@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Balkán Biztonsági Monitor – Feszültség</title>
+  <title>Közép-Kelet Európa Biztonsági Monitor – Feszültség</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -120,7 +120,7 @@
     .layers{ width: 260px; }
     .hotspots{ width: 320px; }
 
-    /* ===== MOBILE: B mód (helyzetkép csak gomb), rétegek bal alsó ===== */
+    /* ===== MOBILE ===== */
     @media (max-width: 720px){
       .dock.top-left{ top: 58px; left: 10px; right: auto; }
       .situation{ width: auto; }
@@ -177,7 +177,7 @@
   <div class="dock top-left situation collapsed" id="dockSituation">
     <div class="hd">
       <div>
-        <div class="title">Balkán – helyzetkép</div>
+        <div class="title">Közép-Kelet Európa Biztonsági Monitor – helyzetkép</div>
         <div class="meta" id="metaLine">Betöltés...</div>
       </div>
       <button class="btn" id="btnSituation">Kinyit</button>
@@ -258,6 +258,7 @@
   </div>
 
   <script>
+    // CEE center
     const map = L.map('map', { zoomControl: true }).setView([52.0, 19.0], 5);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
@@ -286,7 +287,6 @@
     }
 
     function parseEventTime(props) {
-      // elfogad ISO-t vagy bármilyen Date által értelmezhető stringet
       const t = props?.time || props?.datetime || props?.date;
       if (!t) return null;
       const d = new Date(t);
@@ -294,13 +294,11 @@
     }
 
     function eventRecencyStyle(sourceName, props) {
-      // 4 sáv: 0-24h, 1-3 nap, 3-7 nap, 7+ nap
       const d = parseEventTime(props);
       const now = new Date();
       let ageDays = null;
       if (d) ageDays = (now.getTime() - d.getTime()) / (1000*60*60*24);
 
-      // alap (fallback)
       let color = "#3b82f6";
       let fillColor = "#3b82f6";
       let opacity = 0.35;
@@ -308,14 +306,12 @@
       let radius = 6;
       let weight = 1;
 
-      // forrás szerinti finomhangolás (radius)
       if (sourceName === "USGS") radius = 7;
       if (sourceName === "GDACS") radius = 8;
       if (sourceName === "GDELT") radius = 6;
 
       if (ageDays !== null) {
         if (ageDays <= 1) {
-          // friss
           color = "#b91c1c";
           fillColor = "#ef4444";
           opacity = 0.75;
@@ -343,7 +339,6 @@
           weight = 1;
         }
       }
-
       return { radius, weight, color, fillColor, opacity, fillOpacity };
     }
 
@@ -358,7 +353,6 @@
       return `${title}${t}${place}${typ}${mag}${domain}${url}`;
     }
 
-    // Hotspot heat-like
     function hotspotStyle(score, maxScore) {
       const s = Math.max(0, Number(score) || 0);
       const m = Math.max(0.001, Number(maxScore) || 0.001);
@@ -443,30 +437,37 @@
       });
     }
 
+    // ✅ Borders: online source + filter to 8 CEE countries
     async function loadBorders(url) {
       const r = await fetch(url, { cache: "no-store" });
-  const gj = await r.json();
+      const gj = await r.json();
 
-  const ceeCountries = [
-    "Hungary",
-    "Czechia",
-    "Slovakia",
-    "Poland",
-    "Estonia",
-    "Latvia",
-    "Lithuania",
-    "Romania"
-  ];
+      const cee = new Set([
+        "Hungary",
+        "Czechia",
+        "Slovakia",
+        "Poland",
+        "Estonia",
+        "Latvia",
+        "Lithuania",
+        "Romania"
+      ]);
 
-  const filtered = {
-    ...gj,
-    features: gj.features.filter(f => ceeCountries.includes(f.properties.ADMIN))
-  };
+      const nameOf = (props) => {
+        // datasets/geo-countries uses: ADMIN
+        // but keep fallbacks to be safe
+        return props?.ADMIN || props?.name || props?.NAME || props?.Country || "";
+      };
 
-  return L.geoJSON(filtered, {
-    style: () => ({ weight: 1.25, opacity: 0.6, fillOpacity: 0.0, color:"#2563eb" })
-  });
-}
+      const filtered = {
+        type: "FeatureCollection",
+        features: (gj.features || []).filter(f => cee.has(nameOf(f.properties)))
+      };
+
+      return L.geoJSON(filtered, {
+        style: () => ({ weight: 1.25, opacity: 0.6, fillOpacity: 0.0, color:"#2563eb" })
+      });
+    }
 
     function renderAlertBanner(alert) {
       const banner = document.getElementById('alertBanner');

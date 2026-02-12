@@ -627,7 +627,7 @@
       try { renderEarlyList(await (await fetch('./data/early.json', { cache: "no-store" })).json()); }
       catch { renderEarlyList({ top: [] }); }
 
-      layers.borders = await loadBorders('./data/balkan_borders.geojson');
+      layers.borders = await loadBorders('./data/cee_borders.geojson');
       layers.hot     = await loadHotspotsHeat('./data/hotspots.geojson');
       layers.early   = await loadEarly('./data/early.geojson');
       layers.gdelt   = await loadGeoJson('./data/gdelt.geojson', 'GDELT');

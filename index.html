@@ -445,11 +445,28 @@
 
     async function loadBorders(url) {
       const r = await fetch(url, { cache: "no-store" });
-      const gj = await r.json();
-      return L.geoJSON(gj, {
-        style: () => ({ weight: 1.25, opacity: 0.6, fillOpacity: 0.0, color:"#2563eb" })
-      });
-    }
+  const gj = await r.json();
+
+  const ceeCountries = [
+    "Hungary",
+    "Czechia",
+    "Slovakia",
+    "Poland",
+    "Estonia",
+    "Latvia",
+    "Lithuania",
+    "Romania"
+  ];
+
+  const filtered = {
+    ...gj,
+    features: gj.features.filter(f => ceeCountries.includes(f.properties.ADMIN))
+  };
+
+  return L.geoJSON(filtered, {
+    style: () => ({ weight: 1.25, opacity: 0.6, fillOpacity: 0.0, color:"#2563eb" })
+  });
+}
 
     function renderAlertBanner(alert) {
       const banner = document.getElementById('alertBanner');

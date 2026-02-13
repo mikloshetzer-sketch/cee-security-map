@@ -15,7 +15,7 @@ from dateutil import parser as dateparser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS_DATA_DIR = os.path.join(ROOT, "docs", "data")
 
-BALKAN_BBOX = (13.0, 37.0, 30.0, 47.5)
+BALKAN_BBOX = (13, 45, 32, 60)
 
 BALKAN_COUNTRIES = [
     "Albania",

@@ -1,51 +1,42 @@
 {
   "type": "FeatureCollection",
   "features": [
-
     {
       "type": "Feature",
       "properties": {
-        "title": "Lengyelország: NATO katonai gyakorlat",
+        "title": "Lengyelország: katonai mozgások a keleti régióban",
         "time": "2026-02-13T18:00:00Z",
         "place": "Poland",
-        "domain": "OSINT",
-        "type": "military"
+        "domain": "teszt OSINT",
+        "type": "security"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [23.5, 52.0]
+        "coordinates": [
+          23.5,
+          52.0
+        ]
       }
     },
-
     {
       "type": "Feature",
-      "properties": {
-        "title": "Litvánia: kiberbiztonsági incidens energia szektorban",
-        "time": "2026-02-13T16:00:00Z",
-        "place": "Lithuania",
-        "domain": "OSINT",
-        "type": "cyber"
-      },
       "geometry": {
         "type": "Point",
-        "coordinates": [25.28, 54.68]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "title": "Románia: energia infrastruktúra fejlesztés",
-        "time": "2026-02-13T14:00:00Z",
-        "place": "Romania",
-        "domain": "OSINT",
-        "type": "energy"
+        "coordinates": [
+          20.8886,
+          42.1579
+        ]
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [26.10, 44.43]
+      "properties": {
+        "source": "USGS",
+        "kind": "earthquake",
+        "mag": 4.5,
+        "place": "13 km ESE of Prizren, Kosovo",
+        "time": "2026-02-10T21:05:28Z",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000s7pd",
+        "title": "M 4.5 - 13 km ESE of Prizren, Kosovo",
+        "type": "Earthquake"
       }
     }
-
   ]
 }

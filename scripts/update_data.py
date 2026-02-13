@@ -11,18 +11,12 @@ import requests
 from dateutil import parser as dateparser
 
 
-# =========================
-# PATHS
-# =========================
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT, "data")
 
-USER_AGENT = "cee-security-map/3.1 (github actions)"
+USER_AGENT = "cee-security-map/3.2 (github actions)"
 TIMEOUT = 30
 
-# =========================
-# CEE COUNTRIES (STRICT)
-# =========================
 CEE_COUNTRIES = [
     "Hungary",
     "Poland",
@@ -34,13 +28,9 @@ CEE_COUNTRIES = [
     "Estonia",
 ]
 
-# rough bbox (final is country name from GDELT location.country)
 CEE_BBOX = (11.0, 42.5, 30.5, 61.5)
 
 
-# =========================
-# BASICS
-# =========================
 def ensure_dirs() -> None:
     os.makedirs(DATA_DIR, exist_ok=True)
 
@@ -66,10 +56,6 @@ def in_bbox(lon: float, lat: float) -> bool:
     return lon_min <= lon <= lon_max and lat_min <= lat <= lat_max
 
 
-def in_cee_country(country_name: Optional[str]) -> bool:
-    return bool(country_name) and (country_name in CEE_COUNTRIES)
-
-
 def to_feature(lon: float, lat: float, props: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "type": "Feature",
@@ -88,32 +74,21 @@ def save_json(path: str, obj: Any) -> None:
         json.dump(obj, f, indent=2, ensure_ascii=False)
 
 
-# =========================
-# HTTP helper (retry + backoff)
-# =========================
 def http_get(url: str, params: Optional[dict] = None) -> requests.Response:
-    headers = {
-        "User-Agent": USER_AGENT,
-        "Accept": "application/json,text/plain,*/*",
-    }
-
+    headers = {"User-Agent": USER_AGENT, "Accept": "application/json,text/plain,*/*"}
     backoff = 2
     last_exc: Optional[Exception] = None
 
     for attempt in range(1, 5):
         try:
             r = requests.get(url, params=params, headers=headers, timeout=TIMEOUT)
-
-            # Retry on typical transient errors
             if r.status_code in (429, 500, 502, 503, 504):
                 print(f"[http_get] retry {attempt}/4 status={r.status_code}")
                 time.sleep(backoff)
                 backoff *= 2
                 continue
-
             r.raise_for_status()
             return r
-
         except Exception as e:
             last_exc = e
             print(f"[http_get] error retry {attempt}/4: {e}")
@@ -123,28 +98,25 @@ def http_get(url: str, params: Optional[dict] = None) -> requests.Response:
     raise last_exc if last_exc else RuntimeError("http_get failed")
 
 
-# =========================
-# GDELT FETCH (robust JSON handling)
-# =========================
-def fetch_gdelt(days: int = 7, max_records: int = 250) -> List[Dict[str, Any]]:
+def fetch_gdelt(days: int = 7, max_records: int = 250) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """
+    Returns (features, debug_info)
+    DEBUG contains counters and first 30 raw location blocks.
+    """
     url = "https://api.gdeltproject.org/api/v2/doc/doc"
-
     end = datetime.now(timezone.utc)
     start = end - timedelta(days=days)
 
-    # bővített kulcsszavak
     keywords = [
         "protest", "riot", "violence", "clash", "border", "checkpoint",
         "military", "army", "troops", "mobilization",
         "cyber", "ransomware", "ddos", "attack", "explosion",
         "security", "police", "terror", "arrest",
         "sanctions", "energy", "gas", "pipeline", "infrastructure",
-        "sabotage", "disinformation", "spy", "espionage"
+        "sabotage", "disinformation", "spy", "espionage",
+        "migrant", "refugee", "smuggling", "crime"
     ]
-
-    # ország-keresési tokenek (query-hez)
     countries_q = ["Hungary", "Poland", "Czech", "Slovakia", "Romania", "Latvia", "Lithuania", "Estonia"]
-
     query = "(" + " OR ".join(keywords) + ") AND (" + " OR ".join(countries_q) + ")"
 
     params = {
@@ -159,25 +131,47 @@ def fetch_gdelt(days: int = 7, max_records: int = 250) -> List[Dict[str, Any]]:
 
     resp = http_get(url, params=params)
 
-    # --- Robust JSON parse ---
     try:
         data = resp.json()
     except Exception:
         head = (resp.text or "")[:400].replace("\n", " ")
         print(f"[GDELT] Non-JSON response. status={resp.status_code} head={head!r}")
-        return []
+        return [], {"non_json": True, "status": resp.status_code, "head": head}
 
+    articles = data.get("articles", []) or []
     out: List[Dict[str, Any]] = []
-    for a in data.get("articles", []) or []:
-        loc = a.get("location") or {}
-        geo = (loc.get("geo") or {})
 
+    debug = {
+        "query": query,
+        "articles": len(articles),
+        "with_location": 0,
+        "with_geo": 0,
+        "kept_bbox_geo": 0,
+        "dropped_no_geo": 0,
+        "sample_locations": [],
+    }
+
+    for i, a in enumerate(articles):
+        loc = a.get("location") or {}
+        if loc:
+            debug["with_location"] += 1
+
+        geo = (loc.get("geo") or {})
         lat = geo.get("latitude")
         lon = geo.get("longitude")
-        country = loc.get("country")  # IMPORTANT: this is what we filter on
+
+        if i < 30:
+            debug["sample_locations"].append({
+                "title": a.get("title"),
+                "url": a.get("url"),
+                "location": loc,
+            })
 
         if lat is None or lon is None:
+            debug["dropped_no_geo"] += 1
             continue
+
+        debug["with_geo"] += 1
 
         try:
             lat_f = float(lat)
@@ -185,14 +179,13 @@ def fetch_gdelt(days: int = 7, max_records: int = 250) -> List[Dict[str, Any]]:
         except Exception:
             continue
 
-        # quick bbox filter + strict country filter
+        # LAZÍTÁS: csak bbox + van geo
         if not in_bbox(lon_f, lat_f):
             continue
-        if not in_cee_country(country):
-            continue
+
+        debug["kept_bbox_geo"] += 1
 
         dt = parse_time_iso(a.get("seendate"))
-
         out.append(
             to_feature(
                 lon_f,
@@ -205,37 +198,34 @@ def fetch_gdelt(days: int = 7, max_records: int = 250) -> List[Dict[str, Any]]:
                     "url": a.get("url"),
                     "domain": a.get("domain"),
                     "language": a.get("language"),
-                    "country": country,
                     "type": "News",
                 },
             )
         )
 
-    print(f"[GDELT] parsed articles={len(data.get('articles', []) or [])}, kept={len(out)}")
-    return out
+    print(f"[GDELT] articles={len(articles)} with_geo={debug['with_geo']} kept_bbox_geo={len(out)}")
+    return out, debug
 
 
-# =========================
-# MAIN
-# =========================
 def main() -> int:
     ensure_dirs()
 
     print("Fetching GDELT…")
     try:
-        gdelt = fetch_gdelt(days=7, max_records=250)
+        gdelt, dbg = fetch_gdelt(days=7, max_records=250)
     except Exception as e:
-        # IMPORTANT: never fail the job on GDELT instability
-        print(f"[GDELT] fetch failed, continuing with empty list: {e}")
-        gdelt = []
+        print(f"[GDELT] fetch failed, continuing empty: {e}")
+        gdelt, dbg = [], {"error": str(e)}
 
     save_geojson(os.path.join(DATA_DIR, "gdelt.geojson"), gdelt)
+    save_json(os.path.join(DATA_DIR, "gdelt_debug.json"), dbg)
 
     summary = {
         "generated_utc": to_utc_z(datetime.now(timezone.utc)),
         "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
         "bullets": [
-            f"GDELT események száma: {len(gdelt)} (csak 8 CEE ország, bbox+country szűréssel).",
+            f"GDELT események száma: {len(gdelt)} (bbox+geo alapú szűrés).",
+            f"Debug: articles={dbg.get('articles')} with_geo={dbg.get('with_geo')} kept={len(gdelt)}.",
             "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.",
         ],
     }

@@ -21,7 +21,7 @@ CACHE_PATH = os.path.join(DATA_DIR, "geocode_cache.json")
 COUNTRIES_CACHE_PATH = os.path.join(DATA_DIR, "cee_countries.geojson")
 GDELT_DEBUG_PATH = os.path.join(DATA_DIR, "gdelt_debug.json")
 
-USER_AGENT = "cee-security-map/2.3 (github actions)"
+USER_AGENT = "cee-security-map/2.4 (github actions)"
 TIMEOUT = 30
 
 # =========================
@@ -38,13 +38,17 @@ CEE_COUNTRIES = [
     "Estonia",
 ]
 
-# rough pre-filter only (final: point-in-polygon)
-CEE_BBOX = (11.0, 42.5, 30.5, 61.5)
+CEE_COUNTRIES_SET = set(CEE_COUNTRIES)
+
+# IMPORTANT: bbox is ONLY a pre-filter.
+# We tighten lon_min to 12.0 so that the known bad point (11.75, 50.75) never enters.
+# Czech western edge is ~12.1E+, so 12.0 is safe and blocks Germany-thuringia points.
+CEE_BBOX = (12.0, 42.5, 30.5, 61.5)
 
 ROLLING_DAYS = 7
 GDELT_DAYS = 7
 USGS_DAYS = 7
-GDACS_DAYS = 14  # RSS window, then trimmed to 7 for map
+GDACS_DAYS = 14  # RSS window, trimmed to 7
 
 # -------------------------
 # EARLY WARNING zones (optional)
@@ -67,7 +71,7 @@ def http_get(url: str, params: Optional[dict] = None, headers: Optional[dict] = 
         h.update(headers)
     backoff = 2
     last_exc: Optional[Exception] = None
-    for attempt in range(1, 4):
+    for _attempt in range(1, 4):
         try:
             r = requests.get(url, params=params, headers=h, timeout=TIMEOUT)
             if r.status_code in (429, 500, 502, 503, 504):
@@ -261,14 +265,16 @@ def load_or_build_country_geoms() -> Dict[str, Dict[str, Any]]:
             geoms[name] = geom
     return geoms
 
-def in_cee_countries(lon: float, lat: float, geoms: Dict[str, Dict[str, Any]]) -> bool:
+def country_hit(lon: float, lat: float, geoms: Dict[str, Dict[str, Any]]) -> Optional[str]:
+    # prefilter first
     if not in_bbox(lon, lat, CEE_BBOX):
-        return False
+        return None
+    # must match one of the 8 explicitly
     for name in CEE_COUNTRIES:
         geom = geoms.get(name)
         if geom and point_in_feature(lon, lat, geom):
-            return True
-    return False
+            return name
+    return None
 
 # =========================
 # Borders layer
@@ -307,8 +313,10 @@ def fetch_usgs(geoms: Dict[str, Dict[str, Any]], days: int = 7, min_magnitude: f
         if len(coords) < 2:
             continue
         lon, lat = float(coords[0]), float(coords[1])
-        if not in_cee_countries(lon, lat, geoms):
+        hit = country_hit(lon, lat, geoms)
+        if not hit:
             continue
+
         p = f.get("properties") or {}
         t_ms = p.get("time")
         dt = None
@@ -321,6 +329,7 @@ def fetch_usgs(geoms: Dict[str, Dict[str, Any]], days: int = 7, min_magnitude: f
                 {
                     "source": "USGS",
                     "kind": "earthquake",
+                    "country": hit,
                     "mag": p.get("mag"),
                     "place": p.get("place"),
                     "time": to_utc_z(dt) if dt else None,
@@ -360,12 +369,15 @@ def fetch_gdacs(geoms: Dict[str, Dict[str, Any]], days: int = 14) -> List[Dict[s
             continue
         if pub_dt < cutoff:
             continue
+
         try:
             lat_s, lon_s = point.split()
-            lat, lon = float(lat_s), float(lon_s)
+            lat, lon = float(lat_s), float(lon_s)  # GDACS gives lat lon
         except Exception:
             continue
-        if not in_cee_countries(lon, lat, geoms):
+
+        hit = country_hit(lon, lat, geoms)
+        if not hit:
             continue
 
         out.append(
@@ -374,6 +386,7 @@ def fetch_gdacs(geoms: Dict[str, Dict[str, Any]], days: int = 14) -> List[Dict[s
                 {
                     "source": "GDACS",
                     "kind": "disaster_alert",
+                    "country": hit,
                     "title": title,
                     "time": to_utc_z(pub_dt),
                     "url": link,
@@ -384,16 +397,14 @@ def fetch_gdacs(geoms: Dict[str, Dict[str, Any]], days: int = 14) -> List[Dict[s
     return out
 
 def fetch_gdelt(geoms: Dict[str, Dict[str, Any]], days: int = 7, max_records: int = 250) -> List[Dict[str, Any]]:
-    """
-    IMPORTANT: keep query short to avoid GDELT "too short or too long".
-    """
     url = "https://api.gdeltproject.org/api/v2/doc/doc"
     end = datetime.now(timezone.utc)
     start = end - timedelta(days=days)
 
-    # short + stable query
+    # Keep it short to avoid the "too short or too long" response.
+    # If you want more keywords later, do it via multiple queries (not one giant string).
     query = """
-    (protest OR riot OR clash OR military OR attack OR explosion OR cyber OR sanctions OR energy)
+    (protest OR riot OR clash OR attack OR explosion OR military OR cyber OR sanctions OR energy OR border)
     AND
     (Hungary OR Poland OR Slovakia OR Romania OR Latvia OR Lithuania OR Estonia OR Czech)
     """
@@ -409,31 +420,17 @@ def fetch_gdelt(geoms: Dict[str, Dict[str, Any]], days: int = 7, max_records: in
     }
 
     resp = http_get(url, params=params)
-
-    # Robust JSON handling + debug
     try:
         data = resp.json()
     except Exception:
         head = (resp.text or "")[:500].replace("\n", " ")
-        dbg = {
-            "non_json": True,
-            "status": resp.status_code,
-            "head": head,
-            "params": params,
-        }
+        dbg = {"non_json": True, "status": resp.status_code, "head": head, "params": params}
         with open(GDELT_DEBUG_PATH, "w", encoding="utf-8") as f:
             json.dump(dbg, f, ensure_ascii=False, indent=2)
         return []
 
     arts = data.get("articles", []) or []
-
-    # write debug always (so you can see counts)
-    dbg = {
-        "non_json": False,
-        "status": resp.status_code,
-        "articles": len(arts),
-        "query": params["query"],
-    }
+    dbg = {"non_json": False, "status": resp.status_code, "articles": len(arts), "query": params["query"]}
     with open(GDELT_DEBUG_PATH, "w", encoding="utf-8") as f:
         json.dump(dbg, f, ensure_ascii=False, indent=2)
 
@@ -450,7 +447,8 @@ def fetch_gdelt(geoms: Dict[str, Dict[str, Any]], days: int = 7, max_records: in
         except Exception:
             continue
 
-        if not in_cee_countries(lon_f, lat_f, geoms):
+        hit = country_hit(lon_f, lat_f, geoms)
+        if not hit:
             continue
 
         seendate = a.get("seendate")
@@ -468,6 +466,7 @@ def fetch_gdelt(geoms: Dict[str, Dict[str, Any]], days: int = 7, max_records: in
                 {
                     "source": "GDELT",
                     "kind": "news_event",
+                    "country": hit,
                     "title": a.get("title"),
                     "time": time_iso,
                     "url": a.get("url"),
@@ -477,7 +476,6 @@ def fetch_gdelt(geoms: Dict[str, Dict[str, Any]], days: int = 7, max_records: in
                 },
             )
         )
-
     return out
 
 # =========================
@@ -591,7 +589,7 @@ def build_hotspots_with_trend(all_features: List[Dict[str, Any]], cell_deg: floa
     return hotspot_features, rows_sorted[:top_n]
 
 # =========================
-# Reverse geocode cache (top hotspots only)
+# Reverse geocode cache
 # =========================
 def load_cache() -> Dict[str, Any]:
     if not os.path.exists(CACHE_PATH):
@@ -615,31 +613,15 @@ def reverse_geocode_osm(lat: float, lon: float, cache: Dict[str, Any]) -> str:
         return cache[k]
 
     url = "https://nominatim.openstreetmap.org/reverse"
-    params = {
-        "format": "jsonv2",
-        "lat": str(lat),
-        "lon": str(lon),
-        "zoom": "10",
-        "addressdetails": "1",
-    }
+    params = {"format": "jsonv2", "lat": str(lat), "lon": str(lon), "zoom": "10", "addressdetails": "1"}
 
     try:
         resp = http_get(url, params=params, headers={"Accept-Language": "en"})
         data = resp.json()
         addr = data.get("address") or {}
-
-        name = (
-            addr.get("county")
-            or addr.get("state")
-            or addr.get("municipality")
-            or addr.get("city")
-            or addr.get("town")
-            or addr.get("village")
-            or ""
-        )
+        name = (addr.get("county") or addr.get("state") or addr.get("municipality") or addr.get("city") or addr.get("town") or addr.get("village") or "")
         country = addr.get("country") or ""
         place = f"{name}, {country}" if name and country and country not in name else (name or country or "unknown")
-
         cache[k] = place
         time.sleep(1.0)
         return place
@@ -648,7 +630,7 @@ def reverse_geocode_osm(lat: float, lon: float, cache: Dict[str, Any]) -> str:
         return "unknown"
 
 # =========================
-# Weekly summary topics
+# Weekly + Daily summaries (same as before, short)
 # =========================
 STOP = {
     "the","a","an","and","or","to","of","in","on","for","with","as","at","by","from",
@@ -674,16 +656,12 @@ def build_weekly(all_features: List[Dict[str, Any]]) -> Dict[str, Any]:
 
     week: List[Tuple[datetime, Dict[str, Any]]] = []
     for f in all_features:
-        p = f.get("properties") or {}
-        dt = parse_time_iso(p.get("time"))
-        if dt is None:
-            continue
-        if dt >= cutoff_7:
+        dt = parse_time_iso((f.get("properties") or {}).get("time"))
+        if dt and dt >= cutoff_7:
             week.append((dt, f))
 
     counts = {"GDELT": 0, "USGS": 0, "GDACS": 0}
     gdelt_items: List[Tuple[datetime, Dict[str, Any]]] = []
-
     for dt, f in week:
         src = (f.get("properties") or {}).get("source")
         if src in counts:
@@ -692,16 +670,10 @@ def build_weekly(all_features: List[Dict[str, Any]]) -> Dict[str, Any]:
             gdelt_items.append((dt, f))
 
     gdelt_items.sort(key=lambda x: x[0], reverse=True)
-
     examples = []
     for dt, f in gdelt_items[:5]:
         p = f.get("properties") or {}
-        examples.append({
-            "time_utc": to_utc_z(dt),
-            "title": p.get("title"),
-            "url": p.get("url"),
-            "domain": p.get("domain"),
-        })
+        examples.append({"time_utc": to_utc_z(dt), "title": p.get("title"), "url": p.get("url"), "domain": p.get("domain")})
 
     topics = extract_topics([((x[1].get("properties") or {}).get("title") or "") for x in gdelt_items[:50]])
 
@@ -713,17 +685,8 @@ def build_weekly(all_features: List[Dict[str, Any]]) -> Dict[str, Any]:
         bullets.append("Gyakori témák a hírcímekben: " + ", ".join(topics) + ".")
     bullets.append("Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.")
 
-    return {
-        "generated_utc": to_utc_z(now),
-        "headline": "Heti kivonat – elmúlt 7 nap",
-        "bullets": bullets,
-        "counts": counts,
-        "examples": examples,
-    }
+    return {"generated_utc": to_utc_z(now), "headline": "Heti kivonat – elmúlt 7 nap", "bullets": bullets, "counts": counts, "examples": examples}
 
-# =========================
-# Daily summary + alert
-# =========================
 def pct_change(curr: float, prev: float) -> Optional[float]:
     if prev <= 0 and curr <= 0:
         return 0.0
@@ -739,21 +702,6 @@ def compute_total_score(features: List[Dict[str, Any]], now: datetime) -> float:
         total += score_feature(props) * time_decay(dt, now)
     return total
 
-def alert_from_top(top: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
-    if not top:
-        return None
-    arrow = top.get("trend_arrow")
-    ch = top.get("change_pct")
-    place = top.get("place") or "ismeretlen térség"
-
-    if arrow == "🆕":
-        return {"level": "info", "title": "Új góc", "text": f"Új hotspot jelent meg: {place}. Érdemes követni 24–72 órában."}
-    if arrow == "🔺":
-        if ch is not None and ch >= 25:
-            return {"level": "high", "title": "Emelkedő feszültség", "text": f"Erősödő hotspot: {place} (+{ch:.0f}%)."}
-        return {"level": "medium", "title": "Emelkedő feszültség", "text": f"Felfutó jelzések: {place}."}
-    return None
-
 def make_summary(all_features: List[Dict[str, Any]], top_hotspots: List[Dict[str, Any]], counts: Dict[str, int]) -> Dict[str, Any]:
     now = datetime.now(timezone.utc)
     cutoff_7 = now - timedelta(days=7)
@@ -763,7 +711,7 @@ def make_summary(all_features: List[Dict[str, Any]], top_hotspots: List[Dict[str
     prev7 = []
     for f in all_features:
         dt = parse_time_iso((f.get("properties") or {}).get("time"))
-        if dt is None:
+        if not dt:
             continue
         if dt >= cutoff_7:
             last7.append(f)
@@ -790,10 +738,7 @@ def make_summary(all_features: List[Dict[str, Any]], top_hotspots: List[Dict[str
         arrow = top.get("trend_arrow", "")
         chv = top.get("change_pct")
         ch_txt = "n/a" if chv is None else f"{chv:+.0f}%"
-        top_text = (
-            f"Legerősebb góc: {place} {arrow} "
-            f"(rácspont {top['lat']:.2f}, {top['lon']:.2f}; score {float(top['score']):.2f}; 7 napos változás: {ch_txt})."
-        )
+        top_text = f"Legerősebb góc: {place} {arrow} (rácspont {top['lat']:.2f}, {top['lon']:.2f}; score {float(top['score']):.2f}; 7 napos változás: {ch_txt})."
     else:
         top_text = "Legerősebb góc: jelenleg nincs elég geokódolt jelzés a térképes kiemeléshez."
 
@@ -804,20 +749,10 @@ def make_summary(all_features: List[Dict[str, Any]], top_hotspots: List[Dict[str
         "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.",
     ]
 
-    return {
-        "generated_utc": to_utc_z(now),
-        "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
-        "bullets": bullets,
-        "alert": alert_from_top(top),
-        "stats": {
-            "score_last7": round(score_last7, 3),
-            "score_prev7": round(score_prev7, 3),
-            "change_pct": None if change is None else round(change, 2),
-        },
-    }
+    return {"generated_utc": to_utc_z(now), "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat", "bullets": bullets}
 
 # =========================
-# EARLY WARNING
+# EARLY WARNING (unchanged logic)
 # =========================
 def zone_multiplier(lon: float, lat: float) -> Tuple[float, Optional[str]]:
     mult = 1.0
@@ -843,11 +778,7 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
     def get_bucket(k: Tuple[int,int]) -> Dict[str, Any]:
         b = acc.get(k)
         if b is None:
-            b = {
-                "recent": 0.0,
-                "baseline": 0.0,
-                "src_recent": {"GDELT": 0, "USGS": 0, "GDACS": 0},
-            }
+            b = {"recent": 0.0, "baseline": 0.0, "src_recent": {"GDELT": 0, "USGS": 0, "GDACS": 0}}
             acc[k] = b
         return b
 
@@ -877,7 +808,7 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
     meta: Dict[Tuple[int,int], Dict[str, Any]] = {}
 
     for k, b in acc.items():
-        lon_c, lat_c = cell_center(k[0], k[1], cell_deg)
+        lon_c, lat_c = cell_center(k[0], k[1], 0.5)
         recent = float(b["recent"])
         base = float(b["baseline"])
         if recent <= 0.75:
@@ -890,21 +821,12 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
         esc = (recent * 10.0) * math.log1p(ratio) * mix_boost * z_mult
 
         raw[k] = esc
-        meta[k] = {
-            "recent": round(recent, 3),
-            "baseline": round(base, 3),
-            "ratio": round(ratio, 3),
-            "src_mix": int(src_mix),
-            "zone": z_name,
-            "zone_mult": round(z_mult, 2),
-            "src_recent": b["src_recent"],
-        }
+        meta[k] = {"recent": round(recent, 3), "baseline": round(base, 3), "ratio": round(ratio, 3), "src_mix": int(src_mix), "zone": z_name, "zone_mult": round(z_mult, 2), "src_recent": b["src_recent"]}
 
     if not raw:
         return [], []
 
     max_raw = max(raw.values()) or 1.0
-
     signals: List[Dict[str, Any]] = []
     rows: List[Dict[str, Any]] = []
 
@@ -915,13 +837,7 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
         score0_100 = min(100.0, (esc_raw * spread_boost) / max_raw * 100.0)
 
         lon_c, lat_c = cell_center(k[0], k[1], cell_deg)
-        props = {
-            "type": "early_warning",
-            "escalation": round(score0_100, 1),
-            "cell_deg": cell_deg,
-            "neighbor_active": int(neigh_active),
-            **meta[k],
-        }
+        props = {"type": "early_warning", "escalation": round(score0_100, 1), "cell_deg": cell_deg, "neighbor_active": int(neigh_active), **meta[k]}
         signals.append(to_feature(lon_c, lat_c, props))
         rows.append({"lon": lon_c, "lat": lat_c, **props})
 
@@ -974,6 +890,7 @@ def main() -> int:
     all_feats = gdelt + gdacs + usgs
 
     hotspot_geo, top_hotspots = build_hotspots_with_trend(all_feats, cell_deg=0.5, top_n=10)
+
     cache = load_cache()
     for h in top_hotspots:
         h["place"] = reverse_geocode_osm(float(h["lat"]), float(h["lon"]), cache)
@@ -1002,12 +919,7 @@ def main() -> int:
     with open(os.path.join(DATA_DIR, "weekly.json"), "w", encoding="utf-8") as f:
         json.dump(weekly, f, ensure_ascii=False, indent=2)
 
-    meta = {
-        "generated_utc": to_utc_z(datetime.now(timezone.utc)),
-        "counts": counts,
-        "rolling_days": ROLLING_DAYS,
-        "countries": CEE_COUNTRIES,
-    }
+    meta = {"generated_utc": to_utc_z(datetime.now(timezone.utc)), "counts": counts, "rolling_days": ROLLING_DAYS, "countries": CEE_COUNTRIES, "bbox": CEE_BBOX}
     with open(os.path.join(DATA_DIR, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
 

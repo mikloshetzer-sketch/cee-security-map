@@ -621,7 +621,7 @@
 
       // FIGYELEM: a border fájl neve nálad lehet más (cee_borders.geojson).
       // Ha még Balkan fájlod van, akkor ezt hagyd így. Ha átnevezed, itt kell cserélni.
-      layers.borders = await loadBorders('./data/balkan_borders.geojson');
+      layers.borders = await loadBorders('./data/cee_borders.geojson');
 
       layers.hot     = await loadHotspotsHeat('./data/hotspots.geojson');
       layers.early   = await loadEarly('./data/early.geojson');

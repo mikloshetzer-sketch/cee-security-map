@@ -648,7 +648,7 @@
       layers.borders = await loadBorders('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson');
       layers.hot     = await loadHotspotsHeat('./data/hotspots.geojson');
       layers.early   = await loadEarly('./data/early.geojson');
-      layers.gdelt   = await loadGeoJson('./data/gdelt.geojson', 'GDELT');
+      layers.gdelt   = await loadGeoJson('./data/daily_osint.geojson', 'OSINT');
       layers.usgs    = await loadGeoJson('./data/usgs.geojson', 'USGS');
       layers.gdacs   = await loadGeoJson('./data/gdacs.geojson', 'GDACS');
 

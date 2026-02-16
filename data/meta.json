@@ -1,12 +1,14 @@
 {
-  "generated_utc": "2026-02-16T16:24:23Z",
+  "generated_utc": "2026-02-16T18:05:00Z",
   "counts": {
     "usgs": 0,
     "gdacs": 0,
-    "gdelt": 170,
-    "hotspot_cells": 121
+    "gdelt_14d": 7,
+    "gdelt_7d": 1,
+    "hotspot_cells": 1
   },
   "rolling_days": 7,
+  "gdelt_days_on_map": 14,
   "countries": [
     "Hungary",
     "Poland",
@@ -18,9 +20,7 @@
     "Estonia"
   ],
   "gdelt": {
-    "api": "doc",
-    "days": 7,
-    "max_total": 1200,
-    "per_query_records": 250
+    "source": "events_export_daily",
+    "lookback_days": 14
   }
 }

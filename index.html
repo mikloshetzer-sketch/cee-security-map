@@ -346,7 +346,15 @@
       const title = props.title ?? props.category ?? props.place ?? "Esemény";
       const place = props.place ?? props.location ?? props.country ?? "—";
       const time = props.time ? isoToLocal(props.time) : "—";
-      const url = props.url ?? "";
+ const url =
+  props.url ||
+  props.source_url ||
+  props.sourceUrl ||
+  props.shareUrl ||
+  props.link ||
+  props.document ||
+  props.web ||
+  "";
 
       const kw = Array.isArray(props.keywords) ? props.keywords.join(", ") : (props.keywords ?? "");
       const kwLine = kw ? escapeHtml(kw) : "—";

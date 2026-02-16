@@ -1,14 +1,13 @@
 {
-  "generated_utc": "2026-02-16T18:44:35Z",
+  "generated_utc": "2026-02-16T19:32:31Z",
   "counts": {
     "usgs": 0,
     "gdacs": 0,
-    "gdelt_14d": 191,
-    "gdelt_7d": 185,
-    "hotspot_cells": 92
+    "gdelt": 185,
+    "gdelt_linked": 880,
+    "hotspot_cells": 209
   },
   "rolling_days": 7,
-  "gdelt_days_on_map": 14,
   "countries": [
     "Hungary",
     "Poland",
@@ -20,17 +19,7 @@
     "Estonia"
   ],
   "gdelt": {
-    "api": "geo",
-    "days": 14,
-    "per_query_points": 200,
-    "categories": [
-      "protest",
-      "military",
-      "border",
-      "cyber",
-      "energy",
-      "drone",
-      "security_politics"
-    ]
+    "geo_days": 7,
+    "export_days": 14
   }
 }

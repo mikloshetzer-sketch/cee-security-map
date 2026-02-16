@@ -37,17 +37,17 @@ CEE_COUNTRIES = [
     "Estonia",
 ]
 
-# Rough pre-filter; final filter is point-in-polygon
+# rough pre-filter; final filter is point-in-polygon
 CEE_BBOX = (11.0, 42.5, 30.5, 61.5)
 
 ROLLING_DAYS = 7
 GDELT_DAYS = 7
 USGS_DAYS = 7
-GDACS_DAYS = 14  # RSS window, but we still trim to ROLLING_DAYS for map
+GDACS_DAYS = 14  # RSS window, but we still trim to 7 for map
 
-# =========================
+# -------------------------
 # EARLY WARNING zones (optional)
-# =========================
+# -------------------------
 SENSITIVE_ZONES = [
     {"name": "PL–BY / Suwałki környék (tág)", "bbox": (22.0, 53.5, 24.5, 55.8), "mult": 1.20},
     {"name": "RO–MD határ (tág)", "bbox": (26.0, 45.0, 29.5, 48.2), "mult": 1.15},
@@ -64,6 +64,7 @@ def http_get(url: str, params: Optional[dict] = None, headers: Optional[dict] = 
     h = {"User-Agent": USER_AGENT, "Accept": "*/*"}
     if headers:
         h.update(headers)
+
     backoff = 2
     last_exc: Optional[Exception] = None
     for _attempt in range(1, 4):
@@ -231,8 +232,8 @@ def point_in_feature(lon: float, lat: float, geom: Dict[str, Any]) -> bool:
 
 def load_or_build_country_geoms() -> Dict[str, Dict[str, Any]]:
     """
-    Returns mapping: country_name -> geometry dict (Polygon/MultiPolygon)
     Cached to data/cee_countries.geojson (weekly refresh).
+    Returns mapping: country_name -> geometry dict
     """
     need_refresh = True
     if os.path.exists(COUNTRIES_CACHE_PATH):
@@ -277,21 +278,21 @@ def in_cee_countries(lon: float, lat: float, geoms: Dict[str, Dict[str, Any]]) -
 # =========================
 # Borders layer
 # =========================
-def ensure_cee_borders() -> None:
-    geoms = load_or_build_country_geoms()
+def ensure_cee_borders(geoms: Dict[str, Dict[str, Any]]) -> None:
     out_path = os.path.join(DATA_DIR, "cee_borders.geojson")
     feats = []
     for name in CEE_COUNTRIES:
-        feats.append({
-            "type": "Feature",
-            "properties": {"name": name},
-            "geometry": geoms[name],
-        })
+        if name in geoms:
+            feats.append({
+                "type": "Feature",
+                "properties": {"name": name},
+                "geometry": geoms[name],
+            })
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump({"type": "FeatureCollection", "features": feats}, f, ensure_ascii=False, indent=2)
 
 # =========================
-# Sources
+# SOURCES: USGS / GDACS
 # =========================
 def fetch_usgs(geoms: Dict[str, Dict[str, Any]], days: int = 7, min_magnitude: float = 2.5) -> List[Dict[str, Any]]:
     url = "https://earthquake.usgs.gov/fdsnws/event/1/query"
@@ -325,12 +326,12 @@ def fetch_usgs(geoms: Dict[str, Dict[str, Any]], days: int = 7, min_magnitude: f
                 {
                     "source": "USGS",
                     "kind": "earthquake",
-                    "category": "natural",
+                    "category": "disaster",
                     "mag": p.get("mag"),
                     "place": p.get("place"),
                     "time": to_utc_z(dt) if dt else None,
                     "url": p.get("url"),
-                    "title": p.get("title"),
+                    "title": p.get("title") or "Earthquake",
                     "type": "Earthquake",
                 },
             )
@@ -379,8 +380,8 @@ def fetch_gdacs(geoms: Dict[str, Dict[str, Any]], days: int = 14) -> List[Dict[s
                 {
                     "source": "GDACS",
                     "kind": "disaster_alert",
-                    "category": "natural",
-                    "title": title,
+                    "category": "disaster",
+                    "title": title or "GDACS Alert",
                     "time": to_utc_z(pub_dt),
                     "url": link,
                     "type": "Alert",
@@ -389,238 +390,208 @@ def fetch_gdacs(geoms: Dict[str, Dict[str, Any]], days: int = 14) -> List[Dict[s
         )
     return out
 
-# -------------------------
-# GDELT (GEO API) – short queries, plus category + fallback link
-# -------------------------
-def _gdelt_build_search_link(query: str) -> str:
-    # Browserben megnyitható "ArtList" HTML
-    # (nem API kulcsos, a felület maga listáz)
-    return "https://api.gdeltproject.org/api/v2/doc/doc?mode=ArtList&format=html&query=" + requests.utils.quote(query)
-
-def _gdelt_category_from_group(group_name: str) -> str:
-    m = group_name.lower().strip()
-    if m == "soc":
-        return "police"
-    if m == "viol":
-        return "police"
-    if m == "mil":
-        return "military"
-    if m == "border":
-        return "border"
-    if m == "cyber":
-        return "cyber"
-    if m == "infra":
-        return "infrastructure"
-    return "other"
-
-def fetch_gdelt_geo(
-    geoms: Dict[str, Dict[str, Any]],
-    days: int = 7,
-    per_query_points: int = 250,
-    debug_path: Optional[str] = None,
-) -> List[Dict[str, Any]]:
-    """
-    Uses GDELT v2 GEO endpoint to get geocoded event points.
-    Adds:
-      - category (from keyword group)
-      - query_link (fallback, always present)
-      - url (if GDELT returns it; otherwise fallback)
-      - title (best-effort, otherwise "GDELT geo event")
-    """
-    base_url = "https://api.gdeltproject.org/api/v2/geo/geo"
-
-    # Keyword groups – rövidek, hogy ne verjük ki a query length limitet
-    kw_groups = [
-        ("soc",   ["protest", "demonstration", "strike", "riot", "clash", "violence"]),
-        ("viol",  ["attack", "explosion", "arson", "sabotage", "shooting", "stabbing"]),
-        ("border",["border", "checkpoint", "incursion", "smuggling", "police", "arrest"]),
-        ("mil",   ["military", "troops", "deployment", "exercise", "mobilization", "missile"]),
-        ("cyber", ["cyber", "ransomware", "ddos", "hack", "disinformation", "spyware"]),
-        ("infra", ["pipeline", "\"power outage\"", "infrastructure"]),
+# =========================
+# GDELT (DOC API) — ARTICLE TITLE + ARTICLE URL + CATEGORY
+# =========================
+def _build_kw_groups() -> List[Dict[str, Any]]:
+    # rövid query-k, hogy ne dobja: "Your query was too short or too long."
+    return [
+        {"cat": "protest", "kw": ["protest", "demonstration", "strike", "riot", "clash", "violence"]},
+        {"cat": "military", "kw": ["military", "troops", "deployment", "exercise", "drill", "mobilization"]},
+        {"cat": "border", "kw": ["border", "checkpoint", "incursion", "smuggling", "migrant", "crossing"]},
+        {"cat": "police", "kw": ["police", "arrest", "detained", "raid", "court", "prosecutor"]},
+        {"cat": "cyber", "kw": ["cyber", "ransomware", "ddos", "hack", "malware", "disinformation"]},
+        {"cat": "infrastructure", "kw": ["pipeline", "power outage", "blackout", "infrastructure", "rail", "bridge"]},
+        {"cat": "security", "kw": ["attack", "explosion", "arson", "sabotage", "shooting", "stabbing"]},
+        {"cat": "energy", "kw": ["energy", "gas", "electricity", "refinery", "substation"]},
     ]
 
-    runs_debug = {"generated_utc": to_utc_z(datetime.now(timezone.utc)), "api": "geo", "days": days, "per_query_points": per_query_points, "runs": []}
+def _escape_query_term(term: str) -> str:
+    # GDELT query-ben idézőjeles kifejezéseknél vigyázunk
+    term = term.replace('"', "")
+    if " " in term:
+        return f'"{term}"'
+    return term
+
+def _gdelt_doc_query(country: str, kw_list: List[str]) -> str:
+    kw_part = " OR ".join(_escape_query_term(k) for k in kw_list)
+    # country hintet is adunk: ország-név + (country:XXX) nem stabil; marad a name + később PIP szűrés
+    return f"({kw_part}) AND ({_escape_query_term(country)})"
+
+def _infer_category(title: str, cat_hint: str) -> str:
+    # ha a kw-group ad egy hintet, azt használjuk; de title alapján felülírhatunk
+    t = (title or "").lower()
+
+    # erős kulcsszavak
+    if any(w in t for w in ["ransomware", "ddos", "malware", "hack", "cyber", "disinformation"]):
+        return "cyber"
+    if any(w in t for w in ["troops", "military", "exercise", "drill", "deployment", "mobilization"]):
+        return "military"
+    if any(w in t for w in ["border", "checkpoint", "crossing", "migrant", "smuggling"]):
+        return "border"
+    if any(w in t for w in ["police", "arrest", "detained", "raid", "prosecutor", "court"]):
+        return "police"
+    if any(w in t for w in ["protest", "demonstration", "strike", "riot", "clash"]):
+        return "protest"
+    if any(w in t for w in ["pipeline", "blackout", "power outage", "substation", "bridge", "rail", "infrastructure"]):
+        return "infrastructure"
+    if any(w in t for w in ["attack", "explosion", "arson", "sabotage", "shooting", "stabbing"]):
+        return "security"
+    if any(w in t for w in ["gas", "refinery", "electricity", "energy"]):
+        return "energy"
+
+    return cat_hint or "other"
+
+def fetch_gdelt(
+    geoms: Dict[str, Dict[str, Any]],
+    days: int = 7,
+    per_query_records: int = 250,
+    max_total: int = 1200,
+) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """
+    DOC 2.1 ArtList -> article-level points with title+url.
+    Returns (features, debug)
+    """
+    url = "https://api.gdeltproject.org/api/v2/doc/doc"
+    end = datetime.now(timezone.utc)
+    start = end - timedelta(days=days)
+
+    kw_groups = _build_kw_groups()
+    debug_runs: List[Dict[str, Any]] = []
 
     out: List[Dict[str, Any]] = []
-    now = datetime.now(timezone.utc)
-    cutoff = now - timedelta(days=days)
+    seen_urls = set()
 
     for country in CEE_COUNTRIES:
-        for group_name, kws in kw_groups:
-            # Query rövid és stabil:
-            # - használjuk a "sourceCountry" helyett a sima ország nevet,
-            # - "near:" vagy "domain:" nélkül, mert hossz.
-            # - OR kulcsszavak
-            kw_q = " OR ".join(kws)
-            query = f"({kw_q}) AND \"{country}\""
-
+        for g in kw_groups:
+            q = _gdelt_doc_query(country, g["kw"])
             params = {
-                "query": query,
-                "format": "geojson",
-                "mode": "geo",
-                "format": "geojson",
-                "maxpoints": str(per_query_points),
+                "query": q,
+                "mode": "ArtList",
+                "format": "json",
+                "maxrecords": str(per_query_records),
+                "startdatetime": start.strftime("%Y%m%d%H%M%S"),
+                "enddatetime": end.strftime("%Y%m%d%H%M%S"),
                 "sort": "HybridRel",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                # timespan röviden
-                "format": "geojson",
-                "mode": "geo",
-                "format": "geojson",
-                "query": query,
-                "format": "geojson",
-                "mode": "geo",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                # ténylegesen fontos:
-                "format": "geojson",
-                "mode": "geo",
-                "format": "geojson",
-                "query": query,
-                "format": "geojson",
-                "mode": "geo",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                "format": "geojson",
-                # timespan:
-                "timespan": f"{days}d",
             }
 
-            # A fenti sok "format" ismétlés NEM hiba a futásban, de csúnya.
-            # Biztonság kedvéért tisztítjuk:
-            params = {k: v for k, v in params.items() if v is not None}
-            # egyértelműen:
-            params["format"] = "geojson"
-            params["mode"] = "geo"
-            params["timespan"] = f"{days}d"
-            params["maxpoints"] = str(per_query_points)
-            params["sort"] = "HybridRel"
-            params["query"] = query
-
             try:
-                resp = http_get(base_url, params=params)
-                # GDELT néha 200-as HTML-t ad hibára; ezért gyors ellenőrzés:
-                txt_head = (resp.text or "")[:200]
-                ok_json = txt_head.strip().startswith("{") or txt_head.strip().startswith("[")
-                if not ok_json:
-                    runs_debug["runs"].append({
+                resp = http_get(url, params=params)
+                # néha nem JSON-t ad vissza
+                try:
+                    data = resp.json()
+                    non_json = False
+                except Exception:
+                    data = {"_non_json": True, "status": resp.status_code, "head": (resp.text or "")[:200]}
+                    non_json = True
+
+                if non_json:
+                    debug_runs.append({
                         "ok": False,
                         "status": resp.status_code,
-                        "query_len": len(query),
-                        "head": txt_head.replace("\n", " ")[:120],
+                        "query_len": len(q),
+                        "head": data.get("head"),
                         "country": country,
-                        "kw": kws,
+                        "kw": g["kw"],
+                        "returned": 0,
                     })
                     continue
 
-                data = resp.json()
-                feats = (data.get("features") or []) if isinstance(data, dict) else []
-                runs_debug["runs"].append({
+                arts = data.get("articles") or []
+                debug_runs.append({
                     "ok": True,
                     "status": resp.status_code,
-                    "query_len": len(query),
-                    "returned": len(feats),
+                    "query_len": len(q),
+                    "returned": len(arts),
                     "country": country,
-                    "kw": kws,
+                    "kw": g["kw"],
                 })
 
-                category = _gdelt_category_from_group(group_name)
-                query_link = _gdelt_build_search_link(query)
-
-                for f in feats:
-                    geom = f.get("geometry") or {}
-                    coords = geom.get("coordinates") or []
-                    if not coords or len(coords) < 2:
+                for a in arts:
+                    # Article URL + title (ez kell a buborékba)
+                    a_url = a.get("url")
+                    if not a_url or not isinstance(a_url, str):
                         continue
-                    lon, lat = float(coords[0]), float(coords[1])
-
-                    # ország-szűrés (hogy ne menjen át német/balkán)
-                    if not in_cee_countries(lon, lat, geoms):
+                    if a_url in seen_urls:
                         continue
 
-                    p = f.get("properties") or {}
-                    # idők:
-                    t_raw = p.get("date") or p.get("datetime") or p.get("seendate") or p.get("time")
-                    dt = parse_time_iso(t_raw) if isinstance(t_raw, str) else None
-                    if dt is None:
-                        # ha nincs idő, akkor "most" – de így is visszavágjuk később rollinggel
-                        dt = now
-
-                    if dt < cutoff:
+                    loc = a.get("location") or {}
+                    geo = (loc.get("geo") or {})
+                    lat = geo.get("latitude")
+                    lon = geo.get("longitude")
+                    if lat is None or lon is None:
+                        continue
+                    try:
+                        lat_f, lon_f = float(lat), float(lon)
+                    except Exception:
                         continue
 
-                    # title / url – GEO gyakran nem ad jó title-t, ezért fallback:
-                    title = (
-                        p.get("name")
-                        or p.get("title")
-                        or p.get("location")
-                        or "GDELT geo event"
-                    )
-                    url = p.get("url") or p.get("sourceurl") or None
-                    if not url:
-                        # legyen legalább egy kattintható link
-                        url = query_link
+                    # tényleges ország-szűrés PIP-pel (így nem jön Németország, Balkán, stb.)
+                    if not in_cee_countries(lon_f, lat_f, geoms):
+                        continue
 
-                    domain = p.get("domain") or p.get("sourceCommonName") or "GDELT"
+                    seendate = a.get("seendate")
+                    time_iso = None
+                    if seendate:
+                        try:
+                            dt = dateparser.parse(seendate).astimezone(timezone.utc)
+                            time_iso = to_utc_z(dt)
+                        except Exception:
+                            time_iso = None
 
-                    out.append(to_feature(
-                        lon, lat,
-                        {
-                            "source": "GDELT",
-                            "kind": "news_event",
-                            "category": category,         # <<< ez jelenik meg buborékban
-                            "title": title,
-                            "time": to_utc_z(dt),
-                            "url": url,                   # <<< sose null: cikk vagy GDELT keresés
-                            "domain": domain,
-                            "country_hint": country,
-                            "kw_group": group_name,
-                            "query_link": query_link,     # <<< külön is eltesszük
-                            "type": "News",
-                        }
-                    ))
+                    title = a.get("title") or "News"
+                    domain = a.get("domain")
+                    lang = a.get("language")
+
+                    cat = _infer_category(title, g.get("cat", "other"))
+
+                    # külön "source_url": a cikk linkje, a GDELT url külön nincs is értelmesen
+                    props = {
+                        "source": "GDELT",
+                        "kind": "news_event",
+                        "category": cat,
+                        "title": title,
+                        "time": time_iso,
+                        "url": a_url,          # EZT fogjuk kattinthatóvá tenni a térképen
+                        "domain": domain,
+                        "language": lang,
+                        "country_hint": country,
+                        "type": "News",
+                    }
+
+                    out.append(to_feature(lon_f, lat_f, props))
+                    seen_urls.add(a_url)
+
+                    if len(out) >= max_total:
+                        break
+
+                if len(out) >= max_total:
+                    break
 
             except Exception as e:
-                runs_debug["runs"].append({
+                debug_runs.append({
                     "ok": False,
                     "status": None,
-                    "query_len": len(query),
-                    "head": f"exception: {str(e)[:120]}",
+                    "query_len": len(q),
+                    "head": str(e)[:200],
                     "country": country,
-                    "kw": kws,
+                    "kw": g["kw"],
+                    "returned": 0,
                 })
                 continue
 
-    if debug_path:
-        with open(debug_path, "w", encoding="utf-8") as f:
-            json.dump(runs_debug, f, ensure_ascii=False, indent=2)
+        if len(out) >= max_total:
+            break
 
-    return out
+    debug = {
+        "generated_utc": to_utc_z(datetime.now(timezone.utc)),
+        "api": "doc",
+        "days": days,
+        "per_query_records": per_query_records,
+        "max_total": max_total,
+        "runs": debug_runs,
+    }
+    return out, debug
 
 # =========================
 # Scoring + hotspots + early
@@ -629,27 +600,29 @@ def score_feature(props: Dict[str, Any]) -> float:
     src = props.get("source")
     kind = props.get("kind")
     if src == "GDELT" and kind == "news_event":
-        # kicsit differenciálunk kategória alapján
-        cat = (props.get("category") or "other").lower()
-        if cat == "military":
-            return 1.35
-        if cat == "cyber":
-            return 1.15
-        if cat == "border":
-            return 1.20
-        if cat == "police":
-            return 1.00
-        if cat == "infrastructure":
-            return 1.05
-        return 0.95
+        # kicsit differenciálunk kategória szerint
+        cat = props.get("category") or "other"
+        base = 1.0
+        if cat in ("military", "security"):
+            base = 1.2
+        elif cat in ("cyber", "border"):
+            base = 1.1
+        elif cat in ("protest", "police"):
+            base = 1.0
+        elif cat in ("infrastructure", "energy"):
+            base = 1.05
+        return base
+
     if src == "GDACS":
         return 0.5
+
     if src == "USGS":
         try:
             m = float(props.get("mag"))
         except Exception:
             m = 0.0
         return 0.2 + min(0.6, max(0.0, (m - 3.0) * 0.15))
+
     return 0.1
 
 def time_decay(dt: Optional[datetime], now: datetime) -> float:
@@ -769,15 +742,28 @@ def reverse_geocode_osm(lat: float, lon: float, cache: Dict[str, Any]) -> str:
         return cache[k]
 
     url = "https://nominatim.openstreetmap.org/reverse"
-    params = {"format": "jsonv2", "lat": str(lat), "lon": str(lon), "zoom": "10", "addressdetails": "1"}
+    params = {
+        "format": "jsonv2",
+        "lat": str(lat),
+        "lon": str(lon),
+        "zoom": "10",
+        "addressdetails": "1",
+    }
 
     try:
         resp = http_get(url, params=params, headers={"Accept-Language": "en"})
         data = resp.json()
         addr = data.get("address") or {}
 
-        name = (addr.get("county") or addr.get("state") or addr.get("municipality") or addr.get("city")
-                or addr.get("town") or addr.get("village") or "")
+        name = (
+            addr.get("county")
+            or addr.get("state")
+            or addr.get("municipality")
+            or addr.get("city")
+            or addr.get("town")
+            or addr.get("village")
+            or ""
+        )
         country = addr.get("country") or ""
         place = f"{name}, {country}" if name and country and country not in name else (name or country or "unknown")
 
@@ -855,7 +841,13 @@ def build_weekly(all_features: List[Dict[str, Any]]) -> Dict[str, Any]:
         bullets.append("Gyakori témák a hírcímekben: " + ", ".join(topics) + ".")
     bullets.append("Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.")
 
-    return {"generated_utc": to_utc_z(now), "headline": "Heti kivonat – elmúlt 7 nap", "bullets": bullets, "counts": counts, "examples": examples}
+    return {
+        "generated_utc": to_utc_z(now),
+        "headline": "Heti kivonat – elmúlt 7 nap",
+        "bullets": bullets,
+        "counts": counts,
+        "examples": examples,
+    }
 
 # =========================
 # Daily summary + alert
@@ -926,7 +918,10 @@ def make_summary(all_features: List[Dict[str, Any]], top_hotspots: List[Dict[str
         arrow = top.get("trend_arrow", "")
         chv = top.get("change_pct")
         ch_txt = "n/a" if chv is None else f"{chv:+.0f}%"
-        top_text = f"Legerősebb góc: {place} {arrow} (rácspont {top['lat']:.2f}, {top['lon']:.2f}; score {float(top['score']):.2f}; 7 napos változás: {ch_txt})."
+        top_text = (
+            f"Legerősebb góc: {place} {arrow} "
+            f"(rácspont {top['lat']:.2f}, {top['lon']:.2f}; score {float(top['score']):.2f}; 7 napos változás: {ch_txt})."
+        )
     else:
         top_text = "Legerősebb góc: jelenleg nincs elég geokódolt jelzés a térképes kiemeléshez."
 
@@ -950,7 +945,7 @@ def make_summary(all_features: List[Dict[str, Any]], top_hotspots: List[Dict[str
     }
 
 # =========================
-# EARLY WARNING (simple)
+# EARLY WARNING
 # =========================
 def zone_multiplier(lon: float, lat: float) -> Tuple[float, Optional[str]]:
     mult = 1.0
@@ -976,7 +971,11 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
     def get_bucket(k: Tuple[int,int]) -> Dict[str, Any]:
         b = acc.get(k)
         if b is None:
-            b = {"recent": 0.0, "baseline": 0.0, "src_recent": {"GDELT": 0, "USGS": 0, "GDACS": 0}}
+            b = {
+                "recent": 0.0,
+                "baseline": 0.0,
+                "src_recent": {"GDELT": 0, "USGS": 0, "GDACS": 0},
+            }
             acc[k] = b
         return b
 
@@ -1033,6 +1032,7 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
         return [], []
 
     max_raw = max(raw.values()) or 1.0
+
     signals: List[Dict[str, Any]] = []
     rows: List[Dict[str, Any]] = []
 
@@ -1043,7 +1043,13 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
         score0_100 = min(100.0, (esc_raw * spread_boost) / max_raw * 100.0)
 
         lon_c, lat_c = cell_center(k[0], k[1], cell_deg)
-        props = {"type": "early_warning", "escalation": round(score0_100, 1), "cell_deg": cell_deg, "neighbor_active": int(neigh_active), **meta[k]}
+        props = {
+            "type": "early_warning",
+            "escalation": round(score0_100, 1),
+            "cell_deg": cell_deg,
+            "neighbor_active": int(neigh_active),
+            **meta[k],
+        }
         signals.append(to_feature(lon_c, lat_c, props))
         rows.append({"lon": lon_c, "lat": lat_c, **props})
 
@@ -1057,14 +1063,13 @@ def main() -> int:
     ensure_dirs()
 
     geoms = load_or_build_country_geoms()
-    ensure_cee_borders()
+    ensure_cee_borders(geoms)
 
-    # Load previous rolling layers
     prev_usgs = load_geojson_features(os.path.join(DATA_DIR, "usgs.geojson"))
     prev_gdacs = load_geojson_features(os.path.join(DATA_DIR, "gdacs.geojson"))
     prev_gdelt = load_geojson_features(os.path.join(DATA_DIR, "gdelt.geojson"))
 
-    # Fetch new
+    # Fetch
     try:
         usgs_new = fetch_usgs(geoms, days=USGS_DAYS, min_magnitude=2.5)
     except Exception as e:
@@ -1077,16 +1082,15 @@ def main() -> int:
         print(f"[GDACS] fetch failed: {e}")
         gdacs_new = []
 
-    # GDELT GEO with debug
-    gdelt_debug_path = os.path.join(DATA_DIR, "gdelt_debug.json")
     try:
-        gdelt_new = fetch_gdelt_geo(geoms, days=GDELT_DAYS, per_query_points=250, debug_path=gdelt_debug_path)
+        gdelt_new, gdelt_dbg = fetch_gdelt(geoms, days=GDELT_DAYS, per_query_records=250, max_total=1200)
     except Exception as e:
         print(f"[GDELT] fetch failed: {e}")
-        gdelt_new = []
-        # still write debug so UI can inspect something
-        with open(gdelt_debug_path, "w", encoding="utf-8") as f:
-            json.dump({"generated_utc": to_utc_z(datetime.now(timezone.utc)), "error": str(e)}, f, ensure_ascii=False, indent=2)
+        gdelt_new, gdelt_dbg = [], {"generated_utc": to_utc_z(datetime.now(timezone.utc)), "error": str(e)[:200]}
+
+    # Save debug always
+    with open(os.path.join(DATA_DIR, "gdelt_debug.json"), "w", encoding="utf-8") as f:
+        json.dump(gdelt_dbg, f, ensure_ascii=False, indent=2)
 
     # Merge rolling + trim
     usgs_merged = merge_dedup(clamp_times(prev_usgs), clamp_times(usgs_new))
@@ -1097,14 +1101,12 @@ def main() -> int:
     gdacs = trim_by_days(gdacs_merged, keep_days=ROLLING_DAYS)
     gdelt = trim_by_days(gdelt_merged, keep_days=ROLLING_DAYS)
 
-    # Save source layers
     save_geojson(os.path.join(DATA_DIR, "usgs.geojson"), usgs)
     save_geojson(os.path.join(DATA_DIR, "gdacs.geojson"), gdacs)
     save_geojson(os.path.join(DATA_DIR, "gdelt.geojson"), gdelt)
 
     all_feats = gdelt + gdacs + usgs
 
-    # Hotspots
     hotspot_geo, top_hotspots = build_hotspots_with_trend(all_feats, cell_deg=0.5, top_n=10)
     cache = load_cache()
     for h in top_hotspots:
@@ -1115,7 +1117,6 @@ def main() -> int:
     with open(os.path.join(DATA_DIR, "hotspots.json"), "w", encoding="utf-8") as f:
         json.dump({"generated_utc": to_utc_z(datetime.now(timezone.utc)), "top": top_hotspots}, f, ensure_ascii=False, indent=2)
 
-    # Early
     early_geo, early_top = build_early_warning(all_feats, cell_deg=0.5, lookback_days=7, recent_hours=48, top_n=10)
     cache = load_cache()
     for e in early_top:
@@ -1126,7 +1127,6 @@ def main() -> int:
     with open(os.path.join(DATA_DIR, "early.json"), "w", encoding="utf-8") as f:
         json.dump({"generated_utc": to_utc_z(datetime.now(timezone.utc)), "top": early_top}, f, ensure_ascii=False, indent=2)
 
-    # Summaries + meta
     counts = {"usgs": len(usgs), "gdacs": len(gdacs), "gdelt": len(gdelt), "hotspot_cells": len(hotspot_geo)}
     summary = make_summary(all_feats, top_hotspots, counts)
     with open(os.path.join(DATA_DIR, "summary.json"), "w", encoding="utf-8") as f:
@@ -1141,7 +1141,12 @@ def main() -> int:
         "counts": counts,
         "rolling_days": ROLLING_DAYS,
         "countries": CEE_COUNTRIES,
-        "gdelt": {"api": "geo", "timespan": f"{GDELT_DAYS}d", "maxpoints": 250},
+        "gdelt": {
+            "api": "doc",
+            "days": GDELT_DAYS,
+            "max_total": 1200,
+            "per_query_records": 250,
+        }
     }
     with open(os.path.join(DATA_DIR, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)

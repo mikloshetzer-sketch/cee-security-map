@@ -30,10 +30,15 @@
     .section h3{margin:0 0 6px 0; font-size:14px;}
     ul{margin:6px 0 0 18px; padding:0;}
     li{margin:4px 0; font-size:13px;}
-    .floating-btn{position:absolute; z-index:9999; border:1px solid rgba(0,0,0,0.15);
-      background:rgba(255,255,255,0.95); border-radius:999px; padding:8px 12px; font-size:12px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.12); cursor:pointer; display:none;
+
+    .floating-btn{
+      position:absolute; z-index:9999;
+      border:1px solid rgba(0,0,0,0.15);
+      background:rgba(255,255,255,0.95);
+      border-radius:999px; padding:8px 12px; font-size:12px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.12); cursor:pointer;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      display:block;
     }
     #openPanelBtn{top:12px; left:12px;}
     #openLayersBtn{top:12px; right:12px;}
@@ -44,8 +49,11 @@
     .badge{display:inline-block; font-size:11px; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#1f2a72; margin-right:6px; margin-bottom:6px;}
     .cat-protest{background:#dcfce7; color:#14532d;}
     .cat-military{background:#fee2e2; color:#7f1d1d;}
-    .cat-police{background:#e0f2fe; color:#0c4a6e;}
-    .cat-security{background:#ffe4e6; color:#881337;}
+    .cat-border{background:#fef9c3; color:#713f12;}
+    .cat-cyber{background:#dbeafe; color:#1e3a8a;}
+    .cat-energy{background:#ede9fe; color:#4c1d95;}
+    .cat-drone{background:#cffafe; color:#155e75;}
+    .cat-security_politics{background:#ffe4e6; color:#881337;}
     .cat-disaster{background:#e5e7eb; color:#111827;}
     .cat-other{background:#eef2ff; color:#1f2a72;}
   </style>
@@ -106,16 +114,6 @@
       try { return new Date(iso).toLocaleString("hu-HU", { year:"numeric", month:"2-digit", day:"2-digit", hour:"2-digit", minute:"2-digit" }); }
       catch { return iso; }
     };
-
-    const catLabelHU = (cat) => ({
-      "protest":"tüntetés/szociális",
-      "military":"katonai",
-      "police":"rendőrségi/igazságügy",
-      "security":"erőszak/biztonsági incidens",
-      "disaster":"katasztrófa/természeti",
-      "other":"egyéb"
-    }[cat] || cat || "—");
-
     const catClass = (cat) => "badge cat-" + (cat || "other").toLowerCase();
 
     const map = L.map("map").setView([47.3, 19.1], 5);
@@ -132,13 +130,14 @@
         const title=p.title||p.location||"Esemény";
         const url=p.url||null;
         const cat=(p.category||"other").toLowerCase();
+        const catHu = p.category_hu || p.category || "—";
         const linkHtml = url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Forrás megnyitása</a>` : `Nincs link az adatban`;
         layer.bindPopup(`
           <div class="popup-title">${url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(title)}</a>` : esc(title)}</div>
-          <div class="${catClass(cat)}">${esc(catLabelHU(cat))}</div>
+          <div class="${catClass(cat)}">${esc(catHu)}</div>
           <div class="popup-meta"><b>Idő:</b> ${esc(fmtTime(p.time))}</div>
-          <div class="popup-meta"><b>Hely:</b> ${esc(p.location || "—")}</div>
-          <div class="popup-meta"><b>GDELT ID:</b> ${esc(p.gdelt_id || "—")}</div>
+          <div class="popup-meta"><b>Ország:</b> ${esc(p.country_hint || "—")}</div>
+          <div class="popup-meta"><b>Domain:</b> ${esc(p.domain || "—")}</div>
           <div class="popup-meta">${linkHtml}</div>
         `,{maxWidth:420});
       }
@@ -169,6 +168,21 @@
       (bullets||[]).forEach(b=>{ const li=document.createElement("li"); li.textContent=b; ul.appendChild(li); });
     }
 
+    function renderHotspotsPanel(data){
+      const box=document.getElementById("hotspotsList");
+      const top=(data && data.top) ? data.top : [];
+      if(!top.length){
+        box.textContent="Nincs elég adat a hotspot listához (még).";
+        return;
+      }
+      box.innerHTML = top.map((h,i)=>(
+        `<div style="padding:8px 0;border-top:1px solid rgba(0,0,0,0.08);">
+          <b>${i+1}. ${esc(h.place || "—")}</b><br/>
+          <span class="meta">(${h.lat.toFixed(2)}, ${h.lon.toFixed(2)}) • score: ${esc(h.score)} • 7 nap: ${esc(h.last7_score)} • trend: ${esc(h.trend_arrow||"")}</span>
+        </div>`
+      )).join("");
+    }
+
     function renderLayers(){
       const el=document.getElementById("layersList");
       el.innerHTML=`
@@ -188,22 +202,17 @@
       bind("chkGdacs",layerGDACS);
     }
 
-    // panel open/close
     const mainPanel=document.getElementById("mainPanel");
     const layersPanel=document.getElementById("layersPanel");
     const hotspotsPanel=document.getElementById("hotspotsPanel");
-    const openPanelBtn=document.getElementById("openPanelBtn");
-    const openLayersBtn=document.getElementById("openLayersBtn");
-    const openHotspotsBtn=document.getElementById("openHotspotsBtn");
 
-    document.getElementById("closeMainPanel").onclick=()=>{ mainPanel.classList.add("hidden"); openPanelBtn.style.display="block"; };
-    openPanelBtn.onclick=()=>{ mainPanel.classList.remove("hidden"); openPanelBtn.style.display="none"; };
+    document.getElementById("closeMainPanel").onclick=()=>{ mainPanel.classList.add("hidden"); };
+    document.getElementById("closeLayersPanel").onclick=()=>{ layersPanel.classList.add("hidden"); };
+    document.getElementById("closeHotspotsPanel").onclick=()=>{ hotspotsPanel.classList.add("hidden"); };
 
-    document.getElementById("closeLayersPanel").onclick=()=>{ layersPanel.classList.add("hidden"); openLayersBtn.style.display="block"; };
-    openLayersBtn.onclick=()=>{ layersPanel.classList.remove("hidden"); openLayersBtn.style.display="none"; };
-
-    document.getElementById("closeHotspotsPanel").onclick=()=>{ hotspotsPanel.classList.add("hidden"); openHotspotsBtn.style.display="block"; };
-    openHotspotsBtn.onclick=()=>{ hotspotsPanel.classList.remove("hidden"); openHotspotsBtn.style.display="none"; };
+    document.getElementById("openPanelBtn").onclick=()=>{ mainPanel.classList.remove("hidden"); };
+    document.getElementById("openLayersBtn").onclick=()=>{ layersPanel.classList.remove("hidden"); };
+    document.getElementById("openHotspotsBtn").onclick=()=>{ hotspotsPanel.classList.remove("hidden"); };
 
     async function boot(){
       renderLayers();
@@ -218,12 +227,15 @@
       try{
         const meta=await fetchJSON("./data/meta.json");
         document.getElementById("metaLine").textContent =
-          `Frissítés: ${fmtTime(meta.generated_utc)} | GDELT (14 nap): ${meta.counts.gdelt_14d} | GDELT (7 nap): ${meta.counts.gdelt_7d}`;
+          `Frissítés: ${fmtTime(meta.generated_utc)} | GDELT(14): ${meta.counts.gdelt_14d} | Hotspot cellák: ${meta.counts.hotspot_cells}`;
       }catch{}
 
       try{ const s=await fetchJSON("./data/summary.json"); setBullets("dailyBullets", s.bullets||[]); }catch{}
       try{ const w=await fetchJSON("./data/weekly.json"); setBullets("weeklyBullets", w.bullets||[]); }catch{}
       try{ const e=await fetchJSON("./data/early.json"); document.getElementById("earlyHint").textContent = (e.top||[]).length ? "EARLY: van jelzés (lásd rétegen)." : "EARLY: nincs elég adat."; }catch{}
+
+      // HOTSPOT panel tartalom
+      try{ const h=await fetchJSON("./data/hotspots.json"); renderHotspotsPanel(h); }catch{ document.getElementById("hotspotsList").textContent="Hotspot lista nem elérhető."; }
     }
     boot();
   </script>

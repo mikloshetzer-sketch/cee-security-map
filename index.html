@@ -20,7 +20,6 @@
       line-height: 1.25;
     }
     .panel h3 { margin: 0 0 6px 0; font-size: 16px; }
-    .panel h4 { margin: 10px 0 6px 0; font-size: 14px; }
     .panel .small { font-size: 12px; color: #333; opacity: 0.85; }
     .panel ul { margin: 6px 0 8px 18px; padding: 0; }
     .panel li { margin: 4px 0; font-size: 13px; }
@@ -30,6 +29,7 @@
       gap: 8px;
       margin-bottom: 6px;
     }
+
     .btn {
       cursor:pointer;
       border: 1px solid rgba(0,0,0,0.15);
@@ -40,25 +40,47 @@
     }
     .btn:hover { background: white; }
 
+    /* --- OPEN BUTTONS: lejjebb, hogy ne takarja a zoomot --- */
     .floating-open {
       position: absolute;
       z-index: 999;
       left: 10px;
-      top: 10px;
+      top: 58px; /* <-- lejjebb a Leaflet zoom (+/-) miatt */
       display:flex;
       flex-direction:column;
       gap: 8px;
+      pointer-events: auto;
     }
 
-    .badge {
-      display:inline-block;
-      padding: 2px 8px;
-      border-radius: 999px;
-      font-size: 12px;
-      border: 1px solid rgba(0,0,0,0.15);
-      background: rgba(255,255,255,0.9);
+    /* --- Collapsible sections inside summary panel --- */
+    .section {
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 10px;
+      background: rgba(255,255,255,0.70);
     }
+    .section summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 8px 10px;
+      font-weight: 700;
+      font-size: 13px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .section summary::-webkit-details-marker { display:none; }
+    .chev {
+      font-weight: 700;
+      opacity: 0.65;
+    }
+    .section[open] .chev { transform: rotate(180deg); }
+    .section-body { padding: 8px 10px 10px 10px; }
+    .section-body ul { margin-top: 6px; }
 
+    /* --- Legend: keskenyebb + scroll --- */
     .legend {
       background: rgba(255,255,255,0.92);
       padding: 10px;
@@ -66,24 +88,32 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       font-size: 12px;
-      line-height: 1.2;
+      line-height: 1.15;
+      width: 200px;          /* <-- keskenyebb */
+      max-height: 220px;     /* <-- ne nőjön túl */
+      overflow: auto;        /* <-- görgethető */
     }
-    .legend .row { display:flex; align-items:center; gap:8px; margin: 4px 0; }
+    .legend .row { display:flex; align-items:center; gap:8px; margin: 3px 0; }
     .dot {
       width: 10px; height: 10px; border-radius: 50%;
       border: 1px solid rgba(0,0,0,0.25);
       display:inline-block;
+      flex: 0 0 10px;
     }
 
     .popup-title { font-weight: 700; margin-bottom: 4px; }
     .popup-line { margin: 2px 0; font-size: 12px; }
     .popup-links a { font-size: 12px; }
+
+    /* make Leaflet layers control blend inside our panel */
+    .leaflet-control-layers {
+      background: transparent !important;
+    }
   </style>
 </head>
 <body>
   <div id="map"></div>
 
-  <!-- “Kinyit” gombok, ha a panelek be vannak zárva -->
   <div class="floating-open" id="openButtons" style="display:none;">
     <button class="btn" id="openSummaryBtn">Kinyit: Kivonatok</button>
     <button class="btn" id="openLayersBtn">Kinyit: Rétegek</button>
@@ -94,7 +124,6 @@
   <script>
     const DATA = "data";
 
-    // ---- Category palette (nem állítunk konkrét színeket túl szigorúan, de legyen konzisztens)
     const CAT_STYLE = {
       protest:        { radius: 6, fillOpacity: 0.55 },
       border:         { radius: 6, fillOpacity: 0.55 },
@@ -141,7 +170,6 @@
       return String(s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
 
-    // ---- Leaflet base
     const map = L.map("map", { preferCanvas: true }).setView([48.6, 19.3], 5);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -149,28 +177,19 @@
       attribution: '&copy; OpenStreetMap'
     }).addTo(map);
 
-    // ---- Layers
     const layerBorders = L.geoJSON(null, { style: { weight: 2 } });
-    const layerUSGS = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng, "USGS") });
-    const layerGDACS = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng, "GDACS") });
-
-    // GEO jelzések (sok pont, link nem mindig)
-    const layerGDELT = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng, "GDELT") });
-
-    // LINKES események (export) – itt MINDIG van sources lista (ha talált)
-    const layerGDELTLinked = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng, "GDELT_LINKED") });
-
+    const layerUSGS = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
+    const layerGDACS = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
+    const layerGDELT = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
+    const layerGDELTLinked = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
     const layerHotspots = L.geoJSON(null, { pointToLayer: (f, latlng) => hotspotMarker(f, latlng) });
     const layerEarly = L.geoJSON(null, { pointToLayer: (f, latlng) => earlyMarker(f, latlng) });
 
-    function circleForFeature(feature, latlng, src){
+    function circleForFeature(feature, latlng){
       const p = feature.properties || {};
       const cat = p.category || "other";
       const st = CAT_STYLE[cat] || CAT_STYLE.other;
 
-      // szín nélkül nem túl informatív, de legyen minimálisan megkülönböztethető:
-      // (Leaflet default kék körvonal). A fillColor-t nem fixáljuk "színkód táblával",
-      // de enyhe különbség kell -> egyszerű map:
       const fillColor = (cat === "cyber") ? "#6f42c1" :
                         (cat === "energy") ? "#d39e00" :
                         (cat === "border") ? "#0c8599" :
@@ -189,8 +208,7 @@
         fillColor,
       });
 
-      const html = popupHtmlFor(feature);
-      m.bindPopup(html, { maxWidth: 420 });
+      m.bindPopup(popupHtmlFor(feature), { maxWidth: 420 });
       return m;
     }
 
@@ -201,9 +219,6 @@
       const src = p.source || "—";
       const cat = humanCat(p.category || p.gdelt_bucket || "other");
 
-      // Link logika:
-      // 1) linked réteg: p.sources[] / p.url
-      // 2) geo réteg: p.url (ha van) vagy p.search_url (mindig van)
       let linksHtml = "";
       const links = [];
 
@@ -250,12 +265,11 @@
         fillOpacity: 0.15,
       });
 
-      const sources = p.sources ? JSON.stringify(p.sources) : "";
       m.bindPopup(`
         <div class="popup-title">Hotspot rácspont</div>
         <div class="popup-line"><b>Score:</b> ${escapeHtml(p.score)}</div>
         <div class="popup-line"><b>Trend:</b> ${escapeHtml(p.trend_arrow || "")} ${escapeHtml(p.trend || "")}</div>
-        <div class="popup-line"><b>Forrásmix:</b> ${escapeHtml(sources)}</div>
+        <div class="popup-line"><b>Forrásmix:</b> ${escapeHtml(p.sources ? JSON.stringify(p.sources) : "—")}</div>
       `);
       return m;
     }
@@ -280,10 +294,8 @@
       return m;
     }
 
-    // ---- Controls: layers (we’ll put into a closable panel)
-    let layersControl = null;
-
     // ---- Panels
+    let layersControl = null;
     let summaryControl, hotspotsControl, layersPanelControl;
 
     function makePanelControl(position, id, title, innerHtml, onClose){
@@ -317,6 +329,10 @@
       return Ctrl;
     }
 
+    let summaryControlOnMap = true;
+    let hotspotsControlOnMap = true;
+    let layersPanelOnMap = true;
+
     function refreshOpenButtons(){
       const openButtons = document.getElementById("openButtons");
       const need = (!summaryControlOnMap || !layersPanelOnMap || !hotspotsControlOnMap);
@@ -325,10 +341,6 @@
       document.getElementById("openLayersBtn").style.display = layersPanelOnMap ? "none" : "block";
       document.getElementById("openHotspotsBtn").style.display = hotspotsControlOnMap ? "none" : "block";
     }
-
-    let summaryControlOnMap = true;
-    let hotspotsControlOnMap = true;
-    let layersPanelOnMap = true;
 
     document.getElementById("openSummaryBtn").addEventListener("click", () => {
       if (!summaryControlOnMap) { map.addControl(summaryControl); summaryControlOnMap = true; refreshOpenButtons(); }
@@ -340,47 +352,37 @@
       if (!hotspotsControlOnMap) { map.addControl(hotspotsControl); hotspotsControlOnMap = true; refreshOpenButtons(); }
     });
 
-    // ---- Legend
+    // ---- Legend (keskenyebb)
     const legend = L.control({ position: "bottomright" });
     legend.onAdd = function(){
       const div = L.DomUtil.create("div", "legend");
       div.innerHTML = `
-        <div style="font-weight:700;margin-bottom:6px;">Kategóriák</div>
+        <div style="font-weight:700;margin-bottom:6px;">Jelmagyarázat</div>
         ${[
-          ["protest","Tüntetés/erőszak"],
-          ["border","Határ/migráció"],
-          ["police","Rendőrség/jog"],
-          ["military","Katonai"],
-          ["drone","Drón/UAV"],
-          ["cyber","Kiber/dezinformáció"],
-          ["energy","Energia/ellátás"],
-          ["infrastructure","Infrastruktúra"],
-          ["security_politics","Security politics"],
-          ["natural","Természeti"],
-          ["other","Egyéb"],
-        ].map(([k,label]) => {
-          const fill = (k === "cyber") ? "#6f42c1" :
-                       (k === "energy") ? "#d39e00" :
-                       (k === "border") ? "#0c8599" :
-                       (k === "protest") ? "#c92a2a" :
-                       (k === "military") ? "#2f9e44" :
-                       (k === "drone") ? "#364fc7" :
-                       (k === "police") ? "#343a40" :
-                       (k === "security_politics") ? "#5c7cfa" :
-                       (k === "natural") ? "#099268" :
-                       (k === "violence") ? "#a61e4d" : "#868e96";
-          return `<div class="row"><span class="dot" style="background:${fill}"></span><span>${label}</span></div>`;
-        }).join("")}
-        <div style="margin-top:8px;" class="small">Megjegyzés: GDELT GEO jelzésekben nem mindig van cikk-link; ilyenkor “GDELT keresés” linket adunk.</div>
+          ["protest","Tüntetés/erőszak", "#c92a2a"],
+          ["border","Határ/migráció", "#0c8599"],
+          ["police","Rendőrség/jog", "#343a40"],
+          ["military","Katonai", "#2f9e44"],
+          ["drone","Drón/UAV", "#364fc7"],
+          ["cyber","Kiber/dezinformáció", "#6f42c1"],
+          ["energy","Energia/ellátás", "#d39e00"],
+          ["infrastructure","Infrastruktúra", "#868e96"],
+          ["security_politics","Security politics", "#5c7cfa"],
+          ["natural","Természeti", "#099268"],
+          ["other","Egyéb", "#868e96"],
+        ].map(([k,label,color]) =>
+          `<div class="row"><span class="dot" style="background:${color}"></span><span>${label}</span></div>`
+        ).join("")}
+        <div style="margin-top:8px;" class="small">
+          GEO jelzéseknél lehet, hogy nincs cikklink → “GDELT keresés”.
+        </div>
       `;
       L.DomEvent.disableClickPropagation(div);
       return div;
     };
     legend.addTo(map);
 
-    // ============================================================
-    // Load all data
-    // ============================================================
+    // ---- Loaders
     async function loadJson(path){
       const r = await fetch(path, { cache: "no-store" });
       if(!r.ok) throw new Error(`Fetch failed: ${path} (${r.status})`);
@@ -388,15 +390,12 @@
     }
 
     async function init(){
-      // load meta + summaries
-      let meta = null, daily = null, weekly = null, hotspotsTop = null, earlyTop = null;
+      let meta = null, daily = null, weekly = null, hotspotsTop = null;
       try { meta = await loadJson(`${DATA}/meta.json`); } catch {}
       try { daily = await loadJson(`${DATA}/summary.json`); } catch {}
       try { weekly = await loadJson(`${DATA}/weekly.json`); } catch {}
       try { hotspotsTop = await loadJson(`${DATA}/hotspots.json`); } catch {}
-      try { earlyTop = await loadJson(`${DATA}/early.json`); } catch {}
 
-      // Summary panel HTML
       const gen = (meta && meta.generated_utc) ? meta.generated_utc : (daily && daily.generated_utc) ? daily.generated_utc : "";
       const counts = meta && meta.counts ? meta.counts : null;
 
@@ -405,26 +404,55 @@
 
       const headerLine = `
         <div class="small">
-          Frissítés: <b>${escapeHtml(gen || "—")}</b> |
+          Frissítés: <b>${escapeHtml(gen || "—")}</b><br/>
           ${counts ? `hotspot cellák: <b>${counts.hotspot_cells||0}</b> | GDELT: <b>${counts.gdelt||0}</b> + linkes: <b>${counts.gdelt_linked||0}</b> | USGS: <b>${counts.usgs||0}</b> | GDACS: <b>${counts.gdacs||0}</b>` : ""}
         </div>
       `;
 
+      // --- Collapsible sections (napi/heti/early) a panelen belül
       const summaryHtml = `
         ${headerLine}
-        <h4>${escapeHtml(daily ? daily.headline : "Napi kivonat")}</h4>
-        <ul>${dailyBullets.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
 
-        <h4>${escapeHtml(weekly ? weekly.headline : "Heti kivonat")}</h4>
-        <ul>${weeklyBullets.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
+        <details class="section" open>
+          <summary>
+            <span>Napi kivonat</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="section-body">
+            <ul>${dailyBullets.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
+          </div>
+        </details>
 
-        <h4>Early signals (elemző mód)</h4>
-        <div class="small">A réteg bekapcsolható a “EARLY” jelöléssel.</div>
+        <details class="section" open>
+          <summary>
+            <span>Heti kivonat</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="section-body">
+            <ul>${weeklyBullets.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
+          </div>
+        </details>
+
+        <details class="section">
+          <summary>
+            <span>Early (elemző mód)</span>
+            <span class="chev">▾</span>
+          </summary>
+          <div class="section-body">
+            <div class="small">
+              Az EARLY réteget a “Rétegek” panelben tudod bekapcsolni. A buborékban látszik az escalation és a zóna.
+            </div>
+          </div>
+        </details>
       `;
 
-      summaryControl = makePanelControl("topleft", "panelSummary", "Közép–Kelet Európa Biztonsági Monitor – helyzetkép", summaryHtml, () => {
-        summaryControlOnMap = false;
-      });
+      summaryControl = makePanelControl(
+        "topleft",
+        "panelSummary",
+        "Közép–Kelet Európa Biztonsági Monitor – helyzetkép",
+        summaryHtml,
+        () => { summaryControlOnMap = false; }
+      );
       map.addControl(summaryControl);
 
       // Hotspots panel
@@ -449,7 +477,6 @@
       });
       map.addControl(hotspotsControl);
 
-      // attach hotspot click handlers
       setTimeout(()=>{
         const root = document.getElementById("panelHotspots");
         if(!root || !top.length) return;
@@ -463,13 +490,13 @@
         });
       }, 0);
 
-      // Layers panel (custom so it can be reopened)
+      // Layers panel
       layersPanelControl = makePanelControl("topright", "panelLayers", "Rétegek", `<div id="layersMount"></div>`, () => {
         layersPanelOnMap = false;
       });
       map.addControl(layersPanelControl);
 
-      // now create real layers control into mount node
+      // layers control inside panel
       setTimeout(()=>{
         const mount = document.getElementById("layersMount");
         if(!mount) return;
@@ -488,7 +515,6 @@
         layersControl = L.control.layers(baseLayers, overlays, { collapsed: false });
         layersControl.addTo(map);
 
-        // move Leaflet's control DOM into our panel
         const lcEl = document.querySelector(".leaflet-control-layers");
         if (lcEl) {
           lcEl.style.boxShadow = "none";
@@ -517,11 +543,9 @@
       if (hotspots) layerHotspots.addData(hotspots);
       if (early) layerEarly.addData(early);
 
-      // Default visible layers:
+      // Default visible layers (ahogy eddig)
       layerBorders.addTo(map);
       layerGDELT.addTo(map);
-      // linked réteg alapból OFF (nehogy „tele legyen”), de bekapcsolható:
-      // layerGDELTLinked.addTo(map);
 
       refreshOpenButtons();
     }

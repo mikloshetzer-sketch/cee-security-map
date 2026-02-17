@@ -1,0 +1,25 @@
+name: Weekly WordPress Post
+
+on:
+  schedule:
+    - cron: "0 7 * * MON"
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - run: pip install requests
+
+      - name: Publish weekly post
+        env:
+          WPCOM_ACCESS_TOKEN: ${{ secrets.WPCOM_ACCESS_TOKEN }}
+        run: |
+          python scripts/post_weekly_wordpress.py

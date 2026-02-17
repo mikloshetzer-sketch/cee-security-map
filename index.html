@@ -3,679 +3,738 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Közép–Kelet Európa Biztonsági Monitor – térkép</title>
+  <title>Közép–Kelet Európa Biztonsági Monitor</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
   <style>
-    html, body { height: 100%; margin: 0; }
+    :root{
+      --card-bg: rgba(255,255,255,0.94);
+      --shadow: 0 8px 28px rgba(0,0,0,0.14);
+      --border: 1px solid rgba(0,0,0,0.08);
+      --radius: 14px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+    html, body { height:100%; }
+    body { margin:0; font-family: var(--font); }
     #map { height: 100vh; width: 100vw; }
 
-    :root{
-      --panel-bg: rgba(255,255,255,0.92);
-      --shadow: 0 6px 20px rgba(0,0,0,0.15);
-      --radius: 12px;
-      --border: 1px solid rgba(0,0,0,0.12);
-      --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    /* ===== Alert banner ===== */
+    .alert-banner{
+      position:fixed; top:0; left:0; right:0; z-index:2000;
+      display:none; padding:10px 12px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(6px);
     }
+    .alert-banner .row{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      max-width: 1200px; margin:0 auto;
+    }
+    .alert-banner .left{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+    .alert-banner .tag{
+      display:inline-block; padding:2px 10px; border-radius:999px;
+      background:#f2f2f2; font-size:12px; font-weight:700;
+    }
+    .alert-banner .title{ font-size:13px; font-weight:800; }
+    .alert-banner .text{ font-size:13px; color:#222; }
+    .alert-banner button{
+      border:0; border-radius:10px; padding:6px 10px; cursor:pointer;
+      background:#f2f2f2; font-size:12px;
+    }
+    .alert-banner.info   { background: rgba(247,251,255,0.96); }
+    .alert-banner.watch  { background: rgba(251,251,247,0.96); }
+    .alert-banner.medium { background: rgba(255,249,242,0.96); }
+    .alert-banner.high   { background: rgba(255,243,243,0.96); }
 
-    .panel {
-      font-family: var(--font);
-      background: var(--panel-bg);
+    /* ===== Floating docks ===== */
+    .dock{
+      position:absolute;
+      z-index: 1200;
+      background: var(--card-bg);
+      border: var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 12px 12px 10px 12px;
-      max-width: 420px;
-      line-height: 1.25;
-      border: var(--border);
-    }
-    .panel h3 { margin: 0; font-size: 15px; }
-    .panel .small { font-size: 12px; color: #333; opacity: 0.85; }
-    .panel ul { margin: 6px 0 8px 18px; padding: 0; }
-    .panel li { margin: 4px 0; font-size: 13px; }
-
-    .panel-header {
-      display:flex; align-items:center; justify-content:space-between;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .btn {
-      cursor:pointer;
-      border: 1px solid rgba(0,0,0,0.15);
-      background: rgba(255,255,255,0.96);
-      border-radius: 10px;
-      padding: 8px 10px;
-      font-size: 12px;
-      font-family: var(--font);
-      line-height: 1.0;
-    }
-    .btn:hover { background: white; }
-    .btn.on { border-color: rgba(0,0,0,0.35); font-weight: 700; }
-
-    /* OPEN BUTTONS: ne ütközzön a zoommal */
-    .floating-open{
-      position: absolute;
-      z-index: 999;
-      left: 10px;
-      top: 64px;              /* zoom alatt legyen */
-      display:flex;
-      flex-direction:column;
-      gap: 8px;
-      pointer-events: auto;
-    }
-
-    /* Collapsible sections */
-    .section {
-      border: 1px solid rgba(0,0,0,0.10);
-      border-radius: 10px;
+      backdrop-filter: blur(6px);
       overflow: hidden;
-      margin-top: 10px;
-      background: rgba(255,255,255,0.70);
     }
-    .section summary{
-      list-style: none;
-      cursor: pointer;
+    /* gombok ne ütközzenek a zoom-control-lal */
+    .dock.top-left { top: 112px; left: 12px; }
+    .dock.top-right { top: 112px; right: 12px; }
+    .dock.bottom-right { right: 12px; bottom: 12px; }
+
+    .dock .hd{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
       padding: 10px 10px;
-      font-weight: 700;
-      font-size: 13px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
+      background: rgba(250,250,250,0.95);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
-    .section summary::-webkit-details-marker{ display:none; }
-    .chev{ font-weight: 700; opacity: 0.65; transition: transform .15s ease; }
-    .section[open] .chev{ transform: rotate(180deg); }
-    .section-body{ padding: 8px 10px 10px 10px; }
-    .section-body ul{ margin-top: 6px; }
-
-    .filters{
-      margin-top: 8px;
-      padding: 8px;
-      border: 1px dashed rgba(0,0,0,0.18);
+    .dock .hd .title{
+      font-size: 13px; font-weight: 800; color:#111;
+      display:flex; align-items:center; gap:8px;
+    }
+    .dock .hd .meta{
+      font-size: 12px; color:#555; font-weight: 500;
+    }
+    .dock .btn{
+      border: 0;
+      background: #f2f2f2;
       border-radius: 10px;
-      background: rgba(255,255,255,0.60);
-    }
-    .filters .row{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items:center;
-      margin-top: 6px;
-    }
-
-    /* Legend */
-    .legend{
-      background: rgba(255,255,255,0.92);
-      padding: 10px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      border: var(--border);
-      font-family: var(--font);
+      padding: 6px 9px;
+      cursor: pointer;
       font-size: 12px;
-      line-height: 1.15;
-      width: 200px;
-      max-height: 220px;
-      overflow: auto;
+      white-space: nowrap;
     }
-    .legend .row{ display:flex; align-items:center; gap:8px; margin: 3px 0; }
-    .dot{
-      width: 10px; height: 10px; border-radius: 50%;
-      border: 1px solid rgba(0,0,0,0.25);
-      display:inline-block;
-      flex: 0 0 10px;
+    .dock .body{ padding: 10px 10px; }
+    .dock.collapsed .body{ display:none; }
+
+    .small { font-size:12px; color:#444; line-height:1.3; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; }
+    .section{ margin: 10px 0; padding: 10px; background:#fafafa; border: 1px solid #eee; border-radius: 12px; }
+    .section h3{ margin:0 0 6px; font-size:12px; font-weight:800; color:#111; }
+    .section .meta{ margin:0 0 8px; font-size:12px; color:#666; }
+    .section ul{ margin:0; padding-left: 18px; }
+    .section li{ font-size:12px; color:#333; margin:4px 0; }
+    details summary{ cursor:pointer; font-size:12px; color:#111; font-weight: 800; }
+    details .muted{ color:#666; font-size:12px; margin-top:6px; }
+
+    .layers .rowCk{ display:flex; gap:8px; align-items:center; margin:8px 0; }
+    .layers label{ font-size: 12px; color:#222; }
+    .layers input{ transform: translateY(1px); }
+
+    .hotlist{ list-style:none; padding:0; margin:0; max-height: 240px; overflow:auto; }
+    .hotitem{
+      display:flex; justify-content:space-between; gap:10px;
+      padding:7px 8px; border-radius: 10px; cursor:pointer;
     }
+    .hotitem:hover{ background:#f2f2f2; }
+    .place{ font-size:12px; font-weight:700; color:#111; }
+    .sub{ font-size:12px; color:#555; }
 
-    .popup-title{ font-weight: 700; margin-bottom: 4px; }
-    .popup-line{ margin: 2px 0; font-size: 12px; }
-    .popup-links a{ font-size: 12px; }
+    .situation{ width: min(520px, calc(100vw - 24px)); }
+    .layers{ width: 270px; }
+    .hotspots{ width: 320px; }
 
-    /* Leaflet layers control -> panelbe ágyazva */
-    .leaflet-control-layers { background: transparent !important; }
-    .leaflet-control-layers-expanded{
-      padding: 0 !important;
-      box-shadow: none !important;
-      border: 0 !important;
-      background: transparent !important;
+    /* ===== Legend ===== */
+    .legend{
+      position:absolute;
+      right:12px;
+      bottom:12px;
+      z-index:1100;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+      backdrop-filter: blur(6px);
+      padding: 8px 10px;
+      width: 220px;
+      max-width: calc(100vw - 24px);
+      font-size: 12px;
+      color:#222;
     }
+    .legend .row{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+    .legend .ttl{ font-weight:800; font-size:12px; }
+    .legend .chip{ display:inline-block; width:10px; height:10px; border-radius:999px; margin-right:8px; border:1px solid rgba(0,0,0,0.2); }
+    .legend .line{ display:flex; align-items:center; margin-top:6px; }
+    .legend .muted{ color:#666; font-size:11px; margin-top:6px; line-height:1.25; }
 
-    /* ====== MOBILE LAYOUT ======
-       - a panelek “bottom sheet”-ként jelennek meg
-       - a zoom/attribution nem ütközik
-    */
+    /* ===== MOBILE tweaks ===== */
     @media (max-width: 720px){
-      .floating-open{
-        left: 10px;
-        right: 10px;
+      /* panelek alul-felül jobban elférjenek */
+      .dock.top-left{ top: 86px; left: 10px; right: auto; }
+      .dock.top-right{
         top: auto;
-        bottom: 12px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 8px;
+        right: auto;
+        left: 10px;
+        bottom: 140px;  /* legend + gombok fölé */
+        width: auto;
       }
-      .floating-open .btn{
-        flex: 1 1 auto;
+      .dock.bottom-right{
+        right: 10px;
+        left: 10px;
+        bottom: 10px;
+        width: auto;
       }
+      .situation{ width: auto; }
+      .layers{ width: auto; }
+      .hotspots{ width: auto; }
+      .hotlist{ max-height: 160px; }
 
-      /* Leaflet controls: legyen egy kis levegő */
-      .leaflet-top.leaflet-left { top: 6px; }
-      .leaflet-control-zoom { margin-top: 6px; }
-
-      /* panelek: teljes szélesség, alul */
-      .panel{
-        max-width: none;
-        width: calc(100vw - 20px);
-      }
-
-      /* summary (topleft) és layers (topright) és hotspots (bottomleft) mind alulra */
-      .leaflet-control-container .leaflet-top.leaflet-left .panel,
-      .leaflet-control-container .leaflet-top.leaflet-right .panel,
-      .leaflet-control-container .leaflet-bottom.leaflet-left .panel{
-        position: fixed !important;
-        left: 10px !important;
-        right: 10px !important;
-        bottom: 70px !important;   /* hagyjon helyet a nyitó gomboknak */
-        top: auto !important;
-        z-index: 1200 !important;
-      }
-
-      /* a legend mobilon kisebb */
+      /* Legend mobilon keskenyebb + feljebb, hogy ne takarja a gombokat */
       .legend{
-        width: 160px;
-        max-height: 170px;
+        right: 10px;
+        bottom: 72px;      /* feljebb tolva */
+        width: 170px;      /* keskenyebb */
+        padding: 8px 9px;
       }
     }
   </style>
 </head>
-<body>
-  <div id="map"></div>
 
-  <!-- Panel visszanyitó gombok -->
-  <div class="floating-open" id="openButtons" style="display:none;">
-    <button class="btn" id="openSummaryBtn">Kinyit: Kivonatok</button>
-    <button class="btn" id="openLayersBtn">Kinyit: Rétegek</button>
-    <button class="btn" id="openHotspotsBtn">Kinyit: Top hotspotok</button>
+<body>
+  <div class="alert-banner" id="alertBanner" role="status" aria-live="polite">
+    <div class="row">
+      <div class="left">
+        <span class="tag" id="alertTag">RIASZTÁS</span>
+        <span class="title" id="alertTitle">—</span>
+        <span class="text" id="alertText">—</span>
+      </div>
+      <button id="alertClose" type="button">Bezár</button>
+    </div>
   </div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <div id="map"></div>
+
+  <!-- ===== Situation (Napi/Heti/Early) ===== -->
+  <div class="dock top-left situation collapsed" id="dockSituation">
+    <div class="hd">
+      <div>
+        <div class="title">KKE – kivonatok</div>
+        <div class="meta" id="metaLine">Betöltés...</div>
+      </div>
+      <button class="btn" id="btnSituation">Kinyit</button>
+    </div>
+    <div class="body">
+
+      <!-- mind lenyitható -->
+      <details class="section">
+        <summary id="sumTitle">Napi kivonat</summary>
+        <div class="meta" id="sumTime" style="margin-top:6px;">—</div>
+        <ul id="sumList"><li>Betöltés...</li></ul>
+      </details>
+
+      <details class="section">
+        <summary>Heti kivonat (7 nap)</summary>
+        <div class="meta" id="weekTime" style="margin-top:6px;">—</div>
+        <ul id="weekList"><li>Betöltés...</li></ul>
+        <div id="weekExamples" class="muted"></div>
+      </details>
+
+      <details class="section">
+        <summary>Early signals (elemző mód)</summary>
+        <div class="meta" id="earlyTime" style="margin-top:6px;">—</div>
+        <ul id="earlyList"><li class="muted">Betöltés...</li></ul>
+        <div class="muted">Megjelenítéshez kapcsold be az EARLY réteget.</div>
+      </details>
+
+      <div class="small">Induláskor zárva van – nyisd ki a „Kinyit” gombbal.</div>
+    </div>
+  </div>
+
+  <!-- ===== Layers ===== -->
+  <div class="dock top-right layers collapsed" id="dockLayers">
+    <div class="hd">
+      <div class="title">Rétegek</div>
+      <button class="btn" id="btnLayers">Kinyit</button>
+    </div>
+    <div class="body">
+      <div class="rowCk">
+        <input type="checkbox" id="layerBorders" checked>
+        <label for="layerBorders">Országhatárok</label>
+      </div>
+      <div class="rowCk">
+        <input type="checkbox" id="layerHot" checked>
+        <label for="layerHot">Hotspot (heat)</label>
+      </div>
+      <div class="rowCk">
+        <input type="checkbox" id="layerEarly">
+        <label for="layerEarly">EARLY (elemző)</label>
+      </div>
+      <div class="rowCk">
+        <input type="checkbox" id="layerEvents" checked>
+        <label for="layerEvents">Események</label>
+      </div>
+      <div class="rowCk">
+        <input type="checkbox" id="layerUsgs">
+        <label for="layerUsgs">USGS rengések</label>
+      </div>
+      <div class="rowCk">
+        <input type="checkbox" id="layerGdacs">
+        <label for="layerGdacs">GDACS riasztás</label>
+      </div>
+
+      <div class="small" style="margin-top:8px;">
+        <b>Színek:</b> 0–24h, 1–3 nap, 3–7 nap, 7+ nap (szürke).
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Hotspots ===== -->
+  <div class="dock bottom-right hotspots collapsed" id="dockHotspots">
+    <div class="hd">
+      <div class="title">Top hotspotok</div>
+      <button class="btn" id="btnHotspots">Kinyit</button>
+    </div>
+    <div class="body">
+      <ol class="hotlist" id="hotList"></ol>
+      <div class="small" style="margin-top:8px;">Kattints a sorra → zoom.</div>
+    </div>
+  </div>
+
+  <!-- ===== Legend ===== -->
+  <div class="legend" id="legendBox">
+    <div class="row">
+      <div class="ttl">Jelmagyarázat</div>
+    </div>
+    <div class="line"><span class="chip" style="background:#ef4444;"></span>0–24 óra</div>
+    <div class="line"><span class="chip" style="background:#f97316;"></span>1–3 nap</div>
+    <div class="line"><span class="chip" style="background:#f59e0b;"></span>3–7 nap</div>
+    <div class="line"><span class="chip" style="background:#9ca3af;"></span>7+ nap</div>
+    <div class="muted">Popupban: esemény + kategória + forráslink(ek).</div>
+  </div>
+
   <script>
-    const DATA = "data";
+    const map = L.map('map', { zoomControl: true }).setView([52.0, 19.0], 5);
 
-    // ---- CATEGORY styles
-    const CAT_STYLE = {
-      protest:        { radius: 6, fillOpacity: 0.55 },
-      border:         { radius: 6, fillOpacity: 0.55 },
-      police:         { radius: 6, fillOpacity: 0.55 },
-      military:       { radius: 6, fillOpacity: 0.55 },
-      drone:          { radius: 6, fillOpacity: 0.55 },
-      cyber:          { radius: 6, fillOpacity: 0.55 },
-      energy:         { radius: 6, fillOpacity: 0.55 },
-      infrastructure: { radius: 6, fillOpacity: 0.55 },
-      security_politics:{ radius: 6, fillOpacity: 0.55 },
-      violence:       { radius: 7, fillOpacity: 0.60 },
-      natural:        { radius: 6, fillOpacity: 0.50 },
-      other:          { radius: 6, fillOpacity: 0.45 }
-    };
-
-    function humanCat(cat){
-      const m = {
-        protest: "tüntetés/erőszak",
-        border: "határ/migráció",
-        police: "rendőrség/jog",
-        military: "katonai",
-        drone: "drón/UAV",
-        cyber: "kiber/dezinformáció",
-        energy: "energia/ellátás",
-        infrastructure: "infrastruktúra",
-        security_politics: "security politics",
-        violence: "erőszak",
-        natural: "természeti",
-        other: "egyéb"
-      };
-      return m[cat] || cat || "egyéb";
-    }
-
-    function fmtTime(t){
-      if(!t) return "—";
-      try {
-        const d = new Date(t);
-        if(isNaN(d.getTime())) return t;
-        return d.toISOString().replace("T"," ").replace(".000Z","Z");
-      } catch { return t; }
-    }
-
-    function escapeHtml(s){
-      return String(s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    }
-
-    // ---- Budapest "today" helpers
-    function ymdInTZ(dateObj, tz){
-      const fmt = new Intl.DateTimeFormat("en-CA", {
-        timeZone: tz, year:"numeric", month:"2-digit", day:"2-digit"
-      });
-      return fmt.format(dateObj); // YYYY-MM-DD
-    }
-    function isTodayBudapest(timeOrDateString){
-      if(!timeOrDateString) return false;
-      let d;
-      try { d = new Date(timeOrDateString); } catch { return false; }
-      if(isNaN(d.getTime())) return false;
-      const todayBud = ymdInTZ(new Date(), "Europe/Budapest");
-      const evBud = ymdInTZ(d, "Europe/Budapest");
-      return evBud === todayBud;
-    }
-
-    const map = L.map("map", { preferCanvas: true }).setView([48.6, 19.3], 5);
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
       attribution: '&copy; OpenStreetMap'
     }).addTo(map);
 
-    // ---- Layers
-    const layerBorders = L.geoJSON(null, { style: { weight: 2 } });
-    const layerUSGS = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
-    const layerGDACS = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
-    const layerGDELT = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
-    const layerGDELTLinked = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
-    const layerHotspots = L.geoJSON(null, { pointToLayer: (f, latlng) => hotspotMarker(f, latlng) });
-    const layerEarly = L.geoJSON(null, { pointToLayer: (f, latlng) => earlyMarker(f, latlng) });
-
-    // ---- Keep datasets for filters
-    const DATASETS = { gdelt:null, gdeltLinked:null, gdacs:null, usgs:null };
-
-    // ---- Filter state
-    const FILTERS = { newsToday:false, alertsToday:false };
-
-    function applyFilters(){
-      if (DATASETS.gdelt){
-        layerGDELT.clearLayers();
-        const feats = DATASETS.gdelt.features || [];
-        const keep = FILTERS.newsToday ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date)) : feats;
-        layerGDELT.addData({ type:"FeatureCollection", features: keep });
-      }
-      if (DATASETS.gdeltLinked){
-        layerGDELTLinked.clearLayers();
-        const feats = DATASETS.gdeltLinked.features || [];
-        const keep = FILTERS.newsToday ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date)) : feats;
-        layerGDELTLinked.addData({ type:"FeatureCollection", features: keep });
-      }
-      if (DATASETS.gdacs){
-        layerGDACS.clearLayers();
-        const feats = DATASETS.gdacs.features || [];
-        const keep = FILTERS.alertsToday ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date)) : feats;
-        layerGDACS.addData({ type:"FeatureCollection", features: keep });
-      }
-      if (DATASETS.usgs){
-        layerUSGS.clearLayers();
-        const feats = DATASETS.usgs.features || [];
-        const keep = FILTERS.alertsToday ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date)) : feats;
-        layerUSGS.addData({ type:"FeatureCollection", features: keep });
-      }
-
-      const btnNews = document.getElementById("btnTodayNews");
-      const btnAlerts = document.getElementById("btnTodayAlerts");
-      const btnReset = document.getElementById("btnReset7d");
-      if (btnNews) btnNews.classList.toggle("on", FILTERS.newsToday);
-      if (btnAlerts) btnAlerts.classList.toggle("on", FILTERS.alertsToday);
-      if (btnReset) btnReset.classList.toggle("on", (!FILTERS.newsToday && !FILTERS.alertsToday));
+    function esc(s) {
+      return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
 
-    function circleForFeature(feature, latlng){
-      const p = feature.properties || {};
-      const cat = p.category || "other";
-      const st = CAT_STYLE[cat] || CAT_STYLE.other;
-
-      const fillColor = (cat === "cyber") ? "#6f42c1" :
-                        (cat === "energy") ? "#d39e00" :
-                        (cat === "border") ? "#0c8599" :
-                        (cat === "protest") ? "#c92a2a" :
-                        (cat === "military") ? "#2f9e44" :
-                        (cat === "drone") ? "#364fc7" :
-                        (cat === "police") ? "#343a40" :
-                        (cat === "security_politics") ? "#5c7cfa" :
-                        (cat === "natural") ? "#099268" :
-                        (cat === "violence") ? "#a61e4d" : "#868e96";
-
-      const m = L.circleMarker(latlng, {
-        radius: st.radius,
-        weight: 1,
-        fillOpacity: st.fillOpacity,
-        fillColor,
-      });
-
-      m.bindPopup(popupHtmlFor(feature), { maxWidth: 420 });
-      return m;
+    function fmtBudapest(isoUtcString) {
+      if (!isoUtcString) return null;
+      const d = new Date(isoUtcString);
+      if (isNaN(d.getTime())) return null;
+      const bud = new Intl.DateTimeFormat('hu-HU', {
+        timeZone: 'Europe/Budapest',
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      }).format(d);
+      return { bud };
     }
 
-    function popupHtmlFor(feature){
-      const p = feature.properties || {};
-      const title = p.title || p.location || p.place || "Esemény";
-      const when = fmtTime(p.time || p.date);
-      const src = p.source || "—";
-      const cat = humanCat(p.category || p.gdelt_bucket || "other");
+    function parseEventTime(props) {
+      const t = props?.time || props?.datetime || props?.date;
+      if (!t) return null;
+      const d = new Date(t);
+      return isNaN(d.getTime()) ? null : d;
+    }
 
+    function eventRecencyStyle(sourceName, props) {
+      const d = parseEventTime(props);
+      const now = new Date();
+      let ageDays = null;
+      if (d) ageDays = (now.getTime() - d.getTime()) / (1000*60*60*24);
+
+      // base
+      let color = "#3b82f6";
+      let fillColor = "#3b82f6";
+      let opacity = 0.35;
+      let fillOpacity = 0.22;
+      let radius = 6;
+      let weight = 1;
+
+      // radius tweak
+      if (sourceName === "USGS") radius = 7;
+      if (sourceName === "GDACS") radius = 8;
+      if (sourceName === "EVENTS") radius = 6;
+
+      if (ageDays !== null) {
+        if (ageDays <= 1) {
+          color = "#b91c1c"; fillColor = "#ef4444";
+          opacity = 0.75; fillOpacity = 0.45; weight = 2; radius += 2;
+        } else if (ageDays <= 3) {
+          color = "#c2410c"; fillColor = "#f97316";
+          opacity = 0.65; fillOpacity = 0.35; weight = 2; radius += 1;
+        } else if (ageDays <= 7) {
+          color = "#a16207"; fillColor = "#f59e0b";
+          opacity = 0.55; fillOpacity = 0.28; weight = 1.5;
+        } else {
+          color = "#6b7280"; fillColor = "#9ca3af";
+          opacity = 0.30; fillOpacity = 0.16; weight = 1;
+        }
+      }
+      return { radius, weight, color, fillColor, opacity, fillOpacity };
+    }
+
+    function normalizeLinks(props){
+      // támogatott formák:
+      // - url / sourceurl
+      // - sources: [url1,url2]
+      // - sources_count + sources (a támadásos scriptből)
       const links = [];
-      if (Array.isArray(p.sources) && p.sources.length) {
-        for (const u of p.sources.slice(0, 6)) links.push({ label: "Forrás", url: u });
-      } else if (p.url) {
-        links.push({ label: "Forrás", url: p.url });
-      } else if (p.search_url) {
-        links.push({ label: "GDELT keresés", url: p.search_url });
+      const u1 = props?.url || props?.sourceurl;
+      if (u1) links.push(u1);
+
+      if (Array.isArray(props?.sources)) {
+        for (const u of props.sources) if (u) links.push(u);
+      }
+      // dedup
+      return [...new Set(links)];
+    }
+
+    function normalizeCategory(props){
+      // többféle script kompatibilitás
+      // - attack_type (assault/fight/mass_violence)
+      // - category / kind / type
+      const c =
+        props?.category ||
+        props?.attack_type ||
+        props?.kind ||
+        props?.type ||
+        "egyéb";
+      return String(c);
+    }
+
+    function normalizeTitle(props){
+      return props?.title || props?.location || props?.place || "Esemény";
+    }
+
+    function makePopup(props) {
+      const title = normalizeTitle(props);
+      const cat = normalizeCategory(props);
+      const t = props?.time ? props.time : (props?.date || '');
+      const where = props?.location || props?.place || '';
+      const src = props?.source ? props.source : (props?.domain ? props.domain : '');
+
+      const links = normalizeLinks(props);
+      let linksHtml = '';
+      if (links.length) {
+        linksHtml = `<div style="margin-top:8px;"><b>Forrás(ok):</b><div style="margin-top:4px;">${
+          links.slice(0, 8).map(u => `<div><a href="${esc(u)}" target="_blank" rel="noopener">Megnyitás</a> <span class="mono" style="color:#666">${esc(new URL(u).hostname)}</span></div>`).join('')
+        }</div></div>`;
+      } else {
+        linksHtml = `<div style="margin-top:8px;color:#666;font-size:12px;">Nincs forráslink a rekordban.</div>`;
       }
 
-      const linksHtml = links.length
-        ? `<div class="popup-links">` +
-          links.map((x,i)=>`<div class="popup-line">🔗 <a href="${escapeHtml(x.url)}" target="_blank" rel="noopener">${escapeHtml(x.label)}${links.length>1?(' #'+(i+1)):""}</a></div>`).join("") +
-          `</div>`
-        : `<div class="popup-line">Nincs link az adatban.</div>`;
+      const extra = [];
+      if (props?.event_code) extra.push(`event_code: ${esc(props.event_code)}`);
+      if (Array.isArray(props?.event_codes) && props.event_codes.length) extra.push(`event_codes: ${esc(props.event_codes.join(", "))}`);
+      if (props?.gdelt_id) extra.push(`gdelt_id: ${esc(props.gdelt_id)}`);
+      if (props?.gdelt_ids_count) extra.push(`gdelt_ids: ${esc(props.gdelt_ids_count)}`);
 
       return `
-        <div class="popup-title">${escapeHtml(title)}</div>
-        <div class="popup-line"><b>Kategória:</b> ${escapeHtml(cat)}</div>
-        <div class="popup-line"><b>Idő:</b> ${escapeHtml(when)}</div>
-        <div class="popup-line"><b>Forrás:</b> ${escapeHtml(src)}</div>
-        ${linksHtml}
+        <div style="min-width:220px;">
+          <div style="font-weight:800;margin-bottom:6px;">${esc(title)}</div>
+          <div><b>Kategória:</b> ${esc(cat)}</div>
+          ${t ? `<div><b>Idő:</b> ${esc(t)}</div>` : ``}
+          ${where ? `<div><b>Hely:</b> ${esc(where)}</div>` : ``}
+          ${src ? `<div><b>Forrás mező:</b> ${esc(src)}</div>` : ``}
+          ${extra.length ? `<div class="mono" style="margin-top:8px;color:#666;">${extra.join(" | ")}</div>` : ``}
+          ${linksHtml}
+        </div>
       `;
     }
 
-    function hotspotMarker(feature, latlng){
-      const p = feature.properties || {};
-      const score = (p.score != null) ? Number(p.score) : 0;
-      const r = Math.max(6, Math.min(18, 6 + score * 6));
-      const m = L.circleMarker(latlng, { radius: r, weight: 2, fillOpacity: 0.15 });
-      m.bindPopup(`
-        <div class="popup-title">Hotspot rácspont</div>
-        <div class="popup-line"><b>Score:</b> ${escapeHtml(p.score)}</div>
-        <div class="popup-line"><b>Trend:</b> ${escapeHtml(p.trend_arrow || "")} ${escapeHtml(p.trend || "")}</div>
-      `);
-      return m;
+    // Hotspot heat-like
+    function hotspotStyle(score, maxScore) {
+      const s = Math.max(0, Number(score) || 0);
+      const m = Math.max(0.001, Number(maxScore) || 0.001);
+      const t = Math.min(1, s / m);
+      const radius = 6 + t * 16;
+      const fillOpacity = 0.08 + t * 0.37;
+      const opacity = 0.18 + t * 0.52;
+      return { radius, weight: 1, fillOpacity, opacity, color:"#2563eb", fillColor:"#60a5fa" };
     }
 
-    function earlyMarker(feature, latlng){
-      const p = feature.properties || {};
-      const e = (p.escalation != null) ? Number(p.escalation) : 0;
-      const r = Math.max(6, Math.min(16, 6 + e / 12));
-      const m = L.circleMarker(latlng, { radius: r, weight: 2, fillOpacity: 0.10 });
-      m.bindPopup(`
-        <div class="popup-title">Early signal</div>
-        <div class="popup-line"><b>Escalation:</b> ${escapeHtml(p.escalation)}</div>
-        <div class="popup-line"><b>Recent:</b> ${escapeHtml(p.recent)} | <b>Baseline:</b> ${escapeHtml(p.baseline)}</div>
-      `);
-      return m;
+    function earlyStyle(escalation) {
+      const e = Math.max(0, Math.min(100, Number(escalation) || 0));
+      const t = e / 100;
+      const radius = 5 + t * 10;
+      const fillOpacity = 0.06 + t * 0.22;
+      const opacity = 0.25 + t * 0.35;
+      return { radius, weight: 1, fillOpacity, opacity, color:"#7c3aed", fillColor:"#a78bfa" };
     }
 
-    // ---- Panels (bezárás = elrejtés)
-    let layersControl = null;
-    let summaryControl, hotspotsControl, layersPanelControl;
+    async function loadGeoJson(url, sourceName) {
+      const r = await fetch(url, { cache: "no-store" });
+      const gj = await r.json();
+      return L.geoJSON(gj, {
+        pointToLayer: (feature, latlng) => {
+          const props = feature.properties || {};
+          const style = eventRecencyStyle(sourceName, props);
+          return L.circleMarker(latlng, style);
+        },
+        onEachFeature: (feature, layer) => layer.bindPopup(makePopup(feature.properties || {}))
+      });
+    }
 
-    let summaryControlOnMap = true;
-    let hotspotsControlOnMap = true;
-    let layersPanelOnMap = true;
+    async function loadHotspotsHeat(url) {
+      const r = await fetch(url, { cache: "no-store" });
+      const gj = await r.json();
 
-    function makePanelControl(position, id, title, innerHtml, onClose){
-      const C = L.Control.extend({
-        onAdd: function(){
-          const div = L.DomUtil.create("div", "panel");
-          div.id = id;
+      let maxScore = 0;
+      for (const f of (gj.features || [])) {
+        const s = Number((f.properties || {}).score) || 0;
+        if (s > maxScore) maxScore = s;
+      }
 
-          div.innerHTML = `
-            <div class="panel-header">
-              <h3>${escapeHtml(title)}</h3>
-              <button class="btn" data-close="1">Bezár</button>
-            </div>
-            <div class="panel-body">${innerHtml}</div>
-          `;
-
-          L.DomEvent.disableClickPropagation(div);
-          L.DomEvent.disableScrollPropagation(div);
-
-          const btn = div.querySelector('button[data-close="1"]');
-          btn.addEventListener("click", () => {
-            div.style.display = "none";
-            if (onClose) onClose();
-            refreshOpenButtons();
-          });
-
-          return div;
+      return L.geoJSON(gj, {
+        pointToLayer: (feature, latlng) => {
+          const p = feature.properties || {};
+          return L.circleMarker(latlng, hotspotStyle(p.score, maxScore));
+        },
+        onEachFeature: (feature, layer) => {
+          const p = feature.properties || {};
+          const src = p.sources ? `GDELT:${p.sources.GDELT||0}, USGS:${p.sources.USGS||0}, GDACS:${p.sources.GDACS||0}` : '';
+          const tr = p.trend_arrow ? ` ${p.trend_arrow}` : '';
+          const ch = (p.change_pct === null || p.change_pct === undefined) ? 'n/a' : `${p.change_pct > 0 ? '+' : ''}${p.change_pct}%`;
+          layer.bindPopup(
+            `<div><b>Hotspot cell</b>${esc(tr)}</div>
+             <div><b>Score:</b> ${esc(p.score)}</div>
+             <div><b>7 napos változás:</b> ${esc(ch)}</div>
+             <div><b>Count:</b> ${esc(p.count)}</div>
+             <div class="mono">${esc(src)}</div>`
+          );
         }
       });
-      return new C({ position });
     }
 
-    function refreshOpenButtons(){
-      const openButtons = document.getElementById("openButtons");
-      const need = (!summaryControlOnMap || !layersPanelOnMap || !hotspotsControlOnMap);
-      openButtons.style.display = need ? "flex" : "none";
-      document.getElementById("openSummaryBtn").style.display = summaryControlOnMap ? "none" : "inline-block";
-      document.getElementById("openLayersBtn").style.display = layersPanelOnMap ? "none" : "inline-block";
-      document.getElementById("openHotspotsBtn").style.display = hotspotsControlOnMap ? "none" : "inline-block";
-    }
-
-    document.getElementById("openSummaryBtn").addEventListener("click", () => {
-      const panel = document.getElementById("panelSummary");
-      if (panel) panel.style.display = "block";
-      summaryControlOnMap = true;
-      refreshOpenButtons();
-    });
-    document.getElementById("openLayersBtn").addEventListener("click", () => {
-      const panel = document.getElementById("panelLayers");
-      if (panel) panel.style.display = "block";
-      layersPanelOnMap = true;
-      refreshOpenButtons();
-    });
-    document.getElementById("openHotspotsBtn").addEventListener("click", () => {
-      const panel = document.getElementById("panelHotspots");
-      if (panel) panel.style.display = "block";
-      hotspotsControlOnMap = true;
-      refreshOpenButtons();
-    });
-
-    // ---- Legend
-    const legend = L.control({ position: "bottomright" });
-    legend.onAdd = function(){
-      const div = L.DomUtil.create("div", "legend");
-      div.innerHTML = `
-        <div style="font-weight:700;margin-bottom:6px;">Jelmagyarázat</div>
-        ${[
-          ["protest","Tüntetés/erőszak", "#c92a2a"],
-          ["border","Határ/migráció", "#0c8599"],
-          ["police","Rendőrség/jog", "#343a40"],
-          ["military","Katonai", "#2f9e44"],
-          ["drone","Drón/UAV", "#364fc7"],
-          ["cyber","Kiber/dezinformáció", "#6f42c1"],
-          ["energy","Energia/ellátás", "#d39e00"],
-          ["infrastructure","Infrastruktúra", "#868e96"],
-          ["security_politics","Security politics", "#5c7cfa"],
-          ["natural","Természeti", "#099268"],
-          ["other","Egyéb", "#868e96"],
-        ].map(([k,label,color]) =>
-          `<div class="row"><span class="dot" style="background:${color}"></span><span>${label}</span></div>`
-        ).join("")}
-        <div style="margin-top:8px;" class="small">“Mai” szűrés Budapest időzónával.</div>
-      `;
-      L.DomEvent.disableClickPropagation(div);
-      return div;
-    };
-    legend.addTo(map);
-
-    async function loadJson(path){
-      const r = await fetch(path, { cache: "no-store" });
-      if(!r.ok) throw new Error(`Fetch failed: ${path} (${r.status})`);
-      return await r.json();
-    }
-
-    async function init(){
-      let meta=null, daily=null, weekly=null, hotspotsTop=null;
-      try { meta = await loadJson(`${DATA}/meta.json`); } catch {}
-      try { daily = await loadJson(`${DATA}/summary.json`); } catch {}
-      try { weekly = await loadJson(`${DATA}/weekly.json`); } catch {}
-      try { hotspotsTop = await loadJson(`${DATA}/hotspots.json`); } catch {}
-
-      const gen = (meta && meta.generated_utc) ? meta.generated_utc : (daily && daily.generated_utc) ? daily.generated_utc : "";
-      const counts = meta && meta.counts ? meta.counts : null;
-
-      const dailyBullets = (daily && daily.bullets) ? daily.bullets : ["—"];
-      const weeklyBullets = (weekly && weekly.bullets) ? weekly.bullets : ["—"];
-
-      const headerLine = `
-        <div class="small">
-          Frissítés: <b>${escapeHtml(gen || "—")}</b><br/>
-          ${counts ? `hotspot cellák: <b>${counts.hotspot_cells||0}</b> | GDELT: <b>${counts.gdelt||0}</b> + linkes: <b>${counts.gdelt_linked||0}</b> | USGS: <b>${counts.usgs||0}</b> | GDACS: <b>${counts.gdacs||0}</b>` : ""}
-        </div>
-      `;
-
-      const todayBud = ymdInTZ(new Date(), "Europe/Budapest");
-
-      const filterBlock = `
-        <div class="filters">
-          <div style="font-weight:700;font-size:13px;">Mai események (Budapest): ${escapeHtml(todayBud)}</div>
-          <div class="row">
-            <button class="btn" id="btnTodayNews" type="button">Mai hírek</button>
-            <button class="btn" id="btnTodayAlerts" type="button">Mai riasztások</button>
-            <button class="btn on" id="btnReset7d" type="button">Vissza 7 napra</button>
-          </div>
-          <div class="small" style="margin-top:6px;">
-            Mai hírek = GDELT GEO + LINKES • Mai riasztások = USGS + GDACS
-          </div>
-        </div>
-      `;
-
-      const summaryHtml = `
-        ${headerLine}
-        ${filterBlock}
-
-        <details class="section" open>
-          <summary><span>Napi kivonat</span><span class="chev">▾</span></summary>
-          <div class="section-body">
-            <ul>${dailyBullets.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
-          </div>
-        </details>
-
-        <details class="section" open>
-          <summary><span>Heti kivonat</span><span class="chev">▾</span></summary>
-          <div class="section-body">
-            <ul>${weeklyBullets.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
-          </div>
-        </details>
-
-        <details class="section">
-          <summary><span>Early (elemző mód)</span><span class="chev">▾</span></summary>
-          <div class="section-body">
-            <div class="small">Az EARLY réteget a “Rétegek” panelben tudod bekapcsolni.</div>
-          </div>
-        </details>
-      `;
-
-      summaryControl = makePanelControl("topleft", "panelSummary",
-        "Közép–Kelet Európa Biztonsági Monitor – helyzetkép",
-        summaryHtml,
-        () => { summaryControlOnMap = false; }
-      );
-      map.addControl(summaryControl);
-
-      setTimeout(()=>{
-        const btnNews = document.getElementById("btnTodayNews");
-        const btnAlerts = document.getElementById("btnTodayAlerts");
-        const btnReset = document.getElementById("btnReset7d");
-        if (btnNews) btnNews.addEventListener("click", () => { FILTERS.newsToday = !FILTERS.newsToday; applyFilters(); });
-        if (btnAlerts) btnAlerts.addEventListener("click", () => { FILTERS.alertsToday = !FILTERS.alertsToday; applyFilters(); });
-        if (btnReset) btnReset.addEventListener("click", () => { FILTERS.newsToday=false; FILTERS.alertsToday=false; applyFilters(); });
-        applyFilters();
-      }, 0);
-
-      const top = hotspotsTop && hotspotsTop.top ? hotspotsTop.top : [];
-      const hsHtml = top.length ? `
-        <div class="small">Kattints a sorra → zoom a rácspontra.</div>
-        <div style="margin-top:6px; display:flex; flex-direction:column; gap:6px;">
-          ${top.slice(0,8).map((h,i)=>{
-            const place = h.place || "unknown";
-            const s = (h.score!=null)? Number(h.score).toFixed(2) : "—";
-            const arrow = h.trend_arrow || "";
-            return `<button class="btn" data-hs="${i}" style="text-align:left;">
-              <b>${escapeHtml(place)}</b> ${escapeHtml(arrow)}<br/>
-              <span class="small">(${h.lat.toFixed(2)}, ${h.lon.toFixed(2)}) · score: ${escapeHtml(s)}</span>
-            </button>`;
-          }).join("")}
-        </div>
-      ` : `<div class="small">Nincs elég adat.</div>`;
-
-      hotspotsControl = makePanelControl("bottomleft", "panelHotspots", "Top hotspotok", hsHtml, () => {
-        hotspotsControlOnMap = false;
+    async function loadEarly(url) {
+      const r = await fetch(url, { cache: "no-store" });
+      const gj = await r.json();
+      return L.geoJSON(gj, {
+        pointToLayer: (feature, latlng) => {
+          const p = feature.properties || {};
+          return L.circleMarker(latlng, earlyStyle(p.escalation));
+        },
+        onEachFeature: (feature, layer) => {
+          const p = feature.properties || {};
+          const zone = p.zone ? ` (zóna: ${esc(p.zone)} ×${esc(p.zone_mult)})` : '';
+          layer.bindPopup(
+            `<div><b>EARLY signal</b> ⚠</div>
+             <div><b>Escalation:</b> ${esc(p.escalation)} / 100</div>
+             <div><b>Recent (48h):</b> ${esc(p.recent)} | <b>Baseline:</b> ${esc(p.baseline)} | <b>Ratio:</b> ${esc(p.ratio)}</div>
+             <div><b>Terjedés:</b> szomszéd aktív cellák: ${esc(p.neighbor_active)}${zone}</div>`
+          );
+        }
       });
-      map.addControl(hotspotsControl);
-
-      setTimeout(()=>{
-        const root = document.getElementById("panelHotspots");
-        if(!root || !top.length) return;
-        root.querySelectorAll("button[data-hs]").forEach(btn=>{
-          btn.addEventListener("click", ()=>{
-            const idx = Number(btn.getAttribute("data-hs"));
-            const h = top[idx];
-            if(!h) return;
-            map.setView([h.lat, h.lon], 7);
-          });
-        });
-      }, 0);
-
-      layersPanelControl = makePanelControl("topright", "panelLayers", "Rétegek", `<div id="layersMount"></div>`, () => {
-        layersPanelOnMap = false;
-      });
-      map.addControl(layersPanelControl);
-
-      setTimeout(()=>{
-        const mount = document.getElementById("layersMount");
-        if(!mount) return;
-
-        const overlays = {
-          "HATÁR (kontúr)": layerBorders,
-          "GDELT (hírek) – GEO jelzések": layerGDELT,
-          "GDELT (hírek) – LINKES események": layerGDELTLinked,
-          "USGS (rengések)": layerUSGS,
-          "GDACS (riasztás)": layerGDACS,
-          "HOTSPOT (heat)": layerHotspots,
-          "EARLY (elemző)": layerEarly,
-        };
-
-        layersControl = L.control.layers({}, overlays, { collapsed: false });
-        layersControl.addTo(map);
-
-        const lcEl = document.querySelector(".leaflet-control-layers");
-        if (lcEl) mount.appendChild(lcEl);
-      }, 0);
-
-      const [borders, gdelt, gdeltLinked, usgs, gdacs, hotspots, early] = await Promise.all([
-        loadJson(`${DATA}/cee_borders.geojson`).catch(()=>null),
-        loadJson(`${DATA}/gdelt.geojson`).catch(()=>null),
-        loadJson(`${DATA}/gdelt_linked.geojson`).catch(()=>null),
-        loadJson(`${DATA}/usgs.geojson`).catch(()=>null),
-        loadJson(`${DATA}/gdacs.geojson`).catch(()=>null),
-        loadJson(`${DATA}/hotspots.geojson`).catch(()=>null),
-        loadJson(`${DATA}/early.geojson`).catch(()=>null),
-      ]);
-
-      if (borders) layerBorders.addData(borders);
-
-      if (gdelt) DATASETS.gdelt = gdelt;
-      if (gdeltLinked) DATASETS.gdeltLinked = gdeltLinked;
-      if (usgs) DATASETS.usgs = usgs;
-      if (gdacs) DATASETS.gdacs = gdacs;
-
-      applyFilters();
-
-      if (hotspots) layerHotspots.addData(hotspots);
-      if (early) layerEarly.addData(early);
-
-      layerBorders.addTo(map);
-      layerGDELT.addTo(map);
-
-      refreshOpenButtons();
     }
 
-    init().catch(err=>{
-      console.error(err);
-      alert("Hiba a betöltésben: " + err.message);
+    async function loadBorders(url) {
+      const r = await fetch(url, { cache: "no-store" });
+      const gj = await r.json();
+      return L.geoJSON(gj, { style: () => ({ weight: 1.25, opacity: 0.6, fillOpacity: 0.0, color:"#2563eb" }) });
+    }
+
+    function renderAlertBanner(alert) {
+      const banner = document.getElementById('alertBanner');
+      if (!alert) {
+        banner.style.display = 'none';
+        banner.className = 'alert-banner';
+        return;
+      }
+      const level = (alert.level || 'info').toLowerCase();
+      banner.className = `alert-banner ${level}`;
+      document.getElementById('alertTitle').textContent = alert.title || 'Riasztás';
+      document.getElementById('alertText').textContent = alert.text || '';
+      document.getElementById('alertTag').textContent = 'RIASZTÁS';
+      banner.style.display = 'block';
+    }
+    document.getElementById('alertClose').addEventListener('click', () => {
+      document.getElementById('alertBanner').style.display = 'none';
     });
+
+    function setupDock(dockId, btnId, openText="Bezár", closedText="Kinyit") {
+      const dock = document.getElementById(dockId);
+      const btn = document.getElementById(btnId);
+      const setBtn = () => btn.textContent = dock.classList.contains('collapsed') ? closedText : openText;
+
+      btn.addEventListener('click', () => {
+        dock.classList.toggle('collapsed');
+        setBtn();
+      });
+
+      setBtn();
+    }
+
+    // induláskor mind zárva
+    setupDock("dockSituation", "btnSituation");
+    setupDock("dockLayers", "btnLayers");
+    setupDock("dockHotspots", "btnHotspots");
+
+    function renderMeta(meta) {
+      const t = fmtBudapest(meta?.generated_utc);
+      const timeText = t ? `Frissítés (Budapest): ${t.bud}` : `Frissítés: —`;
+      const counts = meta?.counts || {};
+      document.getElementById('metaLine').textContent =
+        `${timeText} | hotspot cellák: ${counts.hotspot_cells ?? 0} | Esemény: ${counts.events ?? 0}, USGS: ${counts.usgs ?? 0}, GDACS: ${counts.gdacs ?? 0}`;
+    }
+
+    function renderSummary(sum) {
+      document.getElementById('sumTitle').textContent = sum?.headline || 'Napi kivonat';
+      const t = fmtBudapest(sum?.generated_utc);
+      document.getElementById('sumTime').textContent = t ? `Frissítés (Budapest): ${t.bud}` : '—';
+      renderAlertBanner(sum?.alert || null);
+
+      const ul = document.getElementById('sumList');
+      ul.innerHTML = '';
+      const bullets = (sum?.bullets || []).slice(0, 12);
+      if (!bullets.length) {
+        ul.innerHTML = '<li>Nincs elérhető kivonat.</li>';
+        return;
+      }
+      for (const b of bullets) {
+        const li = document.createElement('li');
+        li.textContent = b;
+        ul.appendChild(li);
+      }
+    }
+
+    function renderWeekly(w) {
+      const t = fmtBudapest(w?.generated_utc);
+      document.getElementById('weekTime').textContent = t ? `Frissítés (Budapest): ${t.bud}` : '—';
+
+      const ul = document.getElementById('weekList');
+      ul.innerHTML = '';
+      const bullets = (w?.bullets || []).slice(0, 12);
+      if (!bullets.length) {
+        ul.innerHTML = '<li>A heti kivonat még gyűlik.</li>';
+      } else {
+        for (const b of bullets) {
+          const li = document.createElement('li');
+          li.textContent = b;
+          ul.appendChild(li);
+        }
+      }
+
+      const ex = document.getElementById('weekExamples');
+      ex.innerHTML = '';
+      const examples = (w?.examples || []).slice(0, 6);
+      if (!examples.length) {
+        ex.textContent = 'Példa események: még nincs elég heti minta.';
+        return;
+      }
+      const wrap = document.createElement('div');
+      wrap.className = 'small';
+      wrap.textContent = 'Példa linkek:';
+      ex.appendChild(wrap);
+
+      const list = document.createElement('ul');
+      list.style.margin = '6px 0 0';
+      list.style.paddingLeft = '18px';
+      for (const e of examples) {
+        const li = document.createElement('li');
+        const title = e.title || '(nincs cím)';
+        const url = e.url || '#';
+        const dom = e.domain ? ` (${e.domain})` : '';
+        li.innerHTML = `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a><span class="small" style="color:#666">${esc(dom)}</span>`;
+        list.appendChild(li);
+      }
+      ex.appendChild(list);
+    }
+
+    function renderEarlyList(payload) {
+      const t = fmtBudapest(payload?.generated_utc);
+      document.getElementById('earlyTime').textContent = t ? `Frissítés (Budapest): ${t.bud}` : '—';
+
+      const ul = document.getElementById('earlyList');
+      ul.innerHTML = '';
+      const top = (payload?.top || []).slice(0, 10);
+
+      if (!top.length) {
+        const li = document.createElement('li');
+        li.className = 'muted';
+        li.textContent = 'Még nincs elég gyorsulás/terjedés minta.';
+        ul.appendChild(li);
+        return;
+      }
+
+      for (const e of top) {
+        const li = document.createElement('li');
+        const place = e.place || 'ismeretlen térség';
+        const zone = e.zone ? ` | zóna: ${e.zone} ×${e.zone_mult}` : '';
+        li.textContent = `${place} — escalation ${e.escalation}/100 | terjedés: ${e.neighbor_active}${zone}`;
+        ul.appendChild(li);
+      }
+    }
+
+    function renderHotList(items) {
+      const ol = document.getElementById('hotList');
+      ol.innerHTML = '';
+      const top = (items || []).slice(0, 10);
+      if (!top.length) {
+        ol.innerHTML = '<li class="small">Nincs elég adat.</li>';
+        return;
+      }
+
+      for (const it of top) {
+        const li = document.createElement('li');
+        li.className = 'hotitem';
+
+        const place = it.place ? it.place : 'ismeretlen térség';
+        const arrow = it.trend_arrow ? it.trend_arrow : '·';
+        const ch = (it.change_pct === null || it.change_pct === undefined) ? 'n/a' : `${it.change_pct > 0 ? '+' : ''}${it.change_pct}%`;
+
+        li.innerHTML = `
+          <div>
+            <div class="place">${esc(place)} <span class="mono">${esc(arrow)}</span> <span class="mono">(${esc(ch)})</span></div>
+            <div class="sub">${esc(`(${it.lat.toFixed(2)}, ${it.lon.toFixed(2)}) • db: ${it.count}`)}</div>
+          </div>
+          <div class="mono">S=${Number(it.score).toFixed(2)}</div>
+        `;
+        li.addEventListener('click', () => map.setView([it.lat, it.lon], 9));
+        ol.appendChild(li);
+      }
+    }
+
+    const layers = { borders: null, hot: null, early: null, events: null, usgs: null, gdacs: null };
+
+    async function init() {
+      // meta
+      try {
+        const meta = await (await fetch('./data/meta.json', { cache: "no-store" })).json();
+        renderMeta(meta);
+      } catch {
+        document.getElementById('metaLine').textContent = 'Meta betöltése nem sikerült.';
+      }
+
+      // summaries
+      try { renderSummary(await (await fetch('./data/summary.json', { cache: "no-store" })).json()); }
+      catch { renderSummary({ headline: 'Napi kivonat', bullets: [], alert: null }); }
+
+      try { renderWeekly(await (await fetch('./data/weekly.json', { cache: "no-store" })).json()); }
+      catch { renderWeekly({ bullets: [], examples: [] }); }
+
+      try { renderEarlyList(await (await fetch('./data/early.json', { cache: "no-store" })).json()); }
+      catch { renderEarlyList({ top: [] }); }
+
+      // layers
+      layers.borders = await loadBorders('./data/cee_borders.geojson');
+      layers.hot     = await loadHotspotsHeat('./data/hotspots.geojson');
+      layers.early   = await loadEarly('./data/early.geojson');
+
+      // events layer: ha a “támadásos” scriptet használod: attacks_2026_live.geojson
+      // ha a régi pipeline: gdelt.geojson
+      // Itt robustan: próbáljuk először attacks_2026_live.geojson-t, ha nincs, akkor gdelt.geojson-t.
+      try {
+        layers.events = await loadGeoJson('./data/attacks_2026_live.geojson', 'EVENTS');
+      } catch {
+        layers.events = await loadGeoJson('./data/gdelt.geojson', 'EVENTS');
+      }
+
+      layers.usgs    = await loadGeoJson('./data/usgs.geojson', 'USGS');
+      layers.gdacs   = await loadGeoJson('./data/gdacs.geojson', 'GDACS');
+
+      // default on
+      layers.borders.addTo(map);
+      layers.hot.addTo(map);
+      layers.events.addTo(map);
+
+      // toggles
+      document.getElementById('layerBorders').addEventListener('change', (e) => e.target.checked ? map.addLayer(layers.borders) : map.removeLayer(layers.borders));
+      document.getElementById('layerHot').addEventListener('change', (e) => e.target.checked ? map.addLayer(layers.hot) : map.removeLayer(layers.hot));
+      document.getElementById('layerEarly').addEventListener('change', (e) => e.target.checked ? map.addLayer(layers.early) : map.removeLayer(layers.early));
+      document.getElementById('layerEvents').addEventListener('change', (e) => e.target.checked ? map.addLayer(layers.events) : map.removeLayer(layers.events));
+      document.getElementById('layerUsgs').addEventListener('change', (e) => e.target.checked ? map.addLayer(layers.usgs) : map.removeLayer(layers.usgs));
+      document.getElementById('layerGdacs').addEventListener('change', (e) => e.target.checked ? map.addLayer(layers.gdacs) : map.removeLayer(layers.gdacs));
+
+      // hot list
+      try {
+        const top = await (await fetch('./data/hotspots.json', { cache: "no-store" })).json();
+        renderHotList(top.top || []);
+      } catch {
+        renderHotList([]);
+      }
+    }
+
+    init();
   </script>
 </body>
 </html>

@@ -121,13 +121,14 @@
       margin-top: 6px;
     }
 
-    /* make Leaflet layers control blend inside our panel */
+    /* Leaflet layers control -> panelbe ágyazva */
     .leaflet-control-layers { background: transparent !important; }
   </style>
 </head>
 <body>
   <div id="map"></div>
 
+  <!-- Panel visszanyitó gombok -->
   <div class="floating-open" id="openButtons" style="display:none;">
     <button class="btn" id="openSummaryBtn">Kinyit: Kivonatok</button>
     <button class="btn" id="openLayersBtn">Kinyit: Rétegek</button>
@@ -190,8 +191,7 @@
       const fmt = new Intl.DateTimeFormat("en-CA", {
         timeZone: tz, year:"numeric", month:"2-digit", day:"2-digit"
       });
-      // en-CA => YYYY-MM-DD
-      return fmt.format(dateObj);
+      return fmt.format(dateObj); // YYYY-MM-DD
     }
     function isTodayBudapest(timeOrDateString){
       if(!timeOrDateString) return false;
@@ -219,7 +219,7 @@
     const layerHotspots = L.geoJSON(null, { pointToLayer: (f, latlng) => hotspotMarker(f, latlng) });
     const layerEarly = L.geoJSON(null, { pointToLayer: (f, latlng) => earlyMarker(f, latlng) });
 
-    // ---- Keep original datasets in memory (so we can filter without refetch)
+    // ---- Keep original datasets in memory (filterhez)
     const DATASETS = {
       gdelt: null,
       gdeltLinked: null,
@@ -270,7 +270,7 @@
         layerUSGS.addData({ type:"FeatureCollection", features: keep });
       }
 
-      // update UI button states (if panel exists)
+      // update UI button states
       const btnNews = document.getElementById("btnTodayNews");
       const btnAlerts = document.getElementById("btnTodayAlerts");
       const btnReset = document.getElementById("btnReset7d");
@@ -313,9 +313,7 @@
       const src = p.source || "—";
       const cat = humanCat(p.category || p.gdelt_bucket || "other");
 
-      let linksHtml = "";
       const links = [];
-
       if (Array.isArray(p.sources) && p.sources.length) {
         for (const u of p.sources.slice(0, 6)) links.push({ label: "Forrás", url: u });
       } else if (p.url) {
@@ -324,13 +322,11 @@
         links.push({ label: "GDELT keresés", url: p.search_url });
       }
 
-      if (links.length) {
-        linksHtml = `<div class="popup-links">` +
-          links.map((x,i)=>`<div class="popup-line">🔗 <a href="${escapeHtml(x.url)}" target="_blank" rel="noopener">${escapeHtml(x.label)} ${links.length>1?('#'+(i+1)):""}</a></div>`).join("") +
-          `</div>`;
-      } else {
-        linksHtml = `<div class="popup-line">Nincs link az adatban.</div>`;
-      }
+      const linksHtml = links.length
+        ? `<div class="popup-links">` +
+          links.map((x,i)=>`<div class="popup-line">🔗 <a href="${escapeHtml(x.url)}" target="_blank" rel="noopener">${escapeHtml(x.label)}${links.length>1?(' #'+(i+1)):""}</a></div>`).join("") +
+          `</div>`
+        : `<div class="popup-line">Nincs link az adatban.</div>`;
 
       const extra = [];
       if (p.domain) extra.push(`Domain: ${escapeHtml(p.domain)}`);
@@ -388,9 +384,13 @@
       return m;
     }
 
-    // ---- Panels
+    // ---- Panels (FIX: bezárás = elrejtés, nem removeControl)
     let layersControl = null;
     let summaryControl, hotspotsControl, layersPanelControl;
+
+    let summaryControlOnMap = true;
+    let hotspotsControlOnMap = true;
+    let layersPanelOnMap = true;
 
     function makePanelControl(position, id, title, innerHtml, onClose){
       const C = L.Control.extend({
@@ -411,7 +411,8 @@
 
           const btn = div.querySelector('button[data-close="1"]');
           btn.addEventListener("click", () => {
-            map.removeControl(Ctrl);
+            // FIX: ne töröljük a controlt, csak rejtsük el
+            div.style.display = "none";
             if (onClose) onClose();
             refreshOpenButtons();
           });
@@ -419,13 +420,8 @@
           return div;
         }
       });
-      const Ctrl = new C({ position });
-      return Ctrl;
+      return new C({ position });
     }
-
-    let summaryControlOnMap = true;
-    let hotspotsControlOnMap = true;
-    let layersPanelOnMap = true;
 
     function refreshOpenButtons(){
       const openButtons = document.getElementById("openButtons");
@@ -436,14 +432,24 @@
       document.getElementById("openHotspotsBtn").style.display = hotspotsControlOnMap ? "none" : "block";
     }
 
+    // Visszanyitás: ha panel már létezik -> display:block
     document.getElementById("openSummaryBtn").addEventListener("click", () => {
-      if (!summaryControlOnMap) { map.addControl(summaryControl); summaryControlOnMap = true; refreshOpenButtons(); }
+      const panel = document.getElementById("panelSummary");
+      if (panel) panel.style.display = "block";
+      summaryControlOnMap = true;
+      refreshOpenButtons();
     });
     document.getElementById("openLayersBtn").addEventListener("click", () => {
-      if (!layersPanelOnMap) { map.addControl(layersPanelControl); layersPanelOnMap = true; refreshOpenButtons(); }
+      const panel = document.getElementById("panelLayers");
+      if (panel) panel.style.display = "block";
+      layersPanelOnMap = true;
+      refreshOpenButtons();
     });
     document.getElementById("openHotspotsBtn").addEventListener("click", () => {
-      if (!hotspotsControlOnMap) { map.addControl(hotspotsControl); hotspotsControlOnMap = true; refreshOpenButtons(); }
+      const panel = document.getElementById("panelHotspots");
+      if (panel) panel.style.display = "block";
+      hotspotsControlOnMap = true;
+      refreshOpenButtons();
     });
 
     // ---- Legend
@@ -476,7 +482,6 @@
     };
     legend.addTo(map);
 
-    // ---- Loaders
     async function loadJson(path){
       const r = await fetch(path, { cache: "no-store" });
       if(!r.ok) throw new Error(`Fetch failed: ${path} (${r.status})`);
@@ -505,7 +510,6 @@
 
       const todayBud = ymdInTZ(new Date(), "Europe/Budapest");
 
-      // Filter buttons block
       const filterBlock = `
         <div class="filters">
           <div style="font-weight:700;font-size:13px;">Mai események (Budapest): ${escapeHtml(todayBud)}</div>
@@ -525,66 +529,43 @@
         ${filterBlock}
 
         <details class="section" open>
-          <summary>
-            <span>Napi kivonat</span>
-            <span class="chev">▾</span>
-          </summary>
+          <summary><span>Napi kivonat</span><span class="chev">▾</span></summary>
           <div class="section-body">
             <ul>${dailyBullets.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
           </div>
         </details>
 
         <details class="section" open>
-          <summary>
-            <span>Heti kivonat</span>
-            <span class="chev">▾</span>
-          </summary>
+          <summary><span>Heti kivonat</span><span class="chev">▾</span></summary>
           <div class="section-body">
             <ul>${weeklyBullets.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
           </div>
         </details>
 
         <details class="section">
-          <summary>
-            <span>Early (elemző mód)</span>
-            <span class="chev">▾</span>
-          </summary>
+          <summary><span>Early (elemző mód)</span><span class="chev">▾</span></summary>
           <div class="section-body">
-            <div class="small">
-              Az EARLY réteget a “Rétegek” panelben tudod bekapcsolni. A buborékban látszik az escalation és a zóna.
-            </div>
+            <div class="small">Az EARLY réteget a “Rétegek” panelben tudod bekapcsolni.</div>
           </div>
         </details>
       `;
 
-      summaryControl = makePanelControl(
-        "topleft",
-        "panelSummary",
+      summaryControl = makePanelControl("topleft", "panelSummary",
         "Közép–Kelet Európa Biztonsági Monitor – helyzetkép",
         summaryHtml,
         () => { summaryControlOnMap = false; }
       );
       map.addControl(summaryControl);
 
-      // Hook filter buttons after panel is added
+      // Filter gombok
       setTimeout(()=>{
         const btnNews = document.getElementById("btnTodayNews");
         const btnAlerts = document.getElementById("btnTodayAlerts");
         const btnReset = document.getElementById("btnReset7d");
 
-        if (btnNews) btnNews.addEventListener("click", () => {
-          FILTERS.newsToday = !FILTERS.newsToday;
-          applyFilters();
-        });
-        if (btnAlerts) btnAlerts.addEventListener("click", () => {
-          FILTERS.alertsToday = !FILTERS.alertsToday;
-          applyFilters();
-        });
-        if (btnReset) btnReset.addEventListener("click", () => {
-          FILTERS.newsToday = false;
-          FILTERS.alertsToday = false;
-          applyFilters();
-        });
+        if (btnNews) btnNews.addEventListener("click", () => { FILTERS.newsToday = !FILTERS.newsToday; applyFilters(); });
+        if (btnAlerts) btnAlerts.addEventListener("click", () => { FILTERS.alertsToday = !FILTERS.alertsToday; applyFilters(); });
+        if (btnReset) btnReset.addEventListener("click", () => { FILTERS.newsToday=false; FILTERS.alertsToday=false; applyFilters(); });
 
         applyFilters();
       }, 0);
@@ -635,7 +616,6 @@
         const mount = document.getElementById("layersMount");
         if(!mount) return;
 
-        const baseLayers = {};
         const overlays = {
           "HATÁR (kontúr)": layerBorders,
           "GDELT (hírek) – GEO jelzések": layerGDELT,
@@ -646,7 +626,7 @@
           "EARLY (elemző)": layerEarly,
         };
 
-        layersControl = L.control.layers(baseLayers, overlays, { collapsed: false });
+        layersControl = L.control.layers({}, overlays, { collapsed: false });
         layersControl.addTo(map);
 
         const lcEl = document.querySelector(".leaflet-control-layers");
@@ -671,14 +651,12 @@
 
       if (borders) layerBorders.addData(borders);
 
-      // store datasets in memory first
       if (gdelt) DATASETS.gdelt = gdelt;
       if (gdeltLinked) DATASETS.gdeltLinked = gdeltLinked;
       if (usgs) DATASETS.usgs = usgs;
       if (gdacs) DATASETS.gdacs = gdacs;
 
-      // initial render (filtered state currently off -> full 7 days)
-      applyFilters();
+      applyFilters(); // első render
 
       if (hotspots) layerHotspots.addData(hotspots);
       if (early) layerEarly.addData(early);

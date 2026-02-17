@@ -16,7 +16,7 @@
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       padding: 12px 12px 10px 12px;
-      max-width: 380px;
+      max-width: 420px;
       line-height: 1.25;
     }
     .panel h3 { margin: 0 0 6px 0; font-size: 16px; }
@@ -39,20 +39,24 @@
       font-size: 12px;
     }
     .btn:hover { background: white; }
+    .btn.on {
+      border-color: rgba(0,0,0,0.35);
+      font-weight: 700;
+    }
 
-    /* --- OPEN BUTTONS: lejjebb, hogy ne takarja a zoomot --- */
+    /* OPEN BUTTONS: lejjebb, hogy ne takarja a zoomot */
     .floating-open {
       position: absolute;
       z-index: 999;
       left: 10px;
-      top: 58px; /* <-- lejjebb a Leaflet zoom (+/-) miatt */
+      top: 58px;
       display:flex;
       flex-direction:column;
       gap: 8px;
       pointer-events: auto;
     }
 
-    /* --- Collapsible sections inside summary panel --- */
+    /* Collapsible sections inside summary panel */
     .section {
       border: 1px solid rgba(0,0,0,0.10);
       border-radius: 10px;
@@ -72,15 +76,12 @@
       gap: 10px;
     }
     .section summary::-webkit-details-marker { display:none; }
-    .chev {
-      font-weight: 700;
-      opacity: 0.65;
-    }
+    .chev { font-weight: 700; opacity: 0.65; }
     .section[open] .chev { transform: rotate(180deg); }
     .section-body { padding: 8px 10px 10px 10px; }
     .section-body ul { margin-top: 6px; }
 
-    /* --- Legend: keskenyebb + scroll --- */
+    /* Legend: keskenyebb + scroll */
     .legend {
       background: rgba(255,255,255,0.92);
       padding: 10px;
@@ -89,9 +90,9 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       font-size: 12px;
       line-height: 1.15;
-      width: 200px;          /* <-- keskenyebb */
-      max-height: 220px;     /* <-- ne nőjön túl */
-      overflow: auto;        /* <-- görgethető */
+      width: 200px;
+      max-height: 220px;
+      overflow: auto;
     }
     .legend .row { display:flex; align-items:center; gap:8px; margin: 3px 0; }
     .dot {
@@ -105,10 +106,23 @@
     .popup-line { margin: 2px 0; font-size: 12px; }
     .popup-links a { font-size: 12px; }
 
-    /* make Leaflet layers control blend inside our panel */
-    .leaflet-control-layers {
-      background: transparent !important;
+    .filters {
+      margin-top: 8px;
+      padding: 8px;
+      border: 1px dashed rgba(0,0,0,0.18);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.60);
     }
+    .filters .row {
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items:center;
+      margin-top: 6px;
+    }
+
+    /* make Leaflet layers control blend inside our panel */
+    .leaflet-control-layers { background: transparent !important; }
   </style>
 </head>
 <body>
@@ -124,6 +138,7 @@
   <script>
     const DATA = "data";
 
+    // ---- CATEGORY styles
     const CAT_STYLE = {
       protest:        { radius: 6, fillOpacity: 0.55 },
       border:         { radius: 6, fillOpacity: 0.55 },
@@ -170,6 +185,24 @@
       return String(s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
 
+    // ---- Budapest "today" helpers
+    function ymdInTZ(dateObj, tz){
+      const fmt = new Intl.DateTimeFormat("en-CA", {
+        timeZone: tz, year:"numeric", month:"2-digit", day:"2-digit"
+      });
+      // en-CA => YYYY-MM-DD
+      return fmt.format(dateObj);
+    }
+    function isTodayBudapest(timeOrDateString){
+      if(!timeOrDateString) return false;
+      let d;
+      try { d = new Date(timeOrDateString); } catch { return false; }
+      if(isNaN(d.getTime())) return false;
+      const todayBud = ymdInTZ(new Date(), "Europe/Budapest");
+      const evBud = ymdInTZ(d, "Europe/Budapest");
+      return evBud === todayBud;
+    }
+
     const map = L.map("map", { preferCanvas: true }).setView([48.6, 19.3], 5);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -177,6 +210,7 @@
       attribution: '&copy; OpenStreetMap'
     }).addTo(map);
 
+    // ---- Layers
     const layerBorders = L.geoJSON(null, { style: { weight: 2 } });
     const layerUSGS = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
     const layerGDACS = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
@@ -184,6 +218,66 @@
     const layerGDELTLinked = L.geoJSON(null, { pointToLayer: (f, latlng) => circleForFeature(f, latlng) });
     const layerHotspots = L.geoJSON(null, { pointToLayer: (f, latlng) => hotspotMarker(f, latlng) });
     const layerEarly = L.geoJSON(null, { pointToLayer: (f, latlng) => earlyMarker(f, latlng) });
+
+    // ---- Keep original datasets in memory (so we can filter without refetch)
+    const DATASETS = {
+      gdelt: null,
+      gdeltLinked: null,
+      gdacs: null,
+      usgs: null
+    };
+
+    // ---- Filter state
+    const FILTERS = {
+      newsToday: false,   // applies to GDELT + GDELTLinked
+      alertsToday: false  // applies to GDACS + USGS
+    };
+
+    function applyFilters(){
+      // GDELT (news)
+      if (DATASETS.gdelt){
+        layerGDELT.clearLayers();
+        const feats = DATASETS.gdelt.features || [];
+        const keep = FILTERS.newsToday
+          ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date))
+          : feats;
+        layerGDELT.addData({ type:"FeatureCollection", features: keep });
+      }
+      if (DATASETS.gdeltLinked){
+        layerGDELTLinked.clearLayers();
+        const feats = DATASETS.gdeltLinked.features || [];
+        const keep = FILTERS.newsToday
+          ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date))
+          : feats;
+        layerGDELTLinked.addData({ type:"FeatureCollection", features: keep });
+      }
+
+      // Alerts (GDACS + USGS)
+      if (DATASETS.gdacs){
+        layerGDACS.clearLayers();
+        const feats = DATASETS.gdacs.features || [];
+        const keep = FILTERS.alertsToday
+          ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date))
+          : feats;
+        layerGDACS.addData({ type:"FeatureCollection", features: keep });
+      }
+      if (DATASETS.usgs){
+        layerUSGS.clearLayers();
+        const feats = DATASETS.usgs.features || [];
+        const keep = FILTERS.alertsToday
+          ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date))
+          : feats;
+        layerUSGS.addData({ type:"FeatureCollection", features: keep });
+      }
+
+      // update UI button states (if panel exists)
+      const btnNews = document.getElementById("btnTodayNews");
+      const btnAlerts = document.getElementById("btnTodayAlerts");
+      const btnReset = document.getElementById("btnReset7d");
+      if (btnNews) btnNews.classList.toggle("on", FILTERS.newsToday);
+      if (btnAlerts) btnAlerts.classList.toggle("on", FILTERS.alertsToday);
+      if (btnReset) btnReset.classList.toggle("on", (!FILTERS.newsToday && !FILTERS.alertsToday));
+    }
 
     function circleForFeature(feature, latlng){
       const p = feature.properties || {};
@@ -352,7 +446,7 @@
       if (!hotspotsControlOnMap) { map.addControl(hotspotsControl); hotspotsControlOnMap = true; refreshOpenButtons(); }
     });
 
-    // ---- Legend (keskenyebb)
+    // ---- Legend
     const legend = L.control({ position: "bottomright" });
     legend.onAdd = function(){
       const div = L.DomUtil.create("div", "legend");
@@ -374,7 +468,7 @@
           `<div class="row"><span class="dot" style="background:${color}"></span><span>${label}</span></div>`
         ).join("")}
         <div style="margin-top:8px;" class="small">
-          GEO jelzéseknél lehet, hogy nincs cikklink → “GDELT keresés”.
+          “Mai” szűrés Budapest időzónával működik.
         </div>
       `;
       L.DomEvent.disableClickPropagation(div);
@@ -409,9 +503,26 @@
         </div>
       `;
 
-      // --- Collapsible sections (napi/heti/early) a panelen belül
+      const todayBud = ymdInTZ(new Date(), "Europe/Budapest");
+
+      // Filter buttons block
+      const filterBlock = `
+        <div class="filters">
+          <div style="font-weight:700;font-size:13px;">Mai események (Budapest): ${escapeHtml(todayBud)}</div>
+          <div class="row">
+            <button class="btn" id="btnTodayNews" type="button">Mai hírek</button>
+            <button class="btn" id="btnTodayAlerts" type="button">Mai riasztások</button>
+            <button class="btn on" id="btnReset7d" type="button">Vissza 7 napra</button>
+          </div>
+          <div class="small" style="margin-top:6px;">
+            Mai hírek = GDELT GEO + LINKES • Mai riasztások = USGS + GDACS
+          </div>
+        </div>
+      `;
+
       const summaryHtml = `
         ${headerLine}
+        ${filterBlock}
 
         <details class="section" open>
           <summary>
@@ -454,6 +565,29 @@
         () => { summaryControlOnMap = false; }
       );
       map.addControl(summaryControl);
+
+      // Hook filter buttons after panel is added
+      setTimeout(()=>{
+        const btnNews = document.getElementById("btnTodayNews");
+        const btnAlerts = document.getElementById("btnTodayAlerts");
+        const btnReset = document.getElementById("btnReset7d");
+
+        if (btnNews) btnNews.addEventListener("click", () => {
+          FILTERS.newsToday = !FILTERS.newsToday;
+          applyFilters();
+        });
+        if (btnAlerts) btnAlerts.addEventListener("click", () => {
+          FILTERS.alertsToday = !FILTERS.alertsToday;
+          applyFilters();
+        });
+        if (btnReset) btnReset.addEventListener("click", () => {
+          FILTERS.newsToday = false;
+          FILTERS.alertsToday = false;
+          applyFilters();
+        });
+
+        applyFilters();
+      }, 0);
 
       // Hotspots panel
       const top = hotspotsTop && hotspotsTop.top ? hotspotsTop.top : [];
@@ -536,14 +670,20 @@
       ]);
 
       if (borders) layerBorders.addData(borders);
-      if (gdelt) layerGDELT.addData(gdelt);
-      if (gdeltLinked) layerGDELTLinked.addData(gdeltLinked);
-      if (usgs) layerUSGS.addData(usgs);
-      if (gdacs) layerGDACS.addData(gdacs);
+
+      // store datasets in memory first
+      if (gdelt) DATASETS.gdelt = gdelt;
+      if (gdeltLinked) DATASETS.gdeltLinked = gdeltLinked;
+      if (usgs) DATASETS.usgs = usgs;
+      if (gdacs) DATASETS.gdacs = gdacs;
+
+      // initial render (filtered state currently off -> full 7 days)
+      applyFilters();
+
       if (hotspots) layerHotspots.addData(hotspots);
       if (early) layerEarly.addData(early);
 
-      // Default visible layers (ahogy eddig)
+      // Default visible layers
       layerBorders.addTo(map);
       layerGDELT.addTo(map);
 

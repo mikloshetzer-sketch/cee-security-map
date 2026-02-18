@@ -10,8 +10,9 @@ on:
 jobs:
   token:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Debug (safe)
+      - name: Debug (safe) - show which secrets are being read
         env:
           CLIENT_ID: ${{ secrets.WPCOM_CEE_CLIENT_ID }}
           REDIRECT_URI: ${{ secrets.WPCOM_CEE_REDIRECT_URI }}
@@ -19,7 +20,7 @@ jobs:
           echo "CLIENT_ID=$CLIENT_ID"
           echo "REDIRECT_URI=$REDIRECT_URI"
 
-      - name: Exchange code for tokens (CEE)
+      - name: Exchange authorization code for tokens (CEE)
         env:
           CLIENT_ID: ${{ secrets.WPCOM_CEE_CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.WPCOM_CEE_CLIENT_SECRET }}
@@ -28,6 +29,24 @@ jobs:
         run: |
           set -euo pipefail
 
+          if [ -z "${CLIENT_ID:-}" ]; then
+            echo "ERROR: WPCOM_CEE_CLIENT_ID is empty or missing."
+            exit 1
+          fi
+          if [ -z "${CLIENT_SECRET:-}" ]; then
+            echo "ERROR: WPCOM_CEE_CLIENT_SECRET is empty or missing."
+            exit 1
+          fi
+          if [ -z "${REDIRECT_URI:-}" ]; then
+            echo "ERROR: WPCOM_CEE_REDIRECT_URI is empty or missing."
+            exit 1
+          fi
+          if [ -z "${CODE:-}" ]; then
+            echo "ERROR: Missing workflow input: code"
+            exit 1
+          fi
+
+          echo "Requesting token from WordPress.com..."
           RESP=$(curl -sS -X POST "https://public-api.wordpress.com/oauth2/token" \
             -H "Content-Type: application/x-www-form-urlencoded" \
             --data-urlencode "client_id=${CLIENT_ID}" \
@@ -38,12 +57,16 @@ jobs:
 
           echo "$RESP" > wp_token_bundle_cee.json
 
-          # Check if access_token exists without using heredoc (YAML-safe)
-          python -c "import json; j=json.load(open('wp_token_bundle_cee.json','r',encoding='utf-8')); print('keys=',list(j.keys())); print('access_token' in j); exit(0 if 'access_token' in j else 1)"
+          echo "Response keys:"
+          python -c "import json; j=json.load(open('wp_token_bundle_cee.json','r',encoding='utf-8')); print(list(j.keys()))"
+
+          python -c "import json,sys; j=json.load(open('wp_token_bundle_cee.json','r',encoding='utf-8')); sys.exit(0 if 'access_token' in j else 1)" \
+            || (echo "ERROR: No access_token returned. Full response:" && cat wp_token_bundle_cee.json && exit 1)
 
           zip -q wp_token_bundle_cee.zip wp_token_bundle_cee.json
+          echo "Created wp_token_bundle_cee.zip"
 
-      - name: Upload artifact
+      - name: Upload artifact (CEE)
         uses: actions/upload-artifact@v4
         with:
           name: wp-token-bundle-cee

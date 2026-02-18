@@ -1,0 +1,54 @@
+name: CEE OAuth exchange (clean)
+
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: "Paste the code=... value"
+        required: true
+
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug (safe)
+        env:
+          CLIENT_ID: ${{ secrets.WPCOM_CEE_CLIENT_ID }}
+          REDIRECT_URI: ${{ secrets.WPCOM_CEE_REDIRECT_URI }}
+        run: |
+          echo "CLIENT_ID=$CLIENT_ID"
+          echo "REDIRECT_URI=$REDIRECT_URI"
+
+      - name: Exchange code for tokens (CEE)
+        env:
+          CLIENT_ID: ${{ secrets.WPCOM_CEE_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.WPCOM_CEE_CLIENT_SECRET }}
+          REDIRECT_URI: ${{ secrets.WPCOM_CEE_REDIRECT_URI }}
+          CODE: ${{ github.event.inputs.code }}
+        run: |
+          set -euo pipefail
+
+          RESP=$(curl -sS -X POST https://public-api.wordpress.com/oauth2/token \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            --data-urlencode "client_id=$CLIENT_ID" \
+            --data-urlencode "client_secret=$CLIENT_SECRET" \
+            --data-urlencode "grant_type=authorization_code" \
+            --data-urlencode "code=$CODE" \
+            --data-urlencode "redirect_uri=$REDIRECT_URI")
+
+          echo "$RESP" > wp_token_bundle_cee.json
+
+          python - <<'PY'
+import json
+j=json.load(open("wp_token_bundle_cee.json","r",encoding="utf-8"))
+print("Keys:", list(j.keys()))
+print("Has access_token:", "access_token" in j)
+PY
+
+          zip -q wp_token_bundle_cee.zip wp_token_bundle_cee.json
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wp-token-bundle-cee
+          path: wp_token_bundle_cee.zip

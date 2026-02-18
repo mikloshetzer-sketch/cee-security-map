@@ -1,0 +1,47 @@
+name: WordPress OAuth exchange (CEE - get refresh token)
+
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: "Authorization code from redirect (code=...)"
+        required: true
+        type: string
+
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exchange code for tokens (CEE)
+        env:
+          CLIENT_ID: ${{ secrets.WPCOM_CEE_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.WPCOM_CEE_CLIENT_SECRET }}
+          REDIRECT_URI: ${{ secrets.WPCOM_CEE_REDIRECT_URI }}
+          CODE: ${{ inputs.code }}
+        run: |
+          set -euo pipefail
+
+          RESP=$(curl -sS -X POST https://public-api.wordpress.com/oauth2/token \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            --data-urlencode "client_id=$CLIENT_ID" \
+            --data-urlencode "client_secret=$CLIENT_SECRET" \
+            --data-urlencode "grant_type=authorization_code" \
+            --data-urlencode "code=$CODE" \
+            --data-urlencode "redirect_uri=$REDIRECT_URI")
+
+          echo "$RESP" > wp_token_bundle.json
+
+          ACCESS_TOKEN=$(python -c "import json; print(json.load(open('wp_token_bundle.json')).get('access_token',''))")
+          if [ -z "$ACCESS_TOKEN" ]; then
+            echo "No access_token returned. Response:"
+            cat wp_token_bundle.json
+            exit 1
+          fi
+
+          zip -q wp_token_bundle_cee.zip wp_token_bundle.json
+
+      - name: Upload token bundle (CEE)
+        uses: actions/upload-artifact@v4
+        with:
+          name: wp-token-bundle-cee
+          path: wp_token_bundle_cee.zip

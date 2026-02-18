@@ -11,13 +11,13 @@ on:
 jobs:
   token:
     runs-on: ubuntu-latest
+
     steps:
       - name: Debug (safe): show which client_id/redirect are used
         env:
           CLIENT_ID: ${{ secrets.WPCOM_CEE_CLIENT_ID }}
           REDIRECT_URI: ${{ secrets.WPCOM_CEE_REDIRECT_URI }}
         run: |
-          set -euo pipefail
           echo "Using CLIENT_ID=$CLIENT_ID"
           echo "Using REDIRECT_URI=$REDIRECT_URI"
 
@@ -29,23 +29,6 @@ jobs:
           CODE: ${{ inputs.code }}
         run: |
           set -euo pipefail
-
-          if [ -z "${CLIENT_ID:-}" ]; then
-            echo "ERROR: Missing WPCOM_CEE_CLIENT_ID secret value."
-            exit 1
-          fi
-          if [ -z "${CLIENT_SECRET:-}" ]; then
-            echo "ERROR: Missing WPCOM_CEE_CLIENT_SECRET secret value."
-            exit 1
-          fi
-          if [ -z "${REDIRECT_URI:-}" ]; then
-            echo "ERROR: Missing WPCOM_CEE_REDIRECT_URI secret value."
-            exit 1
-          fi
-          if [ -z "${CODE:-}" ]; then
-            echo "ERROR: Missing workflow input: code"
-            exit 1
-          fi
 
           echo "Exchanging authorization code for tokens..."
 
@@ -59,7 +42,6 @@ jobs:
 
           echo "$RESP" > wp_token_bundle_cee.json
 
-          # Validate response contains access_token
           ACCESS_TOKEN=$(python - <<'PY'
 import json
 with open("wp_token_bundle_cee.json","r",encoding="utf-8") as f:
@@ -74,9 +56,7 @@ PY
             exit 1
           fi
 
-          # Create zip artifact
           zip -q wp_token_bundle_cee.zip wp_token_bundle_cee.json
-          echo "Created wp_token_bundle_cee.zip"
 
       - name: Upload token bundle zip (CEE)
         uses: actions/upload-artifact@v4

@@ -54,12 +54,11 @@ def main() -> int:
         "expires_in": payload.get("expires_in"),
     }
 
-    # Mentsük artifactba
     with open("wp_token_bundle.json", "w", encoding="utf-8") as f:
         json.dump(bundle, f, ensure_ascii=False, indent=2)
 
-    print("[OK] Token bundle saved to wp_token_bundle.json (uploaded as artifact).")
-    print("[NEXT] Download artifact, then set repo secrets: WP_REFRESH_TOKEN and WP_BLOG_ID.")
+    print("[OK] Token bundle saved to wp_token_bundle.json")
+    print("[NEXT] Download artifact, then set repo secrets: WPCOM_CEE_REFRESH_TOKEN (and optionally WPCOM_CEE_BLOG_ID if you use it).")
     return 0
 
 if __name__ == "__main__":

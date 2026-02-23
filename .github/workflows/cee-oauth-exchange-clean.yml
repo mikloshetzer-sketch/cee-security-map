@@ -1,10 +1,10 @@
-name: CEE OAuth exchange
+name: CEE OAuth exchange (stable)
 
 on:
   workflow_dispatch:
     inputs:
       code:
-        description: "Paste the code value from ?code=..."
+        description: "Paste ONLY the code value (from ?code=... up to before &state)"
         required: true
 
 jobs:
@@ -12,62 +12,80 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug (safe) - show which secrets are being read
-        env:
-          CLIENT_ID: ${{ secrets.WPCOM_CEE_CLIENT_ID }}
-          REDIRECT_URI: ${{ secrets.WPCOM_CEE_REDIRECT_URI }}
-        run: |
-          echo "CLIENT_ID=$CLIENT_ID"
-          echo "REDIRECT_URI=$REDIRECT_URI"
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Exchange authorization code for tokens (CEE)
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      # IMPORTANT:
+      # Store redirect URI as an Actions Variable (not secret) so it can be printed and verified:
+      # Settings -> Secrets and variables -> Actions -> Variables
+      # Name:  WPCOM_CEE_REDIRECT_URI
+      # Value: https://mikloshetzer-sketch.github.io/cee-security-map/
+      - name: Debug (safe) - show config (no tokens)
         env:
           CLIENT_ID: ${{ secrets.WPCOM_CEE_CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.WPCOM_CEE_CLIENT_SECRET }}
-          REDIRECT_URI: ${{ secrets.WPCOM_CEE_REDIRECT_URI }}
-          CODE: ${{ github.event.inputs.code }}
+          REDIRECT_URI: ${{ vars.WPCOM_CEE_REDIRECT_URI }}
+        run: |
+          echo "CLIENT_ID=${CLIENT_ID}"
+          echo "REDIRECT_URI=[${REDIRECT_URI}]"
+
+      - name: Validate workflow input code (safe)
+        env:
+          WP_CODE: ${{ github.event.inputs.code }}
+        run: |
+          python - <<'PY'
+          import os, sys, re
+          c = os.getenv("WP_CODE") or ""
+          raw_len = len(c)
+          s = c.strip()
+
+          print("code_raw_len:", raw_len)
+          print("code_stripped_len:", len(s))
+
+          bad = []
+          if not s:
+            bad.append("empty")
+          if "code=" in s:
+            bad.append("contains 'code=' (paste ONLY the value after code=)")
+          if "&" in s:
+            bad.append("contains '&' (state appended?) paste ONLY up to before &")
+          if "?" in s:
+            bad.append("contains '?' (looks like full URL pasted)")
+          if any(ch.isspace() for ch in c):
+            bad.append("contains whitespace/newline")
+          if "=" in s:
+            bad.append("contains '=' (looks like key=value pasted)")
+          if re.search(r"[^A-Za-z0-9_\-]", s):
+            bad.append("contains non-URL-safe chars")
+
+          if bad:
+            print("ERROR: code looks malformed:", ", ".join(bad))
+            sys.exit(1)
+
+          print("OK: code format looks plausible")
+          PY
+
+      - name: Exchange authorization code for tokens (CEE via Python)
+        env:
+          WP_CLIENT_ID: ${{ secrets.WPCOM_CEE_CLIENT_ID }}
+          WP_CLIENT_SECRET: ${{ secrets.WPCOM_CEE_CLIENT_SECRET }}
+          WP_REDIRECT_URI: ${{ vars.WPCOM_CEE_REDIRECT_URI }}
+          WP_CODE: ${{ github.event.inputs.code }}
         run: |
           set -euo pipefail
+          python scripts/wp_oauth_exchange.py
 
-          if [ -z "${CLIENT_ID:-}" ]; then
-            echo "ERROR: WPCOM_CEE_CLIENT_ID is empty or missing."
-            exit 1
-          fi
-          if [ -z "${CLIENT_SECRET:-}" ]; then
-            echo "ERROR: WPCOM_CEE_CLIENT_SECRET is empty or missing."
-            exit 1
-          fi
-          if [ -z "${REDIRECT_URI:-}" ]; then
-            echo "ERROR: WPCOM_CEE_REDIRECT_URI is empty or missing."
-            exit 1
-          fi
-          if [ -z "${CODE:-}" ]; then
-            echo "ERROR: Missing workflow input: code"
-            exit 1
-          fi
-
-          echo "Requesting token from WordPress.com..."
-          RESP=$(curl -sS -X POST "https://public-api.wordpress.com/oauth2/token" \
-            -H "Content-Type: application/x-www-form-urlencoded" \
-            --data-urlencode "client_id=${CLIENT_ID}" \
-            --data-urlencode "client_secret=${CLIENT_SECRET}" \
-            --data-urlencode "grant_type=authorization_code" \
-            --data-urlencode "code=${CODE}" \
-            --data-urlencode "redirect_uri=${REDIRECT_URI}")
-
-          echo "$RESP" > wp_token_bundle_cee.json
-
-          echo "Response keys:"
-          python -c "import json; j=json.load(open('wp_token_bundle_cee.json','r',encoding='utf-8')); print(list(j.keys()))"
-
-          python -c "import json,sys; j=json.load(open('wp_token_bundle_cee.json','r',encoding='utf-8')); sys.exit(0 if 'access_token' in j else 1)" \
-            || (echo "ERROR: No access_token returned. Full response:" && cat wp_token_bundle_cee.json && exit 1)
-
-          zip -q wp_token_bundle_cee.zip wp_token_bundle_cee.json
-          echo "Created wp_token_bundle_cee.zip"
-
-      - name: Upload artifact (CEE)
+      - name: Upload artifact (token bundle)
         uses: actions/upload-artifact@v4
         with:
           name: wp-token-bundle-cee
-          path: wp_token_bundle_cee.zip
+          path: wp_token_bundle.json

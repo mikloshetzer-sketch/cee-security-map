@@ -1,16 +1,16 @@
 import json
+import os
 import requests
 from datetime import datetime, timezone
 
 # ===== CONFIG =====
-WORDPRESS_SITE = "torésvonalak.wordpress.com"   # ide a saját site-od!
-ACCESS_TOKEN = None  # GitHub secretből jön
+DEFAULT_WORDPRESS_SITE = "toresvonalak.wordpress.com"  # javasolt ékezet nélkül
 MAP_URL = "https://mikloshetzer-sketch.github.io/cee-security-map/"
 WEEKLY_FILE = "data/weekly.json"
 META_FILE = "data/meta.json"
 
 # ===== LOAD DATA =====
-def load_json(path):
+def load_json(path: str):
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
@@ -24,7 +24,6 @@ date_label = datetime.now(timezone.utc).strftime("%Y.%m.%d")
 
 # ===== POST CONTENT =====
 title = f"Közép–Kelet Európa biztonsági helyzet – heti jelentés ({date_label})"
-
 bullets_html = "".join([f"<li>{b}</li>" for b in bullets])
 
 content = f"""
@@ -45,36 +44,35 @@ Automatikus OSINT kivonat. A linkelt források kézi ellenőrzése javasolt.
 </p>
 """
 
-# ===== POST =====
-def publish():
-    global ACCESS_TOKEN
+def publish() -> None:
+    token = (os.getenv("WPCOM_ACCESS_TOKEN") or "").strip()
+    if not token:
+        raise SystemExit("ERROR: Missing env var WPCOM_ACCESS_TOKEN")
 
-    ACCESS_TOKEN = requests.get(
-        "https://api.github.com/repos",
-        headers={"Authorization": f"Bearer {ACCESS_TOKEN}"}
-    )  # dummy: token check
+    wordpress_site = (os.getenv("WPCOM_SITE") or DEFAULT_WORDPRESS_SITE).strip()
+    if not wordpress_site:
+        raise SystemExit("ERROR: Missing site (set WPCOM_SITE or DEFAULT_WORDPRESS_SITE)")
 
-    token = ACCESS_TOKEN
-
-    url = f"https://public-api.wordpress.com/rest/v1.1/sites/{WORDPRESS_SITE}/posts/new"
+    url = f"https://public-api.wordpress.com/rest/v1.1/sites/{wordpress_site}/posts/new"
 
     headers = {
-        "Authorization": f"Bearer {token}"
+        "Authorization": f"Bearer {token}",
     }
 
     payload = {
         "title": title,
         "content": content,
-        "status": "publish"
+        "status": "publish",
     }
 
-    r = requests.post(url, headers=headers, data=payload)
+    r = requests.post(url, headers=headers, data=payload, timeout=30)
 
     if r.status_code != 200:
-        print("WP POST ERROR:", r.text)
+        print("WP POST ERROR:", r.status_code, r.text)
         raise SystemExit(1)
 
-    print("WordPress post created:", r.json().get("URL"))
+    j = r.json()
+    print("WordPress post created:", j.get("URL") or j.get("url") or j)
 
 if __name__ == "__main__":
     publish()

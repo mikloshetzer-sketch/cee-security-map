@@ -24,7 +24,7 @@ DATA_DIR = os.path.join(ROOT, "data")
 CACHE_PATH = os.path.join(DATA_DIR, "geocode_cache.json")
 COUNTRIES_CACHE_PATH = os.path.join(DATA_DIR, "cee_countries.geojson")
 
-USER_AGENT = "cee-security-map/3.0 (github actions)"
+USER_AGENT = "cee-security-map/4.0 (github actions)"
 TIMEOUT = 30
 
 # ============================================================
@@ -45,23 +45,21 @@ CEE_COUNTRIES = [
 CEE_BBOX = (11.0, 42.5, 30.5, 61.5)
 
 ROLLING_DAYS = 7
-GDELT_GEO_DAYS = 7     # GEO API window
-GDELT_EXPORT_DAYS = 14 # linkes események (export) window
+GDELT_GEO_DAYS = 7      # GEO API window
+GDELT_EXPORT_DAYS = 14  # linked events (export) window
+GDELT_DOC_DAYS = 7      # cross-border doc search
 USGS_DAYS = 7
-GDACS_DAYS = 14  # RSS window; trim to 7
+GDACS_DAYS = 14         # RSS window; trim to 7
 
 # ============================================================
-# GDELT EXPORT SETTINGS (linkes események)
+# GDELT EXPORT SETTINGS (linked events)
 # ============================================================
 MASTERFILELIST_URL = "http://data.gdeltproject.org/gdeltv2/masterfilelist.txt"
 MAX_SOURCES_PER_EVENT = 8
 
 # ============================================================
-# CATEGORY MODEL (amit kértél)
+# CATEGORY MODEL
 # ============================================================
-# A kategóriát két forrásból tudjuk:
-#  - GEO API: a lekérdezés "keyword bucket" alapján adjuk (stabil, de nem mindig cikklinkes)
-#  - EXPORT CSV: a CAMEO root/event alapján + fallback kulcsszó (stabil, és van SOURCEURL)
 CATEGORY_BUCKETS = [
     ("protest", ["protest", "demonstration", "strike", "riot", "clash", "violence"]),
     ("border", ["border", "checkpoint", "incursion", "smuggling", "migration", "asylum"]),
@@ -70,24 +68,18 @@ CATEGORY_BUCKETS = [
     ("drone", ["drone", "uav", "unmanned", "quadcop", "shahed"]),
     ("cyber", ["cyber", "ransomware", "ddos", "hack", "malware", "disinformation"]),
     ("energy", ["energy", "pipeline", "power outage", "electricity", "grid", "gas"]),
-    ("infrastructure", ["infrastructure", "rail", "bridge", "port", "airport"]),
-    ("security_politics", ["security", "intelligence", "sanctions", "terror", "extremism"]),
+    ("infrastructure", ["infrastructure", "rail", "bridge", "port", "airport", "cable"]),
+    ("security_politics", ["security", "intelligence", "sanctions", "terror", "extremism", "diplomatic"]),
 ]
 
-# CAMEO root (28. oszlop a GDELT exportban): durva megfeleltetés
-# Megjegyzés: ez nem tökéletes – de stabilabb, mint a semmi.
 CAMEO_ROOT_TO_CAT = {
-    # erőszak/konfliktus
     "18": "violence",
     "19": "violence",
     "20": "violence",
-    # jog/állam, rendvédelem (néhány root)
     "14": "police",
     "15": "police",
-    # diplomácia/államközi
     "01": "security_politics",
     "02": "security_politics",
-    # gazdaság/energia jellegűt nem mindig ad root, ezt kulcsszóval erősítjük
 }
 
 # ============================================================
@@ -97,7 +89,100 @@ SENSITIVE_ZONES = [
     {"name": "PL–BY / Suwałki környék (tág)", "bbox": (22.0, 53.5, 24.5, 55.8), "mult": 1.20},
     {"name": "RO–MD határ (tág)", "bbox": (26.0, 45.0, 29.5, 48.2), "mult": 1.15},
     {"name": "HU–UA perem (tág)", "bbox": (21.0, 47.5, 23.5, 49.3), "mult": 1.12},
+    {"name": "LT–BY perem (tág)", "bbox": (23.5, 53.5, 26.8, 55.6), "mult": 1.15},
+    {"name": "LT–RU / Kalinyingrád perem (tág)", "bbox": (20.0, 54.2, 23.5, 56.0), "mult": 1.14},
+    {"name": "LV–RU perem (tág)", "bbox": (26.5, 56.0, 29.5, 58.3), "mult": 1.12},
+    {"name": "EE–RU perem (tág)", "bbox": (26.5, 58.5, 29.5, 59.9), "mult": 1.12},
+    {"name": "SK–UA perem (tág)", "bbox": (21.0, 48.2, 23.5, 49.3), "mult": 1.10},
+    {"name": "RO–UA perem (tág)", "bbox": (25.0, 45.3, 30.0, 48.5), "mult": 1.10},
 ]
+
+# ============================================================
+# EXTRA NEWS FEEDS + CROSS-BORDER LOGIC
+# ============================================================
+COUNTRY_RELATIONS = {
+    "Hungary": ["Ukraine", "Ukrainian", "Russia", "Russian", "Slovakia", "Romania", "Serbia", "EU", "NATO"],
+    "Poland": ["Ukraine", "Ukrainian", "Belarus", "Belarusian", "Russia", "Russian", "Lithuania", "Germany", "EU", "NATO"],
+    "Czech Republic": ["Ukraine", "Ukrainian", "Russia", "Russian", "Slovakia", "Poland", "Germany", "EU", "NATO"],
+    "Slovakia": ["Ukraine", "Ukrainian", "Hungary", "Poland", "Czech", "Russia", "Russian", "EU", "NATO"],
+    "Romania": ["Ukraine", "Ukrainian", "Moldova", "Moldovan", "Russia", "Russian", "Black Sea", "NATO", "EU"],
+    "Latvia": ["Russia", "Russian", "Belarus", "Belarusian", "Estonia", "Lithuania", "NATO", "EU"],
+    "Lithuania": ["Russia", "Russian", "Belarus", "Belarusian", "Poland", "Latvia", "Kaliningrad", "NATO", "EU"],
+    "Estonia": ["Russia", "Russian", "Latvia", "Finland", "Baltic Sea", "NATO", "EU"],
+}
+
+HIGH_IMPACT_TERMS = [
+    "druzhba", "barátság", "pipeline", "oil pipeline", "gas pipeline", "crude flows",
+    "detained", "detention", "custody", "arrested", "expelled", "deported",
+    "border incident", "checkpoint", "smuggling", "convoy", "raid",
+    "sabotage", "explosion", "drone", "uav", "air defence", "air defense", "missile",
+    "sanctions", "embargo", "transit", "black sea", "naval", "cyberattack",
+    "intelligence", "spy", "espionage", "military exercise", "mobilization",
+]
+
+DIRECT_FEEDS = [
+    {"name": "Reuters World", "url": "https://feeds.reuters.com/Reuters/worldNews", "lang": "en"},
+    {"name": "Reuters Europe", "url": "https://feeds.reuters.com/reuters/europeNews", "lang": "en"},
+    {"name": "Reuters Business", "url": "https://feeds.reuters.com/reuters/businessNews", "lang": "en"},
+    {"name": "Reuters Top", "url": "https://feeds.reuters.com/reuters/topNews", "lang": "en"},
+    {"name": "The Guardian World", "url": "https://www.theguardian.com/world/rss", "lang": "en"},
+    {"name": "The Guardian Europe", "url": "https://www.theguardian.com/world/europe-news/rss", "lang": "en"},
+    {"name": "Euronews News", "url": "https://www.euronews.com/rss?level=theme&name=news", "lang": "en"},
+    {"name": "Euronews Europe", "url": "https://www.euronews.com/rss?level=vertical&name=europe", "lang": "en"},
+    {"name": "DW Top Stories", "url": "https://rss.dw.com/xml/rss-en-all", "lang": "en"},
+    {"name": "Politico Europe", "url": "https://www.politico.eu/feed/", "lang": "en"},
+    {"name": "AP News", "url": "https://apnews.com/hub/ap-top-news?output=rss", "lang": "en"},
+    {"name": "BBC World", "url": "http://feeds.bbci.co.uk/news/world/rss.xml", "lang": "en"},
+    {"name": "Telex Belföld", "url": "https://telex.hu/rss/belfold", "lang": "hu"},
+    {"name": "Telex Külföld", "url": "https://telex.hu/rss/kulfold", "lang": "hu"},
+    {"name": "Telex Gazdaság", "url": "https://telex.hu/rss/gazdasag", "lang": "hu"},
+]
+
+CEE_ALIASES = {
+    "Hungary": ["hungary", "hungarian", "budapest", "mol", "szijjarto", "szijjártó", "orban", "orbán", "magyarország", "magyar"],
+    "Poland": ["poland", "polish", "warsaw", "tusk", "poland's", "lengyelország", "lengyel"],
+    "Czech Republic": ["czech republic", "czech", "prague", "csehország", "cseh"],
+    "Slovakia": ["slovakia", "slovak", "bratislava", "fico", "szlovákia", "szlovák"],
+    "Romania": ["romania", "romanian", "bucharest", "románia", "román"],
+    "Latvia": ["latvia", "latvian", "riga", "lettország", "lett"],
+    "Lithuania": ["lithuania", "lithuanian", "vilnius", "kaliningrad", "litvánia", "litván"],
+    "Estonia": ["estonia", "estonian", "tallinn", "észtország", "észt"],
+}
+
+COUNTRY_CENTROIDS = {
+    "Hungary": (19.04, 47.50),
+    "Poland": (19.15, 52.10),
+    "Czech Republic": (14.43, 50.08),
+    "Slovakia": (17.11, 48.15),
+    "Romania": (26.10, 44.43),
+    "Latvia": (24.10, 56.95),
+    "Lithuania": (25.28, 54.69),
+    "Estonia": (24.75, 59.44),
+}
+
+BORDER_CENTROIDS = {
+    "HU-UA": (22.25, 48.20),
+    "PL-BY": (23.30, 53.80),
+    "RO-MD": (27.50, 47.20),
+    "LT-RU": (22.20, 55.10),
+    "LT-BY": (25.90, 54.30),
+    "LV-RU": (27.70, 56.30),
+    "EE-RU": (27.70, 59.20),
+    "SK-UA": (22.10, 48.80),
+    "RO-UA": (26.80, 47.95),
+}
+
+RELATION_ZONE_HINTS = {
+    ("Hungary", "Ukraine"): "HU-UA",
+    ("Poland", "Belarus"): "PL-BY",
+    ("Romania", "Moldova"): "RO-MD",
+    ("Lithuania", "Russia"): "LT-RU",
+    ("Lithuania", "Belarus"): "LT-BY",
+    ("Latvia", "Russia"): "LV-RU",
+    ("Estonia", "Russia"): "EE-RU",
+    ("Slovakia", "Ukraine"): "SK-UA",
+    ("Romania", "Ukraine"): "RO-UA",
+}
 
 # ============================================================
 # Basics
@@ -206,19 +291,167 @@ def trim_by_days(features: List[Dict[str, Any]], keep_days: int) -> List[Dict[st
     return kept
 
 # ============================================================
+# Text/feed helpers
+# ============================================================
+def strip_html(x: str) -> str:
+    return re.sub(r"<[^>]+>", " ", x or "").strip()
+
+def compact_ws(x: str) -> str:
+    return re.sub(r"\s+", " ", (x or "")).strip()
+
+def feed_tag_text(xml_chunk: str, tag: str) -> Optional[str]:
+    m = re.search(rf"<{tag}[^>]*>(.*?)</{tag}>", xml_chunk, flags=re.I | re.S)
+    if not m:
+        return None
+    return compact_ws(strip_html(m.group(1)))
+
+def feed_link(xml_chunk: str) -> Optional[str]:
+    m = re.search(r"<link[^>]*>(.*?)</link>", xml_chunk, flags=re.I | re.S)
+    if m:
+        return compact_ws(strip_html(m.group(1)))
+    m = re.search(r'<link[^>]+href="([^"]+)"', xml_chunk, flags=re.I | re.S)
+    if m:
+        return compact_ws(m.group(1))
+    return None
+
+def parse_feed_items(xml_text: str) -> List[Dict[str, str]]:
+    out: List[Dict[str, str]] = []
+
+    for raw in xml_text.split("<item>")[1:]:
+        chunk = raw.split("</item>")[0]
+        title = feed_tag_text(chunk, "title") or ""
+        link = feed_link(chunk) or ""
+        desc = (
+            feed_tag_text(chunk, "description")
+            or feed_tag_text(chunk, "content:encoded")
+            or ""
+        )
+        pub = (
+            feed_tag_text(chunk, "pubDate")
+            or feed_tag_text(chunk, "dc:date")
+            or feed_tag_text(chunk, "published")
+            or ""
+        )
+        if title or link:
+            out.append({"title": title, "link": link, "description": desc, "published": pub})
+
+    for raw in xml_text.split("<entry>")[1:]:
+        chunk = raw.split("</entry>")[0]
+        title = feed_tag_text(chunk, "title") or ""
+        link = feed_link(chunk) or ""
+        desc = (
+            feed_tag_text(chunk, "summary")
+            or feed_tag_text(chunk, "content")
+            or ""
+        )
+        pub = (
+            feed_tag_text(chunk, "updated")
+            or feed_tag_text(chunk, "published")
+            or ""
+        )
+        if title or link:
+            out.append({"title": title, "link": link, "description": desc, "published": pub})
+
+    return out
+
+def feed_item_time(raw: str) -> Optional[datetime]:
+    if not raw:
+        return None
+    try:
+        dt = dateparser.parse(raw)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except Exception:
+        return None
+
+def detect_country_mentions(text: str) -> List[str]:
+    t = (text or "").lower()
+    hits: List[str] = []
+    for country, aliases in CEE_ALIASES.items():
+        if any(a in t for a in aliases):
+            hits.append(country)
+    return hits
+
+def relation_matches(country: str, text: str) -> List[str]:
+    rels = COUNTRY_RELATIONS.get(country, [])
+    t = (text or "").lower()
+    hits = []
+    for rel in rels:
+        if rel.lower() in t:
+            hits.append(rel)
+    return hits
+
+def classify_from_text(text: str) -> Optional[str]:
+    t = (text or "").lower()
+    for bucket_name, kw in CATEGORY_BUCKETS:
+        for k in kw:
+            if k.lower() in t:
+                return bucket_name
+    return None
+
+def classify_news_item(title: str, description: str) -> str:
+    txt = f"{title} {description}".lower()
+
+    if any(k in txt for k in ["pipeline", "oil", "gas", "electricity", "grid", "power", "energy", "druzhba", "transit"]):
+        return "energy"
+    if any(k in txt for k in ["drone", "uav", "missile", "air defence", "air defense", "shahed"]):
+        return "drone"
+    if any(k in txt for k in ["cyber", "hack", "ddos", "malware", "ransomware", "disinformation"]):
+        return "cyber"
+    if any(k in txt for k in ["troops", "military", "exercise", "drill", "mobilization", "defence", "defense", "nato"]):
+        return "military"
+    if any(k in txt for k in ["arrest", "detained", "detention", "custody", "court", "prosecutor", "raid", "police", "expelled", "deported"]):
+        return "police"
+    if any(k in txt for k in ["border", "checkpoint", "crossing", "asylum", "migration", "smuggling", "frontier"]):
+        return "border"
+    if any(k in txt for k in ["protest", "demonstration", "riot", "clash", "strike"]):
+        return "protest"
+    if any(k in txt for k in ["rail", "bridge", "airport", "port", "infrastructure", "substation", "cable"]):
+        return "infrastructure"
+    if any(k in txt for k in ["sanctions", "intelligence", "espionage", "spy", "security", "terror", "extremism", "diplomatic"]):
+        return "security_politics"
+
+    fallback = classify_from_text(f"{title} {description}")
+    return fallback or "other"
+
+def impact_multiplier(title: str, description: str) -> float:
+    txt = f"{title} {description}".lower()
+    mult = 1.0
+    for term in HIGH_IMPACT_TERMS:
+        if term in txt:
+            mult += 0.12
+    return min(mult, 1.8)
+
+def pick_relation_coordinate(country: str, rel_hits: List[str]) -> Tuple[float, float]:
+    for rel in rel_hits:
+        key = (country, rel)
+        zone = RELATION_ZONE_HINTS.get(key)
+        if zone and zone in BORDER_CENTROIDS:
+            return BORDER_CENTROIDS[zone]
+    return COUNTRY_CENTROIDS[country]
+
+# ============================================================
 # Dedup
 # ============================================================
 def dedup_key(feature: Dict[str, Any]) -> Optional[str]:
     p = feature.get("properties") or {}
     src = p.get("source") or ""
     url = p.get("url")
-    title = p.get("title")
-    tm = p.get("time")
+    title = compact_ws((p.get("title") or "")[:160]).lower()
+    tm = p.get("time") or ""
     kind = p.get("kind") or ""
+    cat = p.get("category") or ""
+    country_hint = p.get("country_hint") or ""
+    location = compact_ws((p.get("location") or "")[:120]).lower()
+
     if url:
         return f"{src}|{url}"
+
     if title and tm:
-        return f"{src}|{kind}|{tm}|{title}"
+        day = tm[:10]
+        return f"{src}|{kind}|{cat}|{country_hint}|{location}|{day}|{title}"
+
     return None
 
 def merge_dedup(old_feats: List[Dict[str, Any]], new_feats: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -285,9 +518,6 @@ def point_in_feature(lon: float, lat: float, geom: Dict[str, Any]) -> bool:
     return False
 
 def load_or_build_country_geoms() -> Dict[str, Dict[str, Any]]:
-    """
-    country_name -> geometry (Polygon/MultiPolygon), cached weekly to data/cee_countries.geojson
-    """
     need_refresh = True
     if os.path.exists(COUNTRIES_CACHE_PATH):
         mtime = datetime.fromtimestamp(os.path.getmtime(COUNTRIES_CACHE_PATH), tz=timezone.utc)
@@ -501,20 +731,13 @@ def fetch_gdacs(geoms: Dict[str, Dict[str, Any]], days: int = 14) -> List[Dict[s
     return out
 
 # ============================================================
-# GDELT GEO (sok pont, link nem mindig)
+# GDELT GEO (many points, sometimes without direct article link)
 # ============================================================
 def gdelt_geo_query(country: str, kw: List[str], days: int, maxpoints: int) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
-    """
-    Uses GDELT 2.1 GEO API:
-      https://api.gdeltproject.org/api/v2/geo/geo
-    Returns (features, debug)
-    """
     url = "https://api.gdeltproject.org/api/v2/geo/geo"
     end = datetime.now(timezone.utc)
     start = end - timedelta(days=days)
 
-    # Query: keyword OR keyword ... AND country
-    # Keep it SHORT (GDELT errors if too long).
     kwq = " OR ".join([f'"{k}"' if " " in k else k for k in kw])
     q = f"({kwq}) AND sourceCountry:{country}"
 
@@ -531,15 +754,12 @@ def gdelt_geo_query(country: str, kw: List[str], days: int, maxpoints: int) -> T
 
     resp = http_get(url, params=params)
     txt = resp.text or ""
-    # GEO API néha visszaad HTML-t hibánál, ezért védjük
     try:
         data = resp.json()
     except Exception:
         return [], {"ok": False, "status": resp.status_code, "non_json": True, "head": txt[:120]}
 
     feats = data.get("features") or []
-    # készítünk egy "fallback" kereső-linket (legalább legyen hova kattintani)
-    # Ez nem a konkrét cikk URL, hanem a GDELT DOC API keresés.
     search_url = (
         "https://api.gdeltproject.org/api/v2/doc/doc?"
         + "mode=ArtList&format=html&query="
@@ -555,13 +775,11 @@ def gdelt_geo_query(country: str, kw: List[str], days: int, maxpoints: int) -> T
         lon, lat = float(coords[0]), float(coords[1])
         props = f.get("properties") or {}
 
-        # GEO API-nál a pontos idő sokszor nincs; ha nincs, adunk "now"-t (de ettől még dedup működik URL alapján)
         t = props.get("date") or props.get("datetime") or props.get("time") or None
         dt = parse_time_iso(t) if t else None
         if dt is None:
             dt = datetime.now(timezone.utc)
 
-        # A GEO API nem garantál cikklinket, de néha ad; ha nem, adjunk "search_url"-t
         url_guess = props.get("url") or props.get("sourceUrl") or None
 
         out.append(
@@ -573,10 +791,10 @@ def gdelt_geo_query(country: str, kw: List[str], days: int, maxpoints: int) -> T
                     "type": "News",
                     "time": to_utc_z(dt),
                     "title": props.get("name") or props.get("title") or f"{country}",
-                    "url": url_guess,  # lehet None
-                    "search_url": search_url,  # mindig van
+                    "url": url_guess,
+                    "search_url": search_url,
                     "country_hint": country,
-                    "category": None,  # később a bucket név lesz
+                    "category": None,
                     "gdelt_bucket": None,
                 },
             )
@@ -593,23 +811,15 @@ def gdelt_geo_query(country: str, kw: List[str], days: int, maxpoints: int) -> T
     return out, dbg
 
 def fetch_gdelt_geo(geoms: Dict[str, Dict[str, Any]], days: int = 7, maxpoints_per_query: int = 250) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
-    """
-    Many points, not always linkable.
-    We'll run multiple short queries (country x bucket) to avoid "query too long".
-    """
     all_out: List[Dict[str, Any]] = []
     dbg_runs: List[Dict[str, Any]] = []
 
-    # GDELT GEO API expects sourceCountry as 2-letter? In practice it supports country names sometimes inconsistently.
-    # We use "countryName" mapping: best working in many cases is "Hungary" etc, but if you want, later we can map to ISO2.
-    # For now, keep as you already tested successfully.
     for country in CEE_COUNTRIES:
         for bucket_name, kw in CATEGORY_BUCKETS:
             feats, dbg = gdelt_geo_query(country=country, kw=kw, days=days, maxpoints=maxpoints_per_query)
             dbg["bucket"] = bucket_name
             dbg_runs.append(dbg)
 
-            # filter to our polygons (geo api can leak)
             for f in feats:
                 coords = (f.get("geometry") or {}).get("coordinates") or []
                 if len(coords) < 2:
@@ -623,7 +833,6 @@ def fetch_gdelt_geo(geoms: Dict[str, Dict[str, Any]], days: int = 7, maxpoints_p
                 f["properties"] = p
                 all_out.append(f)
 
-    # lightweight dedup by url/search_url + time+title
     all_out = merge_dedup([], clamp_times(all_out))
     all_out = trim_by_days(all_out, keep_days=ROLLING_DAYS)
 
@@ -637,7 +846,142 @@ def fetch_gdelt_geo(geoms: Dict[str, Dict[str, Any]], days: int = 7, maxpoints_p
     return all_out, debug
 
 # ============================================================
-# GDELT EXPORT (linkes események)
+# GDELT DOC (cross-border relevance)
+# ============================================================
+def gdelt_crossborder_query(country: str, days: int = 7, maxrecords: int = 75) -> List[Dict[str, Any]]:
+    url = "https://api.gdeltproject.org/api/v2/doc/doc"
+    end = datetime.now(timezone.utc)
+    start = end - timedelta(days=days)
+
+    country_terms = CEE_ALIASES.get(country, [country.lower()])
+    relation_terms = COUNTRY_RELATIONS.get(country, [])
+    q_country = " OR ".join([f'"{x}"' for x in country_terms[:4]])
+    q_rel = " OR ".join([f'"{x}"' for x in relation_terms[:6]])
+    query = f"({q_country}) AND ({q_rel})"
+
+    params = {
+        "query": query,
+        "mode": "ArtList",
+        "format": "json",
+        "maxrecords": str(maxrecords),
+        "startdatetime": start.strftime("%Y%m%d%H%M%S"),
+        "enddatetime": end.strftime("%Y%m%d%H%M%S"),
+        "sort": "DateDesc",
+    }
+
+    try:
+        resp = http_get(url, params=params)
+        data = resp.json()
+    except Exception:
+        return []
+
+    articles = data.get("articles") or []
+    out: List[Dict[str, Any]] = []
+
+    for a in articles:
+        title = compact_ws(a.get("title") or "")
+        source_domain = a.get("domain") or ""
+        urlx = a.get("url") or None
+        seendate = a.get("seendate") or ""
+        dt = parse_time_iso(seendate)
+        if dt is None:
+            dt = datetime.now(timezone.utc)
+
+        text_probe = f"{title} {source_domain}"
+        rel_hits = relation_matches(country, text_probe)
+        lon, lat = pick_relation_coordinate(country, rel_hits)
+
+        out.append(
+            to_feature(
+                lon, lat,
+                {
+                    "source": "GDELT_DOC",
+                    "kind": "news_crossborder",
+                    "type": "News",
+                    "time": to_utc_z(dt),
+                    "title": title or country,
+                    "description": source_domain,
+                    "url": urlx,
+                    "country_hint": country,
+                    "relation_hits": rel_hits,
+                    "category": classify_news_item(title, source_domain),
+                    "impact_mult": impact_multiplier(title, source_domain),
+                },
+            )
+        )
+
+    return out
+
+def fetch_gdelt_crossborder(days: int = 7, maxrecords_per_country: int = 75) -> List[Dict[str, Any]]:
+    all_out: List[Dict[str, Any]] = []
+    for country in CEE_COUNTRIES:
+        try:
+            feats = gdelt_crossborder_query(country, days=days, maxrecords=maxrecords_per_country)
+            all_out.extend(feats)
+        except Exception:
+            continue
+    all_out = merge_dedup([], clamp_times(all_out))
+    all_out = trim_by_days(all_out, keep_days=ROLLING_DAYS)
+    return all_out
+
+# ============================================================
+# Direct RSS / Atom feeds
+# ============================================================
+def fetch_direct_news_feeds(days: int = 7) -> List[Dict[str, Any]]:
+    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    out: List[Dict[str, Any]] = []
+
+    for feed in DIRECT_FEEDS:
+        try:
+            xml = http_get(feed["url"]).text
+            items = parse_feed_items(xml)
+        except Exception:
+            continue
+
+        for it in items:
+            dt = feed_item_time(it.get("published") or "")
+            if dt is None:
+                dt = datetime.now(timezone.utc)
+            if dt < cutoff:
+                continue
+
+            title = compact_ws(it.get("title") or "")
+            desc = compact_ws(it.get("description") or "")
+            link = compact_ws(it.get("link") or "")
+            full_text = f"{title} {desc}"
+
+            country_hits = detect_country_mentions(full_text)
+            if not country_hits:
+                continue
+
+            for country in country_hits:
+                rel_hits = relation_matches(country, full_text)
+                lon, lat = pick_relation_coordinate(country, rel_hits)
+
+                out.append(
+                    to_feature(
+                        lon, lat,
+                        {
+                            "source": "DIRECT_FEED",
+                            "feed_name": feed["name"],
+                            "kind": "news_direct",
+                            "type": "News",
+                            "time": to_utc_z(dt),
+                            "title": title or country,
+                            "description": desc[:800],
+                            "url": link or None,
+                            "country_hint": country,
+                            "relation_hits": rel_hits,
+                            "category": classify_news_item(title, desc),
+                            "impact_mult": impact_multiplier(title, desc),
+                        },
+                    )
+                )
+
+    return out
+
+# ============================================================
+# GDELT EXPORT (linked events)
 # ============================================================
 def parse_masterfilelist(master_text: str) -> List[str]:
     urls = []
@@ -649,7 +993,6 @@ def parse_masterfilelist(master_text: str) -> List[str]:
         if len(parts) < 3:
             continue
         url = parts[2].strip()
-        # normalize https->http to avoid occasional SSL issues in GH Actions
         if url.startswith("https://data.gdeltproject.org/"):
             url = "http://data.gdeltproject.org/" + url[len("https://data.gdeltproject.org/"):]
         if url.endswith(".export.CSV.zip") and "/gdeltv2/" in url:
@@ -685,20 +1028,31 @@ def add_unique(lst: List[str], url: str) -> None:
     if url not in lst and len(lst) < MAX_SOURCES_PER_EVENT:
         lst.append(url)
 
-def classify_from_text(text: str) -> Optional[str]:
-    t = (text or "").lower()
-    for bucket_name, kw in CATEGORY_BUCKETS:
-        for k in kw:
-            if k.lower() in t:
-                return bucket_name
-    return None
+def classify_gdelt_export_row(fullname: str, sourceurl: str, event_code: str, root: str) -> str:
+    category = CAMEO_ROOT_TO_CAT.get(root)
+    if category:
+        return category
+
+    probe = f"{fullname} {sourceurl} {event_code}".lower()
+
+    if any(k in probe for k in ["pipeline", "druzhba", "oil", "gas", "transit", "grid", "electricity"]):
+        return "energy"
+    if any(k in probe for k in ["detained", "arrest", "custody", "raid", "police", "court", "expelled"]):
+        return "police"
+    if any(k in probe for k in ["border", "checkpoint", "migration", "smuggling", "asylum"]):
+        return "border"
+    if any(k in probe for k in ["military", "troops", "exercise", "drill", "nato", "mobilization"]):
+        return "military"
+    if any(k in probe for k in ["drone", "uav", "missile", "shahed"]):
+        return "drone"
+    if any(k in probe for k in ["cyber", "hack", "ddos", "disinformation"]):
+        return "cyber"
+    if any(k in probe for k in ["sanctions", "intelligence", "spy", "espionage", "security"]):
+        return "security_politics"
+
+    return classify_from_text(probe) or "other"
 
 def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: int = 14) -> List[Dict[str, Any]]:
-    """
-    Pull GDELT v2 export CSV ZIP files for the last N days.
-    Filter to our 8 countries by point-in-polygon.
-    Produce aggregated events with multiple source URLs.
-    """
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(days=lookback_days)
 
@@ -733,15 +1087,6 @@ def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: i
             if len(row) < 61:
                 continue
 
-            # GDELT 2.1 Events export columns:
-            # 0 GlobalEventID
-            # 1 SQLDATE (yyyymmdd)
-            # 26 EventCode
-            # 28 EventRootCode
-            # 52 ActionGeo_FullName (location string)
-            # 56 ActionGeo_Lat
-            # 57 ActionGeo_Long
-            # 60 SOURCEURL
             gid = str(row[0]).strip()
             day = str(row[1]).strip()
             event_code = str(row[26]).strip()
@@ -760,13 +1105,16 @@ def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: i
             if not date_iso:
                 continue
 
-            # category: root->cat + keyword fallback
-            category = CAMEO_ROOT_TO_CAT.get(root)
-            if category is None:
-                category = classify_from_text(fullname) or "other"
-
+            category = classify_gdelt_export_row(fullname, sourceurl, event_code, root)
             loc_norm = norm_loc(fullname)
-            key = f"{date_iso}|{category}|{loc_norm}"
+
+            domain_hint = ""
+            if sourceurl:
+                m = re.search(r"https?://([^/]+)", sourceurl)
+                if m:
+                    domain_hint = m.group(1).lower()
+
+            key = f"{date_iso}|{category}|{loc_norm}|{event_code}|{domain_hint}"
 
             if key not in live_agg:
                 live_agg[key] = {
@@ -809,43 +1157,63 @@ def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: i
                     "type": "News",
                     "time": ev["time"],
                     "date": ev["date"],
-                    "title": ev["location"],  # headline-like surrogate; for real headline, DOC api needed
+                    "title": ev["location"],
                     "location": ev["location"],
                     "category": ev["category"],
                     "event_root_code": ev["event_root_code"],
                     "event_codes": sorted([c for c in ev["event_codes"] if c]),
                     "gdelt_ids_count": len(ev["gdelt_ids"]),
                     "sources_count": len(ev["sources"]),
-                    "sources": ev["sources"],  # list of URLs
-                    # convenience field for popup:
+                    "sources": ev["sources"],
                     "url": ev["sources"][0] if ev["sources"] else None,
+                    "impact_mult": impact_multiplier(ev["location"], " ".join(ev["sources"][:3])),
                 },
             )
         )
 
-    # newest first
-    live_features.sort(key=lambda f: (f.get("properties", {}).get("date", ""), f.get("properties", {}).get("sources_count", 0)), reverse=True)
+    live_features.sort(
+        key=lambda f: (
+            f.get("properties", {}).get("date", ""),
+            f.get("properties", {}).get("sources_count", 0)
+        ),
+        reverse=True
+    )
     return live_features
-
-# ============================================================
+    # ============================================================
 # Scoring + hotspots + trend
 # ============================================================
 def score_feature(props: Dict[str, Any]) -> float:
     src = props.get("source")
     kind = props.get("kind")
+    base = 0.1
+
     if src == "GDELT" and kind in ("news_linked",):
-        return 1.3
-    if src == "GDELT" and kind in ("news_geo", "news_event"):
-        return 1.0
-    if src == "GDACS":
-        return 0.6
-    if src == "USGS":
+        base = 1.30
+    elif src == "GDELT" and kind in ("news_geo", "news_event"):
+        base = 1.00
+    elif src == "GDELT_DOC":
+        base = 1.25
+    elif src == "DIRECT_FEED":
+        base = 1.35
+    elif src == "GDACS":
+        base = 0.60
+    elif src == "USGS":
         try:
             m = float(props.get("mag"))
         except Exception:
             m = 0.0
-        return 0.2 + min(0.6, max(0.0, (m - 3.0) * 0.15))
-    return 0.1
+        base = 0.2 + min(0.6, max(0.0, (m - 3.0) * 0.15))
+
+    cat = props.get("category") or ""
+    if cat in ("military", "drone", "energy", "security_politics", "border", "police"):
+        base *= 1.10
+
+    try:
+        impact = float(props.get("impact_mult") or 1.0)
+    except Exception:
+        impact = 1.0
+
+    return base * impact
 
 def time_decay(dt: Optional[datetime], now: datetime) -> float:
     if dt is None:
@@ -893,7 +1261,7 @@ def build_hotspots_with_trend(all_features: List[Dict[str, Any]], cell_deg: floa
             acc[k] = {
                 "score": 0.0,
                 "count": 0,
-                "sources": {"GDELT": 0, "USGS": 0, "GDACS": 0},
+                "sources": {"GDELT": 0, "GDELT_DOC": 0, "DIRECT_FEED": 0, "USGS": 0, "GDACS": 0},
                 "last7_score": 0.0,
                 "prev7_score": 0.0,
             }
@@ -969,7 +1337,7 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
             b = {
                 "recent": 0.0,
                 "baseline": 0.0,
-                "src_recent": {"GDELT": 0, "USGS": 0, "GDACS": 0},
+                "src_recent": {"GDELT": 0, "GDELT_DOC": 0, "DIRECT_FEED": 0, "USGS": 0, "GDACS": 0},
             }
             acc[k] = b
         return b
@@ -1052,7 +1420,7 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
     return signals, rows_sorted[:top_n]
 
 # ============================================================
-# Weekly topics (simple)
+# Weekly topics
 # ============================================================
 STOP = {
     "the","a","an","and","or","to","of","in","on","for","with","as","at","by","from",
@@ -1061,7 +1429,7 @@ STOP = {
     "says","say","new","up","down",
     "hungary","poland","czech","slovak","romania","latvia","lithuania","estonia"
 }
-WORD_RE = re.compile(r"[a-zA-Z]{3,}")
+WORD_RE = re.compile(r"[a-zA-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ]{3,}")
 
 def extract_topics(titles: List[str], top_k: int = 6) -> List[str]:
     freq: Dict[str, int] = {}
@@ -1083,24 +1451,48 @@ def build_weekly(all_features: List[Dict[str, Any]]) -> Dict[str, Any]:
         if dt and dt >= cutoff_7:
             week.append((dt, f))
 
-    counts = {"GDELT": 0, "USGS": 0, "GDACS": 0}
+    counts = {
+        "GDELT": 0,
+        "GDELT_DOC": 0,
+        "DIRECT_FEED": 0,
+        "USGS": 0,
+        "GDACS": 0,
+    }
     titles = []
+    category_counts: Dict[str, int] = {}
+    country_counts: Dict[str, int] = {}
 
-    for dt, f in week:
-        src = (f.get("properties") or {}).get("source")
+    for _, f in week:
+        p = f.get("properties") or {}
+        src = p.get("source")
         if src in counts:
             counts[src] += 1
-        if src == "GDELT":
-            titles.append(((f.get("properties") or {}).get("title") or ""))
 
-    topics = extract_topics(titles[:80])
+        title = p.get("title") or ""
+        if title:
+            titles.append(title)
+
+        cat = p.get("category") or "other"
+        category_counts[cat] = category_counts.get(cat, 0) + 1
+
+        ch = p.get("country_hint")
+        if ch:
+            country_counts[ch] = country_counts.get(ch, 0) + 1
+
+    topics = extract_topics(titles[:200])
+    top_cats = [k for k, _ in sorted(category_counts.items(), key=lambda x: x[1], reverse=True)[:5]]
+    top_countries = [k for k, _ in sorted(country_counts.items(), key=lambda x: x[1], reverse=True)[:5]]
 
     bullets = [
-        f"Híralapú jelzések (GDELT): {counts['GDELT']} db az elmúlt 7 napban.",
-        f"Természeti/ellátási stresszorok: USGS {counts['USGS']} esemény, GDACS {counts['GDACS']} riasztás (CEE országok területén).",
+        f"Híralapú jelzések: GDELT {counts['GDELT']} db, GDELT DOC {counts['GDELT_DOC']} db, direkt feed {counts['DIRECT_FEED']} db az elmúlt 7 napban.",
+        f"Természeti/ellátási stresszorok: USGS {counts['USGS']} esemény, GDACS {counts['GDACS']} riasztás.",
     ]
+    if top_cats:
+        bullets.append("Leggyakoribb kategóriák: " + ", ".join(top_cats) + ".")
+    if top_countries:
+        bullets.append("Leginkább érintett vizsgált országok: " + ", ".join(top_countries) + ".")
     if topics:
-        bullets.append("Gyakori témák a hírcímekben: " + ", ".join(topics) + ".")
+        bullets.append("Gyakori témák a hírekben: " + ", ".join(topics) + ".")
     bullets.append("Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.")
 
     return {
@@ -1108,6 +1500,8 @@ def build_weekly(all_features: List[Dict[str, Any]]) -> Dict[str, Any]:
         "headline": "Heti kivonat – elmúlt 7 nap",
         "bullets": bullets,
         "counts": counts,
+        "category_counts": category_counts,
+        "country_counts": country_counts,
     }
 
 # ============================================================
@@ -1188,7 +1582,7 @@ def make_summary(all_features: List[Dict[str, Any]], top_hotspots: List[Dict[str
     bullets = [
         top_text,
         trend_text,
-        f"Forráskép: GDELT {counts.get('gdelt',0)}, USGS {counts.get('usgs',0)}, GDACS {counts.get('gdacs',0)}.",
+        f"Forráskép: GDELT {counts.get('gdelt',0)}, GDELT DOC {counts.get('gdelt_cross',0)}, direkt feed {counts.get('direct_news',0)}, USGS {counts.get('usgs',0)}, GDACS {counts.get('gdacs',0)}.",
         "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.",
     ]
 
@@ -1210,19 +1604,16 @@ def make_summary(all_features: List[Dict[str, Any]], top_hotspots: List[Dict[str
 def main() -> int:
     ensure_dirs()
 
-    # country geometries
     geoms = load_or_build_country_geoms()
-
-    # borders
     ensure_cee_borders(geoms)
 
-    # Load previous rolling layers
     prev_usgs = load_geojson_features(os.path.join(DATA_DIR, "usgs.geojson"))
     prev_gdacs = load_geojson_features(os.path.join(DATA_DIR, "gdacs.geojson"))
     prev_gdelt = load_geojson_features(os.path.join(DATA_DIR, "gdelt.geojson"))
     prev_gdelt_linked = load_geojson_features(os.path.join(DATA_DIR, "gdelt_linked.geojson"))
+    prev_gdelt_cross = load_geojson_features(os.path.join(DATA_DIR, "gdelt_crossborder.geojson"))
+    prev_direct_news = load_geojson_features(os.path.join(DATA_DIR, "direct_news.geojson"))
 
-    # Fetch new: USGS / GDACS
     try:
         usgs_new = fetch_usgs(geoms, days=USGS_DAYS, min_magnitude=2.5)
     except Exception as e:
@@ -1235,43 +1626,55 @@ def main() -> int:
         print(f"[GDACS] fetch failed: {e}")
         gdacs_new = []
 
-    # Fetch new: GDELT GEO (many points) + debug
     try:
         gdelt_geo_new, gdelt_debug = fetch_gdelt_geo(geoms, days=GDELT_GEO_DAYS, maxpoints_per_query=250)
     except Exception as e:
         print(f"[GDELT GEO] fetch failed: {e}")
         gdelt_geo_new, gdelt_debug = [], {"ok": False, "error": str(e)}
 
-    # Fetch new: GDELT EXPORT (linked events)
     try:
         gdelt_linked_new = fetch_gdelt_export_linked(geoms, lookback_days=GDELT_EXPORT_DAYS)
     except Exception as e:
         print(f"[GDELT EXPORT] fetch failed: {e}")
         gdelt_linked_new = []
 
-    # Merge rolling + trim
+    try:
+        gdelt_cross_new = fetch_gdelt_crossborder(days=GDELT_DOC_DAYS, maxrecords_per_country=75)
+    except Exception as e:
+        print(f"[GDELT DOC] fetch failed: {e}")
+        gdelt_cross_new = []
+
+    try:
+        direct_news_new = fetch_direct_news_feeds(days=ROLLING_DAYS)
+    except Exception as e:
+        print(f"[DIRECT FEEDS] fetch failed: {e}")
+        direct_news_new = []
+
     usgs_merged = merge_dedup(clamp_times(prev_usgs), clamp_times(usgs_new))
     gdacs_merged = merge_dedup(clamp_times(prev_gdacs), clamp_times(gdacs_new))
     gdelt_merged = merge_dedup(clamp_times(prev_gdelt), clamp_times(gdelt_geo_new))
     gdelt_linked_merged = merge_dedup(clamp_times(prev_gdelt_linked), clamp_times(gdelt_linked_new))
+    gdelt_cross_merged = merge_dedup(clamp_times(prev_gdelt_cross), clamp_times(gdelt_cross_new))
+    direct_news_merged = merge_dedup(clamp_times(prev_direct_news), clamp_times(direct_news_new))
 
     usgs = trim_by_days(usgs_merged, keep_days=ROLLING_DAYS)
     gdacs = trim_by_days(gdacs_merged, keep_days=ROLLING_DAYS)
     gdelt = trim_by_days(gdelt_merged, keep_days=ROLLING_DAYS)
     gdelt_linked = trim_by_days(gdelt_linked_merged, keep_days=GDELT_EXPORT_DAYS)
+    gdelt_cross = trim_by_days(gdelt_cross_merged, keep_days=ROLLING_DAYS)
+    direct_news = trim_by_days(direct_news_merged, keep_days=ROLLING_DAYS)
 
-    # Save source layers
     save_geojson(os.path.join(DATA_DIR, "usgs.geojson"), usgs)
     save_geojson(os.path.join(DATA_DIR, "gdacs.geojson"), gdacs)
-    save_geojson(os.path.join(DATA_DIR, "gdelt.geojson"), gdelt)  # GEO points
-    save_geojson(os.path.join(DATA_DIR, "gdelt_linked.geojson"), gdelt_linked)  # EXPORT linked events
+    save_geojson(os.path.join(DATA_DIR, "gdelt.geojson"), gdelt)
+    save_geojson(os.path.join(DATA_DIR, "gdelt_linked.geojson"), gdelt_linked)
+    save_geojson(os.path.join(DATA_DIR, "gdelt_crossborder.geojson"), gdelt_cross)
+    save_geojson(os.path.join(DATA_DIR, "direct_news.geojson"), direct_news)
 
-    # Save debug
     with open(os.path.join(DATA_DIR, "gdelt_debug.json"), "w", encoding="utf-8") as f:
         json.dump(gdelt_debug, f, ensure_ascii=False, indent=2)
 
-    # Hotspots: combine all
-    all_feats = gdelt + gdelt_linked + gdacs + usgs
+    all_feats = gdelt + gdelt_linked + gdelt_cross + direct_news + gdacs + usgs
 
     hotspot_geo, top_hotspots = build_hotspots_with_trend(all_feats, cell_deg=0.5, top_n=10)
 
@@ -1284,8 +1687,8 @@ def main() -> int:
     with open(os.path.join(DATA_DIR, "hotspots.json"), "w", encoding="utf-8") as f:
         json.dump({"generated_utc": to_utc_z(datetime.now(timezone.utc)), "top": top_hotspots}, f, ensure_ascii=False, indent=2)
 
-    # Early
     early_geo, early_top = build_early_warning(all_feats, cell_deg=0.5, lookback_days=7, recent_hours=48, top_n=10)
+
     cache = load_cache()
     for e in early_top:
         e["place"] = reverse_geocode_osm(float(e["lat"]), float(e["lon"]), cache)
@@ -1295,14 +1698,16 @@ def main() -> int:
     with open(os.path.join(DATA_DIR, "early.json"), "w", encoding="utf-8") as f:
         json.dump({"generated_utc": to_utc_z(datetime.now(timezone.utc)), "top": early_top}, f, ensure_ascii=False, indent=2)
 
-    # Summaries + meta
     counts = {
         "usgs": len(usgs),
         "gdacs": len(gdacs),
         "gdelt": len(gdelt),
         "gdelt_linked": len(gdelt_linked),
+        "gdelt_cross": len(gdelt_cross),
+        "direct_news": len(direct_news),
         "hotspot_cells": len(hotspot_geo),
     }
+
     summary = make_summary(all_feats, top_hotspots, counts)
     with open(os.path.join(DATA_DIR, "summary.json"), "w", encoding="utf-8") as f:
         json.dump(summary, f, ensure_ascii=False, indent=2)
@@ -1319,7 +1724,9 @@ def main() -> int:
         "gdelt": {
             "geo_days": GDELT_GEO_DAYS,
             "export_days": GDELT_EXPORT_DAYS,
-        }
+            "crossborder_days": GDELT_DOC_DAYS,
+        },
+        "direct_feeds": [f["name"] for f in DIRECT_FEEDS],
     }
     with open(os.path.join(DATA_DIR, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)

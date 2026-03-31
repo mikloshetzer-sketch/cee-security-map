@@ -38,6 +38,7 @@ content = f"""
 <div style="background:#4b5563;padding:40px 20px;">
   <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:22px;">
 
+    <!-- HEADER -->
     <div style="
         background:linear-gradient(135deg,#475569,#334155);
         padding:26px 28px;
@@ -54,8 +55,12 @@ content = f"""
       <div style="margin-top:10px;font-size:15px;line-height:1.6;color:#e2e8f0;">
         Heti automatizált összefoglaló a közép– és kelet-európai biztonsági környezetről.
       </div>
+      <div style="margin-top:12px;font-size:14px;line-height:1.6;color:#cbd5e1;">
+        <strong>Frissítés:</strong> {generated}
+      </div>
     </div>
 
+    <!-- MÓDSZER -->
     <section style="margin:0;">
       <div style="
           background:#e5e7eb;
@@ -66,29 +71,24 @@ content = f"""
           margin:0 0 14px 0;
       ">
         <div style="font-size:22px;font-weight:700;line-height:1.3;">
-          Heti biztonsági kivonat
+          Módszer
         </div>
       </div>
 
-      <div style="padding:2px 8px 0 8px;">
-        <p style="margin:0 0 16px 0;font-size:16px;line-height:1.8;color:#f1f5f9;text-align:justify;">
-          <strong>Frissítés:</strong> {generated}
+      <div style="
+          background:rgba(255,255,255,0.08);
+          border:1px solid rgba(255,255,255,0.12);
+          border-radius:16px;
+          padding:22px 24px;
+          box-shadow:0 8px 20px rgba(0,0,0,0.12);
+      ">
+        <p style="margin:0;font-size:15px;line-height:1.8;color:#e2e8f0;text-align:justify;">
+          A heti brief nyílt forrású információk strukturált feldolgozásán alapul. Az összesítés célja nem a teljes körű eseménylista megjelenítése, hanem a főbb regionális biztonsági mintázatok, visszatérő témák és geopolitikai jelentőségű trendek kiemelése. Az automatikusan generált összefoglaló ezért tájékozódási és előszűrési célokat szolgál, a források és következtetések kézi ellenőrzése továbbra is indokolt.
         </p>
-
-        <div style="
-            background:rgba(255,255,255,0.08);
-            border:1px solid rgba(255,255,255,0.12);
-            border-radius:16px;
-            padding:22px 24px;
-            box-shadow:0 8px 20px rgba(0,0,0,0.12);
-        ">
-          <ul style="margin:0 0 0 22px;padding:0;color:#f1f5f9;line-height:1.8;font-size:16px;">
-            {bullets_html}
-          </ul>
-        </div>
       </div>
     </section>
 
+    <!-- JELENTÉS -->
     <section style="margin:0;">
       <div style="
           background:#e5e7eb;
@@ -99,33 +99,24 @@ content = f"""
           margin:0 0 14px 0;
       ">
         <div style="font-size:22px;font-weight:700;line-height:1.3;">
-          Interaktív térkép
+          Jelentés
         </div>
       </div>
 
-      <div style="padding:2px 8px 0 8px;">
-        <p style="margin:0 0 16px 0;font-size:16px;line-height:1.8;color:#f1f5f9;text-align:justify;">
-          Az alábbi beágyazott térkép vizuálisan támogatja a heti incidensminták és regionális fókuszpontok gyors áttekintését.
-        </p>
-
-        <div style="
-            background:#f8fafc;
-            padding:16px;
-            border-radius:18px;
-            box-shadow:0 10px 24px rgba(0,0,0,0.18);
-            overflow:hidden;
-        ">
-          <iframe
-            src="{MAP_URL}"
-            width="100%"
-            height="720"
-            style="border:0;border-radius:12px;"
-            loading="lazy">
-          </iframe>
-        </div>
+      <div style="
+          background:rgba(255,255,255,0.08);
+          border:1px solid rgba(255,255,255,0.12);
+          border-radius:16px;
+          padding:22px 24px;
+          box-shadow:0 8px 20px rgba(0,0,0,0.12);
+      ">
+        <ul style="margin:0 0 0 22px;padding:0;color:#f1f5f9;line-height:1.8;font-size:16px;">
+          {bullets_html}
+        </ul>
       </div>
     </section>
 
+    <!-- PROJEKT -->
     <section style="margin:0;">
       <div style="
           background:#e5e7eb;
@@ -136,13 +127,21 @@ content = f"""
           margin:0 0 14px 0;
       ">
         <div style="font-size:22px;font-weight:700;line-height:1.3;">
-          Megjegyzés
+          Projekt
         </div>
       </div>
 
-      <div style="padding:2px 8px 0 8px;">
-        <p style="margin:0;font-size:14px;line-height:1.8;color:#e2e8f0;text-align:justify;">
-          Automatikus OSINT kivonat. A linkelt források és következtetések kézi ellenőrzése minden esetben javasolt.
+      <div style="
+          background:rgba(255,255,255,0.08);
+          border:1px solid rgba(255,255,255,0.12);
+          border-radius:16px;
+          padding:22px 24px;
+          box-shadow:0 8px 20px rgba(0,0,0,0.12);
+      ">
+        <p style="margin:0;font-size:15px;line-height:1.8;color:#e2e8f0;">
+          <a href="{MAP_URL}" target="_blank" rel="noopener noreferrer" style="color:#93c5fd;font-weight:600;text-decoration:none;">
+            Projekt megnyitása
+          </a>
         </p>
       </div>
     </section>

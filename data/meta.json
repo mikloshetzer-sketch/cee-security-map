@@ -1,13 +1,14 @@
 {
-  "generated_utc": "2026-03-31T07:24:43Z",
+  "generated_utc": "2026-03-31T10:13:24Z",
   "counts": {
     "usgs": 0,
     "gdacs": 0,
     "gdelt": 0,
-    "gdelt_linked": 2828,
-    "gdelt_cross": 3763,
-    "direct_news": 419,
-    "hotspot_cells": 164
+    "gdelt_linked": 2859,
+    "gdelt_cross": 3803,
+    "direct_news": 418,
+    "hotspot_cells": 165,
+    "rss_trusted": 200
   },
   "rolling_days": 7,
   "countries": [
@@ -20,10 +21,39 @@
     "Lithuania",
     "Estonia"
   ],
+  "bbox": {
+    "lon_min": 11.0,
+    "lat_min": 42.5,
+    "lon_max": 30.5,
+    "lat_max": 61.5
+  },
   "gdelt": {
     "geo_days": 7,
     "export_days": 14,
     "crossborder_days": 7
+  },
+  "early": {
+    "recent_hours": 48,
+    "lookback_days": 7
+  },
+  "rss": {
+    "enabled": true,
+    "feeds": [
+      "reuters_world",
+      "reuters_europe",
+      "guardian_world",
+      "guardian_europe",
+      "euronews_news",
+      "euronews_europe",
+      "dw_top",
+      "politico_europe",
+      "ap_news",
+      "bbc_world",
+      "telex_belfold",
+      "telex_kulfold",
+      "telex_gazdasag"
+    ],
+    "output": "trusted_rss.json"
   },
   "direct_feeds": [
     "Reuters World",
@@ -41,5 +71,18 @@
     "Telex Belföld",
     "Telex Külföld",
     "Telex Gazdaság"
-  ]
+  ],
+  "weekly_brief": {
+    "enabled": true,
+    "structure": [
+      "intro",
+      "country_assessments",
+      "external_actors",
+      "risk_assessment",
+      "forecast",
+      "closing",
+      "methodology",
+      "signal_summary"
+    ]
+  }
 }

@@ -46,6 +46,14 @@ def format_list_hu(items):
     return f"{', '.join(items[:-1])} és {items[-1]}"
 
 
+def clean_bullet_text(text: str) -> str:
+    if not text:
+        return ""
+    cleaned = " ".join(str(text).strip().split())
+    cleaned = cleaned.lstrip("-• ").strip()
+    return cleaned
+
+
 def build_intro(weekly: dict) -> str:
     counts = weekly.get("counts", {})
     category_counts = weekly.get("category_counts", {})
@@ -84,13 +92,33 @@ def build_intro(weekly: dict) -> str:
     return " ".join(parts)
 
 
+def build_paragraphs(bullets, chunk_size=2, max_bullets=6):
+    if not bullets:
+        return []
+
+    selected = [clean_bullet_text(b) for b in bullets[:max_bullets] if clean_bullet_text(b)]
+    if not selected:
+        return []
+
+    paragraphs = []
+    for i in range(0, len(selected), chunk_size):
+        chunk = selected[i:i + chunk_size]
+        paragraph = " ".join(chunk)
+        if paragraph:
+            paragraphs.append(paragraph)
+
+    return paragraphs
+
+
 weekly = load_json(WEEKLY_FILE)
 meta = load_json(META_FILE)
 
 bullets = weekly.get("bullets", [])
 generated = weekly.get("generated_utc") or meta.get("generated_utc") or "-"
 date_label = datetime.now(timezone.utc).strftime("%Y.%m.%d")
+
 intro_text = build_intro(weekly)
+report_paragraphs = build_paragraphs(bullets)
 
 # ===== POST CONTENT =====
 title = f"Közép–Kelet Európa biztonsági helyzet – heti jelentés ({date_label})"
@@ -99,6 +127,13 @@ bullets_html = "".join(
     [
         f'<li style="margin:0 0 12px 0;text-align:justify;">{esc(b)}</li>'
         for b in bullets
+    ]
+)
+
+paragraphs_html = "".join(
+    [
+        f'<p style="margin:0 0 16px 0;font-size:16px;line-height:1.8;color:#e2e8f0;text-align:justify;">{esc(p)}</p>'
+        for p in report_paragraphs
     ]
 )
 
@@ -183,9 +218,16 @@ content = f"""
           {esc(intro_text)}
         </p>
 
-        <ul style="margin:0 0 0 22px;padding:0;color:#f1f5f9;line-height:1.8;font-size:16px;">
-          {bullets_html}
-        </ul>
+        {paragraphs_html}
+
+        <div style="margin-top:10px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.10);">
+          <div style="margin:0 0 14px 0;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#cbd5e1;text-transform:uppercase;">
+            Főbb heti fejlemények
+          </div>
+          <ul style="margin:0 0 0 22px;padding:0;color:#f1f5f9;line-height:1.8;font-size:16px;">
+            {bullets_html}
+          </ul>
+        </div>
 
       </div>
     </section>

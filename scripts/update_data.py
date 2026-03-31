@@ -30,7 +30,7 @@ CACHE_PATH = os.path.join(DATA_DIR, "geocode_cache.json")
 COUNTRIES_CACHE_PATH = os.path.join(DATA_DIR, "cee_countries.geojson")
 TRUSTED_RSS_PATH = os.path.join(DATA_DIR, "trusted_rss.json")
 
-USER_AGENT = "cee-security-map/5.0 (github actions)"
+USER_AGENT = "cee-security-map/5.1 (github actions)"
 TIMEOUT = 30
 
 # ============================================================
@@ -2055,14 +2055,26 @@ def get_country_scores(
 ) -> Dict[str, Dict[str, float]]:
     stories = (trusted_rss_payload or {}).get("stories") or []
     out: Dict[str, Dict[str, float]] = {}
+
     for country in CEE_COUNTRIES:
         feat_score = country_signal_score_from_features(week_items, country)
         rss_score = country_signal_score_from_rss(stories, country)
+        total = round(feat_score + rss_score, 2)
         out[country] = {
             "feature_score": feat_score,
             "rss_score": rss_score,
-            "total": round(feat_score + rss_score, 2),
+            "total": total,
+            "normalized": 0.0,
         }
+
+    max_total = max((v["total"] for v in out.values()), default=0.0)
+    if max_total <= 0:
+        for country in out:
+            out[country]["normalized"] = 0.0
+    else:
+        for country in out:
+            out[country]["normalized"] = round((out[country]["total"] / max_total) * 10.0, 2)
+
     return out
 
 def dominant_dimensions(stories: List[Dict[str, Any]], country: Optional[str] = None) -> List[str]:
@@ -2122,17 +2134,19 @@ def main_drivers_label(
     if "cyber" in dims:
         drivers.append("kiber- és információs sérülékenységek")
 
-    baltic_total = (
-        country_scores.get("Estonia", {}).get("total", 0.0)
-        + country_scores.get("Latvia", {}).get("total", 0.0)
-        + country_scores.get("Lithuania", {}).get("total", 0.0)
-    )
-    if baltic_total >= 6.0:
+    baltic_avg = (
+        country_scores.get("Estonia", {}).get("normalized", 0.0)
+        + country_scores.get("Latvia", {}).get("normalized", 0.0)
+        + country_scores.get("Lithuania", {}).get("normalized", 0.0)
+    ) / 3.0
+    if baltic_avg >= 5.5:
         drivers.append("balti–orosz kapcsolatrendszer fokozott érzékenysége")
 
-    poland_total = country_scores.get("Poland", {}).get("total", 0.0)
-    romania_total = country_scores.get("Romania", {}).get("total", 0.0)
-    if poland_total + romania_total >= 5.0:
+    eastern_pair_avg = (
+        country_scores.get("Poland", {}).get("normalized", 0.0)
+        + country_scores.get("Romania", {}).get("normalized", 0.0)
+    ) / 2.0
+    if eastern_pair_avg >= 5.0:
         drivers.append("keleti peremterületek tartós biztonságpolitikai terheltsége")
 
     uniq = []
@@ -2173,9 +2187,9 @@ def intro_paragraph(
     )
 
 def country_tone_from_score(score: float) -> str:
-    if score >= 4.0:
+    if score >= 6.5:
         return "romló"
-    if score >= 2.2:
+    if score >= 3.0:
         return "stagnáló"
     return "óvatosan stabilizálódó"
 
@@ -2286,18 +2300,20 @@ def forecast_paragraph(
     top_hotspots: List[Dict[str, Any]],
     trusted_rss_payload: Optional[Dict[str, Any]] = None,
 ) -> str:
-    baltic_total = (
-        country_scores.get("Estonia", {}).get("total", 0.0)
-        + country_scores.get("Latvia", {}).get("total", 0.0)
-        + country_scores.get("Lithuania", {}).get("total", 0.0)
-    )
-    poland_total = country_scores.get("Poland", {}).get("total", 0.0)
-    romania_total = country_scores.get("Romania", {}).get("total", 0.0)
-    hungary_total = country_scores.get("Hungary", {}).get("total", 0.0)
+    baltic_avg = (
+        country_scores.get("Estonia", {}).get("normalized", 0.0)
+        + country_scores.get("Latvia", {}).get("normalized", 0.0)
+        + country_scores.get("Lithuania", {}).get("normalized", 0.0)
+    ) / 3.0
+    eastern_pair_avg = (
+        country_scores.get("Poland", {}).get("normalized", 0.0)
+        + country_scores.get("Romania", {}).get("normalized", 0.0)
+    ) / 2.0
+    hungary_norm = country_scores.get("Hungary", {}).get("normalized", 0.0)
 
-    if baltic_total >= max(poland_total + romania_total, hungary_total):
+    if baltic_avg >= max(eastern_pair_avg, hungary_norm):
         key_issue = "a balti térség és az orosz kapcsolatrendszer alakulása"
-    elif poland_total + romania_total >= hungary_total:
+    elif eastern_pair_avg >= hungary_norm:
         key_issue = "a keleti peremterületek biztonságpolitikai terheltsége"
     else:
         key_issue = "az energia- és belpolitikai sérülékenységek összekapcsolódása"
@@ -2324,6 +2340,7 @@ def methodology_paragraph() -> str:
         "A heti brief nyílt forrású információk strukturált feldolgozásán alapul. "
         "A rendszer GDELT GEO, GDELT export és GDELT crossborder híradatokat, trusted RSS sajtóforrásokat, közvetlen feedeket, valamint USGS és GDACS jelzéseket integrál. "
         "Az események időbeli súlyozással, forrásalapú pontozással, országi jelzésszámmal, térbeli hotspot- és early warning azonosítással kerülnek értékelésre. "
+        "Az országok közötti összehasonlíthatóság érdekében az összesített országscore 0–10-es normalizált skálán is tárolásra kerül. "
         "A kimenet automatizált, indikátor-alapú szöveggenerálással készül, ezért tájékoztató jellegű; a kiemelt állítások esetében továbbra is javasolt a források manuális ellenőrzése és elemzői validálása."
     )
 
@@ -2390,7 +2407,7 @@ def build_weekly(all_features: List[Dict[str, Any]], trusted_rss_payload: Option
         countries.append({
             "country": country,
             "code": country[:2].upper(),
-            "text": make_country_section(country, country_scores.get(country, {}).get("total", 0.0), dims),
+            "text": make_country_section(country, country_scores.get(country, {}).get("normalized", 0.0), dims),
         })
 
     external = external_actors_paragraph(trusted_rss_payload)

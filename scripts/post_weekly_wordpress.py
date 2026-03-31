@@ -46,89 +46,83 @@ def format_list_hu(items):
     return f"{', '.join(items[:-1])} és {items[-1]}"
 
 
-def clean_bullet_text(text: str) -> str:
+def clean_bullet(text: str) -> str:
     if not text:
         return ""
-    cleaned = " ".join(str(text).strip().split())
-    cleaned = cleaned.lstrip("-• ").strip()
-    return cleaned
+    return " ".join(str(text).strip().lstrip("-• ").split())
 
 
-def build_intro(weekly: dict) -> str:
+# ===== NARRATÍV GENERÁLÁS =====
+def build_report(weekly: dict) -> list:
+
+    bullets = [clean_bullet(b) for b in weekly.get("bullets", []) if clean_bullet(b)]
+
     counts = weekly.get("counts", {})
     category_counts = weekly.get("category_counts", {})
     country_counts = weekly.get("country_counts", {})
 
-    total_events = counts.get("total") or counts.get("events") or counts.get("items")
+    total = counts.get("total") or counts.get("events") or counts.get("items")
     top_categories = top_keys(category_counts, 3)
     top_countries = top_keys(country_counts, 3)
 
-    parts = []
-
-    if total_events and top_categories:
-        parts.append(
-            f"Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben {total_events} releváns jelzés került a heti kivonatba, "
-            f"amelyek közül különösen a {format_list_hu(top_categories)} témák rajzolódtak ki hangsúlyosan."
-        )
-    elif top_categories:
-        parts.append(
-            f"Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben elsősorban a {format_list_hu(top_categories)} témák határozták meg a regionális képet."
-        )
-    else:
-        parts.append(
-            "Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben több, egymással párhuzamosan zajló fejlemény rajzolódott ki."
-        )
-
-    if top_countries:
-        parts.append(
-            f"A rendelkezésre álló jelzések alapján a figyelem leginkább {format_list_hu(top_countries)} irányába összpontosult, "
-            f"ami arra utal, hogy ezekben az országokban sűrűsödtek a regionális biztonsági szempontból jelentősebb történések."
-        )
-    else:
-        parts.append(
-            "A heti mintázatok alapján nem egyetlen domináns válsághelyzet, hanem több, különböző területeken jelentkező nyomáspont határozta meg a regionális képet."
-        )
-
-    return " ".join(parts)
-
-
-def build_paragraphs(bullets, chunk_size=2, max_bullets=6):
-    if not bullets:
-        return []
-
-    selected = [clean_bullet_text(b) for b in bullets[:max_bullets] if clean_bullet_text(b)]
-    if not selected:
-        return []
-
     paragraphs = []
-    for i in range(0, len(selected), chunk_size):
-        chunk = selected[i:i + chunk_size]
-        paragraph = " ".join(chunk)
-        if paragraph:
-            paragraphs.append(paragraph)
+
+    # 1. bevezető
+    if total and top_categories:
+        paragraphs.append(
+            f"Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben {total} releváns jelzés került az elemzésbe. "
+            f"A fejlemények közül különösen a {format_list_hu(top_categories)} témák rajzolódtak ki hangsúlyosan, "
+            f"ami arra utal, hogy ezek a területek jelenleg fokozott figyelmet kapnak a regionális diskurzusban."
+        )
+    else:
+        paragraphs.append(
+            "Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben több, egymással párhuzamosan zajló fejlemény rajzolódott ki, "
+            "amelyek együttesen alakították a térség aktuális biztonsági képét."
+        )
+
+    # 2. földrajzi fókusz
+    if top_countries:
+        paragraphs.append(
+            f"A jelzések földrajzi megoszlása alapján a figyelem leginkább {format_list_hu(top_countries)} irányába koncentrálódott. "
+            f"Ez arra utal, hogy ezekben az országokban vagy régiókban sűrűsödtek azok az események és folyamatok, "
+            f"amelyek rövid távon is hatással lehetnek a biztonsági környezet alakulására."
+        )
+
+    # 3. események narratív összefűzése
+    if bullets:
+        selected = bullets[:6]
+
+        combined = " ".join(selected)
+
+        paragraphs.append(
+            f"A heti események részletesebb vizsgálata alapján megállapítható, hogy {combined}. "
+            f"Ezek az események nem elszigetelten értelmezhetők, hanem egy tágabb regionális dinamikába illeszkednek."
+        )
+
+    # 4. értelmezés
+    paragraphs.append(
+        "Összességében a vizsgált időszakban nem egyetlen domináns válsághelyzet határozta meg a térséget, "
+        "hanem több, egymással összefüggő nyomáspont jelent meg. "
+        "A biztonsági környezet továbbra is differenciált képet mutat, ahol a politikai, gazdasági és infrastruktúrális tényezők egyaránt szerepet játszanak."
+    )
+
+    # 5. rövid outlook
+    paragraphs.append(
+        "Rövid távon a jelenlegi trendek fennmaradása valószínűsíthető, különösen azon területeken, ahol a jelzések sűrűsége tartósan magas marad. "
+        "Ez indokolja a régió folyamatos monitorozását és az események kontextusba helyezett értelmezését."
+    )
 
     return paragraphs
 
 
+# ===== LOAD =====
 weekly = load_json(WEEKLY_FILE)
 meta = load_json(META_FILE)
 
-bullets = weekly.get("bullets", [])
 generated = weekly.get("generated_utc") or meta.get("generated_utc") or "-"
 date_label = datetime.now(timezone.utc).strftime("%Y.%m.%d")
 
-intro_text = build_intro(weekly)
-report_paragraphs = build_paragraphs(bullets)
-
-# ===== POST CONTENT =====
-title = f"Közép–Kelet Európa biztonsági helyzet – heti jelentés ({date_label})"
-
-bullets_html = "".join(
-    [
-        f'<li style="margin:0 0 12px 0;text-align:justify;">{esc(b)}</li>'
-        for b in bullets
-    ]
-)
+report_paragraphs = build_report(weekly)
 
 paragraphs_html = "".join(
     [
@@ -137,11 +131,15 @@ paragraphs_html = "".join(
     ]
 )
 
+# ===== TITLE =====
+title = f"Közép–Kelet Európa biztonsági helyzet – heti jelentés ({date_label})"
+
+
+# ===== CONTENT =====
 content = f"""
 <div style="background:#4b5563;padding:40px 20px;">
   <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:22px;">
 
-    <!-- HEADER -->
     <div style="
         background:linear-gradient(135deg,#475569,#334155);
         padding:26px 28px;
@@ -152,112 +150,44 @@ content = f"""
       <div style="font-size:12px;text-transform:uppercase;letter-spacing:1.4px;color:#cbd5e1;">
         CEE Security Monitor
       </div>
-      <div style="font-size:30px;font-weight:700;line-height:1.2;margin-top:8px;">
+      <div style="font-size:30px;font-weight:700;">
         {esc(title)}
       </div>
-      <div style="margin-top:10px;font-size:15px;line-height:1.6;color:#e2e8f0;">
-        Heti automatizált összefoglaló a közép– és kelet-európai biztonsági környezetről.
+      <div style="margin-top:10px;color:#e2e8f0;">
+        Heti automatizált biztonsági elemzés
       </div>
-      <div style="margin-top:12px;font-size:14px;line-height:1.6;color:#cbd5e1;">
+      <div style="margin-top:10px;color:#cbd5e1;">
         <strong>Frissítés:</strong> {esc(generated)}
       </div>
     </div>
 
-    <!-- MÓDSZER -->
-    <section style="margin:0;">
-      <div style="
-          background:#e5e7eb;
-          color:#0f172a;
-          padding:18px 22px;
-          border-radius:16px;
-          box-shadow:0 6px 18px rgba(0,0,0,0.16);
-          margin:0 0 14px 0;
-      ">
-        <div style="font-size:22px;font-weight:700;line-height:1.3;">
-          Módszer
-        </div>
-      </div>
-
-      <div style="
-          background:rgba(255,255,255,0.08);
-          border:1px solid rgba(255,255,255,0.12);
-          border-radius:16px;
-          padding:22px 24px;
-          box-shadow:0 8px 20px rgba(0,0,0,0.12);
-      ">
-        <p style="margin:0;font-size:15px;line-height:1.8;color:#e2e8f0;text-align:justify;">
-          A heti brief nyílt forrású információk strukturált feldolgozásán alapul. Az összesítés célja nem a teljes körű eseménylista megjelenítése, hanem a főbb regionális biztonsági mintázatok, visszatérő témák és geopolitikai jelentőségű trendek kiemelése. Az automatikusan generált összefoglaló ezért tájékozódási és előszűrési célokat szolgál, a források és következtetések kézi ellenőrzése továbbra is indokolt.
-        </p>
-      </div>
-    </section>
-
     <!-- JELENTÉS -->
-    <section style="margin:0;">
-      <div style="
-          background:#e5e7eb;
-          color:#0f172a;
-          padding:18px 22px;
-          border-radius:16px;
-          box-shadow:0 6px 18px rgba(0,0,0,0.16);
-          margin:0 0 14px 0;
-      ">
-        <div style="font-size:22px;font-weight:700;line-height:1.3;">
-          Jelentés
-        </div>
+    <section>
+      <div style="background:#e5e7eb;color:#0f172a;padding:18px;border-radius:16px;">
+        <strong>Jelentés</strong>
       </div>
 
-      <div style="
-          background:rgba(255,255,255,0.08);
-          border:1px solid rgba(255,255,255,0.12);
-          border-radius:16px;
-          padding:22px 24px;
-          box-shadow:0 8px 20px rgba(0,0,0,0.12);
-      ">
-
-        <p style="margin:0 0 16px 0;font-size:16px;line-height:1.8;color:#e2e8f0;text-align:justify;">
-          {esc(intro_text)}
-        </p>
-
+      <div style="background:rgba(255,255,255,0.08);padding:22px;border-radius:16px;">
         {paragraphs_html}
 
-        <div style="margin-top:10px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="margin:0 0 14px 0;font-size:14px;font-weight:700;letter-spacing:0.3px;color:#cbd5e1;text-transform:uppercase;">
-            Főbb heti fejlemények
-          </div>
-          <ul style="margin:0 0 0 22px;padding:0;color:#f1f5f9;line-height:1.8;font-size:16px;">
-            {bullets_html}
-          </ul>
-        </div>
-
+        <p style="margin-top:20px;">
+          <a href="{MAP_URL}" target="_blank" style="color:#93c5fd;font-weight:600;">
+            Projekt megnyitása
+          </a>
+        </p>
       </div>
     </section>
 
-    <!-- PROJEKT -->
-    <section style="margin:0;">
-      <div style="
-          background:#e5e7eb;
-          color:#0f172a;
-          padding:18px 22px;
-          border-radius:16px;
-          box-shadow:0 6px 18px rgba(0,0,0,0.16);
-          margin:0 0 14px 0;
-      ">
-        <div style="font-size:22px;font-weight:700;line-height:1.3;">
-          Projekt
-        </div>
+    <!-- MÓDSZERTAN -->
+    <section>
+      <div style="background:#e5e7eb;color:#0f172a;padding:18px;border-radius:16px;">
+        <strong>Módszertan</strong>
       </div>
 
-      <div style="
-          background:rgba(255,255,255,0.08);
-          border:1px solid rgba(255,255,255,0.12);
-          border-radius:16px;
-          padding:22px 24px;
-          box-shadow:0 8px 20px rgba(0,0,0,0.12);
-      ">
-        <p style="margin:0;font-size:15px;line-height:1.8;color:#e2e8f0;">
-          <a href="{MAP_URL}" target="_blank" rel="noopener noreferrer" style="color:#93c5fd;font-weight:600;text-decoration:none;">
-            Projekt megnyitása
-          </a>
+      <div style="background:rgba(255,255,255,0.08);padding:22px;border-radius:16px;">
+        <p style="color:#e2e8f0;text-align:justify;">
+          A heti jelentés nyílt forrású információk feldolgozásán alapul, és a főbb regionális mintázatok azonosítására fókuszál. 
+          A cél nem az események teljes körű felsorolása, hanem azok értelmezése és kontextusba helyezése.
         </p>
       </div>
     </section>
@@ -267,14 +197,13 @@ content = f"""
 """
 
 
+# ===== PUBLISH =====
 def publish() -> None:
     token = (os.getenv("WPCOM_ACCESS_TOKEN") or "").strip()
     if not token:
         raise SystemExit("ERROR: Missing env var WPCOM_ACCESS_TOKEN")
 
     wordpress_site = (os.getenv("WPCOM_SITE") or DEFAULT_WORDPRESS_SITE).strip()
-    if not wordpress_site:
-        raise SystemExit("ERROR: Missing site (set WPCOM_SITE or DEFAULT_WORDPRESS_SITE)")
 
     url = f"https://public-api.wordpress.com/rest/v1.1/sites/{wordpress_site}/posts/new"
 

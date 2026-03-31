@@ -110,9 +110,15 @@ content = f"""
           padding:22px 24px;
           box-shadow:0 8px 20px rgba(0,0,0,0.12);
       ">
+
+        <p style="margin:0 0 16px 0;font-size:16px;line-height:1.8;color:#e2e8f0;text-align:justify;">
+          Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben több, egymással párhuzamosan zajló fejlemény rajzolódott ki. A rendelkezésre álló jelzések alapján nem egyetlen domináns válsághelyzet, hanem inkább több, különböző területeken jelentkező nyomáspont határozta meg a regionális képet.
+        </p>
+
         <ul style="margin:0 0 0 22px;padding:0;color:#f1f5f9;line-height:1.8;font-size:16px;">
           {bullets_html}
         </ul>
+
       </div>
     </section>
 

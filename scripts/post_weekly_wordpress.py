@@ -17,19 +17,87 @@ def load_json(path: str):
         return json.load(f)
 
 
+def esc(text) -> str:
+    if text is None:
+        return ""
+    return (
+        str(text)
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
+
+
+def top_keys(data, limit=3):
+    if not isinstance(data, dict):
+        return []
+    items = sorted(data.items(), key=lambda x: x[1], reverse=True)
+    return [k for k, _ in items[:limit] if k]
+
+
+def format_list_hu(items):
+    items = [str(x) for x in items if x]
+    if not items:
+        return ""
+    if len(items) == 1:
+        return items[0]
+    if len(items) == 2:
+        return f"{items[0]} és {items[1]}"
+    return f"{', '.join(items[:-1])} és {items[-1]}"
+
+
+def build_intro(weekly: dict) -> str:
+    counts = weekly.get("counts", {})
+    category_counts = weekly.get("category_counts", {})
+    country_counts = weekly.get("country_counts", {})
+
+    total_events = counts.get("total") or counts.get("events") or counts.get("items")
+    top_categories = top_keys(category_counts, 3)
+    top_countries = top_keys(country_counts, 3)
+
+    parts = []
+
+    if total_events and top_categories:
+        parts.append(
+            f"Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben {total_events} releváns jelzés került a heti kivonatba, "
+            f"amelyek közül különösen a {format_list_hu(top_categories)} témák rajzolódtak ki hangsúlyosan."
+        )
+    elif top_categories:
+        parts.append(
+            f"Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben elsősorban a {format_list_hu(top_categories)} témák határozták meg a regionális képet."
+        )
+    else:
+        parts.append(
+            "Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben több, egymással párhuzamosan zajló fejlemény rajzolódott ki."
+        )
+
+    if top_countries:
+        parts.append(
+            f"A rendelkezésre álló jelzések alapján a figyelem leginkább {format_list_hu(top_countries)} irányába összpontosult, "
+            f"ami arra utal, hogy ezekben az országokban sűrűsödtek a regionális biztonsági szempontból jelentősebb történések."
+        )
+    else:
+        parts.append(
+            "A heti mintázatok alapján nem egyetlen domináns válsághelyzet, hanem több, különböző területeken jelentkező nyomáspont határozta meg a regionális képet."
+        )
+
+    return " ".join(parts)
+
+
 weekly = load_json(WEEKLY_FILE)
 meta = load_json(META_FILE)
 
 bullets = weekly.get("bullets", [])
 generated = weekly.get("generated_utc") or meta.get("generated_utc") or "-"
 date_label = datetime.now(timezone.utc).strftime("%Y.%m.%d")
+intro_text = build_intro(weekly)
 
 # ===== POST CONTENT =====
 title = f"Közép–Kelet Európa biztonsági helyzet – heti jelentés ({date_label})"
 
 bullets_html = "".join(
     [
-        f'<li style="margin:0 0 12px 0;text-align:justify;">{b}</li>'
+        f'<li style="margin:0 0 12px 0;text-align:justify;">{esc(b)}</li>'
         for b in bullets
     ]
 )
@@ -50,13 +118,13 @@ content = f"""
         CEE Security Monitor
       </div>
       <div style="font-size:30px;font-weight:700;line-height:1.2;margin-top:8px;">
-        {title}
+        {esc(title)}
       </div>
       <div style="margin-top:10px;font-size:15px;line-height:1.6;color:#e2e8f0;">
         Heti automatizált összefoglaló a közép– és kelet-európai biztonsági környezetről.
       </div>
       <div style="margin-top:12px;font-size:14px;line-height:1.6;color:#cbd5e1;">
-        <strong>Frissítés:</strong> {generated}
+        <strong>Frissítés:</strong> {esc(generated)}
       </div>
     </div>
 
@@ -112,7 +180,7 @@ content = f"""
       ">
 
         <p style="margin:0 0 16px 0;font-size:16px;line-height:1.8;color:#e2e8f0;text-align:justify;">
-          Az elmúlt hétben a közép– és kelet-európai biztonsági környezetben több, egymással párhuzamosan zajló fejlemény rajzolódott ki. A rendelkezésre álló jelzések alapján nem egyetlen domináns válsághelyzet, hanem inkább több, különböző területeken jelentkező nyomáspont határozta meg a regionális képet.
+          {esc(intro_text)}
         </p>
 
         <ul style="margin:0 0 0 22px;padding:0;color:#f1f5f9;line-height:1.8;font-size:16px;">

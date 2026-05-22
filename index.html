@@ -841,7 +841,6 @@
     .ci-digital{ background:#6f62d7; }
     .ci-military{ background:#638a70; }
     .ci-industrial{ background:#c46d3f; }
-    .ci-hazardous{ background:#c46d3f; }
     .ci-other{ background:#8393a3; }
 
     .leaflet-control-zoom a{
@@ -1121,10 +1120,6 @@
             <div class="layer-item">
               <input type="checkbox" id="layerHot" checked>
               <label for="layerHot">hotspot heat</label>
-            </div>
-            <div class="layer-item">
-              <input type="checkbox" id="layerCriticalInfraAll" checked>
-              <label for="layerCriticalInfraAll">kritikus infrastruktúra – összes</label>
             </div>
             <div class="layer-item">
               <input type="checkbox" id="layerCriticalInfraEnergy" checked>
@@ -2074,7 +2069,6 @@
         digital: "digitális infrastruktúra",
         military: "katonai infrastruktúra",
         industrial: "ipari infrastruktúra",
-        hazardous: "víz / vegyipar / veszélyes ipar",
         transport_energy: "energia + közlekedés",
         other: "egyéb"
       };
@@ -2089,7 +2083,7 @@
       if (c.includes("military")) return "★";
       if (s.includes("nuclear")) return "⚛";
       if (c.includes("energy") || s.includes("lng") || s.includes("refinery") || s.includes("petrochemical")) return "⚡";
-      if (c.includes("industrial") || c.includes("hazardous")) return "●";
+      if (c.includes("industrial")) return "●";
       return "•";
     }
 
@@ -2099,7 +2093,7 @@
       if (c.includes("transport")) return "ci-transport";
       if (c.includes("digital")) return "ci-digital";
       if (c.includes("military")) return "ci-military";
-      if (c.includes("industrial") || c.includes("hazardous")) return "ci-hazardous";
+      if (c.includes("industrial")) return "ci-industrial";
       return "ci-other";
     }
 
@@ -2130,66 +2124,58 @@
       `;
     }
 
-    function normalizeCiCategory(item){
-      const text = `${item?.category || ""} ${item?.subtype || ""} ${item?.risk_tags ? item.risk_tags.join(" ") : ""} ${item?.name || ""}`.toLowerCase();
-      if (/military|airbase|air base|base|nato|missile|defence|defense|brigade|training|armed forces|helicopter/.test(text)) return "military";
-      if (/transport|airport|port|seaport|harbour|rail|railway|logistics|terminal|intermodal|corridor|hub/.test(text)) return "transport";
-      if (/energy|nuclear|refinery|oil|gas|lng|power|electric|interconnector|chp|storage|pipeline|petrochemical/.test(text)) return "energy";
-      if (/digital|cyber|data center|internet|exchange/.test(text)) return "digital";
-      if (/hazardous|chemical|industrial|water|waste|dam/.test(text)) return "hazardous";
-      return String(item?.category || "other").toLowerCase();
+    const CRITICAL_INFRA_CATEGORY_LAYER_IDS = {
+      energy: "layerCriticalInfraEnergy",
+      transport: "layerCriticalInfraTransport",
+      military: "layerCriticalInfraMilitary"
+    };
+
+    function normalizeCriticalInfraCategory(item){
+      const c = String(item?.category || "").toLowerCase().trim();
+      const st = String(item?.subtype || "").toLowerCase().trim();
+
+      if (c === "energy" || c === "transport" || c === "military") return c;
+      if (c.includes("energy") || st.includes("refinery") || st.includes("lng") || st.includes("nuclear") || st.includes("gas") || st.includes("power") || st.includes("interconnector")) return "energy";
+      if (c.includes("transport") || st.includes("port") || st.includes("airport") || st.includes("rail") || st.includes("logistics")) return "transport";
+      if (c.includes("military") || st.includes("airbase") || st.includes("base") || st.includes("missile") || st.includes("training")) return "military";
+      return "energy";
     }
 
-    function ciCategoryMatches(item, wanted){
-      if (!wanted) return true;
-      return normalizeCiCategory(item) === wanted;
+    function makeCriticalInfraMarker(item){
+      const lat = Number(item.lat);
+      const lon = Number(item.lon);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+
+      const normalizedCategory = normalizeCriticalInfraCategory(item);
+      const icon = L.divIcon({
+        className: "",
+        html: `<div class="ci-marker ${esc(ciClass(normalizedCategory))}" title="${esc(item.name || "")}">${esc(ciIconSymbol(normalizedCategory, item.subtype))}</div>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15],
+        popupAnchor: [0, -14]
+      });
+
+      const marker = L.marker([lat, lon], { icon, riseOnHover: true });
+      marker.bindPopup(makeCriticalInfraPopup({ ...item, category: normalizedCategory }));
+      return { marker, category: normalizedCategory };
     }
 
-    function makeCriticalInfrastructureLayer(payload, categoryFilter = null){
-      const group = L.layerGroup();
+    function makeCriticalInfrastructureLayers(payload){
+      const groups = {
+        energy: L.layerGroup(),
+        transport: L.layerGroup(),
+        military: L.layerGroup()
+      };
+
       const items = Array.isArray(payload?.items) ? payload.items : [];
-      let added = 0;
-
       for (const item of items){
-        if (!ciCategoryMatches(item, categoryFilter)) continue;
-
-        const lat = Number(item.lat);
-        const lon = Number(item.lon);
-        if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
-
-        const normalizedCategory = normalizeCiCategory(item);
-        const icon = L.divIcon({
-          className: "ci-div-icon",
-          html: `<div class="ci-marker ${esc(ciClass(normalizedCategory))}" title="${esc(item.name || "")}">${esc(ciIconSymbol(normalizedCategory, item.subtype))}</div>`,
-          iconSize: [30, 30],
-          iconAnchor: [15, 15],
-          popupAnchor: [0, -14]
-        });
-
-        const marker = L.marker([lat, lon], { icon, riseOnHover: true, zIndexOffset: 1000 });
-        marker.bindPopup(makeCriticalInfraPopup({ ...item, category: normalizedCategory }));
-        marker.addTo(group);
-        added += 1;
+        const res = makeCriticalInfraMarker(item);
+        if (!res) continue;
+        if (!groups[res.category]) continue;
+        res.marker.addTo(groups[res.category]);
       }
 
-      group._ciCount = added;
-      return group;
-    }
-
-    function setLayerVisible(layer, checked){
-      if (!layer) return;
-      if (checked) {
-        if (!map.hasLayer(layer)) map.addLayer(layer);
-      } else {
-        if (map.hasLayer(layer)) map.removeLayer(layer);
-      }
-    }
-
-    function syncCriticalInfraMasterCheckbox(){
-      const ids = ["layerCriticalInfraEnergy", "layerCriticalInfraTransport", "layerCriticalInfraMilitary"];
-      const master = document.getElementById("layerCriticalInfraAll");
-      if (!master) return;
-      master.checked = ids.every(id => document.getElementById(id)?.checked);
+      return groups;
     }
 
     const layers = {
@@ -2197,9 +2183,7 @@
       countryRisk: null,
       hot: null,
       early: null,
-      criticalInfrastructureEnergy: null,
-      criticalInfrastructureTransport: null,
-      criticalInfrastructureMilitary: null,
+      criticalInfrastructure: { energy: null, transport: null, military: null },
       gdelt: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       gdeltLinked: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       gdeltDoc: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
@@ -2246,8 +2230,8 @@
         <div style="font-weight:800;margin:10px 0 4px;color:#22313d;">Kritikus infrastruktúra</div>
         <div class="row"><span class="dot" style="background:#b78a38"></span><span>Energia</span></div>
         <div class="row"><span class="dot" style="background:#3f8aa0"></span><span>Közlekedés / logisztika</span></div>
-        <div class="row"><span class="dot" style="background:#638a70"></span><span>Katonai</span></div>
         <div class="row"><span class="dot" style="background:#6f62d7"></span><span>Digitális</span></div>
+        <div class="row"><span class="dot" style="background:#638a70"></span><span>Katonai</span></div>
         <div style="margin-top:8px;" class="small">USGS/GDACS szín: frissesség (0–24h → piros).</div>
       `;
       L.DomEvent.disableClickPropagation(div);
@@ -2300,21 +2284,13 @@
       try {
         const ci = await loadJson(`${DATA}/critical_infrastructure.json`);
         DATASETS.criticalInfrastructure = ci;
-        layers.criticalInfrastructureEnergy = makeCriticalInfrastructureLayer(ci, "energy");
-        layers.criticalInfrastructureTransport = makeCriticalInfrastructureLayer(ci, "transport");
-        layers.criticalInfrastructureMilitary = makeCriticalInfrastructureLayer(ci, "military");
-        console.info("critical infrastructure loaded", {
-          total: Array.isArray(ci?.items) ? ci.items.length : 0,
-          energy: layers.criticalInfrastructureEnergy._ciCount,
-          transport: layers.criticalInfrastructureTransport._ciCount,
-          military: layers.criticalInfrastructureMilitary._ciCount
-        });
+        layers.criticalInfrastructure = makeCriticalInfrastructureLayers(ci);
+        const ciCount = Array.isArray(ci?.items) ? ci.items.length : 0;
+        console.info(`Critical infrastructure loaded: ${ciCount} items`);
       } catch (err) {
-        console.warn("critical_infrastructure.json betöltési hiba", err);
+        console.error("Critical infrastructure JSON could not be loaded:", err);
         DATASETS.criticalInfrastructure = { items: [] };
-        layers.criticalInfrastructureEnergy = L.layerGroup();
-        layers.criticalInfrastructureTransport = L.layerGroup();
-        layers.criticalInfrastructureMilitary = L.layerGroup();
+        layers.criticalInfrastructure = makeCriticalInfrastructureLayers(DATASETS.criticalInfrastructure);
       }
 
       const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss] = await Promise.all([
@@ -2354,9 +2330,12 @@
       if (layers.countryRisk) layers.countryRisk.addTo(map);
       if (layers.borders) layers.borders.addTo(map);
       if (layers.hot) layers.hot.addTo(map);
-      setLayerVisible(layers.criticalInfrastructureEnergy, document.getElementById("layerCriticalInfraEnergy")?.checked !== false);
-      setLayerVisible(layers.criticalInfrastructureTransport, document.getElementById("layerCriticalInfraTransport")?.checked !== false);
-      setLayerVisible(layers.criticalInfrastructureMilitary, document.getElementById("layerCriticalInfraMilitary")?.checked !== false);
+      for (const cat of ["energy", "transport", "military"]) {
+        const cb = document.getElementById(CRITICAL_INFRA_CATEGORY_LAYER_IDS[cat]);
+        if (cb?.checked && layers.criticalInfrastructure?.[cat]) {
+          layers.criticalInfrastructure[cat].addTo(map);
+        }
+      }
       layers.gdelt.addTo(map);
 
       document.getElementById('layerBorders').addEventListener('change', (e) => {
@@ -2372,28 +2351,15 @@
         e.target.checked ? map.addLayer(layers.hot) : map.removeLayer(layers.hot);
         document.getElementById('quickToggleHot').classList.toggle('on', e.target.checked);
       });
-      document.getElementById('layerCriticalInfraAll').addEventListener('change', (e) => {
-        const checked = e.target.checked;
-        for (const id of ["layerCriticalInfraEnergy", "layerCriticalInfraTransport", "layerCriticalInfraMilitary"]) {
-          const cb = document.getElementById(id);
-          if (cb) cb.checked = checked;
-        }
-        setLayerVisible(layers.criticalInfrastructureEnergy, checked);
-        setLayerVisible(layers.criticalInfrastructureTransport, checked);
-        setLayerVisible(layers.criticalInfrastructureMilitary, checked);
-      });
-      document.getElementById('layerCriticalInfraEnergy').addEventListener('change', (e) => {
-        setLayerVisible(layers.criticalInfrastructureEnergy, e.target.checked);
-        syncCriticalInfraMasterCheckbox();
-      });
-      document.getElementById('layerCriticalInfraTransport').addEventListener('change', (e) => {
-        setLayerVisible(layers.criticalInfrastructureTransport, e.target.checked);
-        syncCriticalInfraMasterCheckbox();
-      });
-      document.getElementById('layerCriticalInfraMilitary').addEventListener('change', (e) => {
-        setLayerVisible(layers.criticalInfrastructureMilitary, e.target.checked);
-        syncCriticalInfraMasterCheckbox();
-      });
+      for (const cat of ["energy", "transport", "military"]) {
+        const cb = document.getElementById(CRITICAL_INFRA_CATEGORY_LAYER_IDS[cat]);
+        if (!cb) continue;
+        cb.addEventListener("change", (e) => {
+          const layer = layers.criticalInfrastructure?.[cat];
+          if (!layer) return;
+          e.target.checked ? map.addLayer(layer) : map.removeLayer(layer);
+        });
+      }
       document.getElementById('layerEarly').addEventListener('change', (e) => {
         if (!layers.early) return;
         e.target.checked ? map.addLayer(layers.early) : map.removeLayer(layers.early);

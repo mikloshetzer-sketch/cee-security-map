@@ -844,6 +844,52 @@
     .ci-hazardous{ background:#c46d3f; }
     .ci-other{ background:#8393a3; }
 
+    .proximity-marker{
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      color:#ffffff;
+      font-size:14px;
+      font-weight:900;
+      border:2px solid rgba(255,255,255,0.95);
+      box-shadow: 0 8px 18px rgba(25,40,55,0.25);
+    }
+
+    .proximity-critical{ background:#b14c4c; }
+    .proximity-high{ background:#c46d3f; }
+    .proximity-medium{ background:#b78a38; }
+    .proximity-watch{ background:#6d7f90; }
+
+    .proximity-card{
+      padding:10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:white;
+      transition:0.15s ease;
+      cursor:pointer;
+    }
+
+    .proximity-card:hover{
+      background:#f9fbfc;
+      border-color: var(--line-strong);
+    }
+
+    .proximity-card .title{
+      font-size:12px;
+      font-weight:900;
+      color:#22313d;
+      line-height:1.35;
+    }
+
+    .proximity-card .meta{
+      margin-top:5px;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.35;
+    }
+
     .leaflet-control-zoom a{
       background: rgba(255,255,255,0.95) !important;
       color: #25313d !important;
@@ -1143,6 +1189,10 @@
               <label for="layerCriticalInfraHazardous">víz / vegyipar / veszélyes ipar</label>
             </div>
             <div class="layer-item">
+              <input type="checkbox" id="layerInfraProximity" checked>
+              <label for="layerInfraProximity">infrastruktúra-közeli incidensek</label>
+            </div>
+            <div class="layer-item">
               <input type="checkbox" id="layerEarly">
               <label for="layerEarly">early warning</label>
             </div>
@@ -1182,6 +1232,14 @@
         </div>
 
         <div class="section">
+          <h3>Top infrastruktúra-kockázatok</h3>
+          <div class="meta" id="proximityMeta">Betöltés...</div>
+          <div id="proximityList" class="story-list">
+            <div class="story-empty">Betöltés...</div>
+          </div>
+        </div>
+
+        <div class="section">
           <h3>Top hotspotok</h3>
           <ol class="hotlist" id="hotList"></ol>
           <div class="small" style="margin-top:8px;">Kattints a sorra → zoom.</div>
@@ -1202,6 +1260,7 @@
       usgs: null,
       riskDaily: null,
       trustedRss: null,
+      infraProximity: null,
       criticalInfrastructure: null,
       digitalInfrastructure: null,
       hazardousInfrastructure: null
@@ -2198,11 +2257,123 @@
       return groups;
     }
 
+
+
+    function proximityColor(level){
+      const x = String(level || "watch").toLowerCase();
+      if (x === "critical") return "#b14c4c";
+      if (x === "high") return "#c46d3f";
+      if (x === "medium") return "#b78a38";
+      return "#6d7f90";
+    }
+
+    function proximityClass(level){
+      const x = String(level || "watch").toLowerCase();
+      if (["critical", "high", "medium", "watch"].includes(x)) return `proximity-${x}`;
+      return "proximity-watch";
+    }
+
+    function proximityPoint(match){
+      const ev = match?.event || {};
+      const infra = match?.infrastructure || {};
+      const lat = Number(ev.lat ?? infra.lat);
+      const lon = Number(ev.lon ?? infra.lon);
+      if (Number.isFinite(lat) && Number.isFinite(lon)) return [lat, lon];
+      return null;
+    }
+
+    function makeProximityPopup(match){
+      const ev = match?.event || {};
+      const infra = match?.infrastructure || {};
+      const url = ev.url ? `<div style="margin-top:6px;">🔗 <a href="${esc(ev.url)}" target="_blank" rel="noopener">Forrás megnyitása</a></div>` : "";
+      return `
+        <div style="margin-bottom:6px;"><b>${esc(infra.name || "Érintett infrastruktúra")}</b></div>
+        <div><b>Kockázati szint:</b> ${esc(String(match.level || "watch").toUpperCase())}</div>
+        <div><b>Score:</b> ${esc(match.score ?? "—")}</div>
+        <div><b>Távolság:</b> ${esc(match.distance_km ?? "—")} km</div>
+        <div><b>Ország:</b> ${esc(infra.country || "—")}</div>
+        <div><b>Kategória:</b> ${esc(ciCategoryLabel(infra.category))}</div>
+        <div><b>Kritikusság:</b> ${esc(ciCriticalityText(infra.criticality))}</div>
+        <hr style="border:none;border-top:1px solid rgba(34,51,68,0.12);margin:8px 0;">
+        <div><b>Incidens:</b> ${esc(ev.title || "—")}</div>
+        <div><b>Forrás:</b> ${esc(ev.source || ev.source_file || "—")}</div>
+        <div><b>Típus:</b> ${esc(ev.category || "—")}</div>
+        ${url}
+      `;
+    }
+
+    function makeProximityLayer(payload){
+      const group = L.layerGroup();
+      const matches = Array.isArray(payload?.top_matches)
+        ? payload.top_matches
+        : (Array.isArray(payload?.matches) ? payload.matches.slice(0, 50) : []);
+
+      for (const match of matches){
+        const pt = proximityPoint(match);
+        if (!pt) continue;
+        const level = String(match.level || "watch").toLowerCase();
+        const icon = L.divIcon({
+          className: "",
+          html: `<div class="proximity-marker ${esc(proximityClass(level))}" title="${esc(match?.infrastructure?.name || "")}">!</div>`,
+          iconSize: [28, 28],
+          iconAnchor: [14, 14],
+          popupAnchor: [0, -14]
+        });
+        const marker = L.marker(pt, { icon, riseOnHover: true });
+        marker.bindPopup(makeProximityPopup(match));
+        marker.addTo(group);
+      }
+      return group;
+    }
+
+    function renderProximityPanel(payload){
+      const metaEl = document.getElementById("proximityMeta");
+      const listEl = document.getElementById("proximityList");
+      if (!metaEl || !listEl) return;
+
+      const t = fmtBudapest(payload?.meta?.generated_utc);
+      const count = payload?.meta?.match_count ?? 0;
+      metaEl.textContent = t ? `Frissítés (Budapest): ${t.bud} • ${count} kapcsolat` : `${count} kapcsolat`;
+
+      const matches = Array.isArray(payload?.top_matches)
+        ? payload.top_matches.slice(0, 10)
+        : [];
+
+      listEl.innerHTML = "";
+      if (!matches.length){
+        listEl.innerHTML = `<div class="story-empty">Nincs 50 km-en belüli infrastruktúra-közeli incidens.</div>`;
+        return;
+      }
+
+      for (const match of matches){
+        const ev = match.event || {};
+        const infra = match.infrastructure || {};
+        const div = document.createElement("div");
+        div.className = "proximity-card";
+        const level = String(match.level || "watch").toUpperCase();
+        div.innerHTML = `
+          <div class="story-top">
+            <span class="story-source" style="background:${esc(proximityColor(match.level))};color:white;border-color:transparent;">${esc(level)}</span>
+            <span class="story-time">${esc(match.distance_km ?? "—")} km</span>
+          </div>
+          <div class="title">${esc(infra.name || "Ismeretlen infrastruktúra")}</div>
+          <div class="meta">${esc(infra.country || "—")} • ${esc(ciCategoryLabel(infra.category))} • score: ${esc(match.score ?? "—")}</div>
+          <div class="meta"><b>Incidens:</b> ${esc((ev.title || "—").slice(0, 150))}</div>
+        `;
+        div.addEventListener("click", () => {
+          const pt = proximityPoint(match);
+          if (pt) map.setView(pt, 8);
+        });
+        listEl.appendChild(div);
+      }
+    }
+
     const layers = {
       borders: null,
       countryRisk: null,
       hot: null,
       early: null,
+      infraProximity: L.layerGroup(),
       criticalInfrastructure: { energy: null, transport: null, military: null, digital: null, hazardous: null },
       gdelt: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       gdeltLinked: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
@@ -2253,6 +2424,11 @@
         <div class="row"><span class="dot" style="background:#6f62d7"></span><span>Digitális</span></div>
         <div class="row"><span class="dot" style="background:#638a70"></span><span>Katonai</span></div>
         <div class="row"><span class="dot" style="background:#c46d3f"></span><span>Víz / vegyipar / veszélyes ipar</span></div>
+        <div style="font-weight:800;margin:10px 0 4px;color:#22313d;">Infrastruktúra-közeli incidens</div>
+        <div class="row"><span class="dot" style="background:#b14c4c"></span><span>Critical</span></div>
+        <div class="row"><span class="dot" style="background:#c46d3f"></span><span>High</span></div>
+        <div class="row"><span class="dot" style="background:#b78a38"></span><span>Medium</span></div>
+        <div class="row"><span class="dot" style="background:#6d7f90"></span><span>Watch</span></div>
         <div style="margin-top:8px;" class="small">USGS/GDACS szín: frissesség (0–24h → piros).</div>
       `;
       L.DomEvent.disableClickPropagation(div);
@@ -2338,6 +2514,19 @@
         DATASETS.hazardousInfrastructure = { items: [] };
       }
 
+      try {
+        const infraProximity = await loadJson(`${DATA}/infra_proximity.json`);
+        DATASETS.infraProximity = infraProximity;
+        layers.infraProximity = makeProximityLayer(infraProximity);
+        renderProximityPanel(infraProximity);
+        console.info(`Infrastructure proximity loaded: ${infraProximity?.meta?.match_count ?? 0} matches`);
+      } catch (err) {
+        console.error("Infrastructure proximity report could not be loaded:", err);
+        DATASETS.infraProximity = { meta: { match_count: 0 }, top_matches: [] };
+        layers.infraProximity = L.layerGroup();
+        renderProximityPanel(DATASETS.infraProximity);
+      }
+
       const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss] = await Promise.all([
         loadJson(`${DATA}/gdelt.geojson`).catch(()=>null),
         loadJson(`${DATA}/gdelt_linked.geojson`).catch(()=>null),
@@ -2381,6 +2570,7 @@
           layers.criticalInfrastructure[cat].addTo(map);
         }
       }
+      if (document.getElementById("layerInfraProximity")?.checked && layers.infraProximity) layers.infraProximity.addTo(map);
       layers.gdelt.addTo(map);
 
       document.getElementById('layerBorders').addEventListener('change', (e) => {
@@ -2405,6 +2595,10 @@
           e.target.checked ? map.addLayer(layer) : map.removeLayer(layer);
         });
       }
+      document.getElementById('layerInfraProximity')?.addEventListener('change', (e) => {
+        if (!layers.infraProximity) return;
+        e.target.checked ? map.addLayer(layers.infraProximity) : map.removeLayer(layers.infraProximity);
+      });
       document.getElementById('layerEarly').addEventListener('change', (e) => {
         if (!layers.early) return;
         e.target.checked ? map.addLayer(layers.early) : map.removeLayer(layers.early);

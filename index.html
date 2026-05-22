@@ -823,6 +823,26 @@
       flex: 0 0 10px;
     }
 
+    .ci-marker{
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      color:#ffffff;
+      font-size:15px;
+      font-weight:900;
+      border:2px solid rgba(255,255,255,0.95);
+      box-shadow: 0 8px 18px rgba(25,40,55,0.22);
+    }
+
+    .ci-energy{ background:#b78a38; }
+    .ci-transport{ background:#3f8aa0; }
+    .ci-digital{ background:#6f62d7; }
+    .ci-military{ background:#638a70; }
+    .ci-industrial{ background:#c46d3f; }
+    .ci-other{ background:#8393a3; }
+
     .leaflet-control-zoom a{
       background: rgba(255,255,255,0.95) !important;
       color: #25313d !important;
@@ -1102,6 +1122,10 @@
               <label for="layerHot">hotspot heat</label>
             </div>
             <div class="layer-item">
+              <input type="checkbox" id="layerCriticalInfra" checked>
+              <label for="layerCriticalInfra">kritikus infrastruktúra</label>
+            </div>
+            <div class="layer-item">
               <input type="checkbox" id="layerEarly">
               <label for="layerEarly">early warning</label>
             </div>
@@ -1160,7 +1184,8 @@
       gdacs: null,
       usgs: null,
       riskDaily: null,
-      trustedRss: null
+      trustedRss: null,
+      criticalInfrastructure: null
     };
 
     const FILTERS = { newsToday: false, alertsToday: false };
@@ -2028,11 +2053,100 @@
       });
     }
 
+
+    function ciCategoryLabel(category){
+      const m = {
+        energy: "energia",
+        transport: "közlekedés / logisztika",
+        digital: "digitális infrastruktúra",
+        military: "katonai infrastruktúra",
+        industrial: "ipari infrastruktúra",
+        transport_energy: "energia + közlekedés",
+        other: "egyéb"
+      };
+      return m[category] || category || "egyéb";
+    }
+
+    function ciIconSymbol(category, subtype){
+      const c = String(category || "").toLowerCase();
+      const s = String(subtype || "").toLowerCase();
+      if (c.includes("digital") || s.includes("cyber") || s.includes("digital")) return "◆";
+      if (c.includes("transport") || s.includes("port") || s.includes("logistics")) return "⇄";
+      if (c.includes("military")) return "★";
+      if (s.includes("nuclear")) return "⚛";
+      if (c.includes("energy") || s.includes("lng") || s.includes("refinery") || s.includes("petrochemical")) return "⚡";
+      if (c.includes("industrial")) return "●";
+      return "•";
+    }
+
+    function ciClass(category){
+      const c = String(category || "other").toLowerCase();
+      if (c.includes("energy")) return "ci-energy";
+      if (c.includes("transport")) return "ci-transport";
+      if (c.includes("digital")) return "ci-digital";
+      if (c.includes("military")) return "ci-military";
+      if (c.includes("industrial")) return "ci-industrial";
+      return "ci-other";
+    }
+
+    function ciCriticalityText(value){
+      const n = Number(value);
+      if (!Number.isFinite(n)) return "—";
+      if (n >= 9) return `${n}/10 – kiemelt`;
+      if (n >= 7) return `${n}/10 – magas`;
+      if (n >= 5) return `${n}/10 – közepes`;
+      return `${n}/10`;
+    }
+
+    function makeCriticalInfraPopup(item){
+      const tags = Array.isArray(item.risk_tags) && item.risk_tags.length
+        ? `<div style="margin-top:6px;"><b>Risk tagek:</b> ${item.risk_tags.map(esc).join(", ")}</div>`
+        : "";
+      const note = item.note ? `<div class="small" style="margin-top:6px;">${esc(item.note)}</div>` : "";
+      return `
+        <div style="margin-bottom:6px;"><b>${esc(item.name || "Kritikus infrastruktúra")}</b></div>
+        <div><b>Ország:</b> ${esc(item.country || "—")}</div>
+        <div><b>Város:</b> ${esc(item.city || "—")}</div>
+        <div><b>Kategória:</b> ${esc(ciCategoryLabel(item.category))}</div>
+        <div><b>Altípus:</b> ${esc(item.subtype || "—")}</div>
+        <div><b>Üzemeltető:</b> ${esc(item.operator || "—")}</div>
+        <div><b>Kritikusság:</b> ${esc(ciCriticalityText(item.criticality))}</div>
+        ${tags}
+        ${note}
+      `;
+    }
+
+    function makeCriticalInfrastructureLayer(payload){
+      const group = L.layerGroup();
+      const items = Array.isArray(payload?.items) ? payload.items : [];
+
+      for (const item of items){
+        const lat = Number(item.lat);
+        const lon = Number(item.lon);
+        if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+
+        const icon = L.divIcon({
+          className: "",
+          html: `<div class="ci-marker ${esc(ciClass(item.category))}" title="${esc(item.name || "")}">${esc(ciIconSymbol(item.category, item.subtype))}</div>`,
+          iconSize: [30, 30],
+          iconAnchor: [15, 15],
+          popupAnchor: [0, -14]
+        });
+
+        const marker = L.marker([lat, lon], { icon, riseOnHover: true });
+        marker.bindPopup(makeCriticalInfraPopup(item));
+        marker.addTo(group);
+      }
+
+      return group;
+    }
+
     const layers = {
       borders: null,
       countryRisk: null,
       hot: null,
       early: null,
+      criticalInfrastructure: null,
       gdelt: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       gdeltLinked: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       gdeltDoc: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
@@ -2076,6 +2190,10 @@
         ).join("")}
         <div style="font-weight:800;margin:10px 0 4px;color:#22313d;">RSS trusted</div>
         <div class="row"><span class="dot" style="background:#4f819b"></span><span>Trusted story marker</span></div>
+        <div style="font-weight:800;margin:10px 0 4px;color:#22313d;">Kritikus infrastruktúra</div>
+        <div class="row"><span class="dot" style="background:#b78a38"></span><span>Energia</span></div>
+        <div class="row"><span class="dot" style="background:#3f8aa0"></span><span>Közlekedés / logisztika</span></div>
+        <div class="row"><span class="dot" style="background:#6f62d7"></span><span>Digitális</span></div>
         <div style="margin-top:8px;" class="small">USGS/GDACS szín: frissesség (0–24h → piros).</div>
       `;
       L.DomEvent.disableClickPropagation(div);
@@ -2125,6 +2243,14 @@
       }
       try { layers.hot = await loadHotspotsHeat(`${DATA}/hotspots.geojson`); } catch {}
       try { layers.early = await loadEarly(`${DATA}/early.geojson`); } catch {}
+      try {
+        const ci = await loadJson(`${DATA}/critical_infrastructure.json`);
+        DATASETS.criticalInfrastructure = ci;
+        layers.criticalInfrastructure = makeCriticalInfrastructureLayer(ci);
+      } catch {
+        DATASETS.criticalInfrastructure = { items: [] };
+        layers.criticalInfrastructure = L.layerGroup();
+      }
 
       const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss] = await Promise.all([
         loadJson(`${DATA}/gdelt.geojson`).catch(()=>null),
@@ -2163,6 +2289,7 @@
       if (layers.countryRisk) layers.countryRisk.addTo(map);
       if (layers.borders) layers.borders.addTo(map);
       if (layers.hot) layers.hot.addTo(map);
+      if (layers.criticalInfrastructure) layers.criticalInfrastructure.addTo(map);
       layers.gdelt.addTo(map);
 
       document.getElementById('layerBorders').addEventListener('change', (e) => {
@@ -2177,6 +2304,10 @@
         if (!layers.hot) return;
         e.target.checked ? map.addLayer(layers.hot) : map.removeLayer(layers.hot);
         document.getElementById('quickToggleHot').classList.toggle('on', e.target.checked);
+      });
+      document.getElementById('layerCriticalInfra').addEventListener('change', (e) => {
+        if (!layers.criticalInfrastructure) return;
+        e.target.checked ? map.addLayer(layers.criticalInfrastructure) : map.removeLayer(layers.criticalInfrastructure);
       });
       document.getElementById('layerEarly').addEventListener('change', (e) => {
         if (!layers.early) return;

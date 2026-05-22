@@ -841,15 +841,7 @@
     .ci-digital{ background:#6f62d7; }
     .ci-military{ background:#638a70; }
     .ci-industrial{ background:#c46d3f; }
-    .ci-hazardous{ background:#c46d3f; }
     .ci-other{ background:#8393a3; }
-
-    .layer-item.sub-layer{
-      margin-left: 24px;
-      padding-left: 12px;
-      border-style: dashed;
-      background: #f9fbfc;
-    }
 
     .leaflet-control-zoom a{
       background: rgba(255,255,255,0.95) !important;
@@ -1133,15 +1125,15 @@
               <input type="checkbox" id="layerCriticalInfraAll" checked>
               <label for="layerCriticalInfraAll">kritikus infrastruktúra – összes</label>
             </div>
-            <div class="layer-item sub-layer">
+            <div class="layer-item">
               <input type="checkbox" id="layerCriticalInfraEnergy" checked>
               <label for="layerCriticalInfraEnergy">energia infrastruktúra</label>
             </div>
-            <div class="layer-item sub-layer">
+            <div class="layer-item">
               <input type="checkbox" id="layerCriticalInfraTransport" checked>
               <label for="layerCriticalInfraTransport">közlekedési infrastruktúra</label>
             </div>
-            <div class="layer-item sub-layer">
+            <div class="layer-item">
               <input type="checkbox" id="layerCriticalInfraMilitary" checked>
               <label for="layerCriticalInfraMilitary">katonai infrastruktúra</label>
             </div>
@@ -2081,7 +2073,6 @@
         digital: "digitális infrastruktúra",
         military: "katonai infrastruktúra",
         industrial: "ipari infrastruktúra",
-        hazardous: "víz / vegyipar / veszélyes ipar",
         transport_energy: "energia + közlekedés",
         other: "egyéb"
       };
@@ -2096,7 +2087,6 @@
       if (c.includes("military")) return "★";
       if (s.includes("nuclear")) return "⚛";
       if (c.includes("energy") || s.includes("lng") || s.includes("refinery") || s.includes("petrochemical")) return "⚡";
-      if (c.includes("hazardous") || s.includes("chemical") || s.includes("water")) return "●";
       if (c.includes("industrial")) return "●";
       return "•";
     }
@@ -2107,7 +2097,6 @@
       if (c.includes("transport")) return "ci-transport";
       if (c.includes("digital")) return "ci-digital";
       if (c.includes("military")) return "ci-military";
-      if (c.includes("hazardous")) return "ci-hazardous";
       if (c.includes("industrial")) return "ci-industrial";
       return "ci-other";
     }
@@ -2139,14 +2128,33 @@
       `;
     }
 
+    function criticalInfraCategoryMatches(item, categoryFilter){
+      const wanted = String(categoryFilter || "").toLowerCase();
+      if (!wanted) return true;
+
+      const category = String(item?.category || "").toLowerCase();
+      const subtype = String(item?.subtype || "").toLowerCase();
+      const tags = Array.isArray(item?.risk_tags) ? item.risk_tags.map(x => String(x).toLowerCase()) : [];
+      const haystack = [category, subtype, ...tags].join(" ");
+
+      if (wanted === "energy") {
+        return category === "energy" || /energy|nuclear|refinery|oil|gas|lng|power|electric|interconnector|chp/.test(haystack);
+      }
+      if (wanted === "transport") {
+        return category === "transport" || /transport|port|airport|rail|logistics|terminal|hub/.test(haystack);
+      }
+      if (wanted === "military") {
+        return category === "military" || /military|airbase|base|nato|missile|defence|defense|training/.test(haystack);
+      }
+      return category === wanted;
+    }
+
     function makeCriticalInfrastructureLayer(payload, categoryFilter = null){
       const group = L.layerGroup();
       const items = Array.isArray(payload?.items) ? payload.items : [];
-      const wanted = categoryFilter ? String(categoryFilter).toLowerCase() : null;
 
       for (const item of items){
-        const category = String(item.category || "other").toLowerCase();
-        if (wanted && category !== wanted) continue;
+        if (!criticalInfraCategoryMatches(item, categoryFilter)) continue;
 
         const lat = Number(item.lat);
         const lon = Number(item.lon);
@@ -2170,9 +2178,9 @@
 
     function syncCriticalInfraMasterCheckbox(){
       const ids = ["layerCriticalInfraEnergy", "layerCriticalInfraTransport", "layerCriticalInfraMilitary"];
-      const allChecked = ids.every(id => document.getElementById(id)?.checked);
       const master = document.getElementById("layerCriticalInfraAll");
-      if (master) master.checked = allChecked;
+      if (!master) return;
+      master.checked = ids.every(id => document.getElementById(id)?.checked);
     }
 
     function toggleCriticalInfraLayer(layerKey, checked){
@@ -2236,7 +2244,7 @@
         <div style="font-weight:800;margin:10px 0 4px;color:#22313d;">Kritikus infrastruktúra</div>
         <div class="row"><span class="dot" style="background:#b78a38"></span><span>Energia</span></div>
         <div class="row"><span class="dot" style="background:#3f8aa0"></span><span>Közlekedés / logisztika</span></div>
-        <div class="row"><span class="dot" style="background:#638a70"></span><span>Katonai</span></div>
+        <div class="row"><span class="dot" style="background:#6f62d7"></span><span>Digitális</span></div>
         <div style="margin-top:8px;" class="small">USGS/GDACS szín: frissesség (0–24h → piros).</div>
       `;
       L.DomEvent.disableClickPropagation(div);
@@ -2292,7 +2300,8 @@
         layers.criticalInfrastructureEnergy = makeCriticalInfrastructureLayer(ci, "energy");
         layers.criticalInfrastructureTransport = makeCriticalInfrastructureLayer(ci, "transport");
         layers.criticalInfrastructureMilitary = makeCriticalInfrastructureLayer(ci, "military");
-      } catch {
+      } catch (err) {
+        console.warn("critical_infrastructure.json betöltési hiba", err);
         DATASETS.criticalInfrastructure = { items: [] };
         layers.criticalInfrastructureEnergy = L.layerGroup();
         layers.criticalInfrastructureTransport = L.layerGroup();
@@ -2364,15 +2373,12 @@
         toggleCriticalInfraLayer("criticalInfrastructureTransport", checked);
         toggleCriticalInfraLayer("criticalInfrastructureMilitary", checked);
       });
-
       document.getElementById('layerCriticalInfraEnergy').addEventListener('change', (e) => {
         toggleCriticalInfraLayer("criticalInfrastructureEnergy", e.target.checked);
       });
-
       document.getElementById('layerCriticalInfraTransport').addEventListener('change', (e) => {
         toggleCriticalInfraLayer("criticalInfrastructureTransport", e.target.checked);
       });
-
       document.getElementById('layerCriticalInfraMilitary').addEventListener('change', (e) => {
         toggleCriticalInfraLayer("criticalInfrastructureMilitary", e.target.checked);
       });

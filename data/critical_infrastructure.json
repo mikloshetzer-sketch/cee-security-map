@@ -1,0 +1,252 @@
+{
+  "meta": {
+    "name": "CEE Critical Infrastructure Layer",
+    "version": "1.0",
+    "description": "Strategic critical infrastructure database for the CEE Security Map.",
+    "last_updated": "2026-05-22",
+    "countries": [
+      "Hungary",
+      "Romania",
+      "Slovakia",
+      "Czechia",
+      "Poland",
+      "Lithuania",
+      "Latvia",
+      "Estonia"
+    ]
+  },
+
+  "items": [
+
+    {
+      "id": "hu-mol-szazhalombatta",
+      "name": "MOL Danube Refinery",
+      "country": "Hungary",
+      "city": "Százhalombatta",
+      "lat": 47.316,
+      "lon": 18.914,
+      "category": "energy",
+      "subtype": "oil_refinery",
+      "criticality": 10,
+      "operator": "MOL Group",
+      "risk_tags": [
+        "oil",
+        "fuel_supply",
+        "critical_infrastructure"
+      ]
+    },
+
+    {
+      "id": "hu-mol-tiszaujvaros",
+      "name": "MOL Tiszaújváros",
+      "country": "Hungary",
+      "city": "Tiszaújváros",
+      "lat": 47.933,
+      "lon": 21.050,
+      "category": "energy",
+      "subtype": "petrochemical_complex",
+      "criticality": 9,
+      "operator": "MOL Group",
+      "risk_tags": [
+        "petrochemical",
+        "industrial",
+        "strategic"
+      ]
+    },
+
+    {
+      "id": "hu-paks",
+      "name": "Paks Nuclear Power Plant",
+      "country": "Hungary",
+      "city": "Paks",
+      "lat": 46.572,
+      "lon": 18.854,
+      "category": "energy",
+      "subtype": "nuclear_power_plant",
+      "criticality": 10,
+      "operator": "MVM",
+      "risk_tags": [
+        "nuclear",
+        "electricity",
+        "strategic_energy"
+      ]
+    },
+
+
+
+    {
+      "id": "ro-cernavoda",
+      "name": "Cernavodă Nuclear Power Plant",
+      "country": "Romania",
+      "city": "Cernavodă",
+      "lat": 44.322,
+      "lon": 28.057,
+      "category": "energy",
+      "subtype": "nuclear_power_plant",
+      "criticality": 10,
+      "operator": "Nuclearelectrica",
+      "risk_tags": [
+        "nuclear",
+        "electricity",
+        "strategic_energy"
+      ]
+    },
+
+    {
+      "id": "ro-constanta-port",
+      "name": "Port of Constanța",
+      "country": "Romania",
+      "city": "Constanța",
+      "lat": 44.173,
+      "lon": 28.638,
+      "category": "transport",
+      "subtype": "seaport",
+      "criticality": 9,
+      "operator": "Port Authority",
+      "risk_tags": [
+        "logistics",
+        "black_sea",
+        "grain_corridor",
+        "strategic_transport"
+      ]
+    },
+
+
+
+    {
+      "id": "sk-slovnaft",
+      "name": "Slovnaft Refinery",
+      "country": "Slovakia",
+      "city": "Bratislava",
+      "lat": 48.129,
+      "lon": 17.185,
+      "category": "energy",
+      "subtype": "oil_refinery",
+      "criticality": 9,
+      "operator": "Slovnaft / MOL Group",
+      "risk_tags": [
+        "oil",
+        "fuel_supply"
+      ]
+    },
+
+
+
+    {
+      "id": "cz-litvinov",
+      "name": "Litvínov Refinery",
+      "country": "Czechia",
+      "city": "Litvínov",
+      "lat": 50.604,
+      "lon": 13.618,
+      "category": "energy",
+      "subtype": "oil_refinery",
+      "criticality": 8,
+      "operator": "ORLEN Unipetrol",
+      "risk_tags": [
+        "oil",
+        "petrochemical"
+      ]
+    },
+
+
+
+    {
+      "id": "pl-plock",
+      "name": "Płock Refinery",
+      "country": "Poland",
+      "city": "Płock",
+      "lat": 52.576,
+      "lon": 19.701,
+      "category": "energy",
+      "subtype": "oil_refinery",
+      "criticality": 10,
+      "operator": "ORLEN",
+      "risk_tags": [
+        "oil",
+        "fuel_supply",
+        "strategic_energy"
+      ]
+    },
+
+    {
+      "id": "pl-swinoujscie",
+      "name": "Świnoujście LNG Terminal",
+      "country": "Poland",
+      "city": "Świnoujście",
+      "lat": 53.910,
+      "lon": 14.286,
+      "category": "energy",
+      "subtype": "lng_terminal",
+      "criticality": 10,
+      "operator": "Gaz-System",
+      "risk_tags": [
+        "lng",
+        "gas_supply",
+        "energy_security"
+      ]
+    },
+
+
+
+    {
+      "id": "lt-klaipeda-lng",
+      "name": "Klaipėda LNG Terminal",
+      "country": "Lithuania",
+      "city": "Klaipėda",
+      "lat": 55.706,
+      "lon": 21.127,
+      "category": "energy",
+      "subtype": "lng_terminal",
+      "criticality": 10,
+      "operator": "KN Energies",
+      "risk_tags": [
+        "lng",
+        "baltic_energy",
+        "energy_security"
+      ]
+    },
+
+
+
+    {
+      "id": "lv-riga-logistics",
+      "name": "Riga Logistics Hub",
+      "country": "Latvia",
+      "city": "Riga",
+      "lat": 56.949,
+      "lon": 24.105,
+      "category": "transport",
+      "subtype": "logistics_hub",
+      "criticality": 7,
+      "operator": "Port / Logistics Operators",
+      "risk_tags": [
+        "logistics",
+        "supply_chain",
+        "baltic_corridor"
+      ]
+    },
+
+
+
+    {
+      "id": "ee-tallinn-digital",
+      "name": "Tallinn Digital Infrastructure Hub",
+      "country": "Estonia",
+      "city": "Tallinn",
+      "lat": 59.437,
+      "lon": 24.753,
+      "category": "digital",
+      "subtype": "cyber_digital_hub",
+      "criticality": 9,
+      "operator": "Multiple",
+      "risk_tags": [
+        "cyber",
+        "digital",
+        "e_government",
+        "nato_cyber"
+      ]
+    }
+
+  ]
+}

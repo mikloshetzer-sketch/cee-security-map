@@ -32,6 +32,14 @@ jobs:
         run: |
           python scripts/update_data.py
 
+      - name: Fetch local media events
+        run: |
+          python scripts/fetch_local_sources.py
+
+      - name: Build infrastructure proximity report
+        run: |
+          python scripts/build_infra_proximity.py
+
       - name: Commit & push if changed
         run: |
           git config user.name "cee-bot"

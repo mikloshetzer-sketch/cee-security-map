@@ -841,6 +841,7 @@
     .ci-digital{ background:#6f62d7; }
     .ci-military{ background:#638a70; }
     .ci-industrial{ background:#c46d3f; }
+    .ci-hazardous{ background:#c46d3f; }
     .ci-other{ background:#8393a3; }
 
     .leaflet-control-zoom a{
@@ -1134,6 +1135,14 @@
               <label for="layerCriticalInfraMilitary">katonai infrastruktúra</label>
             </div>
             <div class="layer-item">
+              <input type="checkbox" id="layerCriticalInfraDigital" checked>
+              <label for="layerCriticalInfraDigital">digitális infrastruktúra</label>
+            </div>
+            <div class="layer-item">
+              <input type="checkbox" id="layerCriticalInfraHazardous" checked>
+              <label for="layerCriticalInfraHazardous">víz / vegyipar / veszélyes ipar</label>
+            </div>
+            <div class="layer-item">
               <input type="checkbox" id="layerEarly">
               <label for="layerEarly">early warning</label>
             </div>
@@ -1193,7 +1202,9 @@
       usgs: null,
       riskDaily: null,
       trustedRss: null,
-      criticalInfrastructure: null
+      criticalInfrastructure: null,
+      digitalInfrastructure: null,
+      hazardousInfrastructure: null
     };
 
     const FILTERS = { newsToday: false, alertsToday: false };
@@ -2069,6 +2080,7 @@
         digital: "digitális infrastruktúra",
         military: "katonai infrastruktúra",
         industrial: "ipari infrastruktúra",
+        hazardous: "víz / vegyipar / veszélyes ipar",
         transport_energy: "energia + közlekedés",
         other: "egyéb"
       };
@@ -2082,6 +2094,7 @@
       if (c.includes("transport") || s.includes("port") || s.includes("logistics")) return "⇄";
       if (c.includes("military")) return "★";
       if (s.includes("nuclear")) return "⚛";
+      if (c.includes("hazardous") || c.includes("industrial") || s.includes("chemical") || s.includes("water") || s.includes("fuel_storage") || s.includes("oil_shale")) return "●";
       if (c.includes("energy") || s.includes("lng") || s.includes("refinery") || s.includes("petrochemical")) return "⚡";
       if (c.includes("industrial")) return "●";
       return "•";
@@ -2093,6 +2106,7 @@
       if (c.includes("transport")) return "ci-transport";
       if (c.includes("digital")) return "ci-digital";
       if (c.includes("military")) return "ci-military";
+      if (c.includes("hazardous")) return "ci-hazardous";
       if (c.includes("industrial")) return "ci-industrial";
       return "ci-other";
     }
@@ -2127,14 +2141,18 @@
     const CRITICAL_INFRA_CATEGORY_LAYER_IDS = {
       energy: "layerCriticalInfraEnergy",
       transport: "layerCriticalInfraTransport",
-      military: "layerCriticalInfraMilitary"
+      military: "layerCriticalInfraMilitary",
+      digital: "layerCriticalInfraDigital",
+      hazardous: "layerCriticalInfraHazardous"
     };
 
     function normalizeCriticalInfraCategory(item){
       const c = String(item?.category || "").toLowerCase().trim();
       const st = String(item?.subtype || "").toLowerCase().trim();
 
-      if (c === "energy" || c === "transport" || c === "military") return c;
+      if (c === "energy" || c === "transport" || c === "military" || c === "digital" || c === "hazardous") return c;
+      if (c.includes("digital") || st.includes("internet") || st.includes("data_center") || st.includes("cyber") || st.includes("digital")) return "digital";
+      if (c.includes("hazardous") || c.includes("industrial") || st.includes("chemical") || st.includes("water") || st.includes("fuel_storage") || st.includes("oil_shale") || st.includes("heavy_industry")) return "hazardous";
       if (c.includes("energy") || st.includes("refinery") || st.includes("lng") || st.includes("nuclear") || st.includes("gas") || st.includes("power") || st.includes("interconnector")) return "energy";
       if (c.includes("transport") || st.includes("port") || st.includes("airport") || st.includes("rail") || st.includes("logistics")) return "transport";
       if (c.includes("military") || st.includes("airbase") || st.includes("base") || st.includes("missile") || st.includes("training")) return "military";
@@ -2164,7 +2182,9 @@
       const groups = {
         energy: L.layerGroup(),
         transport: L.layerGroup(),
-        military: L.layerGroup()
+        military: L.layerGroup(),
+        digital: L.layerGroup(),
+        hazardous: L.layerGroup()
       };
 
       const items = Array.isArray(payload?.items) ? payload.items : [];
@@ -2183,7 +2203,7 @@
       countryRisk: null,
       hot: null,
       early: null,
-      criticalInfrastructure: { energy: null, transport: null, military: null },
+      criticalInfrastructure: { energy: null, transport: null, military: null, digital: null, hazardous: null },
       gdelt: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       gdeltLinked: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       gdeltDoc: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
@@ -2232,6 +2252,7 @@
         <div class="row"><span class="dot" style="background:#3f8aa0"></span><span>Közlekedés / logisztika</span></div>
         <div class="row"><span class="dot" style="background:#6f62d7"></span><span>Digitális</span></div>
         <div class="row"><span class="dot" style="background:#638a70"></span><span>Katonai</span></div>
+        <div class="row"><span class="dot" style="background:#c46d3f"></span><span>Víz / vegyipar / veszélyes ipar</span></div>
         <div style="margin-top:8px;" class="small">USGS/GDACS szín: frissesség (0–24h → piros).</div>
       `;
       L.DomEvent.disableClickPropagation(div);
@@ -2293,6 +2314,30 @@
         layers.criticalInfrastructure = makeCriticalInfrastructureLayers(DATASETS.criticalInfrastructure);
       }
 
+      try {
+        const digitalCi = await loadJson(`${DATA}/infra_digital.json`);
+        DATASETS.digitalInfrastructure = digitalCi;
+        const digitalLayers = makeCriticalInfrastructureLayers(digitalCi);
+        digitalLayers.digital.eachLayer(layer => layer.addTo(layers.criticalInfrastructure.digital));
+        const digitalCount = Array.isArray(digitalCi?.items) ? digitalCi.items.length : 0;
+        console.info(`Digital infrastructure loaded: ${digitalCount} items`);
+      } catch (err) {
+        console.error("Digital infrastructure JSON could not be loaded:", err);
+        DATASETS.digitalInfrastructure = { items: [] };
+      }
+
+      try {
+        const hazardousCi = await loadJson(`${DATA}/infra_hazardous.json`);
+        DATASETS.hazardousInfrastructure = hazardousCi;
+        const hazardousLayers = makeCriticalInfrastructureLayers(hazardousCi);
+        hazardousLayers.hazardous.eachLayer(layer => layer.addTo(layers.criticalInfrastructure.hazardous));
+        const hazardousCount = Array.isArray(hazardousCi?.items) ? hazardousCi.items.length : 0;
+        console.info(`Hazardous infrastructure loaded: ${hazardousCount} items`);
+      } catch (err) {
+        console.error("Hazardous infrastructure JSON could not be loaded:", err);
+        DATASETS.hazardousInfrastructure = { items: [] };
+      }
+
       const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss] = await Promise.all([
         loadJson(`${DATA}/gdelt.geojson`).catch(()=>null),
         loadJson(`${DATA}/gdelt_linked.geojson`).catch(()=>null),
@@ -2330,7 +2375,7 @@
       if (layers.countryRisk) layers.countryRisk.addTo(map);
       if (layers.borders) layers.borders.addTo(map);
       if (layers.hot) layers.hot.addTo(map);
-      for (const cat of ["energy", "transport", "military"]) {
+      for (const cat of ["energy", "transport", "military", "digital", "hazardous"]) {
         const cb = document.getElementById(CRITICAL_INFRA_CATEGORY_LAYER_IDS[cat]);
         if (cb?.checked && layers.criticalInfrastructure?.[cat]) {
           layers.criticalInfrastructure[cat].addTo(map);
@@ -2351,7 +2396,7 @@
         e.target.checked ? map.addLayer(layers.hot) : map.removeLayer(layers.hot);
         document.getElementById('quickToggleHot').classList.toggle('on', e.target.checked);
       });
-      for (const cat of ["energy", "transport", "military"]) {
+      for (const cat of ["energy", "transport", "military", "digital", "hazardous"]) {
         const cb = document.getElementById(CRITICAL_INFRA_CATEGORY_LAYER_IDS[cat]);
         if (!cb) continue;
         cb.addEventListener("change", (e) => {

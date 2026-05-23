@@ -51,7 +51,7 @@ def esc(value):
 
 def risk_class(level):
     level = str(level or "normal").lower()
-    if level in {"critical", "tense", "elevated", "normal"}:
+    if level in {"critical", "tense", "elevated", "normal", "high", "medium", "watch"}:
         return level
     return "normal"
 
@@ -93,17 +93,14 @@ def build_report():
 
     matches = infra.get("matches", [])
     top_prox = sorted(matches, key=lambda x: x.get("score", 0), reverse=True)[:12]
-
     local = local_events.get("features", [])[:12]
 
     region_counter = Counter()
     for c in countries_sorted:
         region_counter[country_region(c.get("country"))] += c.get("overall_score", 0)
 
-    generated = utc_now().isoformat()
-
     return {
-        "generated_utc": generated,
+        "generated_utc": utc_now().isoformat(),
         "headline": "CEE Infrastructure & Security Daily Brief",
         "region": risk.get("region", {}),
         "top_countries": countries_sorted[:8],
@@ -237,7 +234,6 @@ def html_region_dashboard(report):
 
 def build_html(report):
     region = report.get("region", {})
-    overall = risk_class(region.get("overall"))
     generated = report.get("generated_utc", "")
     today = utc_now().strftime("%Y-%m-%d")
 
@@ -571,12 +567,143 @@ body {{
 }}
 
 .level-pill.critical {{ background:#fee2e2; color:#991b1b; }}
-.level-pill.tense,
 .level-pill.high {{ background:#ffedd5; color:#9a3412; }}
-.level-pill.elevated,
 .level-pill.medium {{ background:#fef3c7; color:#92400e; }}
-.level-pill.normal,
 .level-pill.watch {{ background:#dcfce7; color:#166534; }}
+
+.visual-dashboard {{
+  margin-top:34px;
+  background:
+    radial-gradient(circle at top right, rgba(37,99,235,0.20), transparent 28%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color:white;
+  border-radius:26px;
+  padding:34px;
+  box-shadow:0 20px 50px rgba(15,23,42,0.25);
+}}
+
+.vd-header {{
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:flex-start;
+  margin-bottom:26px;
+}}
+
+.vd-kicker {{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:0.12em;
+  color:#93c5fd;
+}}
+
+.visual-dashboard h2 {{
+  margin:6px 0 8px;
+  font-size:36px;
+  line-height:1.05;
+}}
+
+.visual-dashboard p {{
+  margin:0;
+  color:#cbd5e1;
+  max-width:760px;
+}}
+
+.vd-date {{
+  background:rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:14px 18px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  white-space:nowrap;
+}}
+
+.vd-grid {{
+  display:grid;
+  grid-template-columns:1.4fr repeat(3, 1fr);
+  gap:16px;
+}}
+
+.vd-main,
+.vd-card,
+.vd-wide {{
+  background:rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:18px;
+  padding:20px;
+}}
+
+.vd-main {{
+  grid-row:span 2;
+}}
+
+.vd-label {{
+  color:#cbd5e1;
+  text-transform:uppercase;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:0.08em;
+}}
+
+.vd-big {{
+  font-size:52px;
+  font-weight:900;
+  margin-top:12px;
+}}
+
+.vd-sub {{
+  color:#cbd5e1;
+  font-size:14px;
+  margin-top:8px;
+}}
+
+.vd-number {{
+  font-size:34px;
+  font-weight:900;
+}}
+
+.vd-text {{
+  margin-top:8px;
+  color:#dbeafe;
+  font-size:14px;
+}}
+
+.vd-card.red {{ border-top:5px solid #ef4444; }}
+.vd-card.orange {{ border-top:5px solid #f97316; }}
+.vd-card.blue {{ border-top:5px solid #3b82f6; }}
+.vd-card.green {{ border-top:5px solid #22c55e; }}
+
+.vd-wide {{
+  grid-column:span 3;
+}}
+
+.vd-sector {{
+  font-size:34px;
+  font-weight:900;
+  margin-top:10px;
+}}
+
+.vd-regions {{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}}
+
+.visual-dashboard .region-card {{
+  box-shadow:none;
+}}
+
+.vd-footer {{
+  margin-top:20px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,0.18);
+  display:flex;
+  justify-content:space-between;
+  color:#cbd5e1;
+  font-size:13px;
+}}
 
 .footer {{
   margin-top:44px;
@@ -607,8 +734,22 @@ body {{
   .kpi-grid,
   .country-grid,
   .region-grid,
-  .card-grid {{
+  .card-grid,
+  .vd-grid,
+  .vd-regions {{
     grid-template-columns:1fr;
+  }}
+
+  .vd-main,
+  .vd-wide {{
+    grid-column:auto;
+    grid-row:auto;
+  }}
+
+  .vd-header,
+  .footer,
+  .vd-footer {{
+    flex-direction:column;
   }}
 }}
 </style>
@@ -702,6 +843,60 @@ body {{
       <h2>Heti trendjelzések</h2>
       <div class="summary-box">
         <ul>{weekly_items or "<li>Nincs elérhető heti trendjelzés.</li>"}</ul>
+      </div>
+    </section>
+
+    <section class="visual-dashboard">
+      <div class="vd-header">
+        <div>
+          <div class="vd-kicker">BLOG VISUAL DASHBOARD</div>
+          <h2>CEE Security & Infrastructure Snapshot</h2>
+          <p>Napi régiós kockázati kép kritikus infrastruktúra, lokális események és OSINT-jelzések alapján.</p>
+        </div>
+        <div class="vd-date">{esc(today)}</div>
+      </div>
+
+      <div class="vd-grid">
+        <div class="vd-main">
+          <div class="vd-label">Régiós állapot</div>
+          <div class="vd-big">{esc(str(region.get("overall", "normal")).upper())}</div>
+          <div class="vd-sub">Regional score: {round(region.get("overall_score", 0), 2)}</div>
+        </div>
+
+        <div class="vd-card red">
+          <div class="vd-number">{critical_count}</div>
+          <div class="vd-text">kritikus infrastruktúra alert</div>
+        </div>
+
+        <div class="vd-card orange">
+          <div class="vd-number">{high_count}</div>
+          <div class="vd-text">magas szintű kapcsolat</div>
+        </div>
+
+        <div class="vd-card blue">
+          <div class="vd-number">{local_count}</div>
+          <div class="vd-text">kiemelt lokális esemény</div>
+        </div>
+
+        <div class="vd-card green">
+          <div class="vd-number">{esc(top_country)}</div>
+          <div class="vd-text">fő kockázati ország</div>
+        </div>
+
+        <div class="vd-wide">
+          <div class="vd-label">Fő szektor</div>
+          <div class="vd-sector">{esc(top_sector)}</div>
+          <div class="vd-sub">Infrastruktúra-közeli találatok domináns kategóriája</div>
+        </div>
+      </div>
+
+      <div class="vd-regions">
+        {html_region_dashboard(report)}
+      </div>
+
+      <div class="vd-footer">
+        <span>Törésvonalak • CEE Security Map</span>
+        <span>Automatikus OSINT-alapú helyzetkép</span>
       </div>
     </section>
 

@@ -9,8 +9,9 @@ DATA = ROOT / "data"
 
 LOCAL_SOURCES_FILE = DATA / "local_sources.json"
 OUTPUT_FILE = DATA / "local_events.geojson"
+DEBUG_FILE = DATA / "local_events_debug.json"
 
-MAX_ITEMS_PER_SOURCE = 15
+MAX_ITEMS_PER_SOURCE = 50
 
 COUNTRY_COORDS = {
     "Hungary": [47.1625, 19.5033],
@@ -208,6 +209,17 @@ INFRA_HINTS = [
     "data center", "internet exchange", "cyber"
 ]
 
+FORCE_INCLUDE_TERMS = [
+    "Tiszaújváros", "MOL", "robbanás", "tűz", "petrolkémiai",
+    "Százhalombatta", "Paks", "katasztrófavédelem",
+    "Cernavodă", "Constanța", "Năvodari", "Mihail Kogălniceanu",
+    "Slovnaft", "Mochovce", "Bohunice",
+    "Temelín", "Dukovany", "Litvínov", "Kralupy",
+    "Płock", "Gdańsk", "Rzeszów", "Świnoujście",
+    "Klaipėda", "Šiauliai", "Riga", "Ādaži",
+    "Tallinn", "Ämari", "Tapa"
+]
+
 
 def load_sources():
     if not LOCAL_SOURCES_FILE.exists():
@@ -237,6 +249,11 @@ def has_infra_hint(text):
     return any(normalize_text(k) in t for k in INFRA_HINTS)
 
 
+def has_force_include(text):
+    t = normalize_text(text)
+    return any(normalize_text(k) in t for k in FORCE_INCLUDE_TERMS)
+
+
 def detect_city(text):
     t = normalize_text(text)
 
@@ -253,7 +270,7 @@ def classify_category(text):
     if any(k in t for k in ["cyberattack", "kibertámadás", "kybernetický útok", "cyberatak", "küberrünnak"]):
         return "cyber"
 
-    if any(k in t for k in ["drone", "drón", "uav"]):
+    if any(k in t for k in ["drone", "drón", "uav", "dróntámadás"]):
         return "drone"
 
     if any(k in t for k in ["military", "katonai", "wojsk", "vojensk", "sõjaline", "karinis"]):
@@ -297,6 +314,25 @@ def estimate_severity(text):
     return "info"
 
 
+def rejection_reason(text, country):
+    if has_negative(text):
+        return "negative_keyword"
+
+    if has_force_include(text):
+        return None
+
+    if not has_positive(text, country):
+        return "no_positive_keyword"
+
+    city, _ = detect_city(text)
+    infra_hint = has_infra_hint(text)
+
+    if not city and not infra_hint:
+        return "no_city_or_infra_hint"
+
+    return None
+
+
 def build_feature(entry, source_name, country):
     title = entry.get("title", "Untitled")
     summary = entry.get("summary", "")
@@ -304,20 +340,12 @@ def build_feature(entry, source_name, country):
     published = entry.get("published") or entry.get("updated")
 
     combined = f"{title} {summary}"
+    reason = rejection_reason(combined, country)
 
-    if has_negative(combined):
-        return None
+    if reason:
+        return None, reason
 
     city, coords = detect_city(combined)
-
-    positive = has_positive(combined, country)
-    infra_hint = has_infra_hint(combined)
-
-    if not positive:
-        return None
-
-    if not city and not infra_hint:
-        return None
 
     if coords:
         lat, lon = coords
@@ -329,10 +357,13 @@ def build_feature(entry, source_name, country):
         geocode_quality = "country_fallback"
 
     if lat is None or lon is None:
-        return None
+        return None, "missing_coordinates"
 
     category = classify_category(combined)
     severity = estimate_severity(combined)
+
+    if has_force_include(combined):
+        severity = "high"
 
     return {
         "type": "Feature",
@@ -342,7 +373,7 @@ def build_feature(entry, source_name, country):
         },
         "properties": {
             "title": title,
-            "summary": str(summary)[:600],
+            "summary": str(summary)[:800],
             "source": source_name,
             "country": country,
             "place": place,
@@ -351,27 +382,56 @@ def build_feature(entry, source_name, country):
             "category": category,
             "severity": severity,
             "kind": "local_media",
-            "geocode_quality": geocode_quality
+            "geocode_quality": geocode_quality,
+            "force_included": has_force_include(combined)
         }
-    }
+    }, None
 
 
 def fetch_feed(source_name, url, country):
     features = []
+    debug_rows = []
 
     try:
         parsed = feedparser.parse(url)
 
         for entry in parsed.entries[:MAX_ITEMS_PER_SOURCE]:
-            feature = build_feature(entry, source_name, country)
+            feature, reason = build_feature(entry, source_name, country)
+
+            title = entry.get("title", "Untitled")
+            link = entry.get("link")
 
             if feature:
                 features.append(feature)
+                debug_rows.append({
+                    "source": source_name,
+                    "country": country,
+                    "title": title,
+                    "url": link,
+                    "status": "included",
+                    "reason": None
+                })
+            else:
+                debug_rows.append({
+                    "source": source_name,
+                    "country": country,
+                    "title": title,
+                    "url": link,
+                    "status": "excluded",
+                    "reason": reason
+                })
 
     except Exception as e:
+        debug_rows.append({
+            "source": source_name,
+            "country": country,
+            "status": "error",
+            "reason": str(e)
+        })
+
         print(f"ERROR {source_name}: {e}")
 
-    return features
+    return features, debug_rows
 
 
 def deduplicate_features(features):
@@ -398,6 +458,7 @@ def deduplicate_features(features):
 def main():
     payload = load_sources()
     features = []
+    debug = []
 
     for country_block in payload.get("countries", []):
         country = country_block.get("country")
@@ -406,12 +467,19 @@ def main():
             rss_url = RSS_FEEDS.get(source_name)
 
             if not rss_url:
+                debug.append({
+                    "source": source_name,
+                    "country": country,
+                    "status": "error",
+                    "reason": "missing_rss_mapping"
+                })
                 print(f"Missing RSS mapping: {source_name}")
                 continue
 
             print(f"Fetching: {source_name} ({country})")
-            fetched = fetch_feed(source_name, rss_url, country)
+            fetched, debug_rows = fetch_feed(source_name, rss_url, country)
             features.extend(fetched)
+            debug.extend(debug_rows)
 
     features = deduplicate_features(features)
 
@@ -421,13 +489,28 @@ def main():
         "features": features
     }
 
+    debug_payload = {
+        "generated_utc": datetime.now(timezone.utc).isoformat(),
+        "max_items_per_source": MAX_ITEMS_PER_SOURCE,
+        "included_count": len(features),
+        "debug_count": len(debug),
+        "rows": debug[:2000]
+    }
+
     OUTPUT_FILE.write_text(
         json.dumps(geojson, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
 
+    DEBUG_FILE.write_text(
+        json.dumps(debug_payload, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+
     print(f"Saved: {OUTPUT_FILE}")
+    print(f"Saved debug: {DEBUG_FILE}")
     print(f"Features: {len(features)}")
+    print(f"Debug rows: {len(debug)}")
 
 
 if __name__ == "__main__":

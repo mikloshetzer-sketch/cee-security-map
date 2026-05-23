@@ -28,24 +28,60 @@ CITY_COORDS = {
     "Százhalombatta": [47.316, 18.914],
     "Paks": [46.572, 18.854],
     "Budapest": [47.497, 19.040],
+    "Algyő": [46.335, 20.209],
+    "Hajdúszoboszló": [47.443, 21.391],
+    "Visonta": [47.784, 20.033],
+
     "Constanța": [44.173, 28.638],
     "Cernavodă": [44.322, 28.057],
+    "Năvodari": [44.335, 28.642],
+    "Brazi": [44.848, 26.029],
     "Bucharest": [44.426, 26.102],
+    "Galați": [45.435, 28.008],
+
     "Bratislava": [48.148, 17.107],
+    "Mochovce": [48.264, 18.455],
+    "Jaslovské Bohunice": [48.494, 17.681],
+    "Veľké Kapušany": [48.548, 22.079],
     "Košice": [48.716, 21.261],
+
     "Prague": [50.075, 14.438],
+    "Praha": [50.075, 14.438],
+    "Temelín": [49.181, 14.376],
+    "Dukovany": [49.085, 16.148],
+    "Litvínov": [50.604, 13.618],
+    "Kralupy": [50.241, 14.312],
     "Ostrava": [49.820, 18.262],
+
     "Płock": [52.576, 19.701],
     "Gdańsk": [54.383, 18.670],
+    "Gdynia": [54.533, 18.550],
     "Warsaw": [52.229, 21.012],
+    "Warszawa": [52.229, 21.012],
     "Rzeszów": [50.041, 21.999],
+    "Świnoujście": [53.910, 14.286],
+    "Bełchatów": [51.267, 19.325],
+
     "Klaipėda": [55.706, 21.127],
     "Vilnius": [54.687, 25.279],
+    "Kaunas": [54.898, 23.904],
+    "Alytus": [54.396, 24.041],
+    "Šiauliai": [55.893, 23.395],
+    "Rukla": [55.000, 24.000],
+
     "Riga": [56.949, 24.105],
     "Ventspils": [57.394, 21.560],
+    "Ādaži": [57.070, 24.337],
+    "Lielvārde": [56.778, 24.853],
+    "Inčukalns": [57.098, 24.686],
+
     "Tallinn": [59.437, 24.753],
     "Tartu": [58.378, 26.729],
-    "Narva": [59.377, 27.420]
+    "Narva": [59.377, 27.420],
+    "Paldiski": [59.350, 24.050],
+    "Tapa": [59.260, 25.958],
+    "Ämari": [59.260, 24.208],
+    "Muuga": [59.500, 24.960]
 }
 
 RSS_FEEDS = {
@@ -98,63 +134,79 @@ RSS_FEEDS = {
     "BNSEstonia": "https://www.bns.ee/rss"
 }
 
-GLOBAL_KEYWORDS = [
-    "explosion", "fire", "blast", "drone", "cyber", "pipeline", "blackout",
-    "gas", "oil", "nuclear", "military", "airport", "port", "rail",
-    "infrastructure", "industrial", "chemical", "electricity", "energy",
-    "accident", "attack", "emergency", "security", "refinery", "power plant"
-]
-
-COUNTRY_KEYWORDS = {
+POSITIVE_KEYWORDS = {
+    "general": [
+        "explosion", "blast", "fire", "industrial accident", "chemical leak",
+        "pipeline leak", "blackout", "power outage", "cyberattack",
+        "drone attack", "missile", "evacuation", "emergency services",
+        "refinery fire", "airport closed", "port closed", "rail disruption"
+    ],
     "Hungary": [
-        "robbanás", "tűz", "füst", "baleset", "ipari baleset", "üzemzavar",
-        "finomító", "vegyipari", "petrolkémiai", "erőmű", "áramszünet",
-        "gázvezeték", "olajvezeték", "MOL", "katasztrófavédelem",
-        "repülőtér", "kikötő", "vasút", "katonai", "kibertámadás"
+        "robbanás", "tűz", "füst", "ipari baleset", "üzemzavar",
+        "vegyi szivárgás", "gázszivárgás", "áramszünet", "kibertámadás",
+        "dróntámadás", "katasztrófavédelem", "kiürítés", "finomító",
+        "petrolkémiai", "MOL", "Tiszaújváros", "Százhalombatta", "Paks"
     ],
     "Romania": [
-        "explozie", "incendiu", "fum", "accident", "accident industrial",
-        "rafinărie", "petrochimic", "centrală", "pană de curent",
-        "conductă", "gaz", "petrol", "militar", "aeroport", "port",
-        "cale ferată", "atac cibernetic", "urgență"
+        "explozie", "incendiu", "fum", "accident industrial", "scurgere chimică",
+        "pană de curent", "atac cibernetic", "rafinărie", "centrală",
+        "evacuare", "urgență", "Constanța", "Cernavodă", "Năvodari"
     ],
     "Slovakia": [
-        "výbuch", "požiar", "dym", "nehoda", "priemyselná nehoda",
-        "rafinéria", "petrochémia", "elektráreň", "výpadok prúdu",
-        "plynovod", "ropovod", "vojenský", "letisko", "prístav",
-        "železnica", "kybernetický útok", "núdzový stav"
+        "výbuch", "požiar", "dym", "priemyselná nehoda", "únik chemikálií",
+        "výpadok prúdu", "kybernetický útok", "rafinéria", "elektráreň",
+        "evakuácia", "Bratislava", "Mochovce", "Bohunice"
     ],
     "Czechia": [
-        "výbuch", "požár", "kouř", "nehoda", "průmyslová nehoda",
-        "rafinerie", "petrochemie", "elektrárna", "výpadek proudu",
-        "plynovod", "ropovod", "vojenský", "letiště", "přístav",
-        "železnice", "kybernetický útok", "mimořádná událost"
+        "výbuch", "požár", "kouř", "průmyslová nehoda", "únik chemikálií",
+        "výpadek proudu", "kybernetický útok", "rafinerie", "elektrárna",
+        "evakuace", "Temelín", "Dukovany", "Litvínov", "Kralupy"
     ],
     "Poland": [
-        "wybuch", "pożar", "dym", "awaria", "wypadek", "wypadek przemysłowy",
-        "rafineria", "petrochemia", "elektrownia", "przerwa w dostawie prądu",
-        "gazociąg", "ropociąg", "wojskowy", "lotnisko", "port",
-        "kolej", "cyberatak", "zagrożenie", "służby"
+        "wybuch", "pożar", "dym", "awaria", "wypadek przemysłowy",
+        "wyciek chemikaliów", "przerwa w dostawie prądu", "cyberatak",
+        "rafineria", "elektrownia", "ewakuacja", "Płock", "Gdańsk",
+        "Rzeszów", "Świnoujście"
     ],
     "Lithuania": [
-        "sprogimas", "gaisras", "dūmai", "avarija", "pramoninė avarija",
-        "naftos perdirbimo", "elektrinė", "elektros tiekimo sutrikimas",
-        "dujotiekis", "naftotiekis", "karinis", "oro uostas", "uostas",
-        "geležinkelis", "kibernetinė ataka", "ekstremali situacija"
+        "sprogimas", "gaisras", "dūmai", "pramoninė avarija",
+        "cheminis nuotėkis", "elektros tiekimo sutrikimas", "kibernetinė ataka",
+        "evakuacija", "Klaipėda", "Vilnius", "Šiauliai"
     ],
     "Latvia": [
-        "sprādziens", "ugunsgrēks", "dūmi", "avārija", "rūpnieciska avārija",
-        "naftas pārstrāde", "elektrostacija", "elektrības pārrāvums",
-        "gāzesvads", "naftas vads", "militārs", "lidosta", "osta",
-        "dzelzceļš", "kiberuzbrukums", "ārkārtas situācija"
+        "sprādziens", "ugunsgrēks", "dūmi", "rūpnieciska avārija",
+        "ķīmisko vielu noplūde", "elektrības pārrāvums", "kiberuzbrukums",
+        "evakuācija", "Rīga", "Riga", "Ventspils", "Ādaži"
     ],
     "Estonia": [
-        "plahvatus", "tulekahju", "suits", "avarii", "tööstusõnnetus",
-        "rafineerimistehas", "elektrijaam", "elektrikatkestus",
-        "gaasitoru", "naftajuhe", "sõjaline", "lennujaam", "sadam",
-        "raudtee", "küberrünnak", "hädaolukord"
+        "plahvatus", "tulekahju", "suits", "tööstusõnnetus",
+        "keemialeke", "elektrikatkestus", "küberrünnak",
+        "evakuatsioon", "Tallinn", "Tartu", "Narva", "Paldiski", "Tapa"
     ]
 }
+
+NEGATIVE_KEYWORDS = [
+    "housing", "real estate", "mortgage", "rent", "apartment",
+    "lakhatás", "ingatlan", "albérlet", "bérleti díj", "lakás",
+    "piano", "music", "concert", "festival", "culture", "sport",
+    "zongora", "zongorázás", "koncert", "fesztivál", "kultúra", "sport",
+    "tourism", "travel", "spa", "wellness", "hotel",
+    "turizmus", "utazás", "fürdő", "wellness", "szálloda",
+    "lázně", "uzdrowisko", "sanatorium", "spa",
+    "health resort", "resort", "holiday", "vacation",
+    "student", "university researchers", "ai algorithm", "friendly ai"
+]
+
+INFRA_HINTS = [
+    "MOL", "refinery", "finomító", "rafinărie", "rafinéria", "rafinerie", "rafineria",
+    "power plant", "erőmű", "centrală", "elektráreň", "elektrárna", "elektrownia",
+    "nuclear", "atomerőmű", "Cernavodă", "Temelín", "Dukovany", "Paks",
+    "airport", "repülőtér", "letisko", "letiště", "lotnisko", "lidosta", "lennujaam",
+    "port", "kikötő", "prístav", "přístav", "uostas", "osta", "sadam",
+    "pipeline", "gázvezeték", "olajvezeték", "gas storage", "LNG",
+    "military base", "air base", "katonai bázis", "airbase",
+    "data center", "internet exchange", "cyber"
+]
 
 
 def load_sources():
@@ -169,13 +221,20 @@ def normalize_text(text):
     return re.sub(r"\s+", " ", str(text or "").lower()).strip()
 
 
-def get_keywords(country):
-    return GLOBAL_KEYWORDS + COUNTRY_KEYWORDS.get(country, [])
-
-
-def contains_keyword(text, country):
+def has_negative(text):
     t = normalize_text(text)
-    return any(normalize_text(k) in t for k in get_keywords(country))
+    return any(normalize_text(k) in t for k in NEGATIVE_KEYWORDS)
+
+
+def has_positive(text, country):
+    t = normalize_text(text)
+    keywords = POSITIVE_KEYWORDS["general"] + POSITIVE_KEYWORDS.get(country, [])
+    return any(normalize_text(k) in t for k in keywords)
+
+
+def has_infra_hint(text):
+    t = normalize_text(text)
+    return any(normalize_text(k) in t for k in INFRA_HINTS)
 
 
 def detect_city(text):
@@ -191,32 +250,29 @@ def detect_city(text):
 def classify_category(text):
     t = normalize_text(text)
 
-    if any(k in t for k in ["cyber", "kiber", "kibernet", "küber", "cyberatak"]):
+    if any(k in t for k in ["cyberattack", "kibertámadás", "kybernetický útok", "cyberatak", "küberrünnak"]):
         return "cyber"
+
+    if any(k in t for k in ["drone", "drón", "uav"]):
+        return "drone"
 
     if any(k in t for k in ["military", "katonai", "wojsk", "vojensk", "sõjaline", "karinis"]):
         return "military"
 
-    if any(k in t for k in ["explosion", "robbanás", "výbuch", "wybuch", "sprogimas", "sprādziens", "plahvatus"]):
+    if any(k in t for k in ["explosion", "blast", "robbanás", "výbuch", "wybuch", "sprogimas", "sprādziens", "plahvatus"]):
         return "explosion"
 
     if any(k in t for k in ["fire", "tűz", "požiar", "požár", "pożar", "gaisras", "ugunsgrēks", "tulekahju"]):
         return "fire"
 
-    if any(k in t for k in ["energy", "energia", "erőmű", "elektrárna", "elektrownia", "elektrinė", "elektrostacija"]):
+    if any(k in t for k in ["blackout", "power outage", "áramszünet", "výpadok prúdu", "výpadek proudu", "przerwa w dostawie prądu"]):
         return "energy"
 
-    if any(k in t for k in ["rail", "vasút", "kolej", "železnica", "geležinkelis", "dzelzceļš", "raudtee"]):
-        return "transport"
-
-    if any(k in t for k in ["port", "kikötő", "prístav", "přístav", "uostas", "osta", "sadam"]):
-        return "transport"
-
-    if any(k in t for k in ["airport", "repülőtér", "letisko", "letiště", "lotnisko", "oro uostas", "lidosta", "lennujaam"]):
-        return "transport"
-
-    if any(k in t for k in ["chemical", "vegyipari", "petro", "petrolkémiai", "rafin", "rafiner"]):
+    if any(k in t for k in ["chemical", "vegyi", "chem", "petro", "rafin", "finomító"]):
         return "hazardous"
+
+    if any(k in t for k in ["airport", "port", "rail", "repülőtér", "kikötő", "vasút", "lotnisko", "kolej"]):
+        return "transport"
 
     return "local_media"
 
@@ -224,20 +280,18 @@ def classify_category(text):
 def estimate_severity(text):
     t = normalize_text(text)
 
-    critical_words = [
-        "explosion", "robbanás", "výbuch", "wybuch", "sprogimas", "sprādziens", "plahvatus",
-        "attack", "támadás", "atak", "kibertámadás", "cyberattack", "blackout", "áramszünet"
-    ]
-
-    high_words = [
-        "fire", "tűz", "požiar", "požár", "pożar", "gaisras", "ugunsgrēks", "tulekahju",
-        "accident", "baleset", "awaria", "avarija", "nehoda", "avārija"
-    ]
-
-    if any(w in t for w in critical_words):
+    if any(k in t for k in [
+        "explosion", "blast", "robbanás", "výbuch", "wybuch",
+        "sprogimas", "sprādziens", "plahvatus", "cyberattack",
+        "kibertámadás", "drone attack", "dróntámadás"
+    ]):
         return "high"
 
-    if any(w in t for w in high_words):
+    if any(k in t for k in [
+        "fire", "tűz", "požiar", "požár", "pożar",
+        "gaisras", "ugunsgrēks", "tulekahju", "blackout",
+        "power outage", "áramszünet"
+    ]):
         return "medium"
 
     return "info"
@@ -251,17 +305,31 @@ def build_feature(entry, source_name, country):
 
     combined = f"{title} {summary}"
 
-    if not contains_keyword(combined, country):
+    if has_negative(combined):
         return None
 
     city, coords = detect_city(combined)
 
+    positive = has_positive(combined, country)
+    infra_hint = has_infra_hint(combined)
+
+    if not positive:
+        return None
+
+    if not city and not infra_hint:
+        return None
+
     if coords:
         lat, lon = coords
         place = city
+        geocode_quality = "city"
     else:
         lat, lon = COUNTRY_COORDS.get(country)
         place = country
+        geocode_quality = "country_fallback"
+
+    if lat is None or lon is None:
+        return None
 
     category = classify_category(combined)
     severity = estimate_severity(combined)
@@ -282,7 +350,8 @@ def build_feature(entry, source_name, country):
             "time": published,
             "category": category,
             "severity": severity,
-            "kind": "local_media"
+            "kind": "local_media",
+            "geocode_quality": geocode_quality
         }
     }
 

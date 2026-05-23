@@ -2,7 +2,7 @@ name: Update CEE security data
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # 6 óránként
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -40,6 +40,10 @@ jobs:
       - name: Build infrastructure proximity report
         run: |
           python scripts/build_infra_proximity.py
+
+      - name: Archive old events
+        run: |
+          python scripts/archive_events.py
 
       - name: Commit & push if changed
         run: |

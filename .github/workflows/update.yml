@@ -58,4 +58,6 @@ jobs:
           fi
 
           git commit -m "auto: update data"
+
+          git pull --rebase origin main
           git push

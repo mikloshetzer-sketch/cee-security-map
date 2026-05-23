@@ -45,6 +45,10 @@ jobs:
         run: |
           python scripts/archive_events.py
 
+      - name: Enrich summaries and risk with local infrastructure data
+        run: |
+          python scripts/enrich_security_outputs.py
+
       - name: Commit & push if changed
         run: |
           git config user.name "cee-bot"

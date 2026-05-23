@@ -503,6 +503,31 @@
       color: #294d61;
     }
 
+    .time-filter-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin:8px 0 10px;
+    }
+
+    .time-filter-btn{
+      cursor:pointer;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 800;
+      line-height:1;
+    }
+
+    .time-filter-btn.on{
+      background: var(--accent-soft);
+      border-color: rgba(61,111,138,0.22);
+      color: #294d61;
+    }
+
     .risk-level{
       display:inline-flex;
       align-items:center;
@@ -1234,6 +1259,12 @@
         <div class="section">
           <h3>Top infrastruktúra-kockázatok</h3>
           <div class="meta" id="proximityMeta">Betöltés...</div>
+          <div class="time-filter-row" aria-label="Időszűrő">
+            <button class="time-filter-btn on" type="button" data-prox-window="24h">24h</button>
+            <button class="time-filter-btn" type="button" data-prox-window="7d">7 nap</button>
+            <button class="time-filter-btn" type="button" data-prox-window="30d">30 nap</button>
+            <button class="time-filter-btn" type="button" data-prox-window="all">összes</button>
+          </div>
           <div id="proximityList" class="story-list">
             <div class="story-empty">Betöltés...</div>
           </div>
@@ -1261,12 +1292,14 @@
       riskDaily: null,
       trustedRss: null,
       infraProximity: null,
+      infraProximityHistory: null,
       criticalInfrastructure: null,
       digitalInfrastructure: null,
       hazardousInfrastructure: null
     };
 
     const FILTERS = { newsToday: false, alertsToday: false };
+    let PROXIMITY_TIME_WINDOW = "24h";
 
     const CAT_STYLE = {
       protest: { radius: 6, fillOpacity: 0.55 },
@@ -2302,6 +2335,148 @@
       `;
     }
 
+
+    function parseMatchTime(match){
+      const value =
+        match?.event?.time ||
+        match?.event?.date ||
+        match?.event?.datetime ||
+        match?.time ||
+        null;
+
+      if (!value) return null;
+
+      const d = new Date(value);
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    function proximityWindowLabel(windowKey){
+      if (windowKey === "24h") return "24 óra";
+      if (windowKey === "7d") return "7 nap";
+      if (windowKey === "30d") return "30 nap";
+      return "összes";
+    }
+
+    function matchInTimeWindow(match, windowKey){
+      if (windowKey === "all") return true;
+
+      const d = parseMatchTime(match);
+      if (!d) return windowKey === "24h";
+
+      const now = new Date();
+      const ageMs = now.getTime() - d.getTime();
+
+      if (ageMs < 0) return true;
+
+      const ageHours = ageMs / (1000 * 60 * 60);
+
+      if (windowKey === "24h") return ageHours <= 24;
+      if (windowKey === "7d") return ageHours <= 24 * 7;
+      if (windowKey === "30d") return ageHours <= 24 * 30;
+
+      return true;
+    }
+
+    function proximityRank(match){
+      const level = String(match?.level || "watch").toLowerCase();
+      const levelWeight = {
+        critical: 4,
+        high: 3,
+        medium: 2,
+        watch: 1
+      }[level] || 0;
+
+      const score = Number(match?.score || 0);
+      const distance = Number(match?.distance_km || 9999);
+
+      return [levelWeight, score, -distance];
+    }
+
+    function isBetterProximityMatch(candidate, current){
+      if (!current) return true;
+
+      const a = proximityRank(candidate);
+      const b = proximityRank(current);
+
+      for (let i = 0; i < a.length; i++){
+        if (a[i] !== b[i]) return a[i] > b[i];
+      }
+
+      const at = parseMatchTime(candidate);
+      const bt = parseMatchTime(current);
+
+      if (at && bt) return at.getTime() > bt.getTime();
+      if (at && !bt) return true;
+
+      return false;
+    }
+
+    function buildProximityPayloadForWindow(windowKey){
+      const current = DATASETS.infraProximity || {};
+      const history = DATASETS.infraProximityHistory || {};
+
+      const all = [
+        ...(Array.isArray(current.matches) ? current.matches : []),
+        ...(Array.isArray(current.top_matches) ? current.top_matches : []),
+        ...(Array.isArray(history.matches) ? history.matches : []),
+        ...(Array.isArray(history.top_matches) ? history.top_matches : [])
+      ];
+
+      const bestByInfra = new Map();
+
+      for (const match of all){
+        if (!matchInTimeWindow(match, windowKey)) continue;
+
+        const infra = match.infrastructure || {};
+        const key = infra.id || `${infra.name || "unknown"}|${infra.country || ""}|${infra.city || ""}`;
+
+        if (!bestByInfra.has(key) || isBetterProximityMatch(match, bestByInfra.get(key))){
+          bestByInfra.set(key, match);
+        }
+      }
+
+      const topMatches = Array.from(bestByInfra.values()).sort((a, b) => {
+        const ar = proximityRank(a);
+        const br = proximityRank(b);
+        for (let i = 0; i < ar.length; i++){
+          if (ar[i] !== br[i]) return br[i] - ar[i];
+        }
+        return 0;
+      });
+
+      return {
+        meta: {
+          ...(current.meta || {}),
+          match_count: topMatches.length,
+          raw_current_count: Array.isArray(current.matches) ? current.matches.length : 0,
+          raw_history_count: Array.isArray(history.matches) ? history.matches.length : 0,
+          active_window: windowKey
+        },
+        top_matches: topMatches.slice(0, 100),
+        matches: topMatches
+      };
+    }
+
+    function refreshProximityView(){
+      const filteredPayload = buildProximityPayloadForWindow(PROXIMITY_TIME_WINDOW);
+
+      if (layers.infraProximity && map.hasLayer(layers.infraProximity)){
+        map.removeLayer(layers.infraProximity);
+      }
+
+      layers.infraProximity = makeProximityLayer(filteredPayload);
+      renderProximityPanel(filteredPayload);
+
+      const cb = document.getElementById("layerInfraProximity");
+      if (cb?.checked){
+        layers.infraProximity.addTo(map);
+      }
+
+      document.querySelectorAll("[data-prox-window]").forEach(btn => {
+        btn.classList.toggle("on", btn.getAttribute("data-prox-window") === PROXIMITY_TIME_WINDOW);
+      });
+    }
+
     function makeProximityLayer(payload){
       const group = L.layerGroup();
       const matches = Array.isArray(payload?.top_matches)
@@ -2333,7 +2508,8 @@
 
       const t = fmtBudapest(payload?.meta?.generated_utc);
       const count = payload?.meta?.match_count ?? 0;
-      metaEl.textContent = t ? `Frissítés (Budapest): ${t.bud} • ${count} kapcsolat` : `${count} kapcsolat`;
+      const windowLabel = proximityWindowLabel(payload?.meta?.active_window || PROXIMITY_TIME_WINDOW);
+      metaEl.textContent = t ? `Frissítés (Budapest): ${t.bud} • ${count} kapcsolat • időablak: ${windowLabel}` : `${count} kapcsolat • időablak: ${windowLabel}`;
 
       const matches = Array.isArray(payload?.top_matches)
         ? payload.top_matches.slice(0, 10)
@@ -2517,15 +2693,22 @@
       try {
         const infraProximity = await loadJson(`${DATA}/infra_proximity.json`);
         DATASETS.infraProximity = infraProximity;
-        layers.infraProximity = makeProximityLayer(infraProximity);
-        renderProximityPanel(infraProximity);
         console.info(`Infrastructure proximity loaded: ${infraProximity?.meta?.match_count ?? 0} matches`);
       } catch (err) {
         console.error("Infrastructure proximity report could not be loaded:", err);
-        DATASETS.infraProximity = { meta: { match_count: 0 }, top_matches: [] };
-        layers.infraProximity = L.layerGroup();
-        renderProximityPanel(DATASETS.infraProximity);
+        DATASETS.infraProximity = { meta: { match_count: 0 }, matches: [], top_matches: [] };
       }
+
+      try {
+        const infraProximityHistory = await loadJson(`${DATA}/history/infra_proximity_history.json`);
+        DATASETS.infraProximityHistory = infraProximityHistory;
+        console.info(`Infrastructure proximity history loaded: ${infraProximityHistory?.matches?.length ?? 0} archived matches`);
+      } catch (err) {
+        console.warn("Infrastructure proximity history could not be loaded yet:", err);
+        DATASETS.infraProximityHistory = { matches: [], top_matches: [] };
+      }
+
+      refreshProximityView();
 
       const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss] = await Promise.all([
         loadJson(`${DATA}/gdelt.geojson`).catch(()=>null),
@@ -2570,7 +2753,7 @@
           layers.criticalInfrastructure[cat].addTo(map);
         }
       }
-      if (document.getElementById("layerInfraProximity")?.checked && layers.infraProximity) layers.infraProximity.addTo(map);
+      if (document.getElementById("layerInfraProximity")?.checked && layers.infraProximity && !map.hasLayer(layers.infraProximity)) layers.infraProximity.addTo(map);
       layers.gdelt.addTo(map);
 
       document.getElementById('layerBorders').addEventListener('change', (e) => {
@@ -2595,6 +2778,13 @@
           e.target.checked ? map.addLayer(layer) : map.removeLayer(layer);
         });
       }
+      document.querySelectorAll("[data-prox-window]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          PROXIMITY_TIME_WINDOW = btn.getAttribute("data-prox-window") || "24h";
+          refreshProximityView();
+        });
+      });
+
       document.getElementById('layerInfraProximity')?.addEventListener('change', (e) => {
         if (!layers.infraProximity) return;
         e.target.checked ? map.addLayer(layers.infraProximity) : map.removeLayer(layers.infraProximity);

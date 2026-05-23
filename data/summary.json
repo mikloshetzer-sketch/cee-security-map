@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-05-23T11:49:21Z",
+  "generated_utc": "2026-05-23T19:21:47Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 2372 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1200 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Patto Stabilità , subito scontro : lAustria di traverso sul debito.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: NATO se antrenează la granița Rusiei pentru un război dominat de drone.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Il presidente ceco Petr Pavel esorta la NATO a mostrare i denti di fronte alle provocazioni della Russia.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 978.55; 7 napos változás: +5422%).",
-    "Trend: emelkedő (+1614%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3796, GDELT DOC 3892, direkt feed 441, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 2338 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1195 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Oana Țoiu , la Forumul GLOBSEC de la Praga . România promovează cooperarea și securitatea regională.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Wahania Trumpa wzbudziły chaos w NATO . Bez jakiejkolwiek koordynacji.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Μένος κατά της Ρωσίας – Ο πρόεδρος της Τσεχίας καλεί το ΝΑΤΟ να αποκλείσει τη Μόσχα από το διαδίκτυο.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 974.95; 7 napos változás: +12222%).",
+    "Trend: emelkedő (+1750%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3862, GDELT DOC 3957, direkt feed 442, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+5422%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+12222%)."
   },
   "stats": {
-    "score_last7": 4252.738,
-    "score_prev7": 248.143,
-    "change_pct": 1613.83
+    "score_last7": 4268.968,
+    "score_prev7": 230.767,
+    "change_pct": 1749.9
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 2372,
+    "last_24h_proximity_matches": 2338,
     "top_proximity": [
       {
         "id": "b5581ea589f2802b",
@@ -238,77 +238,77 @@
         }
       },
       {
-        "id": "f6d5fd636d1ac5fc",
+        "id": "cc635234f2961001",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "32f555d4d783946a",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-05-23T00:00:00Z",
+          "url": "https://www.globalsecurity.org/military/library/news/2026/05/mil-260522-estonia-mfa02.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "8249745db8adb84a",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "82d3ee5aa495f461",
+          "title": "Riga, Riga, Latvia",
+          "category": "violence",
+          "source": "GDELT",
+          "time": "2026-05-23T00:00:00Z",
+          "url": "http://www.bignewsnetwork.com/news/279071213/drone-crashes-into-lake-in-baltic-state",
+          "lat": 56.95000000000001,
+          "lon": 24.100000000000005,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "4686931c5f9bebf1",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "1d7df9064c93d8db",
-          "title": "Patto Stabilità , subito scontro : lAustria di traverso sul debito",
+          "id": "decb70aa5f451689",
+          "title": "Oana Țoiu , la Forumul GLOBSEC de la Praga . România promovează cooperarea și securitatea regională",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-23T11:15:00Z",
-          "url": "https://www.ilgazzettino.it/economia/news/patto_stabilita_scontro_austria_debito-6310741.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "2aa2ac31c5300868",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "11ed6ff0c11bd0ab",
-          "title": "NATO se antrenează la granița Rusiei pentru un război dominat de drone",
-          "category": "drone",
-          "source": "GDELT_DOC",
-          "time": "2026-05-23T11:15:00Z",
-          "url": "https://ziare.com/nato/exercitii-militare-estonia-spring-storm-2026-2014394",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "8a36ef18b23a1b4d",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "44ec67b232acf1c7",
-          "title": "Il presidente ceco Petr Pavel esorta la NATO a mostrare i denti di fronte alle provocazioni della Russia",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-05-23T11:15:00Z",
-          "url": "https://www.zazoom.it/2026-05-23/il-presidente-ceco-petr-pavel-esorta-la-nato-a-mostrare-i-denti-di-fronte-alle-provocazioni-della-russia/19237942/",
+          "time": "2026-05-23T18:45:00Z",
+          "url": "https://www.mediafax.ro/politic/oana-toiu-la-forumul-globsec-de-la-praga-romania-promoveaza-cooperarea-si-securitatea-regionala-23742486",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

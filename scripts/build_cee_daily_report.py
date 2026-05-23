@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from datetime import datetime, timezone
+from collections import Counter, defaultdict
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -27,7 +28,6 @@ def ensure_dirs():
 def load_json(path, default):
     if not path.exists():
         return default
-
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
@@ -38,14 +38,42 @@ def utc_now():
     return datetime.now(timezone.utc)
 
 
-def risk_level(score):
-    if score >= 8:
-        return "critical"
-    if score >= 5:
-        return "tense"
-    if score >= 2:
-        return "elevated"
+def esc(value):
+    return (
+        str(value or "")
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+        .replace("'", "&#39;")
+    )
+
+
+def risk_class(level):
+    level = str(level or "normal").lower()
+    if level in {"critical", "tense", "elevated", "normal"}:
+        return level
     return "normal"
+
+
+def country_region(country):
+    c = str(country or "")
+    if c in {"Estonia", "Latvia", "Lithuania"}:
+        return "Baltikum"
+    if c in {"Poland", "Czech Republic", "Czechia", "Slovakia", "Hungary"}:
+        return "V4 térség"
+    if c in {"Romania"}:
+        return "Fekete-tengeri perem"
+    return "Egyéb CEE"
+
+
+def top_sector_from_matches(matches):
+    cats = Counter()
+    for m in matches:
+        infra = m.get("infrastructure", {})
+        cat = infra.get("category") or infra.get("subtype") or "infrastructure"
+        cats[str(cat)] += 1
+    return cats.most_common(1)[0][0] if cats else "infrastruktúra"
 
 
 def build_report():
@@ -53,353 +81,660 @@ def build_report():
     weekly = load_json(WEEKLY, {})
     risk = load_json(RISK, {})
     meta = load_json(META, {})
-
     local_events = load_json(LOCAL_EVENTS, {"features": []})
     infra = load_json(INFRA_PROX, {"matches": []})
 
     countries = risk.get("countries", [])
-
     countries_sorted = sorted(
         countries,
         key=lambda x: x.get("overall_score", 0),
         reverse=True
     )
 
-    top_local = local_events.get("features", [])[:10]
+    matches = infra.get("matches", [])
+    top_prox = sorted(matches, key=lambda x: x.get("score", 0), reverse=True)[:12]
 
-    top_prox = sorted(
-        infra.get("matches", []),
-        key=lambda x: x.get("score", 0),
-        reverse=True
-    )[:10]
+    local = local_events.get("features", [])[:12]
+
+    region_counter = Counter()
+    for c in countries_sorted:
+        region_counter[country_region(c.get("country"))] += c.get("overall_score", 0)
 
     generated = utc_now().isoformat()
 
-    report = {
+    return {
         "generated_utc": generated,
-        "headline": "CEE Security Daily Report",
+        "headline": "CEE Infrastructure & Security Daily Brief",
         "region": risk.get("region", {}),
         "top_countries": countries_sorted[:8],
         "summary_bullets": summary.get("bullets", []),
         "weekly_bullets": weekly.get("bullets", []),
-        "top_local_events": top_local,
+        "top_local_events": local,
         "top_infrastructure_matches": top_prox,
-        "meta": meta
+        "all_matches": matches,
+        "meta": meta,
+        "region_counter": dict(region_counter),
+        "top_sector": top_sector_from_matches(matches),
     }
-
-    return report
 
 
 def save_report_json(report):
     today = utc_now().strftime("%Y-%m-%d")
 
-    latest_path = REPORT_DATA_DIR / "cee_daily_report_latest.json"
-    dated_path = REPORT_DATA_DIR / f"cee_daily_report_{today}.json"
-
-    latest_path.write_text(
+    (REPORT_DATA_DIR / "cee_daily_report_latest.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
 
-    dated_path.write_text(
+    (REPORT_DATA_DIR / f"cee_daily_report_{today}.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
 
 
-def html_country_table(countries):
-    rows = []
+def html_country_cards(countries):
+    if not countries:
+        return "<p>Nincs elérhető országkockázati adat.</p>"
+
+    out = []
 
     for c in countries:
-        rows.append(f"""
-        <tr>
-            <td>{c.get("country", "")}</td>
-            <td>{c.get("overall", "")}</td>
-            <td>{round(c.get("overall_score", 0), 2)}</td>
-            <td>{", ".join(c.get("drivers", []))}</td>
-        </tr>
-        """)
-
-    return "\n".join(rows)
-
-
-def html_local_events(events):
-    rows = []
-
-    for item in events:
-        props = item.get("properties", {})
-
-        rows.append(f"""
-        <div class="event-card">
-            <div class="event-title">
-                {props.get("title", "")}
-            </div>
-
-            <div class="event-meta">
-                {props.get("country", "")}
-                |
-                {props.get("category", "")}
-                |
-                {props.get("severity", "")}
-            </div>
-
-            <div class="event-summary">
-                {props.get("summary", "")}
-            </div>
-
-            <a href="{props.get("url", "#")}" target="_blank">
-                Source
-            </a>
+        level = risk_class(c.get("overall"))
+        drivers = ", ".join(c.get("drivers", [])) or "automatikus OSINT jelzés"
+        out.append(f"""
+        <div class="country-card {level}">
+          <div class="country-name">{esc(c.get("country"))}</div>
+          <div class="country-score">{round(c.get("overall_score", 0), 2)}</div>
+          <div class="country-level">{esc(c.get("overall"))}</div>
+          <div class="country-drivers">{esc(drivers)}</div>
         </div>
         """)
 
-    return "\n".join(rows)
+    return "\n".join(out)
+
+
+def html_local_events(events):
+    if not events:
+        return "<p>Nincs kiemelt lokális esemény.</p>"
+
+    out = []
+
+    for item in events:
+        p = item.get("properties", {})
+        out.append(f"""
+        <div class="event-card">
+          <div class="event-kicker">{esc(p.get("country"))} • {esc(p.get("category"))} • {esc(p.get("severity"))}</div>
+          <h3>{esc(p.get("title"))}</h3>
+          <p>{esc(p.get("summary"))}</p>
+          <a href="{esc(p.get("url") or "#")}" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        """)
+
+    return "\n".join(out)
 
 
 def html_proximity(matches):
-    rows = []
+    if not matches:
+        return "<p>Nincs infrastruktúra-közeli kiemelt találat.</p>"
+
+    out = []
 
     for m in matches:
         infra = m.get("infrastructure", {})
         event = m.get("event", {})
+        level = risk_class(m.get("level"))
 
-        rows.append(f"""
-        <div class="infra-card">
-            <div class="infra-title">
-                {infra.get("name", "")}
-            </div>
-
-            <div class="infra-meta">
-                {infra.get("country", "")}
-                |
-                {m.get("level", "")}
-                |
-                {round(m.get("distance_km", 0), 1)} km
-            </div>
-
-            <div class="infra-event">
-                {event.get("title", "")}
-            </div>
-
-            <a href="{event.get("url", "#")}" target="_blank">
-                Source
-            </a>
+        out.append(f"""
+        <div class="infra-card {level}">
+          <div class="event-kicker">{esc(infra.get("country"))} • {esc(infra.get("category"))} • {round(m.get("distance_km", 0), 1)} km</div>
+          <h3>{esc(infra.get("name"))}</h3>
+          <p>{esc(event.get("title"))}</p>
+          <div class="level-pill {level}">{esc(m.get("level"))}</div>
+          <a href="{esc(event.get("url") or "#")}" target="_blank" rel="noopener">Forrás megnyitása</a>
         </div>
         """)
 
-    return "\n".join(rows)
+    return "\n".join(out)
+
+
+def html_region_dashboard(report):
+    countries = report.get("top_countries", [])
+    groups = defaultdict(list)
+
+    for c in countries:
+        groups[country_region(c.get("country"))].append(c)
+
+    region_names = ["Baltikum", "V4 térség", "Fekete-tengeri perem", "Egyéb CEE"]
+    colors = {
+        "Baltikum": "blue",
+        "V4 térség": "green",
+        "Fekete-tengeri perem": "orange",
+        "Egyéb CEE": "red",
+    }
+
+    out = []
+
+    for name in region_names:
+        rows = groups.get(name, [])
+        total = round(sum(x.get("overall_score", 0) for x in rows), 2)
+        top = rows[0].get("country") if rows else "—"
+        color = colors.get(name, "blue")
+
+        out.append(f"""
+        <div class="region-card {color}">
+          <div class="region-head">{esc(name)}</div>
+          <div class="region-body">
+            <div class="big-number">{total}</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> {esc(top)}</div>
+            <div class="mini-bar"><span style="width:{min(100, total * 12)}%"></span></div>
+          </div>
+        </div>
+        """)
+
+    return "\n".join(out)
 
 
 def build_html(report):
     region = report.get("region", {})
-    countries = report.get("top_countries", [])
-    summary_bullets = report.get("summary_bullets", [])
-    weekly_bullets = report.get("weekly_bullets", [])
+    overall = risk_class(region.get("overall"))
+    generated = report.get("generated_utc", "")
+    today = utc_now().strftime("%Y-%m-%d")
 
-    local_html = html_local_events(report.get("top_local_events", []))
-    prox_html = html_proximity(report.get("top_infrastructure_matches", []))
+    matches = report.get("all_matches", [])
+    critical_count = sum(1 for m in matches if str(m.get("level")).lower() == "critical")
+    high_count = sum(1 for m in matches if str(m.get("level")).lower() == "high")
+    local_count = len(report.get("top_local_events", []))
+    top_country = report.get("top_countries", [{}])[0].get("country", "—")
+    top_sector = report.get("top_sector", "infrastruktúra")
 
-    summary_html = "".join(
-        [f"<li>{x}</li>" for x in summary_bullets]
-    )
+    summary_items = "".join(f"<li>{esc(x)}</li>" for x in report.get("summary_bullets", [])[:8])
+    weekly_items = "".join(f"<li>{esc(x)}</li>" for x in report.get("weekly_bullets", [])[:5])
 
-    weekly_html = "".join(
-        [f"<li>{x}</li>" for x in weekly_bullets]
-    )
-
-    html = f"""
-<!DOCTYPE html>
-<html lang="en">
+    return f"""<!DOCTYPE html>
+<html lang="hu">
 <head>
 <meta charset="UTF-8">
-<title>CEE Security Daily Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEE Infrastructure & Security Daily Brief</title>
 
 <style>
+:root {{
+  --dark:#07111f;
+  --dark2:#101b2d;
+  --panel:#ffffff;
+  --soft:#f3f6fa;
+  --text:#172033;
+  --muted:#65758b;
+  --blue:#2f66e8;
+  --green:#18a957;
+  --orange:#f97316;
+  --red:#dc2626;
+  --line:#e4eaf2;
+}}
+
+* {{ box-sizing:border-box; }}
 
 body {{
-    margin: 0;
-    background: #0f172a;
-    color: #e2e8f0;
-    font-family: Arial, sans-serif;
+  margin:0;
+  background:#dde3ea;
+  color:var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height:1.55;
 }}
 
-.container {{
-    max-width: 1400px;
-    margin: auto;
-    padding: 24px;
+.page {{
+  max-width:1320px;
+  margin:0 auto;
+  background:#f8fafc;
+  min-height:100vh;
 }}
 
-h1 {{
-    margin-top: 0;
+.hero {{
+  background:
+    radial-gradient(circle at 70% 20%, rgba(79,117,255,0.22), transparent 28%),
+    linear-gradient(135deg, #07111f 0%, #132039 100%);
+  color:white;
+  padding:48px;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:center;
+}}
+
+.hero h1 {{
+  margin:0;
+  font-size:42px;
+  line-height:1.05;
+  letter-spacing:-0.03em;
+}}
+
+.hero p {{
+  color:#cbd5e1;
+  font-size:18px;
+  margin:16px 0 0;
+}}
+
+.date-box {{
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:18px;
+  padding:24px 34px;
+  min-width:230px;
+  text-align:center;
+  background:rgba(255,255,255,0.04);
+}}
+
+.date-box .label {{
+  color:#94a3b8;
+  font-size:13px;
+  text-transform:uppercase;
+  font-weight:800;
+}}
+
+.date-box .date {{
+  font-size:28px;
+  font-weight:900;
+  margin-top:8px;
+}}
+
+.content {{
+  padding:34px 46px 54px;
+}}
+
+.actions {{
+  display:flex;
+  justify-content:flex-end;
+  gap:12px;
+  margin-bottom:22px;
+}}
+
+.btn {{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:800;
+  background:#111827;
+  color:white;
+}}
+
+.btn.blue {{
+  background:#2563eb;
+}}
+
+.kpi-grid {{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+  margin-bottom:26px;
+}}
+
+.kpi {{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 10px 26px rgba(15,23,42,0.06);
+}}
+
+.kpi .label {{
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  color:#334155;
+}}
+
+.kpi .value {{
+  font-size:36px;
+  font-weight:900;
+  color:#2563eb;
+  margin-top:8px;
+}}
+
+.kpi .note {{
+  color:var(--muted);
+  font-size:14px;
 }}
 
 .section {{
-    margin-top: 28px;
-    background: #111827;
-    padding: 18px;
-    border-radius: 12px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:26px;
+  margin-top:26px;
+  box-shadow:0 10px 26px rgba(15,23,42,0.05);
 }}
 
-.grid {{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
+.section h2 {{
+  margin:0 0 18px;
+  font-size:26px;
+}}
+
+.summary-box {{
+  border-left:6px solid #2563eb;
+  background:#f8fbff;
+  padding:18px;
+  border-radius:14px;
+}}
+
+.summary-box li {{
+  margin-bottom:10px;
+}}
+
+.country-grid,
+.region-grid,
+.card-grid {{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+}}
+
+.country-card,
+.region-card,
+.event-card,
+.infra-card {{
+  border-radius:18px;
+  overflow:hidden;
+  background:white;
+  border:1px solid var(--line);
+  box-shadow:0 8px 20px rgba(15,23,42,0.05);
+}}
+
+.country-card {{
+  padding:20px;
+  border-top:8px solid #2563eb;
+}}
+
+.country-card.normal {{ border-top-color:var(--green); }}
+.country-card.elevated {{ border-top-color:#d97706; }}
+.country-card.tense {{ border-top-color:var(--orange); }}
+.country-card.critical {{ border-top-color:var(--red); }}
+
+.country-name {{
+  font-size:18px;
+  font-weight:900;
+}}
+
+.country-score {{
+  font-size:34px;
+  font-weight:900;
+  color:#2563eb;
+  margin-top:8px;
+}}
+
+.country-level {{
+  display:inline-block;
+  margin-top:8px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#eef2ff;
+  color:#1d4ed8;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+}}
+
+.country-drivers {{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:12px;
+}}
+
+.region-head {{
+  color:white;
+  padding:20px;
+  font-size:22px;
+  font-weight:900;
+  text-transform:uppercase;
+}}
+
+.region-card.blue .region-head {{ background:var(--blue); }}
+.region-card.green .region-head {{ background:var(--green); }}
+.region-card.orange .region-head {{ background:var(--orange); }}
+.region-card.red .region-head {{ background:var(--red); }}
+
+.region-body {{
+  padding:20px;
+  background:#f8fafc;
+}}
+
+.big-number {{
+  font-size:38px;
+  color:#2563eb;
+  font-weight:900;
+}}
+
+.small-label,
+.region-line {{
+  color:#475569;
+  font-size:14px;
+  margin-top:8px;
+}}
+
+.mini-bar {{
+  height:9px;
+  background:#e2e8f0;
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:18px;
+}}
+
+.mini-bar span {{
+  display:block;
+  height:100%;
+  background:#2563eb;
+  border-radius:999px;
 }}
 
 .event-card,
 .infra-card {{
-    background: #1e293b;
-    padding: 14px;
-    border-radius: 10px;
+  padding:20px;
 }}
 
-.event-title,
-.infra-title {{
-    font-weight: bold;
-    margin-bottom: 8px;
+.event-kicker {{
+  font-size:12px;
+  text-transform:uppercase;
+  color:#64748b;
+  font-weight:900;
+  margin-bottom:8px;
 }}
 
-.event-meta,
-.infra-meta {{
-    color: #94a3b8;
-    margin-bottom: 8px;
+.event-card h3,
+.infra-card h3 {{
+  margin:0 0 10px;
+  font-size:18px;
 }}
 
-table {{
-    width: 100%;
-    border-collapse: collapse;
+.event-card p,
+.infra-card p {{
+  color:#475569;
+  font-size:14px;
 }}
 
-th, td {{
-    border-bottom: 1px solid #334155;
-    padding: 10px;
-    text-align: left;
+.event-card a,
+.infra-card a {{
+  color:#2563eb;
+  font-weight:800;
+  text-decoration:none;
 }}
 
-a {{
-    color: #60a5fa;
+.level-pill {{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  margin:4px 0 12px;
 }}
 
-.badge {{
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 999px;
-    background: #1e293b;
+.level-pill.critical {{ background:#fee2e2; color:#991b1b; }}
+.level-pill.tense,
+.level-pill.high {{ background:#ffedd5; color:#9a3412; }}
+.level-pill.elevated,
+.level-pill.medium {{ background:#fef3c7; color:#92400e; }}
+.level-pill.normal,
+.level-pill.watch {{ background:#dcfce7; color:#166534; }}
+
+.footer {{
+  margin-top:44px;
+  background:#101827;
+  color:#cbd5e1;
+  border-radius:18px;
+  padding:22px 28px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
 }}
 
+.footer b {{
+  color:white;
+}}
+
+@media(max-width:1000px) {{
+  .hero {{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:34px 24px;
+  }}
+
+  .content {{
+    padding:24px;
+  }}
+
+  .kpi-grid,
+  .country-grid,
+  .region-grid,
+  .card-grid {{
+    grid-template-columns:1fr;
+  }}
+}}
 </style>
 </head>
 
 <body>
+<div class="page">
 
-<div class="container">
+  <header class="hero">
+    <div>
+      <h1>CEE Infrastructure &<br>Security Daily Brief</h1>
+      <p>Regionális OSINT helyzetkép kritikus infrastruktúrára, lokális eseményekre és kockázati mintázatokra.</p>
+    </div>
 
-<h1>CEE Security Daily Report</h1>
+    <div class="date-box">
+      <div class="label">Dátum</div>
+      <div class="date">{esc(today)}</div>
+      <div class="label">UTC alapú riport</div>
+    </div>
+  </header>
 
-<div class="badge">
-Generated: {report.get("generated_utc", "")}
+  <main class="content">
+
+    <div class="actions">
+      <a class="btn blue" href="../index.html">Vissza a dashboardra</a>
+      <a class="btn" href="cee-daily-report-latest.html">Legfrissebb riport</a>
+    </div>
+
+    <section class="kpi-grid">
+      <div class="kpi">
+        <div class="label">Régiós állapot</div>
+        <div class="value">{esc(str(region.get("overall", "normal")).upper())}</div>
+        <div class="note">score: {round(region.get("overall_score", 0), 2)}</div>
+      </div>
+
+      <div class="kpi">
+        <div class="label">Kritikus infra alert</div>
+        <div class="value">{critical_count}</div>
+        <div class="note">magas: {high_count}</div>
+      </div>
+
+      <div class="kpi">
+        <div class="label">Fő kockázati ország</div>
+        <div class="value" style="font-size:28px;">{esc(top_country)}</div>
+        <div class="note">országkockázati sorrend alapján</div>
+      </div>
+
+      <div class="kpi">
+        <div class="label">Fő szektor</div>
+        <div class="value" style="font-size:28px;">{esc(top_sector)}</div>
+        <div class="note">infrastruktúra-közeli találatok alapján</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Rövid napi értékelés</h2>
+      <div class="summary-box">
+        <ul>{summary_items or "<li>Nincs elérhető napi kivonat.</li>"}</ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Fő régiós blokkok</h2>
+      <div class="region-grid">
+        {html_region_dashboard(report)}
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Top risk országok</h2>
+      <div class="country-grid">
+        {html_country_cards(report.get("top_countries", []))}
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Infrastruktúra-közeli incidensek</h2>
+      <div class="card-grid">
+        {html_proximity(report.get("top_infrastructure_matches", []))}
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Helyi forrásokból azonosított események</h2>
+      <div class="card-grid">
+        {html_local_events(report.get("top_local_events", []))}
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Heti trendjelzések</h2>
+      <div class="summary-box">
+        <ul>{weekly_items or "<li>Nincs elérhető heti trendjelzés.</li>"}</ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <b>Módszertani megjegyzés</b><br>
+        Automatikus OSINT-alapú CEE infrastruktúra- és biztonsági jelentés. A források kézi ellenőrzése javasolt.
+      </div>
+      <div>
+        <b>Törésvonalak</b><br>
+        CEE Security Map
+      </div>
+    </footer>
+
+  </main>
 </div>
-
-<div class="section">
-<h2>Regional Risk Snapshot</h2>
-
-<p>
-Overall regional status:
-<strong>{region.get("overall", "normal")}</strong>
-</p>
-
-<p>
-Regional score:
-<strong>{round(region.get("overall_score", 0), 2)}</strong>
-</p>
-
-</div>
-
-<div class="section">
-<h2>Top Risk Countries</h2>
-
-<table>
-<thead>
-<tr>
-<th>Country</th>
-<th>Status</th>
-<th>Score</th>
-<th>Drivers</th>
-</tr>
-</thead>
-
-<tbody>
-{html_country_table(countries)}
-</tbody>
-
-</table>
-</div>
-
-<div class="section">
-<h2>Daily Executive Summary</h2>
-
-<ul>
-{summary_html}
-</ul>
-
-</div>
-
-<div class="section">
-<h2>Weekly Trend Signals</h2>
-
-<ul>
-{weekly_html}
-</ul>
-
-</div>
-
-<div class="section">
-<h2>Top Local Infrastructure Events</h2>
-
-<div class="grid">
-{local_html}
-</div>
-
-</div>
-
-<div class="section">
-<h2>Infrastructure Proximity Alerts</h2>
-
-<div class="grid">
-{prox_html}
-</div>
-
-</div>
-
-</div>
-
 </body>
-</html>
-"""
-
-    return html
+</html>"""
 
 
 def save_html(report):
     today = utc_now().strftime("%Y-%m-%d")
-
     html = build_html(report)
 
-    latest = REPORT_HTML_DIR / "cee-daily-report-latest.html"
-    dated = REPORT_HTML_DIR / f"cee-daily-report-{today}.html"
-
-    latest.write_text(html, encoding="utf-8")
-    dated.write_text(html, encoding="utf-8")
+    (REPORT_HTML_DIR / "cee-daily-report-latest.html").write_text(html, encoding="utf-8")
+    (REPORT_HTML_DIR / f"cee-daily-report-{today}.html").write_text(html, encoding="utf-8")
 
 
 def main():
     ensure_dirs()
-
     report = build_report()
-
     save_report_json(report)
     save_html(report)
-
     print("CEE daily report created")
 
 

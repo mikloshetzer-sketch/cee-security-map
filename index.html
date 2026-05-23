@@ -1218,6 +1218,10 @@
               <label for="layerInfraProximity">infrastruktúra-közeli incidensek</label>
             </div>
             <div class="layer-item">
+              <input type="checkbox" id="layerLocalEvents" checked>
+              <label for="layerLocalEvents">helyi források / local events</label>
+            </div>
+            <div class="layer-item">
               <input type="checkbox" id="layerEarly">
               <label for="layerEarly">early warning</label>
             </div>
@@ -1293,6 +1297,7 @@
       trustedRss: null,
       infraProximity: null,
       infraProximityHistory: null,
+      localEvents: null,
       criticalInfrastructure: null,
       digitalInfrastructure: null,
       hazardousInfrastructure: null
@@ -1969,6 +1974,15 @@
         layers.rssTrusted.addData({ type:"FeatureCollection", features: keep });
       }
 
+      if (DATASETS.localEvents && layers.localEvents){
+        const feats = DATASETS.localEvents.features || [];
+        const keep = FILTERS.newsToday
+          ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date))
+          : feats;
+        layers.localEvents.clearLayers();
+        layers.localEvents.addData({ type:"FeatureCollection", features: keep });
+      }
+
       document.getElementById("btnTodayNews").classList.toggle("on", FILTERS.newsToday);
       document.getElementById("btnTodayAlerts").classList.toggle("on", FILTERS.alertsToday);
       document.getElementById("btnReset7d").classList.toggle("on", (!FILTERS.newsToday && !FILTERS.alertsToday));
@@ -2544,6 +2558,46 @@
       }
     }
 
+    function localEventPointToLayer(feature, latlng){
+      const p = feature.properties || {};
+      const category = String(p.category || "local_media").toLowerCase();
+      const severity = String(p.severity || "info").toLowerCase();
+
+      let fillColor = "#4f819b";
+      if (category === "explosion" || severity === "high") fillColor = "#b14c4c";
+      else if (category === "fire" || severity === "medium") fillColor = "#c46d3f";
+      else if (category === "energy") fillColor = "#b78a38";
+      else if (category === "hazardous") fillColor = "#c46d3f";
+      else if (category === "cyber") fillColor = "#6f62d7";
+      else if (category === "military") fillColor = "#638a70";
+      else if (category === "transport") fillColor = "#3f8aa0";
+
+      return L.circleMarker(latlng, {
+        radius: severity === "high" ? 9 : 7,
+        weight: 2,
+        color: "#ffffff",
+        opacity: 0.95,
+        fillColor,
+        fillOpacity: 0.85
+      });
+    }
+
+    function makeLocalEventPopup(props){
+      const url = props.url ? `<div style="margin-top:6px;">🔗 <a href="${esc(props.url)}" target="_blank" rel="noopener">Helyi forrás megnyitása</a></div>` : "";
+      return `
+        <div style="margin-bottom:6px;"><b>${esc(props.title || "Helyi esemény")}</b></div>
+        <div><b>Forrás:</b> ${esc(props.source || "—")}</div>
+        <div><b>Ország:</b> ${esc(props.country || "—")}</div>
+        <div><b>Hely:</b> ${esc(props.place || "—")}</div>
+        <div><b>Kategória:</b> ${esc(props.category || "—")}</div>
+        <div><b>Súlyosság:</b> ${esc(props.severity || "—")}</div>
+        <div><b>Geokód:</b> ${esc(props.geocode_quality || "—")}</div>
+        <div><b>Idő:</b> ${esc(props.time || "—")}</div>
+        ${props.summary ? `<div class="small" style="margin-top:6px;">${esc(props.summary).slice(0, 320)}</div>` : ""}
+        ${url}
+      `;
+    }
+
     const layers = {
       borders: null,
       countryRisk: null,
@@ -2556,6 +2610,7 @@
       gdeltDoc: L.geoJSON(null, { pointToLayer: gdeltPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       usgs: L.geoJSON(null, { pointToLayer: genericRecencyPointToLayer("USGS"), onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       gdacs: L.geoJSON(null, { pointToLayer: genericRecencyPointToLayer("GDACS"), onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
+      localEvents: L.geoJSON(null, { pointToLayer: localEventPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makeLocalEventPopup(f.properties||{})) }),
       rssTrusted: L.geoJSON(null, {
         pointToLayer: (feature, latlng) => L.circleMarker(latlng, storyMarkerStyle(feature.properties || {})),
         onEachFeature: (f, l) => l.bindPopup(makeStoryPopup(f.properties || {}))
@@ -2710,13 +2765,14 @@
 
       refreshProximityView();
 
-      const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss] = await Promise.all([
+      const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss, localEvents] = await Promise.all([
         loadJson(`${DATA}/gdelt.geojson`).catch(()=>null),
         loadJson(`${DATA}/gdelt_linked.geojson`).catch(()=>null),
         loadJson(`${DATA}/gdelt_crossborder.geojson`).catch(()=>null),
         loadJson(`${DATA}/usgs.geojson`).catch(()=>null),
         loadJson(`${DATA}/gdacs.geojson`).catch(()=>null),
         loadJson(`${DATA}/trusted_rss.json`).catch(()=>null),
+        loadJson(`${DATA}/local_events.geojson`).catch(()=>null),
       ]);
 
       if (gdelt) DATASETS.gdelt = gdelt;
@@ -2724,6 +2780,11 @@
       if (gdeltDoc) DATASETS.gdeltDoc = gdeltDoc;
       if (usgs) DATASETS.usgs = usgs;
       if (gdacs) DATASETS.gdacs = gdacs;
+      if (localEvents) {
+        DATASETS.localEvents = localEvents;
+        layers.localEvents.clearLayers();
+        layers.localEvents.addData(localEvents);
+      }
 
       if (trustedRss) {
         DATASETS.trustedRss = trustedRss;
@@ -2754,6 +2815,7 @@
         }
       }
       if (document.getElementById("layerInfraProximity")?.checked && layers.infraProximity && !map.hasLayer(layers.infraProximity)) layers.infraProximity.addTo(map);
+      if (document.getElementById("layerLocalEvents")?.checked && layers.localEvents && !map.hasLayer(layers.localEvents)) layers.localEvents.addTo(map);
       layers.gdelt.addTo(map);
 
       document.getElementById('layerBorders').addEventListener('change', (e) => {
@@ -2788,6 +2850,10 @@
       document.getElementById('layerInfraProximity')?.addEventListener('change', (e) => {
         if (!layers.infraProximity) return;
         e.target.checked ? map.addLayer(layers.infraProximity) : map.removeLayer(layers.infraProximity);
+      });
+      document.getElementById('layerLocalEvents')?.addEventListener('change', (e) => {
+        if (!layers.localEvents) return;
+        e.target.checked ? map.addLayer(layers.localEvents) : map.removeLayer(layers.localEvents);
       });
       document.getElementById('layerEarly').addEventListener('change', (e) => {
         if (!layers.early) return;
@@ -2867,3 +2933,4 @@
   </script>
 </body>
 </html>
+

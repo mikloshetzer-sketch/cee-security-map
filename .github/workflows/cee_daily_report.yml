@@ -1,0 +1,45 @@
+name: Build CEE Daily Report
+
+on:
+  schedule:
+    - cron: "30 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-cee-daily-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build CEE daily report
+        run: |
+          python scripts/build_cee_daily_report.py
+
+      - name: Commit & push report
+        run: |
+          git config user.name "cee-bot"
+          git config user.email "cee-bot@users.noreply.github.com"
+
+          git add data/reports docs/reports
+
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+            exit 0
+          fi
+
+          git commit -m "auto: build CEE daily report"
+
+          git pull --rebase origin main
+          git push

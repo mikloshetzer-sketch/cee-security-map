@@ -1,689 +1,777 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
 <meta charset="UTF-8">
-<title>CEE Security Daily Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEE Infrastructure & Security Daily Brief</title>
 
 <style>
+:root {
+  --dark:#07111f;
+  --dark2:#101b2d;
+  --panel:#ffffff;
+  --soft:#f3f6fa;
+  --text:#172033;
+  --muted:#65758b;
+  --blue:#2f66e8;
+  --green:#18a957;
+  --orange:#f97316;
+  --red:#dc2626;
+  --line:#e4eaf2;
+}
+
+* { box-sizing:border-box; }
 
 body {
-    margin: 0;
-    background: #0f172a;
-    color: #e2e8f0;
-    font-family: Arial, sans-serif;
+  margin:0;
+  background:#dde3ea;
+  color:var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height:1.55;
 }
 
-.container {
-    max-width: 1400px;
-    margin: auto;
-    padding: 24px;
+.page {
+  max-width:1320px;
+  margin:0 auto;
+  background:#f8fafc;
+  min-height:100vh;
 }
 
-h1 {
-    margin-top: 0;
+.hero {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(79,117,255,0.22), transparent 28%),
+    linear-gradient(135deg, #07111f 0%, #132039 100%);
+  color:white;
+  padding:48px;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:center;
+}
+
+.hero h1 {
+  margin:0;
+  font-size:42px;
+  line-height:1.05;
+  letter-spacing:-0.03em;
+}
+
+.hero p {
+  color:#cbd5e1;
+  font-size:18px;
+  margin:16px 0 0;
+}
+
+.date-box {
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:18px;
+  padding:24px 34px;
+  min-width:230px;
+  text-align:center;
+  background:rgba(255,255,255,0.04);
+}
+
+.date-box .label {
+  color:#94a3b8;
+  font-size:13px;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.date-box .date {
+  font-size:28px;
+  font-weight:900;
+  margin-top:8px;
+}
+
+.content {
+  padding:34px 46px 54px;
+}
+
+.actions {
+  display:flex;
+  justify-content:flex-end;
+  gap:12px;
+  margin-bottom:22px;
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:800;
+  background:#111827;
+  color:white;
+}
+
+.btn.blue {
+  background:#2563eb;
+}
+
+.kpi-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+  margin-bottom:26px;
+}
+
+.kpi {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 10px 26px rgba(15,23,42,0.06);
+}
+
+.kpi .label {
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  color:#334155;
+}
+
+.kpi .value {
+  font-size:36px;
+  font-weight:900;
+  color:#2563eb;
+  margin-top:8px;
+}
+
+.kpi .note {
+  color:var(--muted);
+  font-size:14px;
 }
 
 .section {
-    margin-top: 28px;
-    background: #111827;
-    padding: 18px;
-    border-radius: 12px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:26px;
+  margin-top:26px;
+  box-shadow:0 10px 26px rgba(15,23,42,0.05);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
+.section h2 {
+  margin:0 0 18px;
+  font-size:26px;
+}
+
+.summary-box {
+  border-left:6px solid #2563eb;
+  background:#f8fbff;
+  padding:18px;
+  border-radius:14px;
+}
+
+.summary-box li {
+  margin-bottom:10px;
+}
+
+.country-grid,
+.region-grid,
+.card-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+}
+
+.country-card,
+.region-card,
+.event-card,
+.infra-card {
+  border-radius:18px;
+  overflow:hidden;
+  background:white;
+  border:1px solid var(--line);
+  box-shadow:0 8px 20px rgba(15,23,42,0.05);
+}
+
+.country-card {
+  padding:20px;
+  border-top:8px solid #2563eb;
+}
+
+.country-card.normal { border-top-color:var(--green); }
+.country-card.elevated { border-top-color:#d97706; }
+.country-card.tense { border-top-color:var(--orange); }
+.country-card.critical { border-top-color:var(--red); }
+
+.country-name {
+  font-size:18px;
+  font-weight:900;
+}
+
+.country-score {
+  font-size:34px;
+  font-weight:900;
+  color:#2563eb;
+  margin-top:8px;
+}
+
+.country-level {
+  display:inline-block;
+  margin-top:8px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#eef2ff;
+  color:#1d4ed8;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.country-drivers {
+  color:var(--muted);
+  font-size:13px;
+  margin-top:12px;
+}
+
+.region-head {
+  color:white;
+  padding:20px;
+  font-size:22px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.region-card.blue .region-head { background:var(--blue); }
+.region-card.green .region-head { background:var(--green); }
+.region-card.orange .region-head { background:var(--orange); }
+.region-card.red .region-head { background:var(--red); }
+
+.region-body {
+  padding:20px;
+  background:#f8fafc;
+}
+
+.big-number {
+  font-size:38px;
+  color:#2563eb;
+  font-weight:900;
+}
+
+.small-label,
+.region-line {
+  color:#475569;
+  font-size:14px;
+  margin-top:8px;
+}
+
+.mini-bar {
+  height:9px;
+  background:#e2e8f0;
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:18px;
+}
+
+.mini-bar span {
+  display:block;
+  height:100%;
+  background:#2563eb;
+  border-radius:999px;
 }
 
 .event-card,
 .infra-card {
-    background: #1e293b;
-    padding: 14px;
-    border-radius: 10px;
+  padding:20px;
 }
 
-.event-title,
-.infra-title {
-    font-weight: bold;
-    margin-bottom: 8px;
+.event-kicker {
+  font-size:12px;
+  text-transform:uppercase;
+  color:#64748b;
+  font-weight:900;
+  margin-bottom:8px;
 }
 
-.event-meta,
-.infra-meta {
-    color: #94a3b8;
-    margin-bottom: 8px;
+.event-card h3,
+.infra-card h3 {
+  margin:0 0 10px;
+  font-size:18px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.event-card p,
+.infra-card p {
+  color:#475569;
+  font-size:14px;
 }
 
-th, td {
-    border-bottom: 1px solid #334155;
-    padding: 10px;
-    text-align: left;
+.event-card a,
+.infra-card a {
+  color:#2563eb;
+  font-weight:800;
+  text-decoration:none;
 }
 
-a {
-    color: #60a5fa;
+.level-pill {
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  margin:4px 0 12px;
 }
 
-.badge {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 999px;
-    background: #1e293b;
+.level-pill.critical { background:#fee2e2; color:#991b1b; }
+.level-pill.tense,
+.level-pill.high { background:#ffedd5; color:#9a3412; }
+.level-pill.elevated,
+.level-pill.medium { background:#fef3c7; color:#92400e; }
+.level-pill.normal,
+.level-pill.watch { background:#dcfce7; color:#166534; }
+
+.footer {
+  margin-top:44px;
+  background:#101827;
+  color:#cbd5e1;
+  border-radius:18px;
+  padding:22px 28px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
 }
 
+.footer b {
+  color:white;
+}
+
+@media(max-width:1000px) {
+  .hero {
+    flex-direction:column;
+    align-items:flex-start;
+    padding:34px 24px;
+  }
+
+  .content {
+    padding:24px;
+  }
+
+  .kpi-grid,
+  .country-grid,
+  .region-grid,
+  .card-grid {
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 
 <body>
+<div class="page">
 
-<div class="container">
+  <header class="hero">
+    <div>
+      <h1>CEE Infrastructure &<br>Security Daily Brief</h1>
+      <p>Regionális OSINT helyzetkép kritikus infrastruktúrára, lokális eseményekre és kockázati mintázatokra.</p>
+    </div>
 
-<h1>CEE Security Daily Report</h1>
+    <div class="date-box">
+      <div class="label">Dátum</div>
+      <div class="date">2026-05-23</div>
+      <div class="label">UTC alapú riport</div>
+    </div>
+  </header>
 
-<div class="badge">
-Generated: 2026-05-23T17:31:58.659498+00:00
-</div>
+  <main class="content">
 
-<div class="section">
-<h2>Regional Risk Snapshot</h2>
+    <div class="actions">
+      <a class="btn blue" href="../index.html">Vissza a dashboardra</a>
+      <a class="btn" href="cee-daily-report-latest.html">Legfrissebb riport</a>
+    </div>
 
-<p>
-Overall regional status:
-<strong>elevated</strong>
-</p>
+    <section class="kpi-grid">
+      <div class="kpi">
+        <div class="label">Régiós állapot</div>
+        <div class="value">TENSE</div>
+        <div class="note">score: 5.0</div>
+      </div>
 
-<p>
-Regional score:
-<strong>2.5</strong>
-</p>
+      <div class="kpi">
+        <div class="label">Kritikus infra alert</div>
+        <div class="value">975</div>
+        <div class="note">magas: 305</div>
+      </div>
 
-</div>
+      <div class="kpi">
+        <div class="label">Fő kockázati ország</div>
+        <div class="value" style="font-size:28px;">Romania</div>
+        <div class="note">országkockázati sorrend alapján</div>
+      </div>
 
-<div class="section">
-<h2>Top Risk Countries</h2>
+      <div class="kpi">
+        <div class="label">Fő szektor</div>
+        <div class="value" style="font-size:28px;">digital</div>
+        <div class="note">infrastruktúra-közeli találatok alapján</div>
+      </div>
+    </section>
 
-<table>
-<thead>
-<tr>
-<th>Country</th>
-<th>Status</th>
-<th>Score</th>
-<th>Drivers</th>
-</tr>
-</thead>
+    <section class="section">
+      <h2>Rövid napi értékelés</h2>
+      <div class="summary-box">
+        <ul><li>Az infrastruktúra-közelségi modul 2338 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1195 magas vagy kritikus szintű.</li><li>CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Oana Țoiu , la Forumul GLOBSEC de la Praga . România promovează cooperarea și securitatea regională.</li><li>CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Wahania Trumpa wzbudziły chaos w NATO . Bez jakiejkolwiek koordynacji.</li><li>CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Μένος κατά της Ρωσίας – Ο πρόεδρος της Τσεχίας καλεί το ΝΑΤΟ να αποκλείσει τη Μόσχα από το διαδίκτυο.</li><li>Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 974.95; 7 napos változás: +12222%).</li><li>Trend: emelkedő (+1750%) az előző 7 naphoz képest.</li><li>Forráskép: GDELT 0, GDELT linked 3862, GDELT DOC 3957, direkt feed 442, USGS 0, GDACS 0.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 200 db.</li></ul>
+      </div>
+    </section>
 
-<tbody>
-
-        <tr>
-            <td>Romania</td>
-            <td>elevated</td>
-            <td>2.5</td>
-            <td>kritikus infrastruktúra-közeli incidensek</td>
-        </tr>
+    <section class="section">
+      <h2>Fő régiós blokkok</h2>
+      <div class="region-grid">
         
-
-        <tr>
-            <td>Lithuania</td>
-            <td>elevated</td>
-            <td>2.5</td>
-            <td>kritikus infrastruktúra-közeli incidensek</td>
-        </tr>
-        
-
-        <tr>
-            <td>Poland</td>
-            <td>elevated</td>
-            <td>2.5</td>
-            <td>kritikus infrastruktúra-közeli incidensek</td>
-        </tr>
-        
-
-        <tr>
-            <td>Slovakia</td>
-            <td>elevated</td>
-            <td>2.5</td>
-            <td>kritikus infrastruktúra-közeli incidensek</td>
-        </tr>
-        
-
-        <tr>
-            <td>Latvia</td>
-            <td>elevated</td>
-            <td>2.5</td>
-            <td>kritikus infrastruktúra-közeli incidensek</td>
-        </tr>
-        
-
-        <tr>
-            <td>Czech Republic</td>
-            <td>elevated</td>
-            <td>2.5</td>
-            <td>kritikus infrastruktúra-közeli incidensek</td>
-        </tr>
-        
-
-        <tr>
-            <td>Hungary</td>
-            <td>elevated</td>
-            <td>2.5</td>
-            <td>kritikus infrastruktúra-közeli incidensek</td>
-        </tr>
-        
-
-        <tr>
-            <td>Estonia</td>
-            <td>elevated</td>
-            <td>2.5</td>
-            <td>kritikus infrastruktúra-közeli incidensek</td>
-        </tr>
-        
-</tbody>
-
-</table>
-</div>
-
-<div class="section">
-<h2>Daily Executive Summary</h2>
-
-<ul>
-<li>Az infrastruktúra-közelségi modul 2372 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1200 magas vagy kritikus szintű.</li><li>CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Patto Stabilità , subito scontro : lAustria di traverso sul debito.</li><li>CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: NATO se antrenează la granița Rusiei pentru un război dominat de drone.</li><li>CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Il presidente ceco Petr Pavel esorta la NATO a mostrare i denti di fronte alle provocazioni della Russia.</li><li>Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 978.55; 7 napos változás: +5422%).</li><li>Trend: emelkedő (+1614%) az előző 7 naphoz képest.</li><li>Forráskép: GDELT 0, GDELT linked 3796, GDELT DOC 3892, direkt feed 441, USGS 0, GDACS 0.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 200 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li>
-</ul>
-
-</div>
-
-<div class="section">
-<h2>Weekly Trend Signals</h2>
-
-<ul>
-<li>A kritikus infrastruktúra-közelségi mutató alapján a heti kitettség fő országai: Czech Republic: 70225.1, Romania: 46161.6, Lithuania: 29322.2, Hungary: 12806.5.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében fokozódó feszültségekkel terhelt képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, katonai és elrettentési dimenziók erősödése, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor lokális incidensek és eszkalációs kockázatok több ponton megfigyelhetők voltak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, ugyanakkor több ponton emelkedő nyomás érzékelhető. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor a jelenlegi mintázatok fennmaradása esetén több ponton fokozatos romlás valószínűsíthető. A következő időszak kulcskérdése várhatóan a keleti peremterületek biztonságpolitikai terheltsége lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li>
-</ul>
-
-</div>
-
-<div class="section">
-<h2>Top Local Infrastructure Events</h2>
-
-<div class="grid">
-
-        <div class="event-card">
-            <div class="event-title">
-                Stabil a tiszaújvárosi robbanás Debrecenben kezelt sérültjeinek állapota
-            </div>
-
-            <div class="event-meta">
-                Hungary
-                |
-                explosion
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                Kiterjedt, súlyos másodfokú égési sérüléseket szenvedtek, egyikük jelenleg lélegeztetésre szorul.
-            </div>
-
-            <a href="https://telex.hu/belfold/2026/05/23/mol-tiszaujvaros-robbanas-serult-aldozat-allapot-stabil-debrecen" target="_blank">
-                Source
-            </a>
+        <div class="region-card blue">
+          <div class="region-head">Baltikum</div>
+          <div class="region-body">
+            <div class="big-number">15.0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> Lithuania</div>
+            <div class="mini-bar"><span style="width:100%"></span></div>
+          </div>
         </div>
         
 
-        <div class="event-card">
-            <div class="event-title">
-                Robbanás történt egy kínai szénbányában, kilencvenen meghaltak
-            </div>
-
-            <div class="event-meta">
-                Hungary
-                |
-                explosion
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                Korábban nyolc halottról számoltak be, és arról, hogy több mint 200 embert sikeresen a felszínre hoztak.
-            </div>
-
-            <a href="https://telex.hu/kulfold/2026/05/23/kina-banya-robbanas-halottak" target="_blank">
-                Source
-            </a>
+        <div class="region-card green">
+          <div class="region-head">V4 térség</div>
+          <div class="region-body">
+            <div class="big-number">20.0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> Poland</div>
+            <div class="mini-bar"><span style="width:100%"></span></div>
+          </div>
         </div>
         
 
-        <div class="event-card">
-            <div class="event-title">
-                Szivárog egy veszélyes anyaggal teli tartály egy kaliforniai üzemben, több mint 40 ezer embert evakuáltak
-            </div>
-
-            <div class="event-meta">
-                Hungary
-                |
-                local_media
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                A katasztrófavédelem már megakadályozta, hogy a tartály tovább hevüljön, de még nem tudják, hogy állítják meg a szivárgást.
-            </div>
-
-            <a href="https://telex.hu/kulfold/2026/05/23/egyesult-allamok-kalifornia-vegyi-szivargas-evakuacio" target="_blank">
-                Source
-            </a>
+        <div class="region-card orange">
+          <div class="region-head">Fekete-tengeri perem</div>
+          <div class="region-body">
+            <div class="big-number">5.0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> Romania</div>
+            <div class="mini-bar"><span style="width:60.0%"></span></div>
+          </div>
         </div>
         
 
-        <div class="event-card">
-            <div class="event-title">
-                Tűz volt hajnalban egy gárdonyi pelletüzemben, a tűzoltók nagy erőkkel vonultak ki
-            </div>
+        <div class="region-card red">
+          <div class="region-head">Egyéb CEE</div>
+          <div class="region-body">
+            <div class="big-number">0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> —</div>
+            <div class="mini-bar"><span style="width:0%"></span></div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
 
-            <div class="event-meta">
-                Hungary
-                |
-                fire
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                Az üzem több száz négyzetméteren égett.
-            </div>
-
-            <a href="https://telex.hu/belfold/2026/05/23/gardony-zichyujfalu-pelletuzem-tuz-katasztrofavedelem" target="_blank">
-                Source
-            </a>
+    <section class="section">
+      <h2>Top risk országok</h2>
+      <div class="country-grid">
+        
+        <div class="country-card tense">
+          <div class="country-name">Romania</div>
+          <div class="country-score">5.0</div>
+          <div class="country-level">tense</div>
+          <div class="country-drivers">kritikus infrastruktúra-közeli incidensek</div>
         </div>
         
 
-        <div class="event-card">
-            <div class="event-title">
-                A Mol további két hetet kapott a NIS ügyében zajló tárgyalások lezárására
-            </div>
-
-            <div class="event-meta">
-                Hungary
-                |
-                local_media
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                A szerb energiaügyi miniszter szerint a helyzet összetett.
-            </div>
-
-            <a href="https://telex.hu/gazdasag/2026/05/22/nis-mol-gazprom-targyalas-eladas-hatarido" target="_blank">
-                Source
-            </a>
+        <div class="country-card tense">
+          <div class="country-name">Lithuania</div>
+          <div class="country-score">5.0</div>
+          <div class="country-level">tense</div>
+          <div class="country-drivers">kritikus infrastruktúra-közeli incidensek</div>
         </div>
         
 
-        <div class="event-card">
-            <div class="event-title">
-                Stabil a tiszaújvárosi Mol-üzemben történt robbanás sérültjeinek az állapota
-            </div>
-
-            <div class="event-meta">
-                Hungary
-                |
-                explosion
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                Az egyik sérültet lélegezetőgépre tették.
-            </div>
-
-            <a href="https://hvg.hu/itthon/20260523_stabil-a-tiszaujvarosi-mol-uzemben-tortent-robbanas-serultjeinek-az-allapota" target="_blank">
-                Source
-            </a>
+        <div class="country-card tense">
+          <div class="country-name">Poland</div>
+          <div class="country-score">5.0</div>
+          <div class="country-level">tense</div>
+          <div class="country-drivers">kritikus infrastruktúra-közeli incidensek</div>
         </div>
         
 
-        <div class="event-card">
-            <div class="event-title">
-                Büntetőeljárást indít a rendőrség a tiszaújvárosi robbanás ügyében
-            </div>
-
-            <div class="event-meta">
-                Hungary
-                |
-                explosion
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                A Mol olefingyárában történt üzemi balesetben egy férfi meghalt, és több súlyos sérültje is van az esetnek.
-            </div>
-
-            <a href="https://hvg.hu/gazdasag/20260523_buntetoeljarast-indit-a-rendorseg-a-tiszaujvarosi-robbanas-ugyeben" target="_blank">
-                Source
-            </a>
+        <div class="country-card tense">
+          <div class="country-name">Slovakia</div>
+          <div class="country-score">5.0</div>
+          <div class="country-level">tense</div>
+          <div class="country-drivers">kritikus infrastruktúra-közeli incidensek</div>
         </div>
         
 
+        <div class="country-card tense">
+          <div class="country-name">Latvia</div>
+          <div class="country-score">5.0</div>
+          <div class="country-level">tense</div>
+          <div class="country-drivers">kritikus infrastruktúra-közeli incidensek</div>
+        </div>
+        
+
+        <div class="country-card tense">
+          <div class="country-name">Czech Republic</div>
+          <div class="country-score">5.0</div>
+          <div class="country-level">tense</div>
+          <div class="country-drivers">kritikus infrastruktúra-közeli incidensek</div>
+        </div>
+        
+
+        <div class="country-card tense">
+          <div class="country-name">Hungary</div>
+          <div class="country-score">5.0</div>
+          <div class="country-level">tense</div>
+          <div class="country-drivers">kritikus infrastruktúra-közeli incidensek</div>
+        </div>
+        
+
+        <div class="country-card tense">
+          <div class="country-name">Estonia</div>
+          <div class="country-score">5.0</div>
+          <div class="country-level">tense</div>
+          <div class="country-drivers">kritikus infrastruktúra-közeli incidensek</div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Infrastruktúra-közeli incidensek</h2>
+      <div class="card-grid">
+        
+        <div class="infra-card critical">
+          <div class="event-kicker">Hungary • hazardous • 0.0 km</div>
+          <h3>MOL Tiszaújváros Petrochemical Complex</h3>
+          <p>Vizsgálóbizottságot állított fel a Mol a tiszaújvárosi robbanás után</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://telex.hu/gazdasag/2026/05/23/vizsgalobizottsagot-allitott-fel-a-mol-a-tiszaujvarosi-robbanas-utan" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Hungary • hazardous • 0.0 km</div>
+          <h3>MOL Tiszaújváros Petrochemical Complex</h3>
+          <p>Halált okozó gondatlan veszélyeztetés gyanúja miatt nyomoznak a tiszaújvárosi robbanás ügyében</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://telex.hu/belfold/2026/05/23/nyomozas-a-tiszaujvarosi-robbanas-rendorseg" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Hungary • hazardous • 0.0 km</div>
+          <h3>MOL Tiszaújváros Petrochemical Complex</h3>
+          <p>Stabil a tiszaújvárosi robbanás Debrecenben kezelt sérültjeinek állapota</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://telex.hu/belfold/2026/05/23/mol-tiszaujvaros-robbanas-serult-aldozat-allapot-stabil-debrecen" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Hungary • hazardous • 0.0 km</div>
+          <h3>MOL Tiszaújváros Petrochemical Complex</h3>
+          <p>Vizsgálóbizottságot állít fel a Mol a tiszaújvárosi robbanás ügyében</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://hvg.hu/gazdasag/20260523_tiszaujvarosi-robbanas-mol-vizsgalobizottsag" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Hungary • hazardous • 0.0 km</div>
+          <h3>MOL Tiszaújváros Petrochemical Complex</h3>
+          <p>Stabil a tiszaújvárosi Mol-üzemben történt robbanás sérültjeinek az állapota</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://hvg.hu/itthon/20260523_stabil-a-tiszaujvarosi-mol-uzemben-tortent-robbanas-serultjeinek-az-allapota" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Hungary • hazardous • 0.0 km</div>
+          <h3>MOL Tiszaújváros Petrochemical Complex</h3>
+          <p>Büntetőeljárást indít a rendőrség a tiszaújvárosi robbanás ügyében</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://hvg.hu/gazdasag/20260523_buntetoeljarast-indit-a-rendorseg-a-tiszaujvarosi-robbanas-ugyeben" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Hungary • hazardous • 0.0 km</div>
+          <h3>MOL Tiszaújváros Petrochemical Complex</h3>
+          <p>Robbanás Tiszaújvárosban: lépéseket jelentett be a Mol</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://www.portfolio.hu/gazdasag/20260523/robbanas-tiszaujvarosban-lepeseket-jelentett-be-a-mol-838822" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Romania • transport • 0.0 km</div>
+          <h3>Port of Constanța</h3>
+          <p>VIDEO Fotbal: Chindia Târgoviște - Farul Constanța 3-3, în barajul pentru Superligă</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://agerpres.ro/sport/2026/05/23/video-fotbal-chindia-targoviste---farul-constanta-3-3-in-barajul-pentru-superliga--1559296" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Estonia • digital • 0.0 km</div>
+          <h3>Tallinn Cyber and Digital Infrastructure Hub</h3>
+          <p>Gallery: Tallinn&#39;s fountains springing forth again with the arrival of the warmer months</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://news.err.ee/1610031679/gallery-tallinn-s-fountains-springing-forth-again-with-the-arrival-of-the-warmer-months" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Estonia • digital • 0.0 km</div>
+          <h3>Tallinn Cyber and Digital Infrastructure Hub</h3>
+          <p>Equestrian statue honors Estonian women&#39;s movement pioneer in Tallinn</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://news.err.ee/1610031547/equestrian-statue-honors-estonian-women-s-movement-pioneer-in-tallinn" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Estonia • digital • 0.0 km</div>
+          <h3>Tallinn Cyber and Digital Infrastructure Hub</h3>
+          <p>Kompassi Square high-rise plans uncertain as talks in Tallinn continue</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://news.err.ee/1610031529/kompassi-square-high-rise-plans-uncertain-as-talks-in-tallinn-continue" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card critical">
+          <div class="event-kicker">Estonia • digital • 0.0 km</div>
+          <h3>Tallinn Cyber and Digital Infrastructure Hub</h3>
+          <p>Accessibility expert: Simple solutions often beat high-tech fixes</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://news.err.ee/1610030203/accessibility-expert-simple-solutions-often-beat-high-tech-fixes" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Helyi forrásokból azonosított események</h2>
+      <div class="card-grid">
+        
         <div class="event-card">
-            <div class="event-title">
-                Megszólalt a Mol üzemében történt robbanás áldozatának hozzátartozója
-            </div>
-
-            <div class="event-meta">
-                Hungary
-                |
-                explosion
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                A kétgyerekes apának nem is kellett ott lennie az üzemben, már véget ért a műszakja.
-            </div>
-
-            <a href="https://hvg.hu/elet/20260523_megszolalt-a-mol-uzemeben-tortent-robbanas-aldozatanak-hozzatartozoja" target="_blank">
-                Source
-            </a>
+          <div class="event-kicker">Hungary • explosion • high</div>
+          <h3>Vizsgálóbizottságot állított fel a Mol a tiszaújvárosi robbanás után</h3>
+          <p>Megkezdődött az érintett üzemegység biztonságos leürítése, ezt követően indulhatnak el a részletes kárfelmérési munkálatok.</p>
+          <a href="https://telex.hu/gazdasag/2026/05/23/vizsgalobizottsagot-allitott-fel-a-mol-a-tiszaujvarosi-robbanas-utan" target="_blank" rel="noopener">Forrás megnyitása</a>
         </div>
         
 
         <div class="event-card">
-            <div class="event-title">
-                Robbanás volt egy kínai bányában, több mint nyolcvanan meghaltak
-            </div>
-
-            <div class="event-meta">
-                Hungary
-                |
-                explosion
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                Sokan a romok alatt rekedtek, őket a katasztrófavédelem próbálja kimenteni.
-            </div>
-
-            <a href="https://hvg.hu/vilag/20260523_robbanas-volt-egy-kinai-banyaban-tobb-mint-nyolcvanan-meghaltak" target="_blank">
-                Source
-            </a>
+          <div class="event-kicker">Hungary • local_media • high</div>
+          <h3>Nem szupervulkán, de aggasztó, hogy egyre inkább ébredezik</h3>
+          <p>Egy új tanulmány szerint a Campi Flegrei aktivitása egyre gyorsuló tendenciát mutat. Ez komoly veszélyt jelent, egy évtizeden belül jelentős változás jöhet.</p>
+          <a href="https://telex.hu/techtud/2026/05/23/campi-flegrei-vulkan-uj-tanulmany-nem-szupervulkan" target="_blank" rel="noopener">Forrás megnyitása</a>
         </div>
         
 
         <div class="event-card">
-            <div class="event-title">
-                26 ezer liternyi mérgező anyag robbanhat fel Kalifornia mellett
-            </div>
-
-            <div class="event-meta">
-                Hungary
-                |
-                fire
-                |
-                high
-            </div>
-
-            <div class="event-summary">
-                A tűzoltók a „igyekeznek megoldást találni”, egyelőre kívülről hűtik a tartályt vízzel.
-            </div>
-
-            <a href="https://hvg.hu/vilag/20260523_26-ezer-liternyi-mergezo-anyag-robbanhat-fel-kalifornia-mellett" target="_blank">
-                Source
-            </a>
+          <div class="event-kicker">Hungary • explosion • high</div>
+          <h3>Halált okozó gondatlan veszélyeztetés gyanúja miatt nyomoznak a tiszaújvárosi robbanás ügyében</h3>
+          <p>A vizsgálat hetekig, hónapokig is eltarthat.</p>
+          <a href="https://telex.hu/belfold/2026/05/23/nyomozas-a-tiszaujvarosi-robbanas-rendorseg" target="_blank" rel="noopener">Forrás megnyitása</a>
         </div>
         
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • explosion • high</div>
+          <h3>Stabil a tiszaújvárosi robbanás Debrecenben kezelt sérültjeinek állapota</h3>
+          <p>Kiterjedt, súlyos másodfokú égési sérüléseket szenvedtek, egyikük jelenleg lélegeztetésre szorul.</p>
+          <a href="https://telex.hu/belfold/2026/05/23/mol-tiszaujvaros-robbanas-serult-aldozat-allapot-stabil-debrecen" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • explosion • high</div>
+          <h3>Robbanás történt egy kínai szénbányában, kilencvenen meghaltak</h3>
+          <p>Korábban nyolc halottról számoltak be, és arról, hogy több mint 200 embert sikeresen a felszínre hoztak.</p>
+          <a href="https://telex.hu/kulfold/2026/05/23/kina-banya-robbanas-halottak" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • explosion • high</div>
+          <h3>Vizsgálóbizottságot állít fel a Mol a tiszaújvárosi robbanás ügyében</h3>
+          <p>Az üzemi balesetben érintett és a mentésben részt vevő kollégák számára szakszerű pszichológiai támogatást biztosít a vállalat – írta a Mol közleményben.</p>
+          <a href="https://hvg.hu/gazdasag/20260523_tiszaujvarosi-robbanas-mol-vizsgalobizottsag" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • explosion • high</div>
+          <h3>Stabil a tiszaújvárosi Mol-üzemben történt robbanás sérültjeinek az állapota</h3>
+          <p>Az egyik sérültet lélegezetőgépre tették.</p>
+          <a href="https://hvg.hu/itthon/20260523_stabil-a-tiszaujvarosi-mol-uzemben-tortent-robbanas-serultjeinek-az-allapota" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • explosion • high</div>
+          <h3>Büntetőeljárást indít a rendőrség a tiszaújvárosi robbanás ügyében</h3>
+          <p>A Mol olefingyárában történt üzemi balesetben egy férfi meghalt, és több súlyos sérültje is van az esetnek.</p>
+          <a href="https://hvg.hu/gazdasag/20260523_buntetoeljarast-indit-a-rendorseg-a-tiszaujvarosi-robbanas-ugyeben" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • explosion • high</div>
+          <h3>Megszólalt a Mol üzemében történt robbanás áldozatának hozzátartozója</h3>
+          <p>A kétgyerekes apának nem is kellett ott lennie az üzemben, már véget ért a műszakja.</p>
+          <a href="https://hvg.hu/elet/20260523_megszolalt-a-mol-uzemeben-tortent-robbanas-aldozatanak-hozzatartozoja" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • explosion • high</div>
+          <h3>Robbanás volt egy kínai bányában, több mint nyolcvanan meghaltak</h3>
+          <p>Sokan a romok alatt rekedtek, őket a katasztrófavédelem próbálja kimenteni.</p>
+          <a href="https://hvg.hu/vilag/20260523_robbanas-volt-egy-kinai-banyaban-tobb-mint-nyolcvanan-meghaltak" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • fire • high</div>
+          <h3>26 ezer liternyi mérgező anyag robbanhat fel Kalifornia mellett</h3>
+          <p>A tűzoltók a „igyekeznek megoldást találni”, egyelőre kívülről hűtik a tartályt vízzel.</p>
+          <a href="https://hvg.hu/vilag/20260523_26-ezer-liternyi-mergezo-anyag-robbanhat-fel-kalifornia-mellett" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • fire • high</div>
+          <h3>Friss fejlemények a PURL ügyében, Zelenszkij visszautasított egy ajánlatot Orbán Viktorra hivatkozva - Híreink az orosz-ukrán háborúból szombaton</h3>
+          <p>&lt;p&gt;A NATO-tagállamok külügyminisztereinek helsingborgi találkozóján Ukrajna új felajánlásokat kapott partnereitől a PURL-kezdeményezéshez, emellett egy újabb finanszírozási forrást is sikerült felszabadítaniuk. Az Egyesült Államok azonnali és átfogó tűzszünetet sürgetett az orosz-ukrán háború lezárása érdekében. Volodimir Zelenszkij ukrán elnök levélben utasította vissza a társult tagságra vonatkozó német javaslatot. A politikus méltánytalannak nevezte az indítványt, mivel az szavazati jog nélkül hagyta volna Kijevet az Európai Unióban. Cikkünkben folyamatosan követjük az orosz–ukrán háború legfontosabb fejleményeit.&lt;/p&gt;</p>
+          <a href="https://www.portfolio.hu/global/20260523/friss-fejlemenyek-a-purl-ugyeben-zelenszkij-visszautasitott-egy-ajanlatot-orban-viktorra-hivatkozva-hireink-az-orosz-ukran-haborubol-szombaton-838676" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Heti trendjelzések</h2>
+      <div class="summary-box">
+        <ul><li>A kritikus infrastruktúra-közelségi mutató alapján a heti kitettség fő országai: Czech Republic: 8999.9, Romania: 4411.9, Lithuania: 3370.6, Hungary: 834.9.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében fokozódó feszültségekkel terhelt képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, katonai és elrettentési dimenziók erősödése, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor lokális incidensek és eszkalációs kockázatok több ponton megfigyelhetők voltak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, ugyanakkor több ponton emelkedő nyomás érzékelhető. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor a jelenlegi mintázatok fennmaradása esetén több ponton fokozatos romlás valószínűsíthető. A következő időszak kulcskérdése várhatóan a keleti peremterületek biztonságpolitikai terheltsége lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <b>Módszertani megjegyzés</b><br>
+        Automatikus OSINT-alapú CEE infrastruktúra- és biztonsági jelentés. A források kézi ellenőrzése javasolt.
+      </div>
+      <div>
+        <b>Törésvonalak</b><br>
+        CEE Security Map
+      </div>
+    </footer>
+
+  </main>
 </div>
-
-</div>
-
-<div class="section">
-<h2>Infrastructure Proximity Alerts</h2>
-
-<div class="grid">
-
-        <div class="infra-card">
-            <div class="infra-title">
-                MOL Tiszaújváros Petrochemical Complex
-            </div>
-
-            <div class="infra-meta">
-                Hungary
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                Stabil a tiszaújvárosi robbanás Debrecenben kezelt sérültjeinek állapota
-            </div>
-
-            <a href="https://telex.hu/belfold/2026/05/23/mol-tiszaujvaros-robbanas-serult-aldozat-allapot-stabil-debrecen" target="_blank">
-                Source
-            </a>
-        </div>
-        
-
-        <div class="infra-card">
-            <div class="infra-title">
-                MOL Tiszaújváros Petrochemical Complex
-            </div>
-
-            <div class="infra-meta">
-                Hungary
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                Stabil a tiszaújvárosi Mol-üzemben történt robbanás sérültjeinek az állapota
-            </div>
-
-            <a href="https://hvg.hu/itthon/20260523_stabil-a-tiszaujvarosi-mol-uzemben-tortent-robbanas-serultjeinek-az-allapota" target="_blank">
-                Source
-            </a>
-        </div>
-        
-
-        <div class="infra-card">
-            <div class="infra-title">
-                MOL Tiszaújváros Petrochemical Complex
-            </div>
-
-            <div class="infra-meta">
-                Hungary
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                Büntetőeljárást indít a rendőrség a tiszaújvárosi robbanás ügyében
-            </div>
-
-            <a href="https://hvg.hu/gazdasag/20260523_buntetoeljarast-indit-a-rendorseg-a-tiszaujvarosi-robbanas-ugyeben" target="_blank">
-                Source
-            </a>
-        </div>
-        
-
-        <div class="infra-card">
-            <div class="infra-title">
-                MOL Tiszaújváros Petrochemical Complex
-            </div>
-
-            <div class="infra-meta">
-                Hungary
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                Kegyelmi ügy: Novák Katalinnál most nincs magányosabb ember – Fülke
-            </div>
-
-            <a href="https://hvg.hu/itthon/20260522_fulke-podcast-novak-zoltan-orban-viktor-kegyelmi-ugy-magyar-peter" target="_blank">
-                Source
-            </a>
-        </div>
-        
-
-        <div class="infra-card">
-            <div class="infra-title">
-                MOL Tiszaújváros Petrochemical Complex
-            </div>
-
-            <div class="infra-meta">
-                Hungary
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                Tiszaújvárosi robbanás - stabil a Debrecenben kezelt sérültek állapota
-            </div>
-
-            <a href="https://www.portfolio.hu/gazdasag/20260523/tiszaujvarosi-robbanas-stabil-a-debrecenben-kezelt-serultek-allapota-838770" target="_blank">
-                Source
-            </a>
-        </div>
-        
-
-        <div class="infra-card">
-            <div class="infra-title">
-                MOL Tiszaújváros Petrochemical Complex
-            </div>
-
-            <div class="infra-meta">
-                Hungary
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                Lélegeztetőgépen az egyik tiszaújvárosi sérült
-            </div>
-
-            <a href="https://24.hu/belfold/2026/05/23/tiszaujvaros-robbanas-serultek-lelegeztetogep-mol-petrolkemia/" target="_blank">
-                Source
-            </a>
-        </div>
-        
-
-        <div class="infra-card">
-            <div class="infra-title">
-                Cernavodă Nuclear Power Plant
-            </div>
-
-            <div class="infra-meta">
-                Romania
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                „Bănuiesc că este fezabil”. Burduja, despre reactoarele modulare de la Doiceşti: „Nu este un proiect care trebuie politizat”
-            </div>
-
-            <a href="https://www.digi24.ro/stiri/economie/banuiesc-ca-este-fezabil-burduja-despre-reactoarele-modulare-de-la-doicesti-nu-este-un-proiect-care-trebuie-politizat-3782335" target="_blank">
-                Source
-            </a>
-        </div>
-        
-
-        <div class="infra-card">
-            <div class="infra-title">
-                Tallinn Cyber and Digital Infrastructure Hub
-            </div>
-
-            <div class="infra-meta">
-                Estonia
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                Gallery: Tallinn's fountains springing forth again with the arrival of the warmer months
-            </div>
-
-            <a href="https://news.err.ee/1610031679/gallery-tallinn-s-fountains-springing-forth-again-with-the-arrival-of-the-warmer-months" target="_blank">
-                Source
-            </a>
-        </div>
-        
-
-        <div class="infra-card">
-            <div class="infra-title">
-                Tallinn Cyber and Digital Infrastructure Hub
-            </div>
-
-            <div class="infra-meta">
-                Estonia
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                Equestrian statue honors Estonian women's movement pioneer in Tallinn
-            </div>
-
-            <a href="https://news.err.ee/1610031547/equestrian-statue-honors-estonian-women-s-movement-pioneer-in-tallinn" target="_blank">
-                Source
-            </a>
-        </div>
-        
-
-        <div class="infra-card">
-            <div class="infra-title">
-                Tallinn Cyber and Digital Infrastructure Hub
-            </div>
-
-            <div class="infra-meta">
-                Estonia
-                |
-                critical
-                |
-                0.0 km
-            </div>
-
-            <div class="infra-event">
-                Kompassi Square high-rise plans uncertain as talks in Tallinn continue
-            </div>
-
-            <a href="https://news.err.ee/1610031529/kompassi-square-high-rise-plans-uncertain-as-talks-in-tallinn-continue" target="_blank">
-                Source
-            </a>
-        </div>
-        
-</div>
-
-</div>
-
-</div>
-
 </body>
 </html>

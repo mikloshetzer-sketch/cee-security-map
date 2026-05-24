@@ -1,44 +1,44 @@
 {
-  "generated_utc": "2026-05-24T08:26:14Z",
+  "generated_utc": "2026-05-24T13:10:19Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1826 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 990 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Вбивство Симона Петлюри в Парижі 25 травня 1926 року : деталі.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Looking for security , world turns to Finland massive bomb shelters.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Looking for security , world turns to Finland massive bomb shelters.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 973.06; 7 napos változás: +12318%).",
-    "Trend: emelkedő (+1666%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3782, GDELT DOC 3879, direkt feed 430, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 1852 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1042 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Міністр оборони Швеції заявив про підтримку вступу України до НАТО.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Auto - Fallen im Urlaub : Regeln auf Europas Straßen , die kaum jemand kennt.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Speedway - GP Prag : Leon Madsen verblüffte alle – wie Phoenix aus der Asche - Speedway - GP.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 1016.54; 7 napos változás: +13488%).",
+    "Trend: emelkedő (+1755%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3806, GDELT DOC 3914, direkt feed 435, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+12318%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+13488%)."
   },
   "stats": {
-    "score_last7": 3949.846,
-    "score_prev7": 223.6,
-    "change_pct": 1666.48
+    "score_last7": 3961.902,
+    "score_prev7": 213.637,
+    "change_pct": 1754.5
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1826,
+    "last_24h_proximity_matches": 1852,
     "top_proximity": [
       {
-        "id": "429d4acdec81df0f",
+        "id": "345940aea990b421",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "1c30e1d82b20c4ed",
-          "title": "Вбивство Симона Петлюри в Парижі 25 травня 1926 року : деталі",
+          "id": "496ba6b34b78f421",
+          "title": "Міністр оборони Швеції заявив про підтримку вступу України до НАТО",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T08:00:00Z",
-          "url": "https://lb.ua/society/2026/05/24/739882_stolittya_simona_25_travnya_1926.html",
+          "time": "2026-05-24T12:45:00Z",
+          "url": "https://ipress.ua/news/ministr_oborony_shvetsii_zayavyv_pro_pidtrymku_vstupu_ukrainy_do_nato_385938.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,107 +58,17 @@
         }
       },
       {
-        "id": "1f8900e4eec53ecc",
+        "id": "073ecc440aa72304",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "f3aa06e4699c3fad",
-          "title": "Looking for security , world turns to Finland massive bomb shelters",
-          "category": "security_politics",
-          "source": "GDELT_DOC",
-          "time": "2026-05-24T07:45:00Z",
-          "url": "http://www.nepalnational.com/news/279067332/finland-s-massive-bomb-shelters-draw-world-to-helsinki",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "d80c834c7618f18b",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "21bd3c96c9568c60",
-          "title": "Looking for security , world turns to Finland massive bomb shelters",
-          "category": "security_politics",
-          "source": "GDELT_DOC",
-          "time": "2026-05-24T07:45:00Z",
-          "url": "http://www.bostonstar.com/news/279067332/finland-s-massive-bomb-shelters-draw-world-to-helsinki",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "0fc5b5c40e2639c8",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "95bd616944f54802",
-          "title": "Looking for security , world turns to Finland massive bomb shelters",
-          "category": "security_politics",
-          "source": "GDELT_DOC",
-          "time": "2026-05-24T07:45:00Z",
-          "url": "http://www.japanherald.com/news/279067332/finland-s-massive-bomb-shelters-draw-world-to-helsinki",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "700af80f2e2cb5a7",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "356ed61f756fc619",
-          "title": "Volodymyr Zelenskyy and the cancer of Ukrainian corruption",
+          "id": "88218874db6a2184",
+          "title": "Auto - Fallen im Urlaub : Regeln auf Europas Straßen , die kaum jemand kennt",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T07:45:00Z",
-          "url": "https://theweek.com/world-news/volodymyr-zelenskyy-and-the-cancer-of-ukrainian-corruption",
+          "time": "2026-05-24T12:30:00Z",
+          "url": "https://www.infranken.de/ratgeber/urlaub-reisen/auto-fallen-im-urlaub-regeln-auf-europas-strassen-die-kaum-jemand-kennt-art-6352548",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +88,17 @@
         }
       },
       {
-        "id": "ac348ed703211a11",
+        "id": "e47de7e1812f4c86",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3edba70625e80221",
-          "title": "Grand Prix na Markétě ovládl Dán Madsen . Češi sledovali hvězdné finále zpovzdálí",
+          "id": "9ad80b08f7d2158e",
+          "title": "Speedway - GP Prag : Leon Madsen verblüffte alle – wie Phoenix aus der Asche - Speedway - GP",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T07:15:00Z",
-          "url": "https://www.denik.cz/motorismus/plocha-draha-grand-prix-cr-leon-madsen-bartosz-zmarzlik-brady-kurtz-jan-kvech.html",
+          "time": "2026-05-24T12:30:00Z",
+          "url": "https://www.speedweek.com/a/speedway-gp/speedway-gp-prag-leon-madsen-sieg",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +118,17 @@
         }
       },
       {
-        "id": "350f9b016332377a",
+        "id": "4f0df80dd1c5ffcd",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "b3d56fad5ebedb1e",
-          "title": "Ruotsista ryöpytystä pahaan pinteeseen ajautuneelle Tre Kronorille : Historiallinen fiasko",
+          "id": "f1a781b94d391209",
+          "title": "Altstädte Europas : Diese elf historischen Ziele sind zu empfehlen",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T07:15:00Z",
-          "url": "https://www.kaleva.fi/ruotsista-ryopytysta-pahaan-pinteeseen-ajautuneell/13508344",
+          "time": "2026-05-24T12:15:00Z",
+          "url": "https://www.stern.de/reise/europa/altstaedte-europas--diese-elf-historischen-ziele-sind-zu-empfehlen-35419834.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +148,17 @@
         }
       },
       {
-        "id": "b3c1fd72306a9150",
+        "id": "26d6142c29db2a59",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "2c07ba5fc83d67eb",
-          "title": "Forumul Globsec . Oana Țoiu subliniază legătura strânsă dintre relevanța geopolitică și respectarea angajamentului privind extinderea UE către Ucraina și R . Moldova : Nu este un cadou , ci un imperativ strategic",
+          "id": "da05dc07bce4a83a",
+          "title": "Ungaria cere Ucrainei să restabilească drepturile minorității maghiare înainte de a discuta despre aderarea la UE",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T07:15:00Z",
-          "url": "https://www.caleaeuropeana.ro/forumul-globsec-oana-toiu-subliniaza-legatura-stransa-dintre-relevanta-geopolitica-si-respectarea-angajamentului-privind-extinderea-ue-catre-ucraina-si-r-moldova-nu-este-un-cadou-ci-un-imperativ-s-2/",
+          "time": "2026-05-24T12:15:00Z",
+          "url": "https://www.caleaeuropeana.ro/ungaria-cere-ucrainei-sa-restabileasca-drepturile-minoritatii-maghiare-inainte-de-a-discuta-despre-aderarea-la-ue/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +178,137 @@
         }
       },
       {
-        "id": "dd2ebcf715401615",
+        "id": "eca6c73b0604eabd",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "064d432437c9b5b3",
-          "title": "Looking for security , world turns to Finland massive bomb shelters",
-          "category": "security_politics",
-          "source": "GDELT_DOC",
-          "time": "2026-05-24T07:15:00Z",
-          "url": "http://www.argentinastar.com/news/279067332/finland-s-massive-bomb-shelters-draw-world-to-helsinki",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "32c574f24fcf5f99",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "24428ae48fdf51b6",
-          "title": "Ukrajinské kladivo na ruské drony : Protiletadlové kanóny zažívají návrat",
+          "id": "73d0fba17d255576",
+          "title": "Schillerová : Prodej Explosie je zatím úvaha , roli by hrála jenom cena",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T07:15:00Z",
-          "url": "https://www.denik.cz/veda-a-technika/ukrajina-protiletadlove-kanony-drony-sestreleni-valka-rusko.html",
+          "time": "2026-05-24T12:15:00Z",
+          "url": "https://www.ceskenoviny.cz/zpravy/schillerova-prodej-explosie-je-zatim-uvaha-roli-by-hrala-jenom-cena/2829430",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "11b9ffe0e53e9f63",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "fafcf9e1ce9cf032",
+          "title": "Олег Скрипка скандальні заяви лідера Воплі відоплясова",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-05-24T12:15:00Z",
+          "url": "https://focus.ua/uk/lifestyle/755207-oleg-skripka-skandalni-zayavi-lidera-vopli-vidoplyasova",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "60aff52d60cf0a68",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "9b5b96f920b32c06",
+          "title": "Як Росія знищувала українську мову : від русифікації до війни з Україною",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-05-24T12:15:00Z",
+          "url": "https://focus.ua/uk/eksklyuzivy/755114-yak-rosiya-znishchuvala-ukrajinsku-movu-vid-rusifikaciji-do-viyni-z-ukrajinoyu",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "a492d5bf2d8a9dc9",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "d7c862c250378465",
+          "title": "Polacy spłacają najdroższe kredyty w UE . Bank stawia jasne zasady",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-05-24T12:15:00Z",
+          "url": "https://www.newsweek.pl/polska/spoleczenstwo/polacy-splacaja-najdrozsze-kredyty-w-ue-bank-stawia-jasne-zasady/pj2d62c",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "9b4c956214f3b824",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "46e60504fdffcbe7",
+          "title": "MI a munkában : meglepő , hogy melyik ország vezeti a listát",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-05-24T12:15:00Z",
+          "url": "https://www.vg.hu/nemzetkozi-gazdasag/2026/05/mi-munka-orszag-beepules",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

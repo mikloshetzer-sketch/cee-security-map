@@ -1,44 +1,104 @@
 {
-  "generated_utc": "2026-05-25T09:57:42Z",
+  "generated_utc": "2026-05-25T14:42:58Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1393 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 690 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Dojde k dalšímu odsunu ? Aneb Táhněte do Evropy ! | ParlamentniListy . cz – politika ze všech stran.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Kannattaako Leijonien hävitä ? Tässä ovat MM - asetelmat.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Zasiadał przy jednym stole z Putinem . Ostrzega Europę . Przestańcie się oszukiwać.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 944.40; 7 napos változás: +13189%).",
-    "Trend: emelkedő (+1601%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3651, GDELT DOC 3816, direkt feed 427, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 1424 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 735 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Baku Energy Week to commence on June 1.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: TATUUM przejmuje 18 , 5 tys . mkw . w Łodzi.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Őrizetbe vették Hilarion orosz metropolitát Csehországban.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 967.62; 7 napos változás: +14160%).",
+    "Trend: emelkedő (+1662%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3707, GDELT DOC 3766, direkt feed 425, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+13189%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+14160%)."
   },
   "stats": {
-    "score_last7": 3655.316,
-    "score_prev7": 214.887,
-    "change_pct": 1601.04
+    "score_last7": 3617.277,
+    "score_prev7": 205.273,
+    "change_pct": 1662.18
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1393,
+    "last_24h_proximity_matches": 1424,
     "top_proximity": [
       {
-        "id": "70aeefc2bb9258d6",
+        "id": "0f1e62a90e8dd4e6",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "b937779b94f63d1b",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-05-25T00:00:00Z",
+          "url": "https://www.politico.eu/article/new-latvian-coalition-government-forming-andris-kulbergs/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "cbabdc20919ac6a9",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "1589b5a72c621194",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-25T00:00:00Z",
+          "url": "https://www.vm.gov.lv/lv/pvo-mazo-valstu-iniciativas-12-augsta-limena-sanaksme-no-resursu-trukuma-uz-ilgtspejibu-vai-mazas-valstis-var-vadit-inovacijas-darbaspeka-joma",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "d3d611095926701e",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "7dfbc1197cf82046",
-          "title": "Dojde k dalšímu odsunu ? Aneb Táhněte do Evropy ! | ParlamentniListy . cz – politika ze všech stran",
-          "category": "other",
+          "id": "d2810fd4260f7220",
+          "title": "Baku Energy Week to commence on June 1",
+          "category": "energy",
           "source": "GDELT_DOC",
-          "time": "2026-05-25T09:30:00Z",
-          "url": "https://www.parlamentnilisty.cz/profily/Mgr-Petr-Stepanek-2006/clanek/Dojde-k-dalsimu-odsunu-Aneb-Tahnete-do-Evropy-145556",
+          "time": "2026-05-25T14:15:00Z",
+          "url": "https://azertag.az/en/xeber/baku_energy_week_to_commence_on_june_1-4223263",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,17 +118,17 @@
         }
       },
       {
-        "id": "b58a7155123ad913",
+        "id": "43b3966762e31dca",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "27306a745f8ceb2c",
-          "title": "Kannattaako Leijonien hävitä ? Tässä ovat MM - asetelmat",
+          "id": "1e93efbb68fade45",
+          "title": "TATUUM przejmuje 18 , 5 tys . mkw . w Łodzi",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-25T09:30:00Z",
-          "url": "https://www.iltalehti.fi/jaakiekon-mm-2026/a/ff493138-3089-4360-a3ec-9533f39672f8",
+          "time": "2026-05-25T14:15:00Z",
+          "url": "https://www.propertynews.pl/magazyny/tatuum-przejmuje-18-5-tys-mkw-w-lodzi,198712.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +148,17 @@
         }
       },
       {
-        "id": "0ef44d9d641db885",
+        "id": "ce0fc3bb7111e915",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "a4206b754e59a201",
-          "title": "Zasiadał przy jednym stole z Putinem . Ostrzega Europę . Przestańcie się oszukiwać",
+          "id": "0ccb528c103be84f",
+          "title": "Őrizetbe vették Hilarion orosz metropolitát Csehországban",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-25T09:30:00Z",
-          "url": "https://wiadomosci.onet.pl/swiat/zasiadal-przy-jednym-stole-z-putinem-ostrzega-europe-przestancie-sie-oszukiwac/mtwj4r9",
+          "time": "2026-05-25T14:00:00Z",
+          "url": "https://ujszo.com/kulfold/orizetbe-vettek-hilarion-orosz-metropolitat-csehorszagban",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +178,17 @@
         }
       },
       {
-        "id": "b3373daaf620b5f6",
+        "id": "757db320b62c4d70",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "583b10c00906385d",
-          "title": "Радіо Свобода Weekly : Чому Київ досі не встановив пам ятника Симону Петлюрі ?",
+          "id": "c00fb9261ff99c42",
+          "title": "Тихановська пояснила , навіщо насправді приїхала в Україну",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-25T09:30:00Z",
-          "url": "https://www.radiosvoboda.org/a/symon-petlyura-viyna-rosiya/33763834.html",
+          "time": "2026-05-25T14:00:00Z",
+          "url": "https://www.radiosvoboda.org/a/tykhanovska-vizyt-kyiv/33764262.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +208,17 @@
         }
       },
       {
-        "id": "653b0003dd75cfd7",
+        "id": "64ee9334cda425dc",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "ef04bce7556d9312",
-          "title": "Truecaller deepens communications with travel eSIM in Nigeria , others",
+          "id": "d7ab82e029df5fc2",
+          "title": "Erikoinen tilanne jkiekon MM - kisoissa – yksi tulos voi tuoda Leijonille yllätysvastuksen",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-25T09:30:00Z",
-          "url": "https://thenationonlineng.net/truecaller-deepens-communications-with-travel-esim-in-nigeria-others/",
+          "time": "2026-05-25T13:45:00Z",
+          "url": "https://www.tamperelainen.fi/urheilu/9478460",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +238,17 @@
         }
       },
       {
-        "id": "29ccb05e9858d255",
+        "id": "fd855a029b9b97e1",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "8bd05276f210dab5",
-          "title": "Vláda přitvrdí vůči válečným uprchlíkům . Mají zmizet i vozy s ukrajinskou značkou | Česko",
+          "id": "4474ba8da990f3af",
+          "title": "Названо умови депортації українців з ЄС",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-25T09:30:00Z",
-          "url": "https://www.lidovky.cz/domov/vlada-projedna-prisnejsi-podminky-pro-uprchliky-pred-valkou-z-ukrajiny.A260525_095142_ln_domov_lvot",
+          "time": "2026-05-25T13:45:00Z",
+          "url": "https://ua.korrespondent.net/ukraine/4881313-nazvano-umovy-deportatsii-ukraintsiv-z-yes",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +268,17 @@
         }
       },
       {
-        "id": "4de5f39406593371",
+        "id": "0d39fc4a5617b9f7",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "53dac48ec53c5faa",
-          "title": "Демографиня назвала , хто з українських біженців першими повернуться додому - Новини Івано - Франківська",
+          "id": "6efe0de11aced534",
+          "title": "Polska i Rumunia inwestują frontowo , Czechy i Węgry na tyłach . Tak Europa Środkowa wydaje pieniądze na zbrojenia",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-25T09:30:00Z",
-          "url": "https://pravda.if.ua/demografynya-nazvala-hto-z-ukrayinsiokyh-bizhencziv-pershymy-povernutiosya-dodomu/",
+          "time": "2026-05-25T13:45:00Z",
+          "url": "https://www.pb.pl/europa-srodkowo-wschodnia-sie-zbroi-rekordowe-wydatki-i-nowe-podejscie-do-obronnosci-1261750",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,77 +298,17 @@
         }
       },
       {
-        "id": "45ae4e03d39e953d",
+        "id": "776e6deeb9eb8196",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "9d998e02532b04bb",
-          "title": "Alarmes enceses a Europa per lextrema calor , que tocarà sostre dijous",
+          "id": "563a905ceb0f1c11",
+          "title": "TAJNÝ život Nadi Marcinko a Epsteina : Ako to medzi nimi bolo",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-25T09:15:00Z",
-          "url": "http://www.elpuntavui.cat/societat/article/5-societat/2646154-alarmes-enceses-a-europa-per-l-extrema-calor-que-tocara-sostre-dijous.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "443fb718a14883e8",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "23cd3dd64ef54fc3",
-          "title": "Turismul a adus piața acasă pentru toată economia Egiptului",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-25T09:15:00Z",
-          "url": "https://jurnalul.ro/timp-liber/calatorii/turism-egipt-incasari-uriase-buget-stat-1033830.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "45ae69669d10b4d4",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "a63bd30466ad925a",
-          "title": "Winter Paralympics 50th anniversary : Chinese dominance expected amid boycotts over Russian flag",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-25T09:15:00Z",
-          "url": "https://www.willitsnews.com/2026/03/04/oly-paralympics-preview/",
+          "time": "2026-05-25T13:30:00Z",
+          "url": "https://www.cas.sk/spravy/tajny-zivot-slovenky-nade-a-epsteina-odhaleny-spolocne-dieta-a-byvanie-mala-mu-dokonca",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-05-25T14:42:58Z",
+  "generated_utc": "2026-05-25T19:24:14Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1424 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 735 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 1675 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 774 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Baku Energy Week to commence on June 1.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: TATUUM przejmuje 18 , 5 tys . mkw . w Łodzi.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Őrizetbe vették Hilarion orosz metropolitát Csehországban.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 967.62; 7 napos változás: +14160%).",
-    "Trend: emelkedő (+1662%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3707, GDELT DOC 3766, direkt feed 425, USGS 0, GDACS 0.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 920.13; 7 napos változás: +14086%).",
+    "Trend: emelkedő (+1768%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3753, GDELT DOC 3799, direkt feed 415, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+14160%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+14086%)."
   },
   "stats": {
-    "score_last7": 3617.277,
-    "score_prev7": 205.273,
-    "change_pct": 1662.18
+    "score_last7": 3665.097,
+    "score_prev7": 196.215,
+    "change_pct": 1767.9
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1424,
+    "last_24h_proximity_matches": 1675,
     "top_proximity": [
       {
         "id": "0f1e62a90e8dd4e6",
@@ -58,6 +58,36 @@
         }
       },
       {
+        "id": "8a0fdd6d0f74815f",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "524191ec88e0d783",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-25T00:00:00Z",
+          "url": "https://www.prokerala.com/news/articles/a1767320.html",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
         "id": "cbabdc20919ac6a9",
         "level": "critical",
         "score": 89.42,
@@ -69,6 +99,66 @@
           "source": "GDELT",
           "time": "2026-05-25T00:00:00Z",
           "url": "https://www.vm.gov.lv/lv/pvo-mazo-valstu-iniciativas-12-augsta-limena-sanaksme-no-resursu-trukuma-uz-ilgtspejibu-vai-mazas-valstis-var-vadit-inovacijas-darbaspeka-joma",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "cdfd8142762d854a",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "de34b62a4c5ad004",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-05-25T00:00:00Z",
+          "url": "https://www.pressenza.com/2026/05/eunited-for-equality-youth-against-femicide/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "55d8cfb2389a5be7",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "54fa911f2a2d8c65",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-25T00:00:00Z",
+          "url": "https://www.baltictimes.com/latvia_s_foreign_investors__future_investment_plans_hit_historic_low__as_uncertainty_reaches_a_record_high/",
           "lat": 56.95,
           "lon": 24.1,
           "source_file": "gdelt_linked.geojson"
@@ -219,96 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-05-25T13:45:00Z",
           "url": "https://www.tamperelainen.fi/urheilu/9478460",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "fd855a029b9b97e1",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "4474ba8da990f3af",
-          "title": "Названо умови депортації українців з ЄС",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-25T13:45:00Z",
-          "url": "https://ua.korrespondent.net/ukraine/4881313-nazvano-umovy-deportatsii-ukraintsiv-z-yes",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "0d39fc4a5617b9f7",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "6efe0de11aced534",
-          "title": "Polska i Rumunia inwestują frontowo , Czechy i Węgry na tyłach . Tak Europa Środkowa wydaje pieniądze na zbrojenia",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-25T13:45:00Z",
-          "url": "https://www.pb.pl/europa-srodkowo-wschodnia-sie-zbroi-rekordowe-wydatki-i-nowe-podejscie-do-obronnosci-1261750",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "776e6deeb9eb8196",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "563a905ceb0f1c11",
-          "title": "TAJNÝ život Nadi Marcinko a Epsteina : Ako to medzi nimi bolo",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-25T13:30:00Z",
-          "url": "https://www.cas.sk/spravy/tajny-zivot-slovenky-nade-a-epsteina-odhaleny-spolocne-dieta-a-byvanie-mala-mu-dokonca",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

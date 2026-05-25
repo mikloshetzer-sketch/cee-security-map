@@ -1,44 +1,44 @@
 {
-  "generated_utc": "2026-05-24T19:10:51Z",
+  "generated_utc": "2026-05-25T02:45:40Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1379 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 842 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Potrivit The Times , Primark analizează extinderea comerțului online în Regatul Unit și posibilitatea unui centru logistic.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Roland - Garros : Kostyuk gagne malgré un missile près de chez elle.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: tagesschau | tagesschau . de.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 1002.77; 7 napos változás: +14106%).",
-    "Trend: emelkedő (+1789%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3842, GDELT DOC 3815, direkt feed 435, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 1297 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 763 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Djokovic , tropiezo y avance - Proceso Digital.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: MS v hokeji 2026 : Slovensko odolávalo silnej Kanade dve tretiny , favorit rozhodol až v závere . Slovensko - Kanada 1 : 5.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: CM Hochei : După două reprize echilibrate , Canada surclasează Slovacia.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 941.34; 7 napos változás: +12252%).",
+    "Trend: emelkedő (+1464%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3587, GDELT DOC 3772, direkt feed 437, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+14106%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+12252%)."
   },
   "stats": {
-    "score_last7": 3808.01,
-    "score_prev7": 201.629,
-    "change_pct": 1788.62
+    "score_last7": 3598.299,
+    "score_prev7": 230.002,
+    "change_pct": 1464.46
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1379,
+    "last_24h_proximity_matches": 1297,
     "top_proximity": [
       {
-        "id": "b72c2f7b5a8a489a",
+        "id": "41d766c250a8a6fe",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "83ca5e9508024519",
-          "title": "Potrivit The Times , Primark analizează extinderea comerțului online în Regatul Unit și posibilitatea unui centru logistic",
+          "id": "97cbdf485513893d",
+          "title": "Djokovic , tropiezo y avance - Proceso Digital",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T18:15:00Z",
-          "url": "https://business24.ro/comert-online/primark-extindere-comert-regatul-unit-logistica-1653397",
+          "time": "2026-05-25T00:00:00Z",
+          "url": "https://proceso.hn/djokovic-tropiezo-y-avance/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,47 +58,17 @@
         }
       },
       {
-        "id": "a059711bffa841c9",
+        "id": "4ece4d61d6069cc2",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3ecbc5640ed090ca",
-          "title": "Roland - Garros : Kostyuk gagne malgré un missile près de chez elle",
-          "category": "drone",
-          "source": "GDELT_DOC",
-          "time": "2026-05-24T18:15:00Z",
-          "url": "https://www.24heures.ch/roland-garros-kostyuk-gagne-malgre-un-missile-pres-de-chez-elle-818715544337",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "c732e30d717e6f62",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "08d97df01718ba3b",
-          "title": "tagesschau | tagesschau . de",
+          "id": "7c223e54f1a85d8e",
+          "title": "MS v hokeji 2026 : Slovensko odolávalo silnej Kanade dve tretiny , favorit rozhodol až v závere . Slovensko - Kanada 1 : 5",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T18:15:00Z",
-          "url": "https://www.tagesschau.de/tagesschau/ts-78822.html",
+          "time": "2026-05-25T00:00:00Z",
+          "url": "https://www.24hod.sk/ms-v-hokeji-2026-slovensko-odolavalo-silnej-kanade-dve-tretiny-favorit-rozhodol-az-v-zavere-slovensko-kanada-1-5-cl826192.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +88,17 @@
         }
       },
       {
-        "id": "bb297e550ed5b37f",
+        "id": "5425133c0fde53b9",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "821e480f4d77ca12",
-          "title": "Ucraina a pierdut jumătate din populație de la obținerea independenței / Războiul a accelerat criza",
+          "id": "eaa29c87a49f30db",
+          "title": "CM Hochei : După două reprize echilibrate , Canada surclasează Slovacia",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T18:00:00Z",
-          "url": "https://hotnews.ro/ucraina-a-pierdut-jumatate-din-populatie-de-la-obtinerea-independentei-razboiul-a-accelerat-criza-2252806",
+          "time": "2026-05-25T00:00:00Z",
+          "url": "https://curierulnational.ro/cm-hochei-dupa-doua-reprize-echilibrate-canada-surclaseaza-slovacia/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +118,17 @@
         }
       },
       {
-        "id": "a7076239ef204078",
+        "id": "c5c66b9f36ec52c6",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "d3d338cbc13646cf",
-          "title": "Демографиня назвала категорію біженців , яка першою повернеться до України",
+          "id": "6e955152b12c81ca",
+          "title": "Schillerová : Prodej Explosie je zatím jen úvaha",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T17:30:00Z",
-          "url": "https://glavcom.ua/country/society/demohrafinja-nazvala-katehoriju-bizhentsiv-jaka-pershoju-povernetsja-do-ukrajini--1121499.html",
+          "time": "2026-05-24T23:15:00Z",
+          "url": "https://archiv.hn.cz/c1-67881220-schillerova-prodej-explosie-je-zatim-jen-uvaha",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,47 +148,17 @@
         }
       },
       {
-        "id": "8267c97b14212736",
+        "id": "66606e3956ae3f70",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "f35c85cc57b80554",
-          "title": "21st Austria weekly - Vienna Airport , AT & S , Strabag ( 21 / 05 / 2026 )",
-          "category": "infrastructure",
-          "source": "GDELT_DOC",
-          "time": "2026-05-24T17:30:00Z",
-          "url": "https://www.boerse-social.com/page/newsflow/21st_austria_weekly_-_vienna_airport_ats_strabag_21052026",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "6cf1128abe8f6540",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "6cea4466da7a8c59",
-          "title": "Війська США в Польщі хаос Трампа загрожує безпеці Європи Світ",
+          "id": "035989dc87288d04",
+          "title": "Kansas City groundskeeping legend George Toma honored for Korean War service",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T17:30:00Z",
-          "url": "https://tsn.ua/svit/yevropa-namahayetsia-ubezpechyty-nato-vid-khaotychnykh-rishen-trampa-politico-3090728.html",
+          "time": "2026-05-24T23:15:00Z",
+          "url": "https://www.kctv5.com/2026/05/24/kansas-city-groundskeeping-legend-george-toma-honored-korean-war-service/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +178,17 @@
         }
       },
       {
-        "id": "727565f5bd47b945",
+        "id": "ca9077370ee32d05",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "130387610bc04209",
-          "title": "V tendri na modernizáciu úseku Vydrník - Markušovce sú nové námietky",
+          "id": "0d6c7534f28e3894",
+          "title": "Inflația în Europa Centrală impune ajustări ale politicii monetare pentru stabilitatea creșterii economice",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T17:15:00Z",
-          "url": "https://www.teraz.sk/ekonomika/v-tendri-na-modernizaciu-useku-vydrni/965139-clanok.html",
+          "time": "2026-05-24T22:45:00Z",
+          "url": "https://business24.ro/inflatie/inflatia-europa-centrala-ajustari-politica-monetara-crestere-economie-1653403",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,17 +208,17 @@
         }
       },
       {
-        "id": "b10c4704bce4ca4d",
+        "id": "f5c5a4708553ac40",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c1878c37c9cd2bf6",
-          "title": "Auxiliares de conversación extranjeros : convocatoria abierta para el curso 2026 - 2027",
+          "id": "d5b6dbe136f0b723",
+          "title": "Roland - Garros : Djokovic cède un set , Zverev et Kostyuk passent au 2e tour",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T17:15:00Z",
-          "url": "https://www.diariodejerez.es/sociedad/auxiliares-conversacion-extranjeros-convocatoria-abierta_0_2006835408.html",
+          "time": "2026-05-24T22:45:00Z",
+          "url": "https://www.dhnet.be/dernieres-depeches/2026/05/24/roland-garros-kostyuk-gagne-dans-lemotion-zverev-file-aussi-au-2e-tour-malgre-la-chaleur-DHJDKEJDIBDWLOY5W4J4JLWH7I/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -298,17 +238,77 @@
         }
       },
       {
-        "id": "5efe43796b5ac333",
+        "id": "5f1594c101e687ae",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "ddd976c3158f8ae9",
-          "title": "Gelato Carpigiani Università tendenze",
+          "id": "8cc416152393d1ba",
+          "title": "issue17345",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-24T17:15:00Z",
-          "url": "https://www.lastampa.it/il-gusto/rubriche/sulla-punta-della-lingua/2026/05/24/news/soft_o_classico_viaggio_nel_cuore_del_gelato-425367532/",
+          "time": "2026-05-24T22:45:00Z",
+          "url": "https://aawsat.com/files/pdf/issue17345/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "12f88c08ad7a5389",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "c18bd0e87ab3493e",
+          "title": "Ola de calor llega a Centroeuropa con temperaturas de más de 30 grados",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-05-24T21:30:00Z",
+          "url": "https://www.lapatria.com/internacional/ola-de-calor-llega-centroeuropa-con-temperaturas-de-mas-de-30-grados",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "962866ae7d1dbc3e",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "502e6f3dbdc2cccb",
+          "title": "25 травня 2026 року : яке сьогодні свято , традиції та заборони",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-05-24T21:30:00Z",
+          "url": "https://glavcom.ua/country/society/25-travnja-jake-sohodni-svjato-traditsiji-ta-zaboroni-1120010.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

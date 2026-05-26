@@ -1,44 +1,194 @@
 {
-  "generated_utc": "2026-05-26T09:48:27Z",
+  "generated_utc": "2026-05-26T14:55:39Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1832 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 968 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Polskie firmy idą w świat . To jeden z kluczy do sukcesu.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: România a inițiat declarația comună privind bugetul UE 2028 - 2034 , alături de 15 state membre , anunță președintele Nicușor Dan.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Τουρισμός Μαρτίου : άλμα μέσης δαπάνης με ανομοιογενείς αγορές.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 957.04; 7 napos változás: +12870%).",
-    "Trend: emelkedő (+1403%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3563, GDELT DOC 3802, direkt feed 425, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 2036 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1074 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Чехія звільнила підсанкційного митрополита Московського патріархату : подробиці справи.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Wolfsburg sa z Bundesligy porúča po 29 rokoch . Zostane v klube slovenský reprezentant Vavro ?.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Чеська ініціатива щодо боєприпасів для України втрачає підтримку донорів.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 995.56; 7 napos változás: +14083%).",
+    "Trend: emelkedő (+1488%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3645, GDELT DOC 3750, direkt feed 433, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+12870%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+14083%)."
   },
   "stats": {
-    "score_last7": 3574.469,
-    "score_prev7": 237.901,
-    "change_pct": 1402.5
+    "score_last7": 3596.21,
+    "score_prev7": 226.46,
+    "change_pct": 1488.01
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1832,
+    "last_24h_proximity_matches": 2036,
     "top_proximity": [
       {
-        "id": "1a1829faea92e4c9",
+        "id": "85f3e38380719b80",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "5b4cc36a7a2974d1",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-05-26T00:00:00Z",
+          "url": "https://www.express.co.uk/news/world/2209729/ww3-fears-european-countries",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "1997a2d6a2865cf0",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "79a2d82bf91c02bd",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "border",
+          "source": "GDELT",
+          "time": "2026-05-26T00:00:00Z",
+          "url": "http://www.russiaherald.com/news/279076131/baltic-state-warns-boaters-near-russian-border",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "213d9a545dfb94a5",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "e0971b9c7b9188b2",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-26T00:00:00Z",
+          "url": "https://www.manilatimes.net/2026/05/26/tmt-newswire/globenewswire/notice-of-the-annual-general-meeting-of-shareholders-of-as-pro-kapital-grupp-and-convening-of-a-repeated-meeting/2351775",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "fcd471b96cd5e6ac",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "827d999ddf7b22a4",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-05-26T00:00:00Z",
+          "url": "https://www.yahoo.com/news/articles/russia-falsify-gps-signals-deep-095010970.html",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "746e0abcc32fb8f3",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "ff5a80014ca422ce",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-26T00:00:00Z",
+          "url": "https://www.dailymail.com/sciencetech/article-15848779/China-launches-human-embryos-space.html",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "a15908408f642cd7",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "97b461cc74778c0c",
-          "title": "Polskie firmy idą w świat . To jeden z kluczy do sukcesu",
+          "id": "3b7b1941bf2adaf9",
+          "title": "Чехія звільнила підсанкційного митрополита Московського патріархату : подробиці справи",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T09:00:00Z",
-          "url": "https://www.wnp.pl/rynki/polskie-firmy-ida-w-swiat-to-jeden-z-kluczy-do-sukcesu,1065564.html",
+          "time": "2026-05-26T14:30:00Z",
+          "url": "https://glavcom.ua/world/observe/chekhija-zvilnila-pidsanktsijnoho-mitropolita-moskovskoho-patriarkhatu-podrobitsi-spravi-1121871.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,17 +208,17 @@
         }
       },
       {
-        "id": "c8cacba2c4ed6db2",
+        "id": "fefe3353f9064f69",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "6f8a7f32829ead71",
-          "title": "România a inițiat declarația comună privind bugetul UE 2028 - 2034 , alături de 15 state membre , anunță președintele Nicușor Dan",
+          "id": "0350a6fc15f0486e",
+          "title": "Wolfsburg sa z Bundesligy porúča po 29 rokoch . Zostane v klube slovenský reprezentant Vavro ?",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T09:00:00Z",
-          "url": "https://www.mediafax.ro/stirile-zilei/romania-a-initiat-declaratia-comuna-privind-bugetul-ue-2028-2034-alaturi-de-15-state-membre-anunta-presedintele-nicusor-dan-23743749",
+          "time": "2026-05-26T14:30:00Z",
+          "url": "https://spravy.pozri.sk/clanok/wolfsburg-sa-z-bundesligy-poruca-po-29-rokoch-zostane-v-klube-slovensky-reprezentant-vavro/1608691",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +238,17 @@
         }
       },
       {
-        "id": "6c6fbf9dd0292d9a",
+        "id": "9e0070aecc005adf",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "9e7c2f26c4d6ad6f",
-          "title": "Τουρισμός Μαρτίου : άλμα μέσης δαπάνης με ανομοιογενείς αγορές",
+          "id": "b09f83b1279e5a2f",
+          "title": "Чеська ініціатива щодо боєприпасів для України втрачає підтримку донорів",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T09:00:00Z",
-          "url": "https://www.sbctv.gr/2026/05/%CF%84%CE%BF%CF%85%CF%81%CE%B9%CF%83%CE%BC%CF%8C%CF%82-%CE%BC%CE%B1%CF%81%CF%84%CE%AF%CE%BF%CF%85-%CE%AC%CE%BB%CE%BC%CE%B1-%CE%BC%CE%AD%CF%83%CE%B7%CF%82-%CE%B4%CE%B1%CF%80%CE%AC%CE%BD%CE%B7%CF%82/",
+          "time": "2026-05-26T14:30:00Z",
+          "url": "https://www.rbc.ua/rus/news/cheska-snaryadna-initsiativa-ukrayini-pochala-1779803694.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,47 +268,17 @@
         }
       },
       {
-        "id": "df73c55eb09ae7bd",
+        "id": "a5b9d3e15cb9de1f",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e2930eeec8c2b404",
-          "title": "Taiwan drone exports soar on Ukraine war",
-          "category": "drone",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T09:00:00Z",
-          "url": "https://www.hurriyetdailynews.com/taiwan-drone-exports-soar-on-ukraine-war-222548",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "41c4846f346e2f5e",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "6ce855615083e529",
-          "title": "Dotknięcie bliskości Maryi",
+          "id": "1c88808101305aa3",
+          "title": "Rusia cere eliberarea mitropolitului ortodox reținut în Republica Cehă pentru trafic de droguri",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T09:00:00Z",
-          "url": "https://www.niedziela.pl/artykul/124430/Dotkniecie-bliskosci-Maryi",
+          "time": "2026-05-26T14:30:00Z",
+          "url": "https://news.yam.md/ro/story/30395750",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,137 +298,17 @@
         }
       },
       {
-        "id": "6b0fdcd35f0e74fe",
+        "id": "c42660cc6d216196",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "dd3a27e9c4f03d31",
-          "title": "„ Nusiurbtų Registrų centro duomenų skandale – kibernetinio saugumo įvertinimas : įvardijo , ko griebiasi nusikaltėliai | Verslas",
+          "id": "26fb8e5138efb68d",
+          "title": "Roland Garros impresa di Arnaldi contro Griekspoor | lazzurro vola al secondo turno dopo 4 ore",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T08:45:00Z",
-          "url": "https://www.15min.lt/verslas/naujiena/mokslas-it/perka-net-google-reklamas-atskleide-kokiu-nauju-triuku-imasi-kibernetiniai-nusikalteliai-lietuvoje-1290-2690766",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1abfb212834bb092",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c2c5c2acc7478efc",
-          "title": "28 لاعبًا في القائمة المبدئية لمنتخب غانا استعدادًا لكأس العالم 2026",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T08:45:00Z",
-          "url": "https://www.dostor.org/5572337",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "3bc2ad632dca87ed",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "fe0f8680e8633009",
-          "title": "Boala avansează , tratamentul întârzie : România , pe ultimul loc în UE la accesul la medicamente inovatoare . Ce înseamnă pentru pacienți 3 ani de așteptare",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T08:45:00Z",
-          "url": "https://hotnews.ro/boala-avanseaza-tratamentul-intarzie-romania-pe-ultimul-loc-in-ue-la-accesul-la-medicamente-inovatoare-ce-inseamna-pentru-pacienti-3-ani-de-asteptare-2255275",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "b615a6b8f5b76201",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "4d6fd9f838185249",
-          "title": "Чехія посилює правила для українських біженців : що зміниться",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T08:30:00Z",
-          "url": "https://regionews.ua/ukr/news/ukraine/1779782849-chehiya-posilyue-pravila-dlya-ukrayinskih-bizhentsiv-shcho-zminitsya",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "dfc5eaee6cafdb6c",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "e03483ca3d40acb0",
-          "title": "Tschechiens Präsident Petr Pavel : Nato müsse Russland « ihre Zähne zeigen »",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T08:30:00Z",
-          "url": "https://weltwoche.ch/daily/tschechiens-praesident-petr-pavel-nato-muesse-russland-ihre-zaehne-zeigen/",
+          "time": "2026-05-26T14:00:00Z",
+          "url": "https://www.zazoom.it/2026-05-26/roland-garros-impresa-di-arnaldi-contro-griekspoor-lazzurro-vola-al-secondo-turno-dopo-4-ore/19254703/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,32 +1,92 @@
 {
-  "generated_utc": "2026-05-27T02:41:49Z",
+  "generated_utc": "2026-05-27T09:38:47Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1729 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 944 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 957.34; 7 napos változás: +10599%).",
-    "Trend: emelkedő (+1095%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3457, GDELT DOC 3787, direkt feed 435, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 1592 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 782 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Dronele ucrainene rătăcite în țările baltice seamănă confuzie ( Reuters ).",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Tyrimo rezultatai sugriovė mitą apie Lietuvos jaunimą.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Nicusor Dan : Romania calls for larger EU cohesion and agriculture funding in post - 2027 budget.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 878.87; 7 napos változás: +10400%).",
+    "Trend: emelkedő (+1172%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3512, GDELT DOC 3705, direkt feed 427, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10599%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10400%)."
   },
   "stats": {
-    "score_last7": 3512.778,
-    "score_prev7": 293.839,
-    "change_pct": 1095.48
+    "score_last7": 3496.192,
+    "score_prev7": 274.823,
+    "change_pct": 1172.16
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1729,
+    "last_24h_proximity_matches": 1592,
     "top_proximity": [
+      {
+        "id": "4edf062aebe0b13c",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "3c3626ab53d657bb",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-05-27T00:00:00Z",
+          "url": "https://hotair.com/john-s-2/2026/05/26/as-russia-struggles-putin-makes-threats-and-recruits-more-soldiers-n3815311",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "118d8e1d0a8017d0",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "3611064b5dd51de9",
+          "title": "Reval, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-05-27T00:00:00Z",
+          "url": "https://en.antaranews.com/news/417043/indonesians-diaspora-welcomed-prabowo-in-paris",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "2674993b7e2f7772",
         "level": "critical",
@@ -249,66 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-05-26T19:00:00Z",
           "url": "https://week.ukrainianwall.com/160278-vash-dvigun-pid-naglyadom-yes-zapuskaye-distanciyniy-kontrol-vikidiv-3-naslidki-dlya-vodijiv",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "386ec1da2266ce63",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "0c856ecb79290ea2",
-          "title": "Drones impulsan exportaciones de Taiwán por guerra en Ucrania",
-          "category": "drone",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T19:00:00Z",
-          "url": "https://laverdadnoticias.com/ultimas-noticias/mundo/drones",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "86813b87b572bc13",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "79a63b480577cbdc",
-          "title": "Poliția cehă l - a eliberat pe mitropolitul rus Ilarion al Bisericii Ortodoxe Ruse . În mașina lui a fost găsit un narcotic interzis",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T19:00:00Z",
-          "url": "https://www.mediafax.ro/externe/politia-ceha-l-a-eliberat-pe-mitropolitul-rus-ilarion-al-bisericii-ortodoxe-ruse-in-masina-lui-a-fost-gasit-un-narcotic-interzis-23744130",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

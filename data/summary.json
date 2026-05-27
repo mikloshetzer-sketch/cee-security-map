@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-05-27T09:38:47Z",
+  "generated_utc": "2026-05-27T15:04:33Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1592 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 782 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Dronele ucrainene rătăcite în țările baltice seamănă confuzie ( Reuters ).",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Tyrimo rezultatai sugriovė mitą apie Lietuvos jaunimą.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Nicusor Dan : Romania calls for larger EU cohesion and agriculture funding in post - 2027 budget.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 878.87; 7 napos változás: +10400%).",
-    "Trend: emelkedő (+1172%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3512, GDELT DOC 3705, direkt feed 427, USGS 0, GDACS 0.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Az infrastruktúra-közelségi modul 1960 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 931 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: مواطن تشيكي يجني رقما خياليا في اليانصيب.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Spritpreise sinken - ADAC : zu langsam.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Spritpreise sinken - ADAC : zu langsam.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 912.29; 7 napos változás: +11074%).",
+    "Trend: emelkedő (+1267%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3600, GDELT DOC 3653, direkt feed 416, USGS 0, GDACS 0.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 186 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10400%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+11074%)."
   },
   "stats": {
-    "score_last7": 3496.192,
-    "score_prev7": 274.823,
-    "change_pct": 1172.16
+    "score_last7": 3567.499,
+    "score_prev7": 261.051,
+    "change_pct": 1266.59
   },
-  "rss_count": 200,
+  "rss_count": 186,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1592,
+    "last_24h_proximity_matches": 1960,
     "top_proximity": [
       {
         "id": "4edf062aebe0b13c",
@@ -88,17 +88,107 @@
         }
       },
       {
-        "id": "2674993b7e2f7772",
+        "id": "e084f5590ff05fd1",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "9b5dbb4562520d92",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "cyber",
+          "source": "GDELT",
+          "time": "2026-05-27T00:00:00Z",
+          "url": "https://english.radio.cz/president-pavel-visits-estonia-will-discuss-security-and-cyber-defence-8887808",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "2b07268b51a0fb4f",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "0d448217ee69a4f3",
+          "title": "Tallinna, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-27T00:00:00Z",
+          "url": "https://www.manilatimes.net/2026/05/27/tmt-newswire/globenewswire/tallinna-vesi-will-harmonise-price-of-water-service-for-private-and-business-customers/2352559",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "895e7379b3e6cfb6",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "9d7c7c687d058634",
+          "title": "Riga, Riga, Latvia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-05-27T00:00:00Z",
+          "url": "https://nltimes.nl/2026/05/27/dutch-german-troops-help-establish-nato-command-center-estonia",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "b844367532eed49c",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "463801a9fc2804ab",
-          "title": "Francúzskom otriasla vražda len 11 - ročného chlapca , zatkli dvoch podozrivých tínedžerov",
+          "id": "0c0ecc2cda6a84b0",
+          "title": "مواطن تشيكي يجني رقما خياليا في اليانصيب",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T19:15:00Z",
-          "url": "https://spravy.pozri.sk/clanok/francuzskom-otriasla-vrazda-len-11-rocneho-chlapca-zatkli-dvoch-podozrivych-tinedzerov/1608708",
+          "time": "2026-05-27T14:15:00Z",
+          "url": "https://arabic.rt.com/funny/1793555-%D9%85%D9%88%D8%A7%D8%B7%D9%86-%D8%AA%D8%B4%D9%8A%D9%83%D9%8A-%D9%8A%D8%AD%D8%B5%D8%AF-%D8%B1%D9%82%D9%85%D8%A7-%D9%82%D9%8A%D8%A7%D8%B3%D9%8A%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D8%A7%D9%86%D8%B5%D9%8A%D8%A8/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +208,17 @@
         }
       },
       {
-        "id": "063d64dc089e34cc",
+        "id": "7a618a2a6b0c5e3f",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "6a8604432330bec5",
-          "title": "Slovenskí podnikatelia varujú pred úpadkom krajiny , firmy kritizujú dane , byrokraciu aj drahé energie",
+          "id": "6e979df06d7a2709",
+          "title": "Spritpreise sinken - ADAC : zu langsam",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T19:15:00Z",
-          "url": "https://spravy.pozri.sk/clanok/slovenski-podnikatelia-varuju-pred-upadkom-krajiny-firmy-kritizuju-dane-byrokraciu-aj-drahe-energie/1608709",
+          "time": "2026-05-27T14:15:00Z",
+          "url": "https://www.t-online.de/finanzen/aktuelles/id_101271536/spritpreise-sinken-adac-zu-langsam.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +238,17 @@
         }
       },
       {
-        "id": "9ed1711323c6b8a1",
+        "id": "aa2776408caec9c9",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "611b2bc55c91af36",
-          "title": "Ruotsi teki ruotsit ja nousi vaikeuksien kautta MM - jkiekon pudotuspeleihin",
+          "id": "dee1ae57ee543fb2",
+          "title": "Spritpreise sinken - ADAC : zu langsam",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T19:15:00Z",
-          "url": "https://www.ita-savo.fi/urheilu/9483266",
+          "time": "2026-05-27T14:15:00Z",
+          "url": "https://www.azonline.de/welt/wirtschaft/spritpreise-sinken-adac-zu-langsam-3560871",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +268,17 @@
         }
       },
       {
-        "id": "e7fcdff1978a781c",
+        "id": "5cbf7a5450aceda1",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3e2a133ad3b6a511",
-          "title": "Eduard Chmelár : Péter Magyar je Matovič skrížený s Mečiarom – ROZHOVOR",
+          "id": "d9ca7a720b72afe2",
+          "title": "Visa zatrudni w Polsce kilka tysięcy pracowników . Powstaje globalny hub technologiczny",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T19:15:00Z",
-          "url": "https://spravy.pozri.sk/clanok/eduard-chmelar-peter-magyar-je-matovic-skrizeny-s-meciarom-rozhovor/1608715",
+          "time": "2026-05-27T14:00:00Z",
+          "url": "https://www.pb.pl/visa-zatrudni-w-polsce-kilka-tysiecy-pracownikow-powstaje-globalny-hub-technologiczny-1261922",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,107 +298,17 @@
         }
       },
       {
-        "id": "7e9baf501ba9f92a",
+        "id": "b3c87c44698671e0",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "2a49c78839597362",
-          "title": "Varšava podpíše s Britániou historickú obrannú dohodu",
-          "category": "other",
+          "id": "c418825b5c3e7629",
+          "title": "Ukraine Has Created an Effective Format of Interaction With Partners at the Level of Communities , Cities , and Regions - President at the 4th International Summit of Cities and Regions",
+          "category": "security_politics",
           "source": "GDELT_DOC",
-          "time": "2026-05-26T19:15:00Z",
-          "url": "https://spravy.pozri.sk/clanok/varsava-podpise-s-britaniou-historicku-obrannu-dohodu/1608717",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "fa99d179b8edc154",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "7476c773803bbc43",
-          "title": "Tréner Allegri nepokračuje v AC Miláno , majitelia pristúpili k výraznejšej obmene vedenia klubu",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T19:15:00Z",
-          "url": "https://spravy.pozri.sk/clanok/trener-allegri-nepokracuje-v-ac-milano-majitelia-pristupili-k-vyraznejsej-obmene-vedenia-klubu/1608712",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "9efaaac0e9104f86",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "1ef72de52dd280c1",
-          "title": "Η Τσεχία εξασφάλισε για την Ουκρανία 1 εκατομμύριο βλήματα πυροβολικού για το 2026",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T19:00:00Z",
-          "url": "https://www.voria.gr/article/i-tsehia-exasfalise-gia-tin-oykrania-1-ekatommyrio-blimata-pyrobolikoy-gia-2026",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "2ee6323abb8dfe47",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "583b2a953409b58a",
-          "title": "Дистанційний контроль викидів авто в ЄС : що зміниться для водіїв",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-26T19:00:00Z",
-          "url": "https://week.ukrainianwall.com/160278-vash-dvigun-pid-naglyadom-yes-zapuskaye-distanciyniy-kontrol-vikidiv-3-naslidki-dlya-vodijiv",
+          "time": "2026-05-27T14:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/05/ukraine-260526-ukraine-president04.htm",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

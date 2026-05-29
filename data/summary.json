@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-05-29T14:49:26Z",
+  "generated_utc": "2026-05-29T20:16:02Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 2414 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1105 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: América Latina ante opinión consultiva a justicia internacional sobre la situación en Palestina.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Săptămâna europeană 25 - 29 mai 2026.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ρουμανία : Διεθνείς αντιδράσεις για το περιστατικό με ρωσικό drone.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 946.46; 7 napos változás: +7778%).",
-    "Trend: emelkedő (+1192%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3603, GDELT DOC 3871, direkt feed 418, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 191 db.",
+    "Az infrastruktúra-közelségi modul 2714 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1352 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Menšík postoupil poprvé do osmifinále Roland Garros , Muchová a Bouzková končí.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Best new books out in May from Elizabeth Strout , Francesca Albanese and more.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Polish baking recipes | National Post.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 976.23; 7 napos változás: +8471%).",
+    "Trend: emelkedő (+1304%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3751, GDELT DOC 3780, direkt feed 416, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7778%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+8471%)."
   },
   "stats": {
-    "score_last7": 4029.549,
-    "score_prev7": 311.767,
-    "change_pct": 1192.49
+    "score_last7": 4153.54,
+    "score_prev7": 295.849,
+    "change_pct": 1303.94
   },
-  "rss_count": 191,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 2414,
+    "last_24h_proximity_matches": 2714,
     "top_proximity": [
       {
         "id": "c5f1488864b719a5",
@@ -178,17 +178,47 @@
         }
       },
       {
-        "id": "32264af5cb6359fb",
+        "id": "3491f2e0b07999ce",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "5b7bffdc422a7bb5",
+          "title": "Riga, Riga, Latvia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-05-29T00:00:00Z",
+          "url": "https://www.lrt.lt/en/news-in-english/19/2944251/in-latvia-s-pine-forests-nato-s-drone-future-takes-shape",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "ab36e950d1a4afd6",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "5f4874352636a786",
-          "title": "América Latina ante opinión consultiva a justicia internacional sobre la situación en Palestina",
+          "id": "1ae777c121b2559e",
+          "title": "Menšík postoupil poprvé do osmifinále Roland Garros , Muchová a Bouzková končí",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-29T14:15:00Z",
-          "url": "https://www.informa-tico.com/25-01-2023/america-latina-opinion-consultiva-justicia-internacional-situacion-palestina",
+          "time": "2026-05-29T19:45:00Z",
+          "url": "https://www.ceskenoviny.cz/zpravy/mensik-postoupil-poprve-do-osmifinale-roland-garros-muchova-a-bouzkova-konci/2831471",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "bce0ad4364730c2a",
+        "id": "a097a429dab94adc",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "4bd484bdfe5667e7",
-          "title": "Săptămâna europeană 25 - 29 mai 2026",
+          "id": "6acaedd26645e549",
+          "title": "Best new books out in May from Elizabeth Strout , Francesca Albanese and more",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-29T14:15:00Z",
-          "url": "https://agerpres.ro/documentare/2026/05/29/saptamana-europeana-25-29-mai-2026--1561443",
+          "time": "2026-05-29T19:45:00Z",
+          "url": "https://www.abc.net.au/news/2026-05-30/best-new-books-may-elizabeth-strout-francesca-albanese/106693732",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,77 +268,47 @@
         }
       },
       {
-        "id": "37c485ce62063b57",
+        "id": "181f03c8f9422021",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "8d1ff0929985e193",
-          "title": "Ρουμανία : Διεθνείς αντιδράσεις για το περιστατικό με ρωσικό drone",
-          "category": "drone",
-          "source": "GDELT_DOC",
-          "time": "2026-05-29T14:15:00Z",
-          "url": "https://www.inewsgr.com/182/roumania-diethneis-antidraseis-gia-to-peristatiko-me-rosiko-drone.htm",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "17be075dd3ff7248",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "703649e461a5cb86",
-          "title": "Romania says Russian drone hit apartment block , NATO vows to defend alliance territory",
-          "category": "drone",
-          "source": "GDELT_DOC",
-          "time": "2026-05-29T14:00:00Z",
-          "url": "https://www.dailymaverick.co.za/article/2026-05-29-romania-says-russian-drone-hit-apartment-block-nato-vows-to-defend-alliance-territory/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "ba2e3a54d98e693d",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "95c2c220860510af",
-          "title": "Polish baking recipes | Airdrie Echo",
+          "id": "641104826d5dee1a",
+          "title": "Polish baking recipes | National Post",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-29T14:00:00Z",
-          "url": "https://www.airdrieecho.com:443/life/food/polish-baking-recipes-dobre-dobre",
+          "time": "2026-05-29T19:45:00Z",
+          "url": "https://nationalpost.com/life/food/polish-baking-recipes-dobre-dobre",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "c3044f394325b5d0",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "4f94f3a78e288eb6",
+          "title": "Why Europe Populists Are Breaking With MAGA",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-05-29T19:45:00Z",
+          "url": "https://foreignpolicy.com/2026/05/29/maga-trump-vance-europe-populists-far-right-alliance-orban-magyar-hungary/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

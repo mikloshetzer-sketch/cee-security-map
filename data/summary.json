@@ -1,44 +1,104 @@
 {
-  "generated_utc": "2026-05-29T02:37:14Z",
+  "generated_utc": "2026-05-29T09:44:47Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1814 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 853 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Internet Exchange / Digital Hub (Poland) – 2.5 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 883.48; 7 napos változás: +6421%).",
-    "Trend: emelkedő (+945%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3325, GDELT DOC 3787, direkt feed 402, USGS 0, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 2006 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 928 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Președintele Cehiei îl susține pe Nicușor Dan după atacul de la Galați : „ Este nevoie de un răspuns internațional ferm.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: BNR subliniază independența băncii centrale în formarea ROBOR pentru stabilitatea prețurilor.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Tipy na víkend : Noc kostelů , staročeské trhy v Turnově nebo dětské dny.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 900.21; 7 napos változás: +7026%).",
+    "Trend: emelkedő (+1045%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3452, GDELT DOC 3760, direkt feed 412, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6421%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7026%)."
   },
   "stats": {
-    "score_last7": 3663.011,
-    "score_prev7": 350.38,
-    "change_pct": 945.44
+    "score_last7": 3748.977,
+    "score_prev7": 327.385,
+    "change_pct": 1045.13
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1814,
+    "last_24h_proximity_matches": 2006,
     "top_proximity": [
       {
-        "id": "37448610d6616f78",
+        "id": "c5f1488864b719a5",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "1d71ced92af673ce",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-29T00:00:00Z",
+          "url": "https://www.irishexaminer.com/news/arid-41853027.html",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "72e00d34ec1b15c1",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "8297a3c9d5cf4ddc",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-05-29T00:00:00Z",
+          "url": "https://www.theregister.com/networks/2026/05/29/jammin-on-uk-defence-secretarys-jet-as-russia-blamed-for-gps-interference/5247673",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "b7f91a616b05acad",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "9daafb4c52df673a",
-          "title": "Skvrna na reputaci Česka , míní Moskva o zadržení Ilariona | Svět",
+          "id": "7d85701a4603caab",
+          "title": "Președintele Cehiei îl susține pe Nicușor Dan după atacul de la Galați : „ Este nevoie de un răspuns internațional ferm",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-28T15:00:00Z",
-          "url": "https://www.lidovky.cz/svet/cesko-rusko-metropolita-zacharovova-kritika-zadrzeni.A260528_162030_ln_zahranici_lsva",
+          "time": "2026-05-29T09:15:00Z",
+          "url": "https://www.mediafax.ro/externe/presedintele-cehiei-il-sustine-pe-nicusor-dan-dupa-atacul-de-la-galati-este-nevoie-de-un-raspuns-international-ferm-23745769",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,17 +118,17 @@
         }
       },
       {
-        "id": "14346af66e867b4f",
+        "id": "624cbdd5cf3c16f4",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "dd9c5c48651d3ca1",
-          "title": "La élite del crucero llega a Barcelona",
+          "id": "6045094d872a3188",
+          "title": "BNR subliniază independența băncii centrale în formarea ROBOR pentru stabilitatea prețurilor",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-28T15:00:00Z",
-          "url": "https://www.abc.es/deportes/vela/vela-crucero/elite-crucero-llega-barcelona-20260528162250-nt.html",
+          "time": "2026-05-29T09:15:00Z",
+          "url": "https://business24.ro/robor/independenta-banca-centrala-robor-stabilitate-preturi-1654090",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +148,17 @@
         }
       },
       {
-        "id": "a8f9a082d125fb09",
+        "id": "e07dcb4ea20a9fc0",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "8063bfa2a9a1e461",
-          "title": "Родина не проти перепоховати Бандеру , але є застереження щодо безпеки могили під час війни голова УІНП :: ВІКНА – Новини Калуша та Прикарпаття",
+          "id": "c4b0b4fbb1291f0c",
+          "title": "Tipy na víkend : Noc kostelů , staročeské trhy v Turnově nebo dětské dny",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-28T15:00:00Z",
-          "url": "https://vikna.if.ua/news/174548/view",
+          "time": "2026-05-29T09:15:00Z",
+          "url": "https://jablonecky.denik.cz/volny-cas/tipy-na-vikend-jablonecko-prehled-akce-pozvanky-detske-dny-2026.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +178,17 @@
         }
       },
       {
-        "id": "056e2bdded24de4a",
+        "id": "911a3b2db51f1589",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e83674bcadf38b58",
-          "title": "Viva Musica ! Festival Opens with Philip Glass Opera Einstein on the Beach - News - Rádio RSI English",
+          "id": "5e3ada66a3c7cf50",
+          "title": "Benzin v Libereckém kraji dál zdražuje , cena nafty rychle klesá",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-28T15:00:00Z",
-          "url": "https://enrsi.stvr.sk/articles/news/446745/viva-musica-festival-opens-with-philip-glass-opera-einstein-on-the-beach",
+          "time": "2026-05-29T09:15:00Z",
+          "url": "https://ceskolipsky.denik.cz/zpravy_region/benzin-v-libereckem-kraji-dal-zdrazuje-cena-nafty-rychle-klesa-20260529.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +208,17 @@
         }
       },
       {
-        "id": "600a5f63fa565e10",
+        "id": "5b5d3bebc4488947",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3f20db9e51159d36",
-          "title": "Yad Vashem set to open Holocaust education centers in Germany",
+          "id": "14b25b42dedec583",
+          "title": "Ceny pohonných látok by mali budúci týždeň klesnúť , hovorí analytik",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-28T15:00:00Z",
-          "url": "https://www.politico.eu/article/yad-vashem-set-to-open-holocaust-education-centers-in-germany/",
+          "time": "2026-05-29T09:15:00Z",
+          "url": "https://hn24.hnonline.sk/hn24/96283730-ceny-pohonnych-latok-by-mali-buduci-tyzden-klesnut-hovori-analytik",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +238,17 @@
         }
       },
       {
-        "id": "dd0dbb3877a86254",
+        "id": "196f59ac63a9f369",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "1d16d02157de35ab",
-          "title": "德議員訪台談去中依賴 稱台灣AI供應鏈關鍵夥伴 | 政治",
+          "id": "eebed972d75cb719",
+          "title": "Els ramaders calculen pèrdues de més de 900 milions per la pesta porcina",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-28T15:00:00Z",
-          "url": "https://www.cna.com.tw:443/news/aipl/202605280367.aspx",
+          "time": "2026-05-29T09:00:00Z",
+          "url": "https://www.regio7.cat/economia/2026/05/29/els-ramaders-calculen-perdues-mes-130738330.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +268,17 @@
         }
       },
       {
-        "id": "8d908b57dc8b2261",
+        "id": "58e3ee64adabce18",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "498c1edb4fa6826a",
-          "title": "Praha jako turistický trhák : V dubnu byla nejvýdělečnější destinací střední Evropy",
+          "id": "8e0e52719dc1f36a",
+          "title": "Dongfeng a ďalšie čínske značky united kingdom ázali nové modely pre slovenský trh . Dbajú na spätnú väzbu priamo od zákazníkov",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-28T15:00:00Z",
-          "url": "https://www.blesk.cz/clanek/regiony-praha-praha-zpravy/840473/praha-jako-turisticky-trhak-v-dubnu-byla-nejvydelecnejsi-destinaci-stredni-evropy.html",
+          "time": "2026-05-29T09:00:00Z",
+          "url": "https://www.noviny.sk/pr-spravy/1214431-dongfeng-a-dalsie-cinske-znacky-ukazali-nove-modely-pre-slovensky-trh-dbaju-na-spaetnu-vaezbu-priamo-od-zakaznikov",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,77 +298,17 @@
         }
       },
       {
-        "id": "5697383126492373",
+        "id": "6e3153773b9de099",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e008a957f6161edd",
-          "title": "Řehka : Moderní válka vyžaduje rychlou adaptaci a technologické inovace",
+          "id": "b5fc6e62a54fbc17",
+          "title": "Ruský dron jsme nesestřelili , protože žijeme v míru , vysvětlila rumunská armáda",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-28T14:45:00Z",
-          "url": "https://www.ceskenoviny.cz/zpravy/rehka-moderni-valka-vyzaduje-rychlou-adaptaci-a-technologicke-inovace/2831468",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "202e85d2822bac1f",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "366ca1aec6314c59",
-          "title": "Prezidentka evropské asociace : Lidé dnes více hledají motivaci , proč cestovat",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-28T14:45:00Z",
-          "url": "https://www.ceskenoviny.cz/zpravy/prezidentka-evropske-asociace-lide-dnes-vice-hledaji-motivaci-proc-cestovat/2831411",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "e4a1a5361ce81ab6",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "b5031a5d2f8eae99",
-          "title": "Batacazo argentino en Roland Garros : Juan Manuel Cerúndolo aprovechó los problemas de Jannik Sinner y eliminó al 1° del mundo",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-28T14:45:00Z",
-          "url": "https://www.infobae.com/deportes/2026/05/28/batacazo-argentino-en-roland-garros-juan-manuel-cerundolo-aprovecho-los-problemas-de-jannik-sinner-y-elimino-al-1-del-mundo/",
+          "time": "2026-05-29T09:00:00Z",
+          "url": "https://www.novinky.cz/clanek/zahranicni-evropa-rusky-dron-jsme-nesestrelili-protoze-zijeme-v-miru-vysvetlila-rumunska-armada-40580545",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

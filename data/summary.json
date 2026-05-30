@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-05-30T02:19:22Z",
+  "generated_utc": "2026-05-30T08:25:17Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1894 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1022 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Fonseca wie Melzer : Sieg über Djoker nach Zweisatzrückstand | Tiroler Tageszeitung – Aktuelle Nachrichten auf tt . com.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Kobra místo pomoci : stát bojuje s chudými , ne s chudobou | 29 . 5 . 2026 | Petr Waniek Horváth.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Unternehmen - Weber pocht auf Ausbau der Atomenergie - UNTERNEHMEN - HEUTE . de.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 958.94; 7 napos változás: +6693%).",
-    "Trend: emelkedő (+1175%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3676, GDELT DOC 3778, direkt feed 412, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 198 db.",
+    "Az infrastruktúra-közelségi modul 2009 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1016 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Pourquoi votre ticket de caisse reste salé alors que linflation est « sous contrôle ?.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Când graba nu strică treaba , iar bicicleta nu trebuie inventată.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Tysklands försvarsbudget stiger i rekordfart.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 892.41; 7 napos változás: +6603%).",
+    "Trend: emelkedő (+1235%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3711, GDELT DOC 3783, direkt feed 409, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6693%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6603%)."
   },
   "stats": {
-    "score_last7": 4049.435,
-    "score_prev7": 317.553,
-    "change_pct": 1175.2
+    "score_last7": 3996.54,
+    "score_prev7": 299.445,
+    "change_pct": 1234.65
   },
-  "rss_count": 198,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1894,
+    "last_24h_proximity_matches": 2009,
     "top_proximity": [
+      {
+        "id": "d1d156f1f86d62a9",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "2187f75470bae6cb",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-30T00:00:00Z",
+          "url": "https://www.asianews.it/news-en/The-ecclesiastical-hitchhiking-of-Russian-priests-65547.html",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "e604158680509922",
         "level": "critical",
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-05-30T00:00:00Z",
           "url": "https://www.ceskenoviny.cz/zpravy/mensik-postoupil-poprve-do-osmifinale-roland-garros-muchova-a-bouzkova-neuspely/2831471",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "88fd61b7250a707e",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "263d18361efeb49b",
-          "title": "30 . Mai 1981 : In Wien wird die Donauinsel eröffnet",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-30T00:00:00Z",
-          "url": "https://www.sn.at/panorama/wissen/30-mai-1981-in-wien-wird-die-donauinsel-eroeffnet-art-653383",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

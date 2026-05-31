@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-05-31T08:41:03Z",
+  "generated_utc": "2026-05-31T13:22:45Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 923 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 473 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 884 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 417 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Wakacyjny hit PKP Intercity z 2025 r . może zostać na dłużej . Na Bałkany pojedziemy nie tylko latem.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Nocna prohibicja w całej Warszawie . Zakaz sprzedaży alkoholu wkrótce zacznie obowiązywać.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Od 3 czerwca nowy obowiązek . Mandat 100 zł za każdym razem.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 773.49; 7 napos változás: +6263%).",
-    "Trend: emelkedő (+1276%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3770, GDELT DOC 3529, direkt feed 412, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 187 db.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 730.21; 7 napos változás: +11698%).",
+    "Trend: emelkedő (+1304%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3814, GDELT DOC 3432, direkt feed 409, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6263%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+11698%)."
   },
   "stats": {
-    "score_last7": 3563.83,
-    "score_prev7": 258.921,
-    "change_pct": 1276.41
+    "score_last7": 3475.094,
+    "score_prev7": 247.479,
+    "change_pct": 1304.2
   },
-  "rss_count": 187,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 923,
+    "last_24h_proximity_matches": 884,
     "top_proximity": [
       {
         "id": "f5dd0d9d0a9669c9",
@@ -39,6 +39,36 @@
           "source": "GDELT",
           "time": "2026-05-31T00:00:00Z",
           "url": "https://azertag.az/en/xeber/4231287",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "a362456abb43599a",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "1acfafe7161d2605",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-05-31T00:00:00Z",
+          "url": "https://www.thehindu.com/news/international/estonian-startups-keen-to-partner-india-tap-into-its-huge-market/article71044254.ece",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
@@ -189,36 +219,6 @@
           "source": "GDELT_DOC",
           "time": "2026-05-31T07:45:00Z",
           "url": "https://www.portalsamorzadowy.pl/zmiany-w-prawie/od-3-czerwca-nowy-obowiazek-mandat-100-zl-za-kazdym-razem,662972.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "47c839f17864a20d",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "f320c9c9fa5c26e8",
-          "title": "Trotz gebändigter Inflation : Warum der Supermarkt immer noch so teuer ist",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-31T07:30:00Z",
-          "url": "https://de.euronews.com/business/2026/05/31/trotz-gebandigter-inflation-warum-der-supermarkt-immer-noch-so-teuer-ist",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

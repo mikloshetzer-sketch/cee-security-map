@@ -1,60 +1,60 @@
 {
-  "generated_utc": "2026-05-30T19:07:49Z",
+  "generated_utc": "2026-05-31T02:43:05Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1614 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 786 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Cuenta regresiva para el Mundial en El Siglo.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Cuba : You Dont Go from Oppression to Freedom Overnight.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Průzkum : united states pod vedením Trumpa podle většiny Čechů oslabují NATO.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 867.42; 7 napos változás: +7130%).",
-    "Trend: emelkedő (+1317%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3817, GDELT DOC 3558, direkt feed 403, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 196 db.",
+    "Az infrastruktúra-közelségi modul 854 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 412 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Port of Tallinn (Estonia) – 2.2 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 794.72; 7 napos változás: +6070%).",
+    "Trend: emelkedő (+1208%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3749, GDELT DOC 3513, direkt feed 406, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7130%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6070%)."
   },
   "stats": {
-    "score_last7": 3826.438,
-    "score_prev7": 270.112,
-    "change_pct": 1316.61
+    "score_last7": 3587.513,
+    "score_prev7": 274.228,
+    "change_pct": 1208.22
   },
-  "rss_count": 196,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1614,
+    "last_24h_proximity_matches": 854,
     "top_proximity": [
       {
-        "id": "d1d156f1f86d62a9",
+        "id": "f5dd0d9d0a9669c9",
         "level": "critical",
-        "score": 89.42,
-        "distance_km": 0.32,
+        "score": 97.1,
+        "distance_km": 1.45,
         "event": {
-          "id": "2187f75470bae6cb",
-          "title": "Riga, Riga, Latvia",
-          "category": "other",
+          "id": "3f14ccffa8bd6cdc",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
           "source": "GDELT",
-          "time": "2026-05-30T00:00:00Z",
-          "url": "https://www.asianews.it/news-en/The-ecclesiastical-hitchhiking-of-Russian-priests-65547.html",
-          "lat": 56.95,
-          "lon": 24.1,
+          "time": "2026-05-31T00:00:00Z",
+          "url": "https://azertag.az/en/xeber/4231287",
+          "lat": 59.4339,
+          "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "lv-transport-riga-port",
-          "name": "Port of Riga",
-          "country": "Latvia",
-          "city": "Riga",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Freeport of Riga Authority",
-          "lat": 56.949,
-          "lon": 24.105,
-          "source_file": "critical_infrastructure.json"
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
         }
       },
       {
@@ -208,36 +208,6 @@
         }
       },
       {
-        "id": "8d18eba9d8c718dd",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "41578a6cd08eb14f",
-          "title": "Rumanía anuncia más de 6 . 600 millones en compras de material militar con cargo al programa europeo SAFE",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-30T16:45:00Z",
-          "url": "https://www.diariosigloxxi.com/texto-ep/mostrar/20260530172501/rumania-anuncia-6600-millones-compras-material-militar-cargo-programa-europeo-safe",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
         "id": "e4f5376f78d6dfdd",
         "level": "critical",
         "score": 88.57,
@@ -309,6 +279,36 @@
           "source": "GDELT_DOC",
           "time": "2026-05-30T15:30:00Z",
           "url": "https://www.163.com/dy/article/KU79SOB105298CTE.html",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "f7a4e50e494e0b1c",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "3e9994ad7822a7e5",
+          "title": "Gigantyczny park rozrywki w Gliwicach . To będzie zupełnie nowa koncepcja",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-05-30T15:30:00Z",
+          "url": "https://biznes.interia.pl/finanse/news-na-slasku-powstaje-gigantyczny-park-rozrywki-inwestycja-za-2,nId,23489896",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

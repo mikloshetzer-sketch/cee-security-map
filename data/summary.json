@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-05-31T02:43:05Z",
+  "generated_utc": "2026-05-31T08:41:03Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 854 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 412 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Port of Tallinn (Estonia) – 2.2 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 794.72; 7 napos változás: +6070%).",
-    "Trend: emelkedő (+1208%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3749, GDELT DOC 3513, direkt feed 406, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Az infrastruktúra-közelségi modul 923 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 473 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Wakacyjny hit PKP Intercity z 2025 r . może zostać na dłużej . Na Bałkany pojedziemy nie tylko latem.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Nocna prohibicja w całej Warszawie . Zakaz sprzedaży alkoholu wkrótce zacznie obowiązywać.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Od 3 czerwca nowy obowiązek . Mandat 100 zł za każdym razem.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 773.49; 7 napos változás: +6263%).",
+    "Trend: emelkedő (+1276%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3770, GDELT DOC 3529, direkt feed 412, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 187 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6070%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6263%)."
   },
   "stats": {
-    "score_last7": 3587.513,
-    "score_prev7": 274.228,
-    "change_pct": 1208.22
+    "score_last7": 3563.83,
+    "score_prev7": 258.921,
+    "change_pct": 1276.41
   },
-  "rss_count": 200,
+  "rss_count": 187,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 854,
+    "last_24h_proximity_matches": 923,
     "top_proximity": [
       {
         "id": "f5dd0d9d0a9669c9",
@@ -58,17 +58,77 @@
         }
       },
       {
-        "id": "531ead9b9f8fbb08",
+        "id": "3280651b1082b23c",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "41826913c809fb43",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-31T00:00:00Z",
+          "url": "https://artdaily.com/news/196600/Fifty-years-of-Italian-ceramic-art-showcased-in-landmark-Riga-exhibition",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "7950cd456dc8cd51",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "09bd09b91579a48e",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-05-31T00:00:00Z",
+          "url": "https://artdaily.com/?date=05/31/2026",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "c84f645c52386182",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "d687ed1b37b5f562",
-          "title": "Cuenta regresiva para el Mundial en El Siglo",
-          "category": "other",
+          "id": "8a59b32d8aa7f273",
+          "title": "Wakacyjny hit PKP Intercity z 2025 r . może zostać na dłużej . Na Bałkany pojedziemy nie tylko latem",
+          "category": "infrastructure",
           "source": "GDELT_DOC",
-          "time": "2026-05-30T18:30:00Z",
-          "url": "https://www.elsiglodetorreon.com.mx/noticia/2026/cuenta-regresiva-para-el-mundial-en-el-siglo.html",
+          "time": "2026-05-31T07:45:00Z",
+          "url": "https://www.portalsamorzadowy.pl/gospodarka-komunalna/wakacyjny-hit-pkp-intercity-z-2025-r-moze-zostac-na-dluzej-na-balkany-pojedziemy-nie-tylko-latem,663117.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +148,17 @@
         }
       },
       {
-        "id": "51dff667a8117a68",
+        "id": "883672f739c7cb90",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "724b6dc50131295c",
-          "title": "Cuba : You Dont Go from Oppression to Freedom Overnight",
+          "id": "7254216906801069",
+          "title": "Nocna prohibicja w całej Warszawie . Zakaz sprzedaży alkoholu wkrótce zacznie obowiązywać",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-30T18:30:00Z",
-          "url": "https://havanatimes.org/interviews/cuba-you-dont-go-from-oppression-to-freedom-overnight/",
+          "time": "2026-05-31T07:45:00Z",
+          "url": "https://wiadomosci.gazeta.pl/polska/7,198073,32825650,nocna-prohibicja-w-calej-warszawie-zakaz-sprzedazy-alkoholu.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +178,77 @@
         }
       },
       {
-        "id": "15441ee65c922fef",
+        "id": "e0dca7b20c6b79f7",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "1a34ad1b0bc7fdf5",
-          "title": "Průzkum : united states pod vedením Trumpa podle většiny Čechů oslabují NATO",
+          "id": "e575da18f6ab79c1",
+          "title": "Od 3 czerwca nowy obowiązek . Mandat 100 zł za każdym razem",
+          "category": "infrastructure",
+          "source": "GDELT_DOC",
+          "time": "2026-05-31T07:45:00Z",
+          "url": "https://www.portalsamorzadowy.pl/zmiany-w-prawie/od-3-czerwca-nowy-obowiazek-mandat-100-zl-za-kazdym-razem,662972.html",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "47c839f17864a20d",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "f320c9c9fa5c26e8",
+          "title": "Trotz gebändigter Inflation : Warum der Supermarkt immer noch so teuer ist",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-05-31T07:30:00Z",
+          "url": "https://de.euronews.com/business/2026/05/31/trotz-gebandigter-inflation-warum-der-supermarkt-immer-noch-so-teuer-ist",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "e9637d3976a49dc0",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "ed33ba776eed98b1",
+          "title": "Průzkum : Podle většiny Čechů Trumpova Amerika oslabuje NATO",
           "category": "military",
           "source": "GDELT_DOC",
-          "time": "2026-05-30T17:15:00Z",
-          "url": "https://www.ceskenoviny.cz/zpravy/pruzkum-usa-pod-vedenim-trumpa-podle-vetsiny-cechu-oslabuji-nato/2832354",
+          "time": "2026-05-31T07:00:00Z",
+          "url": "https://cesky.radio.cz/pruzkum-podle-vetsiny-cechu-trumpova-amerika-oslabuje-nato-8888181",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +268,17 @@
         }
       },
       {
-        "id": "dcb4e7f4c58baa43",
+        "id": "f7c8f91638e93cc9",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "2161cb80a5a72481",
-          "title": "5 polskich zespołów metalowych , które podbiły świat . Każdy poszedł inną drogą",
-          "category": "other",
+          "id": "0a04f5db02cb4ca7",
+          "title": "Czech Republic likely to miss NATO defence - spending target , PM tells FT",
+          "category": "military",
           "source": "GDELT_DOC",
-          "time": "2026-05-30T17:00:00Z",
-          "url": "https://rozrywka.natemat.pl/655360,5-polskich-zespolow-metalowych-ktore-podbily-swiat-kazdy-poszedl-inna-droga",
+          "time": "2026-05-31T06:30:00Z",
+          "url": "https://www.yahoo.com/news/articles/czech-republic-likely-miss-nato-055032033.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,137 +298,17 @@
         }
       },
       {
-        "id": "5db8564159624c2c",
+        "id": "1f0ea03bbc0b91f5",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "44ccf54ceb5f6a50",
-          "title": "Интервью с Марией Силкиной на Российско - Китайских играх : выступления под флагом , соперничество с китайцами , суперниндзя дети",
+          "id": "3e2d017e97047bc4",
+          "title": "Slovenská politika východu tlačí IT firmy k přesunu do Česka",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-05-30T16:45:00Z",
-          "url": "https://www.championat.com/other/article-6488114-intervyu-s-mariej-silkinoj-na-rossijsko-kitajskih-igrah-vystupleniya-pod-flagom-sopernichestvo-s-kitajcami-supernindzya-deti.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "e4f5376f78d6dfdd",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c75de69cc5880cc9",
-          "title": "IBEX 35 und TECDAX vs . Nasdaq und HANG SENG – kommentierter KW 22 Peer Group Watch Indizes und Rohstoffe",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-30T16:00:00Z",
-          "url": "https://www.boerse-social.com/page/newsflow/ibex_35_und_tecdax_vs_nasdaq_und_hang_seng_kommentierter_kw_22_peer_group_watch_indizes_und_rohstoffe",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "81c977dcf8cab623",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "d524ac670037194c",
-          "title": "جدول مباريات غدًا الأحد 31 - 5 - 2026 في جميع البطولات",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-30T16:00:00Z",
-          "url": "https://www.dostor.org/5576958",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "baeb8a8a8af7d426",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "35269d51834f75f6",
-          "title": "男单下半区趣事 ： 四00后战四90后名将 ： 德约打趣 ： 三盘两胜就好了",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-30T15:30:00Z",
-          "url": "https://www.163.com/dy/article/KU79SOB105298CTE.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "f7a4e50e494e0b1c",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "3e9994ad7822a7e5",
-          "title": "Gigantyczny park rozrywki w Gliwicach . To będzie zupełnie nowa koncepcja",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-30T15:30:00Z",
-          "url": "https://biznes.interia.pl/finanse/news-na-slasku-powstaje-gigantyczny-park-rozrywki-inwestycja-za-2,nId,23489896",
+          "time": "2026-05-31T06:30:00Z",
+          "url": "https://www.e15.cz/byznys/slovenska-politika-vychodu-tlaci-tamni-it-byznys-k-presunu-do-ceska-1433191",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

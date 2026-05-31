@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-05-31T13:22:45Z",
+  "generated_utc": "2026-05-31T19:10:04Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 884 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 417 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Wakacyjny hit PKP Intercity z 2025 r . może zostać na dłużej . Na Bałkany pojedziemy nie tylko latem.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Nocna prohibicja w całej Warszawie . Zakaz sprzedaży alkoholu wkrótce zacznie obowiązywać.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Od 3 czerwca nowy obowiązek . Mandat 100 zł za każdym razem.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 730.21; 7 napos változás: +11698%).",
-    "Trend: emelkedő (+1304%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3814, GDELT DOC 3432, direkt feed 409, USGS 0, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 1067 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 438 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: BlackSeaNews | Обхід санкцій Росією для підтримки цивільної авіації у 2025 році : тренди і перспективи.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Латвийские производители против импорта : супермаркеты создают напряженность на рынке овощей и фруктов.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Bibliotekoje – neįprastas spektaklis.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 776.97; 7 napos változás: +13185%).",
+    "Trend: emelkedő (+1383%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3843, GDELT DOC 3474, direkt feed 414, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+11698%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+13185%)."
   },
   "stats": {
-    "score_last7": 3475.094,
-    "score_prev7": 247.479,
-    "change_pct": 1304.2
+    "score_last7": 3470.745,
+    "score_prev7": 234.065,
+    "change_pct": 1382.81
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 884,
+    "last_24h_proximity_matches": 1067,
     "top_proximity": [
       {
         "id": "f5dd0d9d0a9669c9",
@@ -69,6 +69,36 @@
           "source": "GDELT",
           "time": "2026-05-31T00:00:00Z",
           "url": "https://www.thehindu.com/news/international/estonian-startups-keen-to-partner-india-tap-into-its-huge-market/article71044254.ece",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "4392f2af5f3c8b03",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "47bcc7b61248dd25",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-05-31T00:00:00Z",
+          "url": "https://www.applevalleynewsnow.com/news/world-news/time-is-not-in-russia-s-favor-battlefield-losses-and-economic-pain-pile-pressure-on/article_06ff6252-1e15-5036-9cef-d3b1c3565f52.html",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-05-31T06:30:00Z",
           "url": "https://www.yahoo.com/news/articles/czech-republic-likely-miss-nato-055032033.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1f0ea03bbc0b91f5",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "3e2d017e97047bc4",
-          "title": "Slovenská politika východu tlačí IT firmy k přesunu do Česka",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-31T06:30:00Z",
-          "url": "https://www.e15.cz/byznys/slovenska-politika-vychodu-tlaci-tamni-it-byznys-k-presunu-do-ceska-1433191",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

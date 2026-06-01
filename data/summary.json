@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-06-01T02:54:19Z",
+  "generated_utc": "2026-06-01T11:17:58Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1060 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 509 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Пока вы спали : итоги предварительного голосования ЕР , новая вакцина от рака , польза и вред мороженого.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: João Fonseca vence Ruud e avança às quartas em Paris.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ministerio del Interior recurre a FAME para comprar sin licitación 31 . 045 pistolas.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 713.46; 7 napos változás: +9848%).",
-    "Trend: emelkedő (+1165%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3645, GDELT DOC 3518, direkt feed 417, USGS 0, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 1114 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 516 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Lietuva gavo progą pasireikšti.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Нижегородец в составе юношеской сборной стал победителем Российско - Китайских игр.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Bu gündən Bakı Enerji Həftəsi işə başlayır.",
+    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 700.05; 7 napos változás: +8389%).",
+    "Trend: emelkedő (+1233%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3730, GDELT DOC 3374, direkt feed 416, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+9848%)."
+    "text": "Erősödő hotspot: Vilnius County, Lithuania (+8389%)."
   },
   "stats": {
-    "score_last7": 3297.007,
-    "score_prev7": 260.59,
-    "change_pct": 1165.21
+    "score_last7": 3203.028,
+    "score_prev7": 240.359,
+    "change_pct": 1232.6
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1060,
+    "last_24h_proximity_matches": 1114,
     "top_proximity": [
+      {
+        "id": "063b23ac6d2f1525",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "715ddbb4bc945733",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-01T00:00:00Z",
+          "url": "https://www.lrt.lt/en/news-in-english/19/2943284/former-obama-adviser-he-was-prepared-to-go-to-war-for-the-baltic-states",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "0958dee3292f5997",
         "level": "critical",
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-05-31T23:15:00Z",
           "url": "https://www.dgabc.com.br/Noticia/4321898/joao-fonseca-derruba-especialista-no-saibro-e-avanca-as-quartas-em-paris",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "01f5ea2785beda93",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "94131fc52f401f0a",
-          "title": "Мирра Андреева в третий раз подряд вышла в четвертьфинал Roland Garros",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-05-31T23:15:00Z",
-          "url": "https://www.kommersant.ru/doc/8708326",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

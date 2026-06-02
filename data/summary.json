@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-06-02T16:10:06Z",
+  "generated_utc": "2026-06-02T20:44:39Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1824 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 987 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Vzdělanostní dluh se stává limitem české ekonomiky a polarizuje trh práce.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Правила тимчасового захисту для українців у ЄС - чоловіки мобілізаційного віку підпитанням.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: ΠΑΣΟΚ : Ερωτήματα για τις παραιτήσεις στρατιωτικών και τα εξοπλιστικά.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 744.56; 7 napos változás: +6665%).",
-    "Trend: emelkedő (+1392%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3784, GDELT DOC 3314, direkt feed 400, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 190 db.",
+    "Az infrastruktúra-közelségi modul 2174 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1143 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Pellegrini prijal Moznera po roku vo funkcii , hlavnou témou boli systémové opatrenia prijaté na Najvyššom súde SR.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Πού και πώς θα κλείσετε δυναμικές διεθνείς τουριστικές συμφωνίες.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Branislav Gröhling ( SaS ): Vládna koalícia s Ficom na čele si robí z ľudí bankomaty – ROZHOVOR.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 792.79; 7 napos változás: +7439%).",
+    "Trend: emelkedő (+1491%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3842, GDELT DOC 3286, direkt feed 396, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 193 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6665%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7439%)."
   },
   "stats": {
-    "score_last7": 3316.73,
-    "score_prev7": 222.347,
-    "change_pct": 1391.69
+    "score_last7": 3384.889,
+    "score_prev7": 212.765,
+    "change_pct": 1490.9
   },
-  "rss_count": 190,
+  "rss_count": 193,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1824,
+    "last_24h_proximity_matches": 2174,
     "top_proximity": [
+      {
+        "id": "b6f0ff968e374944",
+        "level": "critical",
+        "score": 98.81,
+        "distance_km": 0.6,
+        "event": {
+          "id": "6b519423c8c3f195",
+          "title": "Rzeszow, Podkarpackie, Poland",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-02T00:00:00Z",
+          "url": "https://www.rustourismnews.com/2026/06/02/wizz-air-adds-1-new-podgorica-route-from-rzeszow/",
+          "lat": 50.0372,
+          "lon": 22.0049,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-military-rzeszow-logistics",
+          "name": "Rzeszów NATO Logistics Hub",
+          "country": "Poland",
+          "city": "Rzeszów",
+          "category": "military",
+          "subtype": "military_logistics_hub",
+          "criticality": 10.0,
+          "operator": "Poland / NATO partners",
+          "lat": 50.041,
+          "lon": 21.999,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "527286042c592e39",
         "level": "critical",
@@ -70,6 +100,66 @@
           "time": "2026-06-02T00:00:00Z",
           "url": "https://www.hellenicshippingnews.com/hamburg-and-estonia-deepen-strategic-port-cooperation/",
           "lat": 59.43390000000001,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "5a057357af6af366",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "4f937900163d18b0",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-02T00:00:00Z",
+          "url": "https://www.kyivpost.com/post/77380",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "f17256164eaa9062",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "b7941007281948f8",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "police",
+          "source": "GDELT",
+          "time": "2026-06-02T00:00:00Z",
+          "url": "https://dnd.com.pk/is-nato-throwing-estonia-into-war-with-russia-as-it-did-with-ukraine/329758/",
+          "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
         },
@@ -178,17 +268,17 @@
         }
       },
       {
-        "id": "decdccf0960089e8",
+        "id": "c47a817173aa13e2",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3c9680403b3ccd2c",
-          "title": "Vzdělanostní dluh se stává limitem české ekonomiky a polarizuje trh práce",
+          "id": "69db4f1c99d17f20",
+          "title": "Pellegrini prijal Moznera po roku vo funkcii , hlavnou témou boli systémové opatrenia prijaté na Najvyššom súde SR",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-02T15:30:00Z",
-          "url": "https://nazory.hn.cz/c1-67885240-vzdelanostni-dluh-se-stava-limitem-ceske-ekonomiky-a-polarizuje-trh-prace",
+          "time": "2026-06-02T19:45:00Z",
+          "url": "https://spravy.pozri.sk/clanok/pellegrini-prijal-moznera-po-roku-vo-funkcii-hlavnou-temou-boli-systemove-opatrenia-prijate-na-najvyssom-sude-sr/1609050",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,107 +298,17 @@
         }
       },
       {
-        "id": "75c8dfcc28d30292",
+        "id": "538afab04b2a89ca",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "a23fecc0013c2e50",
-          "title": "Правила тимчасового захисту для українців у ЄС - чоловіки мобілізаційного віку підпитанням",
+          "id": "4c2fab01642bfdb1",
+          "title": "Πού και πώς θα κλείσετε δυναμικές διεθνείς τουριστικές συμφωνίες",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-02T15:15:00Z",
-          "url": "https://focus.ua/uk/economics/756345-pravila-timchasovogo-zahistu-dlya-ukrajinciv-u-yes-choloviki-mobilizaciynogo-viku-pidpitannyam",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "35144d132212bc53",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "b8cd51c114df2fdc",
-          "title": "ΠΑΣΟΚ : Ερωτήματα για τις παραιτήσεις στρατιωτικών και τα εξοπλιστικά",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T15:15:00Z",
-          "url": "https://www.euro2day.gr/news/politics/article/2353867/pasok-erothmata-gia-tis-paraithseis-stratiotikon-k.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "74adb51a31ba85c2",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "803620cb36a0618b",
-          "title": "České reality ovládl domácí kapitál . Praha je menší než Frankfurt , ale má vyšší výnos , říká Hrbáček z WOOD & Company",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T15:15:00Z",
-          "url": "https://www.e15.cz/podcasty/e15-cast/ceske-reality-ovladl-domaci-kapital-praha-je-mensi-nez-frankfurt-ale-ma-vyssi-vynos-rika-hrbacek-z-wood-company-1433276",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "f87d9bb4af632c73",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "6bd82ba14454b1a1",
-          "title": "Drahý tabák stojí státní pokladnu 20 miliard ročně",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T15:15:00Z",
-          "url": "https://www.e15.cz/byznys/finance-a-bankovnictvi/koureni-je-pro-stary-a-stat-na-to-doplaci-drahy-tabak-stoji-statni-pokladnu-20-miliard-rocne-1433171",
+          "time": "2026-06-02T19:45:00Z",
+          "url": "https://news.travelling.gr/2026/06/%CF%80%CE%BF%CF%8D-%CE%BA%CE%B1%CE%B9-%CF%80%CF%8E%CF%82-%CE%B8%CE%B1-%CE%BA%CE%BB%CE%B5%CE%AF%CF%83%CE%B5%CF%84%CE%B5-%CE%B4%CF%85%CE%BD%CE%B1%CE%BC%CE%B9%CE%BA%CE%AD%CF%82-%CE%B4%CE%B9%CE%B5%CE%B8/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

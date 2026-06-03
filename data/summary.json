@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-03T16:27:26Z",
+  "generated_utc": "2026-06-03T20:55:04Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1427 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 589 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Vilja banna rúss­neska túr­ista.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Людина КДБ у Держдепартаменті США чи подвійний агент ? Шпигунська загадка з архіву Холодної війни.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: У Вільнюсі занепокоєні затримкою нової ротації американських військових.",
-    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 647.77; 7 napos változás: +9034%).",
-    "Trend: emelkedő (+1357%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3660, GDELT DOC 3054, direkt feed 402, USGS 0, GDACS 0.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 181 db.",
+    "Az infrastruktúra-közelségi modul 1519 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 663 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Vrabel dostal za dotační podvod při pandemii podmíněný trest.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Zverev powers into French Open semis.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ερευνα : Επιδείνωση της παιδικής ευεξίας και σε πλούσιες χώρες.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 696.22; 7 napos változás: +6576%).",
+    "Trend: emelkedő (+1468%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3715, GDELT DOC 3100, direkt feed 401, USGS 0, GDACS 0.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Vilnius County, Lithuania (+9034%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6576%)."
   },
   "stats": {
-    "score_last7": 3202.528,
-    "score_prev7": 219.76,
-    "change_pct": 1357.28
+    "score_last7": 3304.994,
+    "score_prev7": 210.783,
+    "change_pct": 1467.96
   },
-  "rss_count": 181,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1427,
+    "last_24h_proximity_matches": 1519,
     "top_proximity": [
       {
         "id": "7da5046d73766cdd",
@@ -115,6 +115,96 @@
           "lat": 59.437,
           "lon": 24.753,
           "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "a93d4cee082faa99",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "b33b402db1fef3f6",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-03T00:00:00Z",
+          "url": "https://www.biometricupdate.com/202606/african-countries-explore-dpi-partnerships-at-estonia-forum",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "daf5a1ab6df45492",
+        "level": "critical",
+        "score": 93.87,
+        "distance_km": 3.07,
+        "event": {
+          "id": "0285499057ad508a",
+          "title": "Mihail Kogalniceanu, Romania (general), Romania",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-03T00:00:00Z",
+          "url": "https://www.stiripesurse.ro/four-italian-eurofighters-arrive-at-mihail-kogalniceanu-air-base-for-enhanced-air-policing-missions_3891829",
+          "lat": 44.3667,
+          "lon": 28.45,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ro-military-mk-airbase",
+          "name": "Mihail Kogălniceanu Air Base",
+          "country": "Romania",
+          "city": "Constanța",
+          "category": "military",
+          "subtype": "airbase",
+          "criticality": 10.0,
+          "operator": "Romanian Air Force / NATO",
+          "lat": 44.362,
+          "lon": 28.488,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "db42c078a87bc37b",
+        "level": "critical",
+        "score": 93.87,
+        "distance_km": 3.07,
+        "event": {
+          "id": "8f060c3693775778",
+          "title": "Mihail Kogalniceanu, Romania (general), Romania",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-03T00:00:00Z",
+          "url": "https://agerpres.ro/english/2026/06/03/four-italian-eurofighters-arrive-at-mihail-kogalniceanu-air-base-for-enhanced-air-policing-missions--1562788",
+          "lat": 44.3667,
+          "lon": 28.45,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ro-military-mk-airbase",
+          "name": "Mihail Kogălniceanu Air Base",
+          "country": "Romania",
+          "city": "Constanța",
+          "category": "military",
+          "subtype": "airbase",
+          "criticality": 10.0,
+          "operator": "Romanian Air Force / NATO",
+          "lat": 44.362,
+          "lon": 28.488,
+          "source_file": "critical_infrastructure.json"
         }
       },
       {
@@ -208,107 +298,17 @@
         }
       },
       {
-        "id": "c47a817173aa13e2",
+        "id": "32d37f8642f4997c",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "69db4f1c99d17f20",
-          "title": "Pellegrini prijal Moznera po roku vo funkcii , hlavnou témou boli systémové opatrenia prijaté na Najvyššom súde SR",
+          "id": "f4afa36ec9d28a46",
+          "title": "Vrabel dostal za dotační podvod při pandemii podmíněný trest",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://spravy.pozri.sk/clanok/pellegrini-prijal-moznera-po-roku-vo-funkcii-hlavnou-temou-boli-systemove-opatrenia-prijate-na-najvyssom-sude-sr/1609050",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "538afab04b2a89ca",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "4c2fab01642bfdb1",
-          "title": "Πού και πώς θα κλείσετε δυναμικές διεθνείς τουριστικές συμφωνίες",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://news.travelling.gr/2026/06/%CF%80%CE%BF%CF%8D-%CE%BA%CE%B1%CE%B9-%CF%80%CF%8E%CF%82-%CE%B8%CE%B1-%CE%BA%CE%BB%CE%B5%CE%AF%CF%83%CE%B5%CF%84%CE%B5-%CE%B4%CF%85%CE%BD%CE%B1%CE%BC%CE%B9%CE%BA%CE%AD%CF%82-%CE%B4%CE%B9%CE%B5%CE%B8/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "e5aae0bf4c164b60",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "bc515a80f6480ff6",
-          "title": "Branislav Gröhling ( SaS ): Vládna koalícia s Ficom na čele si robí z ľudí bankomaty – ROZHOVOR",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://spravy.pozri.sk/clanok/branislav-grohling-sas-vladna-koalicia-s-ficom-na-cele-si-robi-z-ludi-bankomaty-rozhovor/1609054",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "22059a83fe37a6c2",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "0967abe309bb11d2",
-          "title": "Vallo predstavil volebný program mestskej strany Team Bratislava , sľubuje zlepšenie cestnej dopravy – FOTO",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://spravy.pozri.sk/clanok/vallo-predstavil-volebny-program-mestskej-strany-team-bratislava-slubuje-zlepsenie-cestnej-dopravy-foto/1609060",
+          "time": "2026-06-03T20:30:00Z",
+          "url": "https://www.idnes.cz/zpravy/domaci/poradatel-demonstrace-vrabel-podminka-dotacni-podvod-covid.A260603_190218_domaci_sahu",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

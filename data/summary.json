@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-03T10:50:39Z",
+  "generated_utc": "2026-06-03T16:27:26Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1554 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 778 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Proiectul Tramvai - Tren din Oradea avansează conectarea utilităților la rețeaua feroviară în cadrul mobilității metropolitane.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Sorin Grindeanu cere demisia generalului Gheorghiţă Vlad : România nu își permite astfel de incertitudini la vârful Armatei.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: CM 2026 Un restaurant din New York aşteaptă suporterii cu sarmale , pomana porcului şi tochitură în meniu . Ce preferă americanii.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 692.46; 7 napos változás: +5916%).",
-    "Trend: emelkedő (+1265%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3545, GDELT DOC 3195, direkt feed 397, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Az infrastruktúra-közelségi modul 1427 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 589 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Vilja banna rúss­neska túr­ista.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Людина КДБ у Держдепартаменті США чи подвійний агент ? Шпигунська загадка з архіву Холодної війни.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: У Вільнюсі занепокоєні затримкою нової ротації американських військових.",
+    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 647.77; 7 napos változás: +9034%).",
+    "Trend: emelkedő (+1357%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3660, GDELT DOC 3054, direkt feed 402, USGS 0, GDACS 0.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 181 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+5916%)."
+    "text": "Erősödő hotspot: Vilnius County, Lithuania (+9034%)."
   },
   "stats": {
-    "score_last7": 3166.631,
-    "score_prev7": 231.962,
-    "change_pct": 1265.15
+    "score_last7": 3202.528,
+    "score_prev7": 219.76,
+    "change_pct": 1357.28
   },
-  "rss_count": 200,
+  "rss_count": 181,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1554,
+    "last_24h_proximity_matches": 1427,
     "top_proximity": [
       {
         "id": "7da5046d73766cdd",
@@ -58,6 +58,66 @@
         }
       },
       {
+        "id": "572ea194ba804e7e",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "703f8708b30eeb41",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-03T00:00:00Z",
+          "url": "https://www.kyivpost.com/post/77412",
+          "lat": 59.4339,
+          "lon": 24.728100000000005,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "4d823b9f73cf859d",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "1b92ed056cdbc80e",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-03T00:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260602-estonia-mfa01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
         "id": "ba656550100e1d57",
         "level": "critical",
         "score": 89.42,
@@ -69,6 +129,66 @@
           "source": "GDELT",
           "time": "2026-06-03T00:00:00Z",
           "url": "https://www.rferl.org/a/russia-kgb-spy-espionage-mitrokhin-flott-secret-archive/33770150.html",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "fbdb33977034eacb",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "79eead4e1fc6aaa4",
+          "title": "Riga, Riga, Latvia",
+          "category": "drone",
+          "source": "GDELT",
+          "time": "2026-06-03T00:00:00Z",
+          "url": "https://www.shephardmedia.com/news/landwarfareintl/drone-summit-turns-spotlight-on-smaller-companies-and-new-uncrewed-systems/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "158e7848ce9a8906",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "a1c54e1630e9c8d7",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-03T00:00:00Z",
+          "url": "https://bnn-news.com/latvian-immunologist-nikiforenko-sentenced-to-13-years-in-prison-for-sexual-abuse-of-patients-280899",
           "lat": 56.95,
           "lon": 24.1,
           "source_file": "gdelt_linked.geojson"
@@ -189,126 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-02T19:45:00Z",
           "url": "https://spravy.pozri.sk/clanok/vallo-predstavil-volebny-program-mestskej-strany-team-bratislava-slubuje-zlepsenie-cestnej-dopravy-foto/1609060",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "0423147f7dd36a42",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "41342deaca7144dc",
-          "title": "Prieskum poslal do parlamentu osem strán a hnutí . Progresívne Slovensko si pohoršilo , ale stále vedie",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://spravy.pozri.sk/clanok/prieskum-poslal-do-parlamentu-osem-stran-a-hnuti-progresivne-slovensko-si-pohorsilo-ale-stale-vedie/1609053",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "eaa7c565fea90e56",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "315fcf969f3fc05e",
-          "title": "Ritorno alla vita : La storia dimenticata dei prigionieri di Dachau in mostra alla Certosa di San Giacomo",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://www.positanonews.it/2026/06/ritorno-alla-vita-la-storia-dimenticata-dei-prigionieri-di-dachau-in-mostra-alla-certosa-di-san-giacomo/3839669",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "f3a03c048bbbe745",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "193058558be5f791",
-          "title": "Marco Rubio tvrdí , že iránsky najvyšší vodca Chameneí je živý a čoraz aktívnejší",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://spravy.pozri.sk/clanok/marco-rubio-tvrdi-ze-iransky-najvyssi-vodca-chamenei-je-zivy-a-coraz-aktivnejsi/1609058",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "f8d416214bb5a5a9",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "bd0571db4eff852f",
-          "title": "Top foto dňa ( 2 . jún 2026 ): Prijatia u prezidenta SR , výstavba projektu PARQ Zátišie a obchod v Havane",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://spravy.pozri.sk/clanok/top-foto-dna-2-jun-2026-prijatia-u-prezidenta-sr-vystavba-projektu-parq-zatisie-a-obchod-v-havane/1609056",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

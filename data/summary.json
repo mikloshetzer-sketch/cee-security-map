@@ -1,32 +1,92 @@
 {
-  "generated_utc": "2026-06-03T02:59:46Z",
+  "generated_utc": "2026-06-03T10:50:39Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1707 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 947 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 744.58; 7 napos változás: +5898%).",
-    "Trend: emelkedő (+1196%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3484, GDELT DOC 3289, direkt feed 395, USGS 0, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 1554 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 778 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Proiectul Tramvai - Tren din Oradea avansează conectarea utilităților la rețeaua feroviară în cadrul mobilității metropolitane.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Sorin Grindeanu cere demisia generalului Gheorghiţă Vlad : România nu își permite astfel de incertitudini la vârful Armatei.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: CM 2026 Un restaurant din New York aşteaptă suporterii cu sarmale , pomana porcului şi tochitură în meniu . Ce preferă americanii.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 692.46; 7 napos változás: +5916%).",
+    "Trend: emelkedő (+1265%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3545, GDELT DOC 3195, direkt feed 397, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+5898%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+5916%)."
   },
   "stats": {
-    "score_last7": 3242.618,
-    "score_prev7": 250.167,
-    "change_pct": 1196.18
+    "score_last7": 3166.631,
+    "score_prev7": 231.962,
+    "change_pct": 1265.15
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1707,
+    "last_24h_proximity_matches": 1554,
     "top_proximity": [
+      {
+        "id": "7da5046d73766cdd",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "71a828a5f4357177",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-03T00:00:00Z",
+          "url": "https://www.kyivpost.com/post/77401",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "ba656550100e1d57",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "12f918d3c813eb12",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-03T00:00:00Z",
+          "url": "https://www.rferl.org/a/russia-kgb-spy-espionage-mitrokhin-flott-secret-archive/33770150.html",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "c47a817173aa13e2",
         "level": "critical",
@@ -249,66 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-02T19:45:00Z",
           "url": "https://spravy.pozri.sk/clanok/top-foto-dna-2-jun-2026-prijatia-u-prezidenta-sr-vystavba-projektu-parq-zatisie-a-obchod-v-havane/1609056",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "4857c718f4c46a20",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "ffa7f79436b42db0",
-          "title": "Rheinmetall podpísal s Rumunskom zbrojný kontrakt za 5 , 7 miliardy eur",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://spravy.pozri.sk/clanok/rheinmetall-podpisal-s-rumunskom-zbrojny-kontrakt-za-5-7-miliardy-eur/1609055",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "273acbad0f61d848",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "751d0266b3933a2c",
-          "title": "Один з найдовших потягів Європи з єднає кордон України з Франкфуртом",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-02T19:45:00Z",
-          "url": "https://espreso.tv/svit-noviy-potyag-vid-peremishlya-do-frankfurta-zapustyat-25-chervnya-marshrut-ponad-1300-km",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

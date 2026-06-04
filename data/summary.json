@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-04T14:46:54Z",
+  "generated_utc": "2026-06-04T20:01:38Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1999 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1040 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 2092 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1001 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Українські біженці - які зміни тимчасового захисту обговорюють на засіданні Ради ЄС з внутрішніх справ.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: CME , Viasat World , Prima Group among CEE buyers of Viaplay titles | News.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Il divano dei giusti – c È una buona scelta stasera in chiaro . rai tre alle 21 , 20 ha un buon ....",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 689.25; 7 napos változás: +6249%).",
-    "Trend: emelkedő (+1339%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3540, GDELT DOC 2961, direkt feed 407, USGS 0, GDACS 1.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 685.88; 7 napos változás: +7860%).",
+    "Trend: emelkedő (+1451%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3625, GDELT DOC 2924, direkt feed 411, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6249%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+7860%)."
   },
   "stats": {
-    "score_last7": 3272.141,
-    "score_prev7": 227.416,
-    "change_pct": 1338.83
+    "score_last7": 3357.726,
+    "score_prev7": 216.43,
+    "change_pct": 1451.42
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1999,
+    "last_24h_proximity_matches": 2092,
     "top_proximity": [
       {
         "id": "e9d46f7270e6d34f",
@@ -268,63 +268,63 @@
         }
       },
       {
-        "id": "fb47be634d9cd074",
+        "id": "55f966e2129847dd",
         "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
+        "score": 89.42,
+        "distance_km": 0.32,
         "event": {
-          "id": "372db994fc810971",
-          "title": "Українські біженці - які зміни тимчасового захисту обговорюють на засіданні Ради ЄС з внутрішніх справ",
+          "id": "d8a4252a8189c807",
+          "title": "Riga, Riga, Latvia",
           "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-04T14:15:00Z",
-          "url": "https://gazeta.ua/articles/politics/_lishe-dlya-okremih-regioniv-u-es-obgovoryuyut-zmini-schodo-dozvolu-perebuvannya-ukrayinskih-bizhenciv/1252020",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
+          "source": "GDELT",
+          "time": "2026-06-04T00:00:00Z",
+          "url": "https://www.baltictimes.com/signet_bank_provides_eur_6_4_million_financing_for_the_development_of_multifunctional_cargo_terminal_agro_terminal_riga/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
           "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
         }
       },
       {
-        "id": "88f9f7c7e4706bdf",
+        "id": "10f22c0bc92a8230",
         "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
+        "score": 89.42,
+        "distance_km": 0.32,
         "event": {
-          "id": "e0997f1acc9b4d41",
-          "title": "CME , Viasat World , Prima Group among CEE buyers of Viaplay titles | News",
+          "id": "cb4befb6c19f83cb",
+          "title": "Riga, Riga, Latvia",
           "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-04T14:15:00Z",
-          "url": "https://www.c21media.net/news/cme-viasat-world-prima-group-among-cee-buyers-of-viaplay-titles/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
+          "source": "GDELT",
+          "time": "2026-06-04T00:00:00Z",
+          "url": "https://www.baltictimes.com/bags___more__a_baltic_success_story_in_style_and_functionality/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
           "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
         }
       }
     ]

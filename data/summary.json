@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-05T14:34:54Z",
+  "generated_utc": "2026-06-05T19:50:56Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1948 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 801 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Olcsóbb lehet a tankolás a szlovákiai kutakon.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Η Ευρώπη προωθεί αυστηρότερους κανόνες ασύλου - Οι συζητήσεις για το καθεστώς ανδρών από την Ουκρανία.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Maďarsko sousedí samo se sebou , prohlásil Magyar.",
-    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 733.53; 7 napos változás: +12829%).",
-    "Trend: emelkedő (+1086%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3380, GDELT DOC 2893, direkt feed 402, USGS 0, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 2032 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 969 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ελληνικά Rafale στη Νορβηγία και F - 16 στην Ισπανία.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Poland , China lead renewed central bank gold buying.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Na Ukrajině padl Čech . Bojoval za obě válčící strany.",
+    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 688.68; 7 napos változás: +12669%).",
+    "Trend: emelkedő (+1145%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3469, GDELT DOC 2786, direkt feed 396, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Vilnius County, Lithuania (+12829%)."
+    "text": "Erősödő hotspot: Vilnius County, Lithuania (+12669%)."
   },
   "stats": {
-    "score_last7": 3335.202,
-    "score_prev7": 281.108,
-    "change_pct": 1086.45
+    "score_last7": 3330.008,
+    "score_prev7": 267.422,
+    "change_pct": 1145.23
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1948,
+    "last_24h_proximity_matches": 2032,
     "top_proximity": [
       {
         "id": "b0d1e34f6c854974",
@@ -88,6 +88,66 @@
         }
       },
       {
+        "id": "07848aa3f0d00237",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "ac7811a926316eef",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-05T00:00:00Z",
+          "url": "https://www.baltictimes.com/presidential_flag_arrives_at_estonian_national_museum_from_australia/",
+          "lat": 59.43390000000001,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "e57ff78dffb2db3a",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "8810fe8a4999f8d5",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "infrastructure",
+          "source": "GDELT",
+          "time": "2026-06-05T00:00:00Z",
+          "url": "https://www.dw.com/en/finland-4-suspects-in-sabotage-of-undersea-cable-link-with-estonia/a-77440069",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
         "id": "1200d07b33af11e6",
         "level": "critical",
         "score": 89.42,
@@ -118,17 +178,107 @@
         }
       },
       {
-        "id": "90705dd29b241ae3",
+        "id": "30eba63fd0d5ccc8",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "df1deba5ade4be06",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-05T00:00:00Z",
+          "url": "https://www.el-balad.com/17017396",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "1e271e66bc95b487",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "d36c2e14a66602c3",
+          "title": "Riga, Riga, Latvia",
+          "category": "violence",
+          "source": "GDELT",
+          "time": "2026-06-05T00:00:00Z",
+          "url": "https://www.baltictimes.com/man_in_riga_attempts_to_pass_off_murder_as_a_suicide/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "9b117ec9782719cf",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "2f39f6e18c30554a",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-05T00:00:00Z",
+          "url": "https://www.baltictimes.com/latvia_has_undergone_major_transformation_since_last_ebrd_meeting_in_riga_-_braze/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "de57114d5103f6f6",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "9d04318439c01196",
-          "title": "Olcsóbb lehet a tankolás a szlovákiai kutakon",
+          "id": "3186bc88254074d3",
+          "title": "Ελληνικά Rafale στη Νορβηγία και F - 16 στην Ισπανία",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-05T09:00:00Z",
-          "url": "https://felvidek.ma/2026/06/05/olcsobb-lehet-a-tankolas-a-szlovakiai-kutakon/",
+          "time": "2026-06-05T19:00:00Z",
+          "url": "https://kathimerini.com.cy/gr/kosmos/ellinika-rafale-sti-norbigia-kai-f-16-stin-ispania",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,167 +298,17 @@
         }
       },
       {
-        "id": "89d9f93e45888faf",
+        "id": "41180f18fcdeb57b",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "1e8465017a99d349",
-          "title": "Η Ευρώπη προωθεί αυστηρότερους κανόνες ασύλου - Οι συζητήσεις για το καθεστώς ανδρών από την Ουκρανία",
+          "id": "addd82012ac3ed2e",
+          "title": "Poland , China lead renewed central bank gold buying",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-05T09:00:00Z",
-          "url": "https://gr.euronews.com/my-europe/2026/06/05/aystiroterous-kanones-asylou-proothei-h-ee",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "9ca7c1cbabed0afa",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "edc9ce2a85391ce7",
-          "title": "Maďarsko sousedí samo se sebou , prohlásil Magyar",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-05T09:00:00Z",
-          "url": "https://www.idnes.cz/zpravy/zahranicni/magyar-madarsko-trianon-slovensko-blanar.A260605_084235_zahranicni_dvou",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "36a94e11d69d754d",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "a82d3b7f4da240ad",
-          "title": "تعرَّف على جنسيات النساء الأسرع غضباً في العالم",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-05T09:00:00Z",
-          "url": "https://www.emaratalyoum.com/life/four-sides/2026-06-05-1.2052437",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a2fc30df299ae2cd",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c5e1a2872b9bb5ab",
-          "title": "Těpluška , Maxim i Masaryk : Do Svinova dorazil z Ruska historický Legiovlak",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-05T09:00:00Z",
-          "url": "https://moravskoslezsky.denik.cz/zpravy_region/ostrava-svinov-nadrazi-legiovlak-legionari-rusko-historie-vystava-masaryk.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "9f82884ecdc3409d",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "cceb07e309d27956",
-          "title": "Biskupia Kopa - najwyższy szczyt Gór Opawskich . Jaki szlak wybrać ?",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-05T09:00:00Z",
-          "url": "https://geekweek.interia.pl/podroze/news-dwa-kraje-i-obledne-widoki-biskupia-kopa-to-swietny-pomysl-n,nId,23488232",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "f55672db98111b8b",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "9f85e27bfded2818",
-          "title": "Pardubické novinky - Komentáře - Nenávist je zakuklená závist , že nejsme na místě nenáviděného",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-05T08:45:00Z",
-          "url": "https://www.pardubickenovinky.cz/sloupky/nenavist-je-zakuklena-zavist-ze-nejsme-na-miste-nenavideneho/",
+          "time": "2026-06-05T18:45:00Z",
+          "url": "https://www.mining.com/poland-china-lead-renewed-central-bank-gold-buying/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,44 +1,74 @@
 {
-  "generated_utc": "2026-06-05T02:40:45Z",
+  "generated_utc": "2026-06-05T09:39:52Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1476 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 626 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Budapest Internet Exchange (Hungary) – 3.3 km-re ettől: Budapest, Budapest, Hungary.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 716.86; 7 napos változás: +2047%).",
-    "Trend: emelkedő (+911%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3223, GDELT DOC 2922, direkt feed 415, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 194 db.",
+    "Az infrastruktúra-közelségi modul 2082 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 963 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Olcsóbb lehet a tankolás a szlovákiai kutakon.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Η Ευρώπη προωθεί αυστηρότερους κανόνες ασύλου - Οι συζητήσεις για το καθεστώς ανδρών από την Ουκρανία.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Maďarsko sousedí samo se sebou , prohlásil Magyar.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 751.57; 7 napos változás: +2319%).",
+    "Trend: emelkedő (+1024%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3284, GDELT DOC 3026, direkt feed 408, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2047%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2319%)."
   },
   "stats": {
-    "score_last7": 3188.36,
-    "score_prev7": 315.237,
-    "change_pct": 911.42
+    "score_last7": 3313.896,
+    "score_prev7": 294.736,
+    "change_pct": 1024.36
   },
-  "rss_count": 194,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1476,
+    "last_24h_proximity_matches": 2082,
     "top_proximity": [
       {
-        "id": "fb47be634d9cd074",
+        "id": "b0d1e34f6c854974",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "43726ddb3c713815",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-05T00:00:00Z",
+          "url": "https://www.manilatimes.net/2026/06/05/tmt-newswire/globenewswire/hepsor-sof-starts-construction-of-new-apartment-buildings-in-the-paevlja-quarter/2359335",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "90705dd29b241ae3",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "372db994fc810971",
-          "title": "Українські біженці - які зміни тимчасового захисту обговорюють на засіданні Ради ЄС з внутрішніх справ",
+          "id": "9d04318439c01196",
+          "title": "Olcsóbb lehet a tankolás a szlovákiai kutakon",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-04T14:15:00Z",
-          "url": "https://gazeta.ua/articles/politics/_lishe-dlya-okremih-regioniv-u-es-obgovoryuyut-zmini-schodo-dozvolu-perebuvannya-ukrayinskih-bizhenciv/1252020",
+          "time": "2026-06-05T09:00:00Z",
+          "url": "https://felvidek.ma/2026/06/05/olcsobb-lehet-a-tankolas-a-szlovakiai-kutakon/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,17 +88,17 @@
         }
       },
       {
-        "id": "88f9f7c7e4706bdf",
+        "id": "89d9f93e45888faf",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e0997f1acc9b4d41",
-          "title": "CME , Viasat World , Prima Group among CEE buyers of Viaplay titles | News",
+          "id": "1e8465017a99d349",
+          "title": "Η Ευρώπη προωθεί αυστηρότερους κανόνες ασύλου - Οι συζητήσεις για το καθεστώς ανδρών από την Ουκρανία",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-04T14:15:00Z",
-          "url": "https://www.c21media.net/news/cme-viasat-world-prima-group-among-cee-buyers-of-viaplay-titles/",
+          "time": "2026-06-05T09:00:00Z",
+          "url": "https://gr.euronews.com/my-europe/2026/06/05/aystiroterous-kanones-asylou-proothei-h-ee",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +118,17 @@
         }
       },
       {
-        "id": "b2bd6b13d24aac22",
+        "id": "9ca7c1cbabed0afa",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3f14a786fa0e15a5",
-          "title": "Il divano dei giusti – c È una buona scelta stasera in chiaro . rai tre alle 21 , 20 ha un buon ...",
+          "id": "edc9ce2a85391ce7",
+          "title": "Maďarsko sousedí samo se sebou , prohlásil Magyar",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-04T14:15:00Z",
-          "url": "https://www.dagospia.com/media-tv/divano-dei-giusti-c-e-buona-scelta-stasera-in-chiaro-rai-alle-21-20-476328",
+          "time": "2026-06-05T09:00:00Z",
+          "url": "https://www.idnes.cz/zpravy/zahranicni/magyar-madarsko-trianon-slovensko-blanar.A260605_084235_zahranicni_dvou",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "f8420690bca63f82",
+        "id": "36a94e11d69d754d",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e8327689ee7484e1",
-          "title": "Suomi vaatii EU : lta tiukempaa viisumipolitiikkaa venäläisiä kohtaan",
+          "id": "a82d3b7f4da240ad",
+          "title": "تعرَّف على جنسيات النساء الأسرع غضباً في العالم",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-04T14:15:00Z",
-          "url": "https://www.hameensanomat.fi/uutissuomalainen/9509149",
+          "time": "2026-06-05T09:00:00Z",
+          "url": "https://www.emaratalyoum.com/life/four-sides/2026-06-05-1.2052437",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "db03ea0e6eb0484e",
+        "id": "a2fc30df299ae2cd",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "af0dca258ec64670",
-          "title": "UA Days 2026 Opening Highlights Underground Art Studio in Kharkiv , Ukraine",
+          "id": "c5e1a2872b9bb5ab",
+          "title": "Těpluška , Maxim i Masaryk : Do Svinova dorazil z Ruska historický Legiovlak",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-04T14:15:00Z",
-          "url": "https://www.chronicle.lu/category/festivals/61578-ua-days-2026-opening-highlights-underground-art-studio-in-kharkiv-ukraine",
+          "time": "2026-06-05T09:00:00Z",
+          "url": "https://moravskoslezsky.denik.cz/zpravy_region/ostrava-svinov-nadrazi-legiovlak-legionari-rusko-historie-vystava-masaryk.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "b38b65a1656c8f3f",
+        "id": "9f82884ecdc3409d",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "6f0db997653c25d2",
-          "title": "ATX an Fronleichnam ruhig , Verbund führt – und Palfinger feiert 27 Jahre Zeitenwende - IPO ( Podcast )",
+          "id": "cceb07e309d27956",
+          "title": "Biskupia Kopa - najwyższy szczyt Gór Opawskich . Jaki szlak wybrać ?",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-04T14:00:00Z",
-          "url": "https://www.boerse-social.com/page/newsflow/atx_an_fronleichnam_ruhig_verbund_fahrt_a_und_palfinger_feiert_27_jahre_zeitenwende-ipo_podcast",
+          "time": "2026-06-05T09:00:00Z",
+          "url": "https://geekweek.interia.pl/podroze/news-dwa-kraje-i-obledne-widoki-biskupia-kopa-to-swietny-pomysl-n,nId,23488232",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "dcf4d4dfd7bac99c",
+        "id": "f55672db98111b8b",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "08cdf46d71338a1f",
-          "title": "Ucrania ya habla de ganar la guerra y el éxito de su ejército de robots tiene gran parte de la culpa",
+          "id": "9f85e27bfded2818",
+          "title": "Pardubické novinky - Komentáře - Nenávist je zakuklená závist , že nejsme na místě nenáviděného",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-04T14:00:00Z",
-          "url": "https://www.elconfidencial.com/tecnologia/novaceno/2026-06-04/ucrania-rusia-guerra-robots-inteligencia-artificial-militar_4367204/",
+          "time": "2026-06-05T08:45:00Z",
+          "url": "https://www.pardubickenovinky.cz/sloupky/nenavist-je-zakuklena-zavist-ze-nejsme-na-miste-nenavideneho/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "9aa8f00f37a4c66d",
+        "id": "f19a9271df76ae99",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "744f03a055836463",
-          "title": "红土遭逆转成常态 ！ 萨巴伦卡本赛季红土翻车 ， 屡败TOP20开外选手",
+          "id": "8de7519aee5ef5f2",
+          "title": "Федоров та Рютте узгодили оборонні пріоритети перед наступним « Рамштайном » ( відео )",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-04T13:45:00Z",
-          "url": "https://www.163.com/dy/article/KUJV1NHL05298CTE.html",
+          "time": "2026-06-05T08:45:00Z",
+          "url": "https://glavcom.ua/world/world-politics/fedorov-ta-rjutte-uzhodili-oboronni-prioriteti-pered-nastupnim-ramshtajnom-1123887.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "c30736507b488a7b",
+        "id": "1aee9b2efe10294d",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "52b012e2eadf5a01",
-          "title": "Ďalší chaos v odvodoch : Časť živnostníkov sa v lete poteší . Ak ale prekročia túto sumu , štát im vezme vyše 130 eur",
+          "id": "02e4acdc9ec83aa5",
+          "title": "Leonilde Iotti nella storia della Repubblica è tutto Grasso che cola",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-04T13:45:00Z",
-          "url": "https://www.aktuality.sk/clanok/qq5RRKt/dalsi-chaos-v-odvodoch-cast-zivnostnikov-sa-v-lete-potesi-ak-ale-prekrocia-tuto-sumu-stat-im-vezme-vyse-130-eur/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "97ac1c8e516f56ad",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "2ce67d45c5f6cbb7",
-          "title": "Як 3D - технології змінюють фіксацію доказів і чому це важливо для захисту",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-04T13:45:00Z",
-          "url": "https://zib.com.ua/ua/172822-yak_3d-tehnologii_zminyuyut_fiksaciyu_dokaziv_i_chomu_ce_vaz.html",
+          "time": "2026-06-05T08:45:00Z",
+          "url": "https://opinione.it/editoriali/2026/06/05/giancarlo-lehner-leonilde-iotti-storia-repubblica-italia-pcus/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

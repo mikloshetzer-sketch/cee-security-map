@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-06T08:29:50Z",
+  "generated_utc": "2026-06-06T13:18:30Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1545 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 780 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 1098 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 564 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ucraina , Giani : Presto andrò a Kiev.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Brit vezérkari főnök : az oroszok emelik a tétet , nem sokra vagyunk attól , hogy átlépjék a határvonalat.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Azərbaycanla gələcək saziş üzrə danışıqların Gəncədə yekunlaşması simvolikdir.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 724.20; 7 napos változás: +2256%).",
-    "Trend: emelkedő (+1081%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3360, GDELT DOC 2843, direkt feed 392, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 693.71; 7 napos változás: +2264%).",
+    "Trend: emelkedő (+1091%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3387, GDELT DOC 2779, direkt feed 389, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 194 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2256%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2264%)."
   },
   "stats": {
-    "score_last7": 3249.8,
-    "score_prev7": 275.131,
-    "change_pct": 1081.18
+    "score_last7": 3127.85,
+    "score_prev7": 262.678,
+    "change_pct": 1090.75
   },
-  "rss_count": 200,
+  "rss_count": 194,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1545,
+    "last_24h_proximity_matches": 1098,
     "top_proximity": [
       {
         "id": "6dbffc5a287addb9",
@@ -55,6 +55,36 @@
           "lat": 59.437,
           "lon": 24.753,
           "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "523cbdecf86a6248",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "c413cbba668524b6",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-06T00:00:00Z",
+          "url": "https://www.chronicle.lu/category/luxembourg/61629-luxembourg-participates-in-who-small-countries-initiative-meeting",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
         }
       },
       {
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-06T06:15:00Z",
           "url": "https://www.novinky.cz/clanek/domaci-cerveny-splnili-jsme-ukol-na-jednicku-40581868",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "5ed449b8a2b63ccc",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "9a21d293e42d6b94",
-          "title": "Ukraine pushes EU to send military - aged men back home media",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-06-06T06:15:00Z",
-          "url": "http://www.bignewsnetwork.com/news/279105284/ukraine-pushes-eu-to-send-military-aged-men-back-home-media",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-07T08:53:48Z",
+  "generated_utc": "2026-06-07T13:28:27Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 600 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 207 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 552 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 192 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
     "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
-    "CRITICAL infrastruktúra-jelzés: Port of Tallinn (Estonia) – 2.2 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 686.17; 7 napos változás: +2518%).",
-    "Trend: emelkedő (+1071%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3370, GDELT DOC 2752, direkt feed 385, USGS 0, GDACS 1.",
+    "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 658.87; 7 napos változás: +2527%).",
+    "Trend: emelkedő (+1080%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3390, GDELT DOC 2719, direkt feed 385, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2518%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2527%)."
   },
   "stats": {
-    "score_last7": 2839.679,
-    "score_prev7": 242.559,
-    "change_pct": 1070.72
+    "score_last7": 2738.576,
+    "score_prev7": 232.102,
+    "change_pct": 1079.9
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 600,
+    "last_24h_proximity_matches": 552,
     "top_proximity": [
       {
         "id": "293ea2e8adca5fa9",
@@ -69,6 +69,36 @@
           "source": "GDELT",
           "time": "2026-06-07T00:00:00Z",
           "url": "http://www.middleeaststar.com/news/279106352/uae-participates-in-ebrd-board-of-governors-meeting",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "582a284083c9c5e4",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "53d4c923dad52204",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-07T00:00:00Z",
+          "url": "https://www.lrt.lt/en/news-in-english/19/2951157/why-is-putin-threatening-the-baltics-opinion",
           "lat": 56.95,
           "lon": 24.1,
           "source_file": "gdelt_linked.geojson"
@@ -268,62 +298,32 @@
         }
       },
       {
-        "id": "fcd14d7b619d5cfb",
+        "id": "2fc9dcea40fb2ddb",
         "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
+        "score": 85.81,
+        "distance_km": 2.33,
         "event": {
-          "id": "dea6ae2e8970e8a1",
+          "id": "ac377b81af57368d",
           "title": "Warsaw, (PL67), Poland",
-          "category": "other",
+          "category": "police",
           "source": "GDELT",
           "time": "2026-06-07T00:00:00Z",
-          "url": "https://www.albawaba.net/news/copilot-gets-smarter-microsoft-unveils-1629331",
+          "url": "https://siouxlandnews.com/news/nation-world/polish-ruling-coalition-collapses-amid-rift-over-media-bill",
           "lat": 52.25,
           "lon": 21.0,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
+          "id": "pl-digital-warsaw-dc-hub",
+          "name": "Warsaw Data Centre Hub",
           "country": "Poland",
           "city": "Warsaw",
           "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
+          "subtype": "data_center_hub",
           "criticality": 9.0,
           "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "3dae589d52978c9e",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "bd26ac2501ed8642",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-06-07T00:00:00Z",
-          "url": "https://www.eurasiareview.com/06062026-japan-eases-rules-on-weapons-exports/",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
+          "lat": 52.23,
+          "lon": 21.01,
           "source_file": "infra_digital.json"
         }
       }

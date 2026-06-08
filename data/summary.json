@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-08T10:28:46Z",
+  "generated_utc": "2026-06-08T15:38:24Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 979 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 443 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 1305 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 548 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Nikdo neví , jak usměrnit slevové akce . Musí to změnit zákazník , říká odborník na retail.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Jägermeister ORANGE predstavuje Zlatokopku . Reaguje na boom easy - to - mix kombinácií.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Erasmus en la Universidad de León : « Me fui llorando y volví llorando »: las dos caras de una experiencia que « te deja el corazón dividido ».",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 604.84; 7 napos változás: +2564%).",
-    "Trend: emelkedő (+981%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3287, GDELT DOC 2749, direkt feed 385, USGS 0, GDACS 1.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 663.53; 7 napos változás: +2987%).",
+    "Trend: emelkedő (+1100%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3388, GDELT DOC 2778, direkt feed 373, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2564%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2987%)."
   },
   "stats": {
-    "score_last7": 2634.041,
-    "score_prev7": 243.68,
-    "change_pct": 980.94
+    "score_last7": 2782.514,
+    "score_prev7": 231.869,
+    "change_pct": 1100.04
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 979,
+    "last_24h_proximity_matches": 1305,
     "top_proximity": [
       {
         "id": "faf9a857f850d2af",
@@ -39,6 +39,36 @@
           "source": "GDELT",
           "time": "2026-06-08T00:00:00Z",
           "url": "https://www.foreignpolicyjournal.com/2026/06/07/analyst-price-targets-on-rtx-corp-nyse-rtx-reset-as-investment-narrative-splits-between-bulls-and-bears/",
+          "lat": 50.0372,
+          "lon": 22.0049,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-military-rzeszow-logistics",
+          "name": "Rzeszów NATO Logistics Hub",
+          "country": "Poland",
+          "city": "Rzeszów",
+          "category": "military",
+          "subtype": "military_logistics_hub",
+          "criticality": 10.0,
+          "operator": "Poland / NATO partners",
+          "lat": 50.041,
+          "lon": 21.999,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "a4b0efe85d1fd4c7",
+        "level": "critical",
+        "score": 98.81,
+        "distance_km": 0.6,
+        "event": {
+          "id": "8083def2a1cf2156",
+          "title": "Rzeszow, Podkarpackie, Poland",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-08T00:00:00Z",
+          "url": "https://en.interfax.com.ua/news/general/1174642.html",
           "lat": 50.0372,
           "lon": 22.0049,
           "source_file": "gdelt_linked.geojson"
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-08T09:30:00Z",
           "url": "https://www.az-online.de/leben/reise/fotos-im-urlaub-verbotsschilder-ernst-nehmen-zr-94340733.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "eb26f766f98b7ddc",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "4ec39f666b1038e1",
-          "title": "Gold Reserves : लगातार 18 महीने से सोना खरीद रहा चीन , लेकिन यूरोप के इस छोटे देश ने लूटी महफिल",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-08T09:30:00Z",
-          "url": "https://navbharattimes.indiatimes.com/business/commodity/global-cnetral-banks-acquired-17-tonnes-of-gold-in-april-with-poland-leading-the-way/articleshow/131583585.cms",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-06-10T09:47:19Z",
+  "generated_utc": "2026-06-10T15:00:58Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1151 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 524 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Pruebas a juguetes teledirigidos para detectar interferencias de señal.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Բանակցող եւ առաջամարտիկ . Հայաստանում ԵՄ նոր առաքելության ղեկավարը.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Newsletter : Από την K - pop στα άρματα K2 - Η Νότια Κορέα ενισχύει τους δεσμούς με την Ευρώπη.",
-    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 584.48; 7 napos változás: +7650%).",
-    "Trend: emelkedő (+916%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3261, GDELT DOC 2603, direkt feed 360, USGS 0, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 1484 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 766 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ukraine - Krieg im Liveticker : +++ 15 : 50 Russische Ermittler verkünden Fund von Autobombe und Festnahmen von Teenagern +++.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Topul orelor de muncă în UE : unde se lucrează cel mai mult și cel mai puțin . Cum arată România , potrivit datelor Eurostat.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: ΟΔΔΗΧ : Στις αγορές βγαίνει το Δημόσιο με 10ετές ομόλογο.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 546.16; 7 napos változás: +2632%).",
+    "Trend: emelkedő (+999%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3361, GDELT DOC 2600, direkt feed 350, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Vilnius County, Lithuania (+7650%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2632%)."
   },
   "stats": {
-    "score_last7": 2609.557,
-    "score_prev7": 256.957,
-    "change_pct": 915.56
+    "score_last7": 2685.451,
+    "score_prev7": 244.345,
+    "change_pct": 999.04
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1151,
+    "last_24h_proximity_matches": 1484,
     "top_proximity": [
+      {
+        "id": "647783adaf134182",
+        "level": "critical",
+        "score": 98.81,
+        "distance_km": 0.6,
+        "event": {
+          "id": "297c328772f6c4a1",
+          "title": "Rzeszow, Podkarpackie, Poland",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-10T00:00:00Z",
+          "url": "https://en.interfax.com.ua/news/general/1175379.html",
+          "lat": 50.0372,
+          "lon": 22.0049,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-military-rzeszow-logistics",
+          "name": "Rzeszów NATO Logistics Hub",
+          "country": "Poland",
+          "city": "Rzeszów",
+          "category": "military",
+          "subtype": "military_logistics_hub",
+          "criticality": 10.0,
+          "operator": "Poland / NATO partners",
+          "lat": 50.041,
+          "lon": 21.999,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "20513dcd6bfd3078",
         "level": "critical",
@@ -279,36 +309,6 @@
           "source": "GDELT",
           "time": "2026-06-10T00:00:00Z",
           "url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-nuclear-threat-zelensky-news-b2992908.html",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "6b7c8bf7b28b9d6e",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "66444674f9fa9856",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "military",
-          "source": "GDELT",
-          "time": "2026-06-10T00:00:00Z",
-          "url": "https://www.lrt.lt/en/news-in-english/19/2956073/baltic-drone-incidents-show-need-for-strong-nato-eastern-flank-lithuanian-pm-told-nb8",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"

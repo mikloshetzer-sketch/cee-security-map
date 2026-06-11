@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-11T10:17:37Z",
+  "generated_utc": "2026-06-11T15:46:33Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1570 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 912 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Bratislavský festival zborového spevu privíta do 500 účastníkov.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: US And Iran Exchange Strikes For Second Day As Tensions Escalate.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Olomoucké novinky - Domácí - Lidice nesmí být zapomenuty , varuje Štefec.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 580.04; 7 napos változás: +2578%).",
-    "Trend: emelkedő (+946%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3208, GDELT DOC 2627, direkt feed 348, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 1407 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 741 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 559.27; 7 napos változás: +2623%).",
+    "Trend: emelkedő (+984%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3305, GDELT DOC 2479, direkt feed 343, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2578%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2623%)."
   },
   "stats": {
-    "score_last7": 2698.93,
-    "score_prev7": 257.994,
-    "change_pct": 946.12
+    "score_last7": 2653.286,
+    "score_prev7": 244.731,
+    "change_pct": 984.17
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1570,
+    "last_24h_proximity_matches": 1407,
     "top_proximity": [
       {
         "id": "337a915b6e79c66a",
@@ -85,6 +85,156 @@
           "lat": 59.437,
           "lon": 24.753,
           "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "378d2e3fbbbef413",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "80bb8e428bcf41f6",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-11T00:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260610-govno01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "424f81ab1f87cb2d",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "5bb9f91bcdc5168d",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "violence",
+          "source": "GDELT",
+          "time": "2026-06-11T00:00:00Z",
+          "url": "https://www.arkansasonline.com/news/2026/jun/11/ukraine-reports-attacks-on-russia/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "8df360b5c962ab43",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "155e972ac8ff46da",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-11T00:00:00Z",
+          "url": "https://www.hindustantimes.com/htcity/htcity-showstoppers/radhikka-madan-on-sanaa-release-delay-i-am-glad-that-sudhanshu-is-taking-time-to-strategise-101781177298592.html",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "12d90a9906df8b40",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "b65cb15b545aea8a",
+          "title": "Riga, Riga, Latvia",
+          "category": "police",
+          "source": "GDELT",
+          "time": "2026-06-11T00:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/canada/2026/canada-260610-canada01.htm",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "9d005d321dbf9627",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "ad69c45a31fddb01",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-11T00:00:00Z",
+          "url": "https://arka.am:443/en/news/business/ardshinbank-once-again-becomes-flagship-sponsor-of-the-ebrd-annual-meeting-and-business-forum/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
         }
       },
       {
@@ -159,156 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-11T09:45:00Z",
           "url": "https://www.olomouckenovinky.cz/zpravy/politika/lidice-nesmi-byt-zapomenuty-varuje-stefec/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "deff3ae79f4b9b90",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "bc9df933ee268a8c",
-          "title": "Can Central Europe Once Again Punch Above its Weight ?",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-11T09:30:00Z",
-          "url": "https://balkaninsight.com/2026/06/11/can-central-europe-once-again-punch-above-its-weight/rd/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "9febc66ede368fc1",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "f3b0c1bf863a055c",
-          "title": "La tabla de posiciones histórica de los Mundiales : qué lugar ocupa Argentina antes de la Copa del Mundo 2026",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-11T09:30:00Z",
-          "url": "https://www.infobae.com/deportes/2026/06/11/la-tabla-de-posiciones-historica-de-los-mundiales-que-lugar-ocupa-argentina-antes-de-la-copa-del-mundo-2026/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "b910c2020e62fb35",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "f7a91825c9041f2d",
-          "title": "Bundeswehr übt Ernstfall in Litauen – „ Beitrag zur Abschreckung",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-11T09:30:00Z",
-          "url": "http://www.merkur.de/politik/bundeswehr-uebt-ernstfall-in-litauen-beitrag-zur-abschreckung-zr-94346146.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "9db6b8dde7552b26",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "f92d01b72a33efec",
-          "title": "Bundeswehr übt Ernstfall in Litauen – „ Beitrag zur Abschreckung",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-11T09:30:00Z",
-          "url": "http://www.op-online.de/politik/bundeswehr-uebt-ernstfall-in-litauen-beitrag-zur-abschreckung-zr-94346146.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "acc2f5394538f43f",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "d9dd71755745e770",
-          "title": "Bundeswehr übt Ernstfall in Litauen – „ Beitrag zur Abschreckung",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-11T09:30:00Z",
-          "url": "https://www.merkur.de/politik/bundeswehr-uebt-ernstfall-in-litauen-beitrag-zur-abschreckung-zr-94346146.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

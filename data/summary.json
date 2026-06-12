@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-12T10:05:35Z",
+  "generated_utc": "2026-06-12T14:43:33Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1096 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 621 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 1193 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 623 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Perù agenti travestiti da mascotte dei Mondiali 2026 arrestano un trafficante.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: V mrazených kurčatách našli pesticíd . Na Slovensko ich doviezli vyše pol tony.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 12 червня – яке сьогодні свято та головні події.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 597.81; 7 napos változás: +6444%).",
-    "Trend: emelkedő (+911%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2968, GDELT DOC 2281, direkt feed 330, USGS 0, GDACS 0.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 562.92; 7 napos változás: +6342%).",
+    "Trend: emelkedő (+951%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3054, GDELT DOC 2184, direkt feed 336, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6444%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6342%)."
   },
   "stats": {
-    "score_last7": 2573.543,
-    "score_prev7": 254.572,
-    "change_pct": 910.93
+    "score_last7": 2560.921,
+    "score_prev7": 243.714,
+    "change_pct": 950.79
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1096,
+    "last_24h_proximity_matches": 1193,
     "top_proximity": [
       {
         "id": "bdcf6390339d92ca",
@@ -55,6 +55,126 @@
           "lat": 59.437,
           "lon": 24.753,
           "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "605313871f127663",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "61e57ff6163ce968",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-12T00:00:00Z",
+          "url": "https://bnn-news.com/first-modular-bomb-shelter-placed-in-tallinn-city-center-281230",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "3da967513ca061d5",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "17e12e0713bc2844",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-12T00:00:00Z",
+          "url": "https://www.azernews.az/culture/259677.html",
+          "lat": 56.95000000000001,
+          "lon": 24.100000000000005,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "a0821f04fa38a88d",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "8027bceece1c11a3",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-12T00:00:00Z",
+          "url": "https://www.mfa.gov.lv/en/article/baiba-braze-common-understanding-has-been-reached-european-commissioner-budget-need-strengthen-support-latvias-security",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "f29dedc226d74715",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "0d913c6c2a042556",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-12T00:00:00Z",
+          "url": "https://azertag.az/en/xeber/book_latvia_and_azerbaijan_history_taken_from_life_stories_presented_in_riga-4258395",
+          "lat": 56.95000000000001,
+          "lon": 24.100000000000005,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
         }
       },
       {
@@ -189,126 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-12T09:30:00Z",
           "url": "https://www.prvnizpravy.cz/zpravy/politika/pavel-dostal-letenku-do-osn-holec-se-mu-vysmal-kvuli-nato/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "cf9f4a41979248aa",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "41a6594056c86163",
-          "title": "Slovensko už nie je tiger strednej Európy , ekonomika zaostáva a odborníci varujú pred ďalším úpadkom",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-12T09:30:00Z",
-          "url": "https://spravy.pozri.sk/clanok/slovensko-uz-nie-je-tiger-strednej-europy-ekonomika-zaostava-a-odbornici-varuju-pred-dalsim-upadkom/1609478",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "0db01110f7240cd0",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "d10a788101138656",
-          "title": "IZAZOV ZA VOZAČE Ovo je pet najstresnijih zemalja za vožnju u Europi",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-12T09:15:00Z",
-          "url": "https://www.vecernji.ba/svijet/izazov-za-vozace-ovo-je-pet-najstresnijih-zemalja-za-voznju-u-europi-1968323",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "6e3a7639bee8e97d",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "0d68b7682beaae7b",
-          "title": "Coupe du monde 2026 : les résultats de la nuit et ce quil faut retenir de la première journée des sélections européennes",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-12T09:15:00Z",
-          "url": "https://www.touteleurope.eu/societe/coupe-du-monde-2026-les-resultats-de-la-nuit-et-ce-qu-il-faut-retenir-de-la-premiere-journee-des-selections-europeennes/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "f860b99b377d3315",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "9a2f506940b926a3",
-          "title": "Janusz Michałowski nie żyje . Uwielbiano jego role w filmach , serialach i teatrze",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-12T09:15:00Z",
-          "url": "https://natemat.pl/656977,janusz-michalowski-nie-zyje-uwielbiano-jego-role-w-filmach-serialach-i-teatrze",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

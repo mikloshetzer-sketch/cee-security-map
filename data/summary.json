@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-13T02:39:14Z",
+  "generated_utc": "2026-06-13T08:53:44Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1378 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 712 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Migrační pakt začal platit . Konec jedné české politické pohádky ? | 12 . 6 . 2026 | Petr Waniek Horváth.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 575.71; 7 napos változás: +6982%).",
-    "Trend: emelkedő (+1025%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2984, GDELT DOC 2305, direkt feed 331, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 1354 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 600 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Drönarlarm i Vilnius.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: K . Donelaičio gatvės istorijos : Mašiotų namas.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: K . Donelaičio gatvės istorijos : Mašiotų namas.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 559.32; 7 napos változás: +4025%).",
+    "Trend: emelkedő (+1085%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3017, GDELT DOC 2288, direkt feed 331, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6982%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+4025%)."
   },
   "stats": {
-    "score_last7": 2692.739,
-    "score_prev7": 239.377,
-    "change_pct": 1024.89
+    "score_last7": 2674.144,
+    "score_prev7": 225.653,
+    "change_pct": 1085.07
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1378,
+    "last_24h_proximity_matches": 1354,
     "top_proximity": [
       {
         "id": "5b24f11f03bbdb55",
@@ -69,6 +69,36 @@
           "source": "GDELT",
           "time": "2026-06-13T00:00:00Z",
           "url": "https://financialpost.com/technology/carneys-middle-powers-us-china-ai-dominance",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "2ee9aefcdd681c10",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "8e1c22a1fb85819c",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-13T00:00:00Z",
+          "url": "https://hotair.com/tree-hugging-sister/2026/06/12/knives-are-out-for-eus-diplomatic-service-n3815906",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
@@ -159,36 +189,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-13T02:00:00Z",
           "url": "https://www.tyden.cz/letos-v-1-ctvrtleti-klesl-pocet-obyvatel-cr-o-19-800-na-10896-milionu",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "6591e1f3ac438d94",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "cfa8ef76285eb370",
-          "title": "Zelensky firma una ley que elimina el ruso de la lista de idiomas protegidos",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-13T01:45:00Z",
-          "url": "https://www.latercera.com/mundo/noticia/zelensky-firma-una-ley-que-elimina-el-ruso-de-la-lista-de-idiomas-protegidos/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

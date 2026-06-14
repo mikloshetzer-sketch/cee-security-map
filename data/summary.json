@@ -1,44 +1,44 @@
 {
-  "generated_utc": "2026-06-14T09:25:43Z",
+  "generated_utc": "2026-06-14T13:36:49Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 733 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 375 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Pact privind migraţia şi azilul - Ileana Sandu.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Austria Extends Border Controls for Three More Months.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: ATP roundup : Ben Shelton , Taylor Fritz to square off in Stuttgart final.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 542.85; 7 napos változás: +4628%).",
-    "Trend: emelkedő (+1165%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3022, GDELT DOC 2282, direkt feed 341, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 1052 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 571 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Fussball - WM 2026 : Gianni Infantino gedenkt Brandopfern von Crans - Montana.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Domácí + politika | TNbiz . cz.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: El gallego Carlos Arévalo se proclama campeón de Europa de K1 200 en Montemor - o - Velho y abre el camino.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 549.29; 7 napos változás: +9269%).",
+    "Trend: emelkedő (+1261%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3041, GDELT DOC 2372, direkt feed 348, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+4628%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+9269%)."
   },
   "stats": {
-    "score_last7": 2440.045,
-    "score_prev7": 192.89,
-    "change_pct": 1165.0
+    "score_last7": 2522.336,
+    "score_prev7": 185.273,
+    "change_pct": 1261.42
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 733,
+    "last_24h_proximity_matches": 1052,
     "top_proximity": [
       {
-        "id": "92a022d467cadf5c",
+        "id": "3b5ecb66e8b44690",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "b6c8e3e5dc94d5af",
-          "title": "Pact privind migraţia şi azilul - Ileana Sandu",
+          "id": "8d0d5d59f5669401",
+          "title": "Fussball - WM 2026 : Gianni Infantino gedenkt Brandopfern von Crans - Montana",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-14T02:30:00Z",
-          "url": "https://www.cuvantul-liber.ro/558597/pact-privind-migratia-si-azilul/",
+          "time": "2026-06-14T13:00:00Z",
+          "url": "https://www.derbund.ch/fussball-wm-2026-gianni-infantino-gedenkt-brandopfern-von-crans-montana-885412667353",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,47 +58,17 @@
         }
       },
       {
-        "id": "11c071a0c8719329",
+        "id": "2b54cb8434fd3dc6",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "a0bcb6d0e7470fcb",
-          "title": "Austria Extends Border Controls for Three More Months",
-          "category": "border",
-          "source": "GDELT_DOC",
-          "time": "2026-06-14T01:45:00Z",
-          "url": "https://voiceofvienna.org/austria-extends-border-controls-for-three-more-months/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "b535621b49b49448",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "f655a171556c8692",
-          "title": "ATP roundup : Ben Shelton , Taylor Fritz to square off in Stuttgart final",
+          "id": "7cb473281ee17303",
+          "title": "Domácí + politika | TNbiz . cz",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-14T01:30:00Z",
-          "url": "http://www.europesun.com/news/279121335/atp-roundup-ben-shelton-taylor-fritz-to-square-off-in-stuttgart-final",
+          "time": "2026-06-14T13:00:00Z",
+          "url": "https://tnbiz.cz/domaci-a-politika/649892",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,47 +88,17 @@
         }
       },
       {
-        "id": "b1eb7e2685f9aac4",
+        "id": "7d482ac4bd88be1b",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "dc99227eebeb3cf7",
-          "title": "Hosszúvíz emlékmű avatás …",
-          "category": "infrastructure",
-          "source": "GDELT_DOC",
-          "time": "2026-06-14T01:00:00Z",
-          "url": "https://marcaliportal.hu/kozelben/81164-hosszuviz-emlekmu-avatas",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1dd91346a682c236",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "7e5ed9920b2d76ea",
-          "title": "两站ATP网球赛决赛席位出炉",
+          "id": "f418905074ceae13",
+          "title": "El gallego Carlos Arévalo se proclama campeón de Europa de K1 200 en Montemor - o - Velho y abre el camino",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-14T01:00:00Z",
-          "url": "https://www.163.com/dy/article/KVCD8IJE05299JMD.html",
+          "time": "2026-06-14T13:00:00Z",
+          "url": "https://www.marca.com/otros-deportes/2026/06/14/carlos-arevalo-campeon-europa-k1-200.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +118,17 @@
         }
       },
       {
-        "id": "bd557ec21da54162",
+        "id": "ede928be982b79b5",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "d0fbac12120c2d7c",
-          "title": "ATP roundup : Ben Shelton , Taylor Fritz to square off in Stuttgart final",
+          "id": "7ae147a53004aa6b",
+          "title": "황인범 · 이강인 · 오현규의 발 끝에 무너진 체코",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-14T01:00:00Z",
-          "url": "http://www.chinanationalnews.com/news/279121335/atp-roundup-ben-shelton-taylor-fritz-to-square-off-in-stuttgart-final",
+          "time": "2026-06-14T12:30:00Z",
+          "url": "https://www.busan.com/view/busan/view.php?code=2026061415233858104",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +148,17 @@
         }
       },
       {
-        "id": "d1fba8b33aedf772",
+        "id": "5300f9c70b2fd7c8",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "b44d6adc307f7c8d",
-          "title": "El fracaso europeo y el antiamericanismo de Sánchez dejan a España a la cola de la fuerza aérea de combate",
+          "id": "7aff31f52384d7e5",
+          "title": "Durván elszálltak az ingatlanárak Magyarországon , Szlovákiában sem sokkal jobb a helyzet | BUMM . sk",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-14T01:00:00Z",
-          "url": "https://www.abc.es/espana/fracaso-europeo-antiamericanismo-sanchez-dejan-espana-cola-20260612020649-nt.html",
+          "time": "2026-06-14T12:30:00Z",
+          "url": "https://www.bumm.sk/2026/06/12/durvan-elszalltak-az-ingatlanarak-magyarorszagon-szlovakiaban-sem-sokkal-jobb-a-helyzet",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +178,17 @@
         }
       },
       {
-        "id": "f1ac94dfcbca7b15",
+        "id": "03de9df4da734810",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "6c036c776c1205c0",
-          "title": "WTA Roundup : Emma Raducanu wins twice in one day to reach London finals",
+          "id": "75baaf797410b4bd",
+          "title": "Online - Kriminalität : Zahlungsbetrug trifft fast jeden zweiten jungen Verbraucher",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-14T01:00:00Z",
-          "url": "http://www.britainnews.net/news/279121360/wta-roundup-emma-raducanu-wins-twice-in-one-day-to-reach-london-finals",
+          "time": "2026-06-14T12:15:00Z",
+          "url": "https://www.welt.de/wirtschaft/article6a2966ce2f385f3e29b03c78/online-kriminalitaet-zahlungsbetrug-trifft-fast-jeden-zweiten-jungen-verbraucher.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,17 +208,17 @@
         }
       },
       {
-        "id": "78d86c99d91171b4",
+        "id": "d1eeb92d14b4910d",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "355bbf0800e9d19a",
-          "title": "ATP roundup : Ben Shelton , Taylor Fritz to square off in Stuttgart final",
+          "id": "ba7f4ad6f11f8241",
+          "title": "Fussball - WM 2026 : Gianni Infantino gedenkt Brandopfern von Crans - Montana",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-14T00:30:00Z",
-          "url": "http://www.newzealandstar.com/news/279121335/atp-roundup-ben-shelton-taylor-fritz-to-square-off-in-stuttgart-final",
+          "time": "2026-06-14T12:15:00Z",
+          "url": "https://www.tagesanzeiger.ch/fussball-wm-2026-gianni-infantino-gedenkt-brandopfern-von-crans-montana-885412667353",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -298,17 +238,77 @@
         }
       },
       {
-        "id": "27e9f0d267e39670",
+        "id": "371301f0a3a7563d",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "f62cd1af12441f40",
-          "title": "Ukraine fordert 20 Milliarden : Wollen , dass Russland noch stärker brennt",
+          "id": "4c95501ca5c142f8",
+          "title": "Câte ore lucrează europenii ? Angajații din România muncesc peste media UE . HARTA țărilor unde se lucrează cel mai mult și cel mai puțin",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-14T00:00:00Z",
-          "url": "https://www.telepolis.de/article/Ukraine-fordert-20-Milliarden-Wollen-dass-Russland-noch-staerker-brennt-11331365.html",
+          "time": "2026-06-14T12:15:00Z",
+          "url": "https://www.antena3.ro/externe/uniunea-europeana/cate-ore-lucreaza-europenii-angajatii-din-romania-muncesc-peste-media-ue-harta-tarilor-unde-se-lucreaza-cel-mai-mult-si-cel-mai-putin-791635.html",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "5c6eae00d453bfc6",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "bf2c6d72926a53bd",
+          "title": "Sladké a levné jahody v Polsku : Češi pro ně jezdí ve velkém",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-14T12:00:00Z",
+          "url": "https://www.blesk.cz/clanek/zpravy-pribehy/841499/sladke-a-levne-jahody-v-polsku-cesi-pro-ne-jezdi-ve-velkem.html",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "591fe6832b6faff3",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "90f9341f7a2dcc78",
+          "title": "Nagelsmann vs Advocaat : 40 años de diferencia en el duelo más extremo de DT en la historia de los Mundiales",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-14T12:00:00Z",
+          "url": "https://www.clarin.com/deportes/nagelsmann-vs-advocaat-40-anos-diferencia-duelo-extremo-dt-historia-mundiales_0_arWBJw2jJd.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

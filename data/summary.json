@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-15T11:54:16Z",
+  "generated_utc": "2026-06-15T17:08:29Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 933 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 404 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Forumul FOREN evidențiază planul extinderii interconexiunilor electrice 400 kV spre 19 linii consolidând rolul României în poartă energetică est - vest.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Parlamentul European dezbate „ acțiunile provocatoare inacceptabile ale Federației Ruse inclusiv încălcările spațiului aerian al României.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Țările de Jos testează o tabără pentru 2 . 000 de prizonieri de război în cazul unui conflict cu Rusia.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 570.52; 7 napos változás: +4460%).",
-    "Trend: emelkedő (+1102%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2938, GDELT DOC 2297, direkt feed 350, USGS 0, GDACS 0.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Az infrastruktúra-közelségi modul 1156 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 446 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Voci del Pride : star europee che difendono i diritti LGBTQIA+.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Magnacka kłótnia w XXI wieku . Lubomirski - Lanckoroński wypomniał Radziwiłłom zdradę w Kiejdanach.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Giraitė Armament Factory starts producing anti - drone ammunition.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 531.42; 7 napos változás: +4365%).",
+    "Trend: emelkedő (+1197%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3033, GDELT DOC 2211, direkt feed 355, USGS 0, GDACS 0.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 182 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+4460%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+4365%)."
   },
   "stats": {
-    "score_last7": 2374.377,
-    "score_prev7": 197.617,
-    "change_pct": 1101.5
+    "score_last7": 2437.232,
+    "score_prev7": 187.901,
+    "change_pct": 1197.08
   },
-  "rss_count": 200,
+  "rss_count": 182,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 933,
+    "last_24h_proximity_matches": 1156,
     "top_proximity": [
       {
         "id": "5b18609d82d4fe0a",
@@ -58,6 +58,66 @@
         }
       },
       {
+        "id": "9cfb3d4365e2e4bd",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "9da561b89d054377",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-15T00:00:00Z",
+          "url": "https://www.winnipegfreepress.com/world/2026/06/15/ukraine-to-start-eu-membership-talks-ushering-in-years-of-reforms-while-fighting-russias-war",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "02c91122b030377c",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "8017ddb1fbbd611d",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-15T00:00:00Z",
+          "url": "https://news.postimees.ee/8491539/interview-kristen-michal-on-political-rumors-our-greetings-to-the-postimees-editor",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
         "id": "6c56ae0bb1caa0af",
         "level": "critical",
         "score": 89.42,
@@ -71,6 +131,66 @@
           "url": "https://bnn-news.com/stradins-hospital-sounds-the-alarm-riga-needs-another-hospital-281255",
           "lat": 56.95000000000001,
           "lon": 24.100000000000005,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "79db59f9e0654452",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "4306a148d2673a73",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-15T00:00:00Z",
+          "url": "https://news.am/en/news/1043615",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "e8bedc901f2b0e57",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "c7a5c0558813bb06",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-15T00:00:00Z",
+          "url": "https://www.flightglobal.com/archive/2026/06/air-baltic-enters-codeshare-pact-with-el-al-after-unveiling-plans-to-return-to-tel-aviv/",
+          "lat": 56.95,
+          "lon": 24.1,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
@@ -189,126 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-15T00:30:00Z",
           "url": "https://www.eurasiareview.com/14062026-georgias-connectivity-trump-card-and-reset-of-relations-with-the-european-union-oped/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1c3f6397ce02e6a9",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "f5fb8d997583a8d0",
-          "title": "Prichádza k nám indický premiér Módí . Ako sa dostal z čajového stánku medzi najmocnejších lídrov sveta ?",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-14T23:45:00Z",
-          "url": "https://www.ta3.com/clanok/1054999/prichadza-k-nam-indicky-premier-modi-ako-sa-dostal-z-cajoveho-stanku-medzi-najmocnejsich-lidrov-sveta",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "042d8652ec004249",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "5cf83467f0d3f6be",
-          "title": "Baby News : Aktuelle Nachrichten zu Baby aus 2026",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-14T22:45:00Z",
-          "url": "https://www.news.de/thema/baby/1/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "2e93a6e1577899c7",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "8a3e7b957cb44b8b",
-          "title": "New 807 - mile train journey through Europe to launch this month",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-14T22:45:00Z",
-          "url": "https://www.express.co.uk/travel/articles/2217256/new-807-mile-train-journey-europe",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "32360f2fb3517308",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "6e2ee6a1c0c79c44",
-          "title": "中欧行 （ 3 ） 匈牙利 ： 布达和佩斯 世界最美咖啡店的5位数账单 | www . wenxuecity . com",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-14T22:45:00Z",
-          "url": "https://www.wenxuecity.com/blog/202606/77902/10310.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,32 +1,92 @@
 {
-  "generated_utc": "2026-06-15T02:57:47Z",
+  "generated_utc": "2026-06-15T11:54:16Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 879 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 445 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Praying mantis named Czechia Insect of the Year as the species spreads across the country.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Fed and BoE stay guarded after 100 days of Iran war.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Bélgica vs . Egipto por el Grupo G del Mundial 2026 : horario y dónde ver el partido en vivo.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 536.47; 7 napos változás: +9093%).",
-    "Trend: emelkedő (+1001%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2838, GDELT DOC 2401, direkt feed 346, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 933 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 404 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Forumul FOREN evidențiază planul extinderii interconexiunilor electrice 400 kV spre 19 linii consolidând rolul României în poartă energetică est - vest.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Parlamentul European dezbate „ acțiunile provocatoare inacceptabile ale Federației Ruse inclusiv încălcările spațiului aerian al României.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Țările de Jos testează o tabără pentru 2 . 000 de prizonieri de război în cazul unui conflict cu Rusia.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 570.52; 7 napos változás: +4460%).",
+    "Trend: emelkedő (+1102%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2938, GDELT DOC 2297, direkt feed 350, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+9093%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+4460%)."
   },
   "stats": {
-    "score_last7": 2371.565,
-    "score_prev7": 215.382,
-    "change_pct": 1001.1
+    "score_last7": 2374.377,
+    "score_prev7": 197.617,
+    "change_pct": 1101.5
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 879,
+    "last_24h_proximity_matches": 933,
     "top_proximity": [
+      {
+        "id": "5b18609d82d4fe0a",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "58cc23370ef87624",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-15T00:00:00Z",
+          "url": "https://www.etnow.com/news/2026/6/tallinn-college-of-music-and-ballet-chooses-future-proof-digico-quantum-338-and-quantum-225-for-building-upgrades",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "6c56ae0bb1caa0af",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "7ba53d6d657c2959",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-15T00:00:00Z",
+          "url": "https://bnn-news.com/stradins-hospital-sounds-the-alarm-riga-needs-another-hospital-281255",
+          "lat": 56.95000000000001,
+          "lon": 24.100000000000005,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "5316b027651a8eb0",
         "level": "critical",
@@ -249,66 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-14T22:45:00Z",
           "url": "https://www.wenxuecity.com/blog/202606/77902/10310.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "06b024443100c238",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "ad56f4290750a549",
-          "title": "Macro Newsletter 15 Iunie 2026",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-14T22:00:00Z",
-          "url": "https://www.bursa.ro/macro-newsletter-15-iunie-2026-01492950",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a619e5e2cb92c0f5",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "efbe36c5adf0820c",
-          "title": "Empresas y productores de Lara aumentan niveles de exportación de rubros agrícolas",
-          "category": "infrastructure",
-          "source": "GDELT_DOC",
-          "time": "2026-06-14T21:30:00Z",
-          "url": "https://unionradio.net/empresas-y-productores-de-lara-aumentan-niveles-de-exportacion-de-rubros-agricolas/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-06-16T16:32:44Z",
+  "generated_utc": "2026-06-16T20:46:24Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1368 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 590 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 1590 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 667 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Na skládku v Životicích zamířil sup bělohlavý.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Index - Gazdaság - Itt is új korszakot hozhat a Tisza - kormány gazdaságpolitikai irányváltása.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Прогодувати велике місто . Що буде , коли супермаркети в Україні зобов яжуть роздавати продукти DSnews . ua.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 571.54; 7 napos változás: +4859%).",
-    "Trend: emelkedő (+1269%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3082, GDELT DOC 2203, direkt feed 368, USGS 0, GDACS 0.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 180 db.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 538.28; 7 napos változás: +4763%).",
+    "Trend: emelkedő (+1344%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3141, GDELT DOC 2167, direkt feed 372, USGS 0, GDACS 0.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+4859%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+4763%)."
   },
   "stats": {
-    "score_last7": 2568.227,
-    "score_prev7": 187.597,
-    "change_pct": 1269.01
+    "score_last7": 2600.909,
+    "score_prev7": 180.115,
+    "change_pct": 1344.02
   },
-  "rss_count": 180,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1368,
+    "last_24h_proximity_matches": 1590,
     "top_proximity": [
+      {
+        "id": "b5f5bb9c3030276f",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "4a65364ddfaeb90e",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-16T00:00:00Z",
+          "url": "https://www.baltictimes.com/scientists_and_decision-makers_to_discuss_estonia_s_readiness_for_climate_change/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "02182cd8009a77ee",
         "level": "critical",
@@ -41,6 +71,66 @@
           "url": "http://www.bignewsnetwork.com/news/279126084/baltic-state-to-restrict-russian-emails",
           "lat": 59.4339,
           "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "0be36f802576f290",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "d5efa95453cbb00f",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-16T00:00:00Z",
+          "url": "https://www.baltictimes.com/tsahkna_to_discuss_ukraine-related_issues_with_eu_colleagues/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "0cf6cbc638605bd6",
+        "level": "critical",
+        "score": 90.92,
+        "distance_km": 4.54,
+        "event": {
+          "id": "024474bee331ae91",
+          "title": "Lasnamae, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-16T00:00:00Z",
+          "url": "https://www.baltictimes.com/study__transition_to_estonian-language_education_requires_support_for_children_and_parents/",
+          "lat": 59.44,
+          "lon": 24.8331,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
@@ -148,36 +238,6 @@
         }
       },
       {
-        "id": "129f73571d1ac7a0",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "d7e4f957ea7b2ce3",
-          "title": "Сонячне затемнення 12 серпня 2026 року – де в Європі побачать унікальний захід Сонця",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-16T15:45:00Z",
-          "url": "https://24tv.ua/tech/sonyachne-zatemnennya-12-serpnya-2026-roku-de-yevropi-pobachat_n3088844",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
         "id": "e4a992f9c4d46eba",
         "level": "critical",
         "score": 88.57,
@@ -249,66 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-16T15:30:00Z",
           "url": "https://www.novinky.cz/clanek/domaci-vlada-chce-vyhladovet-neziskovky-skrty-dopadnou-i-na-pomoc-lidem-v-nouzi-40580993",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "18df717fe0918707",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "02afc3e363856cfd",
-          "title": "Celinas schlimmster Albtraum wurde wahr , doch nur so konnte sie gerettet werden",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-16T15:30:00Z",
-          "url": "https://www.schwaebische.de/regional/tuttlingen/tuttlingen/celinas-schlimmster-albtraum-wurde-wahr-doch-nur-so-konnte-sie-gerettet-werden-4636781",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "10f7c625c9a84ad6",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "17bbee1f1bcdd8d9",
-          "title": "AI začíná měnit i trh s běžným hardwarem , ceny komponent rostou , hrozí i horší dostupnost",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-16T14:15:00Z",
-          "url": "https://www.computertrends.cz/clanky/ai-zacina-menit-i-trh-s-beznym-hardwarem-ceny-komponent-rostou-hrozi-i-horsi-dostupnost/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

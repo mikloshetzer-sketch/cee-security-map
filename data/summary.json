@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-18T14:56:07Z",
+  "generated_utc": "2026-06-18T20:21:33Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1423 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 631 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Grupa Orlen ma umowę zakupu 20 proc . udziałów w koncesjach na norweskim złożu Goliat.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Las claves de la serie Star City ( o todo lo que nunca supimos del programa espacial de la URSS ).",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Чорнокозинський замок – що приховують руїни найстарішої фортеці Поділля над Збручем Україна.",
-    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 613.37; 7 napos változás: +13811%).",
-    "Trend: emelkedő (+1318%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3055, GDELT DOC 2337, direkt feed 394, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 1535 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 766 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Somaliland : conclusa la visita di Irro in Israele , rafforzata la cooperazione in diplomazia , sicurezza ed economia.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Η επίσημη ανακοίνωση για τον θάνατο του Σωτήρη Τσόγκα - Η αναφορά στη Μαίρη Ραζή και η ημέρα της κηδείας.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 莫斯科煉油廠遭烏克蘭無人機攻擊 - 星島日報.",
+    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 583.12; 7 napos változás: +13834%).",
+    "Trend: emelkedő (+1423%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3155, GDELT DOC 2319, direkt feed 399, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Vilnius County, Lithuania (+13811%)."
+    "text": "Erősödő hotspot: Vilnius County, Lithuania (+13834%)."
   },
   "stats": {
-    "score_last7": 2860.021,
-    "score_prev7": 201.68,
-    "change_pct": 1318.1
+    "score_last7": 2915.199,
+    "score_prev7": 191.419,
+    "change_pct": 1422.94
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1423,
+    "last_24h_proximity_matches": 1535,
     "top_proximity": [
       {
         "id": "6f3bccb8170c331e",
@@ -58,17 +58,77 @@
         }
       },
       {
-        "id": "f40ada733097ec13",
+        "id": "4ffcb1fa64a8b2d6",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "8728cbf1e4915919",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-18T00:00:00Z",
+          "url": "https://www.trend.az/azerbaijan/politics/4199404.html",
+          "lat": 56.949999999999996,
+          "lon": 24.099999999999998,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "2ac6eecc4f4ab4aa",
+        "level": "critical",
+        "score": 88.68,
+        "distance_km": 0.73,
+        "event": {
+          "id": "94044389e3cd35ef",
+          "title": "Alytus, Alytaus Apskritis, Lithuania",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-18T00:00:00Z",
+          "url": "https://www.lrt.lt/en/news-in-english/19/2964212/up-to-90-of-lithuanian-apple-trees-lost-to-unprecedented-winter",
+          "lat": 54.4,
+          "lon": 24.05,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lt-energy-litpol-link",
+          "name": "LitPol Link Alytus Node",
+          "country": "Lithuania",
+          "city": "Alytus",
+          "category": "energy",
+          "subtype": "electricity_interconnector",
+          "criticality": 9.0,
+          "operator": "Litgrid / PSE",
+          "lat": 54.396,
+          "lon": 24.041,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "5db61fef54e1c334",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "61496eefea376766",
-          "title": "三个关键数据看封关半年新变化丨海客谈 - 南海网",
+          "id": "a35f9c033db066f9",
+          "title": "Somaliland : conclusa la visita di Irro in Israele , rafforzata la cooperazione in diplomazia , sicurezza ed economia",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-18T02:15:00Z",
-          "url": "https://www.hinews.cn:443/page?n=2831608&m=1&s=1044",
+          "time": "2026-06-18T19:30:00Z",
+          "url": "https://www.agenzianova.com/news/somaliland-conclusa-la-visita-del-presidente-irro-in-israele-rafforzata-la-cooperazione-in-diplomazia-sicurezza-ed-economia/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +148,17 @@
         }
       },
       {
-        "id": "31ebca05793d81ca",
+        "id": "b3e8f77480371d4a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c5b75c95a4657d73",
-          "title": "Olomoucké novinky - Domácí - Zdeněk Zbořil : Vojenské újezdy a jejich „ mrtvé duše v Čechách , na Moravě",
+          "id": "c6d1ec934064d00f",
+          "title": "Η επίσημη ανακοίνωση για τον θάνατο του Σωτήρη Τσόγκα - Η αναφορά στη Μαίρη Ραζή και η ημέρα της κηδείας",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-18T02:00:00Z",
-          "url": "https://www.olomouckenovinky.cz/zpravy/politika/zdenek-zboril-vojenske-ujezdy-a-jejich-mrtve-duse-v-cechach-na-morave/",
+          "time": "2026-06-18T19:30:00Z",
+          "url": "https://www.inewsgr.com/184/i-episimi-anakoinosi-gia-ton-thanato-tou-sotiri-tsogka--i-anafora-sti-mairi-razi-kai-i-imera-tis-kideias.htm",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +178,17 @@
         }
       },
       {
-        "id": "f00555850b8c95ca",
+        "id": "6fc0a68468281fa0",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "5cb17a846a191fd8",
-          "title": "Alineación de México vs . Corea del Sur : El plan de Javier Aguirre para amarrar el pase en el Mundial 2026",
+          "id": "e70a42314a32b1fb",
+          "title": "莫斯科煉油廠遭烏克蘭無人機攻擊 - 星島日報",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-18T02:00:00Z",
-          "url": "https://imparcialoaxaca.mx/super-deportivo/futbol/alineacion-de-mexico-vs-corea-del-sur-el-plan-de-javier-aguirre-para-amarrar-el-pase-en-el-mundial-2026/",
+          "time": "2026-06-18T19:30:00Z",
+          "url": "https://www.singtaousa.com/2026/06/18/news/world/moscow-oil-refinery-attacked-by-ukrainian-drones/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +208,17 @@
         }
       },
       {
-        "id": "ac9fb8634a51445f",
+        "id": "7879f872ac59ee7e",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "1cc0b723d7b6ab35",
-          "title": "Estudio revela que empresas de Chile y Brasil lideran despliegue de IA a un ritmo más alto que la región → TransMedia",
+          "id": "4554fbc024a45c5f",
+          "title": "A Bruxelles una riunione del gruppo Amici della coesione : Il bilancio non penalizzi le politiche dei trattati",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-18T02:00:00Z",
-          "url": "https://www.transmedia.cl/blog/2026/06/17/estudio-revela-que-empresas-de-chile-lideran-despliegue-de-ia-a-un-ritmo-mas-alto-que-la-region/",
+          "time": "2026-06-18T19:30:00Z",
+          "url": "https://www.agenzianova.com/news/a-bruxelles-una-riunione-del-gruppo-amici-della-coesione-il-bilancio-non-penalizzi-le-politiche-dei-trattati/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +238,17 @@
         }
       },
       {
-        "id": "354ce3e9276a9159",
+        "id": "8a4e93b50a1690f7",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "ed2abc44d3d2f5a7",
-          "title": "México y Corea del Sur pelearán este jueves por el liderato del Grupo A en el Mundial 2026",
+          "id": "832fce0cddeeec68",
+          "title": "England learn route to Women World Cup after play - off draw",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-18T01:45:00Z",
-          "url": "https://www.eleconomista.com.mx/deportes/mexico-corea-sur-chocaran-jueves-liderato-grupo-mundial-20260617-818984.html",
+          "time": "2026-06-18T19:30:00Z",
+          "url": "https://morningstaronline.co.uk/article/england-learn-route-womens-world-cup-after-play-draw",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +268,17 @@
         }
       },
       {
-        "id": "d0e8c86db037f837",
+        "id": "35c9943da566dd56",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "ec9244917c50545f",
-          "title": "첫 승 거둔 홍명보호 , 멕시코전 관전 포인트 5가지",
+          "id": "c0038e598db44155",
+          "title": "Bilancio UE non penalizzi PAC e Coesione : Meloni guida gli Amici della Coesione - Economia e Finanza",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-18T01:45:00Z",
-          "url": "https://star.ohmynews.com/NWS_Web/OhmyStar/at_pg.aspx?CNTN_CD=A0003244161&PAGE_CD=N0002&CMPT_CD=M0112",
+          "time": "2026-06-18T19:30:00Z",
+          "url": "https://finanza.repubblica.it/News/2026/06/18/bilancio_ue_non_penalizzi_pac_e_coesione_meloni_guida_gli_amici_della_coesione-249/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,77 +298,17 @@
         }
       },
       {
-        "id": "520df052f9165a42",
+        "id": "f1d73e1717f0da3a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "4e15d97507b285a9",
-          "title": "Coreano Hermano : Ahead of Mexico vs . South Korea , it all love between the fans",
+          "id": "f1924296cba2b132",
+          "title": "Donald Tusk lengyel kormányfő is megújítaná a visegrádi négyek együttműködését",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-18T01:45:00Z",
-          "url": "https://www.kedm.org/npr-news/2026-06-17/coreano-hermano-ahead-of-mexico-vs-south-korea-its-all-love-between-the-fans",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "42f611966ffa9d66",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "03cbf0923aec051f",
-          "title": "První zprávy - Domácí - Zdeněk Zbořil : Vojenské újezdy a jejich „ mrtvé duše v Čechách , na Moravě",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-18T01:45:00Z",
-          "url": "https://www.prvnizpravy.cz/zpravy/politika/zdenek-zboril-vojenske-ujezdy-a-jejich-mrtve-duse-v-cechach-na-morave/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "2aad07f643c7df61",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "f5ae1158b5803524",
-          "title": "德法终难患难与共 - FT中文网",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-18T01:45:00Z",
-          "url": "http://www.ftchinese.com/story/001110068",
+          "time": "2026-06-18T19:30:00Z",
+          "url": "https://maszol.ro/kulfold/Donald-Tusk-lengyel-kormanyfo-is-megujitana-a-visegradi-negyek-egyuttmukodeset",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

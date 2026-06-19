@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-19T10:19:56Z",
+  "generated_utc": "2026-06-19T14:51:20Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 931 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 447 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Канцлер Австрії закликав ЄС відновити діалог із Путіним.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Nie zostawili suchej nitki na Polakach . Mamy problem z rozumieniem.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Russland : Wladimir Putin startet massiven Lauschangriff auf die Nato.",
-    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 631.20; 7 napos változás: +14728%).",
-    "Trend: emelkedő (+1168%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2954, GDELT DOC 2264, direkt feed 400, USGS 0, GDACS 0.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 195 db.",
+    "Az infrastruktúra-közelségi modul 1321 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 584 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: ΕΕ : Αντιδράσεις για το άνοιγμα διαύλου επικοινωνίας του Κόστα με το Κρεμλίνο.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Lithuania steps up border monitoring with Latvia over irregular migration surge.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Didžiosios muštynės dėl ES pinigų : ko nori Lietuva ?.",
+    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 666.61; 7 napos változás: +16267%).",
+    "Trend: emelkedő (+1289%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3033, GDELT DOC 2298, direkt feed 394, USGS 0, GDACS 0.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Vilnius County, Lithuania (+14728%)."
+    "text": "Erősödő hotspot: Vilnius County, Lithuania (+16267%)."
   },
   "stats": {
-    "score_last7": 2729.696,
-    "score_prev7": 215.198,
-    "change_pct": 1168.46
+    "score_last7": 2861.842,
+    "score_prev7": 206.028,
+    "change_pct": 1289.05
   },
-  "rss_count": 195,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 931,
+    "last_24h_proximity_matches": 1321,
     "top_proximity": [
       {
         "id": "285f5e66b85852dc",
@@ -55,6 +55,126 @@
           "lat": 59.437,
           "lon": 24.753,
           "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "74429931d4b33245",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "29fe8c4e59f59a27",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-19T00:00:00Z",
+          "url": "https://bnn-news.com/bnn-interview-cinevilla-turns-22-andrejs-ekis-reveals-the-magic-behind-the-facades-of-latvias-backlot-281456",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "19a4cce0ff124f47",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "97938379702ddf62",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-19T00:00:00Z",
+          "url": "https://jazzjournal.co.uk/2026/06/19/reviewed-pulse-trio-alexis-martin-ensemble-freyja-garbett/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "f83fed601433f0cd",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "c05435d30d34f268",
+          "title": "Riga, Riga, Latvia",
+          "category": "police",
+          "source": "GDELT",
+          "time": "2026-06-19T00:00:00Z",
+          "url": "https://bnn-news.com/digital-television-case-reopened-supreme-court-overturns-acquittal-of-slesers-and-skele-281496",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "f34d2ef93374c215",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "0b38b0bf2added8c",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-19T00:00:00Z",
+          "url": "https://www.mfa.gov.lv/en/article/regular-meeting-strategic-dialogue-between-ministries-foreign-affairs-latvia-and-azerbaijan-took-place-riga",
+          "lat": 56.949999999999996,
+          "lon": 24.099999999999998,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
         }
       },
       {
@@ -189,126 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-18T18:45:00Z",
           "url": "https://www.dw.com/ro/prim-viceguvernatorul-bnr-%C3%AEn-presa-german%C4%83-rom%C3%A2nia-ar-trebui-s%C4%83-gr%C4%83beasc%C4%83-pasul-spre-moneda-euro/a-77617942",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "49696848b2f1a4a4",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "5c635be68a00f7b8",
-          "title": "CFR Călători introduce bilete electronice pentru rutele către Germania : Cum se pot cumpăra",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-18T18:45:00Z",
-          "url": "https://ziarulunirea.ro/cfr-calatori-introduce-bilete-electronice-pentru-rutele-catre-germania-cum-se-pot-cumpara-998801/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a77740f706dc072e",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "64663aefeab349dc",
-          "title": "У Львові обрали нового директора Інституту біології клітини НАН України : хто ним став",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-18T18:45:00Z",
-          "url": "https://tvoemisto.tv/uk/news/5112-u-lvovi-obraly-novoho-dyrektora-instytutu-biolohiyi-klityny-nan-ukrayiny-khto-nym-stav",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "32b0292a34d34a50",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "ef38d7d979d1cc9b",
-          "title": "Miguel Herrera predice victoria de México 2 - 1 ante Corea en el Mundial 2026",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-18T18:45:00Z",
-          "url": "https://www.sdpnoticias.com/deportes/miguel-herrera-predice-victoria-de-mexico-2-1-ante-corea-en-el-mundial-2026/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "7b741fba9a98de07",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c2d3fca5108a9116",
-          "title": "开放红利持续释放 海南绘就国际旅游消费新图景 - 新华网",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-18T18:45:00Z",
-          "url": "http://www.hq.xinhuanet.com/20260618/0fcaf7efc23748139a45d0614aec152b/c.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-06-19T03:35:31Z",
+  "generated_utc": "2026-06-19T10:19:56Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 876 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 421 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 624.01; 7 napos változás: +13631%).",
-    "Trend: emelkedő (+1118%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2901, GDELT DOC 2345, direkt feed 405, USGS 0, GDACS 0.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Az infrastruktúra-közelségi modul 931 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 447 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Канцлер Австрії закликав ЄС відновити діалог із Путіним.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Nie zostawili suchej nitki na Polakach . Mamy problem z rozumieniem.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Russland : Wladimir Putin startet massiven Lauschangriff auf die Nato.",
+    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 631.20; 7 napos változás: +14728%).",
+    "Trend: emelkedő (+1168%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2954, GDELT DOC 2264, direkt feed 400, USGS 0, GDACS 0.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 195 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Vilnius County, Lithuania (+13631%)."
+    "text": "Erősödő hotspot: Vilnius County, Lithuania (+14728%)."
   },
   "stats": {
-    "score_last7": 2796.532,
-    "score_prev7": 229.625,
-    "change_pct": 1117.87
+    "score_last7": 2729.696,
+    "score_prev7": 215.198,
+    "change_pct": 1168.46
   },
-  "rss_count": 200,
+  "rss_count": 195,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 876,
+    "last_24h_proximity_matches": 931,
     "top_proximity": [
+      {
+        "id": "285f5e66b85852dc",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "bb93da18bfc122e7",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-19T00:00:00Z",
+          "url": "https://www.manilatimes.net/2026/06/19/tmt-newswire/globenewswire/resolutions-of-the-annual-general-meeting-of-shareholders-from-19-june-2026/2368984",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "5db61fef54e1c334",
         "level": "critical",
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-18T18:45:00Z",
           "url": "http://www.hq.xinhuanet.com/20260618/0fcaf7efc23748139a45d0614aec152b/c.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "cb164452d8976751",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "964e8daee83ff2c5",
-          "title": "European Markets Close Broadly Lower On Interest Rate Concerns",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-18T18:30:00Z",
-          "url": "https://www.finanznachrichten.de/nachrichten-2026-06/68807880-european-markets-close-broadly-lower-on-interest-rate-concerns-020.htm",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

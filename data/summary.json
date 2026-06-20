@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-06-20T02:40:20Z",
+  "generated_utc": "2026-06-20T08:49:38Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1039 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 478 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 580.77; 7 napos változás: +15046%).",
-    "Trend: emelkedő (+1203%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3017, GDELT DOC 2249, direkt feed 393, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 1036 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 495 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Στο επίκεντρο του παγκόσμιου Τάνγκο η Ρόδος με 180 χορευτές και κορυφαίους DJs.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Maailma suurim õigeusu katedraal sündis Rumeenia rahvustunde eripärast.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Județele care intră sub Cod galben de caniculă . Căldură excesivă și furtuni anunțate în mai multe regiuni.",
+    "Legerősebb góc: Vilnius County, Lithuania 🔺 (rácspont 54.75, 25.25; score 539.02; 7 napos változás: +14814%).",
+    "Trend: emelkedő (+1228%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3043, GDELT DOC 2177, direkt feed 395, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Vilnius County, Lithuania (+15046%)."
+    "text": "Erősödő hotspot: Vilnius County, Lithuania (+14814%)."
   },
   "stats": {
-    "score_last7": 2767.598,
-    "score_prev7": 212.428,
-    "change_pct": 1202.84
+    "score_last7": 2658.285,
+    "score_prev7": 200.207,
+    "change_pct": 1227.77
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1039,
+    "last_24h_proximity_matches": 1036,
     "top_proximity": [
+      {
+        "id": "ad13f12a71b224d4",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "5893f683f79a4579",
+          "title": "Riga, Riga, Latvia",
+          "category": "infrastructure",
+          "source": "GDELT",
+          "time": "2026-06-20T00:00:00Z",
+          "url": "https://www.travelwires.com/tampere-airport-launches-direct-flights-to-mallorca-with-air-baltic/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "2c353300e7fb4a73",
         "level": "critical",
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-19T18:15:00Z",
           "url": "https://www.cadena3.com/noticia/mundo/la-ue-busca-establecer-comunicacion-con-moscu-en-medio-de-la-guerra-en-ucrania_564383",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "2c0d26ad75960b2b",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "4975b7170badad61",
-          "title": "У якому віці європейці купують перше житло",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-19T17:15:00Z",
-          "url": "https://24tv.ua/realestate24/yakomu-vitsi-yevropeytsi-kupuyut-pershe-zhitlo_n3090993",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

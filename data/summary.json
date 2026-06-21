@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-06-21T02:53:53Z",
+  "generated_utc": "2026-06-21T09:43:23Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 972 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 486 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 871 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 458 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: صقر 358 .. صياد المسيّرات الإيراني الذي أسقط الأباتشي.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Novinky . cz - nejčtenější zprávy na českém internetu.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ludovic Orban face scut în jurul lui Ilie Bolojan . Fostul premier și președinte al PNL a numit adversarii : A devenit un partener al sistemului INTERVIU.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 553.80; 7 napos változás: +4791%).",
-    "Trend: emelkedő (+1275%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3089, GDELT DOC 2253, direkt feed 392, USGS 0, GDACS 0.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 513.58; 7 napos változás: +4743%).",
+    "Trend: emelkedő (+1284%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3106, GDELT DOC 2185, direkt feed 386, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+4791%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+4743%)."
   },
   "stats": {
-    "score_last7": 2637.767,
-    "score_prev7": 191.777,
-    "change_pct": 1275.44
+    "score_last7": 2485.209,
+    "score_prev7": 179.581,
+    "change_pct": 1283.89
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 972,
+    "last_24h_proximity_matches": 871,
     "top_proximity": [
+      {
+        "id": "9c3f928420879c7c",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "bdcc7f29ea875fa9",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-21T00:00:00Z",
+          "url": "https://www.bbc.co.uk/programmes/articles/5F4yv0Lnb8SdYBshJL109nJ/nine-surprising-ways-to-celebrate-the-summer-solstice",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "7af1210c5eaefc11",
         "level": "critical",
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-20T22:30:00Z",
           "url": "https://opiniabuzau.ro/21-iunie-2026/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "dbb588ce9e0b48a5",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "240bfd8bc158f33b",
-          "title": "Rolls - Royce eyes nuke deals to wean Europe off Russia",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-20T22:30:00Z",
-          "url": "https://www.dailymail.com/money/markets/article-15915975/Rolls-Royce-eyes-nuke-deals-wean-Europe-Russia.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

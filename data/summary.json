@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-22T11:43:43Z",
+  "generated_utc": "2026-06-22T16:37:11Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1007 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 525 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 882 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 437 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Lotta Italia da cinque medaglie al Wrestling Challenge Under 15 in Romania.",
     "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Frankfurt und die WM : Für diese Nationen wird am lautesten gejubelt.",
     "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Axis 365 : η 22α Ιουνίου στην Ελλάδα και στον Κόσμο.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 564.64; 7 napos változás: +5254%).",
-    "Trend: emelkedő (+1124%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3053, GDELT DOC 2287, direkt feed 372, USGS 0, GDACS 2.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 545.65; 7 napos változás: +5324%).",
+    "Trend: emelkedő (+1168%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3123, GDELT DOC 2212, direkt feed 378, USGS 0, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+5254%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+5324%)."
   },
   "stats": {
-    "score_last7": 2450.532,
-    "score_prev7": 200.239,
-    "change_pct": 1123.8
+    "score_last7": 2422.764,
+    "score_prev7": 191.029,
+    "change_pct": 1168.27
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1007,
+    "last_24h_proximity_matches": 882,
     "top_proximity": [
       {
         "id": "cc3068a9dca7df01",
@@ -69,6 +69,96 @@
           "source": "GDELT",
           "time": "2026-06-22T00:00:00Z",
           "url": "https://dailypost.ng/2026/06/22/bye-election-kano-ndc-fires-back-at-gov-yusuf-over-comment-against-party/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "fc0d7545550fdf00",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "f5e0ae4ea89c5137",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-22T00:00:00Z",
+          "url": "https://www.dailymail.com/news/article-15919587/Putins-personal-enemy-revealed-relationship-Olympic-gymnast-dies-eating-poisonous-mushrooms.html",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "f99741fb2743f113",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "5ea64afbe093dc72",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-22T00:00:00Z",
+          "url": "https://www.bostonglobe.com/2026/06/22/metro/hampton-nh-sand-sculpting-2026-champion/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "938391f62713aba1",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "fdb502246dd5201a",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-22T00:00:00Z",
+          "url": "https://www.dailystar.co.uk/news/latest-news/putin-enemy-who-exposed-affair-37331660",
           "lat": 56.95,
           "lon": 24.1,
           "source_file": "gdelt_linked.geojson"
@@ -219,96 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-21T23:00:00Z",
           "url": "https://www.blesk.cz/clanek/zpravy-politika/842161/h-vno-nejsou-silnejsi-cepelka-z-cimrmanu-podporil-protest-za-ct-dorazily-peckova-i-machalkova.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "775167d1c1013247",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "2d96bd48b60824cd",
-          "title": "Czechia : Thousands march in support of public media funding",
-          "category": "infrastructure",
-          "source": "GDELT_DOC",
-          "time": "2026-06-21T23:00:00Z",
-          "url": "https://www.dw.com/en/czechia-thousands-march-in-support-of-public-media-funding/a-77650608",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "6a2ed9e4758f424b",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "708a0706e8d2fc45",
-          "title": "Včely mají pomoci ukrajinským veteránům vyrovnat se s válečnými traumaty",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-21T22:30:00Z",
-          "url": "https://www.enviweb.cz/rss/401862",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a4920be962af9ea4",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "442a05bdfce9d4ed",
-          "title": "Blog N : Koniec dlhej noci",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-21T22:30:00Z",
-          "url": "https://dennikn.sk/blog/5408978/koniec-dlhej-noci/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

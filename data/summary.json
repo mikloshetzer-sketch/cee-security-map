@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-23T14:36:09Z",
+  "generated_utc": "2026-06-23T19:57:37Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 2148 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1136 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Czech president appeals to Constitutional Court after NATO delegation snub.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: लखनऊ हादसे के बाद गहलोत की चेतावनी - Naya India - Hindi News , Latest Hindi News , Breaking News , Hindi Samachar.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 1 hét múlva kezd a VéNégy Fesztivál Nagymaroson.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 641.82; 7 napos változás: +5995%).",
-    "Trend: emelkedő (+1145%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3126, GDELT DOC 2492, direkt feed 390, USGS 0, GDACS 4.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Az infrastruktúra-közelségi modul 2166 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1050 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Explosive - laden drone found in NATO state amid Ukrainian attack wave.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Explosive - laden drone found in NATO state amid Ukrainian attack wave ( PHOTOS ).",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Компромисс один прекращение огня.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 690.65; 7 napos változás: +6819%).",
+    "Trend: emelkedő (+1238%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3219, GDELT DOC 2472, direkt feed 390, USGS 0, GDACS 4.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 199 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+5995%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+6819%)."
   },
   "stats": {
-    "score_last7": 2762.926,
-    "score_prev7": 221.861,
-    "change_pct": 1145.34
+    "score_last7": 2818.409,
+    "score_prev7": 210.708,
+    "change_pct": 1237.59
   },
-  "rss_count": 200,
+  "rss_count": 199,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 2148,
+    "last_24h_proximity_matches": 2166,
     "top_proximity": [
       {
         "id": "b0db89c25d44bae1",
@@ -99,6 +99,36 @@
           "source": "GDELT",
           "time": "2026-06-23T00:00:00Z",
           "url": "https://businessdayghana.com/blackwall-enters-vietnam-european-web-traffic-security-firm-launches-southeast-asia-expansion-with-19-year-hosting-partner-hostvn/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "09d556778c571535",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "d8eccd79590929c3",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-23T00:00:00Z",
+          "url": "https://nypost.com/2026/06/23/world-news/lithuanian-pm-inga-ruginiene-government-step-down-after-coalition-reshuffle/",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-06-23T14:00:00Z",
           "url": "https://www.borsonline.hu/travelo/2026/06/1-het-mulva-kezd-a-venegy-fesztival-nagymaroson",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "e16a89699256ba23",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "cfdadbf183992271",
-          "title": "June 23 , 2026 - Radio Romania International",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-23T14:00:00Z",
-          "url": "https://www.rri.ro/en/news-and-current-affairs/newsflash/june-23-2026-id1032228.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

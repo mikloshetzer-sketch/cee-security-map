@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-24T02:37:01Z",
+  "generated_utc": "2026-06-24T08:59:35Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1749 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 938 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 2027年一趟理想又美好的河輪假期 住進歐洲的風景裡.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Chequia vs México : Datos que quizá no sabías del enfrentamiento.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 634.01; 7 napos változás: +5002%).",
-    "Trend: emelkedő (+943%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2998, GDELT DOC 2442, direkt feed 390, USGS 0, GDACS 4.",
+    "Az infrastruktúra-közelségi modul 1611 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 904 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Яхно : На новий світопорядок впливатимуть не тільки країни - гегемони.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Resumen Mundial 2026 | Colombia vuela , Inglaterra se complica y Ronaldo revive y se cabrea por Messi.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Są naszym ulubionym sąsiadem . Liczba turystów rośnie o ponad 40 proc ..",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 609.77; 7 napos változás: +7396%).",
+    "Trend: emelkedő (+1013%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3020, GDELT DOC 2482, direkt feed 387, USGS 0, GDACS 4.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+5002%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7396%)."
   },
   "stats": {
-    "score_last7": 2682.523,
-    "score_prev7": 257.146,
-    "change_pct": 943.19
+    "score_last7": 2691.698,
+    "score_prev7": 241.836,
+    "change_pct": 1013.03
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1749,
+    "last_24h_proximity_matches": 1611,
     "top_proximity": [
       {
         "id": "3d7ff91b26a44150",
@@ -58,167 +58,77 @@
         }
       },
       {
-        "id": "f2be79c25f102468",
+        "id": "be7efb29af4f0407",
         "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
+        "score": 97.1,
+        "distance_km": 1.45,
         "event": {
-          "id": "fc8d2393245f9a41",
-          "title": "2027年一趟理想又美好的河輪假期 住進歐洲的風景裡",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-24T02:00:00Z",
-          "url": "https://n.yam.com/Article/20260624502951",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "2e5049b8f8aa6112",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "b655f5ab91aa95b1",
-          "title": "Chequia vs México : Datos que quizá no sabías del enfrentamiento",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-24T02:00:00Z",
-          "url": "https://www.eldictamen.mx/chequia-vs-mexico-datos-que-quiza-no-sabias-del-enfrentamiento/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "fd0f1db8289116ea",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "f2f3cec28042036c",
-          "title": "FT早报 ： 2026年6月24日",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-24T01:45:00Z",
-          "url": "http://www.ftchinese.com/interactive/284600",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "48c4083afbd8d59a",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "07f290c296c00653",
-          "title": "한국 축구 , 마지막 운명의 남아공전 관전포인트 5가지",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-24T01:45:00Z",
-          "url": "https://star.ohmynews.com/NWS_Web/OhmyStar/at_pg.aspx?CNTN_CD=A0003245742&PAGE_CD=N0002&BLCK_NO=&CMPT_CD=M0147",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "87c4993639ffe9c4",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "e158ea8c69568802",
-          "title": "Hungría aprueba más de 30 enmiendas legales para desbloquear los fondos europeos",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-24T01:15:00Z",
-          "url": "https://www.ideal.es/internacional/europa/hungria-aprueba-enmiendas-legales-desbloquear-fondos-europeos-20260623184933-ntrc.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "b475104b951c6693",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "8011fc16a1fbcef5",
-          "title": "Electromobilitate , servere AI , semiconductori , drone : legăturile industriale dintre ...",
-          "category": "drone",
-          "source": "GDELT_DOC",
+          "id": "ee1bf8eb78043f95",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
           "time": "2026-06-24T00:00:00Z",
-          "url": "https://www.zf.ro/business-international/electromobilitate-servere-ai-semiconductori-drone-legaturile-23181004",
+          "url": "https://www.cruisehive.com/norwegian-sun-sailing-gets-late-adjustment-due-to-propulsion-issues/211914",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "1c12bfc507bf5f87",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "5f0a4b6813b656da",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-24T00:00:00Z",
+          "url": "https://www.oneindia.com/international/journalist-who-exposed-putins-secret-relationship-with-kabaeva-dies-in-exile-8127989.html",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "3f0648fc433e95b6",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "98ac50559c3cceaf",
+          "title": "Яхно : На новий світопорядок впливатимуть не тільки країни - гегемони",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-24T08:15:00Z",
+          "url": "https://espreso.tv/poglyad-evroskeptiki-povoli-vidkhreshchuyutsya-vid-prorosiyskosti",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +148,17 @@
         }
       },
       {
-        "id": "475104d9c66783c7",
+        "id": "0f9c675e4ccd8ea7",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "8a07ff330fc129dd",
-          "title": "Selección Mexicana vs República Checa : cambios posibles",
+          "id": "7f0f37b8660e3b40",
+          "title": "Resumen Mundial 2026 | Colombia vuela , Inglaterra se complica y Ronaldo revive y se cabrea por Messi",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-23T23:45:00Z",
-          "url": "http://www.elmanana.com/deportes/futbol/seleccion-mexicana-vs-republica-checa-cambios-posibles/6150892",
+          "time": "2026-06-24T08:15:00Z",
+          "url": "https://www.elprogreso.es/articulo/mundial-futbol-2026/colombia-vuela-inglaterra-complica-ronaldo-revive-cabrea-messi/202606240804071980861.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,17 +178,17 @@
         }
       },
       {
-        "id": "a444846f831b9130",
+        "id": "7fe9f6124ae4c193",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "ceaf3470b66afab0",
-          "title": "Gödöllőn találkoztak a V4 - ek , Donald Tusk megköszönte Magyar Péternek , hogy visszahozta a reményt",
+          "id": "633f331b8adebcde",
+          "title": "Są naszym ulubionym sąsiadem . Liczba turystów rośnie o ponad 40 proc .",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-23T23:45:00Z",
-          "url": "https://nepszava.hu/3326951_v4-csucstalalkozo-sajtotajekoztato-godollo-magyar-peter-donald-tusk-robert-fico-andrej-babis",
+          "time": "2026-06-24T08:15:00Z",
+          "url": "https://natemat.pl/658345,sa-naszym-ulubionym-sasiadem-liczba-turystow-rosnie-o-ponad-40-proc",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -298,17 +208,107 @@
         }
       },
       {
-        "id": "02d27bd588503a68",
+        "id": "c3c75de9508b1bea",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "b370db03e9c893ac",
-          "title": "ЄС та Угорщина – Будапешт може скоротити заявку на позики SAFE – новини Європи",
+          "id": "012fa50a9eee1c2b",
+          "title": "The new test for property markets",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-23T23:45:00Z",
-          "url": "https://zn.ua/ukr/europe/jes-mozhe-oholositi-novij-raund-oboronnikh-kreditiv-cherez-uhorshchinu.html",
+          "time": "2026-06-24T08:15:00Z",
+          "url": "https://cyprus-mail.com/2026/06/24/the-new-test-for-property-markets",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "036b0ccf5331814f",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "93d6ede8df38eac3",
+          "title": "Vidlák předpověděl budoucnost stávkujících celebrit nejen z ČT | ParlamentniListy . cz – politika ze všech stran",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-24T08:15:00Z",
+          "url": "https://www.parlamentnilisty.cz/arena/rozhovory/Vidlak-predpovedel-budoucnost-stavkujicich-celebrit-nejen-z-CT-793177",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "ae872cd6f32e9dbb",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "62a20ee58899d25a",
+          "title": "Další útok medvěda na Slovensku : Muž skončil v nemocnici , zvíře zastřelili",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-24T08:00:00Z",
+          "url": "https://www.denik.cz/evropa/dalsi-utok-medveda-na-slovensku-muz-skoncil-v-nemocnici-zvire-zastrelili/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "e28686c049833a7a",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "580fd157876b3764",
+          "title": "台積電效應 台廠赴波蘭串聯 半導體金三角 | 國際",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-24T08:00:00Z",
+          "url": "https://news.ustv.com.tw/newsdetail/20260624A044?newsall=true&type=104",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

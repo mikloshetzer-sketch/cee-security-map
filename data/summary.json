@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-06-24T08:59:35Z",
+  "generated_utc": "2026-06-24T14:15:19Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1611 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 904 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Яхно : На новий світопорядок впливатимуть не тільки країни - гегемони.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Resumen Mundial 2026 | Colombia vuela , Inglaterra se complica y Ronaldo revive y se cabrea por Messi.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Są naszym ulubionym sąsiadem . Liczba turystów rośnie o ponad 40 proc ..",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 609.77; 7 napos változás: +7396%).",
-    "Trend: emelkedő (+1013%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3020, GDELT DOC 2482, direkt feed 387, USGS 0, GDACS 4.",
+    "Az infrastruktúra-közelségi modul 1734 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 950 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Kuhamo se u kućama : 94 milijuna ljudi danas će se pržiti na preko 35°C.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: В уряді Польщі вважають , що Навроцький хотів зірвати конференцію з відновлення.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Удары по России как Кремль оветит на массированные удары по России.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 662.19; 7 napos változás: +8478%).",
+    "Trend: emelkedő (+1141%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3100, GDELT DOC 2520, direkt feed 390, USGS 0, GDACS 4.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7396%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+8478%)."
   },
   "stats": {
-    "score_last7": 2691.698,
-    "score_prev7": 241.836,
-    "change_pct": 1013.03
+    "score_last7": 2855.59,
+    "score_prev7": 230.115,
+    "change_pct": 1140.94
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1611,
+    "last_24h_proximity_matches": 1734,
     "top_proximity": [
+      {
+        "id": "45c347f0d7e59e2c",
+        "level": "critical",
+        "score": 97.75,
+        "distance_km": 1.12,
+        "event": {
+          "id": "138cb15ae751fdbc",
+          "title": "Rzeszow-Jasionka, Podkarpackie, Poland",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-24T00:00:00Z",
+          "url": "https://www.adn.com/nation-world/2026/06/24/top-army-general-who-was-last-us-soldier-to-leave-afghanistan-is-suddenly-leaving-his-post/",
+          "lat": 50.1,
+          "lon": 22.0167,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-transport-rzeszow-airport",
+          "name": "Rzeszów-Jasionka Airport and Logistics Hub",
+          "country": "Poland",
+          "city": "Rzeszów",
+          "category": "transport",
+          "subtype": "airport_logistics_hub",
+          "criticality": 10.0,
+          "operator": "Airport / logistics operators",
+          "lat": 50.11,
+          "lon": 22.019,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "3d7ff91b26a44150",
         "level": "critical",
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "3f0648fc433e95b6",
+        "id": "b95f51459553f3e3",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "98ac50559c3cceaf",
-          "title": "Яхно : На новий світопорядок впливатимуть не тільки країни - гегемони",
+          "id": "999b8a88a1114981",
+          "title": "Kuhamo se u kućama : 94 milijuna ljudi danas će se pržiti na preko 35°C",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-24T08:15:00Z",
-          "url": "https://espreso.tv/poglyad-evroskeptiki-povoli-vidkhreshchuyutsya-vid-prorosiyskosti",
+          "time": "2026-06-24T13:15:00Z",
+          "url": "https://www.index.hr/vijesti/clanak/kuhamo-se-u-kucama-94-milijuna-ljudi-danas-ce-se-prziti-na-preko-35c/2806160.aspx?index_tid=1065714&index_ref=naslovnica_vijesti_ostalo_d_0",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "0f9c675e4ccd8ea7",
+        "id": "c57f9c581b664163",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "7f0f37b8660e3b40",
-          "title": "Resumen Mundial 2026 | Colombia vuela , Inglaterra se complica y Ronaldo revive y se cabrea por Messi",
+          "id": "40db897a33881d17",
+          "title": "В уряді Польщі вважають , що Навроцький хотів зірвати конференцію з відновлення",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-24T08:15:00Z",
-          "url": "https://www.elprogreso.es/articulo/mundial-futbol-2026/colombia-vuela-inglaterra-complica-ronaldo-revive-cabrea-messi/202606240804071980861.html",
+          "time": "2026-06-24T13:15:00Z",
+          "url": "https://uainfo.org/blognews/1782299781-v-uryadi-polshchi-vvazhayut-shcho-navrotskiy-hotiv-zirvati-konferentsiyu.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "7fe9f6124ae4c193",
+        "id": "d5f8b8ef394040df",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "633f331b8adebcde",
-          "title": "Są naszym ulubionym sąsiadem . Liczba turystów rośnie o ponad 40 proc .",
+          "id": "1ca76faec0b15544",
+          "title": "Удары по России как Кремль оветит на массированные удары по России",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-24T08:15:00Z",
-          "url": "https://natemat.pl/658345,sa-naszym-ulubionym-sasiadem-liczba-turystow-rosnie-o-ponad-40-proc",
+          "time": "2026-06-24T13:15:00Z",
+          "url": "https://glavred.info/war/kak-otvetit-kreml-na-udary-po-rossii-razvedka-poluchila-sekretnye-dokumenty-10775384.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "c3c75de9508b1bea",
+        "id": "e962f8c5006d36e2",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "012fa50a9eee1c2b",
-          "title": "The new test for property markets",
+          "id": "dd3a735366390698",
+          "title": "Zahlen , bitte ! Auf der Welt gibt es 11 . 422 GroÃŸstädte â€ was wir über sie wissen",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-24T08:15:00Z",
-          "url": "https://cyprus-mail.com/2026/06/24/the-new-test-for-property-markets",
+          "time": "2026-06-24T13:15:00Z",
+          "url": "https://www.heise.de/hintergrund/Zahlen-bitte-3-7-Milliarden-Menschen-leben-in-11-422-Grossstaedten-10962778.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "036b0ccf5331814f",
+        "id": "cf54a903923bab61",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "93d6ede8df38eac3",
-          "title": "Vidlák předpověděl budoucnost stávkujících celebrit nejen z ČT | ParlamentniListy . cz – politika ze všech stran",
+          "id": "a976ff45b7d2ca30",
+          "title": "Nowa Skoda Peaq nie będzie pogromcą Kodiaqa . Ale zjada go w jednej kwestii",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-24T08:15:00Z",
-          "url": "https://www.parlamentnilisty.cz/arena/rozhovory/Vidlak-predpovedel-budoucnost-stavkujicich-celebrit-nejen-z-CT-793177",
+          "time": "2026-06-24T13:15:00Z",
+          "url": "https://natemat.pl/658210,nowa-skoda-peaq-nie-bedzie-pogromca-kodiaqa-ale-zjada-go-w-jednej-kwestii",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "ae872cd6f32e9dbb",
+        "id": "d69df8a654122207",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "62a20ee58899d25a",
-          "title": "Další útok medvěda na Slovensku : Muž skončil v nemocnici , zvíře zastřelili",
+          "id": "195a06e58b64edcb",
+          "title": "Vala e të nxehtit zhvendoset drejt Evropës Qendrore , Gjermania më e prekur",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-24T08:00:00Z",
-          "url": "https://www.denik.cz/evropa/dalsi-utok-medveda-na-slovensku-muz-skoncil-v-nemocnici-zvire-zastrelili/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "e28686c049833a7a",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "580fd157876b3764",
-          "title": "台積電效應 台廠赴波蘭串聯 半導體金三角 | 國際",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-24T08:00:00Z",
-          "url": "https://news.ustv.com.tw/newsdetail/20260624A044?newsall=true&type=104",
+          "time": "2026-06-24T13:15:00Z",
+          "url": "https://zeri.info/bota/627580/vala-e-te-nxehtit-zhvendoset-drejt-evropes-qendrore-gjermania-me-e-prekur/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

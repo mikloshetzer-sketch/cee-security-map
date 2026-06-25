@@ -1,152 +1,32 @@
 {
-  "generated_utc": "2026-06-24T19:36:18Z",
+  "generated_utc": "2026-06-25T02:37:35Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1894 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1087 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: La familia real catarí compra la villa de las orgías de Berlusconi.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Brüsszel félig szembeköpi magát , hogy mentse a német ipart.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Partidos de extrema derecha en Europa : 23 % de los votantes los respalda.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 720.16; 7 napos változás: +9736%).",
-    "Trend: emelkedő (+1247%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3169, GDELT DOC 2527, direkt feed 381, USGS 0, GDACS 4.",
+    "Az infrastruktúra-közelségi modul 1380 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 793 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
+    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 664.10; 7 napos változás: +7326%).",
+    "Trend: emelkedő (+910%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2964, GDELT DOC 2393, direkt feed 380, USGS 0, GDACS 4.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+9736%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7326%)."
   },
   "stats": {
-    "score_last7": 2944.795,
-    "score_prev7": 218.564,
-    "change_pct": 1247.34
+    "score_last7": 2698.348,
+    "score_prev7": 267.102,
+    "change_pct": 910.23
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1894,
+    "last_24h_proximity_matches": 1380,
     "top_proximity": [
-      {
-        "id": "45c347f0d7e59e2c",
-        "level": "critical",
-        "score": 97.75,
-        "distance_km": 1.12,
-        "event": {
-          "id": "138cb15ae751fdbc",
-          "title": "Rzeszow-Jasionka, Podkarpackie, Poland",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-06-24T00:00:00Z",
-          "url": "https://www.adn.com/nation-world/2026/06/24/top-army-general-who-was-last-us-soldier-to-leave-afghanistan-is-suddenly-leaving-his-post/",
-          "lat": 50.1,
-          "lon": 22.0167,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-transport-rzeszow-airport",
-          "name": "Rzeszów-Jasionka Airport and Logistics Hub",
-          "country": "Poland",
-          "city": "Rzeszów",
-          "category": "transport",
-          "subtype": "airport_logistics_hub",
-          "criticality": 10.0,
-          "operator": "Airport / logistics operators",
-          "lat": 50.11,
-          "lon": 22.019,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "3d7ff91b26a44150",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "220fdcbfa747172f",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-06-24T00:00:00Z",
-          "url": "https://www.eurasiareview.com/24062026-infertility-increasing-and-affecting-ever-younger-russians-oped/",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "be7efb29af4f0407",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "ee1bf8eb78043f95",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-06-24T00:00:00Z",
-          "url": "https://www.cruisehive.com/norwegian-sun-sailing-gets-late-adjustment-due-to-propulsion-issues/211914",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1c12bfc507bf5f87",
-        "level": "critical",
-        "score": 89.42,
-        "distance_km": 0.32,
-        "event": {
-          "id": "5f0a4b6813b656da",
-          "title": "Riga, Riga, Latvia",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-06-24T00:00:00Z",
-          "url": "https://www.oneindia.com/international/journalist-who-exposed-putins-secret-relationship-with-kabaeva-dies-in-exile-8127989.html",
-          "lat": 56.95,
-          "lon": 24.1,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "lv-transport-riga-port",
-          "name": "Port of Riga",
-          "country": "Latvia",
-          "city": "Riga",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Freeport of Riga Authority",
-          "lat": 56.949,
-          "lon": 24.105,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
       {
         "id": "9b0a81eb8db0183f",
         "level": "critical",
@@ -309,6 +189,126 @@
           "source": "GDELT_DOC",
           "time": "2026-06-24T18:30:00Z",
           "url": "https://www1.folha.uol.com.br/mercado/2026/06/cinco-paises-fora-da-zona-do-euro-nao-estao-prontos-para-aderir-a-moeda-unica-diz-comissao.shtml",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "6edff29177c1cf64",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "e209550cb0cf81cc",
+          "title": "România nu este pregătită să adopte moneda euro . Comisia Europeană : „ Nu îndeplinește toate criteriile .",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-24T18:30:00Z",
+          "url": "https://www.monitorulcj.ro/economie/138446-romania-nu-este-pregatita-sa-adopte-moneda-euro-comisia-europeana-nu-indeplineste-toate-criteriile",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "c82d839ec30029a3",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "fb9f34014ba2e3c4",
+          "title": "The Future Of Kanye West San Antonio Concert Just Became Clearer",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-24T18:30:00Z",
+          "url": "https://wibb.iheart.com/content/2026-06-24-big-update-on-kanye-wests-controversial-texas-concert/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "9441085f16e44ec1",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "a7035267e1e2e1f3",
+          "title": "Venden la mansión de Silvio Berlusconi en Cerdeña , sede de fiestas bunga - bunga , por casi US$ 400 millones",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-24T18:30:00Z",
+          "url": "https://www.elpais.com.uy/mundo/venden-la-mansion-de-silvio-berlusconi-en-cerdena-sede-de-fiestas-bunga-bunga-por-casi-us-400-millones",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "4c857a936c4ec215",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "d42d1611b7f1dc3a",
+          "title": "La familia real catarí compra la villa de las orgías de Berlusconi",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-24T18:30:00Z",
+          "url": "https://www.diariosur.es/internacional/europa/familia-real-catari-compra-villa-orgias-berlusconi-20260624200529-ntrc.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

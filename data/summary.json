@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-26T14:14:16Z",
+  "generated_utc": "2026-06-26T19:35:40Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1228 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 550 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 677.09; 7 napos változás: +7606%).",
-    "Trend: emelkedő (+1105%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3120, GDELT DOC 2474, direkt feed 378, USGS 0, GDACS 4.",
+    "Az infrastruktúra-közelségi modul 1262 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 576 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Profound transformations , current state of flux , growing convergences : Jaishankar highlights India global role in meeting with European journalists.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ayuda humanitaria en Venezuela : qué países mandaron brigadas tras los terremotos :: Diario Pregon de Jujuy.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: El mundo moviliza ayuda humanitaria para Venezuela tras los terremotos.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 725.37; 7 napos változás: +8606%).",
+    "Trend: emelkedő (+1206%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3173, GDELT DOC 2536, direkt feed 372, USGS 0, GDACS 4.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7606%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+8606%)."
   },
   "stats": {
-    "score_last7": 2847.031,
-    "score_prev7": 236.23,
-    "change_pct": 1105.2
+    "score_last7": 2929.064,
+    "score_prev7": 224.356,
+    "change_pct": 1205.54
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1228,
+    "last_24h_proximity_matches": 1262,
     "top_proximity": [
       {
         "id": "83f093d8a70ff078",
@@ -148,17 +148,77 @@
         }
       },
       {
-        "id": "2ea5ceda30c3836a",
+        "id": "4feb9676e40072b4",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "1b64b03354b919bb",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-26T00:00:00Z",
+          "url": "https://bnn-news.com/bnn-in-focus-political-analyst-explains-what-riga-city-councils-falling-approval-ratings-really-mean-281544",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "dff976ef83b70a77",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "db90518d09d63dd0",
+          "title": "Riga, Riga, Latvia",
+          "category": "police",
+          "source": "GDELT",
+          "time": "2026-06-26T00:00:00Z",
+          "url": "https://www.yahoo.com/news/world/articles/latvian-court-jails-man-woman-154226114.html",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "9ea2805085b31404",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "d1a880aaea9256d5",
-          "title": "Відсторонення від НАТО : чому атака на президента Павела веде до орбанізації Чехії",
+          "id": "53794a7d56a2c438",
+          "title": "Profound transformations , current state of flux , growing convergences : Jaishankar highlights India global role in meeting with European journalists",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-25T19:15:00Z",
-          "url": "https://www.eurointegration.com.ua/articles/2026/06/25/7240319/",
+          "time": "2026-06-26T19:00:00Z",
+          "url": "http://www.cambodiantimes.com/news/279149913/profound-transformations-current-state-of-flux-growing-convergences-jaishankar-highlights-india-global-role-in-meeting-with-european-journalists",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +238,17 @@
         }
       },
       {
-        "id": "470c7a3fdf881658",
+        "id": "4742662d30ebc0fa",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "faa7744b8e6e568e",
-          "title": "AP Strange SummaryBrief at 12 : 00 p . m . EDT",
+          "id": "e7a74c5c0a5601ee",
+          "title": "Ayuda humanitaria en Venezuela : qué países mandaron brigadas tras los terremotos :: Diario Pregon de Jujuy",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-25T19:15:00Z",
-          "url": "https://www.ktvo.com/news/nation-world/ap-strange-summarybrief-at-12-00-p-m-edt/article_ed49f78c-a22a-54de-a66f-844a22f14460.html",
+          "time": "2026-06-26T19:00:00Z",
+          "url": "https://www.pregon.com.ar/nota/-67808/2026/06/ayuda-humanitaria-en-venezuela--que-paises-mandaron-brigadas-tras-los-terremotos",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +268,17 @@
         }
       },
       {
-        "id": "141b33df73b20044",
+        "id": "81548eeaa7c233c4",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "41683ea3de660a8a",
-          "title": "Reporta SSC 28 detenidos y 5 personas lesionadas en festejos mundialistas en CDMX – Periódico Zócalo | Noticias de Saltillo , Torreón , Piedras Negras , Monclova , Acuña",
-          "category": "infrastructure",
+          "id": "36bcf569dd17a574",
+          "title": "El mundo moviliza ayuda humanitaria para Venezuela tras los terremotos",
+          "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-25T19:15:00Z",
-          "url": "https://www.zocalo.com.mx/reporta-ssc-28-detenidos-y-5-personas-lesionadas-en-festejos-mundialistas-en-cdmx/",
+          "time": "2026-06-26T19:00:00Z",
+          "url": "https://cronicadelquindio.com/actualidad/mundo/mundo-moviliza-ayuda-humanitaria-para-venezuela-tras-terremotos/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,77 +298,17 @@
         }
       },
       {
-        "id": "6808fe357f702a80",
+        "id": "b3857970f8b0e0c5",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e4f9252b9c7b815d",
-          "title": "Punho de Mahin confirma primeira turnê internacional",
+          "id": "560f1e2331144667",
+          "title": "给你点 颜色 ， 来看看大美青海 - 华侨网",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-25T19:15:00Z",
-          "url": "https://billboard.com.br/punho-de-mahin-turne-internacional-2026/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "25eb4c2bd40c4920",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "06f74c59ede3637d",
-          "title": "У Варшаві розбився літак , є жертви",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-25T19:15:00Z",
-          "url": "https://www.eurointegration.com.ua/news/2026/06/25/7240406/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "af17cfcc32847bcd",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "31d505d1d4b533a0",
-          "title": "Vacek završil na mistrovství republiky cyklistů vítězný hattrick v časovce",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-25T19:15:00Z",
-          "url": "https://www.ceskenoviny.cz/zpravy/vacek-zavrsil-na-mistrovstvi-republiky-cyklistu-vitezny-hattrick-v-casovce-/2843465",
+          "time": "2026-06-26T19:00:00Z",
+          "url": "https://www.chinesepress.com/archives/173889",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

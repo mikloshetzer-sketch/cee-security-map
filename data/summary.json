@@ -1,62 +1,32 @@
 {
-  "generated_utc": "2026-06-27T02:33:39Z",
+  "generated_utc": "2026-06-27T08:33:10Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 805 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 397 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Internet Exchange / Digital Hub (Poland) – 2.5 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Budapest Internet Exchange (Hungary) – 3.3 km-re ettől: Budapest, Budapest, Hungary.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 677.96; 7 napos változás: +8726%).",
-    "Trend: emelkedő (+1031%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3069, GDELT DOC 2497, direkt feed 372, USGS 0, GDACS 4.",
+    "Az infrastruktúra-közelségi modul 749 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 380 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Невтерпёж : Прибалтика требует от ЕС ускорить запрет на российскую нефть.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Festival do Atlântico ilumina agenda de sábado na Madeira.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Перемога над Москвою під Конотоп 367 років тому : урок XVII століття для України тепер.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 636.01; 7 napos változás: +8671%).",
+    "Trend: emelkedő (+1082%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3086, GDELT DOC 2543, direkt feed 373, USGS 0, GDACS 4.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+8726%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+8671%)."
   },
   "stats": {
-    "score_last7": 2728.923,
-    "score_prev7": 241.362,
-    "change_pct": 1030.63
+    "score_last7": 2693.801,
+    "score_prev7": 227.833,
+    "change_pct": 1082.36
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 805,
+    "last_24h_proximity_matches": 749,
     "top_proximity": [
-      {
-        "id": "9ea2805085b31404",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "53794a7d56a2c438",
-          "title": "Profound transformations , current state of flux , growing convergences : Jaishankar highlights India global role in meeting with European journalists",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-26T19:00:00Z",
-          "url": "http://www.cambodiantimes.com/news/279149913/profound-transformations-current-state-of-flux-growing-convergences-jaishankar-highlights-india-global-role-in-meeting-with-european-journalists",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
       {
         "id": "4742662d30ebc0fa",
         "level": "critical",
@@ -178,36 +148,6 @@
         }
       },
       {
-        "id": "c2cca6160ce17f45",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "23ecf0c6a6ee7fbf",
-          "title": "Rusko chystá vojenské provokace v Pobaltí nebo v Polsku",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-26T18:45:00Z",
-          "url": "https://www.novinky.cz/clanek/valka-na-ukrajine-rusko-chysta-vojenske-provokace-v-pobalti-nebo-v-polsku-40585133",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
         "id": "272e0c1f25c822be",
         "level": "critical",
         "score": 88.57,
@@ -309,6 +249,66 @@
           "source": "GDELT_DOC",
           "time": "2026-06-26T17:45:00Z",
           "url": "https://www.prensa-latina.cu/2026/06/26/segundo-boletin-de-deportes-776/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "57b9c4bd67d45587",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "3d1bc5f0ebbc805d",
+          "title": "Winners Announced at 31st Shanghai TV Festival Magnolia Awards",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-26T17:45:00Z",
+          "url": "https://www.prnewswire.com/news-releases/winners-announced-at-31st-shanghai-tv-festival-magnolia-awards-302812158.html",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "9c34d7e765a23726",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "ca6cee243a9238cd",
+          "title": "Enstrom Helicopter Corporation strengthens collaboration with European partners",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-26T16:45:00Z",
+          "url": "https://verticalmag.com/press-releases/enstrom-helicopter-corporation-strengthens-collaboration-with-european-partners/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

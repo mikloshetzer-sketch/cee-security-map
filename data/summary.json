@@ -1,44 +1,74 @@
 {
-  "generated_utc": "2026-06-27T08:33:10Z",
+  "generated_utc": "2026-06-27T13:18:23Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 749 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 380 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Невтерпёж : Прибалтика требует от ЕС ускорить запрет на российскую нефть.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Festival do Atlântico ilumina agenda de sábado na Madeira.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Перемога над Москвою під Конотоп 367 років тому : урок XVII століття для України тепер.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 636.01; 7 napos változás: +8671%).",
-    "Trend: emelkedő (+1082%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3086, GDELT DOC 2543, direkt feed 373, USGS 0, GDACS 4.",
+    "Az infrastruktúra-közelségi modul 1190 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 612 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Українська компанія представила броньовану ремонтно - евакуаційну машину INGUAR - 4.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Canicule en Europe : plus de 35°C prévus pour au moins 193 millions de personnes ce samedi , en hausse.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Records tumble as European heatwave moves east.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 693.13; 7 napos változás: +9920%).",
+    "Trend: emelkedő (+1177%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3124, GDELT DOC 2584, direkt feed 372, USGS 0, GDACS 4.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+8671%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+9920%)."
   },
   "stats": {
-    "score_last7": 2693.801,
-    "score_prev7": 227.833,
-    "change_pct": 1082.36
+    "score_last7": 2778.589,
+    "score_prev7": 217.642,
+    "change_pct": 1176.68
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 749,
+    "last_24h_proximity_matches": 1190,
     "top_proximity": [
       {
-        "id": "4742662d30ebc0fa",
+        "id": "fc67771c89e739b2",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "21710c03558b621b",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-27T00:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260626-estonia-mfa01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "b2fca707f62b40a8",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e7a74c5c0a5601ee",
-          "title": "Ayuda humanitaria en Venezuela : qué países mandaron brigadas tras los terremotos :: Diario Pregon de Jujuy",
+          "id": "5fce59ee416e6a0f",
+          "title": "Українська компанія представила броньовану ремонтно - евакуаційну машину INGUAR - 4",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-26T19:00:00Z",
-          "url": "https://www.pregon.com.ar/nota/-67808/2026/06/ayuda-humanitaria-en-venezuela--que-paises-mandaron-brigadas-tras-los-terremotos",
+          "time": "2026-06-27T12:45:00Z",
+          "url": "https://www.facenews.ua/news/2026/534437/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,17 +88,17 @@
         }
       },
       {
-        "id": "81548eeaa7c233c4",
+        "id": "aa38be0dc17267f8",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "36bcf569dd17a574",
-          "title": "El mundo moviliza ayuda humanitaria para Venezuela tras los terremotos",
+          "id": "c1f48c59ca5da485",
+          "title": "Canicule en Europe : plus de 35°C prévus pour au moins 193 millions de personnes ce samedi , en hausse",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-26T19:00:00Z",
-          "url": "https://cronicadelquindio.com/actualidad/mundo/mundo-moviliza-ayuda-humanitaria-para-venezuela-tras-terremotos/",
+          "time": "2026-06-27T12:45:00Z",
+          "url": "https://www.laprovence.com/article/societe/12707414937021/canicule-en-europe-plus-de-35-c-prevus-pour-au-moins-193-millions-de-personnes-ce-samedi-en-hausse",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +118,17 @@
         }
       },
       {
-        "id": "b3857970f8b0e0c5",
+        "id": "58cb241789159294",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "560f1e2331144667",
-          "title": "给你点 颜色 ， 来看看大美青海 - 华侨网",
+          "id": "f17dca6f75b83e83",
+          "title": "Records tumble as European heatwave moves east",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-26T19:00:00Z",
-          "url": "https://www.chinesepress.com/archives/173889",
+          "time": "2026-06-27T12:45:00Z",
+          "url": "https://economictimes.indiatimes.com/news/international/world-news/records-tumble-as-european-heatwave-moves-east/articleshow/132034042.cms",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "fd9da84000b42e3b",
+        "id": "e5be58669a6bb2ef",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "da51d19f2bbd5c75",
-          "title": "The best European festivals in July 2026",
+          "id": "f059ae5e7c28276e",
+          "title": "Новая коалиция против Украины в ЕС : опять рука Москвы ?",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-26T18:45:00Z",
-          "url": "https://www.skiddle.com/news/all/Skiddles-big-fat-festival-guide-Europe-edition---July/61777/",
+          "time": "2026-06-27T12:30:00Z",
+          "url": "https://www.mk.ru/politics/2026/06/27/novaya-koaliciya-protiv-ukrainy-v-es-opyat-ruka-moskvy.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "272e0c1f25c822be",
+        "id": "7ad643680a31e187",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "b6a3ccf501db43a2",
-          "title": "Nem csak a magyar , de a külföldi befektetők is sorban állnak a forintos állampapírokért",
+          "id": "c55956d562ab6a23",
+          "title": "Polska kupuje latające cysterny . To może być przełom dla armii",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-26T18:30:00Z",
-          "url": "https://www.economx.hu/befektetes/2026/06/26/allampapir-befektetes-allomanyok-hozamok/",
+          "time": "2026-06-27T12:30:00Z",
+          "url": "https://wiadomosci.wp.pl/polska-kupuje-latajace-cysterny-to-moze-byc-przelom-dla-armii-7300970690697312a",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "e00f31e09a9fefe9",
+        "id": "e35cab61d5464359",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c0f4046c8dc80a38",
-          "title": "Ziemowit Szczerek : W rozmowie z Ukraińcami wyszliśmy na frajerów",
+          "id": "e446bf4d523cf5f6",
+          "title": "Panzer fahren auf der Autobahn mit bis zu 60 km / h : Autofahrer filmten sie mit ihren Handys",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-26T18:30:00Z",
-          "url": "https://dorzeczy.pl/opinie/906946/ziemowit-szczerek-w-rozmowie-z-ukraincami-wyszlismy-na-frajerow.html",
+          "time": "2026-06-27T12:30:00Z",
+          "url": "https://www.focus.de/politik/ausland/panzer-fahren-auf-der-autobahn-mit-bis-zu-60-km-h-autofahrer-filmten-sie-mit-ihren-handys_a45dec54-4cea-45e2-a98c-9f860ec546ab.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "4823093eb47857d8",
+        "id": "1d896862774a9f27",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "69bb2c4637f31c2d",
-          "title": "InfoBAN | Kicillof se reunió con el embajador de la Unión Europea y representantes diplomáticos de países del bloque regional",
+          "id": "527f863db926b44b",
+          "title": "Nie pomaga . Lawina komentarzy po tym , co zrobił mer Lwowa",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-26T17:45:00Z",
-          "url": "https://www.infoban.com.ar/23/06/2026/kicillof-se-reunio-con-el-embajador-de-la-union-europea-y-representantes-diplomaticos-de-paises-del-bloque-regional/",
+          "time": "2026-06-27T12:30:00Z",
+          "url": "https://wiadomosci.wp.pl/nie-pomaga-lawina-komentarzy-po-tym-co-zrobil-mer-lwowa-7301363738626272a",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "679a20241e0bd578",
+        "id": "83df13f8deaaef13",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c1b854b50436a02d",
-          "title": "Segundo boletín de deportes - Noticias Prensa Latina",
-          "category": "infrastructure",
+          "id": "e9ebc1a37f763fcc",
+          "title": "V pondělí vstoupí do Wimbledonu šest českých tenistů včetně Krejčíkové a Muchové",
+          "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-26T17:45:00Z",
-          "url": "https://www.prensa-latina.cu/2026/06/26/segundo-boletin-de-deportes-776/",
+          "time": "2026-06-27T12:15:00Z",
+          "url": "https://www.ceskenoviny.cz/zpravy/v-pondeli-vstoupi-do-wimbledonu-sest-ceskych-tenistu-vcetne-krejcikove-a-muchove/2844433",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "57b9c4bd67d45587",
+        "id": "c7b5c8965090ccf6",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3d1bc5f0ebbc805d",
-          "title": "Winners Announced at 31st Shanghai TV Festival Magnolia Awards",
+          "id": "401d9acfe682d5d0",
+          "title": "El dos sin timonel sevillano se gana en Lucerna el derecho a luchar por los metales",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-26T17:45:00Z",
-          "url": "https://www.prnewswire.com/news-releases/winners-announced-at-31st-shanghai-tv-festival-magnolia-awards-302812158.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "9c34d7e765a23726",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "ca6cee243a9238cd",
-          "title": "Enstrom Helicopter Corporation strengthens collaboration with European partners",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-26T16:45:00Z",
-          "url": "https://verticalmag.com/press-releases/enstrom-helicopter-corporation-strengthens-collaboration-with-european-partners/",
+          "time": "2026-06-27T12:15:00Z",
+          "url": "https://www.abc.es/deportes/sevilla/dos-timonel-sevillano-gana-lucerna-derecho-luchar-20260627133843-nts.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

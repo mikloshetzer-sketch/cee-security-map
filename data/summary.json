@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-06-27T13:18:23Z",
+  "generated_utc": "2026-06-27T19:13:33Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1190 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 612 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Українська компанія представила броньовану ремонтно - евакуаційну машину INGUAR - 4.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Canicule en Europe : plus de 35°C prévus pour au moins 193 millions de personnes ce samedi , en hausse.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Records tumble as European heatwave moves east.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 693.13; 7 napos változás: +9920%).",
-    "Trend: emelkedő (+1177%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3124, GDELT DOC 2584, direkt feed 372, USGS 0, GDACS 4.",
+    "Az infrastruktúra-közelségi modul 1306 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 721 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Upały w Polsce i rekordowe temperatury w Europie . Nawet 42 st . C.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ο καύσωνας σαρώνει την Ευρώπη : Σπάει η άσφαλτος στη Γερμανία - Αυξάνονται οι νεκροί στη Γαλλία [ βίντεο ].",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 保时捷拟将卡宴SUV生产线迁回德国 降薪成转移先决条件 - 智能汽车 - ITBear科技资讯.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 736.04; 7 napos változás: +11177%).",
+    "Trend: emelkedő (+1254%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3155, GDELT DOC 2572, direkt feed 372, USGS 0, GDACS 4.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+9920%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+11177%)."
   },
   "stats": {
-    "score_last7": 2778.589,
-    "score_prev7": 217.642,
-    "change_pct": 1176.68
+    "score_last7": 2784.023,
+    "score_prev7": 205.586,
+    "change_pct": 1254.19
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1190,
+    "last_24h_proximity_matches": 1306,
     "top_proximity": [
       {
         "id": "fc67771c89e739b2",
@@ -58,17 +58,47 @@
         }
       },
       {
-        "id": "b2fca707f62b40a8",
+        "id": "8525a307fdf08586",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "65244e09cd2bf26d",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-27T00:00:00Z",
+          "url": "https://www.dailykos.com/stories/2026/6/27/800061804/community/cnn-anchor-calls-out-the-emperor-has-no-clothes/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "e68eb452e727fc1f",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "5fce59ee416e6a0f",
-          "title": "Українська компанія представила броньовану ремонтно - евакуаційну машину INGUAR - 4",
+          "id": "cd3110dc29022591",
+          "title": "Upały w Polsce i rekordowe temperatury w Europie . Nawet 42 st . C",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-27T12:45:00Z",
-          "url": "https://www.facenews.ua/news/2026/534437/",
+          "time": "2026-06-27T18:45:00Z",
+          "url": "https://wiadomosci.onet.pl/kraj/upaly-w-polsce-i-rekordowe-temperatury-w-europie-nawet-42-st-c/k9spqp5",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +118,17 @@
         }
       },
       {
-        "id": "aa38be0dc17267f8",
+        "id": "25fbf87c543ae39c",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c1f48c59ca5da485",
-          "title": "Canicule en Europe : plus de 35°C prévus pour au moins 193 millions de personnes ce samedi , en hausse",
+          "id": "fbc9e9d3f5b77e13",
+          "title": "Ο καύσωνας σαρώνει την Ευρώπη : Σπάει η άσφαλτος στη Γερμανία - Αυξάνονται οι νεκροί στη Γαλλία [ βίντεο ]",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-27T12:45:00Z",
-          "url": "https://www.laprovence.com/article/societe/12707414937021/canicule-en-europe-plus-de-35-c-prevus-pour-au-moins-193-millions-de-personnes-ce-samedi-en-hausse",
+          "time": "2026-06-27T18:30:00Z",
+          "url": "https://www.efsyn.gr/kosmos/1415176/o-kaysonas-saronei-tin-eyropi-spaei-i-asfaltos-sti-germania-ayxanontai-oi-nekroi-sti-gallia-vinteo/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "58cb241789159294",
+        "id": "03934ed1178bcd38",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "f17dca6f75b83e83",
-          "title": "Records tumble as European heatwave moves east",
+          "id": "6cd4ead1c4bacefe",
+          "title": "保时捷拟将卡宴SUV生产线迁回德国 降薪成转移先决条件 - 智能汽车 - ITBear科技资讯",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-27T12:45:00Z",
-          "url": "https://economictimes.indiatimes.com/news/international/world-news/records-tumble-as-european-heatwave-moves-east/articleshow/132034042.cms",
+          "time": "2026-06-27T18:30:00Z",
+          "url": "https://www.itbear.com.cn/html/2026-06/1416531.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "e5be58669a6bb2ef",
+        "id": "1001875b49558318",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "f059ae5e7c28276e",
-          "title": "Новая коалиция против Украины в ЕС : опять рука Москвы ?",
+          "id": "e0268a2fccdfce36",
+          "title": "Finn Open and U29 European Championship 2026 at Gdynia , Poland",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-27T12:30:00Z",
-          "url": "https://www.mk.ru/politics/2026/06/27/novaya-koaliciya-protiv-ukrainy-v-es-opyat-ruka-moskvy.html",
+          "time": "2026-06-27T18:30:00Z",
+          "url": "https://www.sail-world.com/news/297489/Finn-Open-and-U29-Europeans-at-Gdynia-Overall",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "7ad643680a31e187",
+        "id": "73e877f1f1cb1bc7",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c55956d562ab6a23",
-          "title": "Polska kupuje latające cysterny . To może być przełom dla armii",
+          "id": "618c0184c6bb2a38",
+          "title": "Novinky . cz - nejčtenější zprávy na českém internetu",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-27T12:30:00Z",
-          "url": "https://wiadomosci.wp.pl/polska-kupuje-latajace-cysterny-to-moze-byc-przelom-dla-armii-7300970690697312a",
+          "time": "2026-06-27T18:30:00Z",
+          "url": "https://www.novinky.cz/?timeline--pageItem=40585388",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "e35cab61d5464359",
+        "id": "d2b36ff244103ec0",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e446bf4d523cf5f6",
-          "title": "Panzer fahren auf der Autobahn mit bis zu 60 km / h : Autofahrer filmten sie mit ihren Handys",
+          "id": "0b3e984d0b39be27",
+          "title": "Je za tím víc , než se zdá | 27 . 6 . 2026 | Jiří Hlavenka",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-27T12:30:00Z",
-          "url": "https://www.focus.de/politik/ausland/panzer-fahren-auf-der-autobahn-mit-bis-zu-60-km-h-autofahrer-filmten-sie-mit-ihren-handys_a45dec54-4cea-45e2-a98c-9f860ec546ab.html",
+          "time": "2026-06-27T18:30:00Z",
+          "url": "https://www.blisty.cz/art/134363-je-za-tim-vic-nez-se-zda.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "1d896862774a9f27",
+        "id": "c1d27e102132af45",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "527f863db926b44b",
-          "title": "Nie pomaga . Lawina komentarzy po tym , co zrobił mer Lwowa",
+          "id": "53160255b5a23086",
+          "title": "Знак STOP уже бачить швидкість на залізничних переїздах",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-27T12:30:00Z",
-          "url": "https://wiadomosci.wp.pl/nie-pomaga-lawina-komentarzy-po-tym-co-zrobil-mer-lwowa-7301363738626272a",
+          "time": "2026-06-27T18:15:00Z",
+          "url": "https://24tv.ua/auto/znak_stop_uzhe_bachyt_shvydkist_yevropa_prydyvliaietsia_do_polskoho_nou_khau_dlia_zaliznychnykh_pereizdiv_n73543",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "83df13f8deaaef13",
+        "id": "b91d9370806bcc92",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e9ebc1a37f763fcc",
-          "title": "V pondělí vstoupí do Wimbledonu šest českých tenistů včetně Krejčíkové a Muchové",
+          "id": "a62c37d5e5beb8c2",
+          "title": "Hitzewelle in Deutschland : Autobahn reißt auf – NRW schränkt Zugverkehr ein",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-27T12:15:00Z",
-          "url": "https://www.ceskenoviny.cz/zpravy/v-pondeli-vstoupi-do-wimbledonu-sest-ceskych-tenistu-vcetne-krejcikove-a-muchove/2844433",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "c7b5c8965090ccf6",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "401d9acfe682d5d0",
-          "title": "El dos sin timonel sevillano se gana en Lucerna el derecho a luchar por los metales",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-27T12:15:00Z",
-          "url": "https://www.abc.es/deportes/sevilla/dos-timonel-sevillano-gana-lucerna-derecho-luchar-20260627133843-nts.html",
+          "time": "2026-06-27T18:15:00Z",
+          "url": "https://www.t-online.de/nachrichten/panorama/wetter/id_101310584/hitzewelle-in-deutschland-autobahn-reisst-auf-nrw-schraenkt-zugverkehr-ein.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

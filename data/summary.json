@@ -1,44 +1,134 @@
 {
-  "generated_utc": "2026-06-29T10:29:41Z",
+  "generated_utc": "2026-06-29T15:39:31Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 893 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 429 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: موجة حر تاريخية تجتاح أوروبا .. أكثر من 1300 وفاة وتحذيرات من تغير المناخ.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Orlen rozpoczął testową sprzedaż nowego paliwa na Słowacji.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Caldo record in Europa , dalla Germania alla Francia : i Paesi con le temperature più alte.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 598.52; 7 napos változás: +6701%).",
-    "Trend: emelkedő (+1123%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2940, GDELT DOC 2624, direkt feed 373, USGS 0, GDACS 2.",
+    "Az infrastruktúra-közelségi modul 1237 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 687 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Teet Kalmus : Ukraina võimekus rakettide alal järjest kasvab.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Slovensko prepisuje mapu sveta . Ruské palivo vložili do štvrtého bloku Mochoviec , stávame sa jadrovým lídrom.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: La canicule affecte lEurope centrale et orientale.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 651.33; 7 napos változás: +6872%).",
+    "Trend: emelkedő (+1220%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 3021, GDELT DOC 2662, direkt feed 370, USGS 0, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+6701%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6872%)."
   },
   "stats": {
-    "score_last7": 2470.189,
-    "score_prev7": 202.031,
-    "change_pct": 1122.68
+    "score_last7": 2540.476,
+    "score_prev7": 192.477,
+    "change_pct": 1219.88
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 893,
+    "last_24h_proximity_matches": 1237,
     "top_proximity": [
       {
-        "id": "498d5714c04f8146",
+        "id": "cc1eaccc196bde7e",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "00667931ca63ed9e",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-29T00:00:00Z",
+          "url": "https://www.kyivpost.com/post/79209",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "161f3fbdc483a757",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "7726e0d9a11e6618",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-29T00:00:00Z",
+          "url": "https://bnn-news.com/roslikovs-wanted-by-authorities-to-run-in-latvias-15th-saeima-elections-281581",
+          "lat": 56.95000000000001,
+          "lon": 24.100000000000005,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "87cf3ebad8638121",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "56881ad3ca2f74cf",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-29T00:00:00Z",
+          "url": "https://bnn-news.com/how-much-does-the-new-airbaltic-ceo-earn-hildens-and-gausss-salaries-compared-281578",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "7beb5ecd6e899ce6",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "02c108b421032e77",
-          "title": "موجة حر تاريخية تجتاح أوروبا .. أكثر من 1300 وفاة وتحذيرات من تغير المناخ",
+          "id": "a1506e0daed24fc3",
+          "title": "Teet Kalmus : Ukraina võimekus rakettide alal järjest kasvab",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "https://www.almontasaf.net/news144077.html",
+          "time": "2026-06-29T15:15:00Z",
+          "url": "https://www.eesti.ca/teet-kalmus-ukraina-voimekus-rakettide-alal-jarjest-kasvab/article62521",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,17 +148,17 @@
         }
       },
       {
-        "id": "58a1384aed3e175f",
+        "id": "402c4bf28ff3a067",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "ace6489c70fe3960",
-          "title": "Orlen rozpoczął testową sprzedaż nowego paliwa na Słowacji",
+          "id": "63f3ecfd3908357a",
+          "title": "Slovensko prepisuje mapu sveta . Ruské palivo vložili do štvrtého bloku Mochoviec , stávame sa jadrovým lídrom",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "https://www.wnp.pl/energia/orlen-rozpoczal-testowa-sprzedaz-nowego-paliwa-na-slowacji,1076549.html",
+          "time": "2026-06-29T14:00:00Z",
+          "url": "https://hnonline.sk/finweb/ekonomika/96289146-slovensko-prepisuje-mapu-sveta-ruske-palivo-vlozili-do-stvrteho-bloku-mochoviec-stavame-sa-jadrovym-lidrom",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +178,17 @@
         }
       },
       {
-        "id": "3c87de5d3512f531",
+        "id": "67bdf681bdc2604a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "49ea433453397e39",
-          "title": "Caldo record in Europa , dalla Germania alla Francia : i Paesi con le temperature più alte",
+          "id": "f34d27b094a513f4",
+          "title": "La canicule affecte lEurope centrale et orientale",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "https://www.key4biz.it/caldo-record-in-europa-dalla-germania-alla-francia-i-paesi-con-le-temperature-piu-alte/577816/",
+          "time": "2026-06-29T14:00:00Z",
+          "url": "https://www.lapresse.ca/international/europe/2026-06-29/la-canicule-affecte-l-europe-centrale-et-orientale.php",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +208,17 @@
         }
       },
       {
-        "id": "bc4477ee89f17e9c",
+        "id": "f8fe5b6821a90edc",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "07b44d768772f966",
-          "title": "7h . Incêndio dominado em Freixo de Espada à Cinta",
-          "category": "other",
+          "id": "ddbe4a6c3d9b85ec",
+          "title": "Ukraine Battered Energy Grid Braces for Intense Heat",
+          "category": "energy",
           "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "https://observador.pt/programas/noticiario/as-noticias-das-7h-2428/",
+          "time": "2026-06-29T14:00:00Z",
+          "url": "https://www.kyivpost.com/post/79194",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +238,17 @@
         }
       },
       {
-        "id": "0041c6341e864cd2",
+        "id": "570ef9f3f1f61452",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "ee38f166a2240042",
-          "title": "Caldo vittime record in Europa Perché le notti calde sono pericolose per la salute",
+          "id": "14fda7f0935bb7e4",
+          "title": "因應熱浪狂襲 德推涼爽地圖 . 義靠智慧手環 - 國際",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "https://www.zazoom.it/2026-06-29/caldo-vittime-record-in-europa-perche-le-notti-calde-sono-pericolose-per-la-salute/19401441/",
+          "time": "2026-06-29T14:00:00Z",
+          "url": "https://news.cts.com.tw/cts/international/202606/202606293049520.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +268,17 @@
         }
       },
       {
-        "id": "5e61c066fa4c54b0",
+        "id": "5bac083915b5d6bb",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "785218370d10e16d",
-          "title": "أجهزة التبريد الصينية تحقق مبيعات قياسية في أوروبا",
+          "id": "d332d627369233d2",
+          "title": "Canicule : lEurope centrale à la peine avec plus de 35°C",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "http://arabic.people.com.cn/n3/2026/0629/c31659-20472203.html",
+          "time": "2026-06-29T14:00:00Z",
+          "url": "https://www.martinique.franceantilles.fr/actualite/international/canicule-leurope-centrale-a-la-peine-avec-plus-de-35c-1084415.php",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,107 +298,17 @@
         }
       },
       {
-        "id": "fb46adf7ac734889",
+        "id": "92a703e1a4418c81",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c0dc64eb2a3388b3",
-          "title": "Nieruchomości premium jako inwestycja , a nie zakupy na pokaz",
+          "id": "74d6e6a0c27a1cd1",
+          "title": "排队抢购 ， 中国空调一机难求",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "https://www.parkiet.com/nieruchomosci/art44685371-nieruchomosci-przyciagaja-ultrabogatych-jako-inwestycja-a-nie-zakupy-na-pokaz",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "6f1889035dc835b2",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "b8d66662cfe00a7b",
-          "title": "Landrat Erbert nennt Fünf - Seen - Verbund historischen Meilenstein",
-          "category": "infrastructure",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "https://www.presseportal.de/pm/105280/6304147",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "d3b5e6634881846f",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "56c7f13403ad3051",
-          "title": "Caldo il killer silenzioso , Oms : In Europa1300 decessi in più . Oggi lapice poi attesi temporali , venti e grandinate",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "https://www.nuovosud.it/articoli/317452-fattinotizie/caldo-il-%E2%80%98killer-silenzioso%E2%80%99-oms-%E2%80%9C-europa1300-decessi-pi%C3%B9%E2%80%9D-oggi-l%E2%80%99apice",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "484ffe0c79372cb4",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "31ab4a729fca6696",
-          "title": "Nicht Xiaomi oder BYD : Dieser China - Autobauer will jetzt Deutschland erobern",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T09:30:00Z",
-          "url": "https://www.netzwelt.de/news/255667-xiaomi-byd-china-autobauer-will-deutschland-erobern.html",
+          "time": "2026-06-29T14:00:00Z",
+          "url": "https://finance.ifeng.com/c/8uM6qIA99Wc",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

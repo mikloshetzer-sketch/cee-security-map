@@ -1,122 +1,32 @@
 {
-  "generated_utc": "2026-06-29T19:49:07Z",
+  "generated_utc": "2026-06-30T02:39:27Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1197 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 693 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Teet Kalmus : Ukraina võimekus rakettide alal järjest kasvab.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Slovensko prepisuje mapu sveta . Ruské palivo vložili do štvrtého bloku Mochoviec , stávame sa jadrovým lídrom.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: La canicule affecte lEurope centrale et orientale.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 618.64; 7 napos változás: +6792%).",
-    "Trend: emelkedő (+1249%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 3078, GDELT DOC 2581, direkt feed 365, USGS 0, GDACS 2.",
+    "Az infrastruktúra-közelségi modul 1058 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 604 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
+    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
+    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 574.76; 7 napos változás: +5194%).",
+    "Trend: emelkedő (+943%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2790, GDELT DOC 2590, direkt feed 368, USGS 0, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6792%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+5194%)."
   },
   "stats": {
-    "score_last7": 2495.318,
-    "score_prev7": 184.921,
-    "change_pct": 1249.4
+    "score_last7": 2399.943,
+    "score_prev7": 230.02,
+    "change_pct": 943.36
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1197,
+    "last_24h_proximity_matches": 1058,
     "top_proximity": [
-      {
-        "id": "cc1eaccc196bde7e",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "00667931ca63ed9e",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-06-29T00:00:00Z",
-          "url": "https://www.kyivpost.com/post/79209",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "161f3fbdc483a757",
-        "level": "critical",
-        "score": 89.42,
-        "distance_km": 0.32,
-        "event": {
-          "id": "7726e0d9a11e6618",
-          "title": "Riga, Riga, Latvia",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-06-29T00:00:00Z",
-          "url": "https://bnn-news.com/roslikovs-wanted-by-authorities-to-run-in-latvias-15th-saeima-elections-281581",
-          "lat": 56.95000000000001,
-          "lon": 24.100000000000005,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "lv-transport-riga-port",
-          "name": "Port of Riga",
-          "country": "Latvia",
-          "city": "Riga",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Freeport of Riga Authority",
-          "lat": 56.949,
-          "lon": 24.105,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "87cf3ebad8638121",
-        "level": "critical",
-        "score": 89.42,
-        "distance_km": 0.32,
-        "event": {
-          "id": "56881ad3ca2f74cf",
-          "title": "Riga, Riga, Latvia",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-06-29T00:00:00Z",
-          "url": "https://bnn-news.com/how-much-does-the-new-airbaltic-ceo-earn-hildens-and-gausss-salaries-compared-281578",
-          "lat": 56.95,
-          "lon": 24.1,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "lv-transport-riga-port",
-          "name": "Port of Riga",
-          "country": "Latvia",
-          "city": "Riga",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Freeport of Riga Authority",
-          "lat": 56.949,
-          "lon": 24.105,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
       {
         "id": "7beb5ecd6e899ce6",
         "level": "critical",
@@ -309,6 +219,96 @@
           "source": "GDELT_DOC",
           "time": "2026-06-29T14:00:00Z",
           "url": "https://finance.ifeng.com/c/8uM6qIA99Wc",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "a0eeba0f903d978d",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "2b76b6f2cf358bcc",
+          "title": "La grave ola de calor en Europa dejó más de 1 . 000 muertos en una semana",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-29T14:00:00Z",
+          "url": "https://elciudadanoweb.com/la-grave-ola-de-calor-en-europa-dejo-mas-de-1-000-muertos-en-una-semana/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "59cb266b81aa213b",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "d1df8df0f00e79d8",
+          "title": "Aria condizionata in Europa : grande ritardo del continente più ricco",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-06-29T14:00:00Z",
+          "url": "https://www.investireoggi.it/aria-condizionata-in-europa-il-grande-ritardo-del-continente-piu-ricco/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "42bd3bf4274ef8be",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "0e75cd59fc5c3b93",
+          "title": "Babiš : Prezidenta sme na summit NATO akreditovali",
+          "category": "military",
+          "source": "GDELT_DOC",
+          "time": "2026-06-29T14:00:00Z",
+          "url": "https://www.teraz.sk/zahranicie/babis-prezidenta-sme-na-summit-nato-ak/974077-clanok.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-06-30T09:05:09Z",
+  "generated_utc": "2026-06-30T14:06:01Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 962 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 486 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: 牛奶 、 科技与白酒 ： 中国品牌在世界杯赛场的三种 进球 方式.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Πάνω από 130 εκατ . άνθρωποι αντιμέτωποι με καύσωνα.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: 11 motociclete ridicate și 28 de încălcări depistate de polițiștii din Orhei . Un șofer , prins beat la ghidon.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 547.61; 7 napos változás: +6039%).",
-    "Trend: emelkedő (+998%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2830, GDELT DOC 2462, direkt feed 370, USGS 0, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 865 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 303 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Un milione di euro falsi e centinaia di documenti contraffatti in un camion turco diretto in Olanda : il maxi sequestro al Porto.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Apēd sausas nūdeles – trīs bērni saslimuši ar salmonelozi.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: رئيس وزراء ليتوانيا المقبل يقترح إلغاء حظر نشر السلاح النووي من الدستور.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 517.68; 7 napos változás: +5990%).",
+    "Trend: emelkedő (+1094%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2928, GDELT DOC 2369, direkt feed 376, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+6039%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+5990%)."
   },
   "stats": {
-    "score_last7": 2374.474,
-    "score_prev7": 216.217,
-    "change_pct": 998.19
+    "score_last7": 2460.692,
+    "score_prev7": 206.027,
+    "change_pct": 1094.35
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 962,
+    "last_24h_proximity_matches": 865,
     "top_proximity": [
+      {
+        "id": "f637d27ddd1d39a2",
+        "level": "critical",
+        "score": 98.81,
+        "distance_km": 0.6,
+        "event": {
+          "id": "3bda09541d5f9285",
+          "title": "Rzeszow, Podkarpackie, Poland",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-06-30T00:00:00Z",
+          "url": "https://www.fivb.com/thai-domination-at-hangzhou-futures/",
+          "lat": 50.0372,
+          "lon": 22.0049,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-military-rzeszow-logistics",
+          "name": "Rzeszów NATO Logistics Hub",
+          "country": "Poland",
+          "city": "Rzeszów",
+          "category": "military",
+          "subtype": "military_logistics_hub",
+          "criticality": 10.0,
+          "operator": "Poland / NATO partners",
+          "lat": 50.041,
+          "lon": 21.999,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "7beb5ecd6e899ce6",
         "level": "critical",
@@ -58,20 +88,20 @@
         }
       },
       {
-        "id": "402c4bf28ff3a067",
+        "id": "5575e47639e871c3",
         "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
+        "score": 85.96,
+        "distance_km": 2.25,
         "event": {
-          "id": "63f3ecfd3908357a",
-          "title": "Slovensko prepisuje mapu sveta . Ruské palivo vložili do štvrtého bloku Mochoviec , stávame sa jadrovým lídrom",
+          "id": "4f8f9b6ce5fbddbd",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
           "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T14:00:00Z",
-          "url": "https://hnonline.sk/finweb/ekonomika/96289146-slovensko-prepisuje-mapu-sveta-ruske-palivo-vlozili-do-stvrteho-bloku-mochoviec-stavame-sa-jadrovym-lidrom",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
+          "source": "GDELT",
+          "time": "2026-06-30T00:00:00Z",
+          "url": "https://www.wvgazettemail.com/ap/international/france-records-around-1-000-additional-deaths-as-extreme-heat-breaks-european-records/article_990ca705-e967-5044-914d-ee9f20e86fc9.html",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
           "id": "cz-digital-prague-ixp",
@@ -88,20 +118,80 @@
         }
       },
       {
-        "id": "67bdf681bdc2604a",
+        "id": "4ae5e036a7fa3563",
         "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
+        "score": 85.96,
+        "distance_km": 2.25,
         "event": {
-          "id": "f34d27b094a513f4",
-          "title": "La canicule affecte lEurope centrale et orientale",
+          "id": "0abd1ebbb37eeedc",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-30T00:00:00Z",
+          "url": "https://www.cambridge-news.co.uk/whats-on/whats-on-news/grooms-prague-stag-ruined-easyjet-34205081",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "e3dfd3f9148cabc6",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "6f708d72629e61bf",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "infrastructure",
+          "source": "GDELT",
+          "time": "2026-06-30T00:00:00Z",
+          "url": "https://www.cambridge-news.co.uk/news/local-news/paedophile-teacher-who-abused-boys-34204288",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "4fa55ca48544a60a",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "c88d139c0049f958",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
           "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T14:00:00Z",
-          "url": "https://www.lapresse.ca/international/europe/2026-06-29/la-canicule-affecte-l-europe-centrale-et-orientale.php",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
+          "source": "GDELT",
+          "time": "2026-06-30T00:00:00Z",
+          "url": "https://www.express.co.uk/travel/articles/2223078/my-prague-stag-do-ruined-after-easyjet-made-weird-decision",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
           "id": "cz-digital-prague-ixp",
@@ -118,50 +208,20 @@
         }
       },
       {
-        "id": "f8fe5b6821a90edc",
+        "id": "7c80a8c9bc93de0b",
         "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
+        "score": 85.96,
+        "distance_km": 2.25,
         "event": {
-          "id": "ddbe4a6c3d9b85ec",
-          "title": "Ukraine Battered Energy Grid Braces for Intense Heat",
-          "category": "energy",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T14:00:00Z",
-          "url": "https://www.kyivpost.com/post/79194",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "570ef9f3f1f61452",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "14fda7f0935bb7e4",
-          "title": "因應熱浪狂襲 德推涼爽地圖 . 義靠智慧手環 - 國際",
+          "id": "507c039d7675ad25",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
           "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T14:00:00Z",
-          "url": "https://news.cts.com.tw/cts/international/202606/202606293049520.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
+          "source": "GDELT",
+          "time": "2026-06-30T00:00:00Z",
+          "url": "http://northcountrynow.com/premium/stacker/stories/european-student-housing-is-30-more-competitive-than-last-year-us-students-who-act-now-still-have,377945",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
           "id": "cz-digital-prague-ixp",
@@ -178,20 +238,50 @@
         }
       },
       {
-        "id": "5bac083915b5d6bb",
+        "id": "1bd6fa2ed464e7e0",
         "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
+        "score": 85.96,
+        "distance_km": 2.25,
         "event": {
-          "id": "d332d627369233d2",
-          "title": "Canicule : lEurope centrale à la peine avec plus de 35°C",
+          "id": "e8c3e5c33c96f363",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-06-30T00:00:00Z",
+          "url": "https://www.mirror.co.uk/travel/prague-stag-weekend-ruined-after-37361954",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "de156f305ae6fdbf",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "1d1eef797e727901",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
           "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T14:00:00Z",
-          "url": "https://www.martinique.franceantilles.fr/actualite/international/canicule-leurope-centrale-a-la-peine-avec-plus-de-35c-1084415.php",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
+          "source": "GDELT",
+          "time": "2026-06-30T00:00:00Z",
+          "url": "https://timesofindia.indiatimes.com/life-style/travel/destinations/this-unique-church-in-europe-is-decorated-with-the-bones-of-up-to-70000-people-heres-how-curious-travellers-can-visit/articleshow/132088507.cms",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
           "id": "cz-digital-prague-ixp",
@@ -208,110 +298,20 @@
         }
       },
       {
-        "id": "92a703e1a4418c81",
+        "id": "bda5c7a28e47d142",
         "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
+        "score": 85.96,
+        "distance_km": 2.25,
         "event": {
-          "id": "74d6e6a0c27a1cd1",
-          "title": "排队抢购 ， 中国空调一机难求",
+          "id": "693046602f1d2619",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
           "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T14:00:00Z",
-          "url": "https://finance.ifeng.com/c/8uM6qIA99Wc",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a0eeba0f903d978d",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "2b76b6f2cf358bcc",
-          "title": "La grave ola de calor en Europa dejó más de 1 . 000 muertos en una semana",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T14:00:00Z",
-          "url": "https://elciudadanoweb.com/la-grave-ola-de-calor-en-europa-dejo-mas-de-1-000-muertos-en-una-semana/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "59cb266b81aa213b",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "d1df8df0f00e79d8",
-          "title": "Aria condizionata in Europa : grande ritardo del continente più ricco",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T14:00:00Z",
-          "url": "https://www.investireoggi.it/aria-condizionata-in-europa-il-grande-ritardo-del-continente-piu-ricco/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "42bd3bf4274ef8be",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "0e75cd59fc5c3b93",
-          "title": "Babiš : Prezidenta sme na summit NATO akreditovali",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-06-29T14:00:00Z",
-          "url": "https://www.teraz.sk/zahranicie/babis-prezidenta-sme-na-summit-nato-ak/974077-clanok.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
+          "source": "GDELT",
+          "time": "2026-06-30T00:00:00Z",
+          "url": "https://english.radio.cz/women-get-reduced-jail-terms-killing-cult-leader-8890894",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
           "id": "cz-digital-prague-ixp",

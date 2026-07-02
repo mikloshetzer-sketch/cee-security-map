@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-02T13:51:33Z",
+  "generated_utc": "2026-07-02T19:22:06Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 323 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 134 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 466 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 182 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Port of Tallinn (Estonia) – 2.2 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 361.25; 7 napos változás: +2954%).",
-    "Trend: emelkedő (+883%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2899, GDELT DOC 1727, direkt feed 379, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 185 db.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 329.89; 7 napos változás: +2837%).",
+    "Trend: emelkedő (+917%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2982, GDELT DOC 1552, direkt feed 375, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2954%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2837%)."
   },
   "stats": {
-    "score_last7": 2071.236,
-    "score_prev7": 210.707,
-    "change_pct": 882.99
+    "score_last7": 2031.273,
+    "score_prev7": 199.823,
+    "change_pct": 916.54
   },
-  "rss_count": 185,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 323,
+    "last_24h_proximity_matches": 466,
     "top_proximity": [
       {
         "id": "942f9b7f740e3fe4",
@@ -58,6 +58,96 @@
         }
       },
       {
+        "id": "476062e6d4306281",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "e2bfcf1a1ff7c1f6",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://www.mfa.gov.lv/en/article/foreign-minister-discusses-security-priorities-her-estonian-counterpart-ahead-nato-summit",
+          "lat": 59.43390000000001,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "d5cd89ed975a54cb",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "7dc273c1c8004b20",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://www.baltictimes.com/latvia_and_estonia_sign_memorandum_on_supply_security__bilateral_business_forum_opens_in_tallinn/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "fe1f272330534e4c",
+        "level": "critical",
+        "score": 96.91,
+        "distance_km": 1.54,
+        "event": {
+          "id": "b4e4f0eb969464f4",
+          "title": "Redzikowo, Pomorskie, Poland",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://www.newsweek.com/nato-trump-defense-spending-12151330",
+          "lat": 54.4725,
+          "lon": 17.1259,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-military-redzikowo",
+          "name": "Redzikowo Aegis Ashore Site",
+          "country": "Poland",
+          "city": "Redzikowo",
+          "category": "military",
+          "subtype": "missile_defense_site",
+          "criticality": 10.0,
+          "operator": "Poland / United States / NATO",
+          "lat": 54.481,
+          "lon": 17.107,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
         "id": "12d055364a81ba7b",
         "level": "critical",
         "score": 86.09,
@@ -69,6 +159,66 @@
           "source": "GDELT",
           "time": "2026-07-02T00:00:00Z",
           "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/07/ukraine-260701-ukraine-mfa01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-transport-tallinn-port",
+          "name": "Port of Tallinn",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Port of Tallinn",
+          "lat": 59.444,
+          "lon": 24.761,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "8f3b861dd5401196",
+        "level": "critical",
+        "score": 86.09,
+        "distance_km": 2.17,
+        "event": {
+          "id": "e2bfcf1a1ff7c1f6",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://www.mfa.gov.lv/en/article/foreign-minister-discusses-security-priorities-her-estonian-counterpart-ahead-nato-summit",
+          "lat": 59.43390000000001,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-transport-tallinn-port",
+          "name": "Port of Tallinn",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Port of Tallinn",
+          "lat": 59.444,
+          "lon": 24.761,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "b81902ac494a4b34",
+        "level": "critical",
+        "score": 86.09,
+        "distance_km": 2.17,
+        "event": {
+          "id": "7dc273c1c8004b20",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://www.baltictimes.com/latvia_and_estonia_sign_memorandum_on_supply_security__bilateral_business_forum_opens_in_tallinn/",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
@@ -159,156 +309,6 @@
           "source": "GDELT",
           "time": "2026-07-02T00:00:00Z",
           "url": "https://theconservativetreehouse.com/blog/2026/07/02/july-2nd-2026-presidential-politics-trump-administration-day-529/comment-page-1/",
-          "lat": 50.0833,
-          "lon": 14.4667,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "14d5b9994024a04e",
-        "level": "critical",
-        "score": 85.96,
-        "distance_km": 2.25,
-        "event": {
-          "id": "5e85aaf65937b187",
-          "title": "Prague, Praha, Hlavníesto, Czech Republic",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://english.radio.cz/419degc-new-normal-czech-summers-8891005",
-          "lat": 50.0833,
-          "lon": 14.4667,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "4f801e4db431c9ac",
-        "level": "critical",
-        "score": 85.96,
-        "distance_km": 2.25,
-        "event": {
-          "id": "83699f16be117c86",
-          "title": "Prague, Praha, Hlavníesto, Czech Republic",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.kyivpost.com/post/79406",
-          "lat": 50.0833,
-          "lon": 14.4667,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "d0603f681c81d768",
-        "level": "critical",
-        "score": 85.96,
-        "distance_km": 2.25,
-        "event": {
-          "id": "cebb8a73eb8ec139",
-          "title": "Prague, Praha, Hlavníesto, Czech Republic",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.ttnworldwide.com:443/ArticleTA/464622/flyadeal-adds-milan,-prague-to-summer-2026-seasonal-network",
-          "lat": 50.0833,
-          "lon": 14.4667,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "f009251004f33db4",
-        "level": "critical",
-        "score": 85.96,
-        "distance_km": 2.25,
-        "event": {
-          "id": "66b547eb4049c671",
-          "title": "Prague, Praha, Hlavníesto, Czech Republic",
-          "category": "military",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://english.radio.cz/czech-security-council-resumes-debate-new-military-strategy-8891065",
-          "lat": 50.0833,
-          "lon": 14.466700000000001,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "25aa3dfa08955610",
-        "level": "critical",
-        "score": 85.96,
-        "distance_km": 2.25,
-        "event": {
-          "id": "637bc4c69593187f",
-          "title": "Prague, Praha, Hlavníesto, Czech Republic",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.dailymail.com/travel/article-15947453/british-tourist-holiday-horror-broken-spine.html",
           "lat": 50.0833,
           "lon": 14.4667,
           "source_file": "gdelt_linked.geojson"

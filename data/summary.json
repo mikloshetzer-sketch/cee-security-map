@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-02T02:37:38Z",
+  "generated_utc": "2026-07-02T08:51:55Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 39 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 20 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 142 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 71 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 408.75; 7 napos változás: +3003%).",
-    "Trend: emelkedő (+803%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2742, GDELT DOC 1954, direkt feed 385, USGS 0, GDACS 0.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 382.25; 7 napos változás: +2980%).",
+    "Trend: emelkedő (+829%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2795, GDELT DOC 1879, direkt feed 378, USGS 0, GDACS 0.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 196 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+3003%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2980%)."
   },
   "stats": {
-    "score_last7": 2120.836,
-    "score_prev7": 234.768,
-    "change_pct": 803.37
+    "score_last7": 2054.274,
+    "score_prev7": 221.085,
+    "change_pct": 829.18
   },
-  "rss_count": 200,
+  "rss_count": 196,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 39,
+    "last_24h_proximity_matches": 142,
     "top_proximity": [
       {
         "id": "d8eaeb46bce40878",
@@ -39,6 +39,126 @@
           "source": "GDELT",
           "time": "2026-07-02T00:00:00Z",
           "url": "https://english.radio.cz/record-temperatures-czechia-prompt-calls-summer-protection-homeless-8890976",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "c00b3ee03a1df7c7",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "a6a2b9495c37ead3",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://www.aljazeera.com/economy/2026/7/2/eu-border-rules-causing-travel-chaos-ahead-of-summer-peak-industry-warns",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "ba57788e34eb5b5f",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "5e6958071b25e027",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://theconservativetreehouse.com/blog/2026/07/02/july-2nd-2026-presidential-politics-trump-administration-day-529/comment-page-1/",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "14d5b9994024a04e",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "5e85aaf65937b187",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://english.radio.cz/419degc-new-normal-czech-summers-8891005",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "4f801e4db431c9ac",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "83699f16be117c86",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://www.kyivpost.com/post/79406",
           "lat": 50.0833,
           "lon": 14.4667,
           "source_file": "gdelt_linked.geojson"
@@ -204,126 +324,6 @@
           "operator": "Multiple operators",
           "lat": 52.229,
           "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "dabff434e0bd56c8",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "5fcbc8dda6d2a176",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "http://www.europesun.com/news/279160564/why-ukraines-most-loyal-sponsor-is-growing-tired-of-kiev",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "c64999139003eee0",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "648219560b33099c",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "http://www.russiaherald.com/news/279160697/poland-slams-zelensky-for-escalating-nazi-collaborator-rift",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "9a3c81664a214b3c",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "ced80654b0f862e1",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "police",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.witn.com/2026/07/01/warsaw-police-say-motel-employee-charged-with-helping-fugitive-avoid-arrest/",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "df630c417a43ec2c",
-        "level": "critical",
-        "score": 84.11,
-        "distance_km": 3.27,
-        "event": {
-          "id": "c7bdd20915f7ebf6",
-          "title": "Budapest, Budapest, Hungary",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.finanznachrichten.de/nachrichten-2026-07/68922183-the-independent-commission-against-corruption-of-hong-kong-china-icac-commissioner-attends-first-iaaca-european-regional-anti-corruption-conference-008.htm",
-          "lat": 47.5,
-          "lon": 19.0833,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "hu-digital-bix",
-          "name": "Budapest Internet Exchange",
-          "country": "Hungary",
-          "city": "Budapest",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "BIX",
-          "lat": 47.497,
-          "lon": 19.04,
           "source_file": "infra_digital.json"
         }
       }

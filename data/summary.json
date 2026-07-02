@@ -1,32 +1,92 @@
 {
-  "generated_utc": "2026-07-02T08:51:55Z",
+  "generated_utc": "2026-07-02T13:51:33Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 142 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 71 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 323 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 134 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Port of Tallinn (Estonia) – 2.2 km-re ettől: Tallinn, Harjumaa, Estonia.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 382.25; 7 napos változás: +2980%).",
-    "Trend: emelkedő (+829%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2795, GDELT DOC 1879, direkt feed 378, USGS 0, GDACS 0.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 196 db.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 361.25; 7 napos változás: +2954%).",
+    "Trend: emelkedő (+883%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2899, GDELT DOC 1727, direkt feed 379, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 185 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2980%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2954%)."
   },
   "stats": {
-    "score_last7": 2054.274,
-    "score_prev7": 221.085,
-    "change_pct": 829.18
+    "score_last7": 2071.236,
+    "score_prev7": 210.707,
+    "change_pct": 882.99
   },
-  "rss_count": 196,
+  "rss_count": 185,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 142,
+    "last_24h_proximity_matches": 323,
     "top_proximity": [
+      {
+        "id": "942f9b7f740e3fe4",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "d620b551d3cbcf30",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "police",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/07/ukraine-260701-ukraine-mfa01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "12d055364a81ba7b",
+        "level": "critical",
+        "score": 86.09,
+        "distance_km": 2.17,
+        "event": {
+          "id": "d620b551d3cbcf30",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "police",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/07/ukraine-260701-ukraine-mfa01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-transport-tallinn-port",
+          "name": "Port of Tallinn",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Port of Tallinn",
+          "lat": 59.444,
+          "lon": 24.761,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "d8eaeb46bce40878",
         "level": "critical",
@@ -178,152 +238,92 @@
         }
       },
       {
-        "id": "ad54f26b39d7ad4e",
+        "id": "d0603f681c81d768",
         "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
+        "score": 85.96,
+        "distance_km": 2.25,
         "event": {
-          "id": "d956f7dfa5ab2dbb",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "police",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://wcti12.com/news/local/econo-lodge-employee-charged-after-allegedly-hiding-wanted-clinton-man-from-police",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "data_center_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "f6911cd0ce525fc7",
-        "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
-        "event": {
-          "id": "5fcbc8dda6d2a176",
-          "title": "Warsaw, (PL67), Poland",
+          "id": "cebb8a73eb8ec139",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
           "category": "other",
           "source": "GDELT",
           "time": "2026-07-02T00:00:00Z",
-          "url": "http://www.europesun.com/news/279160564/why-ukraines-most-loyal-sponsor-is-growing-tired-of-kiev",
-          "lat": 52.25,
-          "lon": 21.0,
+          "url": "https://www.ttnworldwide.com:443/ArticleTA/464622/flyadeal-adds-milan,-prague-to-summer-2026-seasonal-network",
+          "lat": 50.0833,
+          "lon": 14.4667,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
           "category": "digital",
-          "subtype": "data_center_hub",
+          "subtype": "internet_exchange",
           "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
           "source_file": "infra_digital.json"
         }
       },
       {
-        "id": "eb9fb6b525790487",
+        "id": "f009251004f33db4",
         "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
+        "score": 85.96,
+        "distance_km": 2.25,
         "event": {
-          "id": "648219560b33099c",
-          "title": "Warsaw, (PL67), Poland",
+          "id": "66b547eb4049c671",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-02T00:00:00Z",
+          "url": "https://english.radio.cz/czech-security-council-resumes-debate-new-military-strategy-8891065",
+          "lat": 50.0833,
+          "lon": 14.466700000000001,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "25aa3dfa08955610",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "637bc4c69593187f",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
           "category": "other",
           "source": "GDELT",
           "time": "2026-07-02T00:00:00Z",
-          "url": "http://www.russiaherald.com/news/279160697/poland-slams-zelensky-for-escalating-nazi-collaborator-rift",
-          "lat": 52.25,
-          "lon": 21.0,
+          "url": "https://www.dailymail.com/travel/article-15947453/british-tourist-holiday-horror-broken-spine.html",
+          "lat": 50.0833,
+          "lon": 14.4667,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
           "category": "digital",
-          "subtype": "data_center_hub",
+          "subtype": "internet_exchange",
           "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "72eaa325113d8a02",
-        "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
-        "event": {
-          "id": "ced80654b0f862e1",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "police",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.witn.com/2026/07/01/warsaw-police-say-motel-employee-charged-with-helping-fugitive-avoid-arrest/",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "data_center_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a8d837f253c836f9",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "d956f7dfa5ab2dbb",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "police",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://wcti12.com/news/local/econo-lodge-employee-charged-after-allegedly-hiding-wanted-clinton-man-from-police",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
           "source_file": "infra_digital.json"
         }
       }

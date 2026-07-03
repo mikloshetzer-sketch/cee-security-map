@@ -1,314 +1,44 @@
 {
-  "generated_utc": "2026-07-02T19:22:06Z",
+  "generated_utc": "2026-07-03T02:11:19Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 466 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 182 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 329.89; 7 napos változás: +2837%).",
-    "Trend: emelkedő (+917%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2982, GDELT DOC 1552, direkt feed 375, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Az infrastruktúra-közelségi modul 22 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 7 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
+    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
+    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 312.64; 7 napos változás: +2409%).",
+    "Trend: emelkedő (+704%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2778, GDELT DOC 1516, direkt feed 373, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 190 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2837%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2409%)."
   },
   "stats": {
-    "score_last7": 2031.273,
-    "score_prev7": 199.823,
-    "change_pct": 916.54
+    "score_last7": 1891.941,
+    "score_prev7": 235.314,
+    "change_pct": 704.01
   },
-  "rss_count": 200,
+  "rss_count": 190,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 466,
+    "last_24h_proximity_matches": 22,
     "top_proximity": [
       {
-        "id": "942f9b7f740e3fe4",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "d620b551d3cbcf30",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "police",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/07/ukraine-260701-ukraine-mfa01.htm",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "476062e6d4306281",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "e2bfcf1a1ff7c1f6",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "military",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.mfa.gov.lv/en/article/foreign-minister-discusses-security-priorities-her-estonian-counterpart-ahead-nato-summit",
-          "lat": 59.43390000000001,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "d5cd89ed975a54cb",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "7dc273c1c8004b20",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.baltictimes.com/latvia_and_estonia_sign_memorandum_on_supply_security__bilateral_business_forum_opens_in_tallinn/",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "fe1f272330534e4c",
-        "level": "critical",
-        "score": 96.91,
-        "distance_km": 1.54,
-        "event": {
-          "id": "b4e4f0eb969464f4",
-          "title": "Redzikowo, Pomorskie, Poland",
-          "category": "military",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.newsweek.com/nato-trump-defense-spending-12151330",
-          "lat": 54.4725,
-          "lon": 17.1259,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-military-redzikowo",
-          "name": "Redzikowo Aegis Ashore Site",
-          "country": "Poland",
-          "city": "Redzikowo",
-          "category": "military",
-          "subtype": "missile_defense_site",
-          "criticality": 10.0,
-          "operator": "Poland / United States / NATO",
-          "lat": 54.481,
-          "lon": 17.107,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "12d055364a81ba7b",
-        "level": "critical",
-        "score": 86.09,
-        "distance_km": 2.17,
-        "event": {
-          "id": "d620b551d3cbcf30",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "police",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/07/ukraine-260701-ukraine-mfa01.htm",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-transport-tallinn-port",
-          "name": "Port of Tallinn",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Port of Tallinn",
-          "lat": 59.444,
-          "lon": 24.761,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "8f3b861dd5401196",
-        "level": "critical",
-        "score": 86.09,
-        "distance_km": 2.17,
-        "event": {
-          "id": "e2bfcf1a1ff7c1f6",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "military",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.mfa.gov.lv/en/article/foreign-minister-discusses-security-priorities-her-estonian-counterpart-ahead-nato-summit",
-          "lat": 59.43390000000001,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-transport-tallinn-port",
-          "name": "Port of Tallinn",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Port of Tallinn",
-          "lat": 59.444,
-          "lon": 24.761,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "b81902ac494a4b34",
-        "level": "critical",
-        "score": 86.09,
-        "distance_km": 2.17,
-        "event": {
-          "id": "7dc273c1c8004b20",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.baltictimes.com/latvia_and_estonia_sign_memorandum_on_supply_security__bilateral_business_forum_opens_in_tallinn/",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-transport-tallinn-port",
-          "name": "Port of Tallinn",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Port of Tallinn",
-          "lat": 59.444,
-          "lon": 24.761,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "d8eaeb46bce40878",
+        "id": "e1df412b350db1b9",
         "level": "critical",
         "score": 85.96,
         "distance_km": 2.25,
         "event": {
-          "id": "0b74eaf1617471c2",
-          "title": "Prague, Praha, Hlavníesto, Czech Republic",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://english.radio.cz/record-temperatures-czechia-prompt-calls-summer-protection-homeless-8890976",
-          "lat": 50.0833,
-          "lon": 14.4667,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "c00b3ee03a1df7c7",
-        "level": "critical",
-        "score": 85.96,
-        "distance_km": 2.25,
-        "event": {
-          "id": "a6a2b9495c37ead3",
-          "title": "Prague, Praha, Hlavníesto, Czech Republic",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://www.aljazeera.com/economy/2026/7/2/eu-border-rules-causing-travel-chaos-ahead-of-summer-peak-industry-warns",
-          "lat": 50.0833,
-          "lon": 14.4667,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "ba57788e34eb5b5f",
-        "level": "critical",
-        "score": 85.96,
-        "distance_km": 2.25,
-        "event": {
-          "id": "5e6958071b25e027",
+          "id": "5bf9c39d7cbb9ff2",
           "title": "Prague, Praha, Hlavníesto, Czech Republic",
           "category": "other",
           "source": "GDELT",
-          "time": "2026-07-02T00:00:00Z",
-          "url": "https://theconservativetreehouse.com/blog/2026/07/02/july-2nd-2026-presidential-politics-trump-administration-day-529/comment-page-1/",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.itnewsonline.com/PRNewswire/NYSD-Partners-with-the-University-of-New-York-in-Prague-UNYP-to-Launch-New-Global-Dual-Credential-Program/1135332",
           "lat": 50.0833,
           "lon": 14.4667,
           "source_file": "gdelt_linked.geojson"
@@ -325,6 +55,276 @@
           "lat": 50.075,
           "lon": 14.438,
           "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "9343d945f0446a0c",
+        "level": "critical",
+        "score": 85.81,
+        "distance_km": 2.33,
+        "event": {
+          "id": "f7c2c82699c7d7e7",
+          "title": "Warsaw, (PL67), Poland",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "http://www.britainnews.net/news/279163177/this-eu-states-anti-russian-crusade-has-become-a-strategic-dead-end",
+          "lat": 52.25,
+          "lon": 21.0,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-digital-warsaw-dc-hub",
+          "name": "Warsaw Data Centre Hub",
+          "country": "Poland",
+          "city": "Warsaw",
+          "category": "digital",
+          "subtype": "data_center_hub",
+          "criticality": 9.0,
+          "operator": "Multiple operators",
+          "lat": 52.23,
+          "lon": 21.01,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "45fb84f38eddc783",
+        "level": "critical",
+        "score": 85.81,
+        "distance_km": 2.33,
+        "event": {
+          "id": "43be393ce583d1aa",
+          "title": "Warsaw, (PL67), Poland",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://hotair.com/david-strom/2026/07/02/democrats-are-now-debating-who-is-too-jewish-n3816572",
+          "lat": 52.25,
+          "lon": 21.0,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-digital-warsaw-dc-hub",
+          "name": "Warsaw Data Centre Hub",
+          "country": "Poland",
+          "city": "Warsaw",
+          "category": "digital",
+          "subtype": "data_center_hub",
+          "criticality": 9.0,
+          "operator": "Multiple operators",
+          "lat": 52.23,
+          "lon": 21.01,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "9dabec5bb98eb4f8",
+        "level": "critical",
+        "score": 85.55,
+        "distance_km": 2.47,
+        "event": {
+          "id": "f7c2c82699c7d7e7",
+          "title": "Warsaw, (PL67), Poland",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "http://www.britainnews.net/news/279163177/this-eu-states-anti-russian-crusade-has-become-a-strategic-dead-end",
+          "lat": 52.25,
+          "lon": 21.0,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-digital-warsaw-ixp",
+          "name": "Warsaw Internet Exchange / Digital Hub",
+          "country": "Poland",
+          "city": "Warsaw",
+          "category": "digital",
+          "subtype": "internet_exchange_digital_hub",
+          "criticality": 9.0,
+          "operator": "Multiple operators",
+          "lat": 52.229,
+          "lon": 21.012,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "d9ea0f0df76b5605",
+        "level": "critical",
+        "score": 85.55,
+        "distance_km": 2.47,
+        "event": {
+          "id": "43be393ce583d1aa",
+          "title": "Warsaw, (PL67), Poland",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://hotair.com/david-strom/2026/07/02/democrats-are-now-debating-who-is-too-jewish-n3816572",
+          "lat": 52.25,
+          "lon": 21.0,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-digital-warsaw-ixp",
+          "name": "Warsaw Internet Exchange / Digital Hub",
+          "country": "Poland",
+          "city": "Warsaw",
+          "category": "digital",
+          "subtype": "internet_exchange_digital_hub",
+          "criticality": 9.0,
+          "operator": "Multiple operators",
+          "lat": 52.229,
+          "lon": 21.012,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "8faf3ca18c239dd4",
+        "level": "critical",
+        "score": 74.78,
+        "distance_km": 3.26,
+        "event": {
+          "id": "5bf9c39d7cbb9ff2",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.itnewsonline.com/PRNewswire/NYSD-Partners-with-the-University-of-New-York-in-Prague-UNYP-to-Launch-New-Global-Dual-Credential-Program/1135332",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-dc-hub",
+          "name": "Prague Data Centre Hub",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "data_center_hub",
+          "criticality": 8.0,
+          "operator": "Multiple operators",
+          "lat": 50.083,
+          "lon": 14.421,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "1ac8972e46567a5f",
+        "level": "high",
+        "score": 56.54,
+        "distance_km": 14.66,
+        "event": {
+          "id": "5bf9c39d7cbb9ff2",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.itnewsonline.com/PRNewswire/NYSD-Partners-with-the-University-of-New-York-in-Prague-UNYP-to-Launch-New-Global-Dual-Credential-Program/1135332",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-transport-prague-airport",
+          "name": "Václav Havel Airport Prague",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "transport",
+          "subtype": "international_airport",
+          "criticality": 8.0,
+          "operator": "Prague Airport",
+          "lat": 50.101,
+          "lon": 14.263,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "c947c97f947a9e65",
+        "level": "medium",
+        "score": 49.37,
+        "distance_km": 19.15,
+        "event": {
+          "id": "d4d5b601daeffcff",
+          "title": "Romania",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.ziarulprofit.ro/formin-toiu-meets-her-counterpart-from-mozambique-favorable-prospects-for-capitalizing-on-existing-potential/",
+          "lat": 46.0,
+          "lon": 25.0,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ro-military-cincu",
+          "name": "Cincu Training Area",
+          "country": "Romania",
+          "city": "Cincu",
+          "category": "military",
+          "subtype": "training_area",
+          "criticality": 8.0,
+          "operator": "Romanian Armed Forces / NATO",
+          "lat": 45.917,
+          "lon": 24.783,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "4e5731690e7026aa",
+        "level": "medium",
+        "score": 49.37,
+        "distance_km": 19.15,
+        "event": {
+          "id": "0a58869069efb1e0",
+          "title": "Romania",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.theepochtimes.com/us/illegal-immigrants-admit-role-in-760000-snap-benefits-fraud-6056664",
+          "lat": 46.0,
+          "lon": 25.0,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ro-military-cincu",
+          "name": "Cincu Training Area",
+          "country": "Romania",
+          "city": "Cincu",
+          "category": "military",
+          "subtype": "training_area",
+          "criticality": 8.0,
+          "operator": "Romanian Armed Forces / NATO",
+          "lat": 45.917,
+          "lon": 24.783,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "241425d551e3dd12",
+        "level": "medium",
+        "score": 49.37,
+        "distance_km": 19.15,
+        "event": {
+          "id": "3ae0c3cd380ce05e",
+          "title": "Romania",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.romaniapress.com/news=194674",
+          "lat": 46.0,
+          "lon": 25.0,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ro-military-cincu",
+          "name": "Cincu Training Area",
+          "country": "Romania",
+          "city": "Cincu",
+          "category": "military",
+          "subtype": "training_area",
+          "criticality": 8.0,
+          "operator": "Romanian Armed Forces / NATO",
+          "lat": 45.917,
+          "lon": 24.783,
+          "source_file": "critical_infrastructure.json"
         }
       }
     ]

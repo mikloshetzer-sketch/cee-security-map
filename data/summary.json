@@ -1,32 +1,92 @@
 {
-  "generated_utc": "2026-07-03T08:58:46Z",
+  "generated_utc": "2026-07-03T13:52:11Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 87 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 29 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 226 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 92 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
     "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 279.85; 7 napos változás: +2293%).",
-    "Trend: emelkedő (+724%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2822, GDELT DOC 1403, direkt feed 372, USGS 0, GDACS 1.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 265.32; 7 napos változás: +2278%).",
+    "Trend: emelkedő (+773%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2901, GDELT DOC 1373, direkt feed 376, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2293%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2278%)."
   },
   "stats": {
-    "score_last7": 1817.37,
-    "score_prev7": 220.422,
-    "change_pct": 724.5
+    "score_last7": 1837.077,
+    "score_prev7": 210.511,
+    "change_pct": 772.67
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 87,
+    "last_24h_proximity_matches": 226,
     "top_proximity": [
+      {
+        "id": "95068db95011dddd",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "1dd4fae4d55808f1",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.globalsecurity.org/military/library/news/2026/07/mil-260702-latvia-mfa01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "14967b8f41c19856",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "43e163c1bf0367d0",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/07/ukraine-260702-iceland01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "ba50547c3ef879c6",
         "level": "critical",
@@ -54,6 +114,66 @@
           "operator": "Freeport of Riga Authority",
           "lat": 56.949,
           "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "e9e16cfd86c10fbf",
+        "level": "critical",
+        "score": 86.09,
+        "distance_km": 2.17,
+        "event": {
+          "id": "1dd4fae4d55808f1",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.globalsecurity.org/military/library/news/2026/07/mil-260702-latvia-mfa01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-transport-tallinn-port",
+          "name": "Port of Tallinn",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Port of Tallinn",
+          "lat": 59.444,
+          "lon": 24.761,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "63c5ad9f3d0d8610",
+        "level": "critical",
+        "score": 86.09,
+        "distance_km": 2.17,
+        "event": {
+          "id": "43e163c1bf0367d0",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/07/ukraine-260702-iceland01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-transport-tallinn-port",
+          "name": "Port of Tallinn",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Port of Tallinn",
+          "lat": 59.444,
+          "lon": 24.761,
           "source_file": "critical_infrastructure.json"
         }
       },
@@ -118,6 +238,66 @@
         }
       },
       {
+        "id": "e119b6671c83d049",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "d74f9ed0c4c3ebdc",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://english.radio.cz/rediscovering-jan-hus-beyond-myths-and-legends-8891209",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "a746c3334467eb26",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "9371d341f16d4cad",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-03T00:00:00Z",
+          "url": "https://www.akp.gov.kh/post/detail/374775",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
         "id": "9343d945f0446a0c",
         "level": "critical",
         "score": 85.81,
@@ -144,186 +324,6 @@
           "operator": "Multiple operators",
           "lat": 52.23,
           "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "45fb84f38eddc783",
-        "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
-        "event": {
-          "id": "43be393ce583d1aa",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-03T00:00:00Z",
-          "url": "https://hotair.com/david-strom/2026/07/02/democrats-are-now-debating-who-is-too-jewish-n3816572",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "data_center_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a1d3bb98e9360181",
-        "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
-        "event": {
-          "id": "86564336e63cefba",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-03T00:00:00Z",
-          "url": "https://artdaily.com/news/197662/Belvedere-exhibition-highlights-the-six-decade-career-of-Polish-artist-Erna-Rosenstein",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "data_center_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "96536abe883902b8",
-        "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
-        "event": {
-          "id": "6117b95d88f50124",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "military",
-          "source": "GDELT",
-          "time": "2026-07-03T00:00:00Z",
-          "url": "https://www.dailymail.com/news/article-15950143/Putin-planning-Polish-incursion-test-NATOs-response.html",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "data_center_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "9dabec5bb98eb4f8",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "f7c2c82699c7d7e7",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-03T00:00:00Z",
-          "url": "http://www.britainnews.net/news/279163177/this-eu-states-anti-russian-crusade-has-become-a-strategic-dead-end",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "d9ea0f0df76b5605",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "43be393ce583d1aa",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-03T00:00:00Z",
-          "url": "https://hotair.com/david-strom/2026/07/02/democrats-are-now-debating-who-is-too-jewish-n3816572",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "48ffe08880c58791",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "86564336e63cefba",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-03T00:00:00Z",
-          "url": "https://artdaily.com/news/197662/Belvedere-exhibition-highlights-the-six-decade-career-of-Polish-artist-Erna-Rosenstein",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
           "source_file": "infra_digital.json"
         }
       }

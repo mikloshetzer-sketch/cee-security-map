@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-03T13:52:11Z",
+  "generated_utc": "2026-07-03T19:11:22Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 226 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 92 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 332 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 139 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
     "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
     "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 265.32; 7 napos változás: +2278%).",
-    "Trend: emelkedő (+773%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2901, GDELT DOC 1373, direkt feed 376, USGS 0, GDACS 1.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 245.51; 7 napos változás: +2213%).",
+    "Trend: emelkedő (+810%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2975, GDELT DOC 1251, direkt feed 385, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2278%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2213%)."
   },
   "stats": {
-    "score_last7": 1837.077,
-    "score_prev7": 210.511,
-    "change_pct": 772.67
+    "score_last7": 1822.162,
+    "score_prev7": 200.216,
+    "change_pct": 810.1
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 226,
+    "last_24h_proximity_matches": 332,
     "top_proximity": [
       {
         "id": "95068db95011dddd",
@@ -298,32 +298,32 @@
         }
       },
       {
-        "id": "9343d945f0446a0c",
+        "id": "70f776cc744f6a59",
         "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
+        "score": 85.96,
+        "distance_km": 2.25,
         "event": {
-          "id": "f7c2c82699c7d7e7",
-          "title": "Warsaw, (PL67), Poland",
+          "id": "787b1b6c4a0f3be5",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
           "category": "other",
           "source": "GDELT",
           "time": "2026-07-03T00:00:00Z",
-          "url": "http://www.britainnews.net/news/279163177/this-eu-states-anti-russian-crusade-has-become-a-strategic-dead-end",
-          "lat": 52.25,
-          "lon": 21.0,
+          "url": "https://www.pv-tech.org/us-considers-banning-chinese-solar-inverters/",
+          "lat": 50.0833,
+          "lon": 14.4667,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
           "category": "digital",
-          "subtype": "data_center_hub",
+          "subtype": "internet_exchange",
           "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
           "source_file": "infra_digital.json"
         }
       }

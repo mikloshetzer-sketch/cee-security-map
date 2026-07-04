@@ -1,32 +1,152 @@
 {
-  "generated_utc": "2026-07-04T02:10:20Z",
+  "generated_utc": "2026-07-04T08:33:38Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 11 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 8 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 56 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 32 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
     "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: Sochaczew County, Poland 🔺 (rácspont 52.25, 20.25; score 226.91; 7 napos változás: +361%).",
-    "Trend: emelkedő (+728%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2869, GDELT DOC 1237, direkt feed 386, USGS 0, GDACS 1.",
+    "Legerősebb góc: Sochaczew County, Poland 🔺 (rácspont 52.25, 20.25; score 219.60; 7 napos változás: +378%).",
+    "Trend: emelkedő (+737%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2892, GDELT DOC 1174, direkt feed 378, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Sochaczew County, Poland (+361%)."
+    "text": "Erősödő hotspot: Sochaczew County, Poland (+378%)."
   },
   "stats": {
-    "score_last7": 1724.807,
-    "score_prev7": 208.393,
-    "change_pct": 727.67
+    "score_last7": 1640.684,
+    "score_prev7": 195.963,
+    "change_pct": 737.24
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 11,
+    "last_24h_proximity_matches": 56,
     "top_proximity": [
+      {
+        "id": "7a92f65779ba2b95",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "bbef4ccbe0f55565",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-04T00:00:00Z",
+          "url": "https://www.walesonline.co.uk/news/health/oncologist-says-check-your-frying-34223255",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "4855b3efd92827b4",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "d94e7b3c27f12556",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-04T00:00:00Z",
+          "url": "https://www.dailymail.com/money/holidays/article-15885073/I-went-lads-holiday-Kyrgyzstan-unusual-trip-choice-saved-money-says-JAMIE-BOYS.html",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "046846bb6798938d",
+        "level": "critical",
+        "score": 85.81,
+        "distance_km": 2.33,
+        "event": {
+          "id": "d60d5349e9578419",
+          "title": "Warsaw, (PL67), Poland",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-04T00:00:00Z",
+          "url": "https://www.kyivpost.com/post/79559",
+          "lat": 52.25,
+          "lon": 21.0,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-digital-warsaw-dc-hub",
+          "name": "Warsaw Data Centre Hub",
+          "country": "Poland",
+          "city": "Warsaw",
+          "category": "digital",
+          "subtype": "data_center_hub",
+          "criticality": 9.0,
+          "operator": "Multiple operators",
+          "lat": 52.23,
+          "lon": 21.01,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "b9cec65b0dde51bf",
+        "level": "critical",
+        "score": 85.81,
+        "distance_km": 2.33,
+        "event": {
+          "id": "36179ba1180a1956",
+          "title": "Warsaw, (PL67), Poland",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-04T00:00:00Z",
+          "url": "https://www.kyivpost.com/post/79558",
+          "lat": 52.25,
+          "lon": 21.0,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-digital-warsaw-dc-hub",
+          "name": "Warsaw Data Centre Hub",
+          "country": "Poland",
+          "city": "Warsaw",
+          "category": "digital",
+          "subtype": "data_center_hub",
+          "criticality": 9.0,
+          "operator": "Multiple operators",
+          "lat": 52.23,
+          "lon": 21.01,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "e05f1fd5babd9749",
         "level": "critical",
@@ -148,183 +268,63 @@
         }
       },
       {
-        "id": "9cee13024c70ff86",
+        "id": "ffce2bac54322f9f",
         "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
+        "score": 85.81,
+        "distance_km": 2.33,
         "event": {
-          "id": "8da7b4d039b26a52",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-04T00:00:00Z",
-          "url": "https://lilith.org/articles/our-true-legacy-radical-jewish-women-in-america/",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "b09b2fb0319848ed",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "f7a0d1c596d24742",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.ncregister.com/features/us-catholic-history-highlights",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "e4f69569b590eaff",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "a451bb423a1ab3e8",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "violence",
-          "source": "GDELT",
-          "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.1073wrsw.com/43-year-old-warsaw-man-dies-in-train-accident-near-argonne-road/",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "bc5dbd77500f2629",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "b7781bef41af5bb2",
+          "id": "0a6aaa9e86dafadb",
           "title": "Warsaw, (PL67), Poland",
           "category": "other",
           "source": "GDELT",
           "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.sherbrookerecord.com/orford-music-festival-boasts-vivaldi-and-chopin/",
+          "url": "https://www.yahoo.com/news/world/articles/poland-ukraine-seek-ease-wartime-031927543.html",
           "lat": 52.25,
           "lon": 21.0,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
+          "id": "pl-digital-warsaw-dc-hub",
+          "name": "Warsaw Data Centre Hub",
           "country": "Poland",
           "city": "Warsaw",
           "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
+          "subtype": "data_center_hub",
           "criticality": 9.0,
           "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
+          "lat": 52.23,
+          "lon": 21.01,
           "source_file": "infra_digital.json"
         }
       },
       {
-        "id": "36ed093e8a69ec50",
-        "level": "medium",
-        "score": 49.37,
-        "distance_km": 19.15,
+        "id": "46c9fb74b00aef55",
+        "level": "critical",
+        "score": 85.81,
+        "distance_km": 2.33,
         "event": {
-          "id": "93a8cd29b0ab688a",
-          "title": "Romania",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.chardandilminsternews.co.uk/news/national/26253038.foreign-secretary-condemns-deplorable-attack-journalist-on-behalf-iran/",
-          "lat": 46.0,
-          "lon": 25.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ro-military-cincu",
-          "name": "Cincu Training Area",
-          "country": "Romania",
-          "city": "Cincu",
-          "category": "military",
-          "subtype": "training_area",
-          "criticality": 8.0,
-          "operator": "Romanian Armed Forces / NATO",
-          "lat": 45.917,
-          "lon": 24.783,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "0ab410915ec80ed1",
-        "level": "medium",
-        "score": 49.37,
-        "distance_km": 19.15,
-        "event": {
-          "id": "c462bdad5aade199",
-          "title": "Romania",
+          "id": "2c18c38f87931331",
+          "title": "Warsaw, (PL67), Poland",
           "category": "security_politics",
           "source": "GDELT",
           "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.israelnationalnews.com/news/429616",
-          "lat": 46.0,
-          "lon": 25.0,
+          "url": "https://www.herefordtimes.com/news/26247792.wartime-exploits-spies-revealed-violette-szab-museum/",
+          "lat": 52.25,
+          "lon": 21.0,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "ro-military-cincu",
-          "name": "Cincu Training Area",
-          "country": "Romania",
-          "city": "Cincu",
-          "category": "military",
-          "subtype": "training_area",
-          "criticality": 8.0,
-          "operator": "Romanian Armed Forces / NATO",
-          "lat": 45.917,
-          "lon": 24.783,
-          "source_file": "critical_infrastructure.json"
+          "id": "pl-digital-warsaw-dc-hub",
+          "name": "Warsaw Data Centre Hub",
+          "country": "Poland",
+          "city": "Warsaw",
+          "category": "digital",
+          "subtype": "data_center_hub",
+          "criticality": 9.0,
+          "operator": "Multiple operators",
+          "lat": 52.23,
+          "lon": 21.01,
+          "source_file": "infra_digital.json"
         }
       }
     ]

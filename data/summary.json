@@ -1,32 +1,122 @@
 {
-  "generated_utc": "2026-07-04T08:33:38Z",
+  "generated_utc": "2026-07-04T13:10:07Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 56 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 32 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: Sochaczew County, Poland 🔺 (rácspont 52.25, 20.25; score 219.60; 7 napos változás: +378%).",
+    "Az infrastruktúra-közelségi modul 109 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 70 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
+    "CRITICAL infrastruktúra-jelzés: Port of Tallinn (Estonia) – 2.2 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "Legerősebb góc: Sochaczew County, Poland 🔺 (rácspont 52.25, 20.25; score 212.48; 7 napos változás: +384%).",
     "Trend: emelkedő (+737%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2892, GDELT DOC 1174, direkt feed 378, USGS 0, GDACS 1.",
+    "Forráskép: GDELT 0, GDELT linked 2916, GDELT DOC 1022, direkt feed 377, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Sochaczew County, Poland (+378%)."
+    "text": "Erősödő hotspot: Sochaczew County, Poland (+384%)."
   },
   "stats": {
-    "score_last7": 1640.684,
-    "score_prev7": 195.963,
-    "change_pct": 737.24
+    "score_last7": 1569.599,
+    "score_prev7": 187.46,
+    "change_pct": 737.3
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 56,
+    "last_24h_proximity_matches": 109,
     "top_proximity": [
+      {
+        "id": "b4dc1cb39d5b4816",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "79f46104bdc68831",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-04T00:00:00Z",
+          "url": "http://www.russiaherald.com/news/279166144/baltic-states-enabled-ukrainian-drone-attacks-moscow",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "3076875f2969a742",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "653403eb69dceb6b",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-04T00:00:00Z",
+          "url": "https://variety.com/2026/film/global/karlovy-vary-future-frames-1236801671/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "e66dcc4ae7fef289",
+        "level": "critical",
+        "score": 86.09,
+        "distance_km": 2.17,
+        "event": {
+          "id": "79f46104bdc68831",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-04T00:00:00Z",
+          "url": "http://www.russiaherald.com/news/279166144/baltic-states-enabled-ukrainian-drone-attacks-moscow",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-transport-tallinn-port",
+          "name": "Port of Tallinn",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Port of Tallinn",
+          "lat": 59.444,
+          "lon": 24.761,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "7a92f65779ba2b95",
         "level": "critical",
@@ -219,96 +309,6 @@
           "source": "GDELT",
           "time": "2026-07-04T00:00:00Z",
           "url": "https://www.1073wrsw.com/43-year-old-warsaw-man-dies-in-train-accident-near-argonne-road/",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "data_center_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "d08059672ec7810f",
-        "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
-        "event": {
-          "id": "b7781bef41af5bb2",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.sherbrookerecord.com/orford-music-festival-boasts-vivaldi-and-chopin/",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "data_center_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "ffce2bac54322f9f",
-        "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
-        "event": {
-          "id": "0a6aaa9e86dafadb",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.yahoo.com/news/world/articles/poland-ukraine-seek-ease-wartime-031927543.html",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "data_center_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "46c9fb74b00aef55",
-        "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
-        "event": {
-          "id": "2c18c38f87931331",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.herefordtimes.com/news/26247792.wartime-exploits-spies-revealed-violette-szab-museum/",
           "lat": 52.25,
           "lon": 21.0,
           "source_file": "gdelt_linked.geojson"

@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-04T13:10:07Z",
+  "generated_utc": "2026-07-04T19:06:29Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 109 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 70 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 184 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 109 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
     "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
     "CRITICAL infrastruktúra-jelzés: Port of Tallinn (Estonia) – 2.2 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "Legerősebb góc: Sochaczew County, Poland 🔺 (rácspont 52.25, 20.25; score 212.48; 7 napos változás: +384%).",
-    "Trend: emelkedő (+737%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2916, GDELT DOC 1022, direkt feed 377, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Legerősebb góc: Sochaczew County, Poland 🔺 (rácspont 52.25, 20.25; score 205.34; 7 napos változás: +398%).",
+    "Trend: emelkedő (+745%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2955, GDELT DOC 873, direkt feed 377, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 183 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Sochaczew County, Poland (+384%)."
+    "text": "Erősödő hotspot: Sochaczew County, Poland (+398%)."
   },
   "stats": {
-    "score_last7": 1569.599,
-    "score_prev7": 187.46,
-    "change_pct": 737.3
+    "score_last7": 1497.878,
+    "score_prev7": 177.256,
+    "change_pct": 745.04
   },
-  "rss_count": 200,
+  "rss_count": 183,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 109,
+    "last_24h_proximity_matches": 184,
     "top_proximity": [
       {
         "id": "b4dc1cb39d5b4816",
@@ -178,17 +178,47 @@
         }
       },
       {
-        "id": "046846bb6798938d",
+        "id": "14f7a243a66fc7b4",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "69ec3a4bdaeab13b",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "violence",
+          "source": "GDELT",
+          "time": "2026-07-04T00:00:00Z",
+          "url": "https://www.dailykos.com/stories/2026/7/4/800064977/community/history-corner-good-news-july-3rds/",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "b9cec65b0dde51bf",
         "level": "critical",
         "score": 85.81,
         "distance_km": 2.33,
         "event": {
-          "id": "d60d5349e9578419",
+          "id": "36179ba1180a1956",
           "title": "Warsaw, (PL67), Poland",
           "category": "other",
           "source": "GDELT",
           "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.kyivpost.com/post/79559",
+          "url": "https://www.kyivpost.com/post/79558",
           "lat": 52.25,
           "lon": 21.0,
           "source_file": "gdelt_linked.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "b9cec65b0dde51bf",
+        "id": "046846bb6798938d",
         "level": "critical",
         "score": 85.81,
         "distance_km": 2.33,
         "event": {
-          "id": "36179ba1180a1956",
+          "id": "d60d5349e9578419",
           "title": "Warsaw, (PL67), Poland",
-          "category": "other",
+          "category": "violence",
           "source": "GDELT",
           "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.kyivpost.com/post/79558",
+          "url": "https://www.kyivpost.com/post/79559",
           "lat": 52.25,
           "lon": 21.0,
           "source_file": "gdelt_linked.geojson"
@@ -279,36 +309,6 @@
           "source": "GDELT",
           "time": "2026-07-04T00:00:00Z",
           "url": "https://www.ncregister.com/features/us-catholic-history-highlights",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-dc-hub",
-          "name": "Warsaw Data Centre Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "data_center_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.23,
-          "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "4ee15ab73646e0de",
-        "level": "critical",
-        "score": 85.81,
-        "distance_km": 2.33,
-        "event": {
-          "id": "a451bb423a1ab3e8",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "violence",
-          "source": "GDELT",
-          "time": "2026-07-04T00:00:00Z",
-          "url": "https://www.1073wrsw.com/43-year-old-warsaw-man-dies-in-train-accident-near-argonne-road/",
           "lat": 52.25,
           "lon": 21.0,
           "source_file": "gdelt_linked.geojson"

@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-05T08:49:03Z",
+  "generated_utc": "2026-07-05T13:18:23Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 298 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 119 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 503 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 197 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Líderes Europeus Reafirmam Apoio a Zelenskiy em Londres para Acordo de Paz com a Rússia.",
     "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: TV - Doku zeigt , was Putins „ Wegwerfagenten in Europa treiben : „ Ihr seid schwach.",
     "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Brennpunkte - Pistorius rechnet mit Zwangsversetzungen nach Litauen.",
-    "Legerősebb góc: Sochaczew County, Poland 🔺 (rácspont 52.25, 20.25; score 185.93; 7 napos változás: +322%).",
-    "Trend: emelkedő (+713%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2887, GDELT DOC 850, direkt feed 379, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 223.82; 7 napos változás: +2699%).",
+    "Trend: emelkedő (+771%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2917, GDELT DOC 850, direkt feed 378, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 187 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Sochaczew County, Poland (+322%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+2699%)."
   },
   "stats": {
-    "score_last7": 1438.994,
-    "score_prev7": 177.089,
-    "change_pct": 712.58
+    "score_last7": 1479.606,
+    "score_prev7": 169.826,
+    "change_pct": 771.25
   },
-  "rss_count": 200,
+  "rss_count": 187,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 298,
+    "last_24h_proximity_matches": 503,
     "top_proximity": [
       {
         "id": "43da8cfaee9e0336",
@@ -55,6 +55,36 @@
           "lat": 59.437,
           "lon": 24.753,
           "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "807b03457b5a593e",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "75302e01c3557a28",
+          "title": "Riga, Riga, Latvia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-05T00:00:00Z",
+          "url": "https://indianexpress.com/article/opinion/columns/nato-summit-russia-trump-gdp-spending-collective-defence-10772531/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
         }
       },
       {
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-05T00:00:00Z",
           "url": "https://www.chinatimes.com/realtimenews/20260705000124-260403",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "cd40782c8c8e6eaf",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "bc92b4ab0279684e",
-          "title": "Визначилися всі пари 1 / 8 фіналу Вімблдону - 2026 : коли грає Марта Костюк",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-05T00:00:00Z",
-          "url": "https://mig.com.ua/vyznachylysia-vsi-pary-1-8-finalu-vimbldonu-2026-koly-hraie-marta-kostiuk/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,32 +1,122 @@
 {
-  "generated_utc": "2026-07-06T10:05:55Z",
+  "generated_utc": "2026-07-06T15:21:05Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 591 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 193 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Intesa accelera su consulenza in Europa Centro - Orientale ed Egitto.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: NATO va confirma pachetul suplimentar de ajutor financiar pentru Ucraina : 70 de miliarde Euro.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Κάθετος Διάδρομος και νέα αναβάθμιση προϊόντων.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 331.86; 7 napos változás: +2999%).",
-    "Trend: emelkedő (+670%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2787, GDELT DOC 754, direkt feed 383, USGS 0, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 816 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 271 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Ηράκλειο : Φρικτά βασανιστήρια 55χρονης από 42χρονη - Της έκοψε τα μαλλιά με μπαλτά.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Exporturile cerealelor Ucrainei scad în sezonul curent , perspective de revenire solide.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Cu ce mandat merge România la summitul NATO de la Ankara ? Oana Țoiu explică prioritățile de securitate.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 412.53; 7 napos változás: +3983%).",
+    "Trend: emelkedő (+767%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2867, GDELT DOC 735, direkt feed 378, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+2999%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+3983%)."
   },
   "stats": {
-    "score_last7": 1422.72,
-    "score_prev7": 184.832,
-    "change_pct": 669.74
+    "score_last7": 1525.136,
+    "score_prev7": 175.963,
+    "change_pct": 766.74
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 591,
+    "last_24h_proximity_matches": 816,
     "top_proximity": [
+      {
+        "id": "05d9d49ef783ea2f",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "b6a3af36e76fa462",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "violence",
+          "source": "GDELT",
+          "time": "2026-07-06T00:00:00Z",
+          "url": "https://www.foxnews.com/tech/starship-delivery-robots-leave-campuses-cities",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "7021aab47d4505c2",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "b5ab94a5369d14b6",
+          "title": "Riga, Riga, Latvia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-06T00:00:00Z",
+          "url": "https://bnn-news.com/from-the-military-to-the-airport-latvia-uncovers-major-russian-espionage-network-281674",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "acbcf80adce3b826",
+        "level": "critical",
+        "score": 86.09,
+        "distance_km": 2.17,
+        "event": {
+          "id": "b6a3af36e76fa462",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "violence",
+          "source": "GDELT",
+          "time": "2026-07-06T00:00:00Z",
+          "url": "https://www.foxnews.com/tech/starship-delivery-robots-leave-campuses-cities",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-transport-tallinn-port",
+          "name": "Port of Tallinn",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Port of Tallinn",
+          "lat": 59.444,
+          "lon": 24.761,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "8eb084e8c1ee78fa",
         "level": "critical",
@@ -39,6 +129,96 @@
           "source": "GDELT",
           "time": "2026-07-06T00:00:00Z",
           "url": "https://link.springer.com/book/10.1007/978-3-032-26492-3",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "774d616e9a24097d",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "ff50415de3c81156",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-06T00:00:00Z",
+          "url": "https://www.express.co.uk/travel/articles/2225701/spain-warning-ryanair-7-worst-airports-delays",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "cacc3db1617a7cd3",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "a9236832045ea9d9",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-06T00:00:00Z",
+          "url": "https://balkaninsight.com/2026/07/06/locals-fight-to-protect-pragues-stalin-cultural-centre-from-closure/rd/",
+          "lat": 50.0833,
+          "lon": 14.4667,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "208394f0197ae8f3",
+        "level": "critical",
+        "score": 85.96,
+        "distance_km": 2.25,
+        "event": {
+          "id": "80779af098dd2513",
+          "title": "Prague, Praha, Hlavníesto, Czech Republic",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-06T00:00:00Z",
+          "url": "https://euobserver.com/225345/in-theory-its-from-china-in-reality-its-from-moscow-how-sanctioned-russian-timber-keeps-flowing-into-czech-republic/",
           "lat": 50.0833,
           "lon": 14.4667,
           "source_file": "gdelt_linked.geojson"
@@ -144,186 +324,6 @@
           "operator": "Multiple operators",
           "lat": 52.23,
           "lon": 21.01,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1168728edae9e512",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "f75a86376270d2e6",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-06T00:00:00Z",
-          "url": "https://en.apa.az/europe/polish-defense-ministry-to-disclose-information-about-military-supplies-to-kyiv-514528",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "0336347d56d4e4a6",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "fb22e4476f2ae493",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-06T00:00:00Z",
-          "url": "https://www.yahoo.com/lifestyle/articles/left-google-spent-traveling-6-234801590.html",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "92ae183dea814e1e",
-        "level": "critical",
-        "score": 85.55,
-        "distance_km": 2.47,
-        "event": {
-          "id": "7931a74728fa161b",
-          "title": "Warsaw, (PL67), Poland",
-          "category": "violence",
-          "source": "GDELT",
-          "time": "2026-07-06T00:00:00Z",
-          "url": "http://www.bignewsnetwork.com/news/279169927/6-injured-after-city-bus-crashes-into-tram-cars-in-warsaw",
-          "lat": 52.25,
-          "lon": 21.0,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-digital-warsaw-ixp",
-          "name": "Warsaw Internet Exchange / Digital Hub",
-          "country": "Poland",
-          "city": "Warsaw",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 9.0,
-          "operator": "Multiple operators",
-          "lat": 52.229,
-          "lon": 21.012,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "0f20c8beaf2a0a84",
-        "level": "critical",
-        "score": 84.11,
-        "distance_km": 3.27,
-        "event": {
-          "id": "34a7cc6fd8743c1a",
-          "title": "Budapest, Budapest, Hungary",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-06T00:00:00Z",
-          "url": "https://www.yahoo.com/news/politics/articles/ukraines-ambassador-eu-enlargement-focus-075303013.html",
-          "lat": 47.5,
-          "lon": 19.0833,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "hu-digital-bix",
-          "name": "Budapest Internet Exchange",
-          "country": "Hungary",
-          "city": "Budapest",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "BIX",
-          "lat": 47.497,
-          "lon": 19.04,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "6f84bf394b478bb8",
-        "level": "critical",
-        "score": 79.24,
-        "distance_km": 0.47,
-        "event": {
-          "id": "1c312b2d23b81cc9",
-          "title": "Intesa accelera su consulenza in Europa Centro - Orientale ed Egitto",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-06T09:15:00Z",
-          "url": "https://www.quotidiano.net/economia/ultimaora/intesa-accelera-su-consulenza-in-09ac60d8",
-          "lat": 44.43,
-          "lon": 26.1,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "ro-digital-bucharest-ixp",
-          "name": "Bucharest Internet Exchange / Digital Hub",
-          "country": "Romania",
-          "city": "Bucharest",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 8.0,
-          "operator": "Multiple operators",
-          "lat": 44.426,
-          "lon": 26.102,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "e62f20a4f4dbfda5",
-        "level": "critical",
-        "score": 79.24,
-        "distance_km": 0.47,
-        "event": {
-          "id": "db03bf39230b12c0",
-          "title": "NATO va confirma pachetul suplimentar de ajutor financiar pentru Ucraina : 70 de miliarde Euro",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-07-06T09:00:00Z",
-          "url": "https://adevarul.ro/blogurile-adevarul/nato-va-confirma-pachetul-suplimentar-de-ajutor-2541227.html",
-          "lat": 44.43,
-          "lon": 26.1,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "ro-digital-bucharest-ixp",
-          "name": "Bucharest Internet Exchange / Digital Hub",
-          "country": "Romania",
-          "city": "Bucharest",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 8.0,
-          "operator": "Multiple operators",
-          "lat": 44.426,
-          "lon": 26.102,
           "source_file": "infra_digital.json"
         }
       }

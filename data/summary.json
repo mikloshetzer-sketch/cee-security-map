@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-07-07T14:17:40Z",
+  "generated_utc": "2026-07-07T19:53:29Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1253 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 796 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Nato , Trump ad Ankara per il vertice : cerimonia inaugurale poi incontro con Erdogan.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Czech delegation to come under scrutiny over defense spending at NATO summit.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Balcerowski y Pantzar cierran con nota la primera fase para el Mundial de Catar 2027.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 372.90; 7 napos változás: +3809%).",
-    "Trend: emelkedő (+849%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2802, GDELT DOC 883, direkt feed 353, USGS 0, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 1254 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 779 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Rzeszów NATO Logistics Hub (Poland) – 0.6 km-re ettől: Rzeszow, Podkarpackie, Poland.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 346.46; 7 napos változás: +3731%).",
+    "Trend: emelkedő (+904%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2895, GDELT DOC 740, direkt feed 356, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+3809%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+3731%)."
   },
   "stats": {
-    "score_last7": 1814.236,
-    "score_prev7": 191.135,
-    "change_pct": 849.19
+    "score_last7": 1818.748,
+    "score_prev7": 181.109,
+    "change_pct": 904.23
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1253,
+    "last_24h_proximity_matches": 1254,
     "top_proximity": [
+      {
+        "id": "cee5bfeb22bbfa97",
+        "level": "critical",
+        "score": 98.81,
+        "distance_km": 0.6,
+        "event": {
+          "id": "9736e6f441e56ac2",
+          "title": "Rzeszow, Podkarpackie, Poland",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-07T00:00:00Z",
+          "url": "https://www.bankingnews.gr/diethni/articles/886722/chaos-in-poland-rzeszow-turns-into-hospital-after-russian-pounding-of-kyiv-as-nato-personnel-collected-with-flying-icus",
+          "lat": 50.0372,
+          "lon": 22.0049,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-military-rzeszow-logistics",
+          "name": "Rzeszów NATO Logistics Hub",
+          "country": "Poland",
+          "city": "Rzeszów",
+          "category": "military",
+          "subtype": "military_logistics_hub",
+          "criticality": 10.0,
+          "operator": "Poland / NATO partners",
+          "lat": 50.041,
+          "lon": 21.999,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "4f67cafc96f4a831",
         "level": "critical",
@@ -55,6 +85,66 @@
           "lat": 59.437,
           "lon": 24.753,
           "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "d09cf1c2f893afa4",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "9a8364637beaedda",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-07T00:00:00Z",
+          "url": "https://www.baltictimes.com/investors__the_future_of_technology_entrepreneurship_is_promising/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "ff3156eb569a058c",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "ca6de125b9475d40",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-07T00:00:00Z",
+          "url": "https://www.baltictimes.com/baurum_to_develop_the__constanta__project_with_approximately_90_apartments_in_a_historic_building_in_central_riga/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
         }
       },
       {
@@ -219,96 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-07T13:45:00Z",
           "url": "https://www.clickondetroit.com/news/politics/2026/07/07/the-latest-president-trump-meets-nato-leaders-as-they-try-to-show-they-are-serious-about-defense/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a31cb6b2160db772",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "633f169611c205ee",
-          "title": "共富 三道坎 ｜商学院观察 - 经济观察网 － 专业财经新闻网站",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-07T13:45:00Z",
-          "url": "http://www.eeo.com.cn/2026/0705/943815.shtml",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "95a50ddb0c97a1a6",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "d2208d43e3241f7a",
-          "title": "Bondarenková ( SPD ): Jak zvednout národní sebevědomí | ParlamentniListy . cz – politika ze všech stran",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-07T13:45:00Z",
-          "url": "https://www.parlamentnilisty.cz/politika/politici-volicum/Bondarenkova-SPD-Jak-zvednout-narodni-sebevedomi-793726",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "01d771dd3be37ed6",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "efecb384cfd412e5",
-          "title": "The Latest : President Trump meets NATO leaders as they try to show they are serious about defense",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-07-07T13:45:00Z",
-          "url": "https://www.winchesterstar.com/associated_press/washington/the-latest-president-trump-meets-nato-leaders-as-they-try-to-show-they-are-serious/article_2d84c6d2-1124-5ba8-9248-4d569d364ea1.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-07-07T02:18:38Z",
+  "generated_utc": "2026-07-07T09:34:42Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1255 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 628 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Tennis : Cobolli sneaks into last eight : Paolini tames Eala.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Πολωνική ιθαγένεια αποκτά ο ηθοποιός Τζέσι Άιζενμπεργκ.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 413.68; 7 napos változás: +3406%).",
-    "Trend: emelkedő (+682%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2680, GDELT DOC 887, direkt feed 373, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 178 db.",
+    "Az infrastruktúra-közelségi modul 1443 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 824 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: How many years of salary buys a home in Ireland v Europe ?.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Největší překážkou výstavby je náš vlastní stát . Poslanci to mohou ve středu změnit.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ostudný a nedůstojný . Opozice kritizuje postoj Babišovy vlády před summitem NATO.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 375.36; 7 napos változás: +3309%).",
+    "Trend: emelkedő (+759%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2732, GDELT DOC 914, direkt feed 355, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 180 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+3406%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+3309%)."
   },
   "stats": {
-    "score_last7": 1676.349,
-    "score_prev7": 214.256,
-    "change_pct": 682.4
+    "score_last7": 1718.805,
+    "score_prev7": 200.013,
+    "change_pct": 759.35
   },
-  "rss_count": 178,
+  "rss_count": 180,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1255,
+    "last_24h_proximity_matches": 1443,
     "top_proximity": [
+      {
+        "id": "4f67cafc96f4a831",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "b5befb14ea4cd486",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-07T00:00:00Z",
+          "url": "https://aa.com.tr/en/world/estonia-says-natos-ankara-gathering-set-to-be-summit-of-delivery-as-allies-push-defense-spending/3988060",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "0772b95793526c4f",
         "level": "critical",
@@ -58,17 +88,17 @@
         }
       },
       {
-        "id": "d97459937e4051f4",
+        "id": "7d89c16fe642d253",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "2459c638c0d6e40d",
-          "title": "Tennis : Cobolli sneaks into last eight : Paolini tames Eala",
+          "id": "e23b0a6fb99c6e17",
+          "title": "How many years of salary buys a home in Ireland v Europe ?",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T01:00:00Z",
-          "url": "https://www.gdnonline.com:443/Details/1399882/Cobolli-sneaks-into-last-eight-Paolini-tames-Eala",
+          "time": "2026-07-07T08:45:00Z",
+          "url": "https://www.rte.ie/news/business/2026/0707/1579260-housing-income-comparison/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +118,17 @@
         }
       },
       {
-        "id": "0a3a28a00e9c1540",
+        "id": "14693f770e12e734",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "e59cd9ff87acfe7f",
-          "title": "Πολωνική ιθαγένεια αποκτά ο ηθοποιός Τζέσι Άιζενμπεργκ",
+          "id": "3a9a39a69b0f95e8",
+          "title": "Největší překážkou výstavby je náš vlastní stát . Poslanci to mohou ve středu změnit",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T01:00:00Z",
-          "url": "https://newpost.gr/eidiseis/poloniki-ithageneia-apokta-o-ithopoios-tzesi-aizenmpergk/",
+          "time": "2026-07-07T08:45:00Z",
+          "url": "https://www.novinky.cz/clanek/podcasty-hlas-na-pousti-nejvetsi-prekazkou-vystavby-je-nas-vlastni-stat-poslanci-to-mohou-ve-stredu-zmenit-40586783",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "8cf1ffd83a3f7dba",
+        "id": "2812b79790b90674",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3c279c8f814e70ae",
-          "title": "Wimbledon recap Day 8 : Alex de Minaur and the devastation that comes with elite sport",
-          "category": "infrastructure",
+          "id": "0e9efcce72efa4cc",
+          "title": "Ostudný a nedůstojný . Opozice kritizuje postoj Babišovy vlády před summitem NATO",
+          "category": "military",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T01:00:00Z",
-          "url": "https://www.nytimes.com/athletic/7425044/2026/07/06/wimbledon-recap-results-scores-bracket-day-8/",
+          "time": "2026-07-07T08:45:00Z",
+          "url": "https://www.denik.cz/cesko/ostudny-a-nedustojny-opozice-kritizuje-postoj-babisovy-vlady-pred-summitem-nato/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,47 +178,17 @@
         }
       },
       {
-        "id": "255ddb021c106113",
+        "id": "239f7c67806fb65b",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "8d3d062657c8f649",
-          "title": "Sánchez llega a la OTAN aferrado al cumplimiento del 2 % del gasto militar frente a Trump",
-          "category": "energy",
-          "source": "GDELT_DOC",
-          "time": "2026-07-07T00:15:00Z",
-          "url": "https://www.diariosur.es/nacional/sanchez-llega-otan-aferrado-cumplimiento-gasto-militar-20260706002625-ntrc.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "fdf5dba699bf788d",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "587fe2846dcafb06",
-          "title": "Los grandes perdedores de la Selección Mexicana en el Mundial del 2026",
+          "id": "0958e37d0f64b8f9",
+          "title": "Jesse Eisenberg sobre volver a interpretar a Mark Zuckerberg : No quiero que me asocien con ese personaje | Cine y series",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T00:15:00Z",
-          "url": "https://www.record.com.mx/historia/los-grandes-perdedores-de-la-seleccion-mexicana-en-el-mundial-del-2026-2026070622515250515",
+          "time": "2026-07-07T08:30:00Z",
+          "url": "https://larepublica.pe:443/cine-series/2026/07/07/jesse-eisenberg-sobre-volver-a-interpretar-a-mark-zuckerberg-no-quiero-que-me-asocien-con-ese-personaje-305172",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +208,17 @@
         }
       },
       {
-        "id": "dfb991e15041f81e",
+        "id": "f2296ad43123c0c5",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "71a5fa1cd4e09362",
-          "title": "Pěšákova poslední šance na přežití proti dronu . Strnadova italská munička Fiocchi představila náboje s wolframovými broky",
+          "id": "c1e9f054a288fa73",
+          "title": "Чехія не блокуватиме рішення саміту НАТО по Україні , але не виділятиме допомогу",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T00:00:00Z",
-          "url": "https://archiv.hn.cz/c1-67900690-pesakova-posledni-sance-na-preziti-proti-dronu-strnadova-italska-municka-fiocchi-predstavila-naboje-s-wolframovymi-broky",
+          "time": "2026-07-07T08:30:00Z",
+          "url": "https://www.eurointegration.com.ua/news/2026/07/7/7241095/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +238,47 @@
         }
       },
       {
-        "id": "865cd74a25eca6ab",
+        "id": "93b948905ab74f58",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "849a050b266080c2",
-          "title": "7 липня 2026 року : яке сьогодні свято , традиції та заборони",
+          "id": "690b66d8d9a6c0fe",
+          "title": "V Ankaře dnes začíná summit NATO , letí Babiš i Pavel",
+          "category": "military",
+          "source": "GDELT_DOC",
+          "time": "2026-07-07T08:30:00Z",
+          "url": "https://www.tyden.cz/v-ankare-dnes-zacina-summit-nato-leti-babis-i-pavel",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "b2a519ab214b09be",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "61daa4ff8078eec4",
+          "title": "Zahraničí | TNbiz . cz",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T00:00:00Z",
-          "url": "https://glavcom.ua/country/society/7-lipnja-jake-sohodni-svjato-traditsiji-ta-zaboroni-1128848.html",
+          "time": "2026-07-07T08:30:00Z",
+          "url": "https://tnbiz.cz/zahranici/651797",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "23b33af4a5ce6521",
+        "id": "0ba218d586e0c750",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "bcbc26374bda68f0",
-          "title": "Sánchez llega a la OTAN aferrado al cumplimiento del 2 % del gasto militar frente a Trump",
-          "category": "energy",
+          "id": "60d24cbabe7aa995",
+          "title": "Привласнював зарплати вчителів : депутат з Прикарпаття отримав дев ять років",
+          "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T00:00:00Z",
-          "url": "https://www.laverdad.es/nacional/sanchez-llega-otan-aferrado-cumplimiento-gasto-militar-20260706002625-ntrc.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "5f59864c4e062c35",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c73ed2ca74d3f363",
-          "title": "Portugal é ltimo na auto - perceo de controlo sobre saúde",
-          "category": "infrastructure",
-          "source": "GDELT_DOC",
-          "time": "2026-07-07T00:00:00Z",
-          "url": "https://sapo.pt/artigo/portugal-e-ultimo-na-auto-percecao-de-controlo-sobre-saude-6a4c3c12f05a77b254524863",
+          "time": "2026-07-07T08:15:00Z",
+          "url": "https://news.bigmir.net/ua/ukraine/10387419-privlasnyuvav-zarplati-vchiteliv-deputat-z-prikarpattya-otrimav-devyat-rokiv",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

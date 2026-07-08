@@ -1,254 +1,74 @@
 {
-  "generated_utc": "2026-07-07T19:53:29Z",
+  "generated_utc": "2026-07-08T01:59:09Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1254 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 779 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Rzeszów NATO Logistics Hub (Poland) – 0.6 km-re ettől: Rzeszow, Podkarpackie, Poland.",
+    "Az infrastruktúra-közelségi modul 1244 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 790 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 346.46; 7 napos változás: +3731%).",
-    "Trend: emelkedő (+904%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2895, GDELT DOC 740, direkt feed 356, USGS 0, GDACS 1.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 广西河北山东等地有强降水和强对流.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Бабіш каже , що не посвариться за одним столом з Павелом на урочистій вечері у Ердогана.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 419.73; 7 napos változás: +4273%).",
+    "Trend: emelkedő (+767%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2733, GDELT DOC 926, direkt feed 356, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+3731%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+4273%)."
   },
   "stats": {
-    "score_last7": 1818.748,
-    "score_prev7": 181.109,
-    "change_pct": 904.23
+    "score_last7": 1947.328,
+    "score_prev7": 224.69,
+    "change_pct": 766.67
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1254,
+    "last_24h_proximity_matches": 1244,
     "top_proximity": [
       {
-        "id": "cee5bfeb22bbfa97",
-        "level": "critical",
-        "score": 98.81,
-        "distance_km": 0.6,
-        "event": {
-          "id": "9736e6f441e56ac2",
-          "title": "Rzeszow, Podkarpackie, Poland",
-          "category": "military",
-          "source": "GDELT",
-          "time": "2026-07-07T00:00:00Z",
-          "url": "https://www.bankingnews.gr/diethni/articles/886722/chaos-in-poland-rzeszow-turns-into-hospital-after-russian-pounding-of-kyiv-as-nato-personnel-collected-with-flying-icus",
-          "lat": 50.0372,
-          "lon": 22.0049,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "pl-military-rzeszow-logistics",
-          "name": "Rzeszów NATO Logistics Hub",
-          "country": "Poland",
-          "city": "Rzeszów",
-          "category": "military",
-          "subtype": "military_logistics_hub",
-          "criticality": 10.0,
-          "operator": "Poland / NATO partners",
-          "lat": 50.041,
-          "lon": 21.999,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "4f67cafc96f4a831",
+        "id": "a25f6fbcdf01c344",
         "level": "critical",
         "score": 97.1,
         "distance_km": 1.45,
         "event": {
-          "id": "b5befb14ea4cd486",
+          "id": "b465a9bfaec20582",
           "title": "Tallinn, Harjumaa, Estonia",
-          "category": "military",
-          "source": "GDELT",
-          "time": "2026-07-07T00:00:00Z",
-          "url": "https://aa.com.tr/en/world/estonia-says-natos-ankara-gathering-set-to-be-summit-of-delivery-as-allies-push-defense-spending/3988060",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "d09cf1c2f893afa4",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "9a8364637beaedda",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-07T00:00:00Z",
-          "url": "https://www.baltictimes.com/investors__the_future_of_technology_entrepreneurship_is_promising/",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "ff3156eb569a058c",
-        "level": "critical",
-        "score": 89.42,
-        "distance_km": 0.32,
-        "event": {
-          "id": "ca6de125b9475d40",
-          "title": "Riga, Riga, Latvia",
           "category": "security_politics",
           "source": "GDELT",
-          "time": "2026-07-07T00:00:00Z",
-          "url": "https://www.baltictimes.com/baurum_to_develop_the__constanta__project_with_approximately_90_apartments_in_a_historic_building_in_central_riga/",
-          "lat": 56.95,
-          "lon": 24.1,
+          "time": "2026-07-08T00:00:00Z",
+          "url": "https://www.eurasiareview.com/08072026-russian-defense-ministry-preparing-law-to-limit-ability-of-wounded-or-infected-soldiers-to-separate-from-service-oped/",
+          "lat": 59.4339,
+          "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
         },
         "infrastructure": {
-          "id": "lv-transport-riga-port",
-          "name": "Port of Riga",
-          "country": "Latvia",
-          "city": "Riga",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Freeport of Riga Authority",
-          "lat": 56.949,
-          "lon": 24.105,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "0772b95793526c4f",
-        "level": "critical",
-        "score": 89.42,
-        "distance_km": 0.32,
-        "event": {
-          "id": "cef2e93ed7442855",
-          "title": "Riga, Riga, Latvia",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-07T00:00:00Z",
-          "url": "https://calgaryherald.com:443/opinion/john-ivison-expensive-submarines-are-the-cost-to-redeem-years-of-liberal-defence-complacency/wcm/4a80fca4-e869-471c-8fc8-6ac5302b6657",
-          "lat": 56.95000000000001,
-          "lon": 24.100000000000005,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "lv-transport-riga-port",
-          "name": "Port of Riga",
-          "country": "Latvia",
-          "city": "Riga",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Freeport of Riga Authority",
-          "lat": 56.949,
-          "lon": 24.105,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "d4e65fe764776a59",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "23dfeeef1355bada",
-          "title": "Nato , Trump ad Ankara per il vertice : cerimonia inaugurale poi incontro con Erdogan",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-07-07T13:45:00Z",
-          "url": "https://www.spotandweb.it/news/908138/nato-trump-ad-ankara-per-il-vertice-cerimonia-inaugurale-poi-incontro-con-erdogan.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
           "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
           "source_file": "infra_digital.json"
         }
       },
       {
-        "id": "0ee196e79106cef0",
+        "id": "977e674c37b5b282",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "80b5476b6348bb4c",
-          "title": "Czech delegation to come under scrutiny over defense spending at NATO summit",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-07-07T13:45:00Z",
-          "url": "https://english.radio.cz/czech-delegation-come-under-scrutiny-over-defense-spending-nato-summit-8891423",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "cef5711e06b9e313",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "7c4d54f47289e90d",
-          "title": "Balcerowski y Pantzar cierran con nota la primera fase para el Mundial de Catar 2027",
+          "id": "243834a09c63703c",
+          "title": "广西河北山东等地有强降水和强对流",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T13:45:00Z",
-          "url": "https://www.laopiniondemalaga.es/unicaja/2026/07/07/balcerowski-pantzar-cierran-nota-primera-fase-mundial-catar-2027-132207254.html",
+          "time": "2026-07-08T01:30:00Z",
+          "url": "https://www.163.com/dy/article/L1A81MRH051484AK.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,17 +88,17 @@
         }
       },
       {
-        "id": "6373fa93b7e170f9",
+        "id": "655200fc908bd55d",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "15a3250f0679182f",
-          "title": "Nato , Trump ad Ankara per il vertice : cerimonia inaugurale poi incontro con Erdogan • Vivere San Benedetto notizie per la città e il territorio",
-          "category": "military",
+          "id": "e6ea7861896e01c3",
+          "title": "Бабіш каже , що не посвариться за одним столом з Павелом на урочистій вечері у Ердогана",
+          "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T13:45:00Z",
-          "url": "https://www.viveresanbenedetto.it/altrigiornali/14/119740-2026",
+          "time": "2026-07-08T01:30:00Z",
+          "url": "https://www.eurointegration.com.ua/news/2026/07/7/7241163/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -298,17 +118,197 @@
         }
       },
       {
-        "id": "86e5267a1d63ac7a",
+        "id": "6cda09658fe13b5a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "5adc5c3aa084cd86",
-          "title": "The Latest : President Trump meets NATO leaders as they try to show they are serious about defense",
+          "id": "2cecdd99dd92c906",
+          "title": "나토 사무총장 · EU집행위원장 , 美 의존 줄이는 나토의 유럽화 강조",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-08T01:30:00Z",
+          "url": "https://www.fnnews.com/news/202607080651060584",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "879b9ad6b7773248",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "d62601e4f6552972",
+          "title": "Перший день саміту НАТО , перемога Марін Ле Пен , тимчасовий прем єр Молдови : новини дня",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-08T01:30:00Z",
+          "url": "https://www.eurointegration.com.ua/news/2026/07/7/7241166/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "786eda4623b0fbd9",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "36ede7e50b677729",
+          "title": "Revista presei internaționale , 8 iulie 2026 | Agenția de presă Rador",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-08T01:15:00Z",
+          "url": "https://www.rador.ro/2026/07/08/revista-presei-internationale-8-iulie-2026/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "cc796690c4f62b3a",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "36b2cd53e6ddc66a",
+          "title": "The Latest : US strikes Iran as Trump meets with NATO leaders in Turkey",
           "category": "military",
           "source": "GDELT_DOC",
-          "time": "2026-07-07T13:45:00Z",
-          "url": "https://www.clickondetroit.com/news/politics/2026/07/07/the-latest-president-trump-meets-nato-leaders-as-they-try-to-show-they-are-serious-about-defense/",
+          "time": "2026-07-08T01:15:00Z",
+          "url": "https://www.yumasun.com/news/national_news/the-latest-us-strikes-iran-as-trump-meets-with-nato-leaders-in-turkey/article_4fe9d6ea-5888-57cd-95b1-afa66d718585.html",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "a4cb802084ab59f4",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "b83a717ca5543fac",
+          "title": "Wimbledon quarterfinal recap : How the roof loomed over another day of drama",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-08T01:00:00Z",
+          "url": "https://www.nytimes.com/athletic/7427700/2026/07/07/wimbledon-quarterfinal-recap-results-bracket-drama/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "19d3cb89155f6b3a",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "de3399705f107216",
+          "title": "Pavel na neformální večeři summitu NATO debatoval o Balkánu a Pobaltí",
+          "category": "military",
+          "source": "GDELT_DOC",
+          "time": "2026-07-08T01:00:00Z",
+          "url": "https://www.respekt.cz/informacni-servis/pavel-na-neformalni-veceri-summitu-nato-debatoval-o-balkanu-a-pobalti-2026-07-08-00-18",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "cedf6c7304ff5929",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "1bb6e5637d0a434c",
+          "title": "Монголын анхны мэдээллийн сайт",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-08T00:45:00Z",
+          "url": "https://www.sonin.mn/newsDetail/17933",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

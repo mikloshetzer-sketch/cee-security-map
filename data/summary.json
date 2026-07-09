@@ -1,32 +1,92 @@
 {
-  "generated_utc": "2026-07-09T14:40:20Z",
+  "generated_utc": "2026-07-09T19:32:48Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 2153 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1092 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ferytale rolls on at Wimbledon as British wild card Fery reaches semifinals after meeting queen.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: We are not at war - NATO state questions bloc Ukraine strategy.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Україна має два місяці на завершення війни , - Павел | БУГ.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 701.58; 7 napos változás: +7572%).",
-    "Trend: emelkedő (+1206%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2816, GDELT DOC 1881, direkt feed 359, USGS 0, GDACS 0.",
+    "Az infrastruktúra-közelségi modul 2162 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1092 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Trzęsienie ziemi niedaleko granicy z Polską . Wstrząsy odczuwalne w czterech krajach.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Il ritorno dellInterrail , simbolo di libertà . Ma il treno europeo non è più solo per giovani.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Karolina Muchova outs Coco Gauff , will play for Wimbledon title.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 763.00; 7 napos változás: +8659%).",
+    "Trend: emelkedő (+1352%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2904, GDELT DOC 2029, direkt feed 357, USGS 0, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7572%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+8659%)."
   },
   "stats": {
-    "score_last7": 2787.814,
-    "score_prev7": 213.413,
-    "change_pct": 1206.3
+    "score_last7": 2957.581,
+    "score_prev7": 203.63,
+    "change_pct": 1352.43
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 2153,
+    "last_24h_proximity_matches": 2162,
     "top_proximity": [
+      {
+        "id": "b9d1acb1ceaa7fa7",
+        "level": "critical",
+        "score": 97.72,
+        "distance_km": 1.14,
+        "event": {
+          "id": "4c3657de162845b1",
+          "title": "Adazi, Adazu Novads, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-09T00:00:00Z",
+          "url": "https://www.theepochtimes.com/world/why-canadas-push-for-a-defence-bank-has-limited-backing-so-far-6059606",
+          "lat": 57.0758,
+          "lon": 24.3214,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-military-adazi-base",
+          "name": "Ādaži Military Base",
+          "country": "Latvia",
+          "city": "Ādaži",
+          "category": "military",
+          "subtype": "military_base",
+          "criticality": 10.0,
+          "operator": "Latvian Armed Forces / NATO eFP",
+          "lat": 57.07,
+          "lon": 24.337,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "2d167455995239f1",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "5aca2c52b73f1fba",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-09T00:00:00Z",
+          "url": "http://www.jpost.com/defense-and-tech/article-902057",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "51b5fcf5ccc29dd2",
         "level": "critical",
@@ -58,257 +118,197 @@
         }
       },
       {
-        "id": "a8f3b732fba0aad3",
+        "id": "59c9f69e05c220c4",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "70ae10163ebfa8dd",
+          "id": "b140f6c9f80ca1e9",
+          "title": "Trzęsienie ziemi niedaleko granicy z Polską . Wstrząsy odczuwalne w czterech krajach",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-09T19:00:00Z",
+          "url": "https://wiadomosci.radiozet.pl/swiat/trzesienie-ziemi-niedaleko-granicy-z-polska-wstrzasy-odczuwalne-w-czterech-krajach",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "a7419e2ddd045341",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "0f086cf991a45379",
+          "title": "Il ritorno dellInterrail , simbolo di libertà . Ma il treno europeo non è più solo per giovani",
+          "category": "infrastructure",
+          "source": "GDELT_DOC",
+          "time": "2026-07-09T19:00:00Z",
+          "url": "https://www.corriere.it/sette/26_luglio_09/il-ritorno-dell-interrail-simbolo-di-liberta-ma-il-treno-europeo-non-e-piu-solo-per-giovani-da9ac3b5-9b11-4b70-955f-e8490f5e7xlk.shtml",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "c610f1da738fe102",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "bb300e25d01ab272",
+          "title": "Karolina Muchova outs Coco Gauff , will play for Wimbledon title",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-09T18:45:00Z",
+          "url": "http://www.londonmercury.com/news/279177519/karolina-muchova-outs-coco-gauff-will-play-for-wimbledon-title",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "3614744ce83c53cb",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "8c14035f09b2911e",
+          "title": "Hodnotit plnění programu po půlroce je vládní marketing",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-09T18:45:00Z",
+          "url": "https://www.idnes.cz/zpravy/domaci/hodnoceni-plneni-program-vlada-andrej-babis-experti-marketing-pr.A260709_193417_domaci_herp",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "38921d40291eeb13",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "2b5bbe3533c252c3",
+          "title": "Karolina Muchova edges Coco Gauff to set up all - Czech Wimbledon final",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-09T18:45:00Z",
+          "url": "http://www.londonmercury.com/news/279177624/karolina-muchova-edges-coco-gauff-to-set-up-all-czech-wimbledon-final",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "66911cb642e7bbd3",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "3ece6867d26e57d3",
+          "title": "Russian stuff blowing up : Ukraine blasts dozens of fuel - carrying Russian tankers",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-09T18:45:00Z",
+          "url": "https://www.dailykos.com/stories/2026/7/9/800067071/community/russian-stuff-blowing-up/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "807beb58d9784be6",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "03061f72464eee96",
           "title": "Ferytale rolls on at Wimbledon as British wild card Fery reaches semifinals after meeting queen",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-09T14:15:00Z",
-          "url": "https://fm99.com/news/030030-ferytale-rolls-on-at-wimbledon-as-british-wild-card-fery-reaches-semifinals-after-meeting-queen/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "d35ae909159973e6",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c7dfc1a26fcb0bac",
-          "title": "We are not at war - NATO state questions bloc Ukraine strategy",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-07-09T14:15:00Z",
-          "url": "http://www.russiaherald.com/news/279177133/we-are-not-at-war-nato-state-questions-bloc-ukraine-strategy",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "ca88537a603eac7f",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "5f09da769068faa0",
-          "title": "Україна має два місяці на завершення війни , - Павел | БУГ",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-09T14:15:00Z",
-          "url": "https://bug.org.ua/news/ukrayina-maye-dva-misyaczi-na-zavershennya-vijny-pavel-1049833/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "9103c9208d1e74a2",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "0cee7ed74e9d69ce",
-          "title": "Ukraine - Krieg im Liveticker : +++ 15 : 44 Ukraine : Keine Hinweise für staatliche Beteiligung an Nord - Stream - Anschlägen +++",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-09T14:00:00Z",
-          "url": "https://www.n-tv.de/politik/15-44-Ukraine-Keine-Hinweise-fuer-staatliche-Beteiligung-an-Nord-Stream-Anschlaegen-id30859357.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "92d25589b271f924",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "73cbce6ec265228d",
-          "title": "Путін може оголосити мобілізацію : Павел заявив , що Україна має два місяці на завершення війни",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-09T13:30:00Z",
-          "url": "https://www.obozrevatel.com/ukr/politics-news/putin-mozhe-ogolositi-mobilizatsiyu-pavel-zayaviv-scho-ukraina-mae-dva-misyatsi-na-zavershennya-vijni.htm",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "497f0c7e02957065",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "ed0899faf1e299ad",
-          "title": "Jonny Lieberman : Fast Cars , Climate Change , and the Contradictions We Often Ignore",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-09T13:30:00Z",
-          "url": "https://www.motortrend.com/features/jonny-lieberman-climate-change-car-enthusiasts",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "e59097eb113d8e2a",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "736f711a9270756b",
-          "title": "MGF partners with Terra Infrastructure in Europe",
-          "category": "infrastructure",
-          "source": "GDELT_DOC",
-          "time": "2026-07-09T13:15:00Z",
-          "url": "https://www.theconstructionindex.co.uk/news/view/mgf-partners-with-terra-infrastructure-in-europe",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "14fc9b26d8956f55",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "b5e2f6d16e250e68",
-          "title": "Кремль вскрыл опасную стратегию Вашингтона : двойная игра заставила изменить взгляд на статус посредника",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-09T13:15:00Z",
-          "url": "https://www.pravda.ru/news/world/2368880-usa-double-game-ukraine/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "fc8752fa45b8a8b7",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "283c4a71ae075177",
-          "title": "Українська бронетехніка заявила про обшуки СБУ та тиск на компанію - чого стосується справа",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-09T13:15:00Z",
-          "url": "https://zn.ua/ukr/UKRAINE/sbu-prijshla-z-obshukami-do-zamdirektora-ukrajinskoji-bronetekhniki-kompanija-zajavila-pro-naklep-ta-pobittja.html",
+          "time": "2026-07-09T18:45:00Z",
+          "url": "https://rewind943.com/news/030030-ferytale-rolls-on-at-wimbledon-as-british-wild-card-fery-reaches-semifinals-after-meeting-queen/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

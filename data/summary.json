@@ -1,15 +1,15 @@
 {
-  "generated_utc": "2026-07-09T02:10:48Z",
+  "generated_utc": "2026-07-09T09:29:39Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 2282 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1262 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Trump says U . S . will give Ukraine license to produce Patriot defense systems.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Terminator 2 : Judgment Day Returns to Theatres For 35th Anniversary.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ukraine Kostyuk extends Wimbledon run as attacks hit Kyiv . She slams IOC decision on Russia.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 685.04; 7 napos változás: +6529%).",
-    "Trend: emelkedő (+975%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2721, GDELT DOC 1595, direkt feed 352, USGS 0, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 186 db.",
+    "Az infrastruktúra-közelségi modul 1988 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 1018 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Nepotyzm na Akademii Wojsk Lądowych . Rodzinne etaty i wyjazdy do Włoch.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: „ Kinijos apaštalas – legendinis išeivis iš Tauragės Samuelis Isakas Jozefas Šereševskis ( Schereschewsky ).",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Винищувачі НАТО будуть збивати повітряні цілі над країнами Балтії.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 638.46; 7 napos változás: +6529%).",
+    "Trend: emelkedő (+1081%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2753, GDELT DOC 1739, direkt feed 353, USGS 0, GDACS 1.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
@@ -18,15 +18,45 @@
     "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+6529%)."
   },
   "stats": {
-    "score_last7": 2575.278,
-    "score_prev7": 239.651,
-    "change_pct": 974.6
+    "score_last7": 2638.642,
+    "score_prev7": 223.356,
+    "change_pct": 1081.36
   },
-  "rss_count": 186,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 2282,
+    "last_24h_proximity_matches": 1988,
     "top_proximity": [
+      {
+        "id": "4b47a28187ef87f4",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "51304bfc53caf632",
+          "title": "Riga, Riga, Latvia",
+          "category": "drone",
+          "source": "GDELT",
+          "time": "2026-07-09T00:00:00Z",
+          "url": "https://www.lrt.lt/en/news-in-english/19/2984327/filming-drones-burning-jeeps-in-lithuania-behind-russia-s-sabotage-network",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "4510ecd9adf330fe",
         "level": "critical",
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-09T00:45:00Z",
           "url": "https://www.finanznachrichten.de/nachrichten-2026-07/68979378-iqm-quantum-computers-lumi-ai-factory-entscheidet-sich-fuer-iqm-zur-einfuehrung-eines-fortschrittlichen-quantencomputers-und-zur-beschleunigung-der-ent-004.htm",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "bf92b9b700acf288",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "5720294ebb31e8eb",
-          "title": "Słynny zawodnik MMA Mamed Ch . skazany na 1 , 5 roku więzienia . W tle m . in . paserstwo",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-09T00:30:00Z",
-          "url": "https://nczas.info/2026/07/08/slynny-zawodnik-mma-mamed-ch-skazany-na-15-roku-wiezienia-w-tle-m-in-paserstwo/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

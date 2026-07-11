@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-11T07:49:24Z",
+  "generated_utc": "2026-07-11T13:05:51Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1633 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 894 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 1419 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 744 magas vagy kritikus szintű.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Jest motocyklistką . To już nie te czasy , kiedy motocykl był zarezerwowany dla facetów.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: NATO , UE , Ucraina , united states : le ultime notizie dopo il vertice di Ankara – Analisi Difesa.",
     "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 一枚炸弹 、 一名女杀手 ， 2 . 2亿美元身家 地产之王 遇刺|摩纳哥|第聂伯罗|乌克兰|俄罗斯|基辅.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 863.82; 7 napos változás: +10461%).",
-    "Trend: emelkedő (+1378%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2859, GDELT DOC 2665, direkt feed 341, USGS 0, GDACS 0.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: 158 ekoschematów w 28 planach WPR . Każdy kraj united kingdom łada je inaczej.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 822.35; 7 napos változás: +10478%).",
+    "Trend: emelkedő (+1433%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2892, GDELT DOC 2709, direkt feed 342, USGS 0, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10461%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10478%)."
   },
   "stats": {
-    "score_last7": 3043.971,
-    "score_prev7": 205.932,
-    "change_pct": 1378.14
+    "score_last7": 3001.255,
+    "score_prev7": 195.737,
+    "change_pct": 1433.31
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1633,
+    "last_24h_proximity_matches": 1419,
     "top_proximity": [
       {
         "id": "72b947a2637a6033",
@@ -39,6 +39,66 @@
           "source": "GDELT",
           "time": "2026-07-11T00:00:00Z",
           "url": "https://www.eurasiareview.com/11072026-putins-aging-inner-circle-resembles-brezhnev-elite-analysis/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "c8caf5ab72455504",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "46995abe15abed39",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-11T00:00:00Z",
+          "url": "https://www.kyivpost.com/post/80067",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "73d5c5f4ede7e43e",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "fad99a86f809c2fe",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-11T00:00:00Z",
+          "url": "http://science20.com/news_staff/at_puberty_brain_networks_related_to_mood_problems_develop_differently_in_males_and_females-241567",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
@@ -99,36 +159,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-11T07:15:00Z",
           "url": "https://kobieta.wp.pl/jest-motocyklistka-to-juz-nie-te-czasy-kiedy-motocykl-byl-zarezerwowany-dla-facetow-7292544944105952a",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "24ab1ed47c4d7c63",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "88fce36a2e5954d1",
-          "title": "NATO , UE , Ucraina , united states : le ultime notizie dopo il vertice di Ankara – Analisi Difesa",
-          "category": "military",
-          "source": "GDELT_DOC",
-          "time": "2026-07-11T07:15:00Z",
-          "url": "https://www.analisidifesa.it/2026/07/nato-ue-ucraina-usa-le-ultime-notizie-dopo-il-vertice-di-ankara/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-11T06:45:00Z",
           "url": "https://www.nytimes.com/athletic/7329359/2026/07/11/world-cup-2026-48-teams-ranked/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "39fd48bc8ed80f99",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "1747026f7112fb99",
-          "title": "Partneři MFF KV vsadily na zážitky , komunitu i společenská témata",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-11T06:45:00Z",
-          "url": "https://www.mediaguru.cz/partneri-mff-kv-vsadily-na-zazitky-komunitu-i-spolecenska-temata",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

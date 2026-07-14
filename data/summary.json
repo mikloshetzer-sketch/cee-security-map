@@ -1,44 +1,74 @@
 {
-  "generated_utc": "2026-07-14T07:56:40Z",
+  "generated_utc": "2026-07-14T13:21:28Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1494 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 841 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Češi vyrážejí do Polska pro okurky . Cenu určuje velikost.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Кличний відмінок - шведський тато назвав феномен в українській граматиці , який його вразив | Моя Школа.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Europljani i dalje Hrvatsku biraju ponajviše zbog - sunca i mora.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 730.53; 7 napos változás: +10115%).",
-    "Trend: emelkedő (+1198%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2722, GDELT DOC 2845, direkt feed 365, USGS 1, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 1759 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 928 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Tak AliExpress chce omijać cło . Stawia na Polskę.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Wider Europe Briefing : The EU Super Tuesday.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Slovenský prezident hodil Babiše přes palubu . O roli Pavla na summitu NATO měl jasno.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 764.65; 7 napos változás: +11174%).",
+    "Trend: emelkedő (+1343%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2814, GDELT DOC 2915, direkt feed 363, USGS 1, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10115%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+11174%)."
   },
   "stats": {
-    "score_last7": 2642.146,
-    "score_prev7": 203.543,
-    "change_pct": 1198.08
+    "score_last7": 2787.886,
+    "score_prev7": 193.207,
+    "change_pct": 1342.96
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1494,
+    "last_24h_proximity_matches": 1759,
     "top_proximity": [
       {
-        "id": "20f4de59f77b6224",
+        "id": "bd1eb66d773a6e7a",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "4d37e8a8c1fb2a39",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-14T00:00:00Z",
+          "url": "https://bnn-news.com/belarus-fled-roslikovs-reveals-when-he-plans-to-return-to-latvia-281784",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "5456b0b8476e6eb7",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "2f8ece134f2e243b",
-          "title": "Češi vyrážejí do Polska pro okurky . Cenu určuje velikost",
+          "id": "72fbc575c8dd3e13",
+          "title": "Tak AliExpress chce omijać cło . Stawia na Polskę",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-14T07:30:00Z",
-          "url": "https://www.denik.cz/regiony/cesi-vyrazeji-do-polska-pro-okurky-cenu-urcuje-velikost/",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "https://www.instalki.pl/news/internet/tak-aliexpress-chce-omijac-clo-stawia-na-polske/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,17 +88,17 @@
         }
       },
       {
-        "id": "84173fa85616b386",
+        "id": "ccf371b88f797598",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "5f349585dce1d2d8",
-          "title": "Кличний відмінок - шведський тато назвав феномен в українській граматиці , який його вразив | Моя Школа",
+          "id": "7ff53f7db5251bc7",
+          "title": "Wider Europe Briefing : The EU Super Tuesday",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-14T07:30:00Z",
-          "url": "https://shkola.obozrevatel.com/ukr/news/shvedskij-tato-nazvav-fenomen-v-ukrainskij-gramatitsi-yakij-jogo-vraziv-takogo-nemae-v-anglijskij-ta-shvedskij-movah.htm",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "http://www.middleeaststar.com/news/279186332/wider-europe-briefing-the-eu-super-tuesday",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +118,17 @@
         }
       },
       {
-        "id": "7db87c52245b3a3f",
+        "id": "0c6dc4476b2d42d4",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c0efaa9270ade55a",
-          "title": "Europljani i dalje Hrvatsku biraju ponajviše zbog - sunca i mora",
-          "category": "other",
+          "id": "949bd6891cb889f7",
+          "title": "Slovenský prezident hodil Babiše přes palubu . O roli Pavla na summitu NATO měl jasno",
+          "category": "military",
           "source": "GDELT_DOC",
-          "time": "2026-07-14T07:30:00Z",
-          "url": "https://www.novilist.hr/novosti/europljani-i-dalje-hrvatsku-biraju-ponajvise-zbog-sunca-i-mora/",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "https://zpravy.aktualne.cz/domaci/slovensky-prezident-hodil-babise-pres-palubu-o-roli-pavla-na-summitu-nato-mel-jasno/r~aaa296a74b43c08526397385731dceda/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "a7bb6c4131597c30",
+        "id": "0c66ddc566de768f",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "fc029518e02bcda9",
-          "title": "La gran mentira de la guerra de Ucrania : ¿ Podrá Kiev llegar a vencer en algún momento ?",
+          "id": "6b7fb5a85076f0cc",
+          "title": "Minister Šaško experimentuje so vzdelávaním sestier , podľa nich opakuje český model , čo nefungoval - Domáce - Správy",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-14T07:30:00Z",
-          "url": "https://www.lahaine.org/mundo.php/la-gran-mentira-de-la-guerra-de",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "https://www.pravda.sk/spravy/domace/clanok/2006965-komora-sestier-vzdelavanie-minister-sasko-zdravotnictvo",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "9cad336dc82b7cbc",
+        "id": "09d7c59d0dee8f9c",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "436a6f2c35c8bea2",
-          "title": "Фрідріх Мерц – Європа підтримує проведення переговорів між Україною та Росією",
+          "id": "47850e12c0f78c19",
+          "title": "Wider Europe Briefing : The EU Super Tuesday",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-14T07:30:00Z",
-          "url": "https://www.obozrevatel.com/ukr/politics-news/teper-use-zalezhit-lishe-vid-putina-merts-zayaviv-pro-gotovnist-evropi-do-peregovoriv-mizh-ukrainoyu-ta-rf.htm",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "http://www.greekherald.com/news/279186332/wider-europe-briefing-the-eu-super-tuesday",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "02bb48059dc9a37b",
+        "id": "4341a2311016bd5a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "6df5bac989a678d6",
-          "title": "Eiropas valstis ieņem līderpozīcijas vides reitingā , Igaunijai pirmā vieta",
+          "id": "af04f7234092b2bf",
+          "title": "Países de la OTAN rechazan financiar nuevo paquete militar para Ucrania",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-14T07:30:00Z",
-          "url": "https://www.delfi.lv/campus/56036786/vide/120126269/eiropas-valstis-ienem-liderpozicijas-vides-reitinga-igaunijai-pirma-vieta",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "https://www.tercerainformacion.es/articulo/internacional/14/07/2026/paises-de-la-otan-rechazan-financiar-nuevo-paquete-militar-para-ucrania/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "b0410e4d4cae2d0e",
+        "id": "2245397248817b9c",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "d0126ec0856aa2f5",
-          "title": "Napadol ho medveď v dedine : Zranený muž opísal chvíle hrôzy",
+          "id": "85ae19c161ed9379",
+          "title": "Wider Europe Briefing : The EU Super Tuesday",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-14T07:15:00Z",
-          "url": "https://www1.pluska.sk/krimi/napadol-ho-medved-priamo-v-dedine-igor-opisal-chvile-hrozy",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "http://www.austinglobe.com/news/279186332/wider-europe-briefing-the-eu-super-tuesday",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "ae378a699df78d23",
+        "id": "bd20f5a37a11e0c6",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "79445df427195274",
-          "title": "Катерина Терлецька про шкільну математику та задачі для життя",
+          "id": "509bbff49a697d46",
+          "title": "A decrease in inflation to 10 . 4pct is , to a large extent , a seasonal illusion ( analysis )",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-14T07:15:00Z",
-          "url": "https://lb.ua/society/2026/07/14/751486_mizh_rafinovanoyu_matematikoyu.html",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "https://www.stiripesurse.ro/a-decrease-in-inflation-to-104pct-is-to-a-large-extent-a-seasonal-illusion-analysis_3903274",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "e56d8dcbed36f367",
+        "id": "6f834da97a5a081a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "888300bbe4ac6472",
-          "title": "Dino w warszawskim Wilanowie wciąż zamknięte . Co mieszkańcy myślą o tym miejscu ?",
+          "id": "3c7824916e5a42d0",
+          "title": "Eurojackpot - Ziehung heute ( 14 . 7 .): Jackpot steigt erneut",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-14T06:45:00Z",
-          "url": "https://www.se.pl/warszawa/dino-w-warszawskim-wilanowie-wciaz-zamkniete-co-mieszkancy-mysla-o-tym-miejscu-aa-ruPh-2g7P-edfF.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1322c52143a9746b",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c43e3ec24fec47e0",
-          "title": "Hormuz investoři neberou vážně , do konce roku má Wall Street ještě vydělat",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-14T06:30:00Z",
-          "url": "https://www.e15.cz/byznys/burzy-a-trhy/parodie-na-krizi-hormuz-investori-neberou-vazne-do-konce-roku-ma-wall-street-jeste-vydelat-1434292",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "https://www.abendblatt.de/ratgeber-wissen/lotto/article412572733/eurojackpot-14-juli-quoten-zahlen-eurozahlen.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

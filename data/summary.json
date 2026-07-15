@@ -1,152 +1,32 @@
 {
-  "generated_utc": "2026-07-14T19:14:52Z",
+  "generated_utc": "2026-07-15T01:39:01Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1556 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 802 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
-    "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
-    "CRITICAL infrastruktúra-jelzés: Port of Riga (Latvia) – 0.3 km-re ettől: Riga, Riga, Latvia.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 724.47; 7 napos változás: +11206%).",
-    "Trend: emelkedő (+1415%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2921, GDELT DOC 2888, direkt feed 358, USGS 1, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 997 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 539 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
+    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
+    "CRITICAL infrastruktúra-jelzés: Warsaw Internet Exchange / Digital Hub (Poland) – 2.5 km-re ettől: Warsaw, (PL67), Poland.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 667.37; 7 napos változás: +7592%).",
+    "Trend: emelkedő (+1038%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2710, GDELT DOC 2787, direkt feed 356, USGS 1, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+11206%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7592%)."
   },
   "stats": {
-    "score_last7": 2766.136,
-    "score_prev7": 182.556,
-    "change_pct": 1415.23
+    "score_last7": 2622.994,
+    "score_prev7": 230.538,
+    "change_pct": 1037.77
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1556,
+    "last_24h_proximity_matches": 997,
     "top_proximity": [
-      {
-        "id": "851dd40ead830c23",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "6a25ca7860c4a0a3",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-14T00:00:00Z",
-          "url": "https://foreignpolicy.com/2026/07/13/trump-strait-hormuz-tolls-shipping-us-blockade-iran/",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "bd1eb66d773a6e7a",
-        "level": "critical",
-        "score": 89.42,
-        "distance_km": 0.32,
-        "event": {
-          "id": "4d37e8a8c1fb2a39",
-          "title": "Riga, Riga, Latvia",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-14T00:00:00Z",
-          "url": "https://bnn-news.com/belarus-fled-roslikovs-reveals-when-he-plans-to-return-to-latvia-281784",
-          "lat": 56.95,
-          "lon": 24.1,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "lv-transport-riga-port",
-          "name": "Port of Riga",
-          "country": "Latvia",
-          "city": "Riga",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Freeport of Riga Authority",
-          "lat": 56.949,
-          "lon": 24.105,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "a24ab26f025d908d",
-        "level": "critical",
-        "score": 89.42,
-        "distance_km": 0.32,
-        "event": {
-          "id": "bd8265056a990885",
-          "title": "Riga, Riga, Latvia",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-14T00:00:00Z",
-          "url": "https://www.mfa.gov.lv/en/article/kaspars-krumholcs-latvias-ambassador-japan-receives-his-letter-credence",
-          "lat": 56.95,
-          "lon": 24.1,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "lv-transport-riga-port",
-          "name": "Port of Riga",
-          "country": "Latvia",
-          "city": "Riga",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Freeport of Riga Authority",
-          "lat": 56.949,
-          "lon": 24.105,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "b80054829f0bae1d",
-        "level": "critical",
-        "score": 89.42,
-        "distance_km": 0.32,
-        "event": {
-          "id": "5fa14546186bf497",
-          "title": "Riga, Riga, Latvia",
-          "category": "other",
-          "source": "GDELT",
-          "time": "2026-07-14T00:00:00Z",
-          "url": "https://www.mfa.gov.lv/en/article/agnese-salina-latvias-new-ambassador-ireland-receives-her-letter-credence",
-          "lat": 56.95,
-          "lon": 24.1,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "lv-transport-riga-port",
-          "name": "Port of Riga",
-          "country": "Latvia",
-          "city": "Riga",
-          "category": "transport",
-          "subtype": "seaport",
-          "criticality": 9.0,
-          "operator": "Freeport of Riga Authority",
-          "lat": 56.949,
-          "lon": 24.105,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
       {
         "id": "5456b0b8476e6eb7",
         "level": "critical",
@@ -309,6 +189,126 @@
           "source": "GDELT_DOC",
           "time": "2026-07-14T12:15:00Z",
           "url": "https://www.tercerainformacion.es/articulo/internacional/14/07/2026/paises-de-la-otan-rechazan-financiar-nuevo-paquete-militar-para-ucrania/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "2245397248817b9c",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "85ae19c161ed9379",
+          "title": "Wider Europe Briefing : The EU Super Tuesday",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "http://www.austinglobe.com/news/279186332/wider-europe-briefing-the-eu-super-tuesday",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "bd20f5a37a11e0c6",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "509bbff49a697d46",
+          "title": "A decrease in inflation to 10 . 4pct is , to a large extent , a seasonal illusion ( analysis )",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "https://www.stiripesurse.ro/a-decrease-in-inflation-to-104pct-is-to-a-large-extent-a-seasonal-illusion-analysis_3903274",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "6f834da97a5a081a",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "3c7824916e5a42d0",
+          "title": "Eurojackpot - Ziehung heute ( 14 . 7 .): Jackpot steigt erneut",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-14T12:15:00Z",
+          "url": "https://www.abendblatt.de/ratgeber-wissen/lotto/article412572733/eurojackpot-14-juli-quoten-zahlen-eurozahlen.html",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "2a866633853f2302",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "1d7bcc1e73565cf4",
+          "title": "Ez a film volt a kritikusok kedvence Karlovy Varyban",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-14T11:45:00Z",
+          "url": "https://ujszo.com/kultura/ez-a-film-volt-a-kritikusok-kedvence-karlovy-varyban",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

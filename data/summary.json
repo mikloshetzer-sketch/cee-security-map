@@ -1,44 +1,74 @@
 {
-  "generated_utc": "2026-07-15T07:58:22Z",
+  "generated_utc": "2026-07-15T13:24:11Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1127 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 621 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 23 ألف سائح يصلون البحر الأحمر على متن 118 رحلة دولية إلى الغردقة ومرسى علم.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Альянс із 19 країн закликає негайно заблокувати вразливі порти на мережевому обладнанні | Новости.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: סעודיה הפכה לרוכשת הכטב מים הגדולה של טייוואן.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 697.14; 7 napos változás: +8451%).",
-    "Trend: emelkedő (+1097%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2737, GDELT DOC 2692, direkt feed 358, USGS 1, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 1041 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 594 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: EU extends right to stay for Ukrainians but excludes military - age men.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Infrazione Ue allItalia e altri 13 sulla direttiva contro le querele bavaglio - Altre news.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Μια ιδέα που θα γίνει η κωμωδία της χρονιάς – « Η Ιδέα της Χρονιάς !» στο Θέατρο Βρετάνια.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 722.16; 7 napos változás: +9242%).",
+    "Trend: emelkedő (+1177%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2816, GDELT DOC 2625, direkt feed 360, USGS 1, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+8451%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+9242%)."
   },
   "stats": {
-    "score_last7": 2595.722,
-    "score_prev7": 216.924,
-    "change_pct": 1096.6
+    "score_last7": 2628.384,
+    "score_prev7": 205.875,
+    "change_pct": 1176.69
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1127,
+    "last_24h_proximity_matches": 1041,
     "top_proximity": [
       {
-        "id": "333c2d19728e218a",
+        "id": "0c4d1160bcb661d5",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "fe5690acf80ac491",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-15T00:00:00Z",
+          "url": "https://igamingbusiness.com/company-news/alea-wraps-up-igb-lve-with-alea-jackpot-in-the-spotlight/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "15b2304e8266262a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "fca42c3ac7896f7b",
-          "title": "23 ألف سائح يصلون البحر الأحمر على متن 118 رحلة دولية إلى الغردقة ومرسى علم",
-          "category": "other",
+          "id": "94b208ccdf01d81d",
+          "title": "EU extends right to stay for Ukrainians but excludes military - age men",
+          "category": "military",
           "source": "GDELT_DOC",
-          "time": "2026-07-15T07:15:00Z",
-          "url": "https://www.dostor.org/5635556",
+          "time": "2026-07-15T12:45:00Z",
+          "url": "https://www.thelocal.dk/20260715/eu-extends-right-to-stay-for-ukrainians-but-excludes-military-age-men/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,17 +88,17 @@
         }
       },
       {
-        "id": "39f38e06e2d9d75e",
+        "id": "dee6db038fe6a1ab",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "0265a1f8f74c92fd",
-          "title": "Альянс із 19 країн закликає негайно заблокувати вразливі порти на мережевому обладнанні | Новости",
+          "id": "6946c93baa1bceb9",
+          "title": "Infrazione Ue allItalia e altri 13 sulla direttiva contro le querele bavaglio - Altre news",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-15T07:15:00Z",
-          "url": "https://ko.com.ua/alyans_iz_19_krayin_zaklikaye_negajno_zablokuvati_vrazlivi_porti_na_merezhevomu_obladnanni_154016",
+          "time": "2026-07-15T12:45:00Z",
+          "url": "https://www.ansa.it/europa/notizie/rubriche/altrenews/2026/07/15/infrazione-ue-allitalia-e-altri-13-sulla-direttiva-contro-le-querele-bavaglio_f9a8988d-ade5-4c83-8910-4b633af3145f.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +118,17 @@
         }
       },
       {
-        "id": "3bfd828cd317566f",
+        "id": "7d1c7a8e3fccd45f",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "18e9592b7015ecb6",
-          "title": "סעודיה הפכה לרוכשת הכטב מים הגדולה של טייוואן",
+          "id": "7822890d5e4a0214",
+          "title": "Μια ιδέα που θα γίνει η κωμωδία της χρονιάς – « Η Ιδέα της Χρονιάς !» στο Θέατρο Βρετάνια",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-15T07:00:00Z",
-          "url": "https://www.globes.co.il/news/article.aspx?did=1001549256",
+          "time": "2026-07-15T12:45:00Z",
+          "url": "https://www.topontiki.gr/2026/07/15/mia-idea-pou-tha-gini-i-komodia-tis-chronias-i-idea-tis-chronias-sto-theatro-vretania/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "a0544fee35c13eff",
+        "id": "5e4f8a14b6c87fac",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "1de7df2285e2d93a",
-          "title": "《 习近平谈治国理政 》 第五卷吉尔吉斯斯坦推介会在比什凯克举行 _ 今日中国",
+          "id": "6014761b4e7267ad",
+          "title": "Aus für Automatismus – EU schränkt Schutz für ukrainische Männer ein",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-15T07:00:00Z",
-          "url": "http://japanese.beijingreview.com.cn/zw2018/ss/202607/t20260715_800441930.html",
+          "time": "2026-07-15T12:45:00Z",
+          "url": "https://www.heute.at/s/eu-schraenkt-schutz-fuer-ukrainische-maenner-ein-120223730",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "6af7d8bd0a67ae31",
+        "id": "37e37633ce1e83ef",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "009e6c8d40ba7a91",
-          "title": "China - Abhängigkeit : Polen entdeckt seinen Industrieabfall als Rohstoffschatz",
+          "id": "b25f0b6dc9a2b90f",
+          "title": "24hod . sk - Hudba",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-15T07:00:00Z",
-          "url": "https://de.euronews.com/my-europe/2026/07/15/china-abhaengigkeit-polen-industrieabfall-rohstoffschatz",
+          "time": "2026-07-15T12:30:00Z",
+          "url": "https://www.24hod.sk/2026-07-15/48/hudba/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "dc27cac812f3540c",
+        "id": "e488028bee83f85a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "8d0f10609a8684bc",
-          "title": "Hová tűnt Orbán Anita ? Nagyon keresik : olyan terv készül az EU - ban , amiért Szijjártó Péter már rég az asztalt verné – hét tagállam összefogott ellene , Magy",
-          "category": "other",
+          "id": "dbcc7c246deae609",
+          "title": "EU extends right to stay for Ukrainians , excludes military - age men",
+          "category": "military",
           "source": "GDELT_DOC",
-          "time": "2026-07-15T07:00:00Z",
-          "url": "https://www.vg.hu/kozelet/2026/07/eu-bovites-tagallamok-terv-keszul-orban-anita-keresik",
+          "time": "2026-07-15T12:30:00Z",
+          "url": "https://www.channelnewsasia.com/world/eu-ukrainians-right-stay-military-men-6255836",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "61d9421f4000b8ec",
+        "id": "8f96135251618785",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "829e3cca7cae7539",
-          "title": "Catarsis en vidas literarias y musicales",
+          "id": "ef9011ea09a86d57",
+          "title": "Česko a Slovensko sa budú zaoberať spoločným nákupom mínometov AM120",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-15T07:00:00Z",
-          "url": "https://www.eltiempo.com/opinion/columnistas/catarsis-en-vidas-literarias-y-musicales-3571264",
+          "time": "2026-07-15T12:15:00Z",
+          "url": "https://e.dennikn.sk/minuta/5456501",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "85afe605332d871f",
+        "id": "36dde34b87826513",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "4a694ff66d61baf0",
-          "title": "Im Ausland müssen Autofahrer unbedingt aufpassen : Viele zahlen drauf",
+          "id": "ce57cb3a754d1b9c",
+          "title": "Regalos de Stalin y bares de leche : la capital europea más sorprendente para un viaje al siglo XX",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-15T06:45:00Z",
-          "url": "https://www.schwaebische.de/panorama/im-ausland-muessen-autofahrer-unbedingt-aufpassen-viele-zahlen-drauf-4711448",
+          "time": "2026-07-15T12:15:00Z",
+          "url": "https://www.eldiario.es/viajes/regalos-stalin-bares-leche-capital-europea-sorprendente-viaje-siglo-xx_1_13285019.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "15f2a6a403f6fe22",
+        "id": "1acbc7e9314a2c17",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "de76bc3d521cc513",
-          "title": "打臉川普 ！ 烏克蘭拿歐盟軍貸買 「 中國製無人機零件 」 65 % 來自深圳 | ETtoday國際新聞",
+          "id": "65574a266c58937c",
+          "title": "Poskytnutí sdělení k situaci na Ukrajině - Policie České republiky",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-15T06:45:00Z",
-          "url": "https://www.ettoday.net/news/20260715/3201531.htm",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "5a3390b86c04d24e",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "dfecf6136986ab08",
-          "title": "Ukrajina vs . Rusko : Aktuální situace na Ukrajině ONLINE",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-15T06:15:00Z",
-          "url": "https://www.blesk.cz/clanek/zpravy-valka-na-ukrajine/702030/online-pri-masivnim-ruskem-utoku-na-odesu-zemreli-tri-lide-a-von-der-leyenova-v-kyjeve.html",
+          "time": "2026-07-15T12:15:00Z",
+          "url": "https://policie.gov.cz/clanek/poskytnuti-sdeleni-k-situaci-na-ukrajine.aspx",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

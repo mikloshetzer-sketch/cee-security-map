@@ -1,32 +1,92 @@
 {
-  "generated_utc": "2026-07-15T13:24:11Z",
+  "generated_utc": "2026-07-15T19:04:27Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1041 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 594 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: EU extends right to stay for Ukrainians but excludes military - age men.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Infrazione Ue allItalia e altri 13 sulla direttiva contro le querele bavaglio - Altre news.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Μια ιδέα που θα γίνει η κωμωδία της χρονιάς – « Η Ιδέα της Χρονιάς !» στο Θέατρο Βρετάνια.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 722.16; 7 napos változás: +9242%).",
-    "Trend: emelkedő (+1177%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2816, GDELT DOC 2625, direkt feed 360, USGS 1, GDACS 1.",
+    "Az infrastruktúra-közelségi modul 1335 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 706 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Baltiske præsidenter : Rusland planlægger angreb på infrastruktur.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Loppemarked suger masser af folk mod Klemensker.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Rusia „ bâzâie NATO : Polonia interceptează avioane militare ruse în Marea Baltică pentru a doua zi consecutiv.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 676.30; 7 napos változás: +9139%).",
+    "Trend: emelkedő (+1266%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2918, GDELT DOC 2481, direkt feed 361, USGS 1, GDACS 1.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+9242%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+9139%)."
   },
   "stats": {
-    "score_last7": 2628.384,
-    "score_prev7": 205.875,
-    "change_pct": 1176.69
+    "score_last7": 2665.122,
+    "score_prev7": 195.151,
+    "change_pct": 1265.67
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1041,
+    "last_24h_proximity_matches": 1335,
     "top_proximity": [
+      {
+        "id": "fa768530b32be0e1",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "0dd4a9e0902a3d2e",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-15T00:00:00Z",
+          "url": "https://www.baltictimes.com/economic_ties_between_the_two_countries_are_stronger_than_ever/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "f296955d370d2975",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "74a97edd940013cc",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "military",
+          "source": "GDELT",
+          "time": "2026-07-15T00:00:00Z",
+          "url": "https://www.baltictimes.com/nato_defense_innovation_leaders_to_gather_in_tallinn/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "0c4d1160bcb661d5",
         "level": "critical",
@@ -249,66 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-15T12:15:00Z",
           "url": "https://e.dennikn.sk/minuta/5456501",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "36dde34b87826513",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "ce57cb3a754d1b9c",
-          "title": "Regalos de Stalin y bares de leche : la capital europea más sorprendente para un viaje al siglo XX",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-15T12:15:00Z",
-          "url": "https://www.eldiario.es/viajes/regalos-stalin-bares-leche-capital-europea-sorprendente-viaje-siglo-xx_1_13285019.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1acbc7e9314a2c17",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "65574a266c58937c",
-          "title": "Poskytnutí sdělení k situaci na Ukrajině - Policie České republiky",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-15T12:15:00Z",
-          "url": "https://policie.gov.cz/clanek/poskytnuti-sdeleni-k-situaci-na-ukrajine.aspx",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

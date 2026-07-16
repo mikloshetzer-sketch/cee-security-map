@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-16T13:30:44Z",
+  "generated_utc": "2026-07-16T19:05:35Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1811 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 955 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Безплатні мовні курси в Чехії – чому українцям відмовляють.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: ESTANFLACIÓN EUROZONA FMI | El FMI concluye que la Eurozona corre el riesgo de sufrir estanflación.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Hypotéka na dům u moře ? Tímhle si musíte projít !.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 769.96; 7 napos változás: +12255%).",
-    "Trend: emelkedő (+1257%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2787, GDELT DOC 2484, direkt feed 357, USGS 1, GDACS 3.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 196 db.",
+    "Az infrastruktúra-közelségi modul 1850 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 921 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Rheinmetall Aktie : 73 Milliarden im Auftragsbuch und der Maschinenraum frisst Kapital.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: В Україні хочуть запровадити систему повернення грошей за пляшки та банки , як у країнах ЄС Finance . ua.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Mașini de teren pentru energia viitorului : Cum vrea Guvernul să urgenteze proiectele verzi gestionate de ADS.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 712.83; 7 napos változás: +11968%).",
+    "Trend: emelkedő (+1336%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2856, GDELT DOC 2393, direkt feed 361, USGS 1, GDACS 3.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+12255%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+11968%)."
   },
   "stats": {
-    "score_last7": 2768.422,
-    "score_prev7": 203.983,
-    "change_pct": 1257.18
+    "score_last7": 2776.637,
+    "score_prev7": 193.313,
+    "change_pct": 1336.34
   },
-  "rss_count": 196,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1811,
+    "last_24h_proximity_matches": 1850,
     "top_proximity": [
       {
         "id": "f284cf3e0e29c659",
@@ -118,6 +118,96 @@
         }
       },
       {
+        "id": "60d6d3e0d3995a43",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "668aa708862b2004",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "drone",
+          "source": "GDELT",
+          "time": "2026-07-16T00:00:00Z",
+          "url": "https://www.baltictimes.com/eu_signs_defense_industry_partnership_with_ukraine_and_creates_drone_alliance/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "2ef4a7ef8d0a657e",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "491025c502234a95",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-16T00:00:00Z",
+          "url": "https://www.eurasiareview.com/16072026-dramatic-shrinkage-of-caspian-sea-equals-size-of-sicily-residents-face-growing-health-risks-oped/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "0f1205e57e6b1aa6",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "430247f1b0ea68da",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "violence",
+          "source": "GDELT",
+          "time": "2026-07-16T00:00:00Z",
+          "url": "https://www.yahoo.com/news/world/articles/uk-deploy-400-more-troops-174844533.html",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
         "id": "ed3579798ce20c45",
         "level": "critical",
         "score": 89.42,
@@ -178,36 +268,6 @@
         }
       },
       {
-        "id": "c1879ceb1d67a820",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c99b193555538a10",
-          "title": "ESTANFLACIÓN EUROZONA FMI | El FMI concluye que la Eurozona corre el riesgo de sufrir estanflación",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-16T12:45:00Z",
-          "url": "https://www.elperiodicomediterraneo.com/economia/2026/07/16/fmi-concluye-eurozona-corre-riesgo-132508795.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
         "id": "07a9de43fe34656b",
         "level": "critical",
         "score": 88.57,
@@ -249,66 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-16T12:30:00Z",
           "url": "https://enrsi.stvr.sk/articles/news/453275/czech-and-slovak-plans-for-joint-weapons-procurement",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "f96d5f4331679127",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "09090cd5d4c738fd",
-          "title": "Uber greift nach Delivery Hero und zerlegt das Europageschäft",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-16T12:30:00Z",
-          "url": "https://www.4investors.de/nachrichten/boerse.php?sektion=stock&ID=191035",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1b3578a04e5431b2",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c240b16d34ab2c16",
-          "title": "Wider Europe Briefing : The EU Super Tuesday",
-          "category": "security_politics",
-          "source": "GDELT_DOC",
-          "time": "2026-07-16T12:30:00Z",
-          "url": "https://www.globalsecurity.org/military/library/news/2026/07/mil-260714-rferl01.htm",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

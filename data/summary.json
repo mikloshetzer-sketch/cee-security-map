@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-16T08:06:17Z",
+  "generated_utc": "2026-07-16T13:30:44Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1369 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 776 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: El Ibex 35 quiere dejar atrás las caídas ; verde en los futuros | Estrategias de Inversión.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Die juristische Presseschau vom 16 . Juli 2026 : Liebich wieder in Deutschland / Ermittlungen gegen Kabarettist Steimle / Gesetz zu israelischen Wehrdienst - Ausnahmen gestoppt.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Staugefahr steigt weiter.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 725.37; 7 napos változás: +10939%).",
-    "Trend: emelkedő (+1128%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2702, GDELT DOC 2465, direkt feed 365, USGS 1, GDACS 1.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 194 db.",
+    "Az infrastruktúra-közelségi modul 1811 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 955 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Безплатні мовні курси в Чехії – чому українцям відмовляють.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: ESTANFLACIÓN EUROZONA FMI | El FMI concluye que la Eurozona corre el riesgo de sufrir estanflación.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Hypotéka na dům u moře ? Tímhle si musíte projít !.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 769.96; 7 napos változás: +12255%).",
+    "Trend: emelkedő (+1257%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2787, GDELT DOC 2484, direkt feed 357, USGS 1, GDACS 3.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 196 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10939%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+12255%)."
   },
   "stats": {
-    "score_last7": 2637.94,
-    "score_prev7": 214.884,
-    "change_pct": 1127.61
+    "score_last7": 2768.422,
+    "score_prev7": 203.983,
+    "change_pct": 1257.18
   },
-  "rss_count": 194,
+  "rss_count": 196,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1369,
+    "last_24h_proximity_matches": 1811,
     "top_proximity": [
       {
         "id": "f284cf3e0e29c659",
@@ -58,17 +58,107 @@
         }
       },
       {
-        "id": "fd4cb40e05054e83",
+        "id": "49f777aeed84427f",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "53e10317a3e15ba3",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "infrastructure",
+          "source": "GDELT",
+          "time": "2026-07-16T00:00:00Z",
+          "url": "https://www.finanznachrichten.de/nachrichten-2026-07/69045008-amrytt-media-wapi-releases-report-on-cash-on-delivery-performance-across-europe-and-mexico-296.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "43aa2b0dfe4a9cbc",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "e6ad7b6c3b86ca93",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-16T00:00:00Z",
+          "url": "https://news.postimees.ee/7596552/schools-for-ukrainian-children-were-completed-in-three-months",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "ed3579798ce20c45",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "db0576b95868722c",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-16T00:00:00Z",
+          "url": "https://www.irishtimes.com/opinion/an-irish-diary/2026/07/16/baltic-banter-frank-mcnally-on-taking-part-in-a-conversation-festival-in-latvia/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "2b8bafca956876b8",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "9729573d5aa5b089",
-          "title": "El Ibex 35 quiere dejar atrás las caídas ; verde en los futuros | Estrategias de Inversión",
+          "id": "b298fc3085dad6c5",
+          "title": "Безплатні мовні курси в Чехії – чому українцям відмовляють",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-16T07:30:00Z",
-          "url": "https://www.estrategiasdeinversion.com/analisis/bolsa-y-mercados/informes/el-ibex-35-quiere-dejar-atras-las-caidas-verde-n-935449",
+          "time": "2026-07-16T12:45:00Z",
+          "url": "https://24tv.ua/zakordon24/bezplatni-movni-kursi-chehiyi-chomu-ukrayintsyam-vidmovlyayut_n3106725",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +178,17 @@
         }
       },
       {
-        "id": "7d9af46658295eb6",
+        "id": "c1879ceb1d67a820",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3d60a2a2444379e4",
-          "title": "Die juristische Presseschau vom 16 . Juli 2026 : Liebich wieder in Deutschland / Ermittlungen gegen Kabarettist Steimle / Gesetz zu israelischen Wehrdienst - Ausnahmen gestoppt",
+          "id": "c99b193555538a10",
+          "title": "ESTANFLACIÓN EUROZONA FMI | El FMI concluye que la Eurozona corre el riesgo de sufrir estanflación",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-16T07:15:00Z",
-          "url": "https://www.lto.de/recht/presseschau/p/presseschau-2026-07-16-auslieferung-marla-svenja-liebich-ermittlungen-uwe-steimle-israels-oberstes-gericht",
+          "time": "2026-07-16T12:45:00Z",
+          "url": "https://www.elperiodicomediterraneo.com/economia/2026/07/16/fmi-concluye-eurozona-corre-riesgo-132508795.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +208,17 @@
         }
       },
       {
-        "id": "608919e5151432c5",
+        "id": "07a9de43fe34656b",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "f7304a282f157ab4",
-          "title": "Staugefahr steigt weiter",
+          "id": "573645ecb94c6819",
+          "title": "Hypotéka na dům u moře ? Tímhle si musíte projít !",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-16T07:15:00Z",
-          "url": "https://nnz-online.de/news/news_lang.php?ArtNr=388674",
+          "time": "2026-07-16T12:30:00Z",
+          "url": "https://www.blesk.cz/clanek/system-nemovitosti-blesk/843626/hypoteka-na-dum-u-more-timhle-si-musite-projit.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +238,17 @@
         }
       },
       {
-        "id": "1fe1524c7ac757ed",
+        "id": "b6a0cbe382342dc1",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "207118f478605a14",
-          "title": "Ευρωπαϊκό μέτωπο κατά της αυστηροποίησης του ETS – Η Ελλάδα στις 10 χώρες που ζητούν φρένο στην άνοδο του κόστους άνθρακα",
+          "id": "8aa8662707de94bd",
+          "title": "Czech and Slovak Plans for Joint Weapon Procurement - News - Rádio RSI English",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-16T07:00:00Z",
-          "url": "https://www.bankingnews.gr/energeia/articles/888452/evropaiko-metopo-kata-tis-afstiropoiisis-tou-ets-i-ellada-stis-10-xores-pou-zitoyn-freno-stin-anodo-tou-kostous-anthraka",
+          "time": "2026-07-16T12:30:00Z",
+          "url": "https://enrsi.stvr.sk/articles/news/453275/czech-and-slovak-plans-for-joint-weapons-procurement",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +268,17 @@
         }
       },
       {
-        "id": "e2bf135722ec388d",
+        "id": "f96d5f4331679127",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "230bacc1d81cd300",
-          "title": "Unia Europejska skutecznie walczy z nielegalnym przekraczaniem granic . Nowe dane",
+          "id": "09090cd5d4c738fd",
+          "title": "Uber greift nach Delivery Hero und zerlegt das Europageschäft",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-16T07:00:00Z",
-          "url": "https://www.gazetaprawna.pl/wiadomosci/swiat/artykuly/11276684,sukces-unii-europejskiej-liczba-nielegalnych-przekroczen-granicy-spad.html",
+          "time": "2026-07-16T12:30:00Z",
+          "url": "https://www.4investors.de/nachrichten/boerse.php?sektion=stock&ID=191035",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,107 +298,17 @@
         }
       },
       {
-        "id": "a55defebbda8b2d2",
+        "id": "1b3578a04e5431b2",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "28d50de27ea6c0b0",
-          "title": "Film Prameň môže Rómkam ublížiť , dostatočne neodsúdil nútené sterilizácie , hovorí žena , ktorá bojuje za ich odškodnenie",
-          "category": "other",
+          "id": "c240b16d34ab2c16",
+          "title": "Wider Europe Briefing : The EU Super Tuesday",
+          "category": "security_politics",
           "source": "GDELT_DOC",
-          "time": "2026-07-16T07:00:00Z",
-          "url": "https://dennikn.sk/5453908/film-pramen-moze-romkam-ublizit-dostatocne-neodsudil-nutene-sterilizacie-hovori-zena-ktora-bojuje-za-ich-odskodnenie/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "d264b11c9adc1a97",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c5547860a2867ee5",
-          "title": "EQS - Adhoc : Delivery Hero SE : Delivery Hero schließt Business Combination Agreement mit Uber Technologies sowie einen Kaufvertrag mit SSW Partners betreffend bestimmte Geschäftsbereiche ab",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-16T06:45:00Z",
-          "url": "https://www.finanznachrichten.de/nachrichten-2026-07/69042319-eqs-adhoc-delivery-hero-se-delivery-hero-schliesst-business-combination-agreement-mit-uber-technologies-sowie-einen-kaufvertrag-mit-ssw-partners-betr-022.htm",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "639657095c49bd12",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "cf5535ac4a0ec28b",
-          "title": "Free Speech Has Its Limits , Rules Czech Supreme Court",
-          "category": "police",
-          "source": "GDELT_DOC",
-          "time": "2026-07-16T06:30:00Z",
-          "url": "https://www.zerohedge.com/geopolitical/free-speech-has-its-limits-rules-czech-supreme-court",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1a9debf2dc69a889",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "3adb700fd4301d75",
-          "title": "2万美元一套 ， 美国人正在阿里巴巴上买房 _ 业界 _ 科技频道首页 _ 财经网 - CAIJING . COM . CN",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-16T06:30:00Z",
-          "url": "http://tech.caijing.com.cn/20260716/5171400.shtml",
+          "time": "2026-07-16T12:30:00Z",
+          "url": "https://www.globalsecurity.org/military/library/news/2026/07/mil-260714-rferl01.htm",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

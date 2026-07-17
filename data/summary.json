@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-17T13:16:06Z",
+  "generated_utc": "2026-07-17T19:05:26Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1391 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 614 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Todd McFarlane Spawn Reboot : Everything We Know.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Euromoney Awards for Excellence 2026 : Grupul austriac Erste a fost desemnat Cea mai ....",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Moravskoslezské novinky - Domácí - Sousedská lávka přes Olši soutěží o Cenu veřejnosti.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 660.50; 7 napos változás: +10443%).",
-    "Trend: emelkedő (+1263%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2782, GDELT DOC 2411, direkt feed 367, USGS 1, GDACS 3.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 196 db.",
+    "Az infrastruktúra-közelségi modul 1595 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 691 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Politechnika Białystok - wyniki rekrutacji 2026 / 2027.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Glaustai : pirmieji vokiečių kariai į Rūdninkų miestelį kelsis jau šį rudenį.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Wie ukrainische Drohnen Putins Wirtschaft bedrohen.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 624.92; 7 napos változás: +7700%).",
+    "Trend: emelkedő (+1383%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2863, GDELT DOC 2396, direkt feed 362, USGS 1, GDACS 3.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10443%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+7700%)."
   },
   "stats": {
-    "score_last7": 2795.513,
-    "score_prev7": 205.111,
-    "change_pct": 1262.93
+    "score_last7": 2882.704,
+    "score_prev7": 194.36,
+    "change_pct": 1383.18
   },
-  "rss_count": 196,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1391,
+    "last_24h_proximity_matches": 1595,
     "top_proximity": [
       {
         "id": "4232b79b163b10ba",
@@ -99,6 +99,36 @@
           "source": "GDELT",
           "time": "2026-07-17T00:00:00Z",
           "url": "https://www.globalsecurity.org/wmd/library/news/uk/2026/uk-260716-ukmod01.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "70074ef51f6171d7",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "0990dc7ee15ad3c1",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "border",
+          "source": "GDELT",
+          "time": "2026-07-17T00:00:00Z",
+          "url": "https://www.express.co.uk/news/world/2230288/britain-decision-tanks-nato-border-estonia-russia",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
@@ -279,36 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-17T12:00:00Z",
           "url": "https://www.ceskenoviny.cz/zpravy/firmy-dostanou-bezplatne-povolenky-vymenou-za-investice-do-dekarbonizace-/2811979",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "274ad7f35f9f8d9c",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "225cca4f67f6c030",
-          "title": "Ein Jahr nach Gründung : Schweizer Nahrungsergänzungs - Startup Revitera liefert in 13 europäische Länder",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-17T12:00:00Z",
-          "url": "https://www.presseschleuder.com/2026/07/ein-jahr-nach-gruendung-schweizer-nahrungsergaenzungs-startup-revitera-liefert-in-13-europaeische-laender/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

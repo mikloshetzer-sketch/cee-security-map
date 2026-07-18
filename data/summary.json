@@ -1,134 +1,44 @@
 {
-  "generated_utc": "2026-07-17T19:05:26Z",
+  "generated_utc": "2026-07-18T01:49:52Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1595 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 691 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Politechnika Białystok - wyniki rekrutacji 2026 / 2027.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Glaustai : pirmieji vokiečių kariai į Rūdninkų miestelį kelsis jau šį rudenį.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Wie ukrainische Drohnen Putins Wirtschaft bedrohen.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 624.92; 7 napos változás: +7700%).",
-    "Trend: emelkedő (+1383%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2863, GDELT DOC 2396, direkt feed 362, USGS 1, GDACS 3.",
+    "Az infrastruktúra-közelségi modul 1022 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 470 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Tallinn Cyber and Digital Infrastructure Hub (Estonia) – 1.4 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Port of Tallinn (Estonia) – 2.2 km-re ettől: Tallinn, Harjumaa, Estonia.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Praga, Praha, Hlavníesto, Czech Republic.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 578.21; 7 napos változás: +7218%).",
+    "Trend: emelkedő (+1226%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2777, GDELT DOC 2330, direkt feed 361, USGS 1, GDACS 3.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+7700%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+7218%)."
   },
   "stats": {
-    "score_last7": 2882.704,
-    "score_prev7": 194.36,
-    "change_pct": 1383.18
+    "score_last7": 2735.803,
+    "score_prev7": 206.369,
+    "change_pct": 1225.69
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1595,
+    "last_24h_proximity_matches": 1022,
     "top_proximity": [
       {
-        "id": "4232b79b163b10ba",
+        "id": "c0f60547737c283e",
         "level": "critical",
         "score": 97.1,
         "distance_km": 1.45,
         "event": {
-          "id": "6d2194590b963f83",
+          "id": "1ac3fbfd4af4c114",
           "title": "Tallinn, Harjumaa, Estonia",
           "category": "security_politics",
           "source": "GDELT",
-          "time": "2026-07-17T00:00:00Z",
-          "url": "https://globalvoices.org/2026/07/17/nowhere-to-belong-after-the-ussr-collapsed-i-became-stateless-in-estonia/",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "c75835e62ee1f6f1",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "9604dfc6e5a50722",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-17T00:00:00Z",
-          "url": "https://www.novinite.com/articles/239674/Britain+Boosts+NATO%E2%80%99s+Eastern+Flank+With+400+More+Troops+in+Estonia+Amid+Russia+Tensions",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "bfc558d80c966924",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "4485dd928a2dc3da",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "security_politics",
-          "source": "GDELT",
-          "time": "2026-07-17T00:00:00Z",
-          "url": "https://www.globalsecurity.org/wmd/library/news/uk/2026/uk-260716-ukmod01.htm",
-          "lat": 59.4339,
-          "lon": 24.7281,
-          "source_file": "gdelt_linked.geojson"
-        },
-        "infrastructure": {
-          "id": "ee-digital-tallinn-cyber-hub",
-          "name": "Tallinn Cyber and Digital Infrastructure Hub",
-          "country": "Estonia",
-          "city": "Tallinn",
-          "category": "digital",
-          "subtype": "cyber_digital_government_hub",
-          "criticality": 10.0,
-          "operator": "Multiple operators / public sector",
-          "lat": 59.437,
-          "lon": 24.753,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "70074ef51f6171d7",
-        "level": "critical",
-        "score": 97.1,
-        "distance_km": 1.45,
-        "event": {
-          "id": "0990dc7ee15ad3c1",
-          "title": "Tallinn, Harjumaa, Estonia",
-          "category": "border",
-          "source": "GDELT",
-          "time": "2026-07-17T00:00:00Z",
-          "url": "https://www.express.co.uk/news/world/2230288/britain-decision-tanks-nato-border-estonia-russia",
+          "time": "2026-07-18T00:00:00Z",
+          "url": "https://www.novinite.com/view_news.php?id=239674",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
@@ -309,6 +219,96 @@
           "source": "GDELT_DOC",
           "time": "2026-07-17T12:00:00Z",
           "url": "https://www.ceskenoviny.cz/zpravy/firmy-dostanou-bezplatne-povolenky-vymenou-za-investice-do-dekarbonizace-/2811979",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "274ad7f35f9f8d9c",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "225cca4f67f6c030",
+          "title": "Ein Jahr nach Gründung : Schweizer Nahrungsergänzungs - Startup Revitera liefert in 13 europäische Länder",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-17T12:00:00Z",
+          "url": "https://www.presseschleuder.com/2026/07/ein-jahr-nach-gruendung-schweizer-nahrungsergaenzungs-startup-revitera-liefert-in-13-europaeische-laender/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "c3480771ca7e0240",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "e376506432e26071",
+          "title": "Kiderült , melyik a legjobb bank : már harmadszor nyertek",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-17T12:00:00Z",
+          "url": "https://www.economx.hu/gazdasag/2026/07/17/kiderult-melyik-a-legjobb-bank-mar-harmadszor-nyertek/",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "711f0887f867af4f",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "e5cf45025d15958f",
+          "title": "Сводка событий в Иране и странах Ближнего Востока за 16 июля 2026 г .",
+          "category": "other",
+          "source": "GDELT_DOC",
+          "time": "2026-07-17T12:00:00Z",
+          "url": "https://anna-news.info/svodka-sobytij-v-irane-i-stranah-blizhnego-vostoka-za-16-iyulya-2026-g/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

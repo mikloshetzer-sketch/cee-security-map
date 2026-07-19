@@ -1,44 +1,74 @@
 {
-  "generated_utc": "2026-07-19T01:58:53Z",
+  "generated_utc": "2026-07-19T08:08:25Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 843 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 488 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 2.2 km-re ettől: Prague, Praha, Hlavníesto, Czech Republic.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Data Centre Hub (Poland) – 2.3 km-re ettől: Warsaw, (PL67), Poland.",
-    "CRITICAL infrastruktúra-jelzés: Warsaw Internet Exchange / Digital Hub (Poland) – 2.5 km-re ettől: Warsaw, (PL67), Poland.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 605.86; 7 napos változás: +10623%).",
-    "Trend: emelkedő (+1358%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2784, GDELT DOC 2395, direkt feed 368, USGS 1, GDACS 2.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Az infrastruktúra-közelségi modul 825 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 511 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 流量 背后 中国 生态游 靠啥 出圈 ？ |武夷山|九寨沟|生态旅游.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 歐洲跑透透 ！ 林佳龍今證實上月曾密訪德國 - 政治.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Europa busca una solución para las antiguas minas polacas.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 631.79; 7 napos változás: +11775%).",
+    "Trend: emelkedő (+1426%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2819, GDELT DOC 2447, direkt feed 366, USGS 1, GDACS 2.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 191 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10623%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+11775%)."
   },
   "stats": {
-    "score_last7": 2572.791,
-    "score_prev7": 176.485,
-    "change_pct": 1357.79
+    "score_last7": 2537.539,
+    "score_prev7": 166.325,
+    "change_pct": 1425.65
   },
-  "rss_count": 200,
+  "rss_count": 191,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 843,
+    "last_24h_proximity_matches": 825,
     "top_proximity": [
       {
-        "id": "5bc8455de0915259",
+        "id": "84865bbbb37dd368",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "abacbbb188812b49",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-19T00:00:00Z",
+          "url": "https://www.standardmedia.co.ke/opinion/article/2001553150/let-every-family-participate-in-building-kenyas-future",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "2fad78dde5df6e17",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "139c34b4ec4ed02e",
-          "title": "Sine niebo na wschodzie i południu Polski . Czeskie sinice w kosmosie - Dzień w 5 minut",
+          "id": "542aba5caac2a170",
+          "title": "流量 背后 中国 生态游 靠啥 出圈 ？ |武夷山|九寨沟|生态旅游",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-18T18:30:00Z",
-          "url": "https://www.polskieradio.pl/podcasty/dzien-w-5-minut/sine-niebo-na-wschodzie-i-poludniu-polski-czeskie-sinice-w-kosmosie",
+          "time": "2026-07-19T07:30:00Z",
+          "url": "https://www.163.com/dy/article/L242TTLP0514R9M0.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -58,17 +88,17 @@
         }
       },
       {
-        "id": "985713cae80ece40",
+        "id": "d5565524f4758795",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "32da1524e554ce8f",
-          "title": "Η Ελένη Ιακωβάκη πρωταθλήτρια Ευρώπης με ασύλληπτο 52 . 38 και πανελλήνιο ρεκόρ",
+          "id": "737bdf7d6491f15e",
+          "title": "歐洲跑透透 ！ 林佳龍今證實上月曾密訪德國 - 政治",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-18T18:30:00Z",
-          "url": "https://www.newsit.gr/athlitika/i-eleni-iakovaki-protathlitria-eyropis-me-asyllipto-52-38-kai-panellinio-rekor/4731701/",
+          "time": "2026-07-19T07:30:00Z",
+          "url": "https://news.ltn.com.tw/news/politics/breakingnews/5510446",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +118,17 @@
         }
       },
       {
-        "id": "dd1e2fec099be9e2",
+        "id": "fa63ed636ef5cd71",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "42a3c55b24db7c87",
-          "title": "Аварія автобусів у Чехії консульство повідомило про постраждалих українок Світ",
+          "id": "bf13213565a0cb81",
+          "title": "Europa busca una solución para las antiguas minas polacas",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-18T18:30:00Z",
-          "url": "https://tsn.ua/svit/avtobus-z-ukrayinkamy-potrapyv-u-motoroshnu-dtp-u-chekhiyi-mayze-piv-sotni-postrazdalykh-pershi-detali-3130565.html",
+          "time": "2026-07-19T07:30:00Z",
+          "url": "https://es.euronews.com/my-europe/2026/07/19/europa-busca-una-solucion-para-las-antiguas-minas-polacas",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "f10ebf8ff6f1fb04",
+        "id": "8d83ff9c79981812",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "696b0517ebc65a65",
-          "title": "Przygody dobrego smakosza . Kulinarna podróż po Czechach i Słowacji - Apetyt na Europę",
+          "id": "5569572e49afaad5",
+          "title": "Alquilar una habitación en Cádiz ya cuesta hasta 500 euros : el « efecto Erasmus » dispara los precios",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-18T18:30:00Z",
-          "url": "https://www.polskieradio.pl/podcasty/apetyt-na-europe/przygody-dobrego-smakosza-kulinarna-podroz-po-czechach-i-slowacji",
+          "time": "2026-07-19T07:15:00Z",
+          "url": "https://www.lavozdigital.es/provincia/cadiz/alquilar-habitacion-cadiz-cuesta-500-euros-efecto-20260713114947-ntv.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "1bbc75fa938546b2",
+        "id": "c53a882662730ffb",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "f8cce906ac780774",
-          "title": "Тривалість відпусток у різних країнах світу ( інфографіка ) Finance . ua",
-          "category": "other",
+          "id": "311697c4f2d77eb4",
+          "title": "România a încheiat Campionatele Europene de tenis de masă pentru juniori de la Gondomar ( Portugalia ) cu trei medalii",
+          "category": "infrastructure",
           "source": "GDELT_DOC",
-          "time": "2026-07-18T18:30:00Z",
-          "url": "https://news.finance.ua/ua/tryvalist-vidpustok-u-riznyh-krainah-svitu-infohrafika",
+          "time": "2026-07-19T07:15:00Z",
+          "url": "https://www.stiripesurse.ro/romania-campionatele-europene-de-tenis-de-masa-pentru-juniori-de-la-gondomar-medalii_3904638",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "cddbb2659042d44b",
+        "id": "088e1f892d38d69a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "5170c0a079da1377",
-          "title": "Η Ελένη Ιακωβάκη πρωταθλήτρια Ευρώπης με ασύλληπτο 52 . 38 και πανελλήνιο ρεκόρ",
+          "id": "f27bd7e225033871",
+          "title": "Cyprus Business Now : weekly wrap - up",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-18T18:15:00Z",
-          "url": "https://www.inewsgr.com/93/i-eleni-iakovaki-protathlitria-evropis-me-asyllipto-5238-kai-panellinio-rekor.htm",
+          "time": "2026-07-19T07:15:00Z",
+          "url": "https://cyprus-mail.com/2026/07/19/cyprus-business-now-weekly-wrap-up-170",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "f656d08925fb0573",
+        "id": "260a363ae2fc45c0",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "fa010d1d6401c6a7",
-          "title": "A szakszervezet egy hét türelmi idő után várja az IKEA válaszát béremelési igényére",
+          "id": "1d00352358068ef2",
+          "title": "Letošní ročník festivalu Masters of Rock uzavře zpěvák Marilyn Manson",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-18T18:00:00Z",
-          "url": "https://profitline.hu/a-szakszervezet-egy-het-turelmi-ido-utan-varja-az-ikea-valaszat-beremelesi-igenyere-489078",
+          "time": "2026-07-19T07:00:00Z",
+          "url": "https://zlinsky.denik.cz/zpravy-region/letosni-rocnik-festivalu-masters-of-rock-uzavre-zpevak-marilyn-manson/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "b4f57f58202549a3",
+        "id": "3a36e15d43355232",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "14719abee83887c4",
-          "title": "Ar „ Made in Europe pakels Europos pramonę ?",
-          "category": "other",
+          "id": "59b2037d8821595b",
+          "title": "Ő volt a „ megpecsételt távírászkisasszony | Új Szó | A szlovákiai magyar napilap és hírportál",
+          "category": "infrastructure",
           "source": "GDELT_DOC",
-          "time": "2026-07-18T17:45:00Z",
-          "url": "https://klaipeda.diena.lt/naujienos/verslas/ekonomika/ar-made-europe-pakels-europos-pramone-1765541",
+          "time": "2026-07-19T07:00:00Z",
+          "url": "https://ujszo.com/kultura/o-volt-a-megpecsetelt-taviraszkisasszony",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "c2e7ada871f1cb2e",
+        "id": "f860827ec4a7e1fb",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "9ee9b04bd6d7dbcf",
-          "title": "Moldova , în topul țărilor cu cele mai mari facturi la energie în 2025 : cât plătesc gospodăriile comparativ cu restul lumii",
+          "id": "82d7ae80398a4be0",
+          "title": "Φρένο στις αγορές χρυσής λίρας από τους Ελληνες - Γιατί μειώθηκαν",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-18T17:45:00Z",
-          "url": "https://www.ziarulnational.md/moldova-in-topul-tarilor-cu-cele-mai-mari-facturi-la-energie-in-2025-cat-platesc-gospodariile-comparativ-cu-restul-lumii/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a31ddfc1ee67d93f",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "0b4124fdde8b0d21",
-          "title": "Index - Gazdaság - Nem ért véget az IKEA - dolgozók harca , új egyeztetés jöhet",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-18T17:45:00Z",
-          "url": "https://index.hu/gazdasag/2026/07/18/ikea-sztrajk-berek-egyeztetes-szakszervezet-targyalas-kasz-ikea-sztrajkbizottsag/",
+          "time": "2026-07-19T07:00:00Z",
+          "url": "https://www.thetoc.gr/oikonomia/article/freno-stis-agores-xrusis-liras-apo-tous-ellines---giati-meiothikan/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

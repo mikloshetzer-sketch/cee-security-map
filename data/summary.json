@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-07-19T13:05:18Z",
+  "generated_utc": "2026-07-19T18:59:46Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 947 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 536 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Climat : pour faire plaisir aux industriels , la Commission européenne souhaite assouplir ses quotas carbone.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Letni wypoczynek na Litwie . Przewodnicy zdradzają najciekawsze atrakcje.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Ticho plynovej komory je hrozivé | Rozhovory | . týždeň - iný pohľad na spoločnosť.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 630.11; 7 napos változás: +12326%).",
-    "Trend: emelkedő (+1515%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2844, GDELT DOC 2486, direkt feed 368, USGS 1, GDACS 2.",
+    "Az infrastruktúra-közelségi modul 990 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 507 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Zatmění Slunce 2026 : Kdy bude a kde v Česku sledovat.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: „ Vilko istorija – kaip sovietinėje pilkumoje atsirado holivudinis leopardo raštas ?.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Mercedes baut jetzt in Kecskemet : Warum deutsche Autobauer ihre Produktion immer öfter nach Ungarn verlegen.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 623.99; 7 napos változás: +12930%).",
+    "Trend: emelkedő (+1609%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2875, GDELT DOC 2471, direkt feed 370, USGS 1, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+12326%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+12930%)."
   },
   "stats": {
-    "score_last7": 2561.952,
-    "score_prev7": 158.588,
-    "change_pct": 1515.48
+    "score_last7": 2560.904,
+    "score_prev7": 149.82,
+    "change_pct": 1609.32
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 947,
+    "last_24h_proximity_matches": 990,
     "top_proximity": [
+      {
+        "id": "219c186ad8de07e5",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "ad982f62e47573f2",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-19T00:00:00Z",
+          "url": "https://www.globalsecurity.org/wmd/library/news/russia/2026/07/russia-260718-rferl02.htm",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "84865bbbb37dd368",
         "level": "critical",
@@ -58,17 +88,17 @@
         }
       },
       {
-        "id": "eb058eab1a227a03",
+        "id": "e9bf633d208e8e6d",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "07eee5e1e5438d78",
-          "title": "Climat : pour faire plaisir aux industriels , la Commission européenne souhaite assouplir ses quotas carbone",
+          "id": "73abe44efeca2ca9",
+          "title": "Zatmění Slunce 2026 : Kdy bude a kde v Česku sledovat",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T12:30:00Z",
-          "url": "https://www.humanite.fr/environnement/commission-europeenne/climat-pour-faire-plaisir-aux-industriels-la-commission-europeenne-souhaite-assouplir-ses-quotas-carbone",
+          "time": "2026-07-19T18:30:00Z",
+          "url": "https://www.novinky.cz/clanek/veda-skoly-zatmeni-slunce-2026-v-cr-kdy-bude-kde-jak-sledovat-40588473",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +118,17 @@
         }
       },
       {
-        "id": "d127f657f26dedbc",
+        "id": "858ba6ec6982bd77",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "4b7586a79c129464",
-          "title": "Letni wypoczynek na Litwie . Przewodnicy zdradzają najciekawsze atrakcje",
+          "id": "4799fcfabca43866",
+          "title": "„ Vilko istorija – kaip sovietinėje pilkumoje atsirado holivudinis leopardo raštas ?",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T11:45:00Z",
-          "url": "https://wiadomosci.onet.pl/swiat/letni-wypoczynek-na-litwie-przewodnicy-zdradzaja-najciekawsze-atrakcje/h6q3rwz",
+          "time": "2026-07-19T18:30:00Z",
+          "url": "https://www.lrt.lt/naujienos/kultura/12/2983282/vilko-istorija-kaip-sovietineje-pilkumoje-atsirado-holivudinis-leopardo-rastas",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "3b45e80a5c2b206e",
+        "id": "8fbf7c36edda63d5",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "2f655f46b380cc1c",
-          "title": "Ticho plynovej komory je hrozivé | Rozhovory | . týždeň - iný pohľad na spoločnosť",
+          "id": "27a79a2d003523dc",
+          "title": "Mercedes baut jetzt in Kecskemet : Warum deutsche Autobauer ihre Produktion immer öfter nach Ungarn verlegen",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T11:30:00Z",
-          "url": "https://www.tyzden.sk/rozhovory/137207/ticho-plynovej-komory-je-hrozive/",
+          "time": "2026-07-19T18:30:00Z",
+          "url": "https://www.badische-zeitung.de/mercedes-baut-jetzt-in-kecskemet-warum-deutsche-autobauer-ihre-produktion-immer-oefter-nach-ungarn-v",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "a5d4271a7142c16a",
+        "id": "0d124aa26bacf82a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "7dc051abecd87d34",
-          "title": "Ben Gvir Crocodile Moat . Not A Joke .",
+          "id": "3bbf379235bf000d",
+          "title": "Novinky . cz - nejčtenější zprávy na českém internetu",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T11:30:00Z",
-          "url": "https://jewlicious.com/2026/07/ben-gvir-crocodile-prison-moat/",
+          "time": "2026-07-19T17:45:00Z",
+          "url": "https://www.novinky.cz/?timeline--pageItem=40588761",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "1b699ebea9ee13ef",
+        "id": "b4e461749b2d3746",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "dca2e5e8e6878716",
-          "title": "KE rozważa cła na import produktow rolnych z nielegalnych izraelskich osiedli",
-          "category": "infrastructure",
+          "id": "434275d2cb98d469",
+          "title": "Communist scientists built a Cold War cola to beat Coke . It still a hit along with these 7 other global rivals | Top Stories",
+          "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T11:30:00Z",
-          "url": "https://www.farmer.pl/finanse/ke-rozwaza-cla-na-import-produktow-rolnych-z-nielegalnych-izraelskich-osiedli,180489.html",
+          "time": "2026-07-19T17:30:00Z",
+          "url": "https://www.wxow.com/news/top-stories/communist-scientists-built-a-cold-war-cola-to-beat-coke-it-s-still-a-hit/article_d335a08c-f639-5bf6-bbf0-88af529f1feb.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "cf759f3bc2950152",
+        "id": "3737c26dae98cd30",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "5ab44676f5d6c84b",
-          "title": "Co bude s extrémní kohabitací po Ankaře ? Vláda potřebuje voliče zaujmout , ale ne ubavit k smrti",
+          "id": "79741f2527b4c9f8",
+          "title": "Więcej łóżek niż w Europie , ale nie ma kto leczyć . Szpitalny paradoks po polsku",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T11:30:00Z",
-          "url": "https://www.reflex.cz/clanek/analyza/137067/co-bude-s-extremni-kohabitaci-po-ankare-vlada-potrebuje-volice-zaujmout-ale-ne-ubavit-k-smrti.html",
+          "time": "2026-07-19T17:15:00Z",
+          "url": "https://www.bankier.pl/wiadomosc/Wiecej-lozek-niz-w-Europie-ale-nie-ma-kto-leczyc-Szpitalny-paradoks-po-polsku-9167510.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "f7d1732eece4c0ce",
+        "id": "206f40eacc01be2d",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "425c57a4241d49d9",
-          "title": "Industria germană mizează pe străinătate – merită oare ?",
+          "id": "7414ddfb3d04e021",
+          "title": "10 Insanely Misguided Radio Competitions",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T11:15:00Z",
-          "url": "https://www.dw.com/ro/industria-german%C4%83-mizeaz%C4%83-pe-str%C4%83in%C4%83tate-merit%C4%83-acest-lucru/a-77941665",
+          "time": "2026-07-19T17:15:00Z",
+          "url": "https://listverse.com/2013/05/14/10-insanely-misguided-radio-competitions/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "898bbcd269cf4637",
+        "id": "79aea5ec3d0b752a",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "8c510ffb0b1e838d",
-          "title": "La Jornada : Desde otras ciudades",
+          "id": "ad00033c172eed09",
+          "title": "DPP : Doklimatizaci tramvají Škoda 15T provede polská ENIKA | ParlamentniListy . cz – politika ze všech stran",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T11:15:00Z",
-          "url": "https://www.jornada.com.mx/2026/07/19/opinion/024o1cap",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "77ae4b362b2dd635",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "bc45e47cd7e19eab",
-          "title": "Zalando ( ETR : ZAL ) Shares Up 0 . 5 % – Time to Buy ?",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-19T11:00:00Z",
-          "url": "https://www.themarketsdaily.com/2026/07/19/zalando-etrzal-shares-up-0-5-time-to-buy.html",
+          "time": "2026-07-19T17:15:00Z",
+          "url": "https://www.parlamentnilisty.cz/zpravy/tiskovezpravy/DPP-Doklimatizaci-tramvaji-Skoda-15T-provede-polska-ENIKA-794275",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

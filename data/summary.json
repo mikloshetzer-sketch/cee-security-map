@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-07-20T08:49:58Z",
+  "generated_utc": "2026-07-20T13:56:59Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 955 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 435 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Rezultatele sesiunii suplimentare la examenele de gimnaziu au fost publicate . Unde pot fi consultate notele și până când pot fi depuse contestațiile.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: 从全球共识到产业落地 ， 全球工业人工智能国际合作论坛发布多项重磅成果.",
-    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: De 2016 até agora : As polémicas e acusaes contra os irmãos Tate.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 560.11; 7 napos változás: +10531%).",
-    "Trend: emelkedő (+1178%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2712, GDELT DOC 2509, direkt feed 364, USGS 1, GDACS 2.",
+    "Az infrastruktúra-közelségi modul 1159 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 455 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: РФ атакувала Павлоград КАБом : двоє людей загинули , 15 постраждали.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: 32 years ago , Aleksandr Lukashenko took first oath and received country first - ever Certificate of Belaru President.",
+    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: З початку 2026 року Україна отримала 4466 одиниць енергообладнання новини LB . ua.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 564.84; 7 napos változás: +9781%).",
+    "Trend: emelkedő (+1306%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2786, GDELT DOC 2496, direkt feed 362, USGS 1, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10531%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+9781%)."
   },
   "stats": {
-    "score_last7": 2389.952,
-    "score_prev7": 186.987,
-    "change_pct": 1178.14
+    "score_last7": 2509.508,
+    "score_prev7": 178.472,
+    "change_pct": 1306.11
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 955,
+    "last_24h_proximity_matches": 1159,
     "top_proximity": [
+      {
+        "id": "288c2a20516e1719",
+        "level": "critical",
+        "score": 98.81,
+        "distance_km": 0.6,
+        "event": {
+          "id": "92fa149151831ea4",
+          "title": "Rzeszow, Podkarpackie, Poland",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-20T00:00:00Z",
+          "url": "https://www.delfi.lt/en/business/it-was-supposed-to-be-shipped-but-remained-in-poland-ukrainian-grain-fuels-a-conflict-between-neighbouring-countries-120278921",
+          "lat": 50.0372,
+          "lon": 22.0049,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "pl-military-rzeszow-logistics",
+          "name": "Rzeszów NATO Logistics Hub",
+          "country": "Poland",
+          "city": "Rzeszów",
+          "category": "military",
+          "subtype": "military_logistics_hub",
+          "criticality": 10.0,
+          "operator": "Poland / NATO partners",
+          "lat": 50.041,
+          "lon": 21.999,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "17c90ee4c733942b",
         "level": "critical",
@@ -54,6 +84,36 @@
           "operator": "Freeport of Riga Authority",
           "lat": 56.949,
           "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "73072f48925713b6",
+        "level": "critical",
+        "score": 88.68,
+        "distance_km": 0.73,
+        "event": {
+          "id": "8edfe4f6f25f8f1b",
+          "title": "Alytus, Alytaus Apskritis, Lithuania",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-20T00:00:00Z",
+          "url": "https://www.lrytas.lt/english/politics/2026/07/20/news/new-details-emerge-about-skvernelis-electronic-monitoring-device-43198023/",
+          "lat": 54.4,
+          "lon": 24.05,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lt-energy-litpol-link",
+          "name": "LitPol Link Alytus Node",
+          "country": "Lithuania",
+          "city": "Alytus",
+          "category": "energy",
+          "subtype": "electricity_interconnector",
+          "criticality": 9.0,
+          "operator": "Litgrid / PSE",
+          "lat": 54.396,
+          "lon": 24.041,
           "source_file": "critical_infrastructure.json"
         }
       },
@@ -249,66 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-19T21:15:00Z",
           "url": "https://www.agronews.gr/oikonomia-kai-politiki/diethni/230249/egrithikan-ta-540-ekat-stirixis-agroton-ee-gia-to-energeiako-kostos-logo-mesis-anatolis/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a37a0ca4ab4f425a",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "c3d8bec6acb288e7",
-          "title": "Tanie masło z Lidla i Biedronki zszokowało Czechów . Chcą zakazu",
-          "category": "infrastructure",
-          "source": "GDELT_DOC",
-          "time": "2026-07-19T19:45:00Z",
-          "url": "https://www.portalspozywczy.pl/handel/wiadomosci/lidl-i-biedronka-zszokowaly-czechow-cenami-masla-rzad-reaguje,291022.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "28228df92a9e7ed6",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "a1cd3ab531a86260",
-          "title": "Visegrádské pohyby : Babiš potopil Orbána , konec Macinkova patolízalství a facka od Pellegriniho",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-19T19:15:00Z",
-          "url": "https://www.reflex.cz/clanek/komentare/137123/visegradske-pohyby-babis-potopil-orbana-konec-macinkova-patolizalstvi-a-facka-od-pellegriniho.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-07-20T02:14:32Z",
+  "generated_utc": "2026-07-20T08:49:58Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 840 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 435 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Masový vrah ve službách revoluce . Před 100 lety zemřel Felix Dzeržinskij.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Куди поїхати туристу , який вирушає у свою першу подорож Finance . ua.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Adiós a las leyendas : además de Ronaldo , Neymar y Ochoa se despiden del Mundial estas grandes figuras.",
-    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 598.00; 7 napos változás: +10553%).",
-    "Trend: emelkedő (+1104%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2682, GDELT DOC 2436, direkt feed 369, USGS 1, GDACS 2.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 187 db.",
+    "Az infrastruktúra-közelségi modul 955 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 435 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Rezultatele sesiunii suplimentare la examenele de gimnaziu au fost publicate . Unde pot fi consultate notele și până când pot fi depuse contestațiile.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: 从全球共识到产业落地 ， 全球工业人工智能国际合作论坛发布多项重磅成果.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: De 2016 até agora : As polémicas e acusaes contra os irmãos Tate.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 560.11; 7 napos változás: +10531%).",
+    "Trend: emelkedő (+1178%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2712, GDELT DOC 2509, direkt feed 364, USGS 1, GDACS 2.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10553%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+10531%)."
   },
   "stats": {
-    "score_last7": 2399.669,
-    "score_prev7": 199.235,
-    "change_pct": 1104.44
+    "score_last7": 2389.952,
+    "score_prev7": 186.987,
+    "change_pct": 1178.14
   },
-  "rss_count": 187,
+  "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 840,
+    "last_24h_proximity_matches": 955,
     "top_proximity": [
+      {
+        "id": "17c90ee4c733942b",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "36c6ac84dbe5d6e6",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-20T00:00:00Z",
+          "url": "https://www.irishtimes.com/opinion/letters/2026/07/20/distressed-pubs/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
       {
         "id": "5fcb6201d4985a7f",
         "level": "critical",
@@ -159,36 +189,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-19T22:00:00Z",
           "url": "https://www.propertynews.pl/centra-handlowe/czeski-gigant-rosnie-w-polsce-po-udanym-debiucie-szykuje-kolejne-sklepy,199974.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "10d0468594da154f",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "813f09427e021167",
-          "title": "Fialova i Babišova drahota je u konce . Vláda se pochlubila čísly | ParlamentniListy . cz – politika ze všech stran",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-19T21:45:00Z",
-          "url": "https://www.parlamentnilisty.cz/arena/monitor/Fialova-i-Babisova-drahota-je-u-konce-Vlada-se-pochlubila-cisly-794284",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

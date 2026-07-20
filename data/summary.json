@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-20T13:56:59Z",
+  "generated_utc": "2026-07-20T19:35:03Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1159 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 455 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: РФ атакувала Павлоград КАБом : двоє людей загинули , 15 постраждали.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: 32 years ago , Aleksandr Lukashenko took first oath and received country first - ever Certificate of Belaru President.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: З початку 2026 року Україна отримала 4466 одиниць енергообладнання новини LB . ua.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 564.84; 7 napos változás: +9781%).",
-    "Trend: emelkedő (+1306%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2786, GDELT DOC 2496, direkt feed 362, USGS 1, GDACS 2.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
+    "Az infrastruktúra-közelségi modul 1417 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 626 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Las dos décadas mágicas de las selecciones españolas.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Europe risks losing its industrial base over climate policy , minister warns.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Allegro promuje Smarta ! Użytkownicy dostaną Smart ! Monety.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 572.52; 7 napos változás: +11965%).",
+    "Trend: emelkedő (+1442%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2866, GDELT DOC 2545, direkt feed 359, USGS 1, GDACS 2.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 197 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+9781%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+11965%)."
   },
   "stats": {
-    "score_last7": 2509.508,
-    "score_prev7": 178.472,
-    "change_pct": 1306.11
+    "score_last7": 2607.435,
+    "score_prev7": 169.049,
+    "change_pct": 1442.41
   },
-  "rss_count": 200,
+  "rss_count": 197,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1159,
+    "last_24h_proximity_matches": 1417,
     "top_proximity": [
       {
         "id": "288c2a20516e1719",
@@ -88,6 +88,96 @@
         }
       },
       {
+        "id": "cb9ae46c35233cfd",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "ba2dfacb5385fff3",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-20T00:00:00Z",
+          "url": "https://www.baltictimes.com/election_summer_in_latvia__much_uncertainty__but_favorites_shine/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "33deae5dcb42e8cc",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "9eebe8a59adfbe38",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-20T00:00:00Z",
+          "url": "https://www.baltictimes.com/housing_as_an_economic_and_security_issue__european_parliament_delegation_led_by_inese_vaidere_arrives_in_riga/",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "ce93c8ad4e3deaf8",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "98c8b70ced227799",
+          "title": "Riga, Riga, Latvia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-20T00:00:00Z",
+          "url": "https://www.ch-aviation.com/news/169654-latvia-in-talks-with-strategic-investor-for-airbaltic-pm",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
         "id": "73072f48925713b6",
         "level": "critical",
         "score": 88.68,
@@ -118,17 +208,17 @@
         }
       },
       {
-        "id": "5fcb6201d4985a7f",
+        "id": "e25f83cbc00441ce",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "a71b7b500025379b",
-          "title": "Masový vrah ve službách revoluce . Před 100 lety zemřel Felix Dzeržinskij",
+          "id": "1eaa1bf47690d0af",
+          "title": "Las dos décadas mágicas de las selecciones españolas",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-20T02:00:00Z",
-          "url": "https://www.idnes.cz/technet/pred-100-lety/pred-100-lety-felix-dzerzinskij-smrt-ceka.A260709_122438_pred-100-lety_vov",
+          "time": "2026-07-20T19:00:00Z",
+          "url": "https://www.laopiniondemalaga.es/deportes/2026/07/20/decadas-magicas-selecciones-espanolas-132636901.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +238,17 @@
         }
       },
       {
-        "id": "20320191853a5a5b",
+        "id": "3de851661a777055",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "625c0d3403524b10",
-          "title": "Куди поїхати туристу , який вирушає у свою першу подорож Finance . ua",
+          "id": "dd269a8f7a9904d1",
+          "title": "Europe risks losing its industrial base over climate policy , minister warns",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T23:30:00Z",
-          "url": "https://news.finance.ua/ua/kudy-poihaty-turystu-yakyy-vyrushaye-u-svoyu-pershu-podorozh",
+          "time": "2026-07-20T19:00:00Z",
+          "url": "https://www.foxnews.com/world/europes-climate-agenda-risks-crushing-its-industry-environment-minister-warns",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +268,17 @@
         }
       },
       {
-        "id": "af5291f50a68521c",
+        "id": "00bea036558c0c33",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "6528453429885c4c",
-          "title": "Adiós a las leyendas : además de Ronaldo , Neymar y Ochoa se despiden del Mundial estas grandes figuras",
+          "id": "84459f4cf290d40c",
+          "title": "Allegro promuje Smarta ! Użytkownicy dostaną Smart ! Monety",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T23:30:00Z",
-          "url": "https://www.telemundo.com/noticias/noticias-telemundo/internacional/leyendas-que-se-despiden-del-mundial-messi-rcna588178",
+          "time": "2026-07-20T18:45:00Z",
+          "url": "https://www.wirtualnemedia.pl/allegro-promuje-smarta-uzytkownicy-dostana-smart-monety,7309548612552736a",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,107 +298,17 @@
         }
       },
       {
-        "id": "26bdb75396797efb",
+        "id": "6c792d59098785bf",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "532c52d5205039c5",
-          "title": "Ukrajina vs . Rusko : Aktuální situace na Ukrajině ONLINE",
+          "id": "8c6c2f4eaa38400d",
+          "title": "Ukraine - Tagebuch : Am Ende wird es vier Billionen Euro kosten und dreißig Jahre dauern",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-19T22:45:00Z",
-          "url": "https://www.blesk.cz/clanek/zpravy-valka-na-ukrajine/702030/online-rusove-zabijeli-na-turecke-lodi-s-obilim-a-dalsi-protesty-v-kyjeve.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "5f8e6a7f60a85c8c",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "ab9031879ab0fa72",
-          "title": "Czeski gigant rośnie w Polsce . Po udanym debiucie szykuje kolejne sklepy",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-19T22:00:00Z",
-          "url": "https://www.propertynews.pl/centra-handlowe/czeski-gigant-rosnie-w-polsce-po-udanym-debiucie-szykuje-kolejne-sklepy,199974.html",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "69533207d774ed61",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "8141c6c62b25282d",
-          "title": "Nový směr Česka . Drulák united kingdom ázal spojence pro nejistou dobu | ParlamentniListy . cz – politika ze všech stran",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-19T21:45:00Z",
-          "url": "https://www.parlamentnilisty.cz/arena/monitor/Novy-smer-Ceska-Drulak-ukazal-spojence-pro-nejistou-dobu-794276",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "1c9550fc8d3d91ea",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "21681cd507f94c5c",
-          "title": "Εγκρίθηκαν τα 540 εκατ . στήριξης αγροτών ΕΕ για το ενεργειακό κόστος λόγω κρίσης στη Μέση Ανατολή",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-19T21:15:00Z",
-          "url": "https://www.agronews.gr/oikonomia-kai-politiki/diethni/230249/egrithikan-ta-540-ekat-stirixis-agroton-ee-gia-to-energeiako-kostos-logo-mesis-anatolis/",
+          "time": "2026-07-20T18:45:00Z",
+          "url": "https://www.rbb24.de/politik/thema/Ukraine/beitraege/ukraine-tagebuch-kyjiw-michael-kanada-wiederaufbau.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

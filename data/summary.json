@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-21T13:27:36Z",
+  "generated_utc": "2026-07-21T19:14:27Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1386 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 755 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Česko bude pro malé reaktory s britskou Rolls - Royce SMR rozvíjet lokality Dětmarovice a Tušimice.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Nie tylko koszty . Polska staje się logistycznym liderem Europy Środkowo ‑ Wschodniej.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Polska bije rekordy w najmie krótkoterminowym . Łódź najszybszym rynkiem.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 590.98; 7 napos változás: +9345%).",
-    "Trend: emelkedő (+1181%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2755, GDELT DOC 2457, direkt feed 355, USGS 1, GDACS 2.",
+    "Az infrastruktúra-közelségi modul 1579 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 850 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 5 , 000 किलोमीटर की फ्लाइटों पर ईयू का उत्सर्जन शुल्क.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 最新全球最強護照排行榜 新加坡蟬聯冠軍 台灣排名34中國60 - 生活.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Škoda Group po 170 letech změní značku , představí ji na veletrhu InnoTrans.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 645.35; 7 napos változás: +10820%).",
+    "Trend: emelkedő (+1318%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2828, GDELT DOC 2557, direkt feed 346, USGS 1, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+9345%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+10820%)."
   },
   "stats": {
-    "score_last7": 2541.615,
-    "score_prev7": 198.43,
-    "change_pct": 1180.86
+    "score_last7": 2661.162,
+    "score_prev7": 187.688,
+    "change_pct": 1317.87
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1386,
+    "last_24h_proximity_matches": 1579,
     "top_proximity": [
       {
         "id": "411b6ee3312b8bd6",
@@ -58,17 +58,47 @@
         }
       },
       {
-        "id": "528de74e5a6b3732",
+        "id": "7a78804802a9d501",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "a7562ef90c32d53c",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-21T00:00:00Z",
+          "url": "https://www.baltictimes.com/otp_bank_to_acquire_luminor__opening_a_new_chapter_in_baltic_financial_markets/",
+          "lat": 59.43390000000001,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "18c6d8258e444a69",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c80e87ee8b1cf1f8",
-          "title": "Česko bude pro malé reaktory s britskou Rolls - Royce SMR rozvíjet lokality Dětmarovice a Tušimice",
+          "id": "c2db0eed7aba6ac3",
+          "title": "5 , 000 किलोमीटर की फ्लाइटों पर ईयू का उत्सर्जन शुल्क",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-21T13:00:00Z",
-          "url": "https://www.novinky.cz/clanek/ekonomika-cesko-bude-pro-male-reaktory-s-britskou-rolls-royce-smr-rozvijet-i-lokality-detmarovice-a-tusimice-40589088",
+          "time": "2026-07-21T18:30:00Z",
+          "url": "https://www.dw.com/hi/us-deeply-concerned-after-eu-eyes-carbon-price-for-international-flights/a-78056072",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -88,17 +118,17 @@
         }
       },
       {
-        "id": "ca25d048245700c4",
+        "id": "35da47e15ca2dbd3",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "2939c5dae87b8318",
-          "title": "Nie tylko koszty . Polska staje się logistycznym liderem Europy Środkowo ‑ Wschodniej",
+          "id": "75f9882b1ddc956d",
+          "title": "最新全球最強護照排行榜 新加坡蟬聯冠軍 台灣排名34中國60 - 生活",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-21T13:00:00Z",
-          "url": "https://www.propertynews.pl/opinie/nie-tylko-koszty-polska-staje-sie-logistycznym-liderem-europy-srodkowo-wschodniej,200085.html",
+          "time": "2026-07-21T18:30:00Z",
+          "url": "https://news.ltn.com.tw/news/life/breakingnews/5513167",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "4f181714ae7b8ae9",
+        "id": "f6b816431d15f010",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "a63a1632e89f2193",
-          "title": "Polska bije rekordy w najmie krótkoterminowym . Łódź najszybszym rynkiem",
+          "id": "d9f1c68524d2359a",
+          "title": "Škoda Group po 170 letech změní značku , představí ji na veletrhu InnoTrans",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-21T13:00:00Z",
-          "url": "https://www.propertynews.pl/hotele/polska-bije-rekordy-w-najmie-krotkoterminowym-lodz-najszybszym-rynkiem,200095.html",
+          "time": "2026-07-21T18:00:00Z",
+          "url": "https://www.e15.cz/byznys/doprava-a-logistika/skoda-group-po-170-letech-zmeni-znacku-predstavi-ji-na-veletrhu-innotrans-1434450",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "31e5105ee105cc4e",
+        "id": "9ee23ff209b3eff8",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "07148e8afc457519",
-          "title": "Dino w Wilanowie już działa . Tak otwierano jedną z najgłośniejszych inwestycji w stolicy",
+          "id": "50a4228d88827f94",
+          "title": "Битва за Україну . День тисяча шістсот дев ятий",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-21T13:00:00Z",
-          "url": "https://www.propertynews.pl/centra-handlowe/dino-w-wilanowie-juz-dziala-tak-otwierano-jedna-z-najglosniejszych-inwestycji-w-stolicy,200087.html",
+          "time": "2026-07-21T17:30:00Z",
+          "url": "https://www.ukrinform.ua/rubric-ato/4146617-bitva-za-ukrainu-den-tisaca-sistsot-devatij.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "d29cedc5df7d5887",
+        "id": "abd2bc36c291d7eb",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c7c9ccbaec4f5811",
-          "title": "Un total de 113 estudiantes extremeños de FP del programa europeo Erasmus+ reciben una beca complementaria de la Junta",
+          "id": "1d7ec5c9f68bdeb5",
+          "title": "Ranking UEFA : Dzieją się rzeczy historyczne ! Polska w TOP10",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-21T13:00:00Z",
-          "url": "https://www.europapress.es/extremadura/noticia-total-149-estudiantes-extremenos-fp-programa-europeo-erasmus-reciben-beca-complementaria-junta-20260721122500.html",
+          "time": "2026-07-21T17:30:00Z",
+          "url": "https://www.goal.pl/ekstraklasa/ranking-uefa-dzieja-sie-rzeczy-historyczne-polska-w-top-10/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "99e929de2f34415b",
+        "id": "a649a858ace3edbe",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c9e1d9e80f0c5f1b",
-          "title": "Výročie : Pred 160 rokmi sa odohrala v Lamači posledná bitka prusko - rakúskej vojny , zomreli stovky ľudí | Lamač | Mestské časti",
+          "id": "476808c5208685d8",
+          "title": "День фінансів : транш МВФ , допомога для українців у ЄС , мільйон квартир для повернення ВПО Finance . ua",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-21T13:00:00Z",
-          "url": "https://www.bratislavskenoviny.sk/aktuality/lamac/89325-vyrocie-pred-160-rokmi-sa-odohrala-v-lamaci-posledna-bitka-prusko-rakuskej-vojny-zomreli-stovky-ludi",
+          "time": "2026-07-21T16:45:00Z",
+          "url": "https://news.finance.ua/ua/den-finansiv-transh-mvf-dopomoha-dlya-ukrainciv-u-yes-mil-yon-kvartyr-dlya-povernennya-vpo",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "cc614b5e0ab03db8",
+        "id": "e4d6537754fc0cb6",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "77c1c7b55fbca783",
-          "title": "Embraer fecha venda de aviões ao Japão e parceria para míssil no C - 390",
+          "id": "602ff2a673a9b57c",
+          "title": "Sybiha telefonoval s Macinkom , Česku sa poďakoval za podporu Ukrajiny",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-21T13:00:00Z",
-          "url": "https://g1.globo.com/sp/vale-do-paraiba-regiao/noticia/2026/07/21/embraer-anuncia-venda-de-dois-avioes-ao-japao-e-parceria-para-integrar-missil-ao-cargueiro-c-390.ghtml",
+          "time": "2026-07-21T16:45:00Z",
+          "url": "https://www.aktuality.sk/clanok/yrq4BOJ/sybiha-telefonoval-s-macinkom-cesku-sa-podakoval-za-podporu-ukrajiny/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "8fb09d6ba65273ed",
+        "id": "2b678a93cf847a44",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "43c62c510b0928e6",
-          "title": "Analiză Rethink : 20 de ani în UE – productivitate record și consum aproape dublu , dar 1 din 6 elevi abandonează școala , iar datoria publică a explodat – Income Magazine",
+          "id": "470e1cc5eb61bc5e",
+          "title": "2万美元一套 ， 阿里 预制房 卖爆美国 ， 河北小伙3年卖3000套|工厂|集装箱|河北省|澳大利亚",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-21T13:00:00Z",
-          "url": "https://incomemagazine.ro/rethink/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "8c8757e8085943d0",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "dd7df70254804445",
-          "title": "Česko a Slovensko chcú v EÚ spoločne rokovať o eurofondoch pre ďalšie programové obdobie",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-21T13:00:00Z",
-          "url": "https://e.dennikn.sk/minuta/5466381",
+          "time": "2026-07-21T16:45:00Z",
+          "url": "https://www.163.com/dy/article/L2DC8NTA0519E3QB.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

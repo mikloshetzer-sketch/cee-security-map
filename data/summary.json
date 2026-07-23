@@ -1,32 +1,62 @@
 {
-  "generated_utc": "2026-07-23T02:05:46Z",
+  "generated_utc": "2026-07-23T08:22:07Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1607 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 810 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Țările UE cu cele mai mari scumpiri ale carburanților - România , în top.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Nové byty jsou u nás dvakrát dražší než v Maďarsku nebo Polsku . Konkurence je tam tvrdší a marže nižší , ale peníze se otáčejí rychleji , říká ředitel UDI Group Jan Chromeček.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: News - Mathematical Model Evaluates Risks of Cannibalism.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 739.05; 7 napos változás: +10029%).",
-    "Trend: emelkedő (+1156%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2589, GDELT DOC 2828, direkt feed 338, USGS 1, GDACS 4.",
+    "Az infrastruktúra-közelségi modul 1522 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 756 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: 【 视频 】 醒狮 、 英歌联袂粤产现代舞重磅亮相美国 ， 岭南文化出海实现三大跃升.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: A murit unul dintre marinarii răniți în incendiul de pe nava Gas Lisbon , lovită de drone în Marea Neagră . Bărbatul avea 46 de ani.",
+    "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Koha të fillojë Dialogu Strategjik ShBA - Kosovë.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 777.13; 7 napos változás: +11225%).",
+    "Trend: emelkedő (+1205%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2614, GDELT DOC 2776, direkt feed 339, USGS 1, GDACS 4.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+10029%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+11225%)."
   },
   "stats": {
-    "score_last7": 2846.666,
-    "score_prev7": 226.609,
-    "change_pct": 1156.2
+    "score_last7": 2786.486,
+    "score_prev7": 213.568,
+    "change_pct": 1204.73
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1607,
+    "last_24h_proximity_matches": 1522,
     "top_proximity": [
+      {
+        "id": "0d750b75dd5b2984",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "ec31cbe8e9d84c6f",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "drone",
+          "source": "GDELT",
+          "time": "2026-07-23T00:00:00Z",
+          "url": "https://www.lrt.lt/en/news-in-english/19/2998285/uk-swaps-tanks-for-drones-in-the-baltics-the-way-of-war-is-changing",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "aa45f9387e9227b8",
         "level": "critical",
@@ -99,36 +129,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-22T23:45:00Z",
           "url": "https://archaeology.org/news/2026/07/22/mathematical-model-evaluates-risks-of-cannibalism/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "a9241f7f8f9453e3",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "4f8a2659e15abd98",
-          "title": "Opt jucătoare române de tenis au trecut de primul tur la Cluj - Napoca ( ITF )",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-22T23:45:00Z",
-          "url": "https://www.stiripesurse.ro/opt-jucatoare-romane-de-tenis-au-trecut-de-primul-tur-la-cluj-napoca-itf_3905837",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,17 +268,17 @@
         }
       },
       {
-        "id": "f47d4352bd16a70f",
+        "id": "b341a674bf89a0a0",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "64a011867f5aae76",
-          "title": "Uber anuncia compra de PedidosYa en países de Latinoamérica",
+          "id": "c21541b89ee16b04",
+          "title": "Charting new horizons : Honeywell Aerospace commitment to Europe aftermarket success",
           "category": "other",
           "source": "GDELT_DOC",
           "time": "2026-07-22T22:45:00Z",
-          "url": "https://www.ultimahora.com/uber-anuncia-compra-de-pedidosya-en-paises-de-latinoamerica",
+          "url": "https://www.flightglobal.com/paid-content/2026/07/charting-new-horizons-honeywell-aerospaces-commitment-to-europes-aftermarket-success/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -298,17 +298,17 @@
         }
       },
       {
-        "id": "b341a674bf89a0a0",
+        "id": "3729efbabdf82675",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c21541b89ee16b04",
-          "title": "Charting new horizons : Honeywell Aerospace commitment to Europe aftermarket success",
+          "id": "2189d599ed48700d",
+          "title": "Travé , Vilarrubla , Lazkano y Olazábal , a las semifinales de canoa en el Mundial de Oklahoma",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-22T22:45:00Z",
-          "url": "https://www.flightglobal.com/paid-content/2026/07/charting-new-horizons-honeywell-aerospaces-commitment-to-europes-aftermarket-success/",
+          "time": "2026-07-22T22:30:00Z",
+          "url": "https://www.marca.com/otros-deportes/2026/07/22/trave-vilarrubla-lazkano-olazabal-semifinales-canoa-mundial-oklahoma.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

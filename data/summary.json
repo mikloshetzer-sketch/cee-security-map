@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-23T13:35:26Z",
+  "generated_utc": "2026-07-23T19:08:10Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1318 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 590 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Neues Ziel , heikler Moment : Migrations - Aufregung bei Lukaschenkos Nachbarn.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: La caféine masque la fatigue sans la faire disparaître : pourquoi le coup de boost des boissons énergisantes est loin d être anodin.",
-    "CRITICAL infrastruktúra-jelzés: Vilnius Digital Infrastructure Hub (Lithuania) – 0.3 km-re ettől: Elmaradunk az uniós átlagtól a megújuló energiaforrások terén.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 746.23; 7 napos változás: +11337%).",
-    "Trend: emelkedő (+1281%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2669, GDELT DOC 2720, direkt feed 344, USGS 1, GDACS 2.",
+    "Az infrastruktúra-közelségi modul 1512 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 724 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: У Чехії розбився військовий вертоліт : є загиблий і поранені.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Vojenský vrtulník Venom havaroval při návratu z výcviku , řekl velitel základny . K nehodě došlo při přistání.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Közúti balesetben életét vesztette egy cseh politikus Szlovákiában.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 776.41; 7 napos változás: +12461%).",
+    "Trend: emelkedő (+1407%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2737, GDELT DOC 2760, direkt feed 339, USGS 1, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+11337%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+12461%)."
   },
   "stats": {
-    "score_last7": 2804.005,
-    "score_prev7": 203.097,
-    "change_pct": 1280.63
+    "score_last7": 2901.25,
+    "score_prev7": 192.538,
+    "change_pct": 1406.84
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1318,
+    "last_24h_proximity_matches": 1512,
     "top_proximity": [
       {
         "id": "0d750b75dd5b2984",
@@ -39,6 +39,126 @@
           "source": "GDELT",
           "time": "2026-07-23T00:00:00Z",
           "url": "https://www.lrt.lt/en/news-in-english/19/2998285/uk-swaps-tanks-for-drones-in-the-baltics-the-way-of-war-is-changing",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "85fb2eb019eed6e4",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "0ba004955423f916",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-23T00:00:00Z",
+          "url": "https://www.baltictimes.com/study__difference_between_cheapest_and_most_expensive_shopping_basket_in_estonia_was_over_12_euros/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "51af0ae063511e0a",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "ab1e94c5832219fc",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-23T00:00:00Z",
+          "url": "https://www.baltictimes.com/over_800_young_people_apply_to_estonian_tech_school_expanding_to_kenya/",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "07a867a30ecb1ee2",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "dbf2bf5b9525caea",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "other",
+          "source": "GDELT",
+          "time": "2026-07-23T00:00:00Z",
+          "url": "https://www.etnow.com/news/2026/7/tallinn-city-theatres-renovation-unifies-seven-performance-spaces-with-harman-professional-audio-system",
+          "lat": 59.4339,
+          "lon": 24.7281,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "ee-digital-tallinn-cyber-hub",
+          "name": "Tallinn Cyber and Digital Infrastructure Hub",
+          "country": "Estonia",
+          "city": "Tallinn",
+          "category": "digital",
+          "subtype": "cyber_digital_government_hub",
+          "criticality": 10.0,
+          "operator": "Multiple operators / public sector",
+          "lat": 59.437,
+          "lon": 24.753,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "600c0d577e7d99be",
+        "level": "critical",
+        "score": 97.1,
+        "distance_km": 1.45,
+        "event": {
+          "id": "d47bb5a62fbc2e51",
+          "title": "Tallinn, Harjumaa, Estonia",
+          "category": "drone",
+          "source": "GDELT",
+          "time": "2026-07-23T00:00:00Z",
+          "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
           "lat": 59.4339,
           "lon": 24.7281,
           "source_file": "gdelt_linked.geojson"
@@ -118,17 +238,17 @@
         }
       },
       {
-        "id": "aa45f9387e9227b8",
+        "id": "9c0dec8eae350742",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "17f51b363e36bb2e",
-          "title": "Țările UE cu cele mai mari scumpiri ale carburanților - România , în top",
+          "id": "ad655a4d71a93d58",
+          "title": "У Чехії розбився військовий вертоліт : є загиблий і поранені",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-23T01:30:00Z",
-          "url": "https://crisana.ro/stiri/economie-3/tarile-ue-cu-cele-mai-mari-scumpiri-ale-carburantilor-romania-in-top-214704.html",
+          "time": "2026-07-23T18:30:00Z",
+          "url": "https://www.dw.com/uk/u-cehii-rozbivsa-vijskovij-vertolit-e-zagiblij-i-poraneni/a-78090980",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +268,17 @@
         }
       },
       {
-        "id": "762c98a01b4cffe0",
+        "id": "aba429e0a24e24d2",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c82c5646bc6a19e7",
-          "title": "Nové byty jsou u nás dvakrát dražší než v Maďarsku nebo Polsku . Konkurence je tam tvrdší a marže nižší , ale peníze se otáčejí rychleji , říká ředitel UDI Group Jan Chromeček",
+          "id": "12ba39c1515338e3",
+          "title": "Vojenský vrtulník Venom havaroval při návratu z výcviku , řekl velitel základny . K nehodě došlo při přistání",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-23T00:30:00Z",
-          "url": "https://ekonom.cz/c1-67907430-nove-byty-jsou-u-nas-dvakrat-drazsi-nez-v-madarsku-nebo-polsku-konkurence-je-tam-tvrdsi-a-marze-nizsi-ale-penize-se-otaceji-rychleji-rika-reditel-udi",
+          "time": "2026-07-23T18:30:00Z",
+          "url": "https://www.e15.cz/byznys/obrana-a-zbrojni-prumysl/vojensky-vrtulnik-venom-havaroval-pri-navratu-z-vycviku-rekl-velitel-zakladny-k-nehode-doslo-pri-pristani-1434509",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,137 +298,17 @@
         }
       },
       {
-        "id": "8354f00566b9b615",
+        "id": "4ddf4e8825e3a6a4",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "b70c0d85c9c8efc3",
-          "title": "News - Mathematical Model Evaluates Risks of Cannibalism",
+          "id": "58b484b6e21aa071",
+          "title": "Közúti balesetben életét vesztette egy cseh politikus Szlovákiában",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-22T23:45:00Z",
-          "url": "https://archaeology.org/news/2026/07/22/mathematical-model-evaluates-risks-of-cannibalism/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "3885dd309b23d7fd",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "7c456fd9b1f83606",
-          "title": "Structura sistemului financiar din România în ultimul deceniu . Cum arată sectorul bancar din România faţă de alte componente din sectorul financiar local şi comparaţie cu alte ţări",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-22T23:15:00Z",
-          "url": "https://www.zfcorporate.ro/banci-asigurari/structura-sistemului-financiar-din-romania-in-ultimul-deceniu-cum-23200835",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "e1e321e66cc9e412",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "b52adfe050772eb3",
-          "title": "Štát začína konať pri bizarnej situácii v zdravotníctve . Chýbajú nám sestry , no posily posielame preč",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-22T23:00:00Z",
-          "url": "https://mediweb.hnonline.sk/zdn/spravy/96293194-stat-zacina-konat-pri-bizarnej-situacii-v-zdravotnictve-chybaju-nam-sestry-no-posily-posielame-prec",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "4d90635571e6a18e",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "6f65f170740243df",
-          "title": "România , printre ţările UE cu cele mai mari scumpiri în ritm anual ale carburanţilor",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-22T23:00:00Z",
-          "url": "https://ziarulprahova.ro/2026/07/23/romania-printre-tarile-ue-cu-cele-mai-mari-scumpiri-in-ritm-anual-ale-carburantilor/",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "cc1c76f0495b10a6",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "9e0bf018e21eeef1",
-          "title": "Hrozí , že zelený plán pripraví Európu o fabriky . Šéf oceliarov varuje pred ilúziou Bruselu",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-22T23:00:00Z",
-          "url": "https://hnonline.sk/finweb/ekonomika/96293197-hrozi-ze-zeleny-plan-pripravi-europu-o-fabriky-sef-oceliarov-varuje-pred-iluziou-bruselu",
+          "time": "2026-07-23T18:30:00Z",
+          "url": "https://parameter.sk/1364099/kozuti-balesetben-eletet-vesztette-egy-cseh-politikus-szlovakiaban/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

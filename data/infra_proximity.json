@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_utc": "2026-07-24T20:10:46.282335+00:00",
+    "generated_utc": "2026-07-24T21:14:26.282223+00:00",
     "infrastructure_count": 103,
-    "event_count": 5541,
-    "match_count": 14107,
-    "raw_match_count": 14107,
-    "top_infrastructure_count": 94,
+    "event_count": 5510,
+    "match_count": 14017,
+    "raw_match_count": 14017,
+    "top_infrastructure_count": 93,
     "max_distance_km": 50,
     "deduplication": {
       "events": "title + url + source + time",
@@ -14,66 +14,6 @@
     }
   },
   "top_matches": [
-    {
-      "id": "b0b72c3d20087c33",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-digital-tallinn-cyber-hub",
-        "name": "Tallinn Cyber and Digital Infrastructure Hub",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "digital",
-        "subtype": "cyber_digital_government_hub",
-        "criticality": 10.0,
-        "operator": "Multiple operators / public sector",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "0b040b159573fbe3",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "a45cb6e4b7a3e65a",
-        "title": "Kapitány István bejelentette, ki lesz Paks II. új vezetője",
-        "category": "local_media",
-        "source": "Telex",
-        "time": "Fri, 24 Jul 2026 17:18:35 +0200",
-        "url": "https://telex.hu/gazdasag/2026/07/24/paks-ii-sagodi-attila-vezerigazgato",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-energy-paks-npp",
-        "name": "Paks Nuclear Power Plant",
-        "country": "Hungary",
-        "city": "Paks",
-        "category": "energy",
-        "subtype": "nuclear_power_plant",
-        "criticality": 10.0,
-        "operator": "MVM",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
     {
       "id": "288c2a20516e1719",
       "level": "critical",
@@ -102,6 +42,36 @@
         "lat": 50.041,
         "lon": 21.999,
         "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "55bf75f1c4be7e64",
+      "level": "critical",
+      "score": 97.1,
+      "distance_km": 1.45,
+      "event": {
+        "id": "eec2c84e87c39f66",
+        "title": "Tallinna, Harjumaa, Estonia",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.manilatimes.net/2026/07/24/tmt-newswire/globenewswire/as-tallinna-vesi-will-hold-an-investor-conference-webinar-to-introduce-the-results-of-the-second-quarter-of-2026/2390861",
+        "lat": 59.4339,
+        "lon": 24.7281,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ee-digital-tallinn-cyber-hub",
+        "name": "Tallinn Cyber and Digital Infrastructure Hub",
+        "country": "Estonia",
+        "city": "Tallinn",
+        "category": "digital",
+        "subtype": "cyber_digital_government_hub",
+        "criticality": 10.0,
+        "operator": "Multiple operators / public sector",
+        "lat": 59.437,
+        "lon": 24.753,
+        "source_file": "infra_digital.json"
       }
     },
     {
@@ -225,20 +195,20 @@
       }
     },
     {
-      "id": "53421126fce1790e",
+      "id": "0e159a290c06d946",
       "level": "critical",
-      "score": 88.38,
-      "distance_km": 0.9,
+      "score": 86.09,
+      "distance_km": 2.17,
       "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
+        "id": "eec2c84e87c39f66",
+        "title": "Tallinna, Harjumaa, Estonia",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.manilatimes.net/2026/07/24/tmt-newswire/globenewswire/as-tallinna-vesi-will-hold-an-investor-conference-webinar-to-introduce-the-results-of-the-second-quarter-of-2026/2390861",
+        "lat": 59.4339,
+        "lon": 24.7281,
+        "source_file": "gdelt_linked.geojson"
       },
       "infrastructure": {
         "id": "ee-transport-tallinn-port",
@@ -915,20 +885,20 @@
       }
     },
     {
-      "id": "e62b232aa48e43ca",
+      "id": "776f19002c52bba8",
       "level": "high",
-      "score": 71.59,
-      "distance_km": 5.25,
+      "score": 69.8,
+      "distance_km": 6.37,
       "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
+        "id": "eec2c84e87c39f66",
+        "title": "Tallinna, Harjumaa, Estonia",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.manilatimes.net/2026/07/24/tmt-newswire/globenewswire/as-tallinna-vesi-will-hold-an-investor-conference-webinar-to-introduce-the-results-of-the-second-quarter-of-2026/2390861",
+        "lat": 59.4339,
+        "lon": 24.7281,
+        "source_file": "gdelt_linked.geojson"
       },
       "infrastructure": {
         "id": "ee-transport-tallinn-airport",
@@ -1125,36 +1095,6 @@
       }
     },
     {
-      "id": "779a9d4c761121c6",
-      "level": "high",
-      "score": 65.46,
-      "distance_km": 13.63,
-      "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-muuga-port",
-        "name": "Muuga Harbour",
-        "country": "Estonia",
-        "city": "Muuga",
-        "category": "transport",
-        "subtype": "cargo_port",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.5,
-        "lon": 24.96,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
       "id": "7c42a1b31dcd2a6c",
       "level": "high",
       "score": 65.37,
@@ -1335,17 +1275,17 @@
       }
     },
     {
-      "id": "6cdadbcb822633f4",
+      "id": "9fe8f109457cddc0",
       "level": "high",
       "score": 56.78,
       "distance_km": 14.51,
       "event": {
-        "id": "01497fc61fa5c557",
-        "title": "Gheorghiță Vlad, șeful Armatei Române, avertizează că vor mai avea loc incidente în Marea Neagră: Se vor naște vulnerabilități",
+        "id": "053b4f6f3702d80b",
+        "title": "ULTIMA ORĂ Drona doborâtă era tip Shahed, anunță Parchetul General. Rusia folosește aceste drone în Ucraina. Procurorii au deschis dosar penal",
         "category": "drone",
-        "source": "Digi24",
-        "time": "Fri, 24 Jul 2026 17:12:22 +0300",
-        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/gheorghita-vlad-seful-armatei-romane-avertizeaza-ca-vor-mai-avea-loc-incidente-in-marea-neagra-se-vor-naste-vulnerabilitati-3877463",
+        "source": "G4Media",
+        "time": "Fri, 24 Jul 2026 18:12:55 +0000",
+        "url": "https://www.g4media.ro/ultima-ora-drona-doborata-era-tip-shahed-anunta-parchetul-general-rusia-foloseste-aceste-drone-in-ucraina-procurorii-au-deschis-dosar-penal.html",
         "lat": 45.9432,
         "lon": 24.9668,
         "source_file": "local_events.geojson"
@@ -1513,369 +1453,69 @@
         "lon": 17.129,
         "source_file": "critical_infrastructure.json"
       }
+    },
+    {
+      "id": "7cf898fa1e6bef63",
+      "level": "medium",
+      "score": 67.35,
+      "distance_km": 1.89,
+      "event": {
+        "id": "7df7306fb2bac4e9",
+        "title": "Cluj-Napoca, Cluj, Romania",
+        "category": "security_politics",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.biometricupdate.com/202607/getlink-says-unstable-eu-software-could-delay-biometric-border-checks",
+        "lat": 46.7667,
+        "lon": 23.6,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-digital-cluj-it-hub",
+        "name": "Cluj-Napoca IT and Data Hub",
+        "country": "Romania",
+        "city": "Cluj-Napoca",
+        "category": "digital",
+        "subtype": "it_data_hub",
+        "criticality": 7.0,
+        "operator": "Multiple operators",
+        "lat": 46.771,
+        "lon": 23.624,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "b0485165ab48cbbb",
+      "level": "medium",
+      "score": 67.32,
+      "distance_km": 16.34,
+      "event": {
+        "id": "8dd3f14852b7a4c7",
+        "title": "Beloiannisz, FejéHU, Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-13T00:00:00Z",
+        "url": "https://hungarytoday.hu/reconstruction-of-iconic-balaton-passenger-ship-reaches-new-milestone/",
+        "lat": 47.1824,
+        "lon": 18.8238,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-energy-szazhalombatta-refinery",
+        "name": "MOL Danube Refinery",
+        "country": "Hungary",
+        "city": "Százhalombatta",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 10.0,
+        "operator": "MOL Group",
+        "lat": 47.316,
+        "lon": 18.914,
+        "source_file": "critical_infrastructure.json"
+      }
     }
   ],
   "matches": [
-    {
-      "id": "0b040b159573fbe3",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "a45cb6e4b7a3e65a",
-        "title": "Kapitány István bejelentette, ki lesz Paks II. új vezetője",
-        "category": "local_media",
-        "source": "Telex",
-        "time": "Fri, 24 Jul 2026 17:18:35 +0200",
-        "url": "https://telex.hu/gazdasag/2026/07/24/paks-ii-sagodi-attila-vezerigazgato",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-energy-paks-npp",
-        "name": "Paks Nuclear Power Plant",
-        "country": "Hungary",
-        "city": "Paks",
-        "category": "energy",
-        "subtype": "nuclear_power_plant",
-        "criticality": 10.0,
-        "operator": "MVM",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "9e8b6135090319b7",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "2d897ca86e9441d9",
-        "title": "Kapitány István felmentette a Paks II. Atomerőmű Zrt. vezérigazgatóját",
-        "category": "local_media",
-        "source": "Telex",
-        "time": "Fri, 24 Jul 2026 12:10:27 +0200",
-        "url": "https://telex.hu/gazdasag/2026/07/24/kapitany-istvan-felmentette-a-paks-ii-atomeromu-zrt-vezerigazgatojat",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-energy-paks-npp",
-        "name": "Paks Nuclear Power Plant",
-        "country": "Hungary",
-        "city": "Paks",
-        "category": "energy",
-        "subtype": "nuclear_power_plant",
-        "criticality": 10.0,
-        "operator": "MVM",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "f7fcfabf49b8a2ef",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "2d5c10d78c33151c",
-        "title": "Már meg is van a Paks II. új vezérigazgatója",
-        "category": "local_media",
-        "source": "HVG",
-        "time": "Fri, 24 Jul 2026 16:35:30 Z",
-        "url": "https://hvg.hu/gazdasag/20260724_paks-ii-atomeromu-zrt-uj-vezerigazgatoja",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-energy-paks-npp",
-        "name": "Paks Nuclear Power Plant",
-        "country": "Hungary",
-        "city": "Paks",
-        "category": "energy",
-        "subtype": "nuclear_power_plant",
-        "criticality": 10.0,
-        "operator": "MVM",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "dd2a84c09334d2be",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "2eb2b446005cb75b",
-        "title": "Tisza-kormány: sorra menesztik az állami vezetőket, nyomozás indult a \"Tisza-adó\" kampány miatt",
-        "category": "local_media",
-        "source": "Portfolio",
-        "time": "Fri, 24 Jul 2026 20:51:00 +0200",
-        "url": "https://www.portfolio.hu/gazdasag/20260724/tisza-kormany-sorra-menesztik-az-allami-vezetoket-nyomozas-indult-a-tisza-ado-kampany-miatt-851742",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-energy-paks-npp",
-        "name": "Paks Nuclear Power Plant",
-        "country": "Hungary",
-        "city": "Paks",
-        "category": "energy",
-        "subtype": "nuclear_power_plant",
-        "criticality": 10.0,
-        "operator": "MVM",
-        "lat": 46.572,
-        "lon": 18.854,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "b0b72c3d20087c33",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-digital-tallinn-cyber-hub",
-        "name": "Tallinn Cyber and Digital Infrastructure Hub",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "digital",
-        "subtype": "cyber_digital_government_hub",
-        "criticality": 10.0,
-        "operator": "Multiple operators / public sector",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "6ebd62bbec78a689",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "684c12c968a479cd",
-        "title": "Tallinn Airport downplays impact if airBaltic cuts routes",
-        "category": "transport",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 16:40:00 +0300",
-        "url": "https://news.err.ee/1610085877/tallinn-airport-downplays-impact-if-airbaltic-cuts-routes",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-digital-tallinn-cyber-hub",
-        "name": "Tallinn Cyber and Digital Infrastructure Hub",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "digital",
-        "subtype": "cyber_digital_government_hub",
-        "criticality": 10.0,
-        "operator": "Multiple operators / public sector",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "6ec32077f3f666d1",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "28093b7641f154e1",
-        "title": "Construction of 2+2 section of Tallinn-Tartu highway begins in autumn",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 14:23:00 +0300",
-        "url": "https://news.err.ee/1610085619/construction-of-2-2-section-of-tallinn-tartu-highway-begins-in-autumn",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-digital-tallinn-cyber-hub",
-        "name": "Tallinn Cyber and Digital Infrastructure Hub",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "digital",
-        "subtype": "cyber_digital_government_hub",
-        "criticality": 10.0,
-        "operator": "Multiple operators / public sector",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "0896a92e55fdca3f",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "35c073d8b2a27c8b",
-        "title": "32 migrants arrested in Estonia linked to Latvia-Belarus migration pressure",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 13:50:00 +0300",
-        "url": "https://news.err.ee/1610085658/32-migrants-arrested-in-estonia-linked-to-latvia-belarus-migration-pressure",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-digital-tallinn-cyber-hub",
-        "name": "Tallinn Cyber and Digital Infrastructure Hub",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "digital",
-        "subtype": "cyber_digital_government_hub",
-        "criticality": 10.0,
-        "operator": "Multiple operators / public sector",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "8dcfdf4146ddfcd8",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "79c611d496bc2596",
-        "title": "Pärnu Defense Industrial Park litigation drags on due to noise complaints",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 17:25:00 +0300",
-        "url": "https://news.err.ee/1610084779/parnu-defense-industrial-park-litigation-drags-on-due-to-noise-complaints",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-digital-tallinn-cyber-hub",
-        "name": "Tallinn Cyber and Digital Infrastructure Hub",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "digital",
-        "subtype": "cyber_digital_government_hub",
-        "criticality": 10.0,
-        "operator": "Multiple operators / public sector",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "53791d842c5b1d3d",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "4801cae6fe6a22da",
-        "title": "Construction works in several Tallinn schools are behind schedule",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 16:55:00 +0300",
-        "url": "https://news.err.ee/1610084755/construction-works-in-several-tallinn-schools-are-behind-schedule",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-digital-tallinn-cyber-hub",
-        "name": "Tallinn Cyber and Digital Infrastructure Hub",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "digital",
-        "subtype": "cyber_digital_government_hub",
-        "criticality": 10.0,
-        "operator": "Multiple operators / public sector",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "b9d12b1b30ebcf26",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "9c508f2e3252cf71",
-        "title": "County court judge named suspect in biting assault on police officer",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 14:52:00 +0300",
-        "url": "https://news.err.ee/1610083249/county-court-judge-named-suspect-in-biting-assault-on-police-officer",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-digital-tallinn-cyber-hub",
-        "name": "Tallinn Cyber and Digital Infrastructure Hub",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "digital",
-        "subtype": "cyber_digital_government_hub",
-        "criticality": 10.0,
-        "operator": "Multiple operators / public sector",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "174a3b4f14c3e189",
-      "level": "critical",
-      "score": 100.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "b517b8f79bfe0a94",
-        "title": "Tallinn cancels construction work contract for Endla tänav tunnels",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 12:25:00 +0300",
-        "url": "https://news.err.ee/1610083192/tallinn-cancels-construction-work-contract-for-endla-tanav-tunnels",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-digital-tallinn-cyber-hub",
-        "name": "Tallinn Cyber and Digital Infrastructure Hub",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "digital",
-        "subtype": "cyber_digital_government_hub",
-        "criticality": 10.0,
-        "operator": "Multiple operators / public sector",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "infra_digital.json"
-      }
-    },
     {
       "id": "55bf75f1c4be7e64",
       "level": "critical",
@@ -7337,426 +6977,6 @@
       }
     },
     {
-      "id": "b62b38b2a5ee23ca",
-      "level": "critical",
-      "score": 88.57,
-      "distance_km": 0.8,
-      "event": {
-        "id": "de80c0d5c840fbd1",
-        "title": "Les leaders de lUE laissent le Luxembourg dans le vent",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://paperjam.lu/article/les-leaders-de-lue-laissent-le-luxembourg-dans-le-vent",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-ixp",
-        "name": "Prague Internet Exchange / NIX.CZ",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "internet_exchange",
-        "criticality": 9.0,
-        "operator": "NIX.CZ",
-        "lat": 50.075,
-        "lon": 14.438,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "672ce49fa3dbff1a",
-      "level": "critical",
-      "score": 88.57,
-      "distance_km": 0.8,
-      "event": {
-        "id": "9804901609f542ef",
-        "title": "Pri páde vrtuľníka Venom v Česku zomrela vojačka , armáda pozastavila prevádzku strojov",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://hnonline.sk/svet/96293373-pri-pade-vrtulnika-venom-v-cesku-zomrela-vojacka-armada-pozastavila-prevadzku-strojov",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-ixp",
-        "name": "Prague Internet Exchange / NIX.CZ",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "internet_exchange",
-        "criticality": 9.0,
-        "operator": "NIX.CZ",
-        "lat": 50.075,
-        "lon": 14.438,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "8aa64ae24340c509",
-      "level": "critical",
-      "score": 88.57,
-      "distance_km": 0.8,
-      "event": {
-        "id": "ec804528814582cb",
-        "title": "Українські переселенці в Іспанії отримали нові можливості для легалізації проживання",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://sud.ua/uk/news/abroad/367386-ukrainski-pereselentsi-v-ispanii-otrymaly-novi-mozhlyvosti-dlia-lehalizatsii-prozhyvannia",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-ixp",
-        "name": "Prague Internet Exchange / NIX.CZ",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "internet_exchange",
-        "criticality": 9.0,
-        "operator": "NIX.CZ",
-        "lat": 50.075,
-        "lon": 14.438,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "b993ed43692eaec6",
-      "level": "critical",
-      "score": 88.57,
-      "distance_km": 0.8,
-      "event": {
-        "id": "237dfc412588db97",
-        "title": "Β . Μεταξάς : Αντιδραστική και επικίνδυνη η πρόταση για τη λειτουργία των κομμάτων ( VIDEO )",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://www.902.gr/eidisi/voyli/425404/v-metaxas-antidrastiki-kai-epikindyni-i-protasi-gia-ti-leitoyrgia-ton-kommaton",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-ixp",
-        "name": "Prague Internet Exchange / NIX.CZ",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "internet_exchange",
-        "criticality": 9.0,
-        "operator": "NIX.CZ",
-        "lat": 50.075,
-        "lon": 14.438,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "27ef72e9807697e3",
-      "level": "critical",
-      "score": 88.57,
-      "distance_km": 0.8,
-      "event": {
-        "id": "08a25a865b792656",
-        "title": "WTA Praga 2026 | Krejcikova ai quarti senza problemi Tararudee vince la battaglia con Bartunkova",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:15:00Z",
-        "url": "https://www.zazoom.it/2026-07-23/wta-praga-2026-krejcikova-ai-quarti-senza-problemi-tararudee-vince-la-battaglia-con-bartunkova/19495135/",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-ixp",
-        "name": "Prague Internet Exchange / NIX.CZ",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "internet_exchange",
-        "criticality": 9.0,
-        "operator": "NIX.CZ",
-        "lat": 50.075,
-        "lon": 14.438,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "fea9442bc727e2c4",
-      "level": "critical",
-      "score": 88.57,
-      "distance_km": 0.8,
-      "event": {
-        "id": "d7a8b249a620e001",
-        "title": "Wedding Tourism e Turismo esperienziale , la 12a edizione di BMII è a Roma il 3 e 4 novembre | InfoOggi",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:15:00Z",
-        "url": "https://www.infooggi.it/articolo/wedding-tourism-e-turismo-esperienziale-la-12a-edizione-di-bmii-a-roma-il-3-e-4-novembre/154215",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-ixp",
-        "name": "Prague Internet Exchange / NIX.CZ",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "internet_exchange",
-        "criticality": 9.0,
-        "operator": "NIX.CZ",
-        "lat": 50.075,
-        "lon": 14.438,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "53421126fce1790e",
-      "level": "critical",
-      "score": 88.38,
-      "distance_km": 0.9,
-      "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-port",
-        "name": "Port of Tallinn",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "seaport",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.444,
-        "lon": 24.761,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "9bdd6173295f806b",
-      "level": "critical",
-      "score": 88.38,
-      "distance_km": 0.9,
-      "event": {
-        "id": "684c12c968a479cd",
-        "title": "Tallinn Airport downplays impact if airBaltic cuts routes",
-        "category": "transport",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 16:40:00 +0300",
-        "url": "https://news.err.ee/1610085877/tallinn-airport-downplays-impact-if-airbaltic-cuts-routes",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-port",
-        "name": "Port of Tallinn",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "seaport",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.444,
-        "lon": 24.761,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "f255519eecc28146",
-      "level": "critical",
-      "score": 88.38,
-      "distance_km": 0.9,
-      "event": {
-        "id": "28093b7641f154e1",
-        "title": "Construction of 2+2 section of Tallinn-Tartu highway begins in autumn",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 14:23:00 +0300",
-        "url": "https://news.err.ee/1610085619/construction-of-2-2-section-of-tallinn-tartu-highway-begins-in-autumn",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-port",
-        "name": "Port of Tallinn",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "seaport",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.444,
-        "lon": 24.761,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "f8fd6287748f7da4",
-      "level": "critical",
-      "score": 88.38,
-      "distance_km": 0.9,
-      "event": {
-        "id": "35c073d8b2a27c8b",
-        "title": "32 migrants arrested in Estonia linked to Latvia-Belarus migration pressure",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 13:50:00 +0300",
-        "url": "https://news.err.ee/1610085658/32-migrants-arrested-in-estonia-linked-to-latvia-belarus-migration-pressure",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-port",
-        "name": "Port of Tallinn",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "seaport",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.444,
-        "lon": 24.761,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "7b29c1d6cfc51af1",
-      "level": "critical",
-      "score": 88.38,
-      "distance_km": 0.9,
-      "event": {
-        "id": "79c611d496bc2596",
-        "title": "Pärnu Defense Industrial Park litigation drags on due to noise complaints",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 17:25:00 +0300",
-        "url": "https://news.err.ee/1610084779/parnu-defense-industrial-park-litigation-drags-on-due-to-noise-complaints",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-port",
-        "name": "Port of Tallinn",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "seaport",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.444,
-        "lon": 24.761,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "a3e12bb55a721136",
-      "level": "critical",
-      "score": 88.38,
-      "distance_km": 0.9,
-      "event": {
-        "id": "4801cae6fe6a22da",
-        "title": "Construction works in several Tallinn schools are behind schedule",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 16:55:00 +0300",
-        "url": "https://news.err.ee/1610084755/construction-works-in-several-tallinn-schools-are-behind-schedule",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-port",
-        "name": "Port of Tallinn",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "seaport",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.444,
-        "lon": 24.761,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "cef7d71419b21578",
-      "level": "critical",
-      "score": 88.38,
-      "distance_km": 0.9,
-      "event": {
-        "id": "9c508f2e3252cf71",
-        "title": "County court judge named suspect in biting assault on police officer",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 14:52:00 +0300",
-        "url": "https://news.err.ee/1610083249/county-court-judge-named-suspect-in-biting-assault-on-police-officer",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-port",
-        "name": "Port of Tallinn",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "seaport",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.444,
-        "lon": 24.761,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "58004f81c26b8803",
-      "level": "critical",
-      "score": 88.38,
-      "distance_km": 0.9,
-      "event": {
-        "id": "b517b8f79bfe0a94",
-        "title": "Tallinn cancels construction work contract for Endla tänav tunnels",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 12:25:00 +0300",
-        "url": "https://news.err.ee/1610083192/tallinn-cancels-construction-work-contract-for-endla-tanav-tunnels",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-port",
-        "name": "Port of Tallinn",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "seaport",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.444,
-        "lon": 24.761,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
       "id": "0e159a290c06d946",
       "level": "critical",
       "score": 86.09,
@@ -9298,6 +8518,36 @@
         "source": "GDELT",
         "time": "2026-07-24T00:00:00Z",
         "url": "https://www.formula1.com/en/latest/article/they-look-very-strong-russell-wary-of-ferrari-threat-in-hungary-as-mercedes-struggle-in-friday-practice.2c3bjbDEf1WIpBBtW1qDIP",
+        "lat": 47.5,
+        "lon": 19.0833,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-digital-bix",
+        "name": "Budapest Internet Exchange",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "digital",
+        "subtype": "internet_exchange",
+        "criticality": 9.0,
+        "operator": "BIX",
+        "lat": 47.497,
+        "lon": 19.04,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "1d1f1a9e4ebd884e",
+      "level": "critical",
+      "score": 84.11,
+      "distance_km": 3.27,
+      "event": {
+        "id": "83ff5d066cd49db5",
+        "title": "Budapest, Budapest, Hungary",
+        "category": "infrastructure",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.superherohype.com/news/681512-matchbox-the-movie-poster-trailer-release-date-john-cena-mattel",
         "lat": 47.5,
         "lon": 19.0833,
         "source_file": "gdelt_linked.geojson"
@@ -20927,186 +20177,6 @@
       }
     },
     {
-      "id": "c9879049e4ab9bca",
-      "level": "critical",
-      "score": 78.84,
-      "distance_km": 0.72,
-      "event": {
-        "id": "de80c0d5c840fbd1",
-        "title": "Les leaders de lUE laissent le Luxembourg dans le vent",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://paperjam.lu/article/les-leaders-de-lue-laissent-le-luxembourg-dans-le-vent",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-dc-hub",
-        "name": "Prague Data Centre Hub",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "data_center_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 50.083,
-        "lon": 14.421,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "71c146a9544b3529",
-      "level": "critical",
-      "score": 78.84,
-      "distance_km": 0.72,
-      "event": {
-        "id": "9804901609f542ef",
-        "title": "Pri páde vrtuľníka Venom v Česku zomrela vojačka , armáda pozastavila prevádzku strojov",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://hnonline.sk/svet/96293373-pri-pade-vrtulnika-venom-v-cesku-zomrela-vojacka-armada-pozastavila-prevadzku-strojov",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-dc-hub",
-        "name": "Prague Data Centre Hub",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "data_center_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 50.083,
-        "lon": 14.421,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "f3e4f2e858f1414e",
-      "level": "critical",
-      "score": 78.84,
-      "distance_km": 0.72,
-      "event": {
-        "id": "ec804528814582cb",
-        "title": "Українські переселенці в Іспанії отримали нові можливості для легалізації проживання",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://sud.ua/uk/news/abroad/367386-ukrainski-pereselentsi-v-ispanii-otrymaly-novi-mozhlyvosti-dlia-lehalizatsii-prozhyvannia",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-dc-hub",
-        "name": "Prague Data Centre Hub",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "data_center_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 50.083,
-        "lon": 14.421,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "5f1a33d5ad0b7463",
-      "level": "critical",
-      "score": 78.84,
-      "distance_km": 0.72,
-      "event": {
-        "id": "237dfc412588db97",
-        "title": "Β . Μεταξάς : Αντιδραστική και επικίνδυνη η πρόταση για τη λειτουργία των κομμάτων ( VIDEO )",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://www.902.gr/eidisi/voyli/425404/v-metaxas-antidrastiki-kai-epikindyni-i-protasi-gia-ti-leitoyrgia-ton-kommaton",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-dc-hub",
-        "name": "Prague Data Centre Hub",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "data_center_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 50.083,
-        "lon": 14.421,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "2f6f747ba6c2a9e7",
-      "level": "critical",
-      "score": 78.84,
-      "distance_km": 0.72,
-      "event": {
-        "id": "08a25a865b792656",
-        "title": "WTA Praga 2026 | Krejcikova ai quarti senza problemi Tararudee vince la battaglia con Bartunkova",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:15:00Z",
-        "url": "https://www.zazoom.it/2026-07-23/wta-praga-2026-krejcikova-ai-quarti-senza-problemi-tararudee-vince-la-battaglia-con-bartunkova/19495135/",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-dc-hub",
-        "name": "Prague Data Centre Hub",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "data_center_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 50.083,
-        "lon": 14.421,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "3060e00c7abbf078",
-      "level": "critical",
-      "score": 78.84,
-      "distance_km": 0.72,
-      "event": {
-        "id": "d7a8b249a620e001",
-        "title": "Wedding Tourism e Turismo esperienziale , la 12a edizione di BMII è a Roma il 3 e 4 novembre | InfoOggi",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:15:00Z",
-        "url": "https://www.infooggi.it/articolo/wedding-tourism-e-turismo-esperienziale-la-12a-edizione-di-bmii-a-roma-il-3-e-4-novembre/154215",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-dc-hub",
-        "name": "Prague Data Centre Hub",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "data_center_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 50.083,
-        "lon": 14.421,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
       "id": "963a23a8e02fa05f",
       "level": "critical",
       "score": 78.68,
@@ -22097,6 +21167,66 @@
       }
     },
     {
+      "id": "8993f8769543ca58",
+      "level": "critical",
+      "score": 78.68,
+      "distance_km": 0.83,
+      "event": {
+        "id": "6e76ba5079cc710f",
+        "title": "Bucharest, Bucuresti, Romania",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.rri.ro/en/news-and-current-affairs/newsflash/july-24-2026-update-2-id1042461.html",
+        "lat": 44.4333,
+        "lon": 26.1,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-digital-bucharest-ixp",
+        "name": "Bucharest Internet Exchange / Digital Hub",
+        "country": "Romania",
+        "city": "Bucharest",
+        "category": "digital",
+        "subtype": "internet_exchange_digital_hub",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 44.426,
+        "lon": 26.102,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "55ada658d8a50e4d",
+      "level": "critical",
+      "score": 78.68,
+      "distance_km": 0.83,
+      "event": {
+        "id": "b4cb3006a2aeb4c5",
+        "title": "Bucharest, Bucuresti, Romania",
+        "category": "protest",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://jowhar.com/11-killed-in-fresh-russia-ukraine-strikes-as-attacks-intensify/",
+        "lat": 44.4333,
+        "lon": 26.1,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-digital-bucharest-ixp",
+        "name": "Bucharest Internet Exchange / Digital Hub",
+        "country": "Romania",
+        "city": "Bucharest",
+        "category": "digital",
+        "subtype": "internet_exchange_digital_hub",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 44.426,
+        "lon": 26.102,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
       "id": "72bf67530cd66bdf",
       "level": "critical",
       "score": 76.07,
@@ -22997,6 +22127,36 @@
       }
     },
     {
+      "id": "2da44b841c6999a9",
+      "level": "critical",
+      "score": 74.78,
+      "distance_km": 3.26,
+      "event": {
+        "id": "83ff5d066cd49db5",
+        "title": "Budapest, Budapest, Hungary",
+        "category": "infrastructure",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.superherohype.com/news/681512-matchbox-the-movie-poster-trailer-release-date-john-cena-mattel",
+        "lat": 47.5,
+        "lon": 19.0833,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-digital-budapest-dc-hub",
+        "name": "Budapest Data Centre Hub",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "digital",
+        "subtype": "data_center_hub",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 47.498,
+        "lon": 19.04,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
       "id": "b9cb0f9fc29e598b",
       "level": "critical",
       "score": 72.55,
@@ -23507,6 +22667,36 @@
       }
     },
     {
+      "id": "50831961a296d619",
+      "level": "critical",
+      "score": 72.55,
+      "distance_km": 4.66,
+      "event": {
+        "id": "83ff5d066cd49db5",
+        "title": "Budapest, Budapest, Hungary",
+        "category": "infrastructure",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.superherohype.com/news/681512-matchbox-the-movie-poster-trailer-release-date-john-cena-mattel",
+        "lat": 47.5,
+        "lon": 19.0833,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-hazardous-dunai-waterworks",
+        "name": "Budapest Waterworks",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "hazardous",
+        "subtype": "water_supply",
+        "criticality": 8.0,
+        "operator": "Fővárosi Vízművek",
+        "lat": 47.53,
+        "lon": 19.04,
+        "source_file": "infra_hazardous.json"
+      }
+    },
+    {
       "id": "e7a81833ac9b254e",
       "level": "high",
       "score": 88.17,
@@ -23611,486 +22801,6 @@
         "lat": 59.4339,
         "lon": 24.7281,
         "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-estlink",
-        "name": "EstLink Electricity Interconnector Area",
-        "country": "Estonia",
-        "city": "Harku / Baltic Sea",
-        "category": "energy",
-        "subtype": "electricity_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / Fingrid",
-        "lat": 59.397,
-        "lon": 24.579,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "e62b232aa48e43ca",
-      "level": "high",
-      "score": 71.59,
-      "distance_km": 5.25,
-      "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-airport",
-        "name": "Tallinn Airport",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Tallinn Airport",
-        "lat": 59.413,
-        "lon": 24.833,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "b00f1baa3a5b22cb",
-      "level": "high",
-      "score": 71.59,
-      "distance_km": 5.25,
-      "event": {
-        "id": "684c12c968a479cd",
-        "title": "Tallinn Airport downplays impact if airBaltic cuts routes",
-        "category": "transport",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 16:40:00 +0300",
-        "url": "https://news.err.ee/1610085877/tallinn-airport-downplays-impact-if-airbaltic-cuts-routes",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-airport",
-        "name": "Tallinn Airport",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Tallinn Airport",
-        "lat": 59.413,
-        "lon": 24.833,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "db48fc26352be4e2",
-      "level": "high",
-      "score": 71.59,
-      "distance_km": 5.25,
-      "event": {
-        "id": "28093b7641f154e1",
-        "title": "Construction of 2+2 section of Tallinn-Tartu highway begins in autumn",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 14:23:00 +0300",
-        "url": "https://news.err.ee/1610085619/construction-of-2-2-section-of-tallinn-tartu-highway-begins-in-autumn",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-airport",
-        "name": "Tallinn Airport",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Tallinn Airport",
-        "lat": 59.413,
-        "lon": 24.833,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "7fa43e6920ce93da",
-      "level": "high",
-      "score": 71.59,
-      "distance_km": 5.25,
-      "event": {
-        "id": "35c073d8b2a27c8b",
-        "title": "32 migrants arrested in Estonia linked to Latvia-Belarus migration pressure",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 13:50:00 +0300",
-        "url": "https://news.err.ee/1610085658/32-migrants-arrested-in-estonia-linked-to-latvia-belarus-migration-pressure",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-airport",
-        "name": "Tallinn Airport",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Tallinn Airport",
-        "lat": 59.413,
-        "lon": 24.833,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "6c05c0c50e29d51b",
-      "level": "high",
-      "score": 71.59,
-      "distance_km": 5.25,
-      "event": {
-        "id": "79c611d496bc2596",
-        "title": "Pärnu Defense Industrial Park litigation drags on due to noise complaints",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 17:25:00 +0300",
-        "url": "https://news.err.ee/1610084779/parnu-defense-industrial-park-litigation-drags-on-due-to-noise-complaints",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-airport",
-        "name": "Tallinn Airport",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Tallinn Airport",
-        "lat": 59.413,
-        "lon": 24.833,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "aaedd357e7f54f64",
-      "level": "high",
-      "score": 71.59,
-      "distance_km": 5.25,
-      "event": {
-        "id": "4801cae6fe6a22da",
-        "title": "Construction works in several Tallinn schools are behind schedule",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 16:55:00 +0300",
-        "url": "https://news.err.ee/1610084755/construction-works-in-several-tallinn-schools-are-behind-schedule",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-airport",
-        "name": "Tallinn Airport",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Tallinn Airport",
-        "lat": 59.413,
-        "lon": 24.833,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "372920775c203f89",
-      "level": "high",
-      "score": 71.59,
-      "distance_km": 5.25,
-      "event": {
-        "id": "9c508f2e3252cf71",
-        "title": "County court judge named suspect in biting assault on police officer",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 14:52:00 +0300",
-        "url": "https://news.err.ee/1610083249/county-court-judge-named-suspect-in-biting-assault-on-police-officer",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-airport",
-        "name": "Tallinn Airport",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Tallinn Airport",
-        "lat": 59.413,
-        "lon": 24.833,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "b0f49fbed7a11e32",
-      "level": "high",
-      "score": 71.59,
-      "distance_km": 5.25,
-      "event": {
-        "id": "b517b8f79bfe0a94",
-        "title": "Tallinn cancels construction work contract for Endla tänav tunnels",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 12:25:00 +0300",
-        "url": "https://news.err.ee/1610083192/tallinn-cancels-construction-work-contract-for-endla-tanav-tunnels",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-tallinn-airport",
-        "name": "Tallinn Airport",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Tallinn Airport",
-        "lat": 59.413,
-        "lon": 24.833,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "cef096a876ab917e",
-      "level": "high",
-      "score": 70.56,
-      "distance_km": 10.8,
-      "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-estlink",
-        "name": "EstLink Electricity Interconnector Area",
-        "country": "Estonia",
-        "city": "Harku / Baltic Sea",
-        "category": "energy",
-        "subtype": "electricity_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / Fingrid",
-        "lat": 59.397,
-        "lon": 24.579,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "81867c5aee02cb51",
-      "level": "high",
-      "score": 70.56,
-      "distance_km": 10.8,
-      "event": {
-        "id": "684c12c968a479cd",
-        "title": "Tallinn Airport downplays impact if airBaltic cuts routes",
-        "category": "transport",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 16:40:00 +0300",
-        "url": "https://news.err.ee/1610085877/tallinn-airport-downplays-impact-if-airbaltic-cuts-routes",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-estlink",
-        "name": "EstLink Electricity Interconnector Area",
-        "country": "Estonia",
-        "city": "Harku / Baltic Sea",
-        "category": "energy",
-        "subtype": "electricity_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / Fingrid",
-        "lat": 59.397,
-        "lon": 24.579,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "06befafc83ed49fc",
-      "level": "high",
-      "score": 70.56,
-      "distance_km": 10.8,
-      "event": {
-        "id": "28093b7641f154e1",
-        "title": "Construction of 2+2 section of Tallinn-Tartu highway begins in autumn",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 14:23:00 +0300",
-        "url": "https://news.err.ee/1610085619/construction-of-2-2-section-of-tallinn-tartu-highway-begins-in-autumn",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-estlink",
-        "name": "EstLink Electricity Interconnector Area",
-        "country": "Estonia",
-        "city": "Harku / Baltic Sea",
-        "category": "energy",
-        "subtype": "electricity_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / Fingrid",
-        "lat": 59.397,
-        "lon": 24.579,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "0d43854ca12556b4",
-      "level": "high",
-      "score": 70.56,
-      "distance_km": 10.8,
-      "event": {
-        "id": "35c073d8b2a27c8b",
-        "title": "32 migrants arrested in Estonia linked to Latvia-Belarus migration pressure",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 13:50:00 +0300",
-        "url": "https://news.err.ee/1610085658/32-migrants-arrested-in-estonia-linked-to-latvia-belarus-migration-pressure",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-estlink",
-        "name": "EstLink Electricity Interconnector Area",
-        "country": "Estonia",
-        "city": "Harku / Baltic Sea",
-        "category": "energy",
-        "subtype": "electricity_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / Fingrid",
-        "lat": 59.397,
-        "lon": 24.579,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "30dcff6460f12a97",
-      "level": "high",
-      "score": 70.56,
-      "distance_km": 10.8,
-      "event": {
-        "id": "79c611d496bc2596",
-        "title": "Pärnu Defense Industrial Park litigation drags on due to noise complaints",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 17:25:00 +0300",
-        "url": "https://news.err.ee/1610084779/parnu-defense-industrial-park-litigation-drags-on-due-to-noise-complaints",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-estlink",
-        "name": "EstLink Electricity Interconnector Area",
-        "country": "Estonia",
-        "city": "Harku / Baltic Sea",
-        "category": "energy",
-        "subtype": "electricity_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / Fingrid",
-        "lat": 59.397,
-        "lon": 24.579,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "518738fcf12bb587",
-      "level": "high",
-      "score": 70.56,
-      "distance_km": 10.8,
-      "event": {
-        "id": "4801cae6fe6a22da",
-        "title": "Construction works in several Tallinn schools are behind schedule",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 16:55:00 +0300",
-        "url": "https://news.err.ee/1610084755/construction-works-in-several-tallinn-schools-are-behind-schedule",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-estlink",
-        "name": "EstLink Electricity Interconnector Area",
-        "country": "Estonia",
-        "city": "Harku / Baltic Sea",
-        "category": "energy",
-        "subtype": "electricity_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / Fingrid",
-        "lat": 59.397,
-        "lon": 24.579,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "95289d48307503c6",
-      "level": "high",
-      "score": 70.56,
-      "distance_km": 10.8,
-      "event": {
-        "id": "9c508f2e3252cf71",
-        "title": "County court judge named suspect in biting assault on police officer",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 14:52:00 +0300",
-        "url": "https://news.err.ee/1610083249/county-court-judge-named-suspect-in-biting-assault-on-police-officer",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-estlink",
-        "name": "EstLink Electricity Interconnector Area",
-        "country": "Estonia",
-        "city": "Harku / Baltic Sea",
-        "category": "energy",
-        "subtype": "electricity_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / Fingrid",
-        "lat": 59.397,
-        "lon": 24.579,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "2d76874986fdac98",
-      "level": "high",
-      "score": 70.56,
-      "distance_km": 10.8,
-      "event": {
-        "id": "b517b8f79bfe0a94",
-        "title": "Tallinn cancels construction work contract for Endla tänav tunnels",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 12:25:00 +0300",
-        "url": "https://news.err.ee/1610083192/tallinn-cancels-construction-work-contract-for-endla-tanav-tunnels",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
       },
       "infrastructure": {
         "id": "ee-energy-estlink",
@@ -24373,246 +23083,6 @@
         "operator": "Riga Airport",
         "lat": 56.923,
         "lon": 23.971,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "779a9d4c761121c6",
-      "level": "high",
-      "score": 65.46,
-      "distance_km": 13.63,
-      "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-muuga-port",
-        "name": "Muuga Harbour",
-        "country": "Estonia",
-        "city": "Muuga",
-        "category": "transport",
-        "subtype": "cargo_port",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.5,
-        "lon": 24.96,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "ae89f8cec4c19dd2",
-      "level": "high",
-      "score": 65.46,
-      "distance_km": 13.63,
-      "event": {
-        "id": "684c12c968a479cd",
-        "title": "Tallinn Airport downplays impact if airBaltic cuts routes",
-        "category": "transport",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 16:40:00 +0300",
-        "url": "https://news.err.ee/1610085877/tallinn-airport-downplays-impact-if-airbaltic-cuts-routes",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-muuga-port",
-        "name": "Muuga Harbour",
-        "country": "Estonia",
-        "city": "Muuga",
-        "category": "transport",
-        "subtype": "cargo_port",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.5,
-        "lon": 24.96,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "8c59e39e94ba7e9a",
-      "level": "high",
-      "score": 65.46,
-      "distance_km": 13.63,
-      "event": {
-        "id": "28093b7641f154e1",
-        "title": "Construction of 2+2 section of Tallinn-Tartu highway begins in autumn",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 14:23:00 +0300",
-        "url": "https://news.err.ee/1610085619/construction-of-2-2-section-of-tallinn-tartu-highway-begins-in-autumn",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-muuga-port",
-        "name": "Muuga Harbour",
-        "country": "Estonia",
-        "city": "Muuga",
-        "category": "transport",
-        "subtype": "cargo_port",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.5,
-        "lon": 24.96,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "6ae2c67a320267dd",
-      "level": "high",
-      "score": 65.46,
-      "distance_km": 13.63,
-      "event": {
-        "id": "35c073d8b2a27c8b",
-        "title": "32 migrants arrested in Estonia linked to Latvia-Belarus migration pressure",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 13:50:00 +0300",
-        "url": "https://news.err.ee/1610085658/32-migrants-arrested-in-estonia-linked-to-latvia-belarus-migration-pressure",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-muuga-port",
-        "name": "Muuga Harbour",
-        "country": "Estonia",
-        "city": "Muuga",
-        "category": "transport",
-        "subtype": "cargo_port",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.5,
-        "lon": 24.96,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "2f5bea96b349e8ba",
-      "level": "high",
-      "score": 65.46,
-      "distance_km": 13.63,
-      "event": {
-        "id": "79c611d496bc2596",
-        "title": "Pärnu Defense Industrial Park litigation drags on due to noise complaints",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 17:25:00 +0300",
-        "url": "https://news.err.ee/1610084779/parnu-defense-industrial-park-litigation-drags-on-due-to-noise-complaints",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-muuga-port",
-        "name": "Muuga Harbour",
-        "country": "Estonia",
-        "city": "Muuga",
-        "category": "transport",
-        "subtype": "cargo_port",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.5,
-        "lon": 24.96,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "c36b2654cdbd6445",
-      "level": "high",
-      "score": 65.46,
-      "distance_km": 13.63,
-      "event": {
-        "id": "4801cae6fe6a22da",
-        "title": "Construction works in several Tallinn schools are behind schedule",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 16:55:00 +0300",
-        "url": "https://news.err.ee/1610084755/construction-works-in-several-tallinn-schools-are-behind-schedule",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-muuga-port",
-        "name": "Muuga Harbour",
-        "country": "Estonia",
-        "city": "Muuga",
-        "category": "transport",
-        "subtype": "cargo_port",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.5,
-        "lon": 24.96,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "72a114de3b87871b",
-      "level": "high",
-      "score": 65.46,
-      "distance_km": 13.63,
-      "event": {
-        "id": "9c508f2e3252cf71",
-        "title": "County court judge named suspect in biting assault on police officer",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 14:52:00 +0300",
-        "url": "https://news.err.ee/1610083249/county-court-judge-named-suspect-in-biting-assault-on-police-officer",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-muuga-port",
-        "name": "Muuga Harbour",
-        "country": "Estonia",
-        "city": "Muuga",
-        "category": "transport",
-        "subtype": "cargo_port",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.5,
-        "lon": 24.96,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "aad06e2b1d454ebc",
-      "level": "high",
-      "score": 65.46,
-      "distance_km": 13.63,
-      "event": {
-        "id": "b517b8f79bfe0a94",
-        "title": "Tallinn cancels construction work contract for Endla tänav tunnels",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 12:25:00 +0300",
-        "url": "https://news.err.ee/1610083192/tallinn-cancels-construction-work-contract-for-endla-tanav-tunnels",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-transport-muuga-port",
-        "name": "Muuga Harbour",
-        "country": "Estonia",
-        "city": "Muuga",
-        "category": "transport",
-        "subtype": "cargo_port",
-        "criticality": 9.0,
-        "operator": "Port of Tallinn",
-        "lat": 59.5,
-        "lon": 24.96,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -25138,6 +23608,36 @@
         "source": "GDELT",
         "time": "2026-07-24T00:00:00Z",
         "url": "https://www.formula1.com/en/latest/article/they-look-very-strong-russell-wary-of-ferrari-threat-in-hungary-as-mercedes-struggle-in-friday-practice.2c3bjbDEf1WIpBBtW1qDIP",
+        "lat": 47.5,
+        "lon": 19.0833,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-transport-budapest-airport",
+        "name": "Budapest Ferenc Liszt International Airport",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "transport",
+        "subtype": "international_airport",
+        "criticality": 9.0,
+        "operator": "Budapest Airport",
+        "lat": 47.436,
+        "lon": 19.255,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "c708fc606a5734b7",
+      "level": "high",
+      "score": 63.47,
+      "distance_km": 14.74,
+      "event": {
+        "id": "83ff5d066cd49db5",
+        "title": "Budapest, Budapest, Hungary",
+        "category": "infrastructure",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.superherohype.com/news/681512-matchbox-the-movie-poster-trailer-release-date-john-cena-mattel",
         "lat": 47.5,
         "lon": 19.0833,
         "source_file": "gdelt_linked.geojson"
@@ -30407,186 +28907,6 @@
       }
     },
     {
-      "id": "0c15620560d76134",
-      "level": "high",
-      "score": 60.58,
-      "distance_km": 12.14,
-      "event": {
-        "id": "de80c0d5c840fbd1",
-        "title": "Les leaders de lUE laissent le Luxembourg dans le vent",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://paperjam.lu/article/les-leaders-de-lue-laissent-le-luxembourg-dans-le-vent",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-transport-prague-airport",
-        "name": "Václav Havel Airport Prague",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Prague Airport",
-        "lat": 50.101,
-        "lon": 14.263,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "fc63930144201933",
-      "level": "high",
-      "score": 60.58,
-      "distance_km": 12.14,
-      "event": {
-        "id": "9804901609f542ef",
-        "title": "Pri páde vrtuľníka Venom v Česku zomrela vojačka , armáda pozastavila prevádzku strojov",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://hnonline.sk/svet/96293373-pri-pade-vrtulnika-venom-v-cesku-zomrela-vojacka-armada-pozastavila-prevadzku-strojov",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-transport-prague-airport",
-        "name": "Václav Havel Airport Prague",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Prague Airport",
-        "lat": 50.101,
-        "lon": 14.263,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "dffd2341e04191d4",
-      "level": "high",
-      "score": 60.58,
-      "distance_km": 12.14,
-      "event": {
-        "id": "ec804528814582cb",
-        "title": "Українські переселенці в Іспанії отримали нові можливості для легалізації проживання",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://sud.ua/uk/news/abroad/367386-ukrainski-pereselentsi-v-ispanii-otrymaly-novi-mozhlyvosti-dlia-lehalizatsii-prozhyvannia",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-transport-prague-airport",
-        "name": "Václav Havel Airport Prague",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Prague Airport",
-        "lat": 50.101,
-        "lon": 14.263,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "2d6fb83f94cc2a3e",
-      "level": "high",
-      "score": 60.58,
-      "distance_km": 12.14,
-      "event": {
-        "id": "237dfc412588db97",
-        "title": "Β . Μεταξάς : Αντιδραστική και επικίνδυνη η πρόταση για τη λειτουργία των κομμάτων ( VIDEO )",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://www.902.gr/eidisi/voyli/425404/v-metaxas-antidrastiki-kai-epikindyni-i-protasi-gia-ti-leitoyrgia-ton-kommaton",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-transport-prague-airport",
-        "name": "Václav Havel Airport Prague",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Prague Airport",
-        "lat": 50.101,
-        "lon": 14.263,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "d7bb28c127590b60",
-      "level": "high",
-      "score": 60.58,
-      "distance_km": 12.14,
-      "event": {
-        "id": "08a25a865b792656",
-        "title": "WTA Praga 2026 | Krejcikova ai quarti senza problemi Tararudee vince la battaglia con Bartunkova",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:15:00Z",
-        "url": "https://www.zazoom.it/2026-07-23/wta-praga-2026-krejcikova-ai-quarti-senza-problemi-tararudee-vince-la-battaglia-con-bartunkova/19495135/",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-transport-prague-airport",
-        "name": "Václav Havel Airport Prague",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Prague Airport",
-        "lat": 50.101,
-        "lon": 14.263,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "0fa1a85a531f9d67",
-      "level": "high",
-      "score": 60.58,
-      "distance_km": 12.14,
-      "event": {
-        "id": "d7a8b249a620e001",
-        "title": "Wedding Tourism e Turismo esperienziale , la 12a edizione di BMII è a Roma il 3 e 4 novembre | InfoOggi",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:15:00Z",
-        "url": "https://www.infooggi.it/articolo/wedding-tourism-e-turismo-esperienziale-la-12a-edizione-di-bmii-a-roma-il-3-e-4-novembre/154215",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-transport-prague-airport",
-        "name": "Václav Havel Airport Prague",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Prague Airport",
-        "lat": 50.101,
-        "lon": 14.263,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
       "id": "81b188abcb49cdae",
       "level": "high",
       "score": 60.11,
@@ -31097,62 +29417,32 @@
       }
     },
     {
-      "id": "6cdadbcb822633f4",
+      "id": "0f5042eadaf4c335",
       "level": "high",
-      "score": 56.78,
-      "distance_km": 14.51,
+      "score": 60.11,
+      "distance_km": 12.43,
       "event": {
-        "id": "01497fc61fa5c557",
-        "title": "Gheorghiță Vlad, șeful Armatei Române, avertizează că vor mai avea loc incidente în Marea Neagră: Se vor naște vulnerabilități",
-        "category": "drone",
-        "source": "Digi24",
-        "time": "Fri, 24 Jul 2026 17:12:22 +0300",
-        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/gheorghita-vlad-seful-armatei-romane-avertizeaza-ca-vor-mai-avea-loc-incidente-in-marea-neagra-se-vor-naste-vulnerabilitati-3877463",
-        "lat": 45.9432,
-        "lon": 24.9668,
-        "source_file": "local_events.geojson"
+        "id": "83ff5d066cd49db5",
+        "title": "Budapest, Budapest, Hungary",
+        "category": "infrastructure",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.superherohype.com/news/681512-matchbox-the-movie-poster-trailer-release-date-john-cena-mattel",
+        "lat": 47.5,
+        "lon": 19.0833,
+        "source_file": "gdelt_linked.geojson"
       },
       "infrastructure": {
-        "id": "ro-military-cincu",
-        "name": "Cincu Training Area",
-        "country": "Romania",
-        "city": "Cincu",
-        "category": "military",
-        "subtype": "training_area",
+        "id": "hu-transport-bilk",
+        "name": "BILK Intermodal Logistics Terminal",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "transport",
+        "subtype": "intermodal_terminal",
         "criticality": 8.0,
-        "operator": "Romanian Armed Forces / NATO",
-        "lat": 45.917,
-        "lon": 24.783,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "7c85de57e2d90d57",
-      "level": "high",
-      "score": 56.78,
-      "distance_km": 14.51,
-      "event": {
-        "id": "b8016b0f5ace8415",
-        "title": "Mesajul Ursulei von der Leyen după doborârea primei drone deasupra României: „Felicit Armata pentru reacția rapidă și eficientă”",
-        "category": "drone",
-        "source": "Digi24",
-        "time": "Fri, 24 Jul 2026 16:26:26 +0300",
-        "url": "https://www.digi24.ro/stiri/externe/mesajul-ursulei-von-der-leyen-dupa-doborarea-primei-drone-deasupra-romaniei-felicit-armata-pentru-reactia-rapida-si-eficienta-3877405",
-        "lat": 45.9432,
-        "lon": 24.9668,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-military-cincu",
-        "name": "Cincu Training Area",
-        "country": "Romania",
-        "city": "Cincu",
-        "category": "military",
-        "subtype": "training_area",
-        "criticality": 8.0,
-        "operator": "Romanian Armed Forces / NATO",
-        "lat": 45.917,
-        "lon": 24.783,
+        "operator": "BILK",
+        "lat": 47.392,
+        "lon": 19.126,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -31427,6 +29717,36 @@
       }
     },
     {
+      "id": "bae457ea68ee4185",
+      "level": "medium",
+      "score": 63.05,
+      "distance_km": 18.47,
+      "event": {
+        "id": "b2be5c4f6a8beb44",
+        "title": "Explicațiile MApN despre drona care a fost doborâtă în România de un avion F-16. „Nu a fost pe direcția bazei aeriene de la Fetești”",
+        "category": "drone",
+        "source": "Digi24",
+        "time": "Fri, 24 Jul 2026 17:10:26 +0300",
+        "url": "https://www.digi24.ro/stiri/mapn-ofera-explicatii-despre-drona-care-a-fost-doborata-in-romania-de-un-avion-f-16-3877201",
+        "lat": 44.366,
+        "lon": 27.833,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-cernavoda-npp",
+        "name": "Cernavodă Nuclear Power Plant",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "category": "energy",
+        "subtype": "nuclear_power_plant",
+        "criticality": 10.0,
+        "operator": "Nuclearelectrica",
+        "lat": 44.322,
+        "lon": 28.057,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
       "id": "96485c06dfba28c8",
       "level": "medium",
       "score": 62.96,
@@ -31513,36 +29833,6 @@
         "operator": "Port of Tallinn",
         "lat": 59.5,
         "lon": 24.96,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "8dd45b616057e6e2",
-      "level": "medium",
-      "score": 62.94,
-      "distance_km": 15.03,
-      "event": {
-        "id": "85955eeeff28d67b",
-        "title": "Demolice českého pavilonu pro Expo 2025 v Japonsku začne 1. srpna",
-        "category": "local_media",
-        "source": "SeznamZpravy",
-        "time": "Fri, 24 Jul 2026 14:49:36 +0200",
-        "url": "https://www.seznamzpravy.cz/clanek/domaci-zivot-v-cesku-demolice-ceskeho-pavilonu-pro-expo-2025-v-japonsku-zacne-1-srpna-311737",
-        "lat": 49.8175,
-        "lon": 15.473,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-military-caslav-airbase",
-        "name": "Čáslav Air Base",
-        "country": "Czechia",
-        "city": "Čáslav",
-        "category": "military",
-        "subtype": "airbase",
-        "criticality": 9.0,
-        "operator": "Czech Air Force",
-        "lat": 49.939,
-        "lon": 15.381,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -34487,6 +32777,36 @@
       }
     },
     {
+      "id": "cc35ce1fde2b91c0",
+      "level": "medium",
+      "score": 57.88,
+      "distance_km": 8.66,
+      "event": {
+        "id": "83ff5d066cd49db5",
+        "title": "Budapest, Budapest, Hungary",
+        "category": "infrastructure",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.superherohype.com/news/681512-matchbox-the-movie-poster-trailer-release-date-john-cena-mattel",
+        "lat": 47.5,
+        "lon": 19.0833,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-transport-csepel-port",
+        "name": "Csepel Free Port",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "transport",
+        "subtype": "river_port",
+        "criticality": 7.0,
+        "operator": "Port operators",
+        "lat": 47.423,
+        "lon": 19.066,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
       "id": "061cc9fed1e6bb81",
       "level": "medium",
       "score": 56.21,
@@ -35848,6 +34168,66 @@
         "source": "GDELT",
         "time": "2026-07-24T00:00:00Z",
         "url": "https://www.stiripesurse.ro/cnab-manager-ambassador-nirenberg-discuss-strengthening-aviation-cooperation_3906495",
+        "lat": 44.4333,
+        "lon": 26.1,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-henri-coanda-airport",
+        "name": "Bucharest Henri Coandă International Airport",
+        "country": "Romania",
+        "city": "Bucharest",
+        "category": "transport",
+        "subtype": "international_airport",
+        "criticality": 8.0,
+        "operator": "Bucharest Airports",
+        "lat": 44.571,
+        "lon": 26.085,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "02a0758cfe129a3c",
+      "level": "medium",
+      "score": 55.43,
+      "distance_km": 15.36,
+      "event": {
+        "id": "6e76ba5079cc710f",
+        "title": "Bucharest, Bucuresti, Romania",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.rri.ro/en/news-and-current-affairs/newsflash/july-24-2026-update-2-id1042461.html",
+        "lat": 44.4333,
+        "lon": 26.1,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-henri-coanda-airport",
+        "name": "Bucharest Henri Coandă International Airport",
+        "country": "Romania",
+        "city": "Bucharest",
+        "category": "transport",
+        "subtype": "international_airport",
+        "criticality": 8.0,
+        "operator": "Bucharest Airports",
+        "lat": 44.571,
+        "lon": 26.085,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "3c09d82e51582fdc",
+      "level": "medium",
+      "score": 55.43,
+      "distance_km": 15.36,
+      "event": {
+        "id": "b4cb3006a2aeb4c5",
+        "title": "Bucharest, Bucuresti, Romania",
+        "category": "protest",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://jowhar.com/11-killed-in-fresh-russia-ukraine-strikes-as-attacks-intensify/",
         "lat": 44.4333,
         "lon": 26.1,
         "source_file": "gdelt_linked.geojson"
@@ -40637,6 +39017,66 @@
       }
     },
     {
+      "id": "1555e306c8d554c7",
+      "level": "medium",
+      "score": 51.9,
+      "distance_km": 21.17,
+      "event": {
+        "id": "edf1babf5db6f6f3",
+        "title": "Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "http://www.jpost.com/opinion/article-903290",
+        "lat": 47.0,
+        "lon": 20.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-military-kecskemet-airbase",
+        "name": "Kecskemét Air Base",
+        "country": "Hungary",
+        "city": "Kecskemét",
+        "category": "military",
+        "subtype": "airbase",
+        "criticality": 9.0,
+        "operator": "Hungarian Defence Forces",
+        "lat": 46.917,
+        "lon": 19.749,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "282d886b6c42a7df",
+      "level": "medium",
+      "score": 51.9,
+      "distance_km": 21.17,
+      "event": {
+        "id": "83a3cc83301abc69",
+        "title": "Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://tribune.com.pk/story/2620079/who-is-karim-khan-the-barrister-at-the-centre-of-the-iccs-internal-crisis",
+        "lat": 47.0,
+        "lon": 20.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-military-kecskemet-airbase",
+        "name": "Kecskemét Air Base",
+        "country": "Hungary",
+        "city": "Kecskemét",
+        "category": "military",
+        "subtype": "airbase",
+        "criticality": 9.0,
+        "operator": "Hungarian Defence Forces",
+        "lat": 46.917,
+        "lon": 19.749,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
       "id": "3cedd5590dde326c",
       "level": "medium",
       "score": 51.8,
@@ -41147,6 +39587,66 @@
       }
     },
     {
+      "id": "8d80c0e3c555a41e",
+      "level": "medium",
+      "score": 51.8,
+      "distance_km": 24.1,
+      "event": {
+        "id": "83ff5d066cd49db5",
+        "title": "Budapest, Budapest, Hungary",
+        "category": "infrastructure",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.superherohype.com/news/681512-matchbox-the-movie-poster-trailer-release-date-john-cena-mattel",
+        "lat": 47.5,
+        "lon": 19.0833,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-energy-szazhalombatta-refinery",
+        "name": "MOL Danube Refinery",
+        "country": "Hungary",
+        "city": "Százhalombatta",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 10.0,
+        "operator": "MOL Group",
+        "lat": 47.316,
+        "lon": 18.914,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "f6def0caf588e361",
+      "level": "medium",
+      "score": 50.4,
+      "distance_km": 24.8,
+      "event": {
+        "id": "2fd0329d24bd07ef",
+        "title": "Latvia strengthens protection of energy infrastructure amid fears of possible Russian provocations",
+        "category": "local_media",
+        "source": "BNN",
+        "time": "Fri, 17 Jul 2026 12:29:39 +0000",
+        "url": "https://bnn-news.com/latvia-strengthens-protection-of-energy-infrastructure-amid-fears-of-possible-russian-provocations-281907",
+        "lat": 56.8796,
+        "lon": 24.6032,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "lv-energy-incukalns-storage",
+        "name": "Inčukalns Underground Gas Storage",
+        "country": "Latvia",
+        "city": "Inčukalns",
+        "category": "energy",
+        "subtype": "gas_storage",
+        "criticality": 10.0,
+        "operator": "Conexus Baltic Grid",
+        "lat": 57.098,
+        "lon": 24.686,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
       "id": "f6c36b09fced2f69",
       "level": "medium",
       "score": 49.9,
@@ -41177,32 +39677,32 @@
       }
     },
     {
-      "id": "18549fc214e7d482",
+      "id": "9bce9a27bdc2b943",
       "level": "medium",
-      "score": 49.79,
-      "distance_km": 18.88,
+      "score": 49.7,
+      "distance_km": 18.94,
       "event": {
-        "id": "a02fe112db6c7560",
-        "title": "BREAKING | Resturi din drona doborâtă de un pilot român au fost găsite în zona Padina din județul Buzău, iar rămășițe ale unei rachete aer-aer în zona Tătaru din județul Brăila, posibil de la atacul nereușit al piloților aerieni asupra dronei",
-        "category": "drone",
-        "source": "G4Media",
-        "time": "Fri, 24 Jul 2026 17:44:29 +0000",
-        "url": "https://www.g4media.ro/breaking-resturi-din-drona-doborata-de-un-pilot-roman-au-fost-gasite-in-zona-padina-din-judetul-buzau-iar-ramasite-ale-unei-rachete-aer-aer-in-zona-tataru-din-judetul-braila-posibil-de-la-atacul-n.html",
-        "lat": 45.269,
-        "lon": 27.957,
+        "id": "2fd0329d24bd07ef",
+        "title": "Latvia strengthens protection of energy infrastructure amid fears of possible Russian provocations",
+        "category": "local_media",
+        "source": "BNN",
+        "time": "Fri, 17 Jul 2026 12:29:39 +0000",
+        "url": "https://bnn-news.com/latvia-strengthens-protection-of-energy-infrastructure-amid-fears-of-possible-russian-provocations-281907",
+        "lat": 56.8796,
+        "lon": 24.6032,
         "source_file": "local_events.geojson"
       },
       "infrastructure": {
-        "id": "ro-transport-galati-port",
-        "name": "Galați Danube Port",
-        "country": "Romania",
-        "city": "Galați",
-        "category": "transport",
-        "subtype": "river_port",
+        "id": "lv-military-lielvarde-airbase",
+        "name": "Lielvārde Air Base",
+        "country": "Latvia",
+        "city": "Lielvārde",
+        "category": "military",
+        "subtype": "airbase",
         "criticality": 8.0,
-        "operator": "Port operators",
-        "lat": 45.435,
-        "lon": 28.008,
+        "operator": "Latvian Armed Forces",
+        "lat": 56.778,
+        "lon": 24.853,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -42958,6 +41458,66 @@
         "source": "GDELT",
         "time": "2026-07-24T00:00:00Z",
         "url": "https://www.gananoquereporter.com:443/news/cfsaco-cornwall-new-command",
+        "lat": 46.0,
+        "lon": 25.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-military-cincu",
+        "name": "Cincu Training Area",
+        "country": "Romania",
+        "city": "Cincu",
+        "category": "military",
+        "subtype": "training_area",
+        "criticality": 8.0,
+        "operator": "Romanian Armed Forces / NATO",
+        "lat": 45.917,
+        "lon": 24.783,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "dbe41990999cb1e5",
+      "level": "medium",
+      "score": 49.37,
+      "distance_km": 19.15,
+      "event": {
+        "id": "09f4202893780471",
+        "title": "Romania",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.pembrokeobserver.com/news/cfsaco-cornwall-new-command",
+        "lat": 46.0,
+        "lon": 25.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-military-cincu",
+        "name": "Cincu Training Area",
+        "country": "Romania",
+        "city": "Cincu",
+        "category": "military",
+        "subtype": "training_area",
+        "criticality": 8.0,
+        "operator": "Romanian Armed Forces / NATO",
+        "lat": 45.917,
+        "lon": 24.783,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "eb8619189bd9413c",
+      "level": "medium",
+      "score": 49.37,
+      "distance_km": 19.15,
+      "event": {
+        "id": "f02129a86ec1e4af",
+        "title": "Romania",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.attitude.co.uk/news/world/romanian-pride-march-to-go-ahead-despite-fourth-consecutive-ban-529642/",
         "lat": 46.0,
         "lon": 25.0,
         "source_file": "gdelt_linked.geojson"
@@ -48227,186 +46787,6 @@
       }
     },
     {
-      "id": "5492e767e9ed8b52",
-      "level": "medium",
-      "score": 48.36,
-      "distance_km": 19.78,
-      "event": {
-        "id": "de80c0d5c840fbd1",
-        "title": "Les leaders de lUE laissent le Luxembourg dans le vent",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://paperjam.lu/article/les-leaders-de-lue-laissent-le-luxembourg-dans-le-vent",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-energy-kralupy-refinery",
-        "name": "Kralupy Refinery",
-        "country": "Czechia",
-        "city": "Kralupy nad Vltavou",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 8.0,
-        "operator": "ORLEN Unipetrol",
-        "lat": 50.241,
-        "lon": 14.312,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "8802ada2262d1065",
-      "level": "medium",
-      "score": 48.36,
-      "distance_km": 19.78,
-      "event": {
-        "id": "9804901609f542ef",
-        "title": "Pri páde vrtuľníka Venom v Česku zomrela vojačka , armáda pozastavila prevádzku strojov",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://hnonline.sk/svet/96293373-pri-pade-vrtulnika-venom-v-cesku-zomrela-vojacka-armada-pozastavila-prevadzku-strojov",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-energy-kralupy-refinery",
-        "name": "Kralupy Refinery",
-        "country": "Czechia",
-        "city": "Kralupy nad Vltavou",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 8.0,
-        "operator": "ORLEN Unipetrol",
-        "lat": 50.241,
-        "lon": 14.312,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "7c43274c4f08d2a6",
-      "level": "medium",
-      "score": 48.36,
-      "distance_km": 19.78,
-      "event": {
-        "id": "ec804528814582cb",
-        "title": "Українські переселенці в Іспанії отримали нові можливості для легалізації проживання",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://sud.ua/uk/news/abroad/367386-ukrainski-pereselentsi-v-ispanii-otrymaly-novi-mozhlyvosti-dlia-lehalizatsii-prozhyvannia",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-energy-kralupy-refinery",
-        "name": "Kralupy Refinery",
-        "country": "Czechia",
-        "city": "Kralupy nad Vltavou",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 8.0,
-        "operator": "ORLEN Unipetrol",
-        "lat": 50.241,
-        "lon": 14.312,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "93979252adb418f3",
-      "level": "medium",
-      "score": 48.36,
-      "distance_km": 19.78,
-      "event": {
-        "id": "237dfc412588db97",
-        "title": "Β . Μεταξάς : Αντιδραστική και επικίνδυνη η πρόταση για τη λειτουργία των κομμάτων ( VIDEO )",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:30:00Z",
-        "url": "https://www.902.gr/eidisi/voyli/425404/v-metaxas-antidrastiki-kai-epikindyni-i-protasi-gia-ti-leitoyrgia-ton-kommaton",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-energy-kralupy-refinery",
-        "name": "Kralupy Refinery",
-        "country": "Czechia",
-        "city": "Kralupy nad Vltavou",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 8.0,
-        "operator": "ORLEN Unipetrol",
-        "lat": 50.241,
-        "lon": 14.312,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "a09883f21d6944ff",
-      "level": "medium",
-      "score": 48.36,
-      "distance_km": 19.78,
-      "event": {
-        "id": "08a25a865b792656",
-        "title": "WTA Praga 2026 | Krejcikova ai quarti senza problemi Tararudee vince la battaglia con Bartunkova",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:15:00Z",
-        "url": "https://www.zazoom.it/2026-07-23/wta-praga-2026-krejcikova-ai-quarti-senza-problemi-tararudee-vince-la-battaglia-con-bartunkova/19495135/",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-energy-kralupy-refinery",
-        "name": "Kralupy Refinery",
-        "country": "Czechia",
-        "city": "Kralupy nad Vltavou",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 8.0,
-        "operator": "ORLEN Unipetrol",
-        "lat": 50.241,
-        "lon": 14.312,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "7ebb2bf98b61b089",
-      "level": "medium",
-      "score": 48.36,
-      "distance_km": 19.78,
-      "event": {
-        "id": "d7a8b249a620e001",
-        "title": "Wedding Tourism e Turismo esperienziale , la 12a edizione di BMII è a Roma il 3 e 4 novembre | InfoOggi",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-23T20:15:00Z",
-        "url": "https://www.infooggi.it/articolo/wedding-tourism-e-turismo-esperienziale-la-12a-edizione-di-bmii-a-roma-il-3-e-4-novembre/154215",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-energy-kralupy-refinery",
-        "name": "Kralupy Refinery",
-        "country": "Czechia",
-        "city": "Kralupy nad Vltavou",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 8.0,
-        "operator": "ORLEN Unipetrol",
-        "lat": 50.241,
-        "lon": 14.312,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
       "id": "daca87caaf223121",
       "level": "medium",
       "score": 47.54,
@@ -48553,6 +46933,36 @@
         "operator": "ORLEN Unipetrol",
         "lat": 50.241,
         "lon": 14.312,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "1e2ba366f8a0909f",
+      "level": "medium",
+      "score": 46.77,
+      "distance_km": 26.62,
+      "event": {
+        "id": "2fd0329d24bd07ef",
+        "title": "Latvia strengthens protection of energy infrastructure amid fears of possible Russian provocations",
+        "category": "local_media",
+        "source": "BNN",
+        "time": "Fri, 17 Jul 2026 12:29:39 +0000",
+        "url": "https://bnn-news.com/latvia-strengthens-protection-of-energy-infrastructure-amid-fears-of-possible-russian-provocations-281907",
+        "lat": 56.8796,
+        "lon": 24.6032,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "lv-military-adazi-base",
+        "name": "Ādaži Military Base",
+        "country": "Latvia",
+        "city": "Ādaži",
+        "category": "military",
+        "subtype": "military_base",
+        "criticality": 10.0,
+        "operator": "Latvian Armed Forces / NATO eFP",
+        "lat": 57.07,
+        "lon": 24.337,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -49157,6 +47567,96 @@
       }
     },
     {
+      "id": "c73a790a7e336741",
+      "level": "medium",
+      "score": 44.19,
+      "distance_km": 22.38,
+      "event": {
+        "id": "edf1babf5db6f6f3",
+        "title": "Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "http://www.jpost.com/opinion/article-903290",
+        "lat": 47.0,
+        "lon": 20.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-military-szolnok-base",
+        "name": "Szolnok Helicopter Base",
+        "country": "Hungary",
+        "city": "Szolnok",
+        "category": "military",
+        "subtype": "helicopter_base",
+        "criticality": 8.0,
+        "operator": "Hungarian Defence Forces",
+        "lat": 47.122,
+        "lon": 20.235,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "8bec27599e57ce32",
+      "level": "medium",
+      "score": 44.19,
+      "distance_km": 22.38,
+      "event": {
+        "id": "83a3cc83301abc69",
+        "title": "Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://tribune.com.pk/story/2620079/who-is-karim-khan-the-barrister-at-the-centre-of-the-iccs-internal-crisis",
+        "lat": 47.0,
+        "lon": 20.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-military-szolnok-base",
+        "name": "Szolnok Helicopter Base",
+        "country": "Hungary",
+        "city": "Szolnok",
+        "category": "military",
+        "subtype": "helicopter_base",
+        "criticality": 8.0,
+        "operator": "Hungarian Defence Forces",
+        "lat": 47.122,
+        "lon": 20.235,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "6d54115ed7e09387",
+      "level": "medium",
+      "score": 41.73,
+      "distance_km": 23.92,
+      "event": {
+        "id": "2fd0329d24bd07ef",
+        "title": "Latvia strengthens protection of energy infrastructure amid fears of possible Russian provocations",
+        "category": "local_media",
+        "source": "BNN",
+        "time": "Fri, 17 Jul 2026 12:29:39 +0000",
+        "url": "https://bnn-news.com/latvia-strengthens-protection-of-energy-infrastructure-amid-fears-of-possible-russian-provocations-281907",
+        "lat": 56.8796,
+        "lon": 24.6032,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "lv-energy-riga-chp",
+        "name": "Riga CHP Power Complex",
+        "country": "Latvia",
+        "city": "Riga",
+        "category": "energy",
+        "subtype": "combined_heat_power",
+        "criticality": 8.0,
+        "operator": "Latvenergo",
+        "lat": 56.934,
+        "lon": 24.222,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
       "id": "ed1fce9ef6e306ef",
       "level": "medium",
       "score": 39.29,
@@ -49757,6 +48257,36 @@
       }
     },
     {
+      "id": "5fa2622bbc16400a",
+      "level": "medium",
+      "score": 37.78,
+      "distance_km": 29.01,
+      "event": {
+        "id": "b16126e412d05d45",
+        "title": "Estonia",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.thenationalnews.com/news/europe/2026/07/24/france-teen-social-media-ban-laure-miller-europe-september/",
+        "lat": 59.0,
+        "lon": 26.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ee-military-tapa-base",
+        "name": "Tapa Military Base",
+        "country": "Estonia",
+        "city": "Tapa",
+        "category": "military",
+        "subtype": "land_forces_base",
+        "criticality": 9.0,
+        "operator": "Estonian Defence Forces / NATO eFP",
+        "lat": 59.26,
+        "lon": 25.958,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
       "id": "df4d433bec3e175e",
       "level": "medium",
       "score": 36.66,
@@ -49907,32 +48437,32 @@
       }
     },
     {
-      "id": "9495cff66123699c",
+      "id": "4b7fb5b197952781",
       "level": "medium",
-      "score": 25.37,
-      "distance_km": 28.85,
+      "score": 36.66,
+      "distance_km": 27.09,
       "event": {
-        "id": "85955eeeff28d67b",
-        "title": "Demolice českého pavilonu pro Expo 2025 v Japonsku začne 1. srpna",
-        "category": "local_media",
-        "source": "SeznamZpravy",
-        "time": "Fri, 24 Jul 2026 14:49:36 +0200",
-        "url": "https://www.seznamzpravy.cz/clanek/domaci-zivot-v-cesku-demolice-ceskeho-pavilonu-pro-expo-2025-v-japonsku-zacne-1-srpna-311737",
-        "lat": 49.8175,
-        "lon": 15.473,
-        "source_file": "local_events.geojson"
+        "id": "254470cedbd2eb88",
+        "title": "Slovak Republic",
+        "category": "violence",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://aa.com.tr/en/europe/over-63-000-evacuated-as-wildfires-tear-through-southwestern-france/4007791",
+        "lat": 48.666667,
+        "lon": 19.5,
+        "source_file": "gdelt_linked.geojson"
       },
       "infrastructure": {
-        "id": "cz-transport-pardubice-airport",
-        "name": "Pardubice Airport",
-        "country": "Czechia",
-        "city": "Pardubice",
-        "category": "transport",
-        "subtype": "airport",
-        "criticality": 6.0,
-        "operator": "Airport operators",
-        "lat": 50.013,
-        "lon": 15.738,
+        "id": "sk-military-sliac-airbase",
+        "name": "Sliač Air Base",
+        "country": "Slovakia",
+        "city": "Sliač",
+        "category": "military",
+        "subtype": "airbase",
+        "criticality": 8.0,
+        "operator": "Slovak Armed Forces",
+        "lat": 48.637,
+        "lon": 19.134,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -49967,32 +48497,32 @@
       }
     },
     {
-      "id": "8bbeca2b109d21a8",
+      "id": "2a02b4869328b00b",
       "level": "watch",
-      "score": 30.52,
-      "distance_km": 33.04,
+      "score": 33.82,
+      "distance_km": 31.21,
       "event": {
-        "id": "060099a763f34a0a",
-        "title": "Rövidnadrágban és pólóban találták meg a magyar fiatalt az osztrák hegyimentők, 8 órán át tartott a kimentése",
+        "id": "2fd0329d24bd07ef",
+        "title": "Latvia strengthens protection of energy infrastructure amid fears of possible Russian provocations",
         "category": "local_media",
-        "source": "HVG",
-        "time": "Fri, 24 Jul 2026 15:18:11 Z",
-        "url": "https://hvg.hu/vilag/20260724_magyar-hegymaszo-mentoakcio-ausztria",
-        "lat": 47.1625,
-        "lon": 19.5033,
+        "source": "BNN",
+        "time": "Fri, 17 Jul 2026 12:29:39 +0000",
+        "url": "https://bnn-news.com/latvia-strengthens-protection-of-energy-infrastructure-amid-fears-of-possible-russian-provocations-281907",
+        "lat": 56.8796,
+        "lon": 24.6032,
         "source_file": "local_events.geojson"
       },
       "infrastructure": {
-        "id": "hu-military-kecskemet-airbase",
-        "name": "Kecskemét Air Base",
-        "country": "Hungary",
-        "city": "Kecskemét",
-        "category": "military",
-        "subtype": "airbase",
+        "id": "lv-transport-riga-port",
+        "name": "Port of Riga",
+        "country": "Latvia",
+        "city": "Riga",
+        "category": "transport",
+        "subtype": "seaport",
         "criticality": 9.0,
-        "operator": "Hungarian Defence Forces",
-        "lat": 46.917,
-        "lon": 19.749,
+        "operator": "Freeport of Riga Authority",
+        "lat": 56.949,
+        "lon": 24.105,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -50024,6 +48554,66 @@
         "lat": 46.917,
         "lon": 19.749,
         "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "f9ca0a70da1f16a2",
+      "level": "watch",
+      "score": 30.06,
+      "distance_km": 31.21,
+      "event": {
+        "id": "2fd0329d24bd07ef",
+        "title": "Latvia strengthens protection of energy infrastructure amid fears of possible Russian provocations",
+        "category": "local_media",
+        "source": "BNN",
+        "time": "Fri, 17 Jul 2026 12:29:39 +0000",
+        "url": "https://bnn-news.com/latvia-strengthens-protection-of-energy-infrastructure-amid-fears-of-possible-russian-provocations-281907",
+        "lat": 56.8796,
+        "lon": 24.6032,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "lv-digital-riga-hub",
+        "name": "Riga Digital Infrastructure Hub",
+        "country": "Latvia",
+        "city": "Riga",
+        "category": "digital",
+        "subtype": "internet_data_hub",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 56.949,
+        "lon": 24.105,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "da4da35664301df5",
+      "level": "watch",
+      "score": 30.06,
+      "distance_km": 31.21,
+      "event": {
+        "id": "2fd0329d24bd07ef",
+        "title": "Latvia strengthens protection of energy infrastructure amid fears of possible Russian provocations",
+        "category": "local_media",
+        "source": "BNN",
+        "time": "Fri, 17 Jul 2026 12:29:39 +0000",
+        "url": "https://bnn-news.com/latvia-strengthens-protection-of-energy-infrastructure-amid-fears-of-possible-russian-provocations-281907",
+        "lat": 56.8796,
+        "lon": 24.6032,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "lv-hazardous-riga-fuel",
+        "name": "Riga Fuel Storage and Chemical Area",
+        "country": "Latvia",
+        "city": "Riga",
+        "category": "hazardous",
+        "subtype": "fuel_storage_chemical",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 56.949,
+        "lon": 24.105,
+        "source_file": "infra_hazardous.json"
       }
     },
     {
@@ -50837,276 +49427,6 @@
       }
     },
     {
-      "id": "3357bd93d0075cdf",
-      "level": "watch",
-      "score": 26.74,
-      "distance_km": 36.63,
-      "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
-        "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-military-amari-airbase",
-        "name": "Ämari Air Base",
-        "country": "Estonia",
-        "city": "Ämari",
-        "category": "military",
-        "subtype": "airbase_nato_air_policing",
-        "criticality": 10.0,
-        "operator": "Estonian Air Force / NATO",
-        "lat": 59.26,
-        "lon": 24.208,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "2c9d7a041437a4a3",
-      "level": "watch",
-      "score": 26.74,
-      "distance_km": 36.63,
-      "event": {
-        "id": "684c12c968a479cd",
-        "title": "Tallinn Airport downplays impact if airBaltic cuts routes",
-        "category": "transport",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 16:40:00 +0300",
-        "url": "https://news.err.ee/1610085877/tallinn-airport-downplays-impact-if-airbaltic-cuts-routes",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-military-amari-airbase",
-        "name": "Ämari Air Base",
-        "country": "Estonia",
-        "city": "Ämari",
-        "category": "military",
-        "subtype": "airbase_nato_air_policing",
-        "criticality": 10.0,
-        "operator": "Estonian Air Force / NATO",
-        "lat": 59.26,
-        "lon": 24.208,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "de17868f2d15b00d",
-      "level": "watch",
-      "score": 26.74,
-      "distance_km": 36.63,
-      "event": {
-        "id": "28093b7641f154e1",
-        "title": "Construction of 2+2 section of Tallinn-Tartu highway begins in autumn",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 14:23:00 +0300",
-        "url": "https://news.err.ee/1610085619/construction-of-2-2-section-of-tallinn-tartu-highway-begins-in-autumn",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-military-amari-airbase",
-        "name": "Ämari Air Base",
-        "country": "Estonia",
-        "city": "Ämari",
-        "category": "military",
-        "subtype": "airbase_nato_air_policing",
-        "criticality": 10.0,
-        "operator": "Estonian Air Force / NATO",
-        "lat": 59.26,
-        "lon": 24.208,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "470474ac5f12da93",
-      "level": "watch",
-      "score": 26.74,
-      "distance_km": 36.63,
-      "event": {
-        "id": "35c073d8b2a27c8b",
-        "title": "32 migrants arrested in Estonia linked to Latvia-Belarus migration pressure",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 13:50:00 +0300",
-        "url": "https://news.err.ee/1610085658/32-migrants-arrested-in-estonia-linked-to-latvia-belarus-migration-pressure",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-military-amari-airbase",
-        "name": "Ämari Air Base",
-        "country": "Estonia",
-        "city": "Ämari",
-        "category": "military",
-        "subtype": "airbase_nato_air_policing",
-        "criticality": 10.0,
-        "operator": "Estonian Air Force / NATO",
-        "lat": 59.26,
-        "lon": 24.208,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "bc53096351ed8a5a",
-      "level": "watch",
-      "score": 26.74,
-      "distance_km": 36.63,
-      "event": {
-        "id": "79c611d496bc2596",
-        "title": "Pärnu Defense Industrial Park litigation drags on due to noise complaints",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 17:25:00 +0300",
-        "url": "https://news.err.ee/1610084779/parnu-defense-industrial-park-litigation-drags-on-due-to-noise-complaints",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-military-amari-airbase",
-        "name": "Ämari Air Base",
-        "country": "Estonia",
-        "city": "Ämari",
-        "category": "military",
-        "subtype": "airbase_nato_air_policing",
-        "criticality": 10.0,
-        "operator": "Estonian Air Force / NATO",
-        "lat": 59.26,
-        "lon": 24.208,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "7f8fc9e4c61bf73c",
-      "level": "watch",
-      "score": 26.74,
-      "distance_km": 36.63,
-      "event": {
-        "id": "4801cae6fe6a22da",
-        "title": "Construction works in several Tallinn schools are behind schedule",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 16:55:00 +0300",
-        "url": "https://news.err.ee/1610084755/construction-works-in-several-tallinn-schools-are-behind-schedule",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-military-amari-airbase",
-        "name": "Ämari Air Base",
-        "country": "Estonia",
-        "city": "Ämari",
-        "category": "military",
-        "subtype": "airbase_nato_air_policing",
-        "criticality": 10.0,
-        "operator": "Estonian Air Force / NATO",
-        "lat": 59.26,
-        "lon": 24.208,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "c159a6e5fcd9aea3",
-      "level": "watch",
-      "score": 26.74,
-      "distance_km": 36.63,
-      "event": {
-        "id": "9c508f2e3252cf71",
-        "title": "County court judge named suspect in biting assault on police officer",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 14:52:00 +0300",
-        "url": "https://news.err.ee/1610083249/county-court-judge-named-suspect-in-biting-assault-on-police-officer",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-military-amari-airbase",
-        "name": "Ämari Air Base",
-        "country": "Estonia",
-        "city": "Ämari",
-        "category": "military",
-        "subtype": "airbase_nato_air_policing",
-        "criticality": 10.0,
-        "operator": "Estonian Air Force / NATO",
-        "lat": 59.26,
-        "lon": 24.208,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "39513477ece0d81f",
-      "level": "watch",
-      "score": 26.74,
-      "distance_km": 36.63,
-      "event": {
-        "id": "b517b8f79bfe0a94",
-        "title": "Tallinn cancels construction work contract for Endla tänav tunnels",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 12:25:00 +0300",
-        "url": "https://news.err.ee/1610083192/tallinn-cancels-construction-work-contract-for-endla-tanav-tunnels",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-military-amari-airbase",
-        "name": "Ämari Air Base",
-        "country": "Estonia",
-        "city": "Ämari",
-        "category": "military",
-        "subtype": "airbase_nato_air_policing",
-        "criticality": 10.0,
-        "operator": "Estonian Air Force / NATO",
-        "lat": 59.26,
-        "lon": 24.208,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "6ae77d34d4f78b9a",
-      "level": "watch",
-      "score": 25.72,
-      "distance_km": 35.71,
-      "event": {
-        "id": "060099a763f34a0a",
-        "title": "Rövidnadrágban és pólóban találták meg a magyar fiatalt az osztrák hegyimentők, 8 órán át tartott a kimentése",
-        "category": "local_media",
-        "source": "HVG",
-        "time": "Fri, 24 Jul 2026 15:18:11 Z",
-        "url": "https://hvg.hu/vilag/20260724_magyar-hegymaszo-mentoakcio-ausztria",
-        "lat": 47.1625,
-        "lon": 19.5033,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-transport-budapest-airport",
-        "name": "Budapest Ferenc Liszt International Airport",
-        "country": "Hungary",
-        "city": "Budapest",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 9.0,
-        "operator": "Budapest Airport",
-        "lat": 47.436,
-        "lon": 19.255,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
       "id": "d9107197d8456f71",
       "level": "watch",
       "score": 25.72,
@@ -51433,36 +49753,6 @@
         "operator": "Elering / regional partners",
         "lat": 59.35,
         "lon": 24.05,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "e77d380e7705dca3",
-      "level": "watch",
-      "score": 18.83,
-      "distance_km": 38.23,
-      "event": {
-        "id": "060099a763f34a0a",
-        "title": "Rövidnadrágban és pólóban találták meg a magyar fiatalt az osztrák hegyimentők, 8 órán át tartott a kimentése",
-        "category": "local_media",
-        "source": "HVG",
-        "time": "Fri, 24 Jul 2026 15:18:11 Z",
-        "url": "https://hvg.hu/vilag/20260724_magyar-hegymaszo-mentoakcio-ausztria",
-        "lat": 47.1625,
-        "lon": 19.5033,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-transport-bilk",
-        "name": "BILK Intermodal Logistics Terminal",
-        "country": "Hungary",
-        "city": "Budapest",
-        "category": "transport",
-        "subtype": "intermodal_terminal",
-        "criticality": 8.0,
-        "operator": "BILK",
-        "lat": 47.392,
-        "lon": 19.126,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -51887,242 +50177,32 @@
       }
     },
     {
-      "id": "5514ebefee8ad37b",
+      "id": "4b4cbfea7ca2c1ea",
       "level": "watch",
-      "score": 16.28,
-      "distance_km": 40.96,
+      "score": 18.1,
+      "distance_km": 38.69,
       "event": {
-        "id": "c5a5cd5d3833f4db",
-        "title": "Britain to replace tanks with drones in Lithuania",
-        "category": "drone",
+        "id": "2fd0329d24bd07ef",
+        "title": "Latvia strengthens protection of energy infrastructure amid fears of possible Russian provocations",
+        "category": "local_media",
         "source": "BNN",
-        "time": "Thu, 23 Jul 2026 13:22:35 +0000",
-        "url": "https://bnn-news.com/britain-to-replace-tanks-with-drones-in-lithuania-282122",
-        "lat": 59.437,
-        "lon": 24.753,
+        "time": "Fri, 17 Jul 2026 12:29:39 +0000",
+        "url": "https://bnn-news.com/latvia-strengthens-protection-of-energy-infrastructure-amid-fears-of-possible-russian-provocations-281907",
+        "lat": 56.8796,
+        "lon": 24.6032,
         "source_file": "local_events.geojson"
       },
       "infrastructure": {
-        "id": "ee-energy-balticconnector-paldiski",
-        "name": "Balticconnector Paldiski Node",
-        "country": "Estonia",
-        "city": "Paldiski",
-        "category": "energy",
-        "subtype": "gas_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / regional partners",
-        "lat": 59.35,
-        "lon": 24.05,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "5bca37b50eb050d0",
-      "level": "watch",
-      "score": 16.28,
-      "distance_km": 40.96,
-      "event": {
-        "id": "684c12c968a479cd",
-        "title": "Tallinn Airport downplays impact if airBaltic cuts routes",
+        "id": "lv-transport-riga-airport",
+        "name": "Riga International Airport",
+        "country": "Latvia",
+        "city": "Riga",
         "category": "transport",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 16:40:00 +0300",
-        "url": "https://news.err.ee/1610085877/tallinn-airport-downplays-impact-if-airbaltic-cuts-routes",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-balticconnector-paldiski",
-        "name": "Balticconnector Paldiski Node",
-        "country": "Estonia",
-        "city": "Paldiski",
-        "category": "energy",
-        "subtype": "gas_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / regional partners",
-        "lat": 59.35,
-        "lon": 24.05,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "7782f6e15a3c167f",
-      "level": "watch",
-      "score": 16.28,
-      "distance_km": 40.96,
-      "event": {
-        "id": "28093b7641f154e1",
-        "title": "Construction of 2+2 section of Tallinn-Tartu highway begins in autumn",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 14:23:00 +0300",
-        "url": "https://news.err.ee/1610085619/construction-of-2-2-section-of-tallinn-tartu-highway-begins-in-autumn",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-balticconnector-paldiski",
-        "name": "Balticconnector Paldiski Node",
-        "country": "Estonia",
-        "city": "Paldiski",
-        "category": "energy",
-        "subtype": "gas_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / regional partners",
-        "lat": 59.35,
-        "lon": 24.05,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "91045fc067a7943f",
-      "level": "watch",
-      "score": 16.28,
-      "distance_km": 40.96,
-      "event": {
-        "id": "35c073d8b2a27c8b",
-        "title": "32 migrants arrested in Estonia linked to Latvia-Belarus migration pressure",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Fri, 24 Jul 2026 13:50:00 +0300",
-        "url": "https://news.err.ee/1610085658/32-migrants-arrested-in-estonia-linked-to-latvia-belarus-migration-pressure",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-balticconnector-paldiski",
-        "name": "Balticconnector Paldiski Node",
-        "country": "Estonia",
-        "city": "Paldiski",
-        "category": "energy",
-        "subtype": "gas_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / regional partners",
-        "lat": 59.35,
-        "lon": 24.05,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "01f1cc697a89771a",
-      "level": "watch",
-      "score": 16.28,
-      "distance_km": 40.96,
-      "event": {
-        "id": "79c611d496bc2596",
-        "title": "Pärnu Defense Industrial Park litigation drags on due to noise complaints",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 17:25:00 +0300",
-        "url": "https://news.err.ee/1610084779/parnu-defense-industrial-park-litigation-drags-on-due-to-noise-complaints",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-balticconnector-paldiski",
-        "name": "Balticconnector Paldiski Node",
-        "country": "Estonia",
-        "city": "Paldiski",
-        "category": "energy",
-        "subtype": "gas_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / regional partners",
-        "lat": 59.35,
-        "lon": 24.05,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "54bfdae76a2615c7",
-      "level": "watch",
-      "score": 16.28,
-      "distance_km": 40.96,
-      "event": {
-        "id": "4801cae6fe6a22da",
-        "title": "Construction works in several Tallinn schools are behind schedule",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Thu, 23 Jul 2026 16:55:00 +0300",
-        "url": "https://news.err.ee/1610084755/construction-works-in-several-tallinn-schools-are-behind-schedule",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-balticconnector-paldiski",
-        "name": "Balticconnector Paldiski Node",
-        "country": "Estonia",
-        "city": "Paldiski",
-        "category": "energy",
-        "subtype": "gas_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / regional partners",
-        "lat": 59.35,
-        "lon": 24.05,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "50b507592f852ba1",
-      "level": "watch",
-      "score": 16.28,
-      "distance_km": 40.96,
-      "event": {
-        "id": "9c508f2e3252cf71",
-        "title": "County court judge named suspect in biting assault on police officer",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 14:52:00 +0300",
-        "url": "https://news.err.ee/1610083249/county-court-judge-named-suspect-in-biting-assault-on-police-officer",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-balticconnector-paldiski",
-        "name": "Balticconnector Paldiski Node",
-        "country": "Estonia",
-        "city": "Paldiski",
-        "category": "energy",
-        "subtype": "gas_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / regional partners",
-        "lat": 59.35,
-        "lon": 24.05,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "e1d28757637ede82",
-      "level": "watch",
-      "score": 16.28,
-      "distance_km": 40.96,
-      "event": {
-        "id": "b517b8f79bfe0a94",
-        "title": "Tallinn cancels construction work contract for Endla tänav tunnels",
-        "category": "local_media",
-        "source": "ERR",
-        "time": "Wed, 22 Jul 2026 12:25:00 +0300",
-        "url": "https://news.err.ee/1610083192/tallinn-cancels-construction-work-contract-for-endla-tanav-tunnels",
-        "lat": 59.437,
-        "lon": 24.753,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ee-energy-balticconnector-paldiski",
-        "name": "Balticconnector Paldiski Node",
-        "country": "Estonia",
-        "city": "Paldiski",
-        "category": "energy",
-        "subtype": "gas_interconnector",
-        "criticality": 9.0,
-        "operator": "Elering / regional partners",
-        "lat": 59.35,
-        "lon": 24.05,
+        "subtype": "international_airport",
+        "criticality": 8.0,
+        "operator": "Riga Airport",
+        "lat": 56.923,
+        "lon": 23.971,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -54377,36 +52457,6 @@
       }
     },
     {
-      "id": "6c5f2fb0a4fd7e38",
-      "level": "watch",
-      "score": 8.55,
-      "distance_km": 43.89,
-      "event": {
-        "id": "060099a763f34a0a",
-        "title": "Rövidnadrágban és pólóban találták meg a magyar fiatalt az osztrák hegyimentők, 8 órán át tartott a kimentése",
-        "category": "local_media",
-        "source": "HVG",
-        "time": "Fri, 24 Jul 2026 15:18:11 Z",
-        "url": "https://hvg.hu/vilag/20260724_magyar-hegymaszo-mentoakcio-ausztria",
-        "lat": 47.1625,
-        "lon": 19.5033,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-transport-csepel-port",
-        "name": "Csepel Free Port",
-        "country": "Hungary",
-        "city": "Budapest",
-        "category": "transport",
-        "subtype": "river_port",
-        "criticality": 7.0,
-        "operator": "Port operators",
-        "lat": 47.423,
-        "lon": 19.066,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
       "id": "7018f4bfe9fff962",
       "level": "watch",
       "score": 8.55,
@@ -55408,6 +53458,66 @@
         "source": "GDELT",
         "time": "2026-07-24T00:00:00Z",
         "url": "https://www.stiripesurse.ro/cnab-manager-ambassador-nirenberg-discuss-strengthening-aviation-cooperation_3906495",
+        "lat": 44.4333,
+        "lon": 26.1,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-petrobrazi-refinery",
+        "name": "Petrobrazi Refinery",
+        "country": "Romania",
+        "city": "Brazi",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 9.0,
+        "operator": "OMV Petrom",
+        "lat": 44.848,
+        "lon": 26.029,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "d9254e5684ca33ad",
+      "level": "watch",
+      "score": 6.38,
+      "distance_km": 46.45,
+      "event": {
+        "id": "6e76ba5079cc710f",
+        "title": "Bucharest, Bucuresti, Romania",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://www.rri.ro/en/news-and-current-affairs/newsflash/july-24-2026-update-2-id1042461.html",
+        "lat": 44.4333,
+        "lon": 26.1,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-petrobrazi-refinery",
+        "name": "Petrobrazi Refinery",
+        "country": "Romania",
+        "city": "Brazi",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 9.0,
+        "operator": "OMV Petrom",
+        "lat": 44.848,
+        "lon": 26.029,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "8b903b7272dd74c9",
+      "level": "watch",
+      "score": 6.38,
+      "distance_km": 46.45,
+      "event": {
+        "id": "b4cb3006a2aeb4c5",
+        "title": "Bucharest, Bucuresti, Romania",
+        "category": "protest",
+        "source": "GDELT",
+        "time": "2026-07-24T00:00:00Z",
+        "url": "https://jowhar.com/11-killed-in-fresh-russia-ukraine-strikes-as-attacks-intensify/",
         "lat": 44.4333,
         "lon": 26.1,
         "source_file": "gdelt_linked.geojson"
@@ -59623,36 +57733,6 @@
         "operator": "OMV Petrom",
         "lat": 44.848,
         "lon": 26.029,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "6d041e88869c66fd",
-      "level": "watch",
-      "score": 4.7,
-      "distance_km": 47.65,
-      "event": {
-        "id": "060099a763f34a0a",
-        "title": "Rövidnadrágban és pólóban találták meg a magyar fiatalt az osztrák hegyimentők, 8 órán át tartott a kimentése",
-        "category": "local_media",
-        "source": "HVG",
-        "time": "Fri, 24 Jul 2026 15:18:11 Z",
-        "url": "https://hvg.hu/vilag/20260724_magyar-hegymaszo-mentoakcio-ausztria",
-        "lat": 47.1625,
-        "lon": 19.5033,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-energy-szazhalombatta-refinery",
-        "name": "MOL Danube Refinery",
-        "country": "Hungary",
-        "city": "Százhalombatta",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 10.0,
-        "operator": "MOL Group",
-        "lat": 47.316,
-        "lon": 18.914,
         "source_file": "critical_infrastructure.json"
       }
     },

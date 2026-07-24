@@ -1,31 +1,31 @@
 {
-  "generated_utc": "2026-07-24T08:19:17Z",
+  "generated_utc": "2026-07-24T13:27:57Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 1456 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 811 magas vagy kritikus szintű.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Veterán Václav Vašek : Odvedli vaši pozornost . Toto se mezitím děje | ParlamentniListy . cz – politika ze všech stran.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Brand - Katastrophe im Südwesten : Tausende Urlauber in Frankreich evakuiert – Notstand in Spanien.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Emmanuel Macron az EU segítségét kérte a Franciaországban pusztító erdőtüzek megfékezéséhez.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 751.48; 7 napos változás: +10300%).",
-    "Trend: emelkedő (+1184%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2579, GDELT DOC 2774, direkt feed 340, USGS 1, GDACS 2.",
+    "Az infrastruktúra-közelségi modul 1667 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 997 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Rente deckt nur in vier EU - Ländern die Ausgaben im Alter.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Tens of thousands evacuated as wildfires hit Spain and southern France.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: 40 ألف محاصر بالنيران .. حرائق جيروند الفرنسية تخرج عن السيطرة.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 741.26; 7 napos változás: +7808%).",
+    "Trend: emelkedő (+1280%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2668, GDELT DOC 2730, direkt feed 348, USGS 1, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+10300%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+7808%)."
   },
   "stats": {
-    "score_last7": 2799.74,
-    "score_prev7": 218.05,
-    "change_pct": 1183.99
+    "score_last7": 2863.141,
+    "score_prev7": 207.514,
+    "change_pct": 1279.73
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 1456,
+    "last_24h_proximity_matches": 1667,
     "top_proximity": [
       {
         "id": "55bf75f1c4be7e64",
@@ -88,17 +88,47 @@
         }
       },
       {
-        "id": "9b309f206ab9c22b",
+        "id": "84319eb022200268",
+        "level": "critical",
+        "score": 89.42,
+        "distance_km": 0.32,
+        "event": {
+          "id": "5994f3198839726a",
+          "title": "Riga, Riga, Latvia",
+          "category": "security_politics",
+          "source": "GDELT",
+          "time": "2026-07-24T00:00:00Z",
+          "url": "http://www.bignewsnetwork.com/news/279207202/eu-state-bans-books-and-toys-in-latest-russophobic-crackdown",
+          "lat": 56.95,
+          "lon": 24.1,
+          "source_file": "gdelt_linked.geojson"
+        },
+        "infrastructure": {
+          "id": "lv-transport-riga-port",
+          "name": "Port of Riga",
+          "country": "Latvia",
+          "city": "Riga",
+          "category": "transport",
+          "subtype": "seaport",
+          "criticality": 9.0,
+          "operator": "Freeport of Riga Authority",
+          "lat": 56.949,
+          "lon": 24.105,
+          "source_file": "critical_infrastructure.json"
+        }
+      },
+      {
+        "id": "9eb3e396f85a2140",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "28c7b07c75abf7f4",
-          "title": "Veterán Václav Vašek : Odvedli vaši pozornost . Toto se mezitím děje | ParlamentniListy . cz – politika ze všech stran",
+          "id": "e985b8603dde87d5",
+          "title": "Rente deckt nur in vier EU - Ländern die Ausgaben im Alter",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-24T07:45:00Z",
-          "url": "https://www.parlamentnilisty.cz/arena/rozhovory/Veteran-Vaclav-Vasek-Odvedli-vasi-pozornost-Toto-se-mezitim-deje-794518",
+          "time": "2026-07-24T13:00:00Z",
+          "url": "http://www.merkur.de/wirtschaft/rente-deckt-nur-in-vier-eu-laendern-die-ausgaben-im-alter-zr-94413427.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -118,17 +148,17 @@
         }
       },
       {
-        "id": "1985edc18d7de2f8",
+        "id": "7642081ba839d9c2",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "8110bc771fdbca8b",
-          "title": "Brand - Katastrophe im Südwesten : Tausende Urlauber in Frankreich evakuiert – Notstand in Spanien",
+          "id": "2a45b769e750c85d",
+          "title": "Tens of thousands evacuated as wildfires hit Spain and southern France",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-24T07:45:00Z",
-          "url": "https://www.salzburg24.at/news/welt/brand-katastrophe-im-suedwesten-tausende-urlauber-in-frankreich-evakuiert-notstand-in-spanien-art-332833",
+          "time": "2026-07-24T13:00:00Z",
+          "url": "https://www.times-series.co.uk/news/national/26406304.tens-thousands-evacuated-wildfires-hit-spain-southern-france/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -148,17 +178,17 @@
         }
       },
       {
-        "id": "ef1bb005a279402c",
+        "id": "02a84865b7c6c2a3",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "becb87639304d69a",
-          "title": "Emmanuel Macron az EU segítségét kérte a Franciaországban pusztító erdőtüzek megfékezéséhez",
+          "id": "2b3515b724cb4091",
+          "title": "40 ألف محاصر بالنيران .. حرائق جيروند الفرنسية تخرج عن السيطرة",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-24T07:45:00Z",
-          "url": "https://hu.euronews.com/my-europe/2026/07/24/emmanuel-macron-az-eu-segitseget-kerte-a-franciaorszagban-pusztito-erdotuzek-megfekezesehe",
+          "time": "2026-07-24T13:00:00Z",
+          "url": "https://www.dostor.org/5645510",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -178,17 +208,17 @@
         }
       },
       {
-        "id": "300d3f9aa0f18c00",
+        "id": "dfea9716289d6c18",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "65af64340f60233d",
-          "title": "Grybauskaitė dla TVP World : jeśli Rosja się nie zmieni , lepsza będzie żelazna kurtyna",
+          "id": "d879fbda79e16307",
+          "title": "Rente deckt nur in vier EU - Ländern die Ausgaben im Alter",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-24T07:45:00Z",
-          "url": "https://www.lrt.lt/pl/wiadomosci/1261/2999223/grybauskaite-dla-tvp-world-jesli-rosja-sie-nie-zmieni-lepsza-bedzie-zelazna-kurtyna",
+          "time": "2026-07-24T12:45:00Z",
+          "url": "http://www.tz.de/wirtschaft/rente-deckt-nur-in-vier-eu-laendern-die-ausgaben-im-alter-zr-94413427.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -208,17 +238,17 @@
         }
       },
       {
-        "id": "26a0d562f197e021",
+        "id": "60a9c844ffd4d1db",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "700ab75835e01feb",
-          "title": "Εφιάλτης χωρίς τέλος σε Ισπανία και Γαλλία : 20 . 000 και πλέον εκτοπισμένοι , ανεξέλεγκτες οι φωτιές",
+          "id": "92d20d506837f62e",
+          "title": "Tens of thousands evacuated as wildfires hit Spain and southern France",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-24T07:45:00Z",
-          "url": "https://www.newsbeast.gr/world/arthro/13254530/efialtis-choris-telos-se-ispania-kai-gallia-20-000-kai-pleon-ektopismenoi-anexelegktes-oi-foties",
+          "time": "2026-07-24T12:30:00Z",
+          "url": "https://www.breakingnews.ie/world/tens-of-thousands-evacuated-as-wildfires-hit-spain-and-southern-france-1931233.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -238,17 +268,17 @@
         }
       },
       {
-        "id": "aba39259cc3fbe65",
+        "id": "7a9e70cfae9bf49f",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "3ba0a4c96c56a9cd",
-          "title": "LGBTQ人群在格鲁吉亚代孕的法律困境 ， 如何解决 ？ - 天伦生殖",
+          "id": "dc43e1f4b4879101",
+          "title": "Rente deckt nur in vier EU - Ländern die Ausgaben im Alter",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-24T07:30:00Z",
-          "url": "https://blog.udn.com:443/89cf136c/191560544",
+          "time": "2026-07-24T12:30:00Z",
+          "url": "http://www.az-online.de/wirtschaft/rente-deckt-nur-in-vier-eu-laendern-die-ausgaben-im-alter-zr-94413427.html",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"
@@ -268,47 +298,17 @@
         }
       },
       {
-        "id": "59854c21948a243e",
+        "id": "01aef7b123d5a824",
         "level": "critical",
         "score": 88.57,
         "distance_km": 0.8,
         "event": {
-          "id": "c0f47dac2b3212e6",
-          "title": "Remembering Karel Mokry ( 1959 - 2026 )",
+          "id": "b02ee5f86e5bf70f",
+          "title": "Tens of thousands evacuated as wildfires hit Spain and southern France",
           "category": "other",
           "source": "GDELT_DOC",
-          "time": "2026-07-24T07:30:00Z",
-          "url": "https://en.chessbase.com/post/karel-mokry-1959-2026",
-          "lat": 50.08,
-          "lon": 14.43,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "cz-digital-prague-ixp",
-          "name": "Prague Internet Exchange / NIX.CZ",
-          "country": "Czechia",
-          "city": "Prague",
-          "category": "digital",
-          "subtype": "internet_exchange",
-          "criticality": 9.0,
-          "operator": "NIX.CZ",
-          "lat": 50.075,
-          "lon": 14.438,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "0633e949ef5989fa",
-        "level": "critical",
-        "score": 88.57,
-        "distance_km": 0.8,
-        "event": {
-          "id": "a56b8e46143e6e98",
-          "title": "金价跳水 国内金饰价格一夜大跌 ！ 后市怎么走 ？ _ 东方财富网",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-24T07:30:00Z",
-          "url": "https://finance.eastmoney.com/a/202607243820312238.html",
+          "time": "2026-07-24T12:15:00Z",
+          "url": "https://www.malverngazette.co.uk/news/national/26406304.tens-thousands-evacuated-wildfires-hit-spain-southern-france/",
           "lat": 50.08,
           "lon": 14.43,
           "source_file": "gdelt_crossborder.geojson"

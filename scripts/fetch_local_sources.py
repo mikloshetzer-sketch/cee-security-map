@@ -1,6 +1,9 @@
 import json
 import re
 import feedparser
+import math
+from difflib import SequenceMatcher
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -306,6 +309,42 @@ POSITIVE_KEYWORDS = {
     ]
 }
 
+SECURITY_EVENT_TERMS = [
+    "explosion", "blast", "robbanás", "výbuch", "wybuch", "sprogimas",
+    "sprādziens", "plahvatus",
+    "missile", "rocket", "air strike", "airstrike", "strike",
+    "drone attack", "dróntámadás", "uav attack", "shahed",
+    "shot down", "shoot down", "downed", "intercepted",
+    "lelőtt", "lelőttek", "doborât", "doborâtă",
+    "airspace violation", "airspace breach", "légtérsértés",
+    "military attack", "armed attack",
+    "cyberattack", "cyber attack", "kibertámadás", "cyberatak",
+    "küberrünnak", "sabotage", "szabotázs",
+    "critical infrastructure", "kritikus infrastruktúra",
+    "industrial accident", "ipari baleset", "chemical leak",
+    "vegyi szivárgás", "gas leak", "gázszivárgás",
+    "blackout", "power outage", "áramszünet",
+    "refinery fire", "airport closed", "port closed",
+    "rail disruption", "evacuation", "kiürítés"
+]
+
+SECURITY_CONTEXT_TERMS = [
+    "military", "katonai", "armed forces", "air force", "légierő",
+    "army", "navy", "nato", "defence", "defense", "védelmi",
+    "border guard", "határőrség", "police", "rendőrség",
+    "emergency services", "katasztrófavédelem",
+    "airport", "repülőtér", "airbase", "air base", "katonai bázis",
+    "refinery", "finomító", "power plant", "erőmű", "nuclear",
+    "atomerőmű", "pipeline", "vezeték", "port", "kikötő"
+]
+
+DRONE_SECURITY_CONTEXT = [
+    "attack", "strike", "missile", "military", "army", "air force",
+    "légierő", "nato", "border", "határ", "airspace", "légtér",
+    "shot down", "downed", "intercepted", "lelőtt", "doborât",
+    "shahed", "explosive", "weapon", "fegyver"
+]
+
 NEGATIVE_KEYWORDS = [
     "housing", "real estate", "mortgage", "rent", "apartment",
     "lakhatás", "ingatlan", "albérlet", "bérleti díj", "lakás",
@@ -500,6 +539,35 @@ def estimate_severity(text):
     return "info"
 
 
+def has_security_event_signal(text):
+    t = normalize_text(text)
+    return any(normalize_text(k) in t for k in SECURITY_EVENT_TERMS)
+
+
+def has_security_context(text):
+    t = normalize_text(text)
+    return any(normalize_text(k) in t for k in SECURITY_CONTEXT_TERMS)
+
+
+def is_security_relevant(text):
+    t = normalize_text(text)
+
+    if has_security_event_signal(text):
+        return True
+
+    if any(k in t for k in ["drone", "drón", "uav"]):
+        return any(normalize_text(k) in t for k in DRONE_SECURITY_CONTEXT)
+
+    fire_terms = [
+        "fire", "tűz", "požiar", "požár", "pożar",
+        "gaisras", "ugunsgrēks", "tulekahju"
+    ]
+    if any(normalize_text(k) in t for k in fire_terms):
+        return has_security_context(text)
+
+    return False
+
+
 def rejection_reason(text, country):
     if country not in TARGET_COUNTRIES:
         return "outside_target_countries"
@@ -507,19 +575,11 @@ def rejection_reason(text, country):
     if has_negative(text):
         return "negative_keyword"
 
-    if has_force_include(text):
-        return None
+    if not is_security_relevant(text):
+        return "not_security_relevant"
 
     if not has_positive(text, country):
         return "no_positive_keyword"
-
-    city, _, _ = detect_city(text, preferred_country=country)
-    infra_hint = has_infra_hint(text)
-
-    if not city and not infra_hint:
-        category = classify_category(text)
-        if category == "local_media":
-            return "no_city_or_infra_hint"
 
     return None
 
@@ -530,10 +590,17 @@ def build_feature(entry, source_name, country):
     link = entry.get("link")
     published = entry.get("published") or entry.get("updated")
 
-    combined = f"{title} {summary}"
+    title_text = str(title or "")
+    summary_text = str(summary or "")
+    combined = f"{title_text} {summary_text}"
 
-    # RSS source country is not event-location evidence.
-    event_country = detect_event_country(combined, country)
+    title_country = detect_event_country(title_text, country)
+    combined_country = detect_event_country(combined, country)
+
+    if title_country in TARGET_COUNTRIES:
+        event_country = title_country
+    else:
+        event_country = combined_country
 
     if event_country is None:
         return None, "no_target_country_evidence"
@@ -543,18 +610,26 @@ def build_feature(entry, source_name, country):
     if reason:
         return None, reason
 
-    city, coords, city_country = detect_city(
-        combined,
+    title_city, title_coords, title_city_country = detect_city(
+        title_text,
         preferred_country=event_country
     )
+
+    if title_coords and title_city_country == event_country:
+        city = title_city
+        coords = title_coords
+        city_country = title_city_country
+    else:
+        city, coords, city_country = detect_city(
+            combined,
+            preferred_country=event_country
+        )
 
     if coords and city_country == event_country:
         lat, lon = coords
         place = city
         geocode_quality = "city"
     else:
-        # Country fallback is allowed only after the article itself proved
-        # that the event belongs to one of the eight monitored countries.
         fallback_coords = COUNTRY_COORDS.get(event_country)
 
         if not fallback_coords:
@@ -578,7 +653,7 @@ def build_feature(entry, source_name, country):
         },
         "properties": {
             "title": title,
-            "summary": str(summary)[:800],
+            "summary": summary_text[:800],
             "source": source_name,
             "country": event_country,
             "place": place,
@@ -588,7 +663,11 @@ def build_feature(entry, source_name, country):
             "severity": severity,
             "kind": "local_media",
             "geocode_quality": geocode_quality,
-            "force_included": has_force_include(combined)
+            "force_included": has_force_include(combined),
+            "source_count": 1,
+            "sources": [source_name],
+            "urls": [link] if link else [],
+            "merged_titles": [title_text]
         }
     }, None
 
@@ -639,25 +718,283 @@ def fetch_feed(source_name, url, country):
     return features, debug_rows
 
 
-def deduplicate_features(features):
-    seen = set()
-    clean = []
+DEDUP_MAX_DISTANCE_KM = 140.0
+DEDUP_MAX_TIME_HOURS = 18.0
+DEDUP_TEXT_SIMILARITY = 0.24
 
-    for f in features:
-        p = f.get("properties", {})
-        key = (
-            p.get("title", "").strip().lower(),
-            p.get("source", "").strip().lower(),
-            p.get("country", "").strip().lower()
+DEDUP_STOPWORDS = {
+    "a", "az", "egy", "és", "hogy", "is", "nem", "meg", "már", "ma",
+    "the", "an", "and", "or", "of", "to", "in", "on", "for", "with",
+    "from", "by", "at", "as", "after", "near", "over",
+    "un", "o", "și", "si", "de", "la", "în", "din", "pe", "cu",
+    "este", "fost", "care",
+}
+
+EVENT_SIGNATURE_TERMS = {
+    "shahed", "f-16", "f16", "eurofighter", "missile", "rocket",
+    "drone", "drón", "uav", "lelőtt", "downed", "intercepted",
+    "doborât", "doborâtă", "airspace", "légtér",
+    "explosion", "robbanás", "blast",
+    "cyberattack", "kibertámadás",
+    "blackout", "áramszünet",
+    "evacuation", "kiürítés",
+}
+
+
+def parse_event_time(value):
+    if not value:
+        return None
+
+    raw = str(value).strip()
+
+    try:
+        dt = parsedate_to_datetime(raw)
+        if dt:
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+    except Exception:
+        pass
+
+    try:
+        dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def haversine_km(lat1, lon1, lat2, lon2):
+    radius_km = 6371.0088
+
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
+    d_phi = math.radians(lat2 - lat1)
+    d_lambda = math.radians(lon2 - lon1)
+
+    a = (
+        math.sin(d_phi / 2) ** 2
+        + math.cos(phi1) * math.cos(phi2) * math.sin(d_lambda / 2) ** 2
+    )
+
+    return 2 * radius_km * math.asin(math.sqrt(a))
+
+
+def event_tokens(text):
+    t = normalize_text(text)
+    words = re.findall(r"[\wÀ-ž-]+", t, flags=re.UNICODE)
+
+    return {
+        word
+        for word in words
+        if len(word) >= 3 and word not in DEDUP_STOPWORDS
+    }
+
+
+def text_similarity(text_a, text_b):
+    a = normalize_text(text_a)
+    b = normalize_text(text_b)
+
+    if not a or not b:
+        return 0.0
+
+    tokens_a = event_tokens(a)
+    tokens_b = event_tokens(b)
+
+    if tokens_a and tokens_b:
+        jaccard = len(tokens_a & tokens_b) / len(tokens_a | tokens_b)
+    else:
+        jaccard = 0.0
+
+    sequence = SequenceMatcher(None, a, b).ratio()
+
+    return max(jaccard, sequence * 0.65)
+
+
+def shared_signature_terms(text_a, text_b):
+    a = normalize_text(text_a)
+    b = normalize_text(text_b)
+
+    return {
+        term
+        for term in EVENT_SIGNATURE_TERMS
+        if normalize_text(term) in a and normalize_text(term) in b
+    }
+
+
+def feature_text(feature):
+    p = feature.get("properties", {})
+    return f"{p.get('title', '')} {p.get('summary', '')}"
+
+
+def feature_coordinates(feature):
+    coords = feature.get("geometry", {}).get("coordinates", [])
+
+    if not isinstance(coords, list) or len(coords) < 2:
+        return None
+
+    try:
+        lon = float(coords[0])
+        lat = float(coords[1])
+        return lat, lon
+    except (TypeError, ValueError):
+        return None
+
+
+def same_event(feature_a, feature_b):
+    pa = feature_a.get("properties", {})
+    pb = feature_b.get("properties", {})
+
+    if pa.get("country") != pb.get("country"):
+        return False
+
+    if pa.get("category") != pb.get("category"):
+        return False
+
+    time_a = parse_event_time(pa.get("time"))
+    time_b = parse_event_time(pb.get("time"))
+
+    if time_a and time_b:
+        hours = abs((time_a - time_b).total_seconds()) / 3600.0
+        if hours > DEDUP_MAX_TIME_HOURS:
+            return False
+
+    coord_a = feature_coordinates(feature_a)
+    coord_b = feature_coordinates(feature_b)
+
+    distance = None
+    if coord_a and coord_b:
+        distance = haversine_km(
+            coord_a[0], coord_a[1],
+            coord_b[0], coord_b[1]
         )
 
-        if key in seen:
-            continue
+        if distance > DEDUP_MAX_DISTANCE_KM:
+            return False
 
-        seen.add(key)
-        clean.append(f)
+    text_a = feature_text(feature_a)
+    text_b = feature_text(feature_b)
 
-    return clean
+    similarity = text_similarity(text_a, text_b)
+    signatures = shared_signature_terms(text_a, text_b)
+
+    if similarity >= DEDUP_TEXT_SIMILARITY:
+        return True
+
+    strong_signatures = {
+        "shahed", "f-16", "f16", "eurofighter",
+        "lelőtt", "downed", "intercepted", "doborât", "doborâtă"
+    }
+
+    if signatures & strong_signatures:
+        if distance is None or distance <= DEDUP_MAX_DISTANCE_KM:
+            return True
+
+    return False
+
+
+def severity_rank(value):
+    ranks = {
+        "info": 0,
+        "low": 1,
+        "medium": 2,
+        "high": 3,
+        "critical": 4,
+    }
+    return ranks.get(str(value or "").lower(), 0)
+
+
+def location_rank(feature):
+    quality = feature.get("properties", {}).get("geocode_quality")
+
+    if quality == "city":
+        return 2
+
+    if quality == "country_fallback":
+        return 1
+
+    return 0
+
+
+def merge_event_features(primary, incoming):
+    pp = primary.setdefault("properties", {})
+    ip = incoming.get("properties", {})
+
+    sources = list(pp.get("sources") or ([pp.get("source")] if pp.get("source") else []))
+    incoming_sources = list(ip.get("sources") or ([ip.get("source")] if ip.get("source") else []))
+
+    for source in incoming_sources:
+        if source and source not in sources:
+            sources.append(source)
+
+    urls = list(pp.get("urls") or ([pp.get("url")] if pp.get("url") else []))
+    incoming_urls = list(ip.get("urls") or ([ip.get("url")] if ip.get("url") else []))
+
+    for url in incoming_urls:
+        if url and url not in urls:
+            urls.append(url)
+
+    titles = list(pp.get("merged_titles") or ([pp.get("title")] if pp.get("title") else []))
+    incoming_titles = list(ip.get("merged_titles") or ([ip.get("title")] if ip.get("title") else []))
+
+    for title in incoming_titles:
+        if title and title not in titles:
+            titles.append(title)
+
+    pp["sources"] = sources
+    pp["source_count"] = len(sources)
+    pp["urls"] = urls
+    pp["merged_titles"] = titles
+
+    if severity_rank(ip.get("severity")) > severity_rank(pp.get("severity")):
+        pp["severity"] = ip.get("severity")
+
+    if location_rank(incoming) > location_rank(primary):
+        primary["geometry"] = incoming.get("geometry", primary.get("geometry"))
+        pp["place"] = ip.get("place", pp.get("place"))
+        pp["geocode_quality"] = ip.get("geocode_quality", pp.get("geocode_quality"))
+
+    if len(str(ip.get("summary") or "")) > len(str(pp.get("summary") or "")):
+        pp["summary"] = ip.get("summary")
+
+    primary_time = parse_event_time(pp.get("time"))
+    incoming_time = parse_event_time(ip.get("time"))
+
+    if incoming_time and (not primary_time or incoming_time < primary_time):
+        pp["time"] = ip.get("time")
+
+    return primary
+
+
+def deduplicate_features(features):
+    clusters = []
+
+    for feature in features:
+        merged = False
+
+        for index, existing in enumerate(clusters):
+            if same_event(existing, feature):
+                clusters[index] = merge_event_features(existing, feature)
+                merged = True
+                break
+
+        if not merged:
+            p = feature.setdefault("properties", {})
+
+            if "sources" not in p:
+                p["sources"] = [p.get("source")] if p.get("source") else []
+
+            if "urls" not in p:
+                p["urls"] = [p.get("url")] if p.get("url") else []
+
+            if "merged_titles" not in p:
+                p["merged_titles"] = [p.get("title")] if p.get("title") else []
+
+            p["source_count"] = len(p["sources"])
+            clusters.append(feature)
+
+    return clusters
 
 
 def main():

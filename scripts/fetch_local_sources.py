@@ -38,7 +38,18 @@ CITY_COORDS = {
     "Năvodari": [44.335, 28.642],
     "Brazi": [44.848, 26.029],
     "Bucharest": [44.426, 26.102],
+    "București": [44.426, 26.102],
     "Galați": [45.435, 28.008],
+    "Brăila": [45.269, 27.957],
+    "Braila": [45.269, 27.957],
+    "Buzău": [45.150, 26.824],
+    "Buzau": [45.150, 26.824],
+    "Ialomița": [44.603, 27.378],
+    "Ialomita": [44.603, 27.378],
+    "Sulina": [45.156, 29.653],
+    "Padina": [44.833, 27.117],
+    "Fetești": [44.366, 27.833],
+    "Fetesti": [44.366, 27.833],
 
     "Bratislava": [48.148, 17.107],
     "Mochovce": [48.264, 18.455],
@@ -83,6 +94,55 @@ CITY_COORDS = {
     "Tapa": [59.260, 25.958],
     "Ämari": [59.260, 24.208],
     "Muuga": [59.500, 24.960]
+}
+
+CITY_COUNTRY = {
+    "Tiszaújváros": "Hungary", "Százhalombatta": "Hungary", "Paks": "Hungary",
+    "Budapest": "Hungary", "Algyő": "Hungary", "Hajdúszoboszló": "Hungary",
+    "Visonta": "Hungary",
+
+    "Constanța": "Romania", "Cernavodă": "Romania", "Năvodari": "Romania",
+    "Brazi": "Romania", "Bucharest": "Romania", "București": "Romania",
+    "Galați": "Romania", "Brăila": "Romania", "Braila": "Romania",
+    "Buzău": "Romania", "Buzau": "Romania", "Ialomița": "Romania",
+    "Ialomita": "Romania", "Sulina": "Romania", "Padina": "Romania",
+    "Fetești": "Romania", "Fetesti": "Romania",
+
+    "Bratislava": "Slovakia", "Mochovce": "Slovakia",
+    "Jaslovské Bohunice": "Slovakia", "Veľké Kapušany": "Slovakia",
+    "Košice": "Slovakia",
+
+    "Prague": "Czechia", "Praha": "Czechia", "Temelín": "Czechia",
+    "Dukovany": "Czechia", "Litvínov": "Czechia", "Kralupy": "Czechia",
+    "Ostrava": "Czechia",
+
+    "Płock": "Poland", "Gdańsk": "Poland", "Gdynia": "Poland",
+    "Warsaw": "Poland", "Warszawa": "Poland", "Rzeszów": "Poland",
+    "Świnoujście": "Poland", "Bełchatów": "Poland",
+
+    "Klaipėda": "Lithuania", "Vilnius": "Lithuania", "Kaunas": "Lithuania",
+    "Alytus": "Lithuania", "Šiauliai": "Lithuania", "Rukla": "Lithuania",
+
+    "Riga": "Latvia", "Ventspils": "Latvia", "Ādaži": "Latvia",
+    "Lielvārde": "Latvia", "Inčukalns": "Latvia",
+
+    "Tallinn": "Estonia", "Tartu": "Estonia", "Narva": "Estonia",
+    "Paldiski": "Estonia", "Tapa": "Estonia", "Ämari": "Estonia",
+    "Muuga": "Estonia"
+}
+
+COUNTRY_TERMS = {
+    "Hungary": ["hungary", "hungarian", "magyarország", "magyarországi"],
+    "Romania": [
+        "romania", "românia", "romanian", "român", "română", "româniei",
+        "románia", "romániai", "román"
+    ],
+    "Slovakia": ["slovakia", "slovak", "slovensko", "slovenský", "szlovákia", "szlovák"],
+    "Czechia": ["czechia", "czech republic", "czech", "česko", "česká", "csehország", "cseh"],
+    "Poland": ["poland", "polish", "polska", "polski", "lengyelország", "lengyel"],
+    "Lithuania": ["lithuania", "lithuanian", "lietuva", "lietuvos", "litvánia", "litván"],
+    "Latvia": ["latvia", "latvian", "latvija", "latvijas", "lettország", "lett"],
+    "Estonia": ["estonia", "estonian", "eesti", "eestis", "észtország", "észt"]
 }
 
 RSS_FEEDS = {
@@ -139,7 +199,7 @@ POSITIVE_KEYWORDS = {
     "general": [
         "explosion", "blast", "fire", "industrial accident", "chemical leak",
         "pipeline leak", "blackout", "power outage", "cyberattack",
-        "drone attack", "missile", "evacuation", "emergency services",
+        "drone", "drón", "uav", "shahed", "drone attack", "missile", "evacuation", "emergency services",
         "refinery fire", "airport closed", "port closed", "rail disruption"
     ],
     "Hungary": [
@@ -254,14 +314,71 @@ def has_force_include(text):
     return any(normalize_text(k) in t for k in FORCE_INCLUDE_TERMS)
 
 
-def detect_city(text):
+def contains_term(text, term):
+    """
+    Unicode-safe whole-term matching.
+
+    Prevents false positives such as:
+      Riga -> "brigadă"
+      Paks -> "paksuks"
+    """
     t = normalize_text(text)
+    k = normalize_text(term)
+
+    if not k:
+        return False
+
+    pattern = rf"(?<!\w){re.escape(k)}(?!\w)"
+    return re.search(pattern, t, flags=re.UNICODE) is not None
+
+
+def detect_city(text, preferred_country=None):
+    matches = []
 
     for city, coords in CITY_COORDS.items():
-        if normalize_text(city) in t:
-            return city, coords
+        if contains_term(text, city):
+            city_country = CITY_COUNTRY.get(city)
+            priority = 0 if preferred_country and city_country == preferred_country else 1
+            matches.append((priority, -len(city), city, coords, city_country))
 
-    return None, None
+    if not matches:
+        return None, None, None
+
+    matches.sort()
+    _, _, city, coords, city_country = matches[0]
+    return city, coords, city_country
+
+
+def detect_event_country(text, source_country):
+    """
+    Determine the country where the event happened.
+
+    Explicit recognized city evidence has priority. If there is no city,
+    an unambiguous country/demonym mention can override the RSS source country.
+    The RSS source country remains the final fallback.
+    """
+    city, _, city_country = detect_city(text)
+
+    if city and city_country:
+        return city_country
+
+    country_hits = []
+
+    for country, terms in COUNTRY_TERMS.items():
+        for term in terms:
+            if contains_term(text, term):
+                country_hits.append(country)
+                break
+
+    unique_hits = list(dict.fromkeys(country_hits))
+
+    if len(unique_hits) == 1:
+        return unique_hits[0]
+
+    if source_country in unique_hits:
+        return source_country
+
+    return source_country
 
 
 def classify_category(text):
@@ -300,7 +417,10 @@ def estimate_severity(text):
     if any(k in t for k in [
         "explosion", "blast", "robbanás", "výbuch", "wybuch",
         "sprogimas", "sprādziens", "plahvatus", "cyberattack",
-        "kibertámadás", "drone attack", "dróntámadás"
+        "kibertámadás", "drone attack", "dróntámadás",
+        "shot down", "shoot down", "downed", "intercepted",
+        "doborât", "doborata", "doborâtă", "lelőtt", "lelőttek",
+        "shahed"
     ]):
         return "high"
 
@@ -324,7 +444,7 @@ def rejection_reason(text, country):
     if not has_positive(text, country):
         return "no_positive_keyword"
 
-    city, _ = detect_city(text)
+    city, _, _ = detect_city(text, preferred_country=country)
     infra_hint = has_infra_hint(text)
 
     if not city and not infra_hint:
@@ -340,20 +460,36 @@ def build_feature(entry, source_name, country):
     published = entry.get("published") or entry.get("updated")
 
     combined = f"{title} {summary}"
-    reason = rejection_reason(combined, country)
+
+    # The feed/source country is not necessarily the event country.
+    event_country = detect_event_country(combined, country)
+
+    reason = rejection_reason(combined, event_country)
 
     if reason:
         return None, reason
 
-    city, coords = detect_city(combined)
+    city, coords, city_country = detect_city(
+        combined,
+        preferred_country=event_country
+    )
+
+    # A recognized city is authoritative for the event country.
+    if coords and city_country:
+        event_country = city_country
 
     if coords:
         lat, lon = coords
         place = city
         geocode_quality = "city"
     else:
-        lat, lon = COUNTRY_COORDS.get(country)
-        place = country
+        fallback_coords = COUNTRY_COORDS.get(event_country)
+
+        if not fallback_coords:
+            return None, "missing_coordinates"
+
+        lat, lon = fallback_coords
+        place = event_country
         geocode_quality = "country_fallback"
 
     if lat is None or lon is None:
@@ -375,7 +511,7 @@ def build_feature(entry, source_name, country):
             "title": title,
             "summary": str(summary)[:800],
             "source": source_name,
-            "country": country,
+            "country": event_country,
             "place": place,
             "url": link,
             "time": published,

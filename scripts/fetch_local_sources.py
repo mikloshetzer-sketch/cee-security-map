@@ -13,6 +13,17 @@ DEBUG_FILE = DATA / "local_events_debug.json"
 
 MAX_ITEMS_PER_SOURCE = 50
 
+TARGET_COUNTRIES = {
+    "Hungary",
+    "Romania",
+    "Slovakia",
+    "Czechia",
+    "Poland",
+    "Lithuania",
+    "Latvia",
+    "Estonia",
+}
+
 COUNTRY_COORDS = {
     "Hungary": [47.1625, 19.5033],
     "Romania": [45.9432, 24.9668],
@@ -97,52 +108,101 @@ CITY_COORDS = {
 }
 
 CITY_COUNTRY = {
-    "Tiszaújváros": "Hungary", "Százhalombatta": "Hungary", "Paks": "Hungary",
-    "Budapest": "Hungary", "Algyő": "Hungary", "Hajdúszoboszló": "Hungary",
+    "Tiszaújváros": "Hungary",
+    "Százhalombatta": "Hungary",
+    "Paks": "Hungary",
+    "Budapest": "Hungary",
+    "Algyő": "Hungary",
+    "Hajdúszoboszló": "Hungary",
     "Visonta": "Hungary",
-
-    "Constanța": "Romania", "Cernavodă": "Romania", "Năvodari": "Romania",
-    "Brazi": "Romania", "Bucharest": "Romania", "București": "Romania",
-    "Galați": "Romania", "Brăila": "Romania", "Braila": "Romania",
-    "Buzău": "Romania", "Buzau": "Romania", "Ialomița": "Romania",
-    "Ialomita": "Romania", "Sulina": "Romania", "Padina": "Romania",
-    "Fetești": "Romania", "Fetesti": "Romania",
-
-    "Bratislava": "Slovakia", "Mochovce": "Slovakia",
-    "Jaslovské Bohunice": "Slovakia", "Veľké Kapušany": "Slovakia",
+    "Constanța": "Romania",
+    "Cernavodă": "Romania",
+    "Năvodari": "Romania",
+    "Brazi": "Romania",
+    "Bucharest": "Romania",
+    "București": "Romania",
+    "Galați": "Romania",
+    "Brăila": "Romania",
+    "Braila": "Romania",
+    "Buzău": "Romania",
+    "Buzau": "Romania",
+    "Ialomița": "Romania",
+    "Ialomita": "Romania",
+    "Sulina": "Romania",
+    "Padina": "Romania",
+    "Fetești": "Romania",
+    "Fetesti": "Romania",
+    "Bratislava": "Slovakia",
+    "Mochovce": "Slovakia",
+    "Jaslovské Bohunice": "Slovakia",
+    "Veľké Kapušany": "Slovakia",
     "Košice": "Slovakia",
-
-    "Prague": "Czechia", "Praha": "Czechia", "Temelín": "Czechia",
-    "Dukovany": "Czechia", "Litvínov": "Czechia", "Kralupy": "Czechia",
+    "Prague": "Czechia",
+    "Praha": "Czechia",
+    "Temelín": "Czechia",
+    "Dukovany": "Czechia",
+    "Litvínov": "Czechia",
+    "Kralupy": "Czechia",
     "Ostrava": "Czechia",
-
-    "Płock": "Poland", "Gdańsk": "Poland", "Gdynia": "Poland",
-    "Warsaw": "Poland", "Warszawa": "Poland", "Rzeszów": "Poland",
-    "Świnoujście": "Poland", "Bełchatów": "Poland",
-
-    "Klaipėda": "Lithuania", "Vilnius": "Lithuania", "Kaunas": "Lithuania",
-    "Alytus": "Lithuania", "Šiauliai": "Lithuania", "Rukla": "Lithuania",
-
-    "Riga": "Latvia", "Ventspils": "Latvia", "Ādaži": "Latvia",
-    "Lielvārde": "Latvia", "Inčukalns": "Latvia",
-
-    "Tallinn": "Estonia", "Tartu": "Estonia", "Narva": "Estonia",
-    "Paldiski": "Estonia", "Tapa": "Estonia", "Ämari": "Estonia",
-    "Muuga": "Estonia"
+    "Płock": "Poland",
+    "Gdańsk": "Poland",
+    "Gdynia": "Poland",
+    "Warsaw": "Poland",
+    "Warszawa": "Poland",
+    "Rzeszów": "Poland",
+    "Świnoujście": "Poland",
+    "Bełchatów": "Poland",
+    "Klaipėda": "Lithuania",
+    "Vilnius": "Lithuania",
+    "Kaunas": "Lithuania",
+    "Alytus": "Lithuania",
+    "Šiauliai": "Lithuania",
+    "Rukla": "Lithuania",
+    "Riga": "Latvia",
+    "Ventspils": "Latvia",
+    "Ādaži": "Latvia",
+    "Lielvārde": "Latvia",
+    "Inčukalns": "Latvia",
+    "Tallinn": "Estonia",
+    "Tartu": "Estonia",
+    "Narva": "Estonia",
+    "Paldiski": "Estonia",
+    "Tapa": "Estonia",
+    "Ämari": "Estonia",
+    "Muuga": "Estonia",
 }
 
 COUNTRY_TERMS = {
-    "Hungary": ["hungary", "hungarian", "magyarország", "magyarországi"],
+    "Hungary": [
+        "hungary", "hungarian", "magyarország", "magyarországi", "magyar"
+    ],
     "Romania": [
         "romania", "românia", "romanian", "român", "română", "româniei",
         "románia", "romániai", "román"
     ],
-    "Slovakia": ["slovakia", "slovak", "slovensko", "slovenský", "szlovákia", "szlovák"],
-    "Czechia": ["czechia", "czech republic", "czech", "česko", "česká", "csehország", "cseh"],
-    "Poland": ["poland", "polish", "polska", "polski", "lengyelország", "lengyel"],
-    "Lithuania": ["lithuania", "lithuanian", "lietuva", "lietuvos", "litvánia", "litván"],
-    "Latvia": ["latvia", "latvian", "latvija", "latvijas", "lettország", "lett"],
-    "Estonia": ["estonia", "estonian", "eesti", "eestis", "észtország", "észt"]
+    "Slovakia": [
+        "slovakia", "slovak", "slovensko", "slovenský", "slovenská",
+        "szlovákia", "szlovák"
+    ],
+    "Czechia": [
+        "czechia", "czech republic", "czech", "česko", "česká", "český",
+        "csehország", "cseh"
+    ],
+    "Poland": [
+        "poland", "polish", "polska", "polski", "lengyelország", "lengyel"
+    ],
+    "Lithuania": [
+        "lithuania", "lithuanian", "lietuva", "lietuvos", "lietuvoje",
+        "litvánia", "litván"
+    ],
+    "Latvia": [
+        "latvia", "latvian", "latvija", "latvijas", "latvijā",
+        "lettország", "lett"
+    ],
+    "Estonia": [
+        "estonia", "estonian", "eesti", "eestis",
+        "észtország", "észt"
+    ]
 }
 
 RSS_FEEDS = {
@@ -199,7 +259,7 @@ POSITIVE_KEYWORDS = {
     "general": [
         "explosion", "blast", "fire", "industrial accident", "chemical leak",
         "pipeline leak", "blackout", "power outage", "cyberattack",
-        "drone", "drón", "uav", "shahed", "drone attack", "missile", "evacuation", "emergency services",
+        "drone", "drón", "uav", "shahed", "drone attack", "missile", "strike", "attack", "air defence", "air defense", "evacuation", "emergency services",
         "refinery fire", "airport closed", "port closed", "rail disruption"
     ],
     "Hungary": [
@@ -351,20 +411,29 @@ def detect_city(text, preferred_country=None):
 
 def detect_event_country(text, source_country):
     """
-    Determine the country where the event happened.
+    Strict whitelist geolocation for the eight monitored CEE countries.
 
-    Explicit recognized city evidence has priority. If there is no city,
-    an unambiguous country/demonym mention can override the RSS source country.
-    The RSS source country remains the final fallback.
+    The RSS source country is metadata only. It is never used automatically
+    as the event location.
+
+    Accepted evidence:
+      1. a recognized city belonging to TARGET_COUNTRIES;
+      2. exactly one explicit monitored-country/demonym mention.
+
+    If the article cannot be tied reliably to one monitored country,
+    return None and exclude it.
     """
     city, _, city_country = detect_city(text)
 
-    if city and city_country:
+    if city and city_country in TARGET_COUNTRIES:
         return city_country
 
     country_hits = []
 
     for country, terms in COUNTRY_TERMS.items():
+        if country not in TARGET_COUNTRIES:
+            continue
+
         for term in terms:
             if contains_term(text, term):
                 country_hits.append(country)
@@ -375,10 +444,7 @@ def detect_event_country(text, source_country):
     if len(unique_hits) == 1:
         return unique_hits[0]
 
-    if source_country in unique_hits:
-        return source_country
-
-    return source_country
+    return None
 
 
 def classify_category(text):
@@ -435,6 +501,9 @@ def estimate_severity(text):
 
 
 def rejection_reason(text, country):
+    if country not in TARGET_COUNTRIES:
+        return "outside_target_countries"
+
     if has_negative(text):
         return "negative_keyword"
 
@@ -448,7 +517,9 @@ def rejection_reason(text, country):
     infra_hint = has_infra_hint(text)
 
     if not city and not infra_hint:
-        return "no_city_or_infra_hint"
+        category = classify_category(text)
+        if category == "local_media":
+            return "no_city_or_infra_hint"
 
     return None
 
@@ -461,8 +532,11 @@ def build_feature(entry, source_name, country):
 
     combined = f"{title} {summary}"
 
-    # The feed/source country is not necessarily the event country.
+    # RSS source country is not event-location evidence.
     event_country = detect_event_country(combined, country)
+
+    if event_country is None:
+        return None, "no_target_country_evidence"
 
     reason = rejection_reason(combined, event_country)
 
@@ -474,15 +548,13 @@ def build_feature(entry, source_name, country):
         preferred_country=event_country
     )
 
-    # A recognized city is authoritative for the event country.
-    if coords and city_country:
-        event_country = city_country
-
-    if coords:
+    if coords and city_country == event_country:
         lat, lon = coords
         place = city
         geocode_quality = "city"
     else:
+        # Country fallback is allowed only after the article itself proved
+        # that the event belongs to one of the eight monitored countries.
         fallback_coords = COUNTRY_COORDS.get(event_country)
 
         if not fallback_coords:
@@ -491,9 +563,6 @@ def build_feature(entry, source_name, country):
         lat, lon = fallback_coords
         place = event_country
         geocode_quality = "country_fallback"
-
-    if lat is None or lon is None:
-        return None, "missing_coordinates"
 
     category = classify_category(combined)
     severity = estimate_severity(combined)

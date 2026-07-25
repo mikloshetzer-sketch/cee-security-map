@@ -1,6 +1,7 @@
 import json
 import math
 import hashlib
+import re
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -26,6 +27,290 @@ OUTPUT = DATA / "infra_proximity.json"
 
 MAX_DISTANCE_KM = 50
 
+# ---------------------------------------------------------------------
+# SECURITY RELEVANCE FILTER
+# ---------------------------------------------------------------------
+#
+# Infrastructure proximity must measure security-relevant incidents near
+# critical infrastructure, not ordinary news that happens to be geocoded
+# to the same city.
+#
+# USGS and GDACS are treated as inherently event-based sources.
+# Local events have already passed the local-source security filter, but
+# are checked here again as a second defensive layer.
+# GDELT-derived events require a security category or explicit incident
+# wording in their title/summary.
+# ---------------------------------------------------------------------
+
+ALWAYS_RELEVANT_SOURCE_FILES = {
+    "usgs.geojson",
+    "gdacs.geojson",
+}
+
+STRONG_SECURITY_CATEGORIES = {
+    "cyber",
+    "drone",
+    "military",
+    "explosion",
+    "hazardous",
+    "conflict",
+    "security",
+    "terrorism",
+    "attack",
+    "missile",
+    "airstrike",
+    "sabotage",
+}
+
+CONTEXTUAL_SECURITY_CATEGORIES = {
+    "fire",
+    "energy",
+    "transport",
+    "emergency",
+    "disaster",
+    "local_media",
+    "unknown",
+}
+
+SECURITY_EVENT_TERMS = [
+    # Kinetic / military
+    "attack",
+    "attacked",
+    "strike",
+    "airstrike",
+    "air strike",
+    "missile",
+    "rocket",
+    "shelling",
+    "bombing",
+    "explosion",
+    "blast",
+    "drone attack",
+    "uav attack",
+    "shahed",
+    "shot down",
+    "shoot down",
+    "downed",
+    "intercepted",
+    "airspace violation",
+    "airspace breach",
+    "military attack",
+    "armed attack",
+
+    # Hungarian
+    "támadás",
+    "csapás",
+    "rakéta",
+    "robbanás",
+    "dróntámadás",
+    "lelőttek",
+    "lelőtt",
+    "elfogtak",
+    "elfogás",
+    "légtérsértés",
+    "fegyveres támadás",
+
+    # Romanian
+    "atac",
+    "lovitură",
+    "lovitura",
+    "rachetă",
+    "racheta",
+    "explozie",
+    "dronă",
+    "drona",
+    "dronei",
+    "doborât",
+    "doborâtă",
+    "spațiul aerian",
+    "spatiul aerian",
+
+    # Cyber / sabotage
+    "cyberattack",
+    "cyber attack",
+    "ransomware",
+    "ddos",
+    "data breach",
+    "sabotage",
+    "kibertámadás",
+    "szabotázs",
+    "cyberatak",
+    "küberrünnak",
+
+    # Critical infrastructure disruption / hazardous event
+    "industrial accident",
+    "chemical leak",
+    "gas leak",
+    "pipeline leak",
+    "blackout",
+    "power outage",
+    "grid failure",
+    "refinery fire",
+    "airport closed",
+    "airport closure",
+    "port closed",
+    "port closure",
+    "rail disruption",
+    "evacuation",
+    "emergency shutdown",
+
+    # Hungarian
+    "ipari baleset",
+    "vegyi szivárgás",
+    "gázszivárgás",
+    "vezeték sérül",
+    "áramszünet",
+    "hálózati hiba",
+    "finomítótűz",
+    "repülőtér lezár",
+    "kikötő lezár",
+    "vasúti fennakadás",
+    "kiürítés",
+
+    # Generic major fire terms. These require context below.
+    "major fire",
+    "large fire",
+    "tűz",
+    "incendiu",
+    "požiar",
+    "požár",
+    "pożar",
+    "gaisras",
+    "ugunsgrēks",
+    "tulekahju",
+]
+
+SECURITY_CONTEXT_TERMS = [
+    # Infrastructure
+    "critical infrastructure",
+    "power plant",
+    "nuclear",
+    "nuclear plant",
+    "refinery",
+    "pipeline",
+    "gas storage",
+    "lng",
+    "airport",
+    "airbase",
+    "air base",
+    "port",
+    "railway",
+    "rail",
+    "data center",
+    "internet exchange",
+    "substation",
+    "power grid",
+
+    # Security / military
+    "military",
+    "armed forces",
+    "air force",
+    "army",
+    "navy",
+    "nato",
+    "border guard",
+    "defence",
+    "defense",
+    "emergency services",
+
+    # Hungarian
+    "kritikus infrastruktúra",
+    "erőmű",
+    "atomerőmű",
+    "finomító",
+    "vezeték",
+    "gáztároló",
+    "repülőtér",
+    "katonai bázis",
+    "kikötő",
+    "vasút",
+    "adatközpont",
+    "villamos hálózat",
+    "katonai",
+    "légierő",
+    "honvédség",
+    "nato",
+    "határőrség",
+    "katasztrófavédelem",
+
+    # Romanian
+    "infrastructură critică",
+    "infrastructura critica",
+    "centrală",
+    "centrala",
+    "rafinărie",
+    "rafinarie",
+    "aeroport",
+    "bază militară",
+    "baza militara",
+    "port",
+    "cale ferată",
+    "cale ferata",
+    "forțele aeriene",
+    "fortele aeriene",
+    "armată",
+    "armata",
+]
+
+NEGATIVE_CONTEXT_TERMS = [
+    # Management / corporate / ordinary economic news
+    "appoint",
+    "appointed",
+    "appointment",
+    "resign",
+    "resigned",
+    "ceo",
+    "chief executive",
+    "director appointed",
+    "management",
+    "board member",
+    "shareholder",
+    "earnings",
+    "profit",
+    "revenue",
+    "investment plan",
+    "trade talks",
+    "trade agreement",
+    "commercial cooperation",
+
+    # Construction / routine infrastructure development
+    "construction begins",
+    "construction works",
+    "construction project",
+    "renovation",
+    "modernisation",
+    "modernization",
+    "tender",
+    "procurement",
+
+    # Hungarian
+    "vezérigazgató",
+    "igazgató",
+    "vezetőváltás",
+    "kinevezték",
+    "felmentette",
+    "kirúgta",
+    "beruházás",
+    "kereskedelmi",
+    "együttműködés",
+    "építkezés",
+    "építési munkák",
+    "felújítás",
+    "közbeszerzés",
+
+    # Romanian
+    "director general",
+    "numit",
+    "demis",
+    "investiție",
+    "investitie",
+    "schimburi comerciale",
+    "cooperare comercială",
+    "cooperare comerciala",
+    "construcție",
+    "constructie",
+]
+
 
 def load_json(path):
     if not path.exists():
@@ -33,6 +318,19 @@ def load_json(path):
 
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def normalize_text(text):
+    return re.sub(r"\s+", " ", str(text or "").lower()).strip()
+
+
+def contains_phrase(text, phrase):
+    return normalize_text(phrase) in normalize_text(text)
+
+
+def contains_any(text, terms):
+    t = normalize_text(text)
+    return any(normalize_text(term) in t for term in terms)
 
 
 def haversine_km(lat1, lon1, lat2, lon2):
@@ -82,6 +380,93 @@ def load_infrastructure():
     return items
 
 
+def event_security_relevant(event):
+    """
+    Second defensive layer for infrastructure proximity.
+
+    An event is allowed to affect infrastructure proximity only when there
+    is actual security / disruption evidence. Ordinary news is rejected even
+    if it is geocoded directly onto an infrastructure asset.
+    """
+    source_file = str(event.get("_source_file") or "").lower()
+    category = normalize_text(event.get("category"))
+    text = f"{event.get('title', '')} {event.get('summary', '')}"
+
+    # Natural hazards / disaster feeds are incident feeds by definition.
+    if source_file in ALWAYS_RELEVANT_SOURCE_FILES:
+        return True
+
+    strong_category = category in STRONG_SECURITY_CATEGORIES
+    event_signal = contains_any(text, SECURITY_EVENT_TERMS)
+    context_signal = contains_any(text, SECURITY_CONTEXT_TERMS)
+    negative_signal = contains_any(text, NEGATIVE_CONTEXT_TERMS)
+
+    # Strong explicit incident wording always wins.
+    if event_signal:
+        # Generic "fire" or similarly broad wording should have context unless
+        # the source/category itself already marks a strong security event.
+        generic_fire_only = (
+            contains_any(
+                text,
+                [
+                    "major fire",
+                    "large fire",
+                    "tűz",
+                    "incendiu",
+                    "požiar",
+                    "požár",
+                    "pożar",
+                    "gaisras",
+                    "ugunsgrēks",
+                    "tulekahju",
+                ],
+            )
+            and not contains_any(
+                text,
+                [
+                    "attack",
+                    "strike",
+                    "explosion",
+                    "blast",
+                    "robbanás",
+                    "explozie",
+                    "sabotage",
+                    "szabotázs",
+                    "cyberattack",
+                    "kibertámadás",
+                    "blackout",
+                    "áramszünet",
+                    "evacuation",
+                    "kiürítés",
+                    "missile",
+                    "rakéta",
+                    "drone",
+                    "drón",
+                    "dronă",
+                    "drona",
+                    "shahed",
+                ],
+            )
+        )
+
+        if generic_fire_only and not context_signal and not strong_category:
+            return False
+
+        return True
+
+    # A strong security category can be sufficient, except when the text is
+    # clearly ordinary management/economic/construction reporting.
+    if strong_category:
+        return not negative_signal
+
+    # Contextual categories need BOTH infrastructure/security context and an
+    # incident/disruption signal. Category or proximity alone is not enough.
+    if category in CONTEXTUAL_SECURITY_CATEGORIES:
+        return context_signal and not negative_signal and event_signal
+
+    return False
+
+
 def load_events():
     events = []
 
@@ -109,37 +494,72 @@ def load_events():
             except Exception:
                 continue
 
-            title = props.get("title") or props.get("name") or props.get("type") or "Unnamed"
+            title = (
+                props.get("title")
+                or props.get("name")
+                or props.get("type")
+                or "Unnamed"
+            )
+
+            summary = (
+                props.get("summary")
+                or props.get("description")
+                or props.get("snippet")
+                or ""
+            )
+
             url = props.get("url") or props.get("search_url")
             source = props.get("source") or props.get("domain") or path.stem
-            category = props.get("category") or props.get("gdelt_bucket") or props.get("type") or "unknown"
-            time = props.get("time") or props.get("datetime") or props.get("date")
+            category = (
+                props.get("category")
+                or props.get("gdelt_bucket")
+                or props.get("type")
+                or "unknown"
+            )
+            time = (
+                props.get("time")
+                or props.get("datetime")
+                or props.get("date")
+            )
 
-            event_id = props.get("id") or stable_id(title, url, source, time, lat, lon)
+            event_id = (
+                props.get("id")
+                or stable_id(title, url, source, time, lat, lon)
+            )
 
-            events.append({
+            event = {
                 "id": event_id,
                 "title": title,
+                "summary": summary,
                 "category": category,
                 "source": source,
                 "time": time,
                 "url": url,
                 "lat": lat,
                 "lon": lon,
-                "_source_file": path.name
-            })
+                "_source_file": path.name,
+            }
+
+            # Critical change:
+            # only security-relevant events are allowed into the proximity
+            # calculation.
+            if not event_security_relevant(event):
+                continue
+
+            events.append(event)
 
     return deduplicate_events(events)
 
 
 def deduplicate_events(events):
     seen = {}
+
     for event in events:
         key = stable_id(
             event.get("title"),
             event.get("url"),
             event.get("source"),
-            event.get("time")
+            event.get("time"),
         )
 
         if key not in seen:
@@ -171,7 +591,7 @@ def level_weight(level):
         "critical": 4,
         "high": 3,
         "medium": 2,
-        "watch": 1
+        "watch": 1,
     }.get(level, 0)
 
 
@@ -180,7 +600,10 @@ def is_better_match(candidate, current):
         return True
 
     if level_weight(candidate["level"]) != level_weight(current["level"]):
-        return level_weight(candidate["level"]) > level_weight(current["level"])
+        return (
+            level_weight(candidate["level"])
+            > level_weight(current["level"])
+        )
 
     if candidate["score"] != current["score"]:
         return candidate["score"] > current["score"]
@@ -200,17 +623,28 @@ def build_matches(infrastructure, events):
                 event["lat"],
                 event["lon"],
                 infra["lat"],
-                infra["lon"]
+                infra["lon"],
             )
 
             if distance > MAX_DISTANCE_KM:
                 continue
 
-            level = calculate_level(distance, infra.get("criticality", 5))
-            score = calculate_score(distance, infra.get("criticality", 5))
+            level = calculate_level(
+                distance,
+                infra.get("criticality", 5),
+            )
+
+            score = calculate_score(
+                distance,
+                infra.get("criticality", 5),
+            )
 
             match = {
-                "id": stable_id(event["id"], infra.get("id"), distance),
+                "id": stable_id(
+                    event["id"],
+                    infra.get("id"),
+                    distance,
+                ),
                 "level": level,
                 "score": score,
                 "distance_km": round(distance, 2),
@@ -223,7 +657,7 @@ def build_matches(infrastructure, events):
                     "url": event["url"],
                     "lat": event["lat"],
                     "lon": event["lon"],
-                    "source_file": event["_source_file"]
+                    "source_file": event["_source_file"],
                 },
                 "infrastructure": {
                     "id": infra.get("id"),
@@ -236,8 +670,8 @@ def build_matches(infrastructure, events):
                     "operator": infra.get("operator"),
                     "lat": infra.get("lat"),
                     "lon": infra.get("lon"),
-                    "source_file": infra.get("_source_file")
-                }
+                    "source_file": infra.get("_source_file"),
+                },
             }
 
             all_matches.append(match)
@@ -247,36 +681,50 @@ def build_matches(infrastructure, events):
 
             if event_infra_key not in best_by_event_infra:
                 best_by_event_infra[event_infra_key] = match
-            elif is_better_match(match, best_by_event_infra[event_infra_key]):
+            elif is_better_match(
+                match,
+                best_by_event_infra[event_infra_key],
+            ):
                 best_by_event_infra[event_infra_key] = match
 
             if infra_id not in best_by_infrastructure:
                 best_by_infrastructure[infra_id] = match
-            elif is_better_match(match, best_by_infrastructure[infra_id]):
+            elif is_better_match(
+                match,
+                best_by_infrastructure[infra_id],
+            ):
                 best_by_infrastructure[infra_id] = match
 
-    unique_event_infra_matches = list(best_by_event_infra.values())
-    top_by_infrastructure = list(best_by_infrastructure.values())
+    unique_event_infra_matches = list(
+        best_by_event_infra.values()
+    )
+    top_by_infrastructure = list(
+        best_by_infrastructure.values()
+    )
 
     unique_event_infra_matches.sort(
         key=lambda x: (
             level_weight(x["level"]),
             x["score"],
-            -x["distance_km"]
+            -x["distance_km"],
         ),
-        reverse=True
+        reverse=True,
     )
 
     top_by_infrastructure.sort(
         key=lambda x: (
             level_weight(x["level"]),
             x["score"],
-            -x["distance_km"]
+            -x["distance_km"],
         ),
-        reverse=True
+        reverse=True,
     )
 
-    return all_matches, unique_event_infra_matches, top_by_infrastructure
+    return (
+        all_matches,
+        unique_event_infra_matches,
+        top_by_infrastructure,
+    )
 
 
 def build():
@@ -285,7 +733,7 @@ def build():
 
     all_matches, unique_matches, top_by_infra = build_matches(
         infrastructure,
-        events
+        events,
     )
 
     report = {
@@ -300,26 +748,32 @@ def build():
             "deduplication": {
                 "events": "title + url + source + time",
                 "matches": "best event-infrastructure pair",
-                "top_matches": "one best match per infrastructure asset"
-            }
+                "top_matches": "one best match per infrastructure asset",
+            },
         },
         "top_matches": top_by_infra[:50],
         "matches": unique_matches,
-        "raw_matches": all_matches[:500]
+        "raw_matches": all_matches[:500],
     }
 
     OUTPUT.write_text(
-        json.dumps(report, ensure_ascii=False, indent=2),
-        encoding="utf-8"
+        json.dumps(
+            report,
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
     )
 
     print(f"Saved: {OUTPUT}")
     print(f"Infrastructure: {len(infrastructure)}")
-    print(f"Events: {len(events)}")
+    print(f"Security-relevant events: {len(events)}")
     print(f"Matches: {len(unique_matches)}")
-    print(f"Top infrastructure matches: {len(top_by_infra)}")
+    print(
+        f"Top infrastructure matches: "
+        f"{len(top_by_infra)}"
+    )
 
 
 if __name__ == "__main__":
     build()
-

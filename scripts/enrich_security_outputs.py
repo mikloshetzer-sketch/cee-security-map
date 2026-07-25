@@ -150,6 +150,76 @@ TARGET_COUNTRY_TERMS = {
     "Estonia": ["estonia", "estonian", "eesti", "tallinn", "tartu", "narva"],
 }
 
+
+ACTUAL_INCIDENT_REQUIRED_TERMS = {
+    "drone": [
+        "shot down", "shoot down", "downed", "intercepted",
+        "airspace violation", "airspace breach", "entered airspace",
+        "breached airspace", "fired at", "crashed", "wreckage",
+        "debris found", "ro-alert", "ro alert",
+        "lelőtt", "lelőttek", "légtérsértés", "berepült",
+        "roncs", "maradvány", "elfogta", "hatástalanította",
+        "doborât", "doborâtă", "doborârea", "interceptat",
+        "interceptată", "spațiul aerian", "spatiul aerian",
+        "resturi", "alertă", "alerta",
+    ],
+    "cyber": [
+        "cyberattack", "cyber attack", "ransomware attack",
+        "ransomware incident", "ddos attack", "data breach",
+        "systems compromised", "network compromised",
+        "service disruption", "website taken down",
+        "kibertámadás", "adatlopás", "feltörték", "leállt a rendszer",
+    ],
+    "military": [
+        "military helicopter crash", "military aircraft crash",
+        "fighter jet crash", "air force aircraft crash",
+        "military vehicle accident", "training accident",
+        "soldier killed", "soldier injured", "base attacked",
+        "military base attacked", "katonai helikopter lezuhant",
+        "katonai repülő lezuhant", "katonai baleset",
+        "katona meghalt", "katona megsérült",
+    ],
+    "explosion": [
+        "explosion", "blast", "detonation", "exploded",
+        "robbanás", "felrobbant", "explozie",
+    ],
+    "hazardous": [
+        "chemical leak", "gas leak", "industrial accident",
+        "toxic leak", "hazardous spill",
+        "vegyi szivárgás", "gázszivárgás", "ipari baleset",
+    ],
+    "infrastructure": [
+        "blackout", "power outage", "grid failure",
+        "airport closed", "airport closure", "port closed",
+        "port closure", "rail disruption", "emergency shutdown",
+        "áramszünet", "hálózati hiba", "repülőtér lezár",
+        "kikötő lezár", "vasúti fennakadás",
+    ],
+    "sabotage": [
+        "sabotage", "suspected sabotage", "szabotázs",
+    ],
+}
+
+NON_INCIDENT_TOPICS = [
+    "defence cooperation", "defense cooperation",
+    "defence manufacturing", "defense manufacturing",
+    "collaboration in defence", "collaboration in defense",
+    "military cooperation", "security cooperation",
+    "strategic partnership", "bilateral defence", "bilateral defense",
+    "procurement", "arms purchase", "defence procurement",
+    "defense procurement", "investment", "contract awarded",
+    "exercise announced", "exercise planned", "may deploy",
+    "deployment planned", "strategy", "doctrine", "autonomy",
+    "nato summit",
+    "cyber strategy", "cybercrime strategy", "cybersecurity strategy",
+    "cyber policy", "digital strategy", "cyber awareness",
+    "what cybercrime strategy lacks",
+    "formula 1", "formula one", "grand prix", "motorsport",
+    "archaeology", "archaeological", "roman military camp",
+    "lunar surface", "moon contract", "space contract",
+    "wildfire watch live",
+]
+
 SECURITY_INCIDENT_PATTERNS = {
     "drone": [
         "drone", "drón", "uav", "shahed", "dronă", "drona",
@@ -240,6 +310,52 @@ def detect_security_country(props, fallback_path=None):
     return hits[0] if len(hits) == 1 else None
 
 
+
+def security_evidence_text(props):
+    return " ".join([
+        str(props.get("title") or props.get("name") or ""),
+        str(props.get("summary") or props.get("description") or ""),
+        str(props.get("url") or props.get("search_url") or ""),
+    ])
+
+
+def has_actual_incident_signal(text, category):
+    category = str(category or "").lower()
+
+    family_map = {
+        "drone_airspace": "drone",
+        "cyber_incident": "cyber",
+        "military_accident": "military",
+        "kinetic_attack": "military",
+        "hazardous_incident": "hazardous",
+        "infrastructure_disruption": "infrastructure",
+        "major_fire": "infrastructure",
+    }
+
+    family = family_map.get(category, category)
+    return contains_any(
+        text,
+        ACTUAL_INCIDENT_REQUIRED_TERMS.get(family, []),
+    )
+
+
+def security_event_is_actual(props, country, inferred_category):
+    text = security_evidence_text(props)
+
+    if contains_any(text, NON_INCIDENT_TOPICS):
+        if not has_actual_incident_signal(text, inferred_category):
+            return False
+
+    if not has_actual_incident_signal(text, inferred_category):
+        return False
+
+    terms = TARGET_COUNTRY_TERMS.get(country, [])
+    if not any(contains_term(text, term) for term in terms):
+        return False
+
+    return True
+
+
 def infer_security_category(props):
     explicit = str(
         props.get("incident_type")
@@ -248,58 +364,67 @@ def infer_security_category(props):
         or ""
     ).lower()
 
-    text = " ".join([
-        str(props.get("title") or props.get("name") or ""),
-        str(props.get("summary") or props.get("description") or ""),
-        str(props.get("url") or props.get("search_url") or ""),
-    ])
+    text = security_evidence_text(props)
 
     if contains_any(text, NOISE_TERMS):
         return None
 
-    # Strong text evidence overrides an upstream "other" label.
     if contains_any(text, SECURITY_INCIDENT_PATTERNS["drone"]):
-        if contains_any(text, [
-            "shot down", "downed", "intercepted", "airspace",
-            "fired at", "lelőtt", "légtér", "doborât",
-            "spațiul aerian", "spatiul aerian"
-        ]):
+        if has_actual_incident_signal(text, "drone"):
             return "drone"
 
     if contains_any(text, SECURITY_INCIDENT_PATTERNS["cyber"]):
-        return "cyber"
+        if has_actual_incident_signal(text, "cyber"):
+            return "cyber"
 
     if contains_any(text, SECURITY_INCIDENT_PATTERNS["military"]):
-        return "military"
+        if has_actual_incident_signal(text, "military"):
+            return "military"
 
     if contains_any(text, SECURITY_INCIDENT_PATTERNS["explosion"]):
-        return "explosion"
+        if has_actual_incident_signal(text, "explosion"):
+            return "explosion"
 
     if contains_any(text, SECURITY_INCIDENT_PATTERNS["hazardous"]):
-        return "hazardous"
+        if has_actual_incident_signal(text, "hazardous"):
+            return "hazardous"
 
     if contains_any(text, SECURITY_INCIDENT_PATTERNS["infrastructure"]):
-        return "infrastructure_disruption"
+        if has_actual_incident_signal(text, "infrastructure"):
+            return "infrastructure_disruption"
 
     if explicit in {
-        "drone", "drone_airspace", "cyber", "cyber_incident",
+        "drone", "drone_airspace",
+        "cyber", "cyber_incident",
         "military", "military_accident", "kinetic_attack",
         "explosion", "hazardous", "hazardous_incident",
         "sabotage", "infrastructure_disruption", "major_fire"
     }:
-        return explicit
+        if has_actual_incident_signal(text, explicit):
+            return explicit
 
     return None
 
 
 def normalize_security_feature(feature, source_file):
     props = dict(feature.get("properties") or {})
-    country = detect_security_country(props, source_file)
+
+    country = detect_security_country(
+        props,
+        source_file,
+    )
     if country not in MONITORED_COUNTRIES:
         return None
 
     category = infer_security_category(props)
     if not category:
+        return None
+
+    if not security_event_is_actual(
+        props,
+        country,
+        category,
+    ):
         return None
 
     dt = parse_time(
@@ -312,74 +437,33 @@ def normalize_security_feature(feature, source_file):
 
     props["country"] = country
     props["category"] = category
-    props["incident_type"] = props.get("incident_type") or category
+    props["incident_type"] = (
+        props.get("incident_type")
+        or category
+    )
     props["time"] = dt.isoformat()
 
     if not props.get("severity"):
-        if category in {"drone", "military", "kinetic_attack", "explosion"}:
+        if category in {
+            "drone", "military",
+            "kinetic_attack", "explosion"
+        }:
             props["severity"] = "high"
-        elif category in {"cyber", "hazardous", "sabotage"}:
+        elif category in {
+            "cyber", "hazardous", "sabotage"
+        }:
             props["severity"] = "medium"
         else:
             props["severity"] = "info"
 
     props["_risk_source_file"] = source_file
+    props["_actual_incident_gate"] = True
 
     return {
         "type": "Feature",
         "geometry": feature.get("geometry"),
         "properties": props,
     }
-
-
-
-INCIDENT_CLUSTER_MAX_HOURS = 30.0
-INCIDENT_TEXT_SIMILARITY = 0.28
-
-INCIDENT_STOPWORDS = {
-    "the", "and", "for", "with", "from", "that", "this", "near",
-    "romania", "romanian", "românia", "român", "hungary", "hungarian",
-    "poland", "polish", "latvia", "latvian", "lithuania", "lithuanian",
-    "estonia", "estonian", "slovakia", "slovak", "czech", "czechia",
-    "republic", "drone", "drón", "dronă", "drona", "uav",
-    "today", "yesterday", "after", "over", "into", "space", "airspace",
-    "doua", "două", "noua", "nouă", "care", "este", "sunt", "din",
-    "pentru", "după", "dupa", "asupra", "româniei", "romaniei",
-}
-
-DRONE_SHOOTDOWN_TERMS = [
-    "shot down", "shoot down", "downed", "intercepted", "destroyed",
-    "lelőtt", "lelőttek", "hatástalanítás", "hatástalanított",
-    "doborât", "doborâtă", "doborârea", "doborata",
-]
-
-DRONE_AIRSPACE_TERMS = [
-    "airspace", "légtér", "spațiul aerian", "spatiul aerian",
-    "air space", "incursion", "incursiune", "violated", "violation",
-]
-
-CYBER_ATTACK_TERMS = [
-    "ransomware", "ddos", "data breach", "cyberattack", "cyber attack",
-    "kibertámadás",
-]
-
-
-def semantic_tokens(text):
-    words = re.findall(r"[\wÀ-ž-]{3,}", normalize_text(text), flags=re.UNICODE)
-    return {word for word in words if word not in INCIDENT_STOPWORDS}
-
-
-def semantic_similarity(text_a, text_b):
-    a = normalize_text(text_a)
-    b = normalize_text(text_b)
-    if not a or not b:
-        return 0.0
-
-    ta = semantic_tokens(a)
-    tb = semantic_tokens(b)
-    jaccard = len(ta & tb) / len(ta | tb) if ta and tb else 0.0
-    sequence = SequenceMatcher(None, a, b).ratio()
-    return max(jaccard, sequence * 0.60)
 
 
 def risk_event_text(feature):
@@ -440,17 +524,24 @@ def same_risk_incident(feature_a, feature_b):
     pa = feature_a.get("properties") or {}
     pb = feature_b.get("properties") or {}
 
-    if norm_country(pa.get("country")) != norm_country(pb.get("country")):
+    country_a = norm_country(pa.get("country"))
+    country_b = norm_country(pb.get("country"))
+
+    if country_a != country_b:
         return False
 
-    category_a = str(pa.get("incident_type") or pa.get("category") or "").lower()
-    category_b = str(pb.get("incident_type") or pb.get("category") or "").lower()
+    category_a = str(
+        pa.get("incident_type") or pa.get("category") or ""
+    ).lower()
+    category_b = str(
+        pb.get("incident_type") or pb.get("category") or ""
+    ).lower()
+
+    drone_family = {"drone", "drone_airspace"}
+    cyber_family = {"cyber", "cyber_incident"}
+    military_family = {"military", "military_accident"}
 
     if category_a != category_b:
-        drone_family = {"drone", "drone_airspace"}
-        cyber_family = {"cyber", "cyber_incident"}
-        military_family = {"military", "military_accident"}
-
         if not (
             {category_a, category_b}.issubset(drone_family)
             or {category_a, category_b}.issubset(cyber_family)
@@ -462,11 +553,13 @@ def same_risk_incident(feature_a, feature_b):
     tb = risk_event_time(feature_b)
 
     if ta and tb:
-        hours = abs((ta - tb).total_seconds()) / 3600.0
+        hours = abs(
+            (ta - tb).total_seconds()
+        ) / 3600.0
+
         if hours > INCIDENT_CLUSTER_MAX_HOURS:
             return False
 
-        # Different days are normally different incidents.
         if ta.date() != tb.date() and hours > 6:
             return False
 
@@ -474,21 +567,31 @@ def same_risk_incident(feature_a, feature_b):
     sig_b = risk_incident_signature(feature_b)
     shared = sig_a & sig_b
 
-    if {"drone", "shootdown"}.issubset(shared):
+    if (
+        category_a in drone_family
+        and category_b in drone_family
+        and ta
+        and tb
+        and ta.date() == tb.date()
+        and "shootdown" in shared
+    ):
         return True
 
     if {"drone", "airspace"}.issubset(shared):
         return semantic_similarity(
-            risk_event_text(feature_a), risk_event_text(feature_b)
-        ) >= 0.12
+            risk_event_text(feature_a),
+            risk_event_text(feature_b),
+        ) >= 0.10
 
     if "cyber" in shared:
         return semantic_similarity(
-            risk_event_text(feature_a), risk_event_text(feature_b)
-        ) >= 0.30
+            risk_event_text(feature_a),
+            risk_event_text(feature_b),
+        ) >= 0.34
 
     return semantic_similarity(
-        risk_event_text(feature_a), risk_event_text(feature_b)
+        risk_event_text(feature_a),
+        risk_event_text(feature_b),
     ) >= INCIDENT_TEXT_SIMILARITY
 
 
@@ -832,10 +935,6 @@ def build_proximity_stats(matches):
 
 
 def write_risk_incidents_debug(security_events):
-    """
-    Write an audit file showing exactly which clustered incidents are used
-    by the country-risk model. This file does not change risk calculations.
-    """
     countries = {
         country: []
         for country in MONITORED_COUNTRIES
@@ -844,7 +943,7 @@ def write_risk_incidents_debug(security_events):
     total_articles = 0
     total_sources = 0
 
-    for index, feature in enumerate(security_events, start=1):
+    for feature in security_events:
         props = feature.get("properties") or {}
         country = norm_country(props.get("country"))
 
@@ -873,8 +972,14 @@ def write_risk_incidents_debug(security_events):
             or ([props.get("source")] if props.get("source") else [])
         )
 
-        article_count = int(props.get("article_count") or max(1, len(titles)))
-        source_count = int(props.get("source_count") or max(1, len(sources)))
+        article_count = int(
+            props.get("article_count")
+            or max(1, len(titles))
+        )
+        source_count = int(
+            props.get("source_count")
+            or max(1, len(sources))
+        )
 
         total_articles += article_count
         total_sources += source_count
@@ -907,6 +1012,7 @@ def write_risk_incidents_debug(security_events):
             "urls": urls,
             "risk_score_input": local_event_score(props),
             "source_file": props.get("_risk_source_file"),
+            "actual_incident_gate": props.get("_actual_incident_gate", False),
         })
 
     country_summary = {}
@@ -917,7 +1023,6 @@ def write_risk_incidents_debug(security_events):
             key=lambda row: (
                 row.get("time") or "",
                 row.get("category") or "",
-                row.get("representative_title") or "",
             ),
             reverse=True,
         )
@@ -929,24 +1034,16 @@ def write_risk_incidents_debug(security_events):
 
         country_summary[country] = {
             "incident_count": len(incidents),
-            "article_count": sum(
-                row["article_count"]
-                for row in incidents
-            ),
-            "source_count": sum(
-                row["source_count"]
-                for row in incidents
-            ),
-            "category_counts": dict(
-                sorted(category_counts.items())
-            ),
+            "article_count": sum(row["article_count"] for row in incidents),
+            "source_count": sum(row["source_count"] for row in incidents),
+            "category_counts": dict(sorted(category_counts.items())),
         }
 
     payload = {
         "generated_utc": now_utc().isoformat(),
         "purpose": (
-            "Audit of incident-level records actually used by "
-            "cee_country_risk_v2. This file is diagnostic only."
+            "Audit of incident-level records used by cee_country_risk_v2 "
+            "after strict actual-incident filtering."
         ),
         "model": "cee_country_risk_v2",
         "window_days": 7,
@@ -1491,7 +1588,6 @@ def main():
     enrich_meta(security_events, prox_matches)
 
     print("Security outputs enriched.")
-    print(f"Risk incident audit saved: {RISK_INCIDENTS_DEBUG}")
     print(f"Validated security events 7d: {len(security_events)}")
     print(f"Validated infrastructure proximity matches 7d: {len(prox_matches)}")
 

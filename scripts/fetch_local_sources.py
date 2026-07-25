@@ -309,6 +309,40 @@ POSITIVE_KEYWORDS = {
     ]
 }
 
+OUTSIDE_AREA_TERMS = {
+    "Russia": [
+        "russia", "russian", "rusia", "rusiei", "oroszország", "orosz",
+        "rossiya", "moscow", "moskva", "st. petersburg", "saint petersburg",
+        "kaliningrad", "kursk", "belgorod", "bryansk"
+    ],
+    "Ukraine": [
+        "ukraine", "ukrainian", "ucraina", "ucrainei", "ukrajna", "ukrán",
+        "kyiv", "kiev", "odesa", "odessa", "kharkiv", "dnipro", "lviv"
+    ],
+    "Belarus": [
+        "belarus", "belarusian", "bieloruś", "białoruś",
+        "fehéroroszország", "fehérorosz", "minsk"
+    ],
+    "Moldova": [
+        "moldova", "moldovan", "moldávia", "moldáv",
+        "chișinău", "chisinau"
+    ]
+}
+
+ATTRIBUTION_PATTERNS = [
+    "bank of estonia",
+    "estonian defense intelligence",
+    "estonian defence intelligence",
+    "estonia expert",
+    "latvian intelligence",
+    "lithuanian intelligence",
+    "polish intelligence",
+    "romanian intelligence",
+    "slovak intelligence",
+    "czech intelligence",
+    "hungarian intelligence"
+]
+
 SECURITY_EVENT_TERMS = [
     "explosion", "blast", "robbanás", "výbuch", "wybuch", "sprogimas",
     "sprādziens", "plahvatus",
@@ -492,7 +526,7 @@ def classify_category(text):
     if any(k in t for k in ["cyberattack", "kibertámadás", "kybernetický útok", "cyberatak", "küberrünnak"]):
         return "cyber"
 
-    if any(k in t for k in ["drone", "drón", "uav", "dróntámadás"]):
+    if any(k in t for k in ["drone", "drón", "uav", "dróntámadás", "dronă", "drona", "dronei", "dronele", "dronelor"]):
         return "drone"
 
     if any(k in t for k in ["military", "katonai", "wojsk", "vojensk", "sõjaline", "karinis"]):
@@ -555,7 +589,7 @@ def is_security_relevant(text):
     if has_security_event_signal(text):
         return True
 
-    if any(k in t for k in ["drone", "drón", "uav"]):
+    if any(k in t for k in ["drone", "drón", "uav", "dronă", "drona", "dronei", "dronele", "dronelor"]):
         return any(normalize_text(k) in t for k in DRONE_SECURITY_CONTEXT)
 
     fire_terms = [
@@ -564,6 +598,74 @@ def is_security_relevant(text):
     ]
     if any(normalize_text(k) in t for k in fire_terms):
         return has_security_context(text)
+
+    return False
+
+
+def detect_outside_area(text):
+    hits = []
+
+    for outside_country, terms in OUTSIDE_AREA_TERMS.items():
+        for term in terms:
+            if contains_term(text, term):
+                hits.append(outside_country)
+                break
+
+    return list(dict.fromkeys(hits))
+
+
+def has_attribution_pattern(text):
+    t = normalize_text(text)
+    return any(normalize_text(pattern) in t for pattern in ATTRIBUTION_PATTERNS)
+
+
+def is_foreign_focus(title, summary, event_country):
+    """
+    Detect articles that mention a monitored-country institution/source but
+    are actually about an event outside the eight-country CEE map.
+
+    External countries are used only as an exclusion signal, never as
+    geocoding targets.
+    """
+    title_text = str(title or "")
+    summary_text = str(summary or "")
+    combined = f"{title_text} {summary_text}"
+
+    title_outside = detect_outside_area(title_text)
+    combined_outside = detect_outside_area(combined)
+
+    # If the headline itself explicitly focuses on Russia/Ukraine/etc. and
+    # there is no recognized target-country city in the headline, treat it
+    # as foreign unless the target country is clearly the local subject.
+    title_city, _, title_city_country = detect_city(
+        title_text,
+        preferred_country=event_country
+    )
+
+    title_target_country = detect_event_country(title_text, event_country)
+
+    # Typical source-attribution false positives:
+    # "Bank of Estonia expert: Russia's economy..."
+    # "Estonian Defense Intelligence: Strikes ... Russia"
+    if has_attribution_pattern(title_text) and title_outside:
+        return True
+
+    # External place/country in title, while target-country evidence exists
+    # only in the summary/source attribution.
+    if title_outside and not title_city:
+        if title_target_country is None:
+            return True
+
+    # If the article has explicit external geography but no concrete CEE city
+    # anywhere, require the target country to be clearly asserted in the title.
+    combined_city, _, combined_city_country = detect_city(
+        combined,
+        preferred_country=event_country
+    )
+
+    if combined_outside and not combined_city:
+        if title_target_country != event_country:
+            return True
 
     return False
 
@@ -605,6 +707,9 @@ def build_feature(entry, source_name, country):
     if event_country is None:
         return None, "no_target_country_evidence"
 
+    if is_foreign_focus(title_text, summary_text, event_country):
+        return None, "foreign_event_focus"
+
     reason = rejection_reason(combined, event_country)
 
     if reason:
@@ -641,9 +746,6 @@ def build_feature(entry, source_name, country):
 
     category = classify_category(combined)
     severity = estimate_severity(combined)
-
-    if has_force_include(combined):
-        severity = "high"
 
     return {
         "type": "Feature",
@@ -719,7 +821,7 @@ def fetch_feed(source_name, url, country):
 
 
 DEDUP_MAX_DISTANCE_KM = 140.0
-DEDUP_MAX_TIME_HOURS = 18.0
+DEDUP_MAX_TIME_HOURS = 30.0
 DEDUP_TEXT_SIMILARITY = 0.24
 
 DEDUP_STOPWORDS = {
@@ -732,7 +834,7 @@ DEDUP_STOPWORDS = {
 
 EVENT_SIGNATURE_TERMS = {
     "shahed", "f-16", "f16", "eurofighter", "missile", "rocket",
-    "drone", "drón", "uav", "lelőtt", "downed", "intercepted",
+    "drone", "drón", "uav", "dronă", "drona", "dronei", "dronele", "dronelor", "lelőtt", "downed", "intercepted",
     "doborât", "doborâtă", "airspace", "légtér",
     "explosion", "robbanás", "blast",
     "cyberattack", "kibertámadás",
@@ -823,6 +925,48 @@ def shared_signature_terms(text_a, text_b):
     }
 
 
+def incident_signature(text):
+    """
+    Map multilingual wording to a small set of incident concepts.
+    This helps merge the same event across Hungarian, Romanian and English.
+    """
+    t = normalize_text(text)
+    signatures = set()
+
+    drone_terms = [
+        "drone", "drón", "uav", "dronă", "drona",
+        "dronei", "dronele", "dronelor", "shahed"
+    ]
+    shootdown_terms = [
+        "shot down", "shoot down", "downed", "intercepted",
+        "lelőtt", "lelőttek", "hatástalanítás",
+        "doborât", "doborâtă", "doborârea", "interceptată"
+    ]
+    airspace_terms = [
+        "airspace", "légtér", "spațiul aerian", "spatiul aerian"
+    ]
+
+    if any(normalize_text(k) in t for k in drone_terms):
+        signatures.add("drone")
+
+    if any(normalize_text(k) in t for k in shootdown_terms):
+        signatures.add("shootdown")
+
+    if any(normalize_text(k) in t for k in airspace_terms):
+        signatures.add("airspace")
+
+    if "shahed" in t:
+        signatures.add("shahed")
+
+    if any(k in t for k in ["f-16", "f16"]):
+        signatures.add("f16")
+
+    if "nato" in t:
+        signatures.add("nato")
+
+    return signatures
+
+
 def feature_text(feature):
     p = feature.get("properties", {})
     return f"{p.get('title', '')} {p.get('summary', '')}"
@@ -888,6 +1032,24 @@ def same_event(feature_a, feature_b):
     }
 
     if signatures & strong_signatures:
+        if distance is None or distance <= DEDUP_MAX_DISTANCE_KM:
+            return True
+
+    semantic_a = incident_signature(text_a)
+    semantic_b = incident_signature(text_b)
+    semantic_shared = semantic_a & semantic_b
+
+    # Multilingual reporting of the same drone shootdown often has low lexical
+    # similarity. A shared drone+shootdown concept within the same country,
+    # geography and news cycle is strong enough to merge.
+    if {"drone", "shootdown"}.issubset(semantic_shared):
+        if distance is None or distance <= DEDUP_MAX_DISTANCE_KM:
+            return True
+
+    # Shahed/F-16/NATO context strengthens the same incident cluster.
+    if "drone" in semantic_shared and (
+        semantic_shared & {"shahed", "f16", "nato", "airspace"}
+    ):
         if distance is None or distance <= DEDUP_MAX_DISTANCE_KM:
             return True
 

@@ -476,6 +476,72 @@ INCIDENT_CLUSTER_MAX_HOURS = 30.0
 INCIDENT_TEXT_SIMILARITY = 0.28
 
 
+
+INCIDENT_STOPWORDS = {
+    "the", "and", "for", "with", "from", "that", "this", "near",
+    "romania", "romanian", "românia", "român", "hungary", "hungarian",
+    "poland", "polish", "latvia", "latvian", "lithuania", "lithuanian",
+    "estonia", "estonian", "slovakia", "slovak", "czech", "czechia",
+    "republic", "drone", "drón", "dronă", "drona", "uav",
+    "today", "yesterday", "after", "over", "into", "space", "airspace",
+    "doua", "două", "noua", "nouă", "care", "este", "sunt", "din",
+    "pentru", "după", "dupa", "asupra", "româniei", "romaniei",
+}
+
+DRONE_SHOOTDOWN_TERMS = [
+    "shot down", "shoot down", "downed", "intercepted", "destroyed",
+    "lelőtt", "lelőttek", "hatástalanítás", "hatástalanított",
+    "doborât", "doborâtă", "doborârea", "doborata",
+]
+
+DRONE_AIRSPACE_TERMS = [
+    "airspace", "légtér", "spațiul aerian", "spatiul aerian",
+    "air space", "incursion", "incursiune", "violated", "violation",
+]
+
+CYBER_ATTACK_TERMS = [
+    "ransomware", "ddos", "data breach", "cyberattack", "cyber attack",
+    "kibertámadás",
+]
+
+
+def semantic_tokens(text):
+    words = re.findall(
+        r"[\wÀ-ž-]{3,}",
+        normalize_text(text),
+        flags=re.UNICODE,
+    )
+    return {
+        word for word in words
+        if word not in INCIDENT_STOPWORDS
+    }
+
+
+def semantic_similarity(text_a, text_b):
+    a = normalize_text(text_a)
+    b = normalize_text(text_b)
+
+    if not a or not b:
+        return 0.0
+
+    ta = semantic_tokens(a)
+    tb = semantic_tokens(b)
+
+    if ta and tb:
+        jaccard = len(ta & tb) / len(ta | tb)
+    else:
+        jaccard = 0.0
+
+    # Simple sequence similarity without external dependencies.
+    # Use token overlap as the primary signal and substring containment
+    # as a secondary signal.
+    containment = 0.0
+    if a in b or b in a:
+        containment = 0.8
+
+    return max(jaccard, containment)
+
+
 def risk_event_text(feature):
     props = feature.get("properties") or {}
     return " ".join([
@@ -1604,4 +1670,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -1,226 +1,120 @@
 {
-  "generated_utc": "2026-07-25T18:29:32.554068+00:00",
-  "purpose": "Audit of incident-level records actually used by cee_country_risk_v2. This file is diagnostic only.",
+  "generated_utc": "2026-07-25T19:33:32.007273+00:00",
+  "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 95,
-    "article_count": 169,
-    "source_count": 127
+    "incident_count": 22,
+    "article_count": 58,
+    "source_count": 26
   },
   "country_summary": {
     "Czech Republic": {
-      "incident_count": 5,
-      "article_count": 7,
-      "source_count": 7,
-      "category_counts": {
-        "drone": 1,
-        "military": 4
-      }
-    },
-    "Hungary": {
       "incident_count": 1,
       "article_count": 1,
       "source_count": 1,
       "category_counts": {
-        "cyber": 1
-      }
-    },
-    "Romania": {
-      "incident_count": 63,
-      "article_count": 132,
-      "source_count": 89,
-      "category_counts": {
-        "cyber": 3,
-        "drone": 33,
-        "explosion": 7,
-        "military": 20
-      }
-    },
-    "Slovakia": {
-      "incident_count": 3,
-      "article_count": 3,
-      "source_count": 4,
-      "category_counts": {
-        "cyber": 1,
-        "explosion": 1,
         "military": 1
       }
     },
-    "Poland": {
-      "incident_count": 10,
-      "article_count": 12,
-      "source_count": 12,
+    "Hungary": {
+      "incident_count": 0,
+      "article_count": 0,
+      "source_count": 0,
+      "category_counts": {}
+    },
+    "Romania": {
+      "incident_count": 20,
+      "article_count": 56,
+      "source_count": 24,
       "category_counts": {
         "cyber": 1,
-        "drone": 1,
-        "military": 8
+        "drone": 12,
+        "explosion": 7
       }
+    },
+    "Slovakia": {
+      "incident_count": 1,
+      "article_count": 1,
+      "source_count": 1,
+      "category_counts": {
+        "explosion": 1
+      }
+    },
+    "Poland": {
+      "incident_count": 0,
+      "article_count": 0,
+      "source_count": 0,
+      "category_counts": {}
     },
     "Lithuania": {
-      "incident_count": 5,
-      "article_count": 5,
-      "source_count": 5,
-      "category_counts": {
-        "cyber": 1,
-        "military": 4
-      }
+      "incident_count": 0,
+      "article_count": 0,
+      "source_count": 0,
+      "category_counts": {}
     },
     "Latvia": {
-      "incident_count": 5,
-      "article_count": 6,
-      "source_count": 6,
-      "category_counts": {
-        "military": 5
-      }
+      "incident_count": 0,
+      "article_count": 0,
+      "source_count": 0,
+      "category_counts": {}
     },
     "Estonia": {
-      "incident_count": 3,
-      "article_count": 3,
-      "source_count": 3,
-      "category_counts": {
-        "drone": 1,
-        "military": 2
-      }
+      "incident_count": 0,
+      "article_count": 0,
+      "source_count": 0,
+      "category_counts": {}
     }
   },
   "countries": {
     "Czech Republic": [
       {
-        "cluster_id": "aa9232583e04e69925ce",
-        "date": "2026-07-25",
-        "time": "2026-07-25T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Czech Republic",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.techtimes.com/articles/321562/20260725/esa-awards-first-ever-lunar-surface-contract-drill-south-pole-ice.htm"
-        ],
-        "titles": [
-          "Czech Republic"
-        ],
-        "urls": [
-          "https://www.techtimes.com/articles/321562/20260725/esa-awards-first-ever-lunar-surface-contract-drill-south-pole-ice.htm"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "69c83409770aa7e3a84d",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Czech Republic",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.globalsecurity.org/military/library/news/2026/07/mil-260723-nato-nspa01.htm"
-        ],
-        "titles": [
-          "Czech Republic"
-        ],
-        "urls": [
-          "https://www.globalsecurity.org/military/library/news/2026/07/mil-260723-nato-nspa01.htm"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "7b067d5ebb18d84ec1ce",
+        "cluster_id": "e5f541d7afafefd293a2",
         "date": "2026-07-23",
-        "time": "2026-07-23T00:00:00+00:00",
+        "time": "2026-07-23T12:15:00+00:00",
         "category": "military",
         "severity": "high",
-        "representative_title": "Prague, Praha, Hlavníesto, Czech Republic",
-        "article_count": 2,
-        "source_count": 2,
+        "representative_title": "At least one dead as military helicopter crashes near Czech Republic town | World | News",
+        "article_count": 1,
+        "source_count": 1,
         "sources": [
-          "https://www.winnipegfreepress.com/world/2026/07/23/a-czech-military-helicopter-crashes-at-an-air-force-base-killing-1-soldier-on-board",
           "GDELT_DOC"
         ],
         "titles": [
-          "Prague, Praha, Hlavníesto, Czech Republic",
           "At least one dead as military helicopter crashes near Czech Republic town | World | News"
         ],
         "urls": [
-          "https://www.winnipegfreepress.com/world/2026/07/23/a-czech-military-helicopter-crashes-at-an-air-force-base-killing-1-soldier-on-board",
           "https://www.express.co.uk/news/world/2232243/Czech-Republic-military-helicopter-crash"
         ],
         "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
+      }
+    ],
+    "Hungary": [],
+    "Romania": [
       {
-        "cluster_id": "6b71aa758ad24a06cf6c",
-        "date": "2026-07-22",
-        "time": "2026-07-22T00:00:00+00:00",
+        "cluster_id": "f0478807f4a50602a2c8",
+        "date": "2026-07-25",
+        "time": "2026-07-25T17:15:00+00:00",
         "category": "drone",
         "severity": "high",
-        "representative_title": "Czech Republic",
+        "representative_title": "Căutările efectuate în Delta Dunării pentru identificarea resturilor de dronă și de rachetă interceptoare au fost întrerupte",
         "article_count": 1,
         "source_count": 1,
         "sources": [
-          "https://www.dailymail.com/news/article-15996043/Ukraine-secret-weapon-pink-Flamingo-missiles-engines-landfill-sites-Russia.html"
+          "GDELT_DOC"
         ],
         "titles": [
-          "Czech Republic"
+          "Căutările efectuate în Delta Dunării pentru identificarea resturilor de dronă și de rachetă interceptoare au fost întrerupte"
         ],
         "urls": [
-          "https://www.dailymail.com/news/article-15996043/Ukraine-secret-weapon-pink-Flamingo-missiles-engines-landfill-sites-Russia.html"
+          "https://www.ziuaconstanta.ro/stiri/actualitate/cautarile-efectuate-in-delta-dunarii-pentru-identificarea-resturilor-de-drona-si-de-racheta-interceptoare-au-fost-intrerupte-947273.html"
         ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
+        "risk_score_input": 3.125,
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
-      {
-        "cluster_id": "aae62b072b32d4086312",
-        "date": "2026-07-21",
-        "time": "2026-07-21T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Prague, Praha, Hlavníesto, Czech Republic",
-        "article_count": 2,
-        "source_count": 2,
-        "sources": [
-          "http://www.bignewsnetwork.com/news/279200926/nato-states-pm-calls-pro-ukraine-coalitions-all-talk",
-          "http://www.europesun.com/news/279201521/nato-member-dismisses-all-talk-pro-ukraine-coalitions"
-        ],
-        "titles": [
-          "Prague, Praha, Hlavníesto, Czech Republic"
-        ],
-        "urls": [
-          "http://www.bignewsnetwork.com/news/279200926/nato-states-pm-calls-pro-ukraine-coalitions-all-talk",
-          "http://www.europesun.com/news/279201521/nato-member-dismisses-all-talk-pro-ukraine-coalitions"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
-      }
-    ],
-    "Hungary": [
-      {
-        "cluster_id": "137e3581b5aacd4e9bbf",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "representative_title": "Budapest, Budapest, Hungary",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.thenational.com.pg/what-png-cybercrime-strategy-lacks/"
-        ],
-        "titles": [
-          "Budapest, Budapest, Hungary"
-        ],
-        "urls": [
-          "https://www.thenational.com.pg/what-png-cybercrime-strategy-lacks/"
-        ],
-        "risk_score_input": 2.1,
-        "source_file": "gdelt_linked.geojson"
-      }
-    ],
-    "Romania": [
       {
         "cluster_id": "e15aa25018c5ed4abe57",
         "date": "2026-07-25",
@@ -240,95 +134,8 @@
           "https://ziare.com/drona/mapn-cautare-drona-tulcea-delta-dunarii-2026234"
         ],
         "risk_score_input": 3.125,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "142e6f83648e671479f4",
-        "date": "2026-07-25",
-        "time": "2026-07-25T10:45:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Romania , abbattuto un secondo drone nel suo spazio aereo in meno di 24 ore",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Romania , abbattuto un secondo drone nel suo spazio aereo in meno di 24 ore"
-        ],
-        "urls": [
-          "https://it.euronews.com/my-europe/2026/07/25/romania-abbattuto-un-secondo-drone-nello-spazio-aereo-in-meno-di-24-ore"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "fa6dd3a7bf7e1f6566fe",
-        "date": "2026-07-25",
-        "time": "2026-07-25T10:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Russian attack kills 3 in Ukraine Sumy region as Romania downs second drone in 2 days | International",
-        "article_count": 2,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Russian attack kills 3 in Ukraine Sumy region as Romania downs second drone in 2 days | International",
-          "Russian attack kills 3 in Ukraine Sumy region as Romania downs second drone in 2 days"
-        ],
-        "urls": [
-          "https://www.winknews.com/news/international/russian-attack-kills-3-in-ukraine-s-sumy-region-as-romania-downs-second-drone-in/article_d4f94d6b-1988-5801-820a-4fef2dc8eed9.html",
-          "https://www.dailyexcelsior.com/russian-attack-kills-3-in-ukraines-sumy-region-as-romania-downs-second-drone-in-2-days/"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "8df2ba847fe39b0aad7d",
-        "date": "2026-07-25",
-        "time": "2026-07-25T09:30:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Romania shoots down second drone in two days",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Romania shoots down second drone in two days"
-        ],
-        "urls": [
-          "https://www.freemalaysiatoday.com/category/world/2026/07/25/romania-shoots-down-second-drone-in-two-days"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "78b632770170943c65d1",
-        "date": "2026-07-25",
-        "time": "2026-07-25T08:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Romania og Nato har skutt ned droner : Én skal ha vært russisk",
-        "article_count": 2,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Romania og Nato har skutt ned droner : Én skal ha vært russisk",
-          "Romania , Drone | Romania har skutt ned ny drone"
-        ],
-        "urls": [
-          "https://www.aftenposten.no/norge/i/d4G7Xo/romania-og-nato-har-skutt-ned-droner-en-skal-ha-vaert-russisk",
-          "https://www.nettavisen.no/nyheter/romania-har-skutt-ned-ny-drone/s/5-95-3165149"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "9b32ac138f530df5f52a",
@@ -338,20 +145,20 @@
         "severity": "high",
         "representative_title": "FOTO / Ziua în care România a doborât prima dronă . Filmul evenimentelor de la Padina",
         "article_count": 26,
-        "source_count": 3,
+        "source_count": 2,
         "sources": [
           "GDELT_DOC",
-          "Digi24",
-          "HVG"
+          "Digi24"
         ],
         "titles": [
           "FOTO / Ziua în care România a doborât prima dronă . Filmul evenimentelor de la Padina",
           "Mesagerul . ro | Încă o dronă a fost doborâtă în România , lângă Sfântu Gheorghe , de același pilot care a anihilat și drona de ieri",
+          "O nouă dronă a fost doborâtă în spațiul aerian românesc",
           "Mesagerul . ro | O nouă alertă la graniță : e deja a doua dronă doborâtă în doar 24 de ore de piloții români , la o zi după incidentul din Buzău de ieri dimineață",
           "„Cât costă racheta”. Ce spune Statul Major al Apărării despre prețul rachetelor folosite împotriva dronelor deasupra României",
-          "Két nap alatt a második légtérsértő drónt szedte le a román légvédelem",
           "Încă o dronă doborâtă pe teritoriul României , anunță Nicușor Dan . Este a doua în mai puțin de 24 de ore",
           "Drona doborâtă în Deltă este reușita aceluiași pilot care a distrus și drona de la Buzău . Armata dă detalii despre operațiune",
+          "O nouă dronă doborâtă în spațiul aerian al României",
           "Încă o dronă rusească doborâtă pe teritoriul României , anunță Nicușor Dan . A doua în mai puțin de 24 de ore",
           "Radu Miruță : O nouă dronă intrată ilegal în spațiul aerian al României a fost doborâtă de un F - 16 românesc",
           "A doua dronă doborâtă în spațiul aerian românesc în două zile consecutive . Anunțul președintelui Nicușor Dan",
@@ -360,8 +167,6 @@
           "Resturi din drona doborâtă lângă Padina au fost identificate în judeţele Buzău şi Brăila",
           "Nicuşor Dan : O nouă dronă - doborâtă la 10 kilometri vest de Sfântu Gheorghe - Radio Iaşi – Cel mai ascultat radio regional",
           "Cât de puternice sunt avioanele F - 16 Fighting Falcon cu care România a doborât două drone rusești",
-          "Radu Miruță explică cum s - a desfășurat acțiunea de doborâre a dronei de la Sfântu Gheorghe . A durat 11 minute",
-          "Europarlamentarul Virgil Popescu acuză AUR pe subiectul dronelor : „ Nici măcar un cuvânt despre cine a lansat drona , Simioane . Sunt rusești . Trimise de prietenul tău , Putin",
           "Oana Țoiu , după doborârea celor două drone , în 48 de ore : „ Granițele României nu sunt negociabile",
           "Două drone doborâte în mai puțin de 24 de ore, „un timp record”. Radu Miruță explică de ce condițiile au fost diferite azi față de ieri",
           "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
@@ -370,17 +175,19 @@
           "Oana Țoiu , după ce armata noastră a doborât două drone în 24 de ore : Granițele României nu sunt negociabile . Despre primul aparat de zbor pus la pământ : Același tip pe care Rusia îl lansează , noapte de noapte , împotriva Ucrainei",
           "Realitatea . NET | Radu Miruță , după doborârea celor două drone : „ Granițele , spațiul aerian și suveranitatea României nu sunt negociabile",
           "MApN : Drona doborâtă sâmbătă , neutralizată în condiții de siguranță într - o zonă nepopulată",
+          "Why did Romania shoot down another drone after an airspace violation ?",
           "Ministrul Apărării după doborârea dronelor - „ România a demonstrat un lucru simplu . Își apără teritoriul și reacționează ferm"
         ],
         "urls": [
           "https://opiniabuzau.ro/foto-ziua-in-care-romania-a-doborat-prima-drona-filmul-evenimentelor-de-la-padina/",
           "https://www.mesagerul.ro/cluj/inca-o-drona-a-fost-doborata-in-romania-langa-sfantu-gheorghe-de-acelasi-pilot-care-a-anihilat-si-drona-de-ieri__59137/",
+          "https://www.viata-libera.ro/prima-pagina/262959-o-noua-drona-a-fost-doborata-in-spatiul-aerian-romanesc",
           "https://www.mesagerul.ro/cluj/o-noua-alerta-la-granita-e-deja-a-doua-drona-doborata-in-doar-24-de-ore-de-pilotii-romani-la-o-zi-dupa-incidentul-din-buzau-de-ieri-dimineata__59138/",
           "https://www.digi24.ro/stiri/actualitate/cat-costa-racheta-ce-spune-statul-major-al-apararii-despre-pretul-rachetelor-folosite-impotriva-dronelor-deasupra-romaniei-3878143",
           "https://www.digi24.ro/stiri/actualitate/social/parchetul-noi-precizari-dupa-incidentul-cu-drona-shahed-doborata-la-padina-ce-urmeaza-in-ancheta-3878009",
-          "https://hvg.hu/vilag/20260725_romania-dron-berepules-legvedelem",
           "https://news.yam.md/ro/story/47059681",
           "https://ziare.com/drona-doborata-delta/sfantu-gheorghe-avion-f-16-2026176",
+          "https://news.yam.md/ro/story/47064990",
           "https://news.yam.md/ro/story/47070267",
           "https://www.ziuaconstanta.ro/stiri/actualitate/radu-miruta-o-noua-drona-intrata-ilegal-in-spatiul-aerian-al-romaniei-a-fost-doborata-de-un-f-16-romanesc-947225.html",
           "https://www.digi24.ro/stiri/actualitate/a-doua-drona-doborata-in-spatiul-aerian-romanesc-anuntul-presedintelui-nicusor-dan-3877929",
@@ -389,8 +196,6 @@
           "https://www.radioiasi.ro/stiri/national/resturi-din-drona-doborata-langa-padina-au-fost-identificate-in-judetele-buzau-si-braila/",
           "https://www.radioiasi.ro/stiri/prim-plan/nicusor-dan-o-noua-drona-doborata-la-10-kilometri-vest-de-sfantu-gheorghe/",
           "https://ziare.com/tehnologie/avioane-f-16-drone-rusesti-2026186",
-          "https://ziare.com/drona-doborata-delta/drona-doborata-11-minute-sfantu-gheorghe-2026182",
-          "https://ziare.com/drona-doborata-delta/virgil-popescu-acuza-aur-nu-acuza-rusia-atac-drone-romania-2026193",
           "https://ampress.ro/oana-toiu-dupa-doborarea-celor-drone-in-48-de-ore-granitele-romaniei-nu-sunt-negociabile/",
           "https://www.digi24.ro/stiri/actualitate/radu-miruta-faptul-ca-doua-drone-au-fost-doborate-la-un-interval-de-15-20-de-ore-evident-nu-mai-e-intamplare-nici-pentru-gurile-rele-3878229",
           "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
@@ -399,175 +204,12 @@
           "https://www.romaniatv.net/oana-toiu-dupa-ce-romania-a-doborat-doua-drone-in-24-de-ore-granitele-romaniei-nu-sunt-negociabile-despre-primul-aparat-de-zbor-pus-la-pamant-acelasi-tip-pe-care-rusia-i_9717265.html",
           "https://www.realitatea.net/stiri/politica/radu-miruta-dupa-doborarea-celor-doua-drone-granitele-spatiul-aerian-si-suveranitatea-romaniei-nu-sunt-negociabile-zvhqnv",
           "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+          "https://news.az/news/why-did-romania-shoot-down-another-drone-after-an-airspace-violation",
           "https://www.ziuaconstanta.ro/stiri/actualitate/ministrul-apararii-dupa-doborarea-dronelor-romania-a-demonstrat-un-lucru-simplu-isi-apara-teritoriul-si-reactioneaza-ferm-947267.html"
         ],
         "risk_score_input": 2.75,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "ff2691f39a7f04a22884",
-        "date": "2026-07-25",
-        "time": "2026-07-25T04:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Huge scope to strengthen collaboration in defence manufacturing between India and Romania : MEA",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Huge scope to strengthen collaboration in defence manufacturing between India and Romania : MEA"
-        ],
-        "urls": [
-          "https://idrw.org/huge-scope-to-strengthen-collaboration-in-defence-manufacturing-between-india-and-romania-mea/"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "65ef2783074172ef3a07",
-        "date": "2026-07-25",
-        "time": "2026-07-25T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.independent.co.uk/news/world/europe/france-wildfires-military-plane-watch-live-b3021498.html"
-        ],
-        "titles": [
-          "Romania"
-        ],
-        "urls": [
-          "https://www.independent.co.uk/news/world/europe/france-wildfires-military-plane-watch-live-b3021498.html"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "fec94509a799c1385761",
-        "date": "2026-07-25",
-        "time": "2026-07-25T00:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Sfantu Gheorghe, Covasna, Romania",
-        "article_count": 7,
-        "source_count": 5,
-        "sources": [
-          "https://www.chronicle.lu/category/international-news/62590-romania-says-it-shot-down-2nd-drone-breaching-its-airspace",
-          "https://english.aawsat.com/world/5299862-romania-says-it-shot-down-second-drone-breaching-its-airspace",
-          "https://news.az/news/romania-shoots-down-second-drone-after-airspace-violation-in-two-days",
-          "https://www.nbcnews.com/world/europe/romania-shot-second-drone-breaching-airspace-rcna589187",
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Sfantu Gheorghe, Covasna, Romania",
-          "Romania",
-          "Bucharest, Bucuresti, Romania",
-          "O nouă dronă a fost doborâtă în spațiul aerian românesc",
-          "O nouă dronă doborâtă în spațiul aerian al României",
-          "Why did Romania shoot down another drone after an airspace violation ?"
-        ],
-        "urls": [
-          "https://www.chronicle.lu/category/international-news/62590-romania-says-it-shot-down-2nd-drone-breaching-its-airspace",
-          "https://english.aawsat.com/world/5299862-romania-says-it-shot-down-second-drone-breaching-its-airspace",
-          "https://news.az/news/romania-shoots-down-second-drone-after-airspace-violation-in-two-days",
-          "https://www.nbcnews.com/world/europe/romania-shot-second-drone-breaching-airspace-rcna589187",
-          "https://www.viata-libera.ro/prima-pagina/262959-o-noua-drona-a-fost-doborata-in-spatiul-aerian-romanesc",
-          "https://news.yam.md/ro/story/47064990",
-          "https://news.az/news/why-did-romania-shoot-down-another-drone-after-an-airspace-violation"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "03a3474315a99445b807",
-        "date": "2026-07-25",
-        "time": "2026-07-25T00:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Padina, Romania (general), Romania",
-        "article_count": 2,
-        "source_count": 2,
-        "sources": [
-          "https://www.wral.com/news/ap/6c4df-russian-attack-kills-3-in-ukraine-s-sumy-region-as-romania-downs-second-drone-in-2-days/",
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Padina, Romania (general), Romania",
-          "Romania Downs Second Drone in Two Days"
-        ],
-        "urls": [
-          "https://www.wral.com/news/ap/6c4df-russian-attack-kills-3-in-ukraine-s-sumy-region-as-romania-downs-second-drone-in-2-days/",
-          "http://www.bgnes.com/politics/romania-downs-second-drone-in-two-days"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "c76075c9147cce734606",
-        "date": "2026-07-24",
-        "time": "2026-07-24T21:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Drona de la Buzău , ratată de italieni . O amenințare de tip Shahed , Geran 2 . Ultimele informații de la MApN",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Drona de la Buzău , ratată de italieni . O amenințare de tip Shahed , Geran 2 . Ultimele informații de la MApN"
-        ],
-        "urls": [
-          "https://www.dcnews.ro/drona-de-la-buzau-ratata-de-italieni-o-amenintare-de-tip-shahed-geran-2-ultimele-informatii-de-la-mapn_1071629.html"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "d8be0bb58686f038e82d",
-        "date": "2026-07-24",
-        "time": "2026-07-24T17:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Romania : MaPN , following Friday drone incident : Romania security (…)",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Romania : MaPN , following Friday drone incident : Romania security (…)"
-        ],
-        "urls": [
-          "https://www.romaniapress.com/news=195256"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "d94f7d4180fd28c6bed0",
-        "date": "2026-07-24",
-        "time": "2026-07-24T17:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Radio Station WHMI 93 . 5 FM Livingston County Michigan News , Weather , Traffic , Sports , School Updates , and the Best Classic Hit",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Radio Station WHMI 93 . 5 FM Livingston County Michigan News , Weather , Traffic , Sports , School Updates , and the Best Classic Hit"
-        ],
-        "urls": [
-          "https://www.whmi.com/news/fox/romanian-f-16-shoots-down-drone-after-airspace-breach-marking-first-nato-ally"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "4a118aca5bf50d78bf11",
@@ -600,7 +242,8 @@
           "https://www.ziarulnational.md/bogdan-chirieac-avertisment-dur-dupa-drona-doborata-la-buzau-romania-tot-mai-aproape-de-un-conflict-major/"
         ],
         "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "f22144c61bba18ddfa20",
@@ -621,49 +264,8 @@
           "https://www.dcnews.ro/dronele-patrund-tot-mai-adanc-in-spatiul-aerian-al-romaniei-tudor-curtifan-e-un-nou-prag-al-escaladarii-insa-am-depasit-blocajul-psihologic_1071551.html"
         ],
         "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "bad6abbdd627e7816f48",
-        "date": "2026-07-24",
-        "time": "2026-07-24T16:30:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Huge scope to strengthen collaboration in defence manufacturing between India and Romania : MEA",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Huge scope to strengthen collaboration in defence manufacturing between India and Romania : MEA"
-        ],
-        "urls": [
-          "https://www.prokerala.com/news/articles/a1792067.html"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "b3f0f099ca4a24c5e3b8",
-        "date": "2026-07-24",
-        "time": "2026-07-24T07:45:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Drone rusești , detectate în apropiere de granița României . Forțele Aeriene au ridicat în aer un elicopter Puma",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Drone rusești , detectate în apropiere de granița României . Forțele Aeriene au ridicat în aer un elicopter Puma"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/actualitate/drone-rusesti-detectate-in-apropiere-de-granita-romaniei-fortele-aeriene-au-ridicat-in-aer-un-elicopter-puma-3876541"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "d3718c0202e3bc53c27d",
@@ -684,7 +286,8 @@
           "https://protv.md/international/atacuri-rusesti-la-granita-romaniei-un-roi-de-drone-a-fost-detectat-in-apropiere-de-tulcea-iar-autoritatile-au-emis-mesaj-ro-alert---2763619.html"
         ],
         "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "9053c300e17201350eb4",
@@ -705,7 +308,8 @@
           "https://www.europafm.ro/alerta-aeriana-granita-romania-drone-ucraina-tulcea/"
         ],
         "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "4c858daf8db85cc98fe7",
@@ -728,115 +332,30 @@
           "https://www.monitoruldegalati.ro/eveniment/atacuri-cu-drone-la-granita-romaniei-mesaj-ro-alert-in-tulcea-si-elicopter-iar-330-puma-ridicat-de-urgenta-in-cursul-noptii.html"
         ],
         "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
-        "cluster_id": "4793dc7c2b039b37576f",
+        "cluster_id": "17309c5b4ed0748a2e5c",
         "date": "2026-07-24",
         "time": "2026-07-24T05:15:00+00:00",
         "category": "drone",
         "severity": "high",
-        "representative_title": "Drone detectate în apropierea graniței României , după un nou atac asupra Ucrainei . Armata a ridicat de la sol un elicopter",
+        "representative_title": "O nouă alertă în Marea Neagră . Navă avariată lângă Sfântu Gheorghe",
         "article_count": 1,
         "source_count": 1,
         "sources": [
           "GDELT_DOC"
         ],
         "titles": [
-          "Drone detectate în apropierea graniței României , după un nou atac asupra Ucrainei . Armata a ridicat de la sol un elicopter"
+          "O nouă alertă în Marea Neagră . Navă avariată lângă Sfântu Gheorghe"
         ],
         "urls": [
-          "https://stirileprotv.ro/stiri/actualitate/drone-detectate-in-apropierea-granitei-romaniei-dupa-un-nou-atac-asupra-ucrainei-armata-a-ridicat-de-la-sol-un-elicopter.html"
+          "https://hotnews.ro/nava-comerciala-marea-neagra-christiana-b-sfantu-gheorghe-drona-marine-mina-2308161"
         ],
         "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "58be03aaa81854e6abe6",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Tulcea, Tulcea, Romania",
-        "article_count": 2,
-        "source_count": 2,
-        "sources": [
-          "https://www.express.co.uk/news/world/2232523/romania-nato-drone-shot-down",
-          "https://www.breitbart.com/europe/2026/07/24/nato-shoots-down-russian-drone-over-romania-for-first-time/"
-        ],
-        "titles": [
-          "Tulcea, Tulcea, Romania",
-          "Buzau, Buzau, Romania"
-        ],
-        "urls": [
-          "https://www.express.co.uk/news/world/2232523/romania-nato-drone-shot-down",
-          "https://www.breitbart.com/europe/2026/07/24/nato-shoots-down-russian-drone-over-romania-for-first-time/"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "296e3af360e1125c3d26",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://redstate.com/wardclark/2026/07/24/first-nato-shootdown-romanian-f-16-downs-rogue-drone-n2204729"
-        ],
-        "titles": [
-          "Romania"
-        ],
-        "urls": [
-          "https://redstate.com/wardclark/2026/07/24/first-nato-shootdown-romanian-f-16-downs-rogue-drone-n2204729"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "4828e034282d67b3c803",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Deveselu, Mehedinti, Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.globalsecurity.org/military/library/news/2026/07/dod-contracts_4554053.htm"
-        ],
-        "titles": [
-          "Deveselu, Mehedinti, Romania"
-        ],
-        "urls": [
-          "https://www.globalsecurity.org/military/library/news/2026/07/dod-contracts_4554053.htm"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "2277dff87512a3feaed0",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Cernavoda, Romania (general), Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.stiripesurse.ro/defence-ministry-representatives-deny-that-the-drone-flew-over-military-bases_3906448"
-        ],
-        "titles": [
-          "Cernavoda, Romania (general), Romania"
-        ],
-        "urls": [
-          "https://www.stiripesurse.ro/defence-ministry-representatives-deny-that-the-drone-flew-over-military-bases_3906448"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "6303e480665ca10f856c",
@@ -857,288 +376,8 @@
           "https://english.pravda.ru/news/hotspots/167494-cargo-ship-explosion-romania-ukraine-route/"
         ],
         "risk_score_input": 2.6,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "e0f16651cd57036f9100",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Sfantu Gheorghe, Covasna, Romania",
-        "article_count": 3,
-        "source_count": 3,
-        "sources": [
-          "https://www.stiripesurse.ro/new-black-sea-incident-another-liberia-flagged-vessel-damaged-possibly-by-drone_3906288",
-          "https://www.stiripesurse.ro/armed-forces-defend-our-territory-protect-our-citizens-says-def-min-miruta-regarding-drone-incident_3906377",
-          "https://www.stiripesurse.ro/ministry-of-national-defence-italian-aircraft-fired-at-drone-but-missed-the-target_3906413"
-        ],
-        "titles": [
-          "Sfantu Gheorghe, Covasna, Romania",
-          "Buzau, Buzau, Romania",
-          "Mihail Kogalniceanu, Romania (general), Romania"
-        ],
-        "urls": [
-          "https://www.stiripesurse.ro/new-black-sea-incident-another-liberia-flagged-vessel-damaged-possibly-by-drone_3906288",
-          "https://www.stiripesurse.ro/armed-forces-defend-our-territory-protect-our-citizens-says-def-min-miruta-regarding-drone-incident_3906377",
-          "https://www.stiripesurse.ro/ministry-of-national-defence-italian-aircraft-fired-at-drone-but-missed-the-target_3906413"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "8702961d7338d9da3e3e",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Padina, Romania (general), Romania",
-        "article_count": 17,
-        "source_count": 14,
-        "sources": [
-          "https://www.dailymaverick.co.za/article/2026-07-24-romania-shoots-down-drone-breaching-its-airspace-president-says/",
-          "https://timesofindia.indiatimes.com/world/europe/romania-f-16-shoots-down-drone-after-airspace-breach/articleshow/132600759.cms",
-          "https://www.rte.ie/news/europe/2026/0724/1584914-romania-drone-breach/",
-          "https://sofiaglobe.com/2026/07/24/romanian-f-16-shoots-down-drone-that-violated-romanias-airspace/",
-          "https://athens-times.com/romanian-f-16-shoots-down-drone-after-airspace-violation/",
-          "https://www.hurriyetdailynews.com/romania-shoots-down-drone-in-its-airspace-for-first-time-president-224753",
-          "https://www.independent.co.uk/news/world/europe/romania-drone-incursion-shot-down-russia-shahed-b3020984.html",
-          "https://nypost.com/2026/07/24/world-news/romania-shoots-down-drone-breaching-its-airspace-president-says/",
-          "https://www.thenews.com.pk/latest/1410130-romanian-f-16-fighter-jet-shoots-down-drone-over-its-airspace",
-          "https://www.newkerala.com/news/a/romania-shoots-down-drone-breaching-airspace-273.htm",
-          "https://www.foxnews.com/world/romanian-f-16-shoots-down-drone-after-airspace-breach-marking-first-nato-ally",
-          "https://www.whmi.com/news/fox/romanian-f-16-shoots-down-drone-after-airspace-breach-marking-first-nato-ally",
-          "https://www.theepochtimes.com/world/romania-shoots-down-drone-that-breached-its-airspace-6066927",
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Padina, Romania (general), Romania",
-          "Romania",
-          "Bucharest, Bucuresti, Romania",
-          "Fetesti, Romania (general), Romania",
-          "Buzau, Buzau, Romania",
-          "Romania shoots down drone breaching airspace",
-          "Romania F - 16 shoots down drone in first NATO airspace intercept",
-          "Romania shoots down drone in airspace incursion for first time"
-        ],
-        "urls": [
-          "https://www.dailymaverick.co.za/article/2026-07-24-romania-shoots-down-drone-breaching-its-airspace-president-says/",
-          "https://timesofindia.indiatimes.com/world/europe/romania-f-16-shoots-down-drone-after-airspace-breach/articleshow/132600759.cms",
-          "https://www.rte.ie/news/europe/2026/0724/1584914-romania-drone-breach/",
-          "https://sofiaglobe.com/2026/07/24/romanian-f-16-shoots-down-drone-that-violated-romanias-airspace/",
-          "https://athens-times.com/romanian-f-16-shoots-down-drone-after-airspace-violation/",
-          "https://www.hurriyetdailynews.com/romania-shoots-down-drone-in-its-airspace-for-first-time-president-224753",
-          "https://www.independent.co.uk/news/world/europe/romania-drone-incursion-shot-down-russia-shahed-b3020984.html",
-          "https://nypost.com/2026/07/24/world-news/romania-shoots-down-drone-breaching-its-airspace-president-says/",
-          "https://www.thenews.com.pk/latest/1410130-romanian-f-16-fighter-jet-shoots-down-drone-over-its-airspace",
-          "https://www.newkerala.com/news/a/romania-shoots-down-drone-breaching-airspace-273.htm",
-          "https://www.foxnews.com/world/romanian-f-16-shoots-down-drone-after-airspace-breach-marking-first-nato-ally",
-          "https://www.whmi.com/news/fox/romanian-f-16-shoots-down-drone-after-airspace-breach-marking-first-nato-ally",
-          "https://www.theepochtimes.com/world/romania-shoots-down-drone-that-breached-its-airspace-6066927",
-          "https://www.prokerala.com/news/articles/a1792070.html",
-          "http://www.jpost.com/international/article-903574",
-          "https://www.jpost.com/international/article-903574"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "6b3aa1001a217b8ee9d2",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Bucharest, Bucuresti, Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://aninews.in/news/world/europe/will-see-deeper-engagement-india-romania-to-deepen-defence-cooperation-in-drones-aerospace20260724214416/"
-        ],
-        "titles": [
-          "Bucharest, Bucuresti, Romania"
-        ],
-        "urls": [
-          "https://aninews.in/news/world/europe/will-see-deeper-engagement-india-romania-to-deepen-defence-cooperation-in-drones-aerospace20260724214416/"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "38bd07afb332aba78b33",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "representative_title": "Bucharest, Bucuresti, Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.digjitale.com/p/signal-65-openai-sells-trust-a-hacker-wipes-romania"
-        ],
-        "titles": [
-          "Bucharest, Bucuresti, Romania"
-        ],
-        "urls": [
-          "https://www.digjitale.com/p/signal-65-openai-sells-trust-a-hacker-wipes-romania"
-        ],
-        "risk_score_input": 2.1,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "38e7caf039c42916c0d4",
-        "date": "2026-07-23",
-        "time": "2026-07-23T16:30:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Nicușor Dan : România va beneficia de investiții de peste 2 miliarde de euro după ce NATO a aprobat extinderea către est a rețelei de conducte pentru combustibil",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Nicușor Dan : România va beneficia de investiții de peste 2 miliarde de euro după ce NATO a aprobat extinderea către est a rețelei de conducte pentru combustibil"
-        ],
-        "urls": [
-          "https://www.caleaeuropeana.ro/nicusor-dan-romania-va-beneficia-de-investitii-de-peste-2-miliarde-de-euro-dupa-ce-nato-a-aprobat-extinderea-catre-est-a-retelei-de-conducte-pentru-combustibil/"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "a478cdce9a1d66ff2ba3",
-        "date": "2026-07-23",
-        "time": "2026-07-23T16:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Încă două petroliere , atacate de drone lângă un terminal strategic de la Marea Neagră prin care petrolul ajungea și în România",
-        "article_count": 2,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Încă două petroliere , atacate de drone lângă un terminal strategic de la Marea Neagră prin care petrolul ajungea și în România",
-          "Criza carburanţilor loveşte din plin România ! Încă două petroliere , atacate de drone lângă un terminal strategic de la Marea Neagră prin care petrolul ajungea și în România"
-        ],
-        "urls": [
-          "https://hotnews.ro/inca-doua-petroliere-atacate-de-drone-langa-un-terminal-strategic-de-la-marea-neagra-prin-care-petrolul-ajungea-si-in-romania-2307846",
-          "https://www.ziarulprofit.ro/criza-carburantilor-loveste-din-plin-romania-inca-doua-petroliere-atacate-de-drone-langa-un-terminal-strategic-de-la-marea-neagra-prin-care-petrolul-ajungea-si-in-romania/"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "a227bd9918f57329a468",
-        "date": "2026-07-23",
-        "time": "2026-07-23T15:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "România primește 2 , 15 miliarde de euro din cea mai mare investiție NATO pentru extinderea conductelor de combustibil",
-        "article_count": 3,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "România primește 2 , 15 miliarde de euro din cea mai mare investiție NATO pentru extinderea conductelor de combustibil",
-          "NATO aprobă cea mai mare investiție din istoria Alianței în infrastructura de combustibil . România va primi peste 2 miliarde de euro pentru extinderea rețelei strategice de conducte"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/actualitate/nicusor-dan-anunta-extinderea-catre-est-a-retelei-nato-de-conducte-pentru-combustibil-proiect-de-215-miliarde-de-euro-pentru-romania-3875787",
-          "https://news.yam.md/ro/story/46563782",
-          "https://news.yam.md/ro/story/46576093"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "1be304559f705a11dcd3",
-        "date": "2026-07-23",
-        "time": "2026-07-23T15:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Anunțul lui Nicușor Dan : România obține un rezultat strategic important în cadrul NATO , după peste 5 ani de negocieri",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Anunțul lui Nicușor Dan : România obține un rezultat strategic important în cadrul NATO , după peste 5 ani de negocieri"
-        ],
-        "urls": [
-          "https://stirileprotv.ro/stiri/politic/anuntul-lui-nicusor-dan-dupa-peste-5-ani-de-negocieri-romania-obtine-un-rezultat-strategic-important-in-cadrul-nato.html"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "1ea696d631a446d1982a",
-        "date": "2026-07-23",
-        "time": "2026-07-23T14:45:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "NATO a revitalizează un proiect de 27 de miliarde de euro îngheţat din timpul Războiului Rece . Nicuşor Dan : România obține un rezultat strategic important",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "NATO a revitalizează un proiect de 27 de miliarde de euro îngheţat din timpul Războiului Rece . Nicuşor Dan : România obține un rezultat strategic important"
-        ],
-        "urls": [
-          "https://www.romaniatv.net/nato-a-revitalizeaza-un-proiect-de-27-de-miliarde-de-euro-uitat-din-timpul-razboiului-rece-nicusor-dan-romania-obtine-un-rezultat-strategic-importan_9713773.html"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "4a0d011d61f982830389",
-        "date": "2026-07-23",
-        "time": "2026-07-23T14:45:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "După ce în urmă cu două săptămâni nu a știut să răspundă , Nicușor Dan anunță un „ rezultat strategic important pentru România în privința rețelei de conducte NATO",
-        "article_count": 3,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "După ce în urmă cu două săptămâni nu a știut să răspundă , Nicușor Dan anunță un „ rezultat strategic important pentru România în privința rețelei de conducte NATO",
-          "Nicuşor Dan : România obţine un rezultat strategic important în cadrul NATO",
-          "Nicușor Dan : România obține un rezultat strategic important în cadrul NATO"
-        ],
-        "urls": [
-          "https://hotnews.ro/dupa-ce-in-urma-cu-doua-saptamani-nu-a-stiut-raspunda-nicusor-dan-anunta-un-rezultat-strategic-important-pentru-romania-in-privinta-retelei-de-conducte-nato-2307796",
-          "https://www.bursa.ro/nicusor-dan-romania-obtine-un-rezultat-strategic-important-in-cadrul-nato-81176959",
-          "https://www.radioconstanta.ro/2026/07/23/nicusor-dan-romania-obtine-un-rezultat-strategic-important-in-cadrul-nato/"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "afc8046f7d5d57988950",
-        "date": "2026-07-23",
-        "time": "2026-07-23T14:45:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Atacurile cu drone din Kazahstan au cauzat scăderi grave ale producției de petrol din cel mai mare zăcământ din țară SURSE",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Atacurile cu drone din Kazahstan au cauzat scăderi grave ale producției de petrol din cel mai mare zăcământ din țară SURSE"
-        ],
-        "urls": [
-          "https://ziare.com/titei/atac-drone-terminal-port-petrolier-kazahstan-importuri-petrol-romania-2025870"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_linked.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "8334da93bc57fc413bbe",
@@ -1159,133 +398,8 @@
           "https://www.winnipegfreepress.com/business/2026/07/23/a-sailor-dies-after-a-ukraine-bound-tanker-catches-fire-off-romania-as-officials-probe-war-link"
         ],
         "risk_score_input": 2.6,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "6b4a261854fa902fff93",
-        "date": "2026-07-22",
-        "time": "2026-07-22T13:45:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Atacurile cu drone amenință livrările de petrol către România : Terminalul care alimentează Petromidia , oprit ; Presiune pe piața carburanților",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Atacurile cu drone amenință livrările de petrol către România : Terminalul care alimentează Petromidia , oprit ; Presiune pe piața carburanților"
-        ],
-        "urls": [
-          "https://www.stiripesurse.ro/atacurile-cu-drone-ameninta-livrarile-de-petrol-catre-romania-terminalul-kazah-care-alimenteaza-petromidia-oprit_3905433"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "311b0f9d69cacdf08d0f",
-        "date": "2026-07-22",
-        "time": "2026-07-22T12:45:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Strategia bizară a unui stat NATO vecin cu România . Jocul dublu față de Ucraina",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Strategia bizară a unui stat NATO vecin cu România . Jocul dublu față de Ucraina"
-        ],
-        "urls": [
-          "https://adevarul.ro/securitate-si-aparare/strategia-bizara-a-unui-stat-nato-vecin-cu-2544530.html"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "fb14f839acf1d2eb8cea",
-        "date": "2026-07-22",
-        "time": "2026-07-22T05:15:00+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "representative_title": "Romania : Cybercriminal deletes country entire land registry database",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Romania : Cybercriminal deletes country entire land registry database"
-        ],
-        "urls": [
-          "https://www.heise.de/en/news/Romania-Cybercriminal-deletes-country-s-entire-land-registry-database-11371456.html"
-        ],
-        "risk_score_input": 1.155,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "0b2da177fb667f670dfe",
-        "date": "2026-07-22",
-        "time": "2026-07-22T04:30:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Polonia spune că există riscul ca Rusia să folosească drone ucrainene capturate pentru atacuri în state NATO , inclusiv în România",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Polonia spune că există riscul ca Rusia să folosească drone ucrainene capturate pentru atacuri în state NATO , inclusiv în România"
-        ],
-        "urls": [
-          "https://news.yam.md/ro/story/46086398"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "59eeeb7724c2ba679de8",
-        "date": "2026-07-22",
-        "time": "2026-07-22T04:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Scenariu alarmant prezentat de ministrul apărării polonez : Rusia ar putea lansa atacuri în România folosind drone ucrainene capturate",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Scenariu alarmant prezentat de ministrul apărării polonez : Rusia ar putea lansa atacuri în România folosind drone ucrainene capturate"
-        ],
-        "urls": [
-          "https://www.stiripesurse.ro/scenariu-alarmant-prezentat-de-ministrul-apararii-polonez-rusia-ar-putea-lansa-atacuri-in-romania-folosind-drone-ucrainene-capturate_3905354"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "dcbb982fbfa1d68cd076",
-        "date": "2026-07-22",
-        "time": "2026-07-22T03:30:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Lovitură pentru importurile de petrol ale României . Kazahstanul va opri livrările prin Marea Neagră din cauza atacurilor cu drone",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Lovitură pentru importurile de petrol ale României . Kazahstanul va opri livrările prin Marea Neagră din cauza atacurilor cu drone"
-        ],
-        "urls": [
-          "https://news.yam.md/ro/story/46081359"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_linked.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "343363228ecaa7636046",
@@ -1306,28 +420,8 @@
           "https://www.romania-insider.com/romania-defense-minister-black-sea-attack-july-2026"
         ],
         "risk_score_input": 1.43,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "5b805e8242cc38249fc5",
-        "date": "2026-07-21",
-        "time": "2026-07-21T20:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Crimeea - fără electricitate , fără apă , fără combustibil . Dronele lui Zelenski au făcut prăpăd în regiunea anexată de Rusia : Oamenii vânează combustibil de parcă ar fi în « Jocurile Foamei »",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Crimeea - fără electricitate , fără apă , fără combustibil . Dronele lui Zelenski au făcut prăpăd în regiunea anexată de Rusia : Oamenii vânează combustibil de parcă ar fi în « Jocurile Foamei »"
-        ],
-        "urls": [
-          "https://www.romaniatv.net/crimeea-fara-electricitate-fara-apa-fara-combustibil-dronele-lui-zelenski-au-facut-prapad-in-regiunea-anexata-de-rusia-oamenii-vaneaza-combustibil-de-parca-ar-fi-in-jocurile-foamei_9709264.html"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_linked.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "08d94b1f9178ef8d2dbe",
@@ -1348,49 +442,8 @@
           "https://vremeanoua.ro/explozie-pe-un-petrolier-in-marea-neagra-in-apropiere-de-sfantu-gheorghe-nava-a-fost-lovita/"
         ],
         "risk_score_input": 1.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "6cf3576b180726751fb2",
-        "date": "2026-07-21",
-        "time": "2026-07-21T17:30:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Mărturiile marinarilor salvați de pe nava cu GPL atacată cu drone pe Marea Neagră",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Mărturiile marinarilor salvați de pe nava cu GPL atacată cu drone pe Marea Neagră"
-        ],
-        "urls": [
-          "https://ziare.com/razboi-ucraina/marturii-marinari-atacat-26-km-romania-2025517"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "66d994aa893d07939551",
-        "date": "2026-07-21",
-        "time": "2026-07-21T14:45:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Gabriel Oprea : Summitul NATO confirmă consolidarea securității euroatlantice . Apel pentru investiții în apărarea României",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Gabriel Oprea : Summitul NATO confirmă consolidarea securității euroatlantice . Apel pentru investiții în apărarea României"
-        ],
-        "urls": [
-          "https://www.stiripesurse.ro/gabriel-oprea-summitul-nato-confirma-consolidarea-securitatii-euroatlantice-apel-pentru-investitii-in-apararea-romaniei_3905363"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "bd65db3aab8be895c618",
@@ -1411,7 +464,8 @@
           "https://www.ziuaveche.ro/actualitate-interna/investigatii/explozie-foc-si-ancore-aruncate-in-plina-noapte-cum-a-supravietuit-echipajul-petrolierului-gas-lisbon-unui-posibil-atac-cu-drona-la-granita-maritima-a-romaniei-349455.html"
         ],
         "risk_score_input": 1.43,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "26e407a38b0d207d8eea",
@@ -1432,7 +486,8 @@
           "https://cursdeguvernare.ro/explozie-nava-gpl-marea-neagra-atac-drone-incident-securitate.html"
         ],
         "risk_score_input": 1.43,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "cc0a433b0fdb22286f58",
@@ -1453,7 +508,8 @@
           "https://stirileprotv.ro/stiri/actualitate/alerta-aeriana-in-romania-dupa-detectarea-unor-drone-la-granita-armata-a-ridicat-avioane-de-lupta-pentru-monitorizare.html"
         ],
         "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "a4f48806914494c7ae73",
@@ -1475,49 +531,8 @@
           "https://www.ziarulprofit.ro/alerta-in-romania-din-cauza-dronelor-rusesti-doua-aeronave-italiene-si-doua-f-16-au-decolat-de-la-mihail-kogalniceanu/"
         ],
         "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "e07d1b34ab8d5e4c150b",
-        "date": "2026-07-21",
-        "time": "2026-07-21T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://georgiatoday.ge/nato-to-host-pop-up-embassy-in-mestia-on-july-24/"
-        ],
-        "titles": [
-          "Romania"
-        ],
-        "urls": [
-          "https://georgiatoday.ge/nato-to-host-pop-up-embassy-in-mestia-on-july-24/"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "4ae503e5fce2f6fce61f",
-        "date": "2026-07-21",
-        "time": "2026-07-21T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Bucharest, Bucuresti, Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://cursdeguvernare.ro/romania-at-the-nato-summit-17-decisions-and-discussions-concerning-us.html"
-        ],
-        "titles": [
-          "Bucharest, Bucuresti, Romania"
-        ],
-        "urls": [
-          "https://cursdeguvernare.ro/romania-at-the-nato-summit-17-decisions-and-discussions-concerning-us.html"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "78d7e843193894530a00",
@@ -1544,7 +559,8 @@
           "https://maritime-executive.com/article/lpg-tanker-on-fire-off-romania-after-apparent-russian-attack"
         ],
         "risk_score_input": 1.43,
-        "source_file": "gdelt_linked.geojson"
+        "source_file": "gdelt_linked.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "a6f1c742d5d37c2055c8",
@@ -1565,28 +581,8 @@
           "https://balkaninsight.com/2026/07/21/land-registry-cyberattack-exposes-holes-in-romanias-digital-defences/bi/"
         ],
         "risk_score_input": 1.155,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "e8316e3cca08261f338e",
-        "date": "2026-07-19",
-        "time": "2026-07-19T17:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "România , sfâșiată între foc și apă : cod roșu de furtuni lovește țara la doar câteva ore după ce canicula a topit termometrele – Ziua Veche",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "România , sfâșiată între foc și apă : cod roșu de furtuni lovește țara la doar câteva ore după ce canicula a topit termometrele – Ziua Veche"
-        ],
-        "urls": [
-          "https://www.ziuaveche.ro/business-2/mediu/romania-sfasiata-intre-foc-si-apa-cod-portocaliu-de-furtuni-loveste-tara-la-doar-cateva-ore-dupa-ce-canicula-a-topit-termometrele-349340.html"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
+        "source_file": "gdelt_linked.geojson",
+        "actual_incident_gate": true
       },
       {
         "cluster_id": "6146d737446680a72cf0",
@@ -1607,91 +603,8 @@
           "https://www.romaniatv.net/ro-alert-la-tulcea-drone-periculoase-s-au-apropiat-de-frontiera-romaniei_9705352.html"
         ],
         "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "a16e6730553ea5e9b2a7",
-        "date": "2026-07-19",
-        "time": "2026-07-19T14:30:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Rusia ar putea testa reacția NATO printr - o provocare în Polonia sau statele baltice . „ Pe flancul sud - estic , inclusiv în zona României , există vulnerabilități",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Rusia ar putea testa reacția NATO printr - o provocare în Polonia sau statele baltice . „ Pe flancul sud - estic , inclusiv în zona României , există vulnerabilități"
-        ],
-        "urls": [
-          "https://adevarul.ro/stiri-externe/europa/rusia-ar-putea-testa-reactia-nato-printr-o-2543965.html"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "e69780c561de8b70c217",
-        "date": "2026-07-19",
-        "time": "2026-07-19T10:45:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Bolojan : „ Apărarea României se construiește prin investiții constante . România , rol activ pe flancul estic al NATO",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Bolojan : „ Apărarea României se construiește prin investiții constante . România , rol activ pe flancul estic al NATO"
-        ],
-        "urls": [
-          "https://www.digi24.ro/digieconomic/macro/bolojan-apararea-romaniei-se-construieste-prin-investitii-constante-romania-rol-activ-pe-flancul-estic-al-nato-110761"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "c75c28dfda2455372e30",
-        "date": "2026-07-19",
-        "time": "2026-07-19T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.techtimes.com/articles/320931/20260718/rafael-brings-worlds-first-operational-laser-23b-nato-deal-farnborough.htm"
-        ],
-        "titles": [
-          "Romania"
-        ],
-        "urls": [
-          "https://www.techtimes.com/articles/320931/20260718/rafael-brings-worlds-first-operational-laser-23b-nato-deal-farnborough.htm"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "dc20de628c4e391f0fc8",
-        "date": "2026-07-19",
-        "time": "2026-07-19T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Bucharest, Bucuresti, Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.ncr-iran.org/en/news/iran-resistance/ncri-supporters-stage-europe-wide-mobilization-against-iranian-regime-throughout-july/"
-        ],
-        "titles": [
-          "Bucharest, Bucuresti, Romania"
-        ],
-        "urls": [
-          "https://www.ncr-iran.org/en/news/iran-resistance/ncri-supporters-stage-europe-wide-mobilization-against-iranian-regime-throughout-july/"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
       }
     ],
     "Slovakia": [
@@ -1714,549 +627,13 @@
           "https://www.aktuality.sk/clanok/I8DGSOl/rizikova-dovolenka-v-taliansku-slovakom-radia-sledovat-poziare-pocitat-s-uzavierkami-ciest-a-obmedzeniami-dopravy/"
         ],
         "risk_score_input": 3.25,
-        "source_file": "local_events.geojson"
-      },
-      {
-        "cluster_id": "1e0ef8636b7283411562",
-        "date": "2026-07-21",
-        "time": "2026-07-21T15:45:00+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "representative_title": "Slovensko čelilo útoku ruských hackerov . Nečinnosť robí z našich politikov ruských kolaborantov , tvrdí Peter Bátor",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Slovensko čelilo útoku ruských hackerov . Nečinnosť robí z našich politikov ruských kolaborantov , tvrdí Peter Bátor"
-        ],
-        "urls": [
-          "https://www.aktuality.sk/clanok/LckHpns/slovensko-celilo-utoku-ruskych-hackerov-necinnost-robi-z-nasich-politikov-ruskych-kolaborantov-tvrdi-peter-bator/"
-        ],
-        "risk_score_input": 1.155,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "d937dfb236e6d3079d49",
-        "date": "2026-07-21",
-        "time": "2026-07-21T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Slovak Republic",
-        "article_count": 1,
-        "source_count": 2,
-        "sources": [
-          "http://www.europesun.com/news/279200959/nato-state-pm-calls-pro-ukraine-coalitions-all-talk",
-          "http://www.europesun.com/news/279201521/nato-member-dismisses-all-talk-pro-ukraine-coalitions"
-        ],
-        "titles": [
-          "Slovak Republic"
-        ],
-        "urls": [
-          "http://www.europesun.com/news/279200959/nato-state-pm-calls-pro-ukraine-coalitions-all-talk"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
+        "source_file": "local_events.geojson",
+        "actual_incident_gate": true
       }
     ],
-    "Poland": [
-      {
-        "cluster_id": "3973f97a2d256970784f",
-        "date": "2026-07-25",
-        "time": "2026-07-25T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Poland",
-        "article_count": 2,
-        "source_count": 2,
-        "sources": [
-          "https://www.breitbart.com/clips/2026/07/25/gop-rep-bacon-i-wont-vote-for-supplemental-without-return-of-troops-to-poland-baltics/",
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Poland",
-          "GOP Rep . Bacon : I Wont Vote for Supplemental Without Return of Troops to Poland , Baltics"
-        ],
-        "urls": [
-          "https://www.breitbart.com/clips/2026/07/25/gop-rep-bacon-i-wont-vote-for-supplemental-without-return-of-troops-to-poland-baltics/"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "cb9f5d9fafb5ec804637",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Warsaw, (PL67), Poland",
-        "article_count": 2,
-        "source_count": 2,
-        "sources": [
-          "https://www.novinite.com/articles/239818/The+US+Aircraft+Deployment+in+Bulgaria+Has+Been+Delayed!",
-          "https://www.globalsecurity.org/military/library/news/2026/07/mil-260723-pl-mfa02.htm"
-        ],
-        "titles": [
-          "Warsaw, (PL67), Poland"
-        ],
-        "urls": [
-          "https://www.novinite.com/articles/239818/The+US+Aircraft+Deployment+in+Bulgaria+Has+Been+Delayed!",
-          "https://www.globalsecurity.org/military/library/news/2026/07/mil-260723-pl-mfa02.htm"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "b038d90f2ba4cd73a7cb",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Poland",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.hindustantimes.com/world-news/donald-trump-is-shifting-america-s-military-footprint-101784884957665.html"
-        ],
-        "titles": [
-          "Poland"
-        ],
-        "urls": [
-          "https://www.hindustantimes.com/world-news/donald-trump-is-shifting-america-s-military-footprint-101784884957665.html"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "d5c4c387984023c339f3",
-        "date": "2026-07-22",
-        "time": "2026-07-22T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Poland",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.salisburyjournal.co.uk/news/26294157.household-cavalry-train-allies-france-exercise/"
-        ],
-        "titles": [
-          "Poland"
-        ],
-        "urls": [
-          "https://www.salisburyjournal.co.uk/news/26294157.household-cavalry-train-allies-france-exercise/"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "d5c4c387984023c339f3",
-        "date": "2026-07-22",
-        "time": "2026-07-22T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Poland",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://politicaldog101.com/2026/07/ukrainerussia-day-1610-second-top-military-leader-gets-fired/"
-        ],
-        "titles": [
-          "Poland"
-        ],
-        "urls": [
-          "https://politicaldog101.com/2026/07/ukrainerussia-day-1610-second-top-military-leader-gets-fired/"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "77d51b4178f79f580386",
-        "date": "2026-07-21",
-        "time": "2026-07-21T19:30:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Polska podłączy się do paliwowego NATO",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Polska podłączy się do paliwowego NATO"
-        ],
-        "urls": [
-          "https://www.pb.pl/polska-podlaczy-sie-do-paliwowego-nato-1264517"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "8cec12eb24c2b64625a4",
-        "date": "2026-07-20",
-        "time": "2026-07-20T14:15:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "NATO Top Military Chief Warns Russia Would Lose A Lot By Attacking Baltic States Or Poland",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "NATO Top Military Chief Warns Russia Would Lose A Lot By Attacking Baltic States Or Poland"
-        ],
-        "urls": [
-          "https://www.hngn.com/articles/272190/20260720/natos-top-military-chief-warns-russia-would-lose-lot-attacking-baltic-states-poland.htm"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "0bcbaffb9771d0561438",
-        "date": "2026-07-20",
-        "time": "2026-07-20T05:30:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "NATO says Russia would lose a lot if Moscow attacks Poland , Baltics",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "NATO says Russia would lose a lot if Moscow attacks Poland , Baltics"
-        ],
-        "urls": [
-          "https://www.cnbc.com/2026/07/20/nato-russia-ukraine-war-missile-attacks-drone-europe-defense-.html"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "533573156a91057318d4",
-        "date": "2026-07-20",
-        "time": "2026-07-20T00:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Poland",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.zerohedge.com/technology/watch-aerial-drones-ferry-kamikaze-ground-bots-battle-warfare-automation-accelerates"
-        ],
-        "titles": [
-          "Poland"
-        ],
-        "urls": [
-          "https://www.zerohedge.com/technology/watch-aerial-drones-ferry-kamikaze-ground-bots-battle-warfare-automation-accelerates"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "2e59ef2ecbf2877c5137",
-        "date": "2026-07-19",
-        "time": "2026-07-19T00:00:00+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "representative_title": "Poland",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.express.co.uk/news/world/2230750/russia-hacker-warning-cyber-security-expert"
-        ],
-        "titles": [
-          "Poland"
-        ],
-        "urls": [
-          "https://www.express.co.uk/news/world/2230750/russia-hacker-warning-cyber-security-expert"
-        ],
-        "risk_score_input": 1.155,
-        "source_file": "gdelt_linked.geojson"
-      }
-    ],
-    "Lithuania": [
-      {
-        "cluster_id": "9845af00f87555090600",
-        "date": "2026-07-24",
-        "time": "2026-07-24T07:45:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Lithuania weighs joining new international defence financing initiatives – minister",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Lithuania weighs joining new international defence financing initiatives – minister"
-        ],
-        "urls": [
-          "https://www.lrt.lt/en/news-in-english/19/3000095/lithuania-weighs-joining-new-international-defence-financing-initiatives-minister"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "d38eaaa5080aa94e9e3e",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "representative_title": "Vilnius, Vilniaus Apskritis, Lithuania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.baltictimes.com/lithuania__philippines_fms_discuss_economic__cybersecurity__energy__defence_ties/"
-        ],
-        "titles": [
-          "Vilnius, Vilniaus Apskritis, Lithuania"
-        ],
-        "urls": [
-          "https://www.baltictimes.com/lithuania__philippines_fms_discuss_economic__cybersecurity__energy__defence_ties/"
-        ],
-        "risk_score_input": 2.1,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "5c430c3ccb35182f09bb",
-        "date": "2026-07-23",
-        "time": "2026-07-23T12:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Inside Lithuania defense strategy against Russia",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Inside Lithuania defense strategy against Russia"
-        ],
-        "urls": [
-          "https://chicago.suntimes.com/nation-world/2026/07/23/lithuania-defense-strategy-suwalki-gap-russia-nato"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "c5cbfdba6a1ae5b64de8",
-        "date": "2026-07-23",
-        "time": "2026-07-23T10:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Former Lithuanian army chief warns Ukraine leadership changes risk military instability",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Former Lithuanian army chief warns Ukraine leadership changes risk military instability"
-        ],
-        "urls": [
-          "https://www.lrt.lt/en/news-in-english/19/2999178/former-lithuanian-army-chief-warns-ukraine-leadership-changes-risk-military-instability"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      {
-        "cluster_id": "a30e2be7aed2aa7e6ba0",
-        "date": "2026-07-22",
-        "time": "2026-07-22T09:30:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "NATO may deploy additional military forces in Lithuania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "NATO may deploy additional military forces in Lithuania"
-        ],
-        "urls": [
-          "https://www.sb.by/en/nato-may-deploy-additional-military-forces-in-lithuania.html"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      }
-    ],
-    "Latvia": [
-      {
-        "cluster_id": "e3efb46dda50b7abc3c5",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Latvia",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.globalsecurity.org/military/library/news/2026/07/mil-260723-unsc01.htm"
-        ],
-        "titles": [
-          "Latvia"
-        ],
-        "urls": [
-          "https://www.globalsecurity.org/military/library/news/2026/07/mil-260723-unsc01.htm"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "db2318eac886e94322a7",
-        "date": "2026-07-23",
-        "time": "2026-07-23T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Latvia",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://europa.today.it/en/eu-accelerate-development-military-technologies.html"
-        ],
-        "titles": [
-          "Latvia"
-        ],
-        "urls": [
-          "https://europa.today.it/en/eu-accelerate-development-military-technologies.html"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "a859450e6a9742cbdd1b",
-        "date": "2026-07-22",
-        "time": "2026-07-22T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Riga, Riga, Latvia",
-        "article_count": 2,
-        "source_count": 2,
-        "sources": [
-          "https://www.baltictimes.com/entrepreneurs_for_peace_opens_civil-military_cooperation_hub_in_riga/",
-          "https://www.baltictimes.com/there_are_no_specific_military_threats_from_russia_at_this_time__but_public_must_remain_vigilant_-_rinkevics/"
-        ],
-        "titles": [
-          "Riga, Riga, Latvia",
-          "Latvia"
-        ],
-        "urls": [
-          "https://www.baltictimes.com/entrepreneurs_for_peace_opens_civil-military_cooperation_hub_in_riga/",
-          "https://www.baltictimes.com/there_are_no_specific_military_threats_from_russia_at_this_time__but_public_must_remain_vigilant_-_rinkevics/"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "2ab4db4f22db1efce638",
-        "date": "2026-07-21",
-        "time": "2026-07-21T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Latvia",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://aa.com.tr/en/turkiye/erdogan-holds-phone-call-with-latvian-president-on-nato-cooperation-bilateral-ties/4004988"
-        ],
-        "titles": [
-          "Latvia"
-        ],
-        "urls": [
-          "https://aa.com.tr/en/turkiye/erdogan-holds-phone-call-with-latvian-president-on-nato-cooperation-bilateral-ties/4004988"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "b5a1c0317f6adb2fd318",
-        "date": "2026-07-20",
-        "time": "2026-07-20T16:45:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Müllheimer Brigade erreicht Meilenstein für Nato - Auftrag an der Ostflanke",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Müllheimer Brigade erreicht Meilenstein für Nato - Auftrag an der Ostflanke"
-        ],
-        "urls": [
-          "https://www.badische-zeitung.de/muellheimer-brigade-erreicht-meilenstein-fuer-nato-auftrag-an-der-ostflanke"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson"
-      }
-    ],
-    "Estonia": [
-      {
-        "cluster_id": "c739c641f848375b3649",
-        "date": "2026-07-25",
-        "time": "2026-07-25T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Estonia",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.globalsecurity.org/military/library/news/2026/07/mil-260724-estonia-mfa01.htm"
-        ],
-        "titles": [
-          "Estonia"
-        ],
-        "urls": [
-          "https://www.globalsecurity.org/military/library/news/2026/07/mil-260724-estonia-mfa01.htm"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "bbb07f5e6c868de967b4",
-        "date": "2026-07-23",
-        "time": "2026-07-23T00:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Tallinn, Harjumaa, Estonia",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.lrt.lt/en/news-in-english/19/2998285/uk-swaps-tanks-for-drones-in-the-baltics-the-way-of-war-is-changing"
-        ],
-        "titles": [
-          "Tallinn, Harjumaa, Estonia"
-        ],
-        "urls": [
-          "https://www.lrt.lt/en/news-in-english/19/2998285/uk-swaps-tanks-for-drones-in-the-baltics-the-way-of-war-is-changing"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      {
-        "cluster_id": "de84505f9fbba47f14e5",
-        "date": "2026-07-21",
-        "time": "2026-07-21T00:00:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "Tallinn, Harjumaa, Estonia",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://www.bankingnews.gr/diethni/articles/889445/british-troops-simulate-drone-strikes-on-st-petersburg-from-estonia-as-moscow-threatens-nuclear-retaliation"
-        ],
-        "titles": [
-          "Tallinn, Harjumaa, Estonia"
-        ],
-        "urls": [
-          "https://www.bankingnews.gr/diethni/articles/889445/british-troops-simulate-drone-strikes-on-st-petersburg-from-estonia-as-moscow-threatens-nuclear-retaliation"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_linked.geojson"
-      }
-    ]
+    "Poland": [],
+    "Lithuania": [],
+    "Latvia": [],
+    "Estonia": []
   }
 }

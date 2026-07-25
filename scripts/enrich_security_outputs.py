@@ -1,4 +1,4 @@
-import json
+mport json
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from collections import Counter, defaultdict
@@ -329,6 +329,259 @@ def normalize_security_feature(feature, source_file):
         "geometry": feature.get("geometry"),
         "properties": props,
     }
+
+
+
+INCIDENT_CLUSTER_MAX_HOURS = 30.0
+INCIDENT_TEXT_SIMILARITY = 0.28
+
+INCIDENT_STOPWORDS = {
+    "the", "and", "for", "with", "from", "that", "this", "near",
+    "romania", "romanian", "românia", "român", "hungary", "hungarian",
+    "poland", "polish", "latvia", "latvian", "lithuania", "lithuanian",
+    "estonia", "estonian", "slovakia", "slovak", "czech", "czechia",
+    "republic", "drone", "drón", "dronă", "drona", "uav",
+    "today", "yesterday", "after", "over", "into", "space", "airspace",
+    "doua", "două", "noua", "nouă", "care", "este", "sunt", "din",
+    "pentru", "după", "dupa", "asupra", "româniei", "romaniei",
+}
+
+DRONE_SHOOTDOWN_TERMS = [
+    "shot down", "shoot down", "downed", "intercepted", "destroyed",
+    "lelőtt", "lelőttek", "hatástalanítás", "hatástalanított",
+    "doborât", "doborâtă", "doborârea", "doborata",
+]
+
+DRONE_AIRSPACE_TERMS = [
+    "airspace", "légtér", "spațiul aerian", "spatiul aerian",
+    "air space", "incursion", "incursiune", "violated", "violation",
+]
+
+CYBER_ATTACK_TERMS = [
+    "ransomware", "ddos", "data breach", "cyberattack", "cyber attack",
+    "kibertámadás",
+]
+
+
+def semantic_tokens(text):
+    words = re.findall(r"[\wÀ-ž-]{3,}", normalize_text(text), flags=re.UNICODE)
+    return {word for word in words if word not in INCIDENT_STOPWORDS}
+
+
+def semantic_similarity(text_a, text_b):
+    a = normalize_text(text_a)
+    b = normalize_text(text_b)
+    if not a or not b:
+        return 0.0
+
+    ta = semantic_tokens(a)
+    tb = semantic_tokens(b)
+    jaccard = len(ta & tb) / len(ta | tb) if ta and tb else 0.0
+    sequence = SequenceMatcher(None, a, b).ratio()
+    return max(jaccard, sequence * 0.60)
+
+
+def risk_event_text(feature):
+    props = feature.get("properties") or {}
+    return " ".join([
+        str(props.get("title") or props.get("name") or ""),
+        str(props.get("summary") or props.get("description") or ""),
+        str(props.get("url") or ""),
+    ])
+
+
+def risk_incident_signature(feature):
+    props = feature.get("properties") or {}
+    category = str(props.get("incident_type") or props.get("category") or "").lower()
+    text = risk_event_text(feature)
+    signature = set()
+
+    if category in {"drone", "drone_airspace"} or contains_any(
+        text, SECURITY_INCIDENT_PATTERNS["drone"]
+    ):
+        signature.add("drone")
+        if contains_any(text, DRONE_SHOOTDOWN_TERMS):
+            signature.add("shootdown")
+        if contains_any(text, DRONE_AIRSPACE_TERMS):
+            signature.add("airspace")
+        if contains_any(text, ["f-16", "f16"]):
+            signature.add("f16")
+        if contains_term(text, "shahed"):
+            signature.add("shahed")
+
+    if category in {"cyber", "cyber_incident"}:
+        signature.add("cyber")
+        if contains_any(text, CYBER_ATTACK_TERMS):
+            signature.add("cyber_attack")
+
+    if category in {"military", "military_accident"}:
+        signature.add("military")
+        if contains_any(text, ["crash", "crashed", "lezuhant", "prăbușit", "prabusit"]):
+            signature.add("accident")
+
+    if category in {"explosion", "kinetic_attack"}:
+        signature.add(category)
+
+    if category in {
+        "hazardous", "hazardous_incident",
+        "infrastructure_disruption", "sabotage"
+    }:
+        signature.add(category)
+
+    return signature
+
+
+def risk_event_time(feature):
+    return parse_time((feature.get("properties") or {}).get("time"))
+
+
+def same_risk_incident(feature_a, feature_b):
+    pa = feature_a.get("properties") or {}
+    pb = feature_b.get("properties") or {}
+
+    if norm_country(pa.get("country")) != norm_country(pb.get("country")):
+        return False
+
+    category_a = str(pa.get("incident_type") or pa.get("category") or "").lower()
+    category_b = str(pb.get("incident_type") or pb.get("category") or "").lower()
+
+    if category_a != category_b:
+        drone_family = {"drone", "drone_airspace"}
+        cyber_family = {"cyber", "cyber_incident"}
+        military_family = {"military", "military_accident"}
+
+        if not (
+            {category_a, category_b}.issubset(drone_family)
+            or {category_a, category_b}.issubset(cyber_family)
+            or {category_a, category_b}.issubset(military_family)
+        ):
+            return False
+
+    ta = risk_event_time(feature_a)
+    tb = risk_event_time(feature_b)
+
+    if ta and tb:
+        hours = abs((ta - tb).total_seconds()) / 3600.0
+        if hours > INCIDENT_CLUSTER_MAX_HOURS:
+            return False
+
+        # Different days are normally different incidents.
+        if ta.date() != tb.date() and hours > 6:
+            return False
+
+    sig_a = risk_incident_signature(feature_a)
+    sig_b = risk_incident_signature(feature_b)
+    shared = sig_a & sig_b
+
+    if {"drone", "shootdown"}.issubset(shared):
+        return True
+
+    if {"drone", "airspace"}.issubset(shared):
+        return semantic_similarity(
+            risk_event_text(feature_a), risk_event_text(feature_b)
+        ) >= 0.12
+
+    if "cyber" in shared:
+        return semantic_similarity(
+            risk_event_text(feature_a), risk_event_text(feature_b)
+        ) >= 0.30
+
+    return semantic_similarity(
+        risk_event_text(feature_a), risk_event_text(feature_b)
+    ) >= INCIDENT_TEXT_SIMILARITY
+
+
+def merge_risk_incident(primary, incoming):
+    pp = primary.setdefault("properties", {})
+    ip = incoming.get("properties") or {}
+
+    sources = list(
+        pp.get("risk_sources")
+        or pp.get("sources")
+        or ([pp.get("source")] if pp.get("source") else [])
+    )
+    for source in (
+        ip.get("risk_sources")
+        or ip.get("sources")
+        or ([ip.get("source")] if ip.get("source") else [])
+    ):
+        if source and source not in sources:
+            sources.append(source)
+
+    urls = list(
+        pp.get("risk_urls")
+        or pp.get("urls")
+        or ([pp.get("url")] if pp.get("url") else [])
+    )
+    for url in (
+        ip.get("risk_urls")
+        or ip.get("urls")
+        or ([ip.get("url")] if ip.get("url") else [])
+    ):
+        if url and url not in urls:
+            urls.append(url)
+
+    titles = list(
+        pp.get("risk_titles")
+        or ([pp.get("title")] if pp.get("title") else [])
+    )
+    incoming_title = ip.get("title")
+    if incoming_title and incoming_title not in titles:
+        titles.append(incoming_title)
+
+    pp["risk_sources"] = sources
+    pp["risk_urls"] = urls
+    pp["risk_titles"] = titles
+    pp["source_count"] = len(sources)
+    pp["article_count"] = int(pp.get("article_count") or 1) + int(
+        ip.get("article_count") or 1
+    )
+
+    severity_rank = {"info": 0, "low": 1, "medium": 2, "high": 3, "critical": 4}
+    if severity_rank.get(str(ip.get("severity") or "").lower(), 0) > \
+       severity_rank.get(str(pp.get("severity") or "").lower(), 0):
+        pp["severity"] = ip.get("severity")
+
+    t_primary = parse_time(pp.get("time"))
+    t_incoming = parse_time(ip.get("time"))
+    if t_incoming and (not t_primary or t_incoming < t_primary):
+        pp["time"] = ip.get("time")
+
+    return primary
+
+
+def cluster_risk_incidents(features):
+    clusters = []
+
+    ordered = sorted(
+        features,
+        key=lambda f: risk_event_time(f) or datetime.min.replace(tzinfo=timezone.utc),
+    )
+
+    for feature in ordered:
+        props = feature.setdefault("properties", {})
+        props["article_count"] = int(props.get("article_count") or 1)
+        props["risk_sources"] = list(
+            props.get("sources")
+            or ([props.get("source")] if props.get("source") else [])
+        )
+        props["risk_urls"] = list(
+            props.get("urls")
+            or ([props.get("url")] if props.get("url") else [])
+        )
+        props["risk_titles"] = [props.get("title")] if props.get("title") else []
+
+        merged = False
+        for index, existing in enumerate(clusters):
+            if same_risk_incident(existing, feature):
+                clusters[index] = merge_risk_incident(existing, feature)
+                merged = True
+                break
+
+        if not merged:
+            clusters.append(feature)
+
+    return clusters
 
 
 def load_validated_security_events(days=7):
@@ -1110,3 +1363,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

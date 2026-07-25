@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_utc": "2026-07-25T02:01:14.121150+00:00",
+    "generated_utc": "2026-07-25T04:47:22.683624+00:00",
     "infrastructure_count": 103,
-    "event_count": 5499,
-    "match_count": 14151,
-    "raw_match_count": 14151,
+    "event_count": 5480,
+    "match_count": 14073,
+    "raw_match_count": 14073,
     "top_infrastructure_count": 91,
     "max_distance_km": 50,
     "deduplication": {
@@ -1155,17 +1155,17 @@
       }
     },
     {
-      "id": "f957d8658f686bbe",
+      "id": "60bd35cf4998fd75",
       "level": "high",
       "score": 64.01,
       "distance_km": 9.99,
       "event": {
-        "id": "f70eddef13b2bbb7",
+        "id": "fa5f675491a75fac",
         "title": "Szeged, Szeged, Hungary",
         "category": "other",
         "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://hungarytoday.hu/medieval-festival-in-szeged-celebrates-john-hunyadis-victory-at-belgrade/",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "http://www.rheaheraldnews.com/news/article_e4124e58-496d-4a08-8ef7-eab1f7ae7d58.html",
         "lat": 46.25,
         "lon": 20.1667,
         "source_file": "gdelt_linked.geojson"
@@ -1271,36 +1271,6 @@
         "operator": "BILK",
         "lat": 47.392,
         "lon": 19.126,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "9fe8f109457cddc0",
-      "level": "high",
-      "score": 56.78,
-      "distance_km": 14.51,
-      "event": {
-        "id": "053b4f6f3702d80b",
-        "title": "ULTIMA ORĂ Drona doborâtă era tip Shahed, anunță Parchetul General. Rusia folosește aceste drone în Ucraina. Procurorii au deschis dosar penal",
-        "category": "drone",
-        "source": "G4Media",
-        "time": "Fri, 24 Jul 2026 18:12:55 +0000",
-        "url": "https://www.g4media.ro/ultima-ora-drona-doborata-era-tip-shahed-anunta-parchetul-general-rusia-foloseste-aceste-drone-in-ucraina-procurorii-au-deschis-dosar-penal.html",
-        "lat": 45.9432,
-        "lon": 24.9668,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-military-cincu",
-        "name": "Cincu Training Area",
-        "country": "Romania",
-        "city": "Cincu",
-        "category": "military",
-        "subtype": "training_area",
-        "criticality": 8.0,
-        "operator": "Romanian Armed Forces / NATO",
-        "lat": 45.917,
-        "lon": 24.783,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -1511,6 +1481,36 @@
         "operator": "MOL Group",
         "lat": 47.316,
         "lon": 18.914,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "9de8c7f7373b77c9",
+      "level": "medium",
+      "score": 63.74,
+      "distance_km": 18.13,
+      "event": {
+        "id": "67c0e6590875abde",
+        "title": "Riga Central, Riga, Latvia",
+        "category": "security_politics",
+        "source": "GDELT",
+        "time": "2026-07-13T00:00:00Z",
+        "url": "https://www.baltictimes.com/shopping_centre__origo__significantly_improves_energy_efficiency_and_reduces_co__emissions_with_artificial_intelligence_solutions/",
+        "lat": 56.9833,
+        "lon": 24.0833,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "lv-military-adazi-base",
+        "name": "Ādaži Military Base",
+        "country": "Latvia",
+        "city": "Ādaži",
+        "category": "military",
+        "subtype": "military_base",
+        "criticality": 10.0,
+        "operator": "Latvian Armed Forces / NATO eFP",
+        "lat": 57.07,
+        "lon": 24.337,
         "source_file": "critical_infrastructure.json"
       }
     }
@@ -8237,50 +8237,20 @@
       }
     },
     {
-      "id": "01428039a4094f0d",
+      "id": "4fa14511f34bb02b",
       "level": "critical",
-      "score": 88.57,
-      "distance_km": 0.8,
+      "score": 85.96,
+      "distance_km": 2.25,
       "event": {
-        "id": "60419777653d8604",
-        "title": "Fialova vláda a stovky milionů pro neziskovky | ParlamentniListy . cz – politika ze všech stran",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-24T04:45:00Z",
-        "url": "https://www.parlamentnilisty.cz/profily/Ing-Irena-Nemcova-160827/clanek/Fialova-vlada-a-stovky-milionu-pro-neziskovky-146430",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-ixp",
-        "name": "Prague Internet Exchange / NIX.CZ",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "internet_exchange",
-        "criticality": 9.0,
-        "operator": "NIX.CZ",
-        "lat": 50.075,
-        "lon": 14.438,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "9d14884e97b8a0c5",
-      "level": "critical",
-      "score": 88.57,
-      "distance_km": 0.8,
-      "event": {
-        "id": "4ea71db12ca1250e",
-        "title": "Novinky . cz - nejčtenější zprávy na českém internetu",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-24T04:45:00Z",
-        "url": "https://www.novinky.cz/?timeline--pageItem=40589523",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
+        "id": "29c55316c5e170ed",
+        "title": "Prague, Praha, Hlavníesto, Czech Republic",
+        "category": "violence",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.goldderby.com/film/2026/weapons-aunt-gladys-prequel-zach-cregger-comic-con-highlights/",
+        "lat": 50.0833,
+        "lon": 14.4667,
+        "source_file": "gdelt_linked.geojson"
       },
       "infrastructure": {
         "id": "cz-digital-prague-ixp",
@@ -21977,66 +21947,6 @@
       }
     },
     {
-      "id": "b274f4b7481b7e91",
-      "level": "critical",
-      "score": 78.84,
-      "distance_km": 0.72,
-      "event": {
-        "id": "60419777653d8604",
-        "title": "Fialova vláda a stovky milionů pro neziskovky | ParlamentniListy . cz – politika ze všech stran",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-24T04:45:00Z",
-        "url": "https://www.parlamentnilisty.cz/profily/Ing-Irena-Nemcova-160827/clanek/Fialova-vlada-a-stovky-milionu-pro-neziskovky-146430",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-dc-hub",
-        "name": "Prague Data Centre Hub",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "data_center_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 50.083,
-        "lon": 14.421,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "f6222cf6cab35075",
-      "level": "critical",
-      "score": 78.84,
-      "distance_km": 0.72,
-      "event": {
-        "id": "4ea71db12ca1250e",
-        "title": "Novinky . cz - nejčtenější zprávy na českém internetu",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-24T04:45:00Z",
-        "url": "https://www.novinky.cz/?timeline--pageItem=40589523",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-digital-prague-dc-hub",
-        "name": "Prague Data Centre Hub",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "digital",
-        "subtype": "data_center_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 50.083,
-        "lon": 14.421,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
       "id": "5261215f88396fc9",
       "level": "critical",
       "score": 78.68,
@@ -22187,6 +22097,36 @@
       }
     },
     {
+      "id": "11e4bc6f037857e8",
+      "level": "critical",
+      "score": 74.78,
+      "distance_km": 3.26,
+      "event": {
+        "id": "29c55316c5e170ed",
+        "title": "Prague, Praha, Hlavníesto, Czech Republic",
+        "category": "violence",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.goldderby.com/film/2026/weapons-aunt-gladys-prequel-zach-cregger-comic-con-highlights/",
+        "lat": 50.0833,
+        "lon": 14.4667,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "cz-digital-prague-dc-hub",
+        "name": "Prague Data Centre Hub",
+        "country": "Czechia",
+        "city": "Prague",
+        "category": "digital",
+        "subtype": "data_center_hub",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 50.083,
+        "lon": 14.421,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
       "id": "01e33bc9841c9af4",
       "level": "high",
       "score": 67.82,
@@ -22243,6 +22183,36 @@
         "operator": "Riga Airport",
         "lat": 56.923,
         "lon": 23.971,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "60bd35cf4998fd75",
+      "level": "high",
+      "score": 64.01,
+      "distance_km": 9.99,
+      "event": {
+        "id": "fa5f675491a75fac",
+        "title": "Szeged, Szeged, Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "http://www.rheaheraldnews.com/news/article_e4124e58-496d-4a08-8ef7-eab1f7ae7d58.html",
+        "lat": 46.25,
+        "lon": 20.1667,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-energy-algyo-hub",
+        "name": "Algyő Oil and Gas Hub",
+        "country": "Hungary",
+        "city": "Algyő",
+        "category": "energy",
+        "subtype": "oil_gas_production_hub",
+        "criticality": 8.0,
+        "operator": "MOL Group",
+        "lat": 46.335,
+        "lon": 20.209,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -28937,20 +28907,20 @@
       }
     },
     {
-      "id": "135b0495fa526cfc",
+      "id": "3709f5e982fd6f31",
       "level": "high",
-      "score": 60.58,
-      "distance_km": 12.14,
+      "score": 56.54,
+      "distance_km": 14.66,
       "event": {
-        "id": "60419777653d8604",
-        "title": "Fialova vláda a stovky milionů pro neziskovky | ParlamentniListy . cz – politika ze všech stran",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-24T04:45:00Z",
-        "url": "https://www.parlamentnilisty.cz/profily/Ing-Irena-Nemcova-160827/clanek/Fialova-vlada-a-stovky-milionu-pro-neziskovky-146430",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
+        "id": "29c55316c5e170ed",
+        "title": "Prague, Praha, Hlavníesto, Czech Republic",
+        "category": "violence",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.goldderby.com/film/2026/weapons-aunt-gladys-prequel-zach-cregger-comic-con-highlights/",
+        "lat": 50.0833,
+        "lon": 14.4667,
+        "source_file": "gdelt_linked.geojson"
       },
       "infrastructure": {
         "id": "cz-transport-prague-airport",
@@ -28963,66 +28933,6 @@
         "operator": "Prague Airport",
         "lat": 50.101,
         "lon": 14.263,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "e630662918e2974f",
-      "level": "high",
-      "score": 60.58,
-      "distance_km": 12.14,
-      "event": {
-        "id": "4ea71db12ca1250e",
-        "title": "Novinky . cz - nejčtenější zprávy na českém internetu",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-24T04:45:00Z",
-        "url": "https://www.novinky.cz/?timeline--pageItem=40589523",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-transport-prague-airport",
-        "name": "Václav Havel Airport Prague",
-        "country": "Czechia",
-        "city": "Prague",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Prague Airport",
-        "lat": 50.101,
-        "lon": 14.263,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "9fe8f109457cddc0",
-      "level": "high",
-      "score": 56.78,
-      "distance_km": 14.51,
-      "event": {
-        "id": "053b4f6f3702d80b",
-        "title": "ULTIMA ORĂ Drona doborâtă era tip Shahed, anunță Parchetul General. Rusia folosește aceste drone în Ucraina. Procurorii au deschis dosar penal",
-        "category": "drone",
-        "source": "G4Media",
-        "time": "Fri, 24 Jul 2026 18:12:55 +0000",
-        "url": "https://www.g4media.ro/ultima-ora-drona-doborata-era-tip-shahed-anunta-parchetul-general-rusia-foloseste-aceste-drone-in-ucraina-procurorii-au-deschis-dosar-penal.html",
-        "lat": 45.9432,
-        "lon": 24.9668,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-military-cincu",
-        "name": "Cincu Training Area",
-        "country": "Romania",
-        "city": "Cincu",
-        "category": "military",
-        "subtype": "training_area",
-        "criticality": 8.0,
-        "operator": "Romanian Armed Forces / NATO",
-        "lat": 45.917,
-        "lon": 24.783,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -29038,36 +28948,6 @@
         "source": "Digi24",
         "time": "Fri, 24 Jul 2026 19:52:09 +0300",
         "url": "https://www.digi24.ro/stiri/mesajul-nato-despre-drona-doborata-in-romania-alianta-transmite-ca-o-ancheta-este-in-desfasurare-3877655",
-        "lat": 44.366,
-        "lon": 27.833,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-energy-cernavoda-npp",
-        "name": "Cernavodă Nuclear Power Plant",
-        "country": "Romania",
-        "city": "Cernavodă",
-        "category": "energy",
-        "subtype": "nuclear_power_plant",
-        "criticality": 10.0,
-        "operator": "Nuclearelectrica",
-        "lat": 44.322,
-        "lon": 28.057,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "bae457ea68ee4185",
-      "level": "medium",
-      "score": 63.05,
-      "distance_km": 18.47,
-      "event": {
-        "id": "b2be5c4f6a8beb44",
-        "title": "Explicațiile MApN despre drona care a fost doborâtă în România de un avion F-16. „Nu a fost pe direcția bazei aeriene de la Fetești”",
-        "category": "drone",
-        "source": "Digi24",
-        "time": "Fri, 24 Jul 2026 17:10:26 +0300",
-        "url": "https://www.digi24.ro/stiri/mapn-ofera-explicatii-despre-drona-care-a-fost-doborata-in-romania-de-un-avion-f-16-3877201",
         "lat": 44.366,
         "lon": 27.833,
         "source_file": "local_events.geojson"
@@ -36197,6 +36077,36 @@
       }
     },
     {
+      "id": "fa26e1ba685e7ea3",
+      "level": "medium",
+      "score": 51.9,
+      "distance_km": 21.17,
+      "event": {
+        "id": "fddeac74b2c98a31",
+        "title": "Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.nhgazette.com/2026/07/24/n-h-does-nuclear-roadmap/",
+        "lat": 47.0,
+        "lon": 20.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-military-kecskemet-airbase",
+        "name": "Kecskemét Air Base",
+        "country": "Hungary",
+        "city": "Kecskemét",
+        "category": "military",
+        "subtype": "airbase",
+        "criticality": 9.0,
+        "operator": "Hungarian Defence Forces",
+        "lat": 46.917,
+        "lon": 19.749,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
       "id": "f6def0caf588e361",
       "level": "medium",
       "score": 50.4,
@@ -36298,6 +36208,36 @@
         "source": "GDELT",
         "time": "2026-07-25T00:00:00Z",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-nuscale-power-stock-fell-184243480.html",
+        "lat": 46.0,
+        "lon": 25.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-military-cincu",
+        "name": "Cincu Training Area",
+        "country": "Romania",
+        "city": "Cincu",
+        "category": "military",
+        "subtype": "training_area",
+        "criticality": 8.0,
+        "operator": "Romanian Armed Forces / NATO",
+        "lat": 45.917,
+        "lon": 24.783,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "0fd320744d1ec859",
+      "level": "medium",
+      "score": 49.37,
+      "distance_km": 19.15,
+      "event": {
+        "id": "37fdb496e7195d1a",
+        "title": "Romania",
+        "category": "security_politics",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://thecolu.mn/4187/romanian-city-bans-pride-parade/",
         "lat": 46.0,
         "lon": 25.0,
         "source_file": "gdelt_linked.geojson"
@@ -43007,50 +42947,20 @@
       }
     },
     {
-      "id": "0ba3e33020a558ff",
+      "id": "547517f5c8957b2f",
       "level": "medium",
-      "score": 48.36,
-      "distance_km": 19.78,
+      "score": 46.86,
+      "distance_km": 20.71,
       "event": {
-        "id": "60419777653d8604",
-        "title": "Fialova vláda a stovky milionů pro neziskovky | ParlamentniListy . cz – politika ze všech stran",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-24T04:45:00Z",
-        "url": "https://www.parlamentnilisty.cz/profily/Ing-Irena-Nemcova-160827/clanek/Fialova-vlada-a-stovky-milionu-pro-neziskovky-146430",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
-      },
-      "infrastructure": {
-        "id": "cz-energy-kralupy-refinery",
-        "name": "Kralupy Refinery",
-        "country": "Czechia",
-        "city": "Kralupy nad Vltavou",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 8.0,
-        "operator": "ORLEN Unipetrol",
-        "lat": 50.241,
-        "lon": 14.312,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "56e46ba542842515",
-      "level": "medium",
-      "score": 48.36,
-      "distance_km": 19.78,
-      "event": {
-        "id": "4ea71db12ca1250e",
-        "title": "Novinky . cz - nejčtenější zprávy na českém internetu",
-        "category": "other",
-        "source": "GDELT_DOC",
-        "time": "2026-07-24T04:45:00Z",
-        "url": "https://www.novinky.cz/?timeline--pageItem=40589523",
-        "lat": 50.08,
-        "lon": 14.43,
-        "source_file": "gdelt_crossborder.geojson"
+        "id": "29c55316c5e170ed",
+        "title": "Prague, Praha, Hlavníesto, Czech Republic",
+        "category": "violence",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.goldderby.com/film/2026/weapons-aunt-gladys-prequel-zach-cregger-comic-con-highlights/",
+        "lat": 50.0833,
+        "lon": 14.4667,
+        "source_file": "gdelt_linked.geojson"
       },
       "infrastructure": {
         "id": "cz-energy-kralupy-refinery",
@@ -43093,6 +43003,36 @@
         "operator": "Latvian Armed Forces / NATO eFP",
         "lat": 57.07,
         "lon": 24.337,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "4c98bb85b36adf66",
+      "level": "medium",
+      "score": 44.19,
+      "distance_km": 22.38,
+      "event": {
+        "id": "fddeac74b2c98a31",
+        "title": "Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.nhgazette.com/2026/07/24/n-h-does-nuclear-roadmap/",
+        "lat": 47.0,
+        "lon": 20.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-military-szolnok-base",
+        "name": "Szolnok Helicopter Base",
+        "country": "Hungary",
+        "city": "Szolnok",
+        "category": "military",
+        "subtype": "helicopter_base",
+        "criticality": 8.0,
+        "operator": "Hungarian Defence Forces",
+        "lat": 47.122,
+        "lon": 20.235,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -43153,36 +43093,6 @@
         "operator": "Freeport of Riga Authority",
         "lat": 56.949,
         "lon": 24.105,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "1d2d256f4b36f713",
-      "level": "watch",
-      "score": 30.52,
-      "distance_km": 33.04,
-      "event": {
-        "id": "a36c37b178c7084e",
-        "title": "Akár napokon belül élesedhet Trump masszív fegyvere Putyin ellen: ha Magyarország is tűzvonalba kerül, az fájna",
-        "category": "fire",
-        "source": "Portfolio",
-        "time": "Fri, 24 Jul 2026 17:38:00 +0200",
-        "url": "https://www.portfolio.hu/global/20260724/akar-napokon-belul-elesedhet-trump-massziv-fegyvere-putyin-ellen-ha-magyarorszag-is-tuzvonalba-kerul-az-fajna-851934",
-        "lat": 47.1625,
-        "lon": 19.5033,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-military-kecskemet-airbase",
-        "name": "Kecskemét Air Base",
-        "country": "Hungary",
-        "city": "Kecskemét",
-        "category": "military",
-        "subtype": "airbase",
-        "criticality": 9.0,
-        "operator": "Hungarian Defence Forces",
-        "lat": 46.917,
-        "lon": 19.749,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -43307,32 +43217,32 @@
       }
     },
     {
-      "id": "d9107197d8456f71",
+      "id": "63d10c23c48f66f8",
       "level": "watch",
-      "score": 25.72,
-      "distance_km": 35.71,
+      "score": 27.96,
+      "distance_km": 34.47,
       "event": {
-        "id": "a36c37b178c7084e",
-        "title": "Akár napokon belül élesedhet Trump masszív fegyvere Putyin ellen: ha Magyarország is tűzvonalba kerül, az fájna",
-        "category": "fire",
-        "source": "Portfolio",
-        "time": "Fri, 24 Jul 2026 17:38:00 +0200",
-        "url": "https://www.portfolio.hu/global/20260724/akar-napokon-belul-elesedhet-trump-massziv-fegyvere-putyin-ellen-ha-magyarorszag-is-tuzvonalba-kerul-az-fajna-851934",
-        "lat": 47.1625,
-        "lon": 19.5033,
-        "source_file": "local_events.geojson"
+        "id": "5a3e4e7df41ca512",
+        "title": "Czech Republic",
+        "category": "security_politics",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.upi.com/Top_News/World-News/2026/07/24/france-spain-wildfires/2521784942786/",
+        "lat": 49.75,
+        "lon": 15.0,
+        "source_file": "gdelt_linked.geojson"
       },
       "infrastructure": {
-        "id": "hu-transport-budapest-airport",
-        "name": "Budapest Ferenc Liszt International Airport",
-        "country": "Hungary",
-        "city": "Budapest",
-        "category": "transport",
-        "subtype": "international_airport",
+        "id": "cz-military-caslav-airbase",
+        "name": "Čáslav Air Base",
+        "country": "Czechia",
+        "city": "Čáslav",
+        "category": "military",
+        "subtype": "airbase",
         "criticality": 9.0,
-        "operator": "Budapest Airport",
-        "lat": 47.436,
-        "lon": 19.255,
+        "operator": "Czech Air Force",
+        "lat": 49.939,
+        "lon": 15.381,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -43363,36 +43273,6 @@
         "operator": "Conexus Baltic Grid",
         "lat": 57.098,
         "lon": 24.686,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "4ff514dd510c79b4",
-      "level": "watch",
-      "score": 18.83,
-      "distance_km": 38.23,
-      "event": {
-        "id": "a36c37b178c7084e",
-        "title": "Akár napokon belül élesedhet Trump masszív fegyvere Putyin ellen: ha Magyarország is tűzvonalba kerül, az fájna",
-        "category": "fire",
-        "source": "Portfolio",
-        "time": "Fri, 24 Jul 2026 17:38:00 +0200",
-        "url": "https://www.portfolio.hu/global/20260724/akar-napokon-belul-elesedhet-trump-massziv-fegyvere-putyin-ellen-ha-magyarorszag-is-tuzvonalba-kerul-az-fajna-851934",
-        "lat": 47.1625,
-        "lon": 19.5033,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-transport-bilk",
-        "name": "BILK Intermodal Logistics Terminal",
-        "country": "Hungary",
-        "city": "Budapest",
-        "category": "transport",
-        "subtype": "intermodal_terminal",
-        "criticality": 8.0,
-        "operator": "BILK",
-        "lat": 47.392,
-        "lon": 19.126,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -45493,36 +45373,6 @@
         "operator": "Ignitis",
         "lat": 54.785,
         "lon": 24.664,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "7018f4bfe9fff962",
-      "level": "watch",
-      "score": 8.55,
-      "distance_km": 43.89,
-      "event": {
-        "id": "a36c37b178c7084e",
-        "title": "Akár napokon belül élesedhet Trump masszív fegyvere Putyin ellen: ha Magyarország is tűzvonalba kerül, az fájna",
-        "category": "fire",
-        "source": "Portfolio",
-        "time": "Fri, 24 Jul 2026 17:38:00 +0200",
-        "url": "https://www.portfolio.hu/global/20260724/akar-napokon-belul-elesedhet-trump-massziv-fegyvere-putyin-ellen-ha-magyarorszag-is-tuzvonalba-kerul-az-fajna-851934",
-        "lat": 47.1625,
-        "lon": 19.5033,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-transport-csepel-port",
-        "name": "Csepel Free Port",
-        "country": "Hungary",
-        "city": "Budapest",
-        "category": "transport",
-        "subtype": "river_port",
-        "criticality": 7.0,
-        "operator": "Port operators",
-        "lat": 47.423,
-        "lon": 19.066,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -50537,36 +50387,6 @@
       }
     },
     {
-      "id": "cbb7d87d3eb954ed",
-      "level": "watch",
-      "score": 4.7,
-      "distance_km": 47.65,
-      "event": {
-        "id": "a36c37b178c7084e",
-        "title": "Akár napokon belül élesedhet Trump masszív fegyvere Putyin ellen: ha Magyarország is tűzvonalba kerül, az fájna",
-        "category": "fire",
-        "source": "Portfolio",
-        "time": "Fri, 24 Jul 2026 17:38:00 +0200",
-        "url": "https://www.portfolio.hu/global/20260724/akar-napokon-belul-elesedhet-trump-massziv-fegyvere-putyin-ellen-ha-magyarorszag-is-tuzvonalba-kerul-az-fajna-851934",
-        "lat": 47.1625,
-        "lon": 19.5033,
-        "source_file": "local_events.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-energy-szazhalombatta-refinery",
-        "name": "MOL Danube Refinery",
-        "country": "Hungary",
-        "city": "Százhalombatta",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 10.0,
-        "operator": "MOL Group",
-        "lat": 47.316,
-        "lon": 18.914,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
       "id": "88a70111d0d881f4",
       "level": "watch",
       "score": 0.63,
@@ -51405,6 +51225,276 @@
         "operator": "Romanian Armed Forces / NATO",
         "lat": 45.917,
         "lon": 24.783,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "0fd320744d1ec859",
+      "level": "medium",
+      "score": 49.37,
+      "distance_km": 19.15,
+      "event": {
+        "id": "37fdb496e7195d1a",
+        "title": "Romania",
+        "category": "security_politics",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://thecolu.mn/4187/romanian-city-bans-pride-parade/",
+        "lat": 46.0,
+        "lon": 25.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-military-cincu",
+        "name": "Cincu Training Area",
+        "country": "Romania",
+        "city": "Cincu",
+        "category": "military",
+        "subtype": "training_area",
+        "criticality": 8.0,
+        "operator": "Romanian Armed Forces / NATO",
+        "lat": 45.917,
+        "lon": 24.783,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "547517f5c8957b2f",
+      "level": "medium",
+      "score": 46.86,
+      "distance_km": 20.71,
+      "event": {
+        "id": "29c55316c5e170ed",
+        "title": "Prague, Praha, Hlavníesto, Czech Republic",
+        "category": "violence",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.goldderby.com/film/2026/weapons-aunt-gladys-prequel-zach-cregger-comic-con-highlights/",
+        "lat": 50.0833,
+        "lon": 14.4667,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "cz-energy-kralupy-refinery",
+        "name": "Kralupy Refinery",
+        "country": "Czechia",
+        "city": "Kralupy nad Vltavou",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 8.0,
+        "operator": "ORLEN Unipetrol",
+        "lat": 50.241,
+        "lon": 14.312,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "3709f5e982fd6f31",
+      "level": "high",
+      "score": 56.54,
+      "distance_km": 14.66,
+      "event": {
+        "id": "29c55316c5e170ed",
+        "title": "Prague, Praha, Hlavníesto, Czech Republic",
+        "category": "violence",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.goldderby.com/film/2026/weapons-aunt-gladys-prequel-zach-cregger-comic-con-highlights/",
+        "lat": 50.0833,
+        "lon": 14.4667,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "cz-transport-prague-airport",
+        "name": "Václav Havel Airport Prague",
+        "country": "Czechia",
+        "city": "Prague",
+        "category": "transport",
+        "subtype": "international_airport",
+        "criticality": 8.0,
+        "operator": "Prague Airport",
+        "lat": 50.101,
+        "lon": 14.263,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "4fa14511f34bb02b",
+      "level": "critical",
+      "score": 85.96,
+      "distance_km": 2.25,
+      "event": {
+        "id": "29c55316c5e170ed",
+        "title": "Prague, Praha, Hlavníesto, Czech Republic",
+        "category": "violence",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.goldderby.com/film/2026/weapons-aunt-gladys-prequel-zach-cregger-comic-con-highlights/",
+        "lat": 50.0833,
+        "lon": 14.4667,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "cz-digital-prague-ixp",
+        "name": "Prague Internet Exchange / NIX.CZ",
+        "country": "Czechia",
+        "city": "Prague",
+        "category": "digital",
+        "subtype": "internet_exchange",
+        "criticality": 9.0,
+        "operator": "NIX.CZ",
+        "lat": 50.075,
+        "lon": 14.438,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "11e4bc6f037857e8",
+      "level": "critical",
+      "score": 74.78,
+      "distance_km": 3.26,
+      "event": {
+        "id": "29c55316c5e170ed",
+        "title": "Prague, Praha, Hlavníesto, Czech Republic",
+        "category": "violence",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.goldderby.com/film/2026/weapons-aunt-gladys-prequel-zach-cregger-comic-con-highlights/",
+        "lat": 50.0833,
+        "lon": 14.4667,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "cz-digital-prague-dc-hub",
+        "name": "Prague Data Centre Hub",
+        "country": "Czechia",
+        "city": "Prague",
+        "category": "digital",
+        "subtype": "data_center_hub",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 50.083,
+        "lon": 14.421,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "fa26e1ba685e7ea3",
+      "level": "medium",
+      "score": 51.9,
+      "distance_km": 21.17,
+      "event": {
+        "id": "fddeac74b2c98a31",
+        "title": "Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.nhgazette.com/2026/07/24/n-h-does-nuclear-roadmap/",
+        "lat": 47.0,
+        "lon": 20.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-military-kecskemet-airbase",
+        "name": "Kecskemét Air Base",
+        "country": "Hungary",
+        "city": "Kecskemét",
+        "category": "military",
+        "subtype": "airbase",
+        "criticality": 9.0,
+        "operator": "Hungarian Defence Forces",
+        "lat": 46.917,
+        "lon": 19.749,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "4c98bb85b36adf66",
+      "level": "medium",
+      "score": 44.19,
+      "distance_km": 22.38,
+      "event": {
+        "id": "fddeac74b2c98a31",
+        "title": "Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.nhgazette.com/2026/07/24/n-h-does-nuclear-roadmap/",
+        "lat": 47.0,
+        "lon": 20.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-military-szolnok-base",
+        "name": "Szolnok Helicopter Base",
+        "country": "Hungary",
+        "city": "Szolnok",
+        "category": "military",
+        "subtype": "helicopter_base",
+        "criticality": 8.0,
+        "operator": "Hungarian Defence Forces",
+        "lat": 47.122,
+        "lon": 20.235,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "63d10c23c48f66f8",
+      "level": "watch",
+      "score": 27.96,
+      "distance_km": 34.47,
+      "event": {
+        "id": "5a3e4e7df41ca512",
+        "title": "Czech Republic",
+        "category": "security_politics",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "https://www.upi.com/Top_News/World-News/2026/07/24/france-spain-wildfires/2521784942786/",
+        "lat": 49.75,
+        "lon": 15.0,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "cz-military-caslav-airbase",
+        "name": "Čáslav Air Base",
+        "country": "Czechia",
+        "city": "Čáslav",
+        "category": "military",
+        "subtype": "airbase",
+        "criticality": 9.0,
+        "operator": "Czech Air Force",
+        "lat": 49.939,
+        "lon": 15.381,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "60bd35cf4998fd75",
+      "level": "high",
+      "score": 64.01,
+      "distance_km": 9.99,
+      "event": {
+        "id": "fa5f675491a75fac",
+        "title": "Szeged, Szeged, Hungary",
+        "category": "other",
+        "source": "GDELT",
+        "time": "2026-07-25T00:00:00Z",
+        "url": "http://www.rheaheraldnews.com/news/article_e4124e58-496d-4a08-8ef7-eab1f7ae7d58.html",
+        "lat": 46.25,
+        "lon": 20.1667,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-energy-algyo-hub",
+        "name": "Algyő Oil and Gas Hub",
+        "country": "Hungary",
+        "city": "Algyő",
+        "category": "energy",
+        "subtype": "oil_gas_production_hub",
+        "criticality": 8.0,
+        "operator": "MOL Group",
+        "lat": 46.335,
+        "lon": 20.209,
         "source_file": "critical_infrastructure.json"
       }
     },
@@ -65325,276 +65415,6 @@
         "operator": "Czech Air Force",
         "lat": 49.939,
         "lon": 15.381,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "9ab9e2f593a4e9e2",
-      "level": "medium",
-      "score": 51.9,
-      "distance_km": 21.17,
-      "event": {
-        "id": "28bf9fd05c82530a",
-        "title": "Hungary",
-        "category": "infrastructure",
-        "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://www.freshplaza.com/north-america/article/9860642/moldova-expects-15-000-to-17-000-tonnes-of-export-quality-apricots/",
-        "lat": 47.0,
-        "lon": 20.0,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-military-kecskemet-airbase",
-        "name": "Kecskemét Air Base",
-        "country": "Hungary",
-        "city": "Kecskemét",
-        "category": "military",
-        "subtype": "airbase",
-        "criticality": 9.0,
-        "operator": "Hungarian Defence Forces",
-        "lat": 46.917,
-        "lon": 19.749,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "3f34c5a27353504d",
-      "level": "medium",
-      "score": 44.19,
-      "distance_km": 22.38,
-      "event": {
-        "id": "28bf9fd05c82530a",
-        "title": "Hungary",
-        "category": "infrastructure",
-        "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://www.freshplaza.com/north-america/article/9860642/moldova-expects-15-000-to-17-000-tonnes-of-export-quality-apricots/",
-        "lat": 47.0,
-        "lon": 20.0,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "hu-military-szolnok-base",
-        "name": "Szolnok Helicopter Base",
-        "country": "Hungary",
-        "city": "Szolnok",
-        "category": "military",
-        "subtype": "helicopter_base",
-        "criticality": 8.0,
-        "operator": "Hungarian Defence Forces",
-        "lat": 47.122,
-        "lon": 20.235,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "7698a0aa6d9d6770",
-      "level": "watch",
-      "score": 6.38,
-      "distance_km": 46.45,
-      "event": {
-        "id": "ff0f994703af1c02",
-        "title": "Bucharest, Bucuresti, Romania",
-        "category": "drone",
-        "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://aninews.in/news/world/europe/will-see-deeper-engagement-india-romania-to-deepen-defence-cooperation-in-drones-aerospace20260724214416/",
-        "lat": 44.4333,
-        "lon": 26.1,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-energy-petrobrazi-refinery",
-        "name": "Petrobrazi Refinery",
-        "country": "Romania",
-        "city": "Brazi",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 9.0,
-        "operator": "OMV Petrom",
-        "lat": 44.848,
-        "lon": 26.029,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "c3be17b6b1b2eb48",
-      "level": "medium",
-      "score": 55.43,
-      "distance_km": 15.36,
-      "event": {
-        "id": "ff0f994703af1c02",
-        "title": "Bucharest, Bucuresti, Romania",
-        "category": "drone",
-        "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://aninews.in/news/world/europe/will-see-deeper-engagement-india-romania-to-deepen-defence-cooperation-in-drones-aerospace20260724214416/",
-        "lat": 44.4333,
-        "lon": 26.1,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-transport-henri-coanda-airport",
-        "name": "Bucharest Henri Coandă International Airport",
-        "country": "Romania",
-        "city": "Bucharest",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Bucharest Airports",
-        "lat": 44.571,
-        "lon": 26.085,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "110b9630ef78bd80",
-      "level": "critical",
-      "score": 78.68,
-      "distance_km": 0.83,
-      "event": {
-        "id": "ff0f994703af1c02",
-        "title": "Bucharest, Bucuresti, Romania",
-        "category": "drone",
-        "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://aninews.in/news/world/europe/will-see-deeper-engagement-india-romania-to-deepen-defence-cooperation-in-drones-aerospace20260724214416/",
-        "lat": 44.4333,
-        "lon": 26.1,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-digital-bucharest-ixp",
-        "name": "Bucharest Internet Exchange / Digital Hub",
-        "country": "Romania",
-        "city": "Bucharest",
-        "category": "digital",
-        "subtype": "internet_exchange_digital_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 44.426,
-        "lon": 26.102,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "732350d8ae8bb8cd",
-      "level": "medium",
-      "score": 49.37,
-      "distance_km": 19.15,
-      "event": {
-        "id": "1a26f52c5fe633c5",
-        "title": "Romania",
-        "category": "police",
-        "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://www.foxnews.com/world/romanian-f-16-shoots-down-drone-after-airspace-breach-marking-first-nato-ally",
-        "lat": 46.0,
-        "lon": 25.0,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-military-cincu",
-        "name": "Cincu Training Area",
-        "country": "Romania",
-        "city": "Cincu",
-        "category": "military",
-        "subtype": "training_area",
-        "criticality": 8.0,
-        "operator": "Romanian Armed Forces / NATO",
-        "lat": 45.917,
-        "lon": 24.783,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "90094e99ab9aa907",
-      "level": "medium",
-      "score": 36.66,
-      "distance_km": 27.09,
-      "event": {
-        "id": "5834a23e56817882",
-        "title": "Slovak Republic",
-        "category": "security_politics",
-        "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/07/ukraine-260723-ukraine-mfa05.htm",
-        "lat": 48.666667,
-        "lon": 19.5,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "sk-military-sliac-airbase",
-        "name": "Sliač Air Base",
-        "country": "Slovakia",
-        "city": "Sliač",
-        "category": "military",
-        "subtype": "airbase",
-        "criticality": 8.0,
-        "operator": "Slovak Armed Forces",
-        "lat": 48.637,
-        "lon": 19.134,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "772db3906405f36f",
-      "level": "watch",
-      "score": 6.38,
-      "distance_km": 46.45,
-      "event": {
-        "id": "d294aa7cf31cd7ba",
-        "title": "Bucharest, Bucuresti, Romania",
-        "category": "other",
-        "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://www.stiripesurse.ro/speaker-grindeanu-the-visit-indias-president-a-truly-historic-one-in-romania-of-the-last-30-years_3906462",
-        "lat": 44.4333,
-        "lon": 26.1,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-energy-petrobrazi-refinery",
-        "name": "Petrobrazi Refinery",
-        "country": "Romania",
-        "city": "Brazi",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 9.0,
-        "operator": "OMV Petrom",
-        "lat": 44.848,
-        "lon": 26.029,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "402fd245ad16c6bb",
-      "level": "medium",
-      "score": 55.43,
-      "distance_km": 15.36,
-      "event": {
-        "id": "d294aa7cf31cd7ba",
-        "title": "Bucharest, Bucuresti, Romania",
-        "category": "other",
-        "source": "GDELT",
-        "time": "2026-07-24T00:00:00Z",
-        "url": "https://www.stiripesurse.ro/speaker-grindeanu-the-visit-indias-president-a-truly-historic-one-in-romania-of-the-last-30-years_3906462",
-        "lat": 44.4333,
-        "lon": 26.1,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-transport-henri-coanda-airport",
-        "name": "Bucharest Henri Coandă International Airport",
-        "country": "Romania",
-        "city": "Bucharest",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Bucharest Airports",
-        "lat": 44.571,
-        "lon": 26.085,
         "source_file": "critical_infrastructure.json"
       }
     }

@@ -1,78 +1,28 @@
 {
-  "generated_utc": "2026-07-25T11:36:16Z",
+  "generated_utc": "2026-07-25T17:56:37Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Helyi források alapján az elmúlt 24 órában 4 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Romania: 2, Latvia: 1, Estonia: 1.",
-    "Az infrastruktúra-közelségi modul 1 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 0 magas vagy kritikus szintű.",
-    "MEDIUM infrastruktúra-jelzés: Cernavodă Nuclear Power Plant (Romania) – 18.5 km-re ettől: Mesagerul . ro | Încă o dronă a fost doborâtă în România , lângă Sfântu Gheorghe , de același pilot care a anihilat și drona de ieri.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 828.10; 7 napos változás: +11952%).",
-    "Trend: emelkedő (+1575%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2795, GDELT DOC 2847, direkt feed 361, USGS 0, GDACS 2.",
+    "Helyi források alapján az elmúlt 24 órában 14 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Romania: 10, Estonia: 1, Czech Republic: 1, Poland: 1.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 863.54; 7 napos változás: +13269%).",
+    "Trend: emelkedő (+1711%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2844, GDELT DOC 2917, direkt feed 358, USGS 0, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+11952%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+13269%)."
   },
   "stats": {
-    "score_last7": 3079.357,
-    "score_prev7": 183.891,
-    "change_pct": 1574.56
+    "score_last7": 3133.51,
+    "score_prev7": 173.004,
+    "change_pct": 1711.23
   },
   "rss_count": 200,
   "local_infrastructure": {
-    "last_24h_local_events": 4,
-    "last_24h_proximity_matches": 1,
-    "top_proximity": [
-      {
-        "id": "56e6ee51f0b2916f",
-        "level": "medium",
-        "score": 63.05,
-        "distance_km": 18.47,
-        "event": {
-          "id": "2fe5044942659682",
-          "title": "Mesagerul . ro | Încă o dronă a fost doborâtă în România , lângă Sfântu Gheorghe , de același pilot care a anihilat și drona de ieri",
-          "category": "other",
-          "incident_type": "drone_airspace",
-          "source": "GDELT_DOC",
-          "source_count": 1,
-          "sources": [
-            "GDELT_DOC"
-          ],
-          "time": "2026-07-24T17:30:00Z",
-          "url": "https://www.ziarulnational.md/a-doua-drona-doborata-de-f16-in-romania-langa-sfantu-gheorghe-mesaj-roalert-pentru-locuitorii-din-tulcea/",
-          "urls": [
-            "https://www.ziarulnational.md/a-doua-drona-doborata-de-f16-in-romania-langa-sfantu-gheorghe-mesaj-roalert-pentru-locuitorii-din-tulcea/",
-            "https://www.zf.ro/eveniment/breaking-presedintele-nicusor-dan-o-noua-drona-a-fost-doborata-de-pilotii-romani-de-f16-langa-localitatea-sfantu-gheorghe-23202514",
-            "https://www.mesagerul.ro/cluj/inca-o-drona-a-fost-doborata-in-romania-langa-sfantu-gheorghe-de-acelasi-pilot-care-a-anihilat-si-drona-de-ieri__59137/",
-            "https://jurnalul.ro/stiri/observator/drona-doborata-buzau-nato-fetesti-f16-ancheta-1039895.html"
-          ],
-          "lat": 44.366,
-          "lon": 27.833,
-          "location_quality": "city",
-          "place": "fetesti",
-          "geolocation_method": "article_city",
-          "geolocation_source_count": 1,
-          "geolocation_evidence_count": 1,
-          "geolocation_negation_filter": true,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "ro-energy-cernavoda-npp",
-          "name": "Cernavodă Nuclear Power Plant",
-          "country": "Romania",
-          "city": "Cernavodă",
-          "category": "energy",
-          "subtype": "nuclear_power_plant",
-          "criticality": 10.0,
-          "operator": "Nuclearelectrica",
-          "lat": 44.322,
-          "lon": 28.057,
-          "source_file": "critical_infrastructure.json"
-        }
-      }
-    ]
+    "last_24h_local_events": 14,
+    "last_24h_proximity_matches": 0,
+    "top_proximity": []
   }
 }

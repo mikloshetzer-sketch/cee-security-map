@@ -1419,8 +1419,16 @@ def score_country_risk(country, event_row, prox_row):
     military_drone = saturating_score(event_row["military_drone_score"], 5.0)
     cyber = saturating_score(event_row["cyber_score"], 4.0)
 
-    infra_raw = event_row["infrastructure_score"] + prox_row["score"] * 1.35
-    infrastructure = saturating_score(infra_raw, 6.0)
+    # Critical-infrastructure exposure must come ONLY from a validated
+    # event-to-infrastructure proximity match. Generic infrastructure-related
+    # incidents still contribute to overall incident pressure, but they do
+    # not automatically imply exposure of a specific critical asset.
+    infra_raw = prox_row["score"] * 1.35
+    infrastructure = (
+        saturating_score(infra_raw, 6.0)
+        if prox_row["count"] > 0
+        else 0.0
+    )
 
     crossborder = saturating_score(event_row["crossborder_score"], 4.0)
 
@@ -1491,8 +1499,13 @@ def score_country_risk(country, event_row, prox_row):
         key=lambda item: item[1] * RISK_WEIGHTS[item[0]],
         reverse=True,
     ):
-        if value >= 2.0:
-            drivers.append(driver_labels[name])
+        if value < 2.0:
+            continue
+
+        if name == "infrastructure" and prox_row["count"] <= 0:
+            continue
+
+        drivers.append(driver_labels[name])
 
     return {
         "normalized": normalized,
@@ -1505,6 +1518,11 @@ def score_country_risk(country, event_row, prox_row):
         "source_count": event_row.get("source_count", event_row["all_count"]),
         "infra_proximity_count": prox_row["count"],
         "high_critical_infra_count": prox_row["high_critical"],
+        "infrastructure_risk_source": (
+            "validated_proximity"
+            if prox_row["count"] > 0
+            else "none"
+        ),
     }
 
 
@@ -1558,6 +1576,7 @@ def enrich_risk(local_events, prox_matches):
             "source_count": scored.get("source_count", scored["local_event_count"]),
             "infra_proximity_count": scored["infra_proximity_count"],
             "high_critical_infra_count": scored["high_critical_infra_count"],
+            "infrastructure_risk_source": scored["infrastructure_risk_source"],
             "model": "cee_country_risk_v2",
             "weights": RISK_WEIGHTS,
         }
@@ -1623,7 +1642,7 @@ def enrich_risk(local_events, prox_matches):
         "scale": "0-10",
         "countries": MONITORED_COUNTRIES,
         "weights": RISK_WEIGHTS,
-        "method": "weighted saturating dimensions from 7-day incident-clustered validated evidence",
+        "method": "weighted saturating dimensions from 7-day incident-clustered validated evidence; infrastructure dimension uses validated proximity only",
         "important": "previous normalized scores are not cumulatively re-added",
     }
     risk["generated_utc"] = now_utc().isoformat()
@@ -1670,3 +1689,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

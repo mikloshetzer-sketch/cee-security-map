@@ -15,6 +15,7 @@ SUMMARY = DATA / "summary.json"
 WEEKLY = DATA / "weekly.json"
 META = DATA / "meta.json"
 RISK_DAILY = DATA / "risk_daily.json"
+RISK_INCIDENTS_DEBUG = DATA / "risk_incidents_debug.json"
 
 LOCAL_EVENTS = DATA / "local_events.geojson"
 LOCAL_HISTORY = HISTORY / "local_events_history.geojson"
@@ -829,6 +830,138 @@ def build_proximity_stats(matches):
     return by_country
 
 
+
+def write_risk_incidents_debug(security_events):
+    """
+    Write an audit file showing exactly which clustered incidents are used
+    by the country-risk model. This file does not change risk calculations.
+    """
+    countries = {
+        country: []
+        for country in MONITORED_COUNTRIES
+    }
+
+    total_articles = 0
+    total_sources = 0
+
+    for index, feature in enumerate(security_events, start=1):
+        props = feature.get("properties") or {}
+        country = norm_country(props.get("country"))
+
+        if country not in MONITORED_COUNTRIES:
+            continue
+
+        dt = parse_time(props.get("time"))
+        category = str(
+            props.get("incident_type")
+            or props.get("category")
+            or "unknown"
+        ).lower()
+
+        titles = list(
+            props.get("risk_titles")
+            or ([props.get("title")] if props.get("title") else [])
+        )
+        urls = list(
+            props.get("risk_urls")
+            or props.get("urls")
+            or ([props.get("url")] if props.get("url") else [])
+        )
+        sources = list(
+            props.get("risk_sources")
+            or props.get("sources")
+            or ([props.get("source")] if props.get("source") else [])
+        )
+
+        article_count = int(props.get("article_count") or max(1, len(titles)))
+        source_count = int(props.get("source_count") or max(1, len(sources)))
+
+        total_articles += article_count
+        total_sources += source_count
+
+        representative_title = (
+            props.get("title")
+            or (titles[0] if titles else "")
+            or props.get("name")
+            or "Untitled incident"
+        )
+
+        cluster_id = stable_event_key(
+            country,
+            category,
+            dt.isoformat() if dt else props.get("time"),
+            representative_title,
+        )
+
+        countries[country].append({
+            "cluster_id": cluster_id,
+            "date": dt.date().isoformat() if dt else None,
+            "time": dt.isoformat() if dt else props.get("time"),
+            "category": category,
+            "severity": props.get("severity"),
+            "representative_title": representative_title,
+            "article_count": article_count,
+            "source_count": source_count,
+            "sources": sources,
+            "titles": titles,
+            "urls": urls,
+            "risk_score_input": local_event_score(props),
+            "source_file": props.get("_risk_source_file"),
+        })
+
+    country_summary = {}
+
+    for country in MONITORED_COUNTRIES:
+        incidents = countries[country]
+        incidents.sort(
+            key=lambda row: (
+                row.get("time") or "",
+                row.get("category") or "",
+                row.get("representative_title") or "",
+            ),
+            reverse=True,
+        )
+
+        category_counts = Counter(
+            row["category"]
+            for row in incidents
+        )
+
+        country_summary[country] = {
+            "incident_count": len(incidents),
+            "article_count": sum(
+                row["article_count"]
+                for row in incidents
+            ),
+            "source_count": sum(
+                row["source_count"]
+                for row in incidents
+            ),
+            "category_counts": dict(
+                sorted(category_counts.items())
+            ),
+        }
+
+    payload = {
+        "generated_utc": now_utc().isoformat(),
+        "purpose": (
+            "Audit of incident-level records actually used by "
+            "cee_country_risk_v2. This file is diagnostic only."
+        ),
+        "model": "cee_country_risk_v2",
+        "window_days": 7,
+        "totals": {
+            "incident_count": len(security_events),
+            "article_count": total_articles,
+            "source_count": total_sources,
+        },
+        "country_summary": country_summary,
+        "countries": countries,
+    }
+
+    save_json(RISK_INCIDENTS_DEBUG, payload)
+
+
 def enrich_summary(local_events, prox_matches):
     summary = load_json(SUMMARY, {
         "generated_utc": now_utc().isoformat(),
@@ -1351,12 +1484,14 @@ def main():
     security_events = load_validated_security_events(days=7)
     prox_matches = load_proximity(days=7)
 
+    write_risk_incidents_debug(security_events)
     enrich_summary(security_events, prox_matches)
     enrich_weekly(security_events, prox_matches)
     enrich_risk(security_events, prox_matches)
     enrich_meta(security_events, prox_matches)
 
     print("Security outputs enriched.")
+    print(f"Risk incident audit saved: {RISK_INCIDENTS_DEBUG}")
     print(f"Validated security events 7d: {len(security_events)}")
     print(f"Validated infrastructure proximity matches 7d: {len(prox_matches)}")
 

@@ -576,6 +576,23 @@ LOCATION_ACTION_TERMS = [
     "prăbușit", "prabusit", "explozie", "atac",
 ]
 
+
+NEGATION_LOCATION_TERMS = [
+    "did not fly over", "didn't fly over", "did not overfly",
+    "did not cross", "did not enter", "did not approach",
+    "did not affect", "was not over", "was not near",
+    "not over", "not near", "never flew over", "denies that", "denied that",
+    "nem repült át", "nem repült", "nem haladt át", "nem lépett be",
+    "nem közelítette meg", "nem érintette", "nem volt felette",
+    "nem volt a közelében", "cáfolta, hogy", "tagadja, hogy", "tagadták, hogy",
+    "nu a survolat", "nu ar fi survolat", "nu a zburat deasupra",
+    "nu a intrat", "nu s-a apropiat", "nu a afectat",
+    "nu a fost deasupra", "nu a fost în apropiere", "nu a fost in apropiere",
+    "neagă că", "neaga ca",
+]
+
+NEGATION_WINDOW_CHARS = 90
+
 NAMED_PLACE_COORDS = {
     "mihail kogălniceanu air base": ("Romania", 44.362, 28.488),
     "mihail kogalniceanu air base": ("Romania", 44.362, 28.488),
@@ -1021,11 +1038,37 @@ def incident_signature(event):
 
 
 
+
+def location_mention_is_negated(text, place_name):
+    """Return True when nearby wording explicitly excludes the place."""
+    normalized = normalize_text(text)
+    place = normalize_text(place_name)
+
+    if not normalized or not place:
+        return False
+
+    for match in re.finditer(re.escape(place), normalized):
+        start = max(0, match.start() - NEGATION_WINDOW_CHARS)
+        end = min(len(normalized), match.end() + 35)
+        context = normalized[start:end]
+
+        if contains_any(context, NEGATION_LOCATION_TERMS):
+            return True
+
+    return False
+
+
+def positive_location_mention(text, place_name):
+    return contains_term(text, place_name) and not location_mention_is_negated(
+        text, place_name
+    )
+
+
 def extract_named_place_candidates(event):
     evidence = actual_location_evidence(event)
     candidates = []
     for place_name, (country, lat, lon) in NAMED_PLACE_COORDS.items():
-        if contains_term(evidence, place_name):
+        if positive_location_mention(evidence, place_name):
             candidates.append({
                 "country": country, "lat": lat, "lon": lon,
                 "place": place_name, "quality": "precise",
@@ -1041,6 +1084,9 @@ def extract_city_candidates(event):
 
     candidates = []
     for city, country in explicit_target_cities(evidence):
+        if location_mention_is_negated(evidence, city):
+            continue
+
         coords = CITY_COORDS_VALIDATION.get(city)
         if coords:
             candidates.append({
@@ -1570,6 +1616,7 @@ def build_matches(infrastructure, events):
                     "geolocation_method": event.get("geolocation_method"),
                     "geolocation_source_count": event.get("geolocation_source_count", 0),
                     "geolocation_evidence_count": event.get("geolocation_evidence_count", 0),
+                    "geolocation_negation_filter": True,
                     "source_file": event["_source_file"],
                 },
                 "infrastructure": {
@@ -1668,7 +1715,7 @@ def build():
                 "deduplication": "country + incident_type + time + semantic similarity",
                 "location_policy": "multi-source geolocation after incident clustering; unresolved/coarse locations excluded",
                 "compatibility": "incident type must match infrastructure category",
-                "geolocation": "named place > article city > trusted source coordinate; GDELT fallback never upgraded automatically"
+                "geolocation": "named place > article city > trusted source coordinate; negated locations rejected; GDELT fallback never upgraded automatically"
             },
             "deduplication": {
                 "events": "exact article dedup then incident-level clustering",

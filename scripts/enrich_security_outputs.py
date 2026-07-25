@@ -30,6 +30,36 @@ COUNTRY_NAME_MAP = {
     "Estonia": "Estonia",
 }
 
+MONITORED_COUNTRIES = [
+    "Czech Republic",
+    "Hungary",
+    "Romania",
+    "Slovakia",
+    "Poland",
+    "Lithuania",
+    "Latvia",
+    "Estonia",
+]
+
+RISK_CATEGORY_GROUPS = {
+    "military_drone": {"military", "drone", "drone_airspace", "kinetic_attack", "military_accident"},
+    "cyber": {"cyber", "cyber_incident"},
+    "infrastructure": {
+        "explosion", "fire", "hazardous", "energy", "transport",
+        "infrastructure_disruption", "sabotage", "major_fire", "hazardous_incident"
+    },
+}
+
+RISK_WEIGHTS = {
+    "incident_pressure": 0.30,
+    "military_drone": 0.20,
+    "cyber": 0.15,
+    "infrastructure": 0.15,
+    "crossborder": 0.10,
+    "trend": 0.10,
+}
+
+
 
 def now_utc():
     return datetime.now(timezone.utc)
@@ -367,85 +397,345 @@ def enrich_weekly(local_events, prox_matches):
     save_json(WEEKLY, weekly)
 
 
+
+def clamp(value, low=0.0, high=10.0):
+    return max(low, min(high, float(value)))
+
+
+def saturating_score(value, scale):
+    """
+    Convert an unbounded activity value to 0..10 without allowing one large
+    raw count to force every country to the ceiling.
+    """
+    value = max(0.0, float(value or 0.0))
+    scale = max(0.001, float(scale))
+    return round(10.0 * value / (value + scale), 3)
+
+
+def event_category(props):
+    return str(
+        props.get("incident_type")
+        or props.get("category")
+        or "unknown"
+    ).lower()
+
+
+def country_event_components(local_events):
+    result = defaultdict(lambda: {
+        "all_score": 0.0,
+        "all_count": 0,
+        "military_drone_score": 0.0,
+        "military_drone_count": 0,
+        "cyber_score": 0.0,
+        "cyber_count": 0,
+        "infrastructure_score": 0.0,
+        "infrastructure_count": 0,
+        "crossborder_score": 0.0,
+        "crossborder_count": 0,
+        "recent_24h_score": 0.0,
+        "previous_24_72h_score": 0.0,
+    })
+
+    seen = set()
+
+    for feature in local_events:
+        props = feature.get("properties") or {}
+        country = norm_country(props.get("country"))
+        if country not in MONITORED_COUNTRIES:
+            continue
+
+        event_key = (
+            props.get("id")
+            or props.get("url")
+            or (
+                props.get("title"),
+                props.get("time"),
+                props.get("source"),
+            )
+        )
+        dedup_key = (country, str(event_key))
+        if dedup_key in seen:
+            continue
+        seen.add(dedup_key)
+
+        score = local_event_score(props)
+        category = event_category(props)
+        age = age_hours(props.get("time"))
+
+        row = result[country]
+        row["all_score"] += score
+        row["all_count"] += 1
+
+        if category in RISK_CATEGORY_GROUPS["military_drone"]:
+            row["military_drone_score"] += score
+            row["military_drone_count"] += 1
+
+        if category in RISK_CATEGORY_GROUPS["cyber"]:
+            row["cyber_score"] += score
+            row["cyber_count"] += 1
+
+        if category in RISK_CATEGORY_GROUPS["infrastructure"]:
+            row["infrastructure_score"] += score
+            row["infrastructure_count"] += 1
+
+        crossborder_flag = any([
+            props.get("crossborder") is True,
+            props.get("cross_border") is True,
+            str(props.get("scope") or "").lower() == "crossborder",
+            str(props.get("category") or "").lower() == "crossborder",
+        ])
+        if crossborder_flag:
+            row["crossborder_score"] += score
+            row["crossborder_count"] += 1
+
+        if age is not None:
+            if age <= 24:
+                row["recent_24h_score"] += score
+            elif age <= 72:
+                row["previous_24_72h_score"] += score
+
+    return result
+
+
+def country_proximity_components(prox_matches):
+    result = defaultdict(lambda: {
+        "score": 0.0,
+        "count": 0,
+        "high_critical": 0,
+    })
+
+    seen = set()
+
+    for match in prox_matches:
+        infra = match.get("infrastructure") or {}
+        event = match.get("event") or {}
+        country = norm_country(infra.get("country"))
+
+        if country not in MONITORED_COUNTRIES:
+            continue
+
+        dedup_key = (
+            country,
+            event.get("id"),
+            infra.get("id") or infra.get("name"),
+        )
+        if dedup_key in seen:
+            continue
+        seen.add(dedup_key)
+
+        score = proximity_score(match)
+        result[country]["score"] += score
+        result[country]["count"] += 1
+
+        if str(match.get("level") or "").lower() in {"high", "critical"}:
+            result[country]["high_critical"] += 1
+
+    return result
+
+
+def score_country_risk(country, event_row, prox_row):
+    incident_pressure = saturating_score(event_row["all_score"], 10.0)
+    military_drone = saturating_score(event_row["military_drone_score"], 5.0)
+    cyber = saturating_score(event_row["cyber_score"], 4.0)
+
+    infra_raw = event_row["infrastructure_score"] + prox_row["score"] * 1.35
+    infrastructure = saturating_score(infra_raw, 6.0)
+
+    crossborder = saturating_score(event_row["crossborder_score"], 4.0)
+
+    recent = event_row["recent_24h_score"]
+    previous_daily = event_row["previous_24_72h_score"] / 2.0
+
+    if recent <= 0 and previous_daily <= 0:
+        trend = 0.0
+    else:
+        ratio = (recent + 0.5) / (previous_daily + 0.5)
+        trend = clamp(5.0 + 3.2 * (ratio - 1.0), 0.0, 10.0)
+
+    dimensions = {
+        "incident_pressure": incident_pressure,
+        "military_drone": military_drone,
+        "cyber": cyber,
+        "infrastructure": infrastructure,
+        "crossborder": crossborder,
+        "trend": round(trend, 3),
+    }
+
+    normalized = round(sum(
+        dimensions[name] * weight
+        for name, weight in RISK_WEIGHTS.items()
+    ), 3)
+
+    evidence_count = event_row["all_count"] + prox_row["count"]
+    active_dimensions = sum(
+        1 for name in [
+            "incident_pressure", "military_drone", "cyber",
+            "infrastructure", "crossborder"
+        ]
+        if dimensions[name] > 0
+    )
+
+    confidence_value = clamp(
+        0.20
+        + min(0.45, evidence_count * 0.055)
+        + min(0.25, active_dimensions * 0.05),
+        0.0,
+        1.0,
+    )
+
+    if confidence_value >= 0.72:
+        confidence = "high"
+    elif confidence_value >= 0.45:
+        confidence = "medium"
+    else:
+        confidence = "low"
+
+    drivers = []
+    driver_labels = {
+        "incident_pressure": "biztonsági incidensnyomás",
+        "military_drone": "katonai és drónaktivitás",
+        "cyber": "kiberincidensek",
+        "infrastructure": "kritikus infrastruktúra-kitettség",
+        "crossborder": "határon átnyúló nyomás",
+        "trend": "friss aktivitási trend",
+    }
+
+    for name, value in sorted(
+        dimensions.items(),
+        key=lambda item: item[1] * RISK_WEIGHTS[item[0]],
+        reverse=True,
+    ):
+        if value >= 2.0:
+            drivers.append(driver_labels[name])
+
+    return {
+        "normalized": normalized,
+        "dimensions": dimensions,
+        "confidence": confidence,
+        "confidence_value": round(confidence_value, 3),
+        "drivers": drivers[:4],
+        "local_event_count": event_row["all_count"],
+        "infra_proximity_count": prox_row["count"],
+        "high_critical_infra_count": prox_row["high_critical"],
+    }
+
+
+def risk_level(score):
+    if score >= 8.0:
+        return "critical"
+    if score >= 5.0:
+        return "tense"
+    if score >= 2.0:
+        return "elevated"
+    return "normal"
+
+
 def enrich_risk(local_events, prox_matches):
+    """
+    Rebuild country risk from current validated evidence.
+
+    Important: the previous normalized value is NOT used as a new baseline.
+    This prevents the enrichment workflow from adding the same bonus again
+    on every run and gradually pushing all countries toward 10.
+    """
     risk = load_json(RISK_DAILY, {
         "generated_utc": now_utc().isoformat(),
         "country_scores": {},
         "countries": [],
-        "region": {
-            "overall": "normal",
-            "overall_score": 0,
-            "confidence": "low",
-            "confidence_value": 0,
-            "dimensions": {},
-            "dimension_scores": {}
-        }
+        "region": {}
     })
 
-    local_stats = build_local_stats(local_events)
-    prox_stats = build_proximity_stats(prox_matches)
+    event_components = country_event_components(local_events)
+    proximity_components = country_proximity_components(prox_matches)
 
-    country_scores = risk.get("country_scores") or {}
+    country_scores = {}
+    countries = []
 
-    all_countries = set(country_scores.keys()) | set(local_stats.keys()) | set(prox_stats.keys())
+    for country in MONITORED_COUNTRIES:
+        event_row = event_components[country]
+        prox_row = proximity_components[country]
 
-    for country in all_countries:
-        row = country_scores.get(country, {})
-        base_norm = float(row.get("normalized", 0.0) or 0.0)
+        scored = score_country_risk(country, event_row, prox_row)
+        normalized = scored["normalized"]
 
-        local_score = local_stats.get(country, {}).get("score", 0.0)
-        prox_score = prox_stats.get(country, {}).get("score", 0.0)
-
-        infra_bonus = min(2.5, local_score * 0.18 + prox_score * 0.22)
-        new_norm = min(10.0, round(base_norm + infra_bonus, 3))
-
-        row["base_normalized_before_local_infra"] = round(base_norm, 3)
-        row["normalized"] = new_norm
-        row["local_event_score"] = round(local_score, 3)
-        row["infra_proximity_score"] = round(prox_score, 3)
-        row["local_event_count"] = local_stats.get(country, {}).get("count", 0)
-        row["infra_proximity_count"] = prox_stats.get(country, {}).get("count", 0)
+        row = {
+            "normalized": normalized,
+            "overall": risk_level(normalized),
+            "confidence": scored["confidence"],
+            "confidence_value": scored["confidence_value"],
+            "dimensions": scored["dimensions"],
+            "drivers": scored["drivers"],
+            "local_event_count": scored["local_event_count"],
+            "infra_proximity_count": scored["infra_proximity_count"],
+            "high_critical_infra_count": scored["high_critical_infra_count"],
+            "model": "cee_country_risk_v2",
+            "weights": RISK_WEIGHTS,
+        }
 
         country_scores[country] = row
 
-    risk["country_scores"] = country_scores
-
-    countries = []
-    for country, row in sorted(country_scores.items(), key=lambda x: x[1].get("normalized", 0), reverse=True):
-        normalized = float(row.get("normalized", 0.0) or 0.0)
-        overall = "critical" if normalized >= 8 else "tense" if normalized >= 5 else "elevated" if normalized >= 2 else "normal"
-
         countries.append({
             "country": country,
-            "overall": overall,
-            "overall_score": round(normalized, 3),
-            "normalized": round(normalized, 3),
-            "confidence": "medium" if row.get("local_event_count", 0) or row.get("infra_proximity_count", 0) else "derived",
-            "drivers": [
-                x for x in [
-                    "lokális infrastruktúra-események" if row.get("local_event_count", 0) else None,
-                    "kritikus infrastruktúra-közeli incidensek" if row.get("infra_proximity_count", 0) else None
-                ] if x
-            ]
+            "overall": row["overall"],
+            "overall_score": normalized,
+            "normalized": normalized,
+            "confidence": row["confidence"],
+            "confidence_value": row["confidence_value"],
+            "drivers": row["drivers"],
+            "dimensions": row["dimensions"],
         })
 
+    countries.sort(key=lambda x: x["normalized"], reverse=True)
+
+    # Regional score: activity-sensitive mean. It remains comparable over time
+    # but does not become identical to the highest-risk country.
+    region_scores = [x["normalized"] for x in countries]
+    region_score = round(sum(region_scores) / len(MONITORED_COUNTRIES), 3)
+
+    evidence_total = sum(
+        x["local_event_count"] + x["infra_proximity_count"]
+        for x in country_scores.values()
+    )
+    confidence_values = [
+        x["confidence_value"] for x in country_scores.values()
+    ]
+    region_confidence_value = round(
+        sum(confidence_values) / len(confidence_values),
+        3,
+    )
+
+    dimension_scores = {}
+    for dimension in RISK_WEIGHTS:
+        dimension_scores[dimension] = round(
+            sum(
+                country_scores[c]["dimensions"][dimension]
+                for c in MONITORED_COUNTRIES
+            ) / len(MONITORED_COUNTRIES),
+            3,
+        )
+
+    risk["country_scores"] = country_scores
     risk["countries"] = countries
-
-    region_scores = [float(x.get("normalized", 0.0) or 0.0) for x in country_scores.values()]
-    region_score = round(sum(region_scores) / max(1, len(region_scores)), 3)
-
-    region = risk.get("region") or {}
-    region["overall_score"] = region_score
-    region["overall"] = "critical" if region_score >= 8 else "tense" if region_score >= 5 else "elevated" if region_score >= 2 else "normal"
-    region["confidence"] = "medium"
-    region["confidence_value"] = min(1.0, round(0.45 + 0.02 * len(local_events) + 0.03 * len(prox_matches), 3))
-
-    dims = region.get("dimension_scores") or {}
-    dims["infrastructure"] = round(float(dims.get("infrastructure", 0.0) or 0.0) + len(prox_matches) * 0.15 + len(local_events) * 0.08, 3)
-    dims["cyber"] = round(float(dims.get("cyber", 0.0) or 0.0) + sum(1 for f in local_events if (f.get("properties") or {}).get("category") == "cyber") * 0.25, 3)
-    region["dimension_scores"] = dims
-
-    risk["region"] = region
+    risk["region"] = {
+        "overall": risk_level(region_score),
+        "overall_score": region_score,
+        "confidence": (
+            "high" if region_confidence_value >= 0.72
+            else "medium" if region_confidence_value >= 0.45
+            else "low"
+        ),
+        "confidence_value": region_confidence_value,
+        "dimension_scores": dimension_scores,
+        "evidence_count": evidence_total,
+    }
+    risk["model"] = {
+        "name": "cee_country_risk_v2",
+        "scale": "0-10",
+        "countries": MONITORED_COUNTRIES,
+        "weights": RISK_WEIGHTS,
+        "method": "weighted saturating dimensions rebuilt from current 7-day validated evidence",
+        "important": "previous normalized scores are not cumulatively re-added",
+    }
     risk["generated_utc"] = now_utc().isoformat()
 
     save_json(RISK_DAILY, risk)
@@ -488,3 +778,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

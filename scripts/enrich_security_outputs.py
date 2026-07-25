@@ -466,6 +466,16 @@ def normalize_security_feature(feature, source_file):
     }
 
 
+
+# Incident clustering thresholds.
+# Maximum temporal separation allowed before two reports must be treated
+# as different incidents.
+INCIDENT_CLUSTER_MAX_HOURS = 30.0
+
+# Minimum generic text similarity for non-special-case incident clustering.
+INCIDENT_TEXT_SIMILARITY = 0.28
+
+
 def risk_event_text(feature):
     props = feature.get("properties") or {}
     return " ".join([
@@ -1594,3 +1604,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

@@ -561,6 +561,58 @@ LOCATION_QUALITY_RANK = {
     "precise": 4,
 }
 
+
+MIN_INFRA_LOCATION_QUALITY = "city"
+
+LOCATION_ACTION_TERMS = [
+    "shot down", "downed", "intercepted", "fired at", "airspace violation",
+    "airspace breach", "entered airspace", "crashed", "explosion", "blast",
+    "attack", "strike", "cyberattack", "ransomware", "ddos", "data breach",
+    "sabotage", "blackout", "power outage", "chemical leak", "gas leak",
+    "evacuation", "bomb threat", "lelőtt", "lelőttek", "elfogták",
+    "légtérsértés", "lezuhant", "robbanás", "támadás", "kibertámadás",
+    "áramszünet", "szabotázs", "kiürítés", "doborât", "doborâtă",
+    "interceptat", "interceptată", "spațiul aerian", "spatiul aerian",
+    "prăbușit", "prabusit", "explozie", "atac",
+]
+
+NAMED_PLACE_COORDS = {
+    "mihail kogălniceanu air base": ("Romania", 44.362, 28.488),
+    "mihail kogalniceanu air base": ("Romania", 44.362, 28.488),
+    "mihail kogălniceanu base": ("Romania", 44.362, 28.488),
+    "mihail kogalniceanu base": ("Romania", 44.362, 28.488),
+    "57th air base": ("Romania", 44.362, 28.488),
+    "fetești air base": ("Romania", 44.393, 27.727),
+    "fetesti air base": ("Romania", 44.393, 27.727),
+    "86th air base": ("Romania", 44.393, 27.727),
+    "cernavodă nuclear power plant": ("Romania", 44.322, 28.057),
+    "cernavoda nuclear power plant": ("Romania", 44.322, 28.057),
+    "kecskemét air base": ("Hungary", 46.917, 19.749),
+    "kecskemet air base": ("Hungary", 46.917, 19.749),
+    "paks nuclear power plant": ("Hungary", 46.573, 18.854),
+    "sliač air base": ("Slovakia", 48.637, 19.134),
+    "sliac air base": ("Slovakia", 48.637, 19.134),
+    "mochovce nuclear power plant": ("Slovakia", 48.263, 18.455),
+    "čáslav air base": ("Czechia", 49.939, 15.382),
+    "caslav air base": ("Czechia", 49.939, 15.382),
+    "temelín nuclear power plant": ("Czechia", 49.181, 14.376),
+    "temelin nuclear power plant": ("Czechia", 49.181, 14.376),
+    "dukovany nuclear power plant": ("Czechia", 49.085, 16.149),
+    "rzeszów-jasionka airport": ("Poland", 50.110, 22.019),
+    "rzeszow-jasionka airport": ("Poland", 50.110, 22.019),
+    "jasionka airport": ("Poland", 50.110, 22.019),
+    "šiauliai air base": ("Lithuania", 55.894, 23.395),
+    "siauliai air base": ("Lithuania", 55.894, 23.395),
+    "rukla military base": ("Lithuania", 55.000, 24.000),
+    "lielvārde air base": ("Latvia", 56.778, 24.853),
+    "lielvarde air base": ("Latvia", 56.778, 24.853),
+    "ādaži military base": ("Latvia", 57.070, 24.337),
+    "adazi military base": ("Latvia", 57.070, 24.337),
+    "ämari air base": ("Estonia", 59.260, 24.208),
+    "amari air base": ("Estonia", 59.260, 24.208),
+    "tapa military base": ("Estonia", 59.260, 25.958),
+}
+
 DEDUP_MAX_HOURS = 36.0
 DEDUP_MAX_DISTANCE_KM = 140.0
 DEDUP_TEXT_THRESHOLD = 0.24
@@ -968,6 +1020,141 @@ def incident_signature(event):
     return signature
 
 
+
+def extract_named_place_candidates(event):
+    evidence = actual_location_evidence(event)
+    candidates = []
+    for place_name, (country, lat, lon) in NAMED_PLACE_COORDS.items():
+        if contains_term(evidence, place_name):
+            candidates.append({
+                "country": country, "lat": lat, "lon": lon,
+                "place": place_name, "quality": "precise",
+                "method": "named_place", "score": 100,
+            })
+    return candidates
+
+
+def extract_city_candidates(event):
+    evidence = actual_location_evidence(event)
+    if not contains_any(evidence, LOCATION_ACTION_TERMS):
+        return []
+
+    candidates = []
+    for city, country in explicit_target_cities(evidence):
+        coords = CITY_COORDS_VALIDATION.get(city)
+        if coords:
+            candidates.append({
+                "country": country, "lat": coords[0], "lon": coords[1],
+                "place": city, "quality": "city",
+                "method": "article_city", "score": 70,
+            })
+    return candidates
+
+
+def extract_original_coordinate_candidate(event):
+    country = canonical_country(event.get("country")) or infer_event_country(event)
+    if country not in TARGET_COUNTRIES:
+        return None
+
+    quality = event.get("location_quality") or infer_location_quality(event, country)
+    rank = LOCATION_QUALITY_RANK.get(quality, 0)
+    if rank < LOCATION_QUALITY_RANK["city"]:
+        return None
+
+    return {
+        "country": country, "lat": event["lat"], "lon": event["lon"],
+        "place": event.get("place"), "quality": quality,
+        "method": "source_coordinate", "score": 60 + rank,
+    }
+
+
+def geolocation_candidates(event):
+    candidates = extract_named_place_candidates(event) + extract_city_candidates(event)
+    original = extract_original_coordinate_candidate(event)
+    if original:
+        candidates.append(original)
+    return candidates
+
+
+def choose_cluster_geolocation(cluster_events):
+    candidates = []
+    for event in cluster_events:
+        for candidate in geolocation_candidates(event):
+            c = dict(candidate)
+            c["source"] = event.get("source")
+            candidates.append(c)
+
+    if not candidates:
+        return None
+
+    groups = []
+    for c in sorted(candidates, key=lambda x: x["score"], reverse=True):
+        found = None
+        for g in groups:
+            if g["country"] == c["country"] and haversine_km(
+                g["lat"], g["lon"], c["lat"], c["lon"]
+            ) <= 35:
+                found = g
+                break
+
+        if found:
+            found["members"].append(c)
+            if c.get("source"):
+                found["sources"].add(c["source"])
+            found["score"] += c["score"]
+            if LOCATION_QUALITY_RANK.get(c["quality"], 0) > LOCATION_QUALITY_RANK.get(found["quality"], 0):
+                found.update({
+                    "lat": c["lat"], "lon": c["lon"], "place": c["place"],
+                    "quality": c["quality"], "method": c["method"],
+                })
+        else:
+            groups.append({
+                "country": c["country"], "lat": c["lat"], "lon": c["lon"],
+                "place": c["place"], "quality": c["quality"],
+                "method": c["method"], "score": c["score"],
+                "sources": {c.get("source")} if c.get("source") else set(),
+                "members": [c],
+            })
+
+    groups.sort(
+        key=lambda g: (
+            LOCATION_QUALITY_RANK.get(g["quality"], 0),
+            len(g["sources"]), g["score"]
+        ),
+        reverse=True,
+    )
+    best = groups[0]
+
+    if len(groups) > 1:
+        second = groups[1]
+        if (
+            second["country"] != best["country"]
+            and len(second["sources"]) >= len(best["sources"])
+            and second["score"] >= best["score"] * 0.85
+        ):
+            return None
+
+    return {
+        "country": best["country"], "lat": round(best["lat"], 6),
+        "lon": round(best["lon"], 6), "place": best["place"],
+        "location_quality": best["quality"],
+        "geolocation_method": best["method"],
+        "geolocation_source_count": len(best["sources"]),
+        "geolocation_evidence_count": len(best["members"]),
+    }
+
+
+def enrich_incident_geolocation(event):
+    geo = choose_cluster_geolocation(event.get("_cluster_members") or [event])
+    if not geo:
+        event["geolocation_method"] = "unresolved"
+        event["geolocation_source_count"] = 0
+        event["geolocation_evidence_count"] = 0
+        return event
+    event.update(geo)
+    return event
+
+
 def same_incident(a, b):
     if a.get("country") != b.get("country"):
         return False
@@ -1005,7 +1192,6 @@ def location_quality_rank(event):
 
 
 def merge_incidents(primary, incoming):
-    # Preserve source evidence.
     sources = list(primary.get("sources") or [primary.get("source")])
     for source in incoming.get("sources") or [incoming.get("source")]:
         if source and source not in sources:
@@ -1020,20 +1206,16 @@ def merge_incidents(primary, incoming):
     primary["urls"] = urls
     primary["source_count"] = len(sources)
 
-    # Best coordinate wins.
-    if location_quality_rank(incoming) > location_quality_rank(primary):
-        for key in ["lat", "lon", "location_quality", "place", "geocode_quality"]:
-            if incoming.get(key) is not None:
-                primary[key] = incoming.get(key)
+    members = list(primary.get("_cluster_members") or [dict(primary)])
+    members.extend(incoming.get("_cluster_members") or [dict(incoming)])
+    primary["_cluster_members"] = members
 
-    # Prefer a more descriptive title.
     if len(str(incoming.get("title") or "")) > len(str(primary.get("title") or "")):
         primary["title"] = incoming.get("title")
 
-    # Earliest report time represents incident appearance.
-    t_primary = parse_event_time(primary.get("time"))
-    t_incoming = parse_event_time(incoming.get("time"))
-    if t_incoming and (not t_primary or t_incoming < t_primary):
+    t1 = parse_event_time(primary.get("time"))
+    t2 = parse_event_time(incoming.get("time"))
+    if t2 and (not t1 or t2 < t1):
         primary["time"] = incoming.get("time")
 
     return primary
@@ -1041,23 +1223,19 @@ def merge_incidents(primary, incoming):
 
 def deduplicate_incidents(events):
     clusters = []
-
-    # Process better locations first so clusters start from stronger anchors.
     ordered = sorted(
         events,
-        key=lambda e: (
-            location_quality_rank(e),
-            INCIDENT_TYPE_PRIORITY.get(e.get("incident_type"), 0),
-        ),
+        key=lambda e: INCIDENT_TYPE_PRIORITY.get(e.get("incident_type"), 0),
         reverse=True,
     )
 
     for event in ordered:
+        event["_cluster_members"] = [dict(event)]
         merged = False
 
-        for idx, existing in enumerate(clusters):
+        for i, existing in enumerate(clusters):
             if same_incident(existing, event):
-                clusters[idx] = merge_incidents(existing, event)
+                clusters[i] = merge_incidents(existing, event)
                 merged = True
                 break
 
@@ -1067,39 +1245,37 @@ def deduplicate_incidents(events):
             event["source_count"] = len(event["sources"])
             clusters.append(event)
 
-    return clusters
+    enriched = []
+    for event in clusters:
+        event = enrich_incident_geolocation(event)
+        event.pop("_cluster_members", None)
+        enriched.append(event)
+
+    return enriched
 
 
 def event_infra_compatible(event, infra):
     incident_type = event.get("incident_type")
     infra_category = normalize_text(infra.get("category"))
-
     allowed = COMPATIBLE_INFRA_CATEGORIES.get(incident_type, set())
+
     if infra_category not in allowed:
         return False
 
     quality = event.get("location_quality")
-    quality_rank = LOCATION_QUALITY_RANK.get(quality, 0)
-
-    # Country-level or broad-city approximations must never create
-    # infrastructure-proximity claims.
-    if quality_rank < LOCATION_QUALITY_RANK["city"]:
+    if LOCATION_QUALITY_RANK.get(quality, 0) < LOCATION_QUALITY_RANK[MIN_INFRA_LOCATION_QUALITY]:
         return False
 
-    # Broad major-city positions are still too coarse for most proximity
-    # statements. Only cyber incidents may use city-level precision against
-    # digital infrastructure; all other incident types require a more
-    # specific place.
-    if quality == "city_approx":
-        return incident_type == "cyber_incident" and infra_category == "digital"
+    if quality == "city":
+        return event.get("geolocation_method") in {"article_city", "source_coordinate"}
 
     return True
 
 
 def event_location_supported(event):
     """
-    Validate that the underlying article is about one of the eight monitored
-    countries. Synthetic GDELT location labels are not treated as evidence.
+    Country validation only. Precise geolocation is deferred until after
+    incident clustering, so all reports can contribute location evidence.
     """
     source_file = str(event.get("_source_file") or "").lower()
 
@@ -1107,21 +1283,14 @@ def event_location_supported(event):
         return True
 
     detected_country = infer_event_country(event)
-
-    # local_events already carries a validated country property from the
-    # dedicated local-source whitelist.
     if source_file == "local_events.geojson":
         detected_country = canonical_country(event.get("country"))
 
     if detected_country not in TARGET_COUNTRIES:
         return False
 
-    if not coordinate_in_country(event["lat"], event["lon"], detected_country):
-        return False
-
     event["country"] = detected_country
     event["location_quality"] = infer_location_quality(event, detected_country)
-
     return True
 
 
@@ -1397,6 +1566,10 @@ def build_matches(infrastructure, events):
                     "lat": event["lat"],
                     "lon": event["lon"],
                     "location_quality": event.get("location_quality"),
+                    "place": event.get("place"),
+                    "geolocation_method": event.get("geolocation_method"),
+                    "geolocation_source_count": event.get("geolocation_source_count", 0),
+                    "geolocation_evidence_count": event.get("geolocation_evidence_count", 0),
                     "source_file": event["_source_file"],
                 },
                 "infrastructure": {
@@ -1493,8 +1666,9 @@ def build():
             },
             "event_model": {
                 "deduplication": "country + incident_type + time + semantic similarity",
-                "location_policy": "country fallback excluded from infrastructure proximity",
-                "compatibility": "incident type must match infrastructure category"
+                "location_policy": "multi-source geolocation after incident clustering; unresolved/coarse locations excluded",
+                "compatibility": "incident type must match infrastructure category",
+                "geolocation": "named place > article city > trusted source coordinate; GDELT fallback never upgraded automatically"
             },
             "deduplication": {
                 "events": "exact article dedup then incident-level clustering",

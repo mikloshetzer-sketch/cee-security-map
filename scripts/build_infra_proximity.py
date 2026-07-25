@@ -5,6 +5,8 @@ import re
 from pathlib import Path
 from datetime import datetime, timezone
 from urllib.parse import urlparse, unquote
+from difflib import SequenceMatcher
+from email.utils import parsedate_to_datetime
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -485,6 +487,84 @@ NEGATIVE_CONTEXT_TERMS = [
 ]
 
 
+# ---------------------------------------------------------------------
+# EVENT MODEL FOR INFRASTRUCTURE PROXIMITY
+# ---------------------------------------------------------------------
+
+BROAD_CITY_NAMES = {
+    "budapest", "bucharest", "bucurești", "bucuresti",
+    "bratislava", "prague", "praha", "warsaw", "warszawa",
+    "vilnius", "riga", "tallinn",
+}
+
+SPORTS_TERMS = [
+    "formula 1", "formula one", "f1", "grand prix", "motorsport",
+    "speedcafe", "race", "racing", "driver", "mercedes-amg",
+]
+
+ARCHAEOLOGY_TERMS = [
+    "archaeology", "archaeological", "roman military camp",
+    "marcus aurelius", "ancient", "excavation", "buried remains",
+]
+
+ORDINARY_CRIME_TERMS = [
+    "murder suspect", "attacked victim", "stabbing", "bar fight",
+    "domestic violence", "street fight",
+]
+
+ROAD_ACCIDENT_TERMS = [
+    "road safety", "street racing", "car crash", "traffic accident",
+    "road accident", "vehicle collision", "autóbaleset", "közúti baleset",
+]
+
+POLICY_ONLY_TERMS = [
+    "strategy", "cooperation", "collaboration", "ties", "autonomy",
+    "manufacturing", "may deploy", "planned deployment", "procurement",
+    "investment", "exercise announced", "evacuation plan",
+]
+
+INCIDENT_TYPE_PRIORITY = {
+    "drone_airspace": 7,
+    "cyber_incident": 6,
+    "sabotage": 6,
+    "kinetic_attack": 6,
+    "explosion": 5,
+    "military_accident": 5,
+    "hazardous_incident": 5,
+    "infrastructure_disruption": 5,
+    "bomb_threat": 4,
+    "major_fire": 4,
+}
+
+# Infrastructure categories that can logically be affected by an event type.
+COMPATIBLE_INFRA_CATEGORIES = {
+    "cyber_incident": {"digital"},
+    "drone_airspace": {"military", "transport", "energy", "hazardous"},
+    "military_accident": {"military", "transport"},
+    "kinetic_attack": {"military", "transport", "energy", "digital", "hazardous"},
+    "explosion": {"military", "transport", "energy", "digital", "hazardous"},
+    "sabotage": {"military", "transport", "energy", "digital", "hazardous"},
+    "hazardous_incident": {"hazardous", "energy", "transport"},
+    "infrastructure_disruption": {"transport", "energy", "digital", "hazardous"},
+    "bomb_threat": {"transport", "military"},
+    "major_fire": {"hazardous", "energy", "transport", "military"},
+}
+
+# Coarse location may be useful for mapping, but not for saying that an
+# incident occurred "near" a specific infrastructure asset.
+LOCATION_QUALITY_RANK = {
+    "country_fallback": 0,
+    "country_approx": 0,
+    "city_approx": 1,
+    "city": 2,
+    "specific_place": 3,
+    "precise": 4,
+}
+
+DEDUP_MAX_HOURS = 36.0
+DEDUP_MAX_DISTANCE_KM = 140.0
+DEDUP_TEXT_THRESHOLD = 0.24
+
 def load_json(path):
     if not path.exists():
         return None
@@ -617,61 +697,430 @@ def has_outside_area_focus(text):
     return contains_any(text, OUTSIDE_AREA_TERMS)
 
 
-def event_location_supported(event):
+def parse_event_time(value):
+    if not value:
+        return None
+
+    raw = str(value).strip()
+
+    try:
+        dt = parsedate_to_datetime(raw)
+        if dt:
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+    except Exception:
+        pass
+
+    try:
+        dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def source_domain_country(url):
+    if not url:
+        return None
+
+    try:
+        host = urlparse(str(url)).netloc.lower().split(":")[0]
+    except Exception:
+        return None
+
+    tld_map = {
+        ".hu": "Hungary",
+        ".ro": "Romania",
+        ".sk": "Slovakia",
+        ".cz": "Czechia",
+        ".pl": "Poland",
+        ".lt": "Lithuania",
+        ".lv": "Latvia",
+        ".ee": "Estonia",
+    }
+
+    for tld, country in tld_map.items():
+        if host.endswith(tld):
+            return country
+
+    return None
+
+
+def actual_location_evidence(event):
     """
-    Strict 8-country CEE location validation.
-    Text/URL evidence and coordinates must agree.
+    Evidence that comes from the underlying article rather than a synthetic
+    GDELT location label.
+
+    gdelt_linked titles are frequently generated place labels such as
+    "Budapest, Budapest, Hungary", so they are deliberately excluded here.
     """
     source_file = str(event.get("_source_file") or "").lower()
-    props_country = canonical_country(event.get("country"))
+
+    parts = [
+        str(event.get("summary") or ""),
+        url_evidence_text(event.get("url")),
+    ]
+
+    if source_file != "gdelt_linked.geojson":
+        parts.insert(0, str(event.get("title") or ""))
+
+    return " ".join(part for part in parts if part)
+
+
+def classify_incident_type(event):
+    evidence = event_evidence_text(event)
+    actual = actual_location_evidence(event)
+
+    # Hard exclusions first.
+    if contains_any(actual, SPORTS_TERMS):
+        return None
+
+    if contains_any(actual, ARCHAEOLOGY_TERMS):
+        return None
+
+    if contains_any(actual, ORDINARY_CRIME_TERMS):
+        return None
+
+    if contains_any(actual, ROAD_ACCIDENT_TERMS):
+        return None
+
+    drone_terms = [
+        "drone", "drón", "uav", "shahed", "dronă", "drona",
+        "dronei", "dronele", "dronelor",
+    ]
+    drone_actions = [
+        "shot down", "shoot down", "downed", "intercepted", "fired at",
+        "airspace violation", "airspace breach", "breached airspace",
+        "entered airspace", "airspace intercept",
+        "lelőtt", "lelőttek", "légtérsértés", "elfogás",
+        "doborât", "doborâtă", "doborârea", "interceptat",
+        "interceptată", "spațiul aerian", "spatiul aerian",
+    ]
+
+    if contains_any(evidence, drone_terms) and contains_any(evidence, drone_actions):
+        return "drone_airspace"
+
+    if contains_any(
+        evidence,
+        [
+            "cyberattack", "cyber attack", "ransomware attack",
+            "ransomware incident", "ddos attack", "data breach",
+            "systems compromised", "network compromised",
+            "kibertámadás", "adatlopás",
+        ],
+    ):
+        return "cyber_incident"
+
+    if contains_any(evidence, ["sabotage", "szabotázs"]):
+        return "sabotage"
+
+    # A military aircraft/vehicle crash is relevant. A generic road/sports
+    # crash is not.
+    military_vehicle = contains_any(
+        evidence,
+        [
+            "military helicopter", "army helicopter", "air force helicopter",
+            "military aircraft", "army aircraft", "air force aircraft",
+            "military jet", "fighter jet", "army vehicle",
+            "katonai helikopter", "katonai repülő", "légierő",
+        ],
+    )
+    if military_vehicle and contains_any(
+        evidence,
+        ["crash", "crashed", "lezuhant", "prăbușit", "prabusit"],
+    ):
+        return "military_accident"
+
+    if contains_any(
+        evidence,
+        [
+            "missile attack", "missile strike", "rocket attack",
+            "airstrike", "air strike", "shelling", "bombing",
+            "armed attack", "támadás érte", "rakétatámadás",
+        ],
+    ):
+        return "kinetic_attack"
+
+    if contains_any(evidence, ["explosion", "blast", "robbanás", "explozie"]):
+        return "explosion"
+
+    if contains_any(
+        evidence,
+        [
+            "chemical leak", "gas leak", "pipeline leak",
+            "industrial accident", "vegyi szivárgás", "gázszivárgás",
+        ],
+    ):
+        return "hazardous_incident"
+
+    if contains_any(
+        evidence,
+        [
+            "blackout", "power outage", "grid failure",
+            "airport closed", "airport closure", "port closed",
+            "port closure", "rail disruption", "emergency shutdown",
+            "áramszünet", "repülőtér lezár", "kikötő lezár",
+        ],
+    ):
+        return "infrastructure_disruption"
+
+    if contains_any(
+        evidence,
+        ["bomb threat", "bomb scare", "bomba fenyegetés", "bombariadó"],
+    ) and contains_any(
+        evidence,
+        ["evacuation", "evacuated", "kiürítés"],
+    ):
+        return "bomb_threat"
+
+    if contains_any(
+        evidence,
+        ["major fire", "large fire", "refinery fire", "finomítótűz"],
+    ):
+        return "major_fire"
+
+    return None
+
+
+def infer_event_country(event):
+    actual = actual_location_evidence(event)
+    hits = list(dict.fromkeys(explicit_target_countries(actual)))
+
+    if len(hits) == 1:
+        return hits[0]
+
+    domain_country = source_domain_country(event.get("url"))
+    if domain_country in TARGET_COUNTRIES:
+        # Domain evidence is only a fallback when no contradictory monitored
+        # country is present in the actual article evidence.
+        if not hits:
+            return domain_country
+
+    return None
+
+
+def infer_location_quality(event, detected_country):
+    source_file = str(event.get("_source_file") or "").lower()
+    props_quality = normalize_text(event.get("geocode_quality"))
+    actual = actual_location_evidence(event)
+    actual_city_hits = [
+        (city, country)
+        for city, country in explicit_target_cities(actual)
+        if country == detected_country
+    ]
 
     if source_file == "local_events.geojson":
-        return props_country in TARGET_COUNTRIES
+        if props_quality == "city":
+            return "city"
+        return "country_fallback"
+
+    # For GDELT, only a city/place independently present in the underlying
+    # article evidence can make the coordinate usable for proximity.
+    if actual_city_hits:
+        broad_only = all(city in BROAD_CITY_NAMES for city, _ in actual_city_hits)
+
+        if not city_coordinate_supported(event, actual_city_hits, max_distance_km=70.0):
+            return "country_approx"
+
+        return "city_approx" if broad_only else "specific_place"
+
+    return "country_approx"
+
+
+def text_similarity(a, b):
+    a = normalize_text(a)
+    b = normalize_text(b)
+
+    if not a or not b:
+        return 0.0
+
+    words_a = set(re.findall(r"[\wÀ-ž-]{3,}", a, flags=re.UNICODE))
+    words_b = set(re.findall(r"[\wÀ-ž-]{3,}", b, flags=re.UNICODE))
+
+    if words_a and words_b:
+        jaccard = len(words_a & words_b) / len(words_a | words_b)
+    else:
+        jaccard = 0.0
+
+    sequence = SequenceMatcher(None, a, b).ratio()
+    return max(jaccard, sequence * 0.65)
+
+
+def incident_signature(event):
+    evidence = event_evidence_text(event)
+    signature = set()
+
+    for token, terms in {
+        "drone": ["drone", "drón", "uav", "shahed", "dronă", "drona"],
+        "shootdown": ["shot down", "downed", "intercepted", "lelőtt", "doborât"],
+        "airspace": ["airspace", "légtér", "spațiul aerian", "spatiul aerian"],
+        "f16": ["f-16", "f16"],
+        "cyber": ["cyberattack", "cyber attack", "ransomware", "ddos"],
+        "explosion": ["explosion", "blast", "robbanás", "explozie"],
+        "bomb_threat": ["bomb threat", "bomb scare", "bombariadó"],
+        "military_crash": ["military helicopter", "military aircraft", "fighter jet"],
+    }.items():
+        if contains_any(evidence, terms):
+            signature.add(token)
+
+    return signature
+
+
+def same_incident(a, b):
+    if a.get("country") != b.get("country"):
+        return False
+
+    if a.get("incident_type") != b.get("incident_type"):
+        return False
+
+    time_a = parse_event_time(a.get("time"))
+    time_b = parse_event_time(b.get("time"))
+
+    if time_a and time_b:
+        if abs((time_a - time_b).total_seconds()) / 3600.0 > DEDUP_MAX_HOURS:
+            return False
+
+    sig_a = incident_signature(a)
+    sig_b = incident_signature(b)
+
+    # Strong multilingual semantic identity.
+    if {"drone", "shootdown"}.issubset(sig_a & sig_b):
+        return True
+
+    if "cyber" in (sig_a & sig_b):
+        return text_similarity(event_evidence_text(a), event_evidence_text(b)) >= 0.18
+
+    # Geographic + textual identity.
+    distance = haversine_km(a["lat"], a["lon"], b["lat"], b["lon"])
+    if distance <= DEDUP_MAX_DISTANCE_KM:
+        return text_similarity(event_evidence_text(a), event_evidence_text(b)) >= DEDUP_TEXT_THRESHOLD
+
+    return False
+
+
+def location_quality_rank(event):
+    return LOCATION_QUALITY_RANK.get(event.get("location_quality"), 0)
+
+
+def merge_incidents(primary, incoming):
+    # Preserve source evidence.
+    sources = list(primary.get("sources") or [primary.get("source")])
+    for source in incoming.get("sources") or [incoming.get("source")]:
+        if source and source not in sources:
+            sources.append(source)
+
+    urls = list(primary.get("urls") or ([primary.get("url")] if primary.get("url") else []))
+    for url in incoming.get("urls") or ([incoming.get("url")] if incoming.get("url") else []):
+        if url and url not in urls:
+            urls.append(url)
+
+    primary["sources"] = sources
+    primary["urls"] = urls
+    primary["source_count"] = len(sources)
+
+    # Best coordinate wins.
+    if location_quality_rank(incoming) > location_quality_rank(primary):
+        for key in ["lat", "lon", "location_quality", "place", "geocode_quality"]:
+            if incoming.get(key) is not None:
+                primary[key] = incoming.get(key)
+
+    # Prefer a more descriptive title.
+    if len(str(incoming.get("title") or "")) > len(str(primary.get("title") or "")):
+        primary["title"] = incoming.get("title")
+
+    # Earliest report time represents incident appearance.
+    t_primary = parse_event_time(primary.get("time"))
+    t_incoming = parse_event_time(incoming.get("time"))
+    if t_incoming and (not t_primary or t_incoming < t_primary):
+        primary["time"] = incoming.get("time")
+
+    return primary
+
+
+def deduplicate_incidents(events):
+    clusters = []
+
+    # Process better locations first so clusters start from stronger anchors.
+    ordered = sorted(
+        events,
+        key=lambda e: (
+            location_quality_rank(e),
+            INCIDENT_TYPE_PRIORITY.get(e.get("incident_type"), 0),
+        ),
+        reverse=True,
+    )
+
+    for event in ordered:
+        merged = False
+
+        for idx, existing in enumerate(clusters):
+            if same_incident(existing, event):
+                clusters[idx] = merge_incidents(existing, event)
+                merged = True
+                break
+
+        if not merged:
+            event["sources"] = [event.get("source")] if event.get("source") else []
+            event["urls"] = [event.get("url")] if event.get("url") else []
+            event["source_count"] = len(event["sources"])
+            clusters.append(event)
+
+    return clusters
+
+
+def event_infra_compatible(event, infra):
+    incident_type = event.get("incident_type")
+    infra_category = normalize_text(infra.get("category"))
+
+    allowed = COMPATIBLE_INFRA_CATEGORIES.get(incident_type, set())
+    if infra_category not in allowed:
+        return False
+
+    quality = event.get("location_quality")
+    quality_rank = LOCATION_QUALITY_RANK.get(quality, 0)
+
+    # Country-level or broad-city approximations must never create
+    # infrastructure-proximity claims.
+    if quality_rank < LOCATION_QUALITY_RANK["city"]:
+        return False
+
+    # Broad major-city positions are still too coarse for most proximity
+    # statements. Only cyber incidents may use city-level precision against
+    # digital infrastructure; all other incident types require a more
+    # specific place.
+    if quality == "city_approx":
+        return incident_type == "cyber_incident" and infra_category == "digital"
+
+    return True
+
+
+def event_location_supported(event):
+    """
+    Validate that the underlying article is about one of the eight monitored
+    countries. Synthetic GDELT location labels are not treated as evidence.
+    """
+    source_file = str(event.get("_source_file") or "").lower()
 
     if source_file in ALWAYS_RELEVANT_SOURCE_FILES:
         return True
 
-    evidence = event_evidence_text(event)
-    summary_url = " ".join([
-        str(event.get("summary") or ""),
-        url_evidence_text(event.get("url")),
-    ])
+    detected_country = infer_event_country(event)
 
-    city_hits = explicit_target_cities(evidence)
-    country_hits = list(dict.fromkeys(explicit_target_countries(evidence)))
+    # local_events already carries a validated country property from the
+    # dedicated local-source whitelist.
+    if source_file == "local_events.geojson":
+        detected_country = canonical_country(event.get("country"))
 
-    if city_hits:
-        city_countries = {country for _, country in city_hits}
-        if len(city_countries) != 1:
-            return False
-        detected_country = next(iter(city_countries))
-
-        if props_country and props_country != detected_country:
-            return False
-        if not coordinate_in_country(event["lat"], event["lon"], detected_country):
-            return False
-        if not city_coordinate_supported(event, city_hits):
-            return False
-
-        non_title_target_hits = explicit_target_countries(summary_url)
-        if has_outside_area_focus(summary_url) and not non_title_target_hits:
-            return False
-
-        return True
-
-    if len(country_hits) != 1:
+    if detected_country not in TARGET_COUNTRIES:
         return False
 
-    detected_country = country_hits[0]
-    if props_country and props_country != detected_country:
-        return False
     if not coordinate_in_country(event["lat"], event["lon"], detected_country):
         return False
 
-    if has_outside_area_focus(summary_url):
-        non_title_target_hits = explicit_target_countries(summary_url)
-        if not non_title_target_hits:
-            return False
+    event["country"] = detected_country
+    event["location_quality"] = infer_location_quality(event, detected_country)
 
     return True
 
@@ -730,62 +1179,12 @@ def load_infrastructure():
 
 
 def event_security_relevant(event):
-    """
-    Infrastructure proximity requires an actual incident.
-    GDELT military/cyber/drone labels are context only, never sufficient alone.
-    """
-    source_file = str(event.get("_source_file") or "").lower()
-    evidence = event_evidence_text(event)
+    incident_type = classify_incident_type(event)
 
-    if source_file in ALWAYS_RELEVANT_SOURCE_FILES:
-        return True
-
-    negative_signal = contains_any(evidence, NEGATIVE_CONTEXT_TERMS)
-    event_signal = contains_any(evidence, SECURITY_EVENT_TERMS)
-    context_signal = contains_any(evidence, SECURITY_CONTEXT_TERMS)
-
-    if negative_signal and not event_signal:
+    if not incident_type:
         return False
 
-    if not event_signal:
-        drone_mention = contains_any(
-            evidence,
-            ["drone", "drón", "uav", "dronă", "drona",
-             "dronei", "dronele", "dronelor", "shahed"],
-        )
-        drone_action = contains_any(
-            evidence,
-            ["shot down", "downed", "intercepted", "fired at",
-             "airspace violation", "airspace breach", "breached airspace",
-             "crashed", "explosion",
-             "lelőtt", "lelőttek", "légtérsértés", "lezuhant",
-             "doborât", "doborâtă", "interceptat", "interceptată",
-             "spațiul aerian", "spatiul aerian"],
-        )
-        return drone_mention and drone_action
-
-    if contains_any(evidence, ["major fire", "large fire", "incendiu major"]) and not context_signal:
-        return False
-
-    policy_terms = [
-        "cooperation hub", "collaboration", "ties", "strategy",
-        "autonomy", "manufacturing", "may deploy", "deployment planned",
-        "archaeology", "archaeological", "roman military camp",
-        "training exercise announced", "procurement", "investment",
-        "defence cooperation", "defense cooperation",
-    ]
-    if contains_any(evidence, policy_terms):
-        disruptive_terms = [
-            "explosion", "blast", "shot down", "downed", "intercepted",
-            "airspace violation", "cyberattack", "ransomware attack",
-            "ddos attack", "data breach", "blackout", "power outage",
-            "sabotage", "evacuation", "chemical leak", "gas leak",
-            "robbanás", "lelőtt", "légtérsértés", "kibertámadás",
-            "áramszünet", "szabotázs", "kiürítés", "doborât", "explozie",
-        ]
-        if not contains_any(evidence, disruptive_terms):
-            return False
-
+    event["incident_type"] = incident_type
     return True
 
 
@@ -863,6 +1262,8 @@ def load_events():
                 "time": time,
                 "url": url,
                 "country": country,
+                "place": props.get("place"),
+                "geocode_quality": props.get("geocode_quality"),
                 "lat": lat,
                 "lon": lon,
                 "_source_file": path.name,
@@ -879,7 +1280,7 @@ def load_events():
 
             events.append(event)
 
-    return deduplicate_events(events)
+    return deduplicate_incidents(deduplicate_events(events))
 
 
 def deduplicate_events(events):
@@ -950,6 +1351,9 @@ def build_matches(infrastructure, events):
 
     for event in events:
         for infra in infrastructure:
+            if not event_infra_compatible(event, infra):
+                continue
+
             distance = haversine_km(
                 event["lat"],
                 event["lon"],
@@ -983,11 +1387,16 @@ def build_matches(infrastructure, events):
                     "id": event["id"],
                     "title": event["title"],
                     "category": event["category"],
+                    "incident_type": event.get("incident_type"),
                     "source": event["source"],
+                    "source_count": event.get("source_count", 1),
+                    "sources": event.get("sources", [event["source"]]),
                     "time": event["time"],
                     "url": event["url"],
+                    "urls": event.get("urls", [event["url"]] if event["url"] else []),
                     "lat": event["lat"],
                     "lon": event["lon"],
+                    "location_quality": event.get("location_quality"),
                     "source_file": event["_source_file"],
                 },
                 "infrastructure": {
@@ -1079,11 +1488,16 @@ def build():
             "target_countries": sorted(TARGET_COUNTRIES),
             "filters": {
                 "location": "strict 8-country text-supported whitelist",
-                "security": "actual incident evidence required; GDELT category alone rejected",
-                "gdelt_geocode": "text + URL + country bounds + city-distance validation",
+                "security": "typed actual incidents only; sports/crime/road-accident/policy noise rejected",
+                "gdelt_geocode": "synthetic GDELT place labels not trusted; article evidence + quality tiers",
+            },
+            "event_model": {
+                "deduplication": "country + incident_type + time + semantic similarity",
+                "location_policy": "country fallback excluded from infrastructure proximity",
+                "compatibility": "incident type must match infrastructure category"
             },
             "deduplication": {
-                "events": "title + url + source + time",
+                "events": "exact article dedup then incident-level clustering",
                 "matches": "best event-infrastructure pair",
                 "top_matches": "one best match per infrastructure asset",
             },

@@ -27,6 +27,186 @@ OUTPUT = DATA / "infra_proximity.json"
 
 MAX_DISTANCE_KM = 50
 
+TARGET_COUNTRIES = {
+    "Hungary",
+    "Romania",
+    "Slovakia",
+    "Czechia",
+    "Poland",
+    "Lithuania",
+    "Latvia",
+    "Estonia",
+}
+
+COUNTRY_ALIASES = {
+    "Czech Republic": "Czechia",
+    "Czechia": "Czechia",
+    "Hungary": "Hungary",
+    "Romania": "Romania",
+    "Slovakia": "Slovakia",
+    "Poland": "Poland",
+    "Lithuania": "Lithuania",
+    "Latvia": "Latvia",
+    "Estonia": "Estonia",
+}
+
+COUNTRY_TERMS = {
+    "Hungary": [
+        "hungary", "hungarian", "magyarország", "magyarországi", "magyar"
+    ],
+    "Romania": [
+        "romania", "românia", "romanian", "român", "română", "româniei",
+        "románia", "romániai", "román"
+    ],
+    "Slovakia": [
+        "slovakia", "slovak", "slovensko", "slovenský", "slovenská",
+        "szlovákia", "szlovák"
+    ],
+    "Czechia": [
+        "czechia", "czech republic", "czech", "česko", "česká", "český",
+        "csehország", "cseh"
+    ],
+    "Poland": [
+        "poland", "polish", "polska", "polski", "lengyelország", "lengyel"
+    ],
+    "Lithuania": [
+        "lithuania", "lithuanian", "lietuva", "lietuvos", "lietuvoje",
+        "litvánia", "litván"
+    ],
+    "Latvia": [
+        "latvia", "latvian", "latvija", "latvijas", "latvijā",
+        "lettország", "lett"
+    ],
+    "Estonia": [
+        "estonia", "estonian", "eesti", "eestis",
+        "észtország", "észt"
+    ],
+}
+
+CITY_COUNTRY = {
+    # Hungary
+    "budapest": "Hungary",
+    "paks": "Hungary",
+    "kecskemét": "Hungary",
+    "kecskemet": "Hungary",
+    "szolnok": "Hungary",
+    "százhalombatta": "Hungary",
+    "szazhalombatta": "Hungary",
+    "tiszaújváros": "Hungary",
+    "tiszaujvaros": "Hungary",
+    "algyő": "Hungary",
+    "algyo": "Hungary",
+    "hajdúszoboszló": "Hungary",
+    "hajduszoboszlo": "Hungary",
+
+    # Romania
+    "bucharest": "Romania",
+    "bucurești": "Romania",
+    "bucuresti": "Romania",
+    "constanța": "Romania",
+    "constanta": "Romania",
+    "cernavodă": "Romania",
+    "cernavoda": "Romania",
+    "năvodari": "Romania",
+    "navodari": "Romania",
+    "fetești": "Romania",
+    "fetesti": "Romania",
+    "buzău": "Romania",
+    "buzau": "Romania",
+    "brăila": "Romania",
+    "braila": "Romania",
+    "galați": "Romania",
+    "galati": "Romania",
+    "sulina": "Romania",
+    "padina": "Romania",
+    "mihail kogălniceanu": "Romania",
+    "mihail kogalniceanu": "Romania",
+    "cincu": "Romania",
+
+    # Slovakia
+    "bratislava": "Slovakia",
+    "košice": "Slovakia",
+    "kosice": "Slovakia",
+    "mochovce": "Slovakia",
+    "jaslovské bohunice": "Slovakia",
+    "jaslovske bohunice": "Slovakia",
+    "veľké kapušany": "Slovakia",
+    "velke kapusany": "Slovakia",
+    "sliač": "Slovakia",
+    "sliac": "Slovakia",
+
+    # Czechia
+    "prague": "Czechia",
+    "praha": "Czechia",
+    "temelín": "Czechia",
+    "temelin": "Czechia",
+    "dukovany": "Czechia",
+    "litvínov": "Czechia",
+    "litvinov": "Czechia",
+    "kralupy": "Czechia",
+    "ostrava": "Czechia",
+
+    # Poland
+    "warsaw": "Poland",
+    "warszawa": "Poland",
+    "płock": "Poland",
+    "plock": "Poland",
+    "gdańsk": "Poland",
+    "gdansk": "Poland",
+    "gdynia": "Poland",
+    "rzeszów": "Poland",
+    "rzeszow": "Poland",
+    "świnoujście": "Poland",
+    "swinoujscie": "Poland",
+    "bełchatów": "Poland",
+    "belchatow": "Poland",
+
+    # Lithuania
+    "vilnius": "Lithuania",
+    "kaunas": "Lithuania",
+    "klaipėda": "Lithuania",
+    "klaipeda": "Lithuania",
+    "alytus": "Lithuania",
+    "šiauliai": "Lithuania",
+    "siauliai": "Lithuania",
+    "rukla": "Lithuania",
+
+    # Latvia
+    "riga": "Latvia",
+    "ventspils": "Latvia",
+    "ādaži": "Latvia",
+    "adazi": "Latvia",
+    "lielvārde": "Latvia",
+    "lielvarde": "Latvia",
+    "inčukalns": "Latvia",
+    "incukalns": "Latvia",
+
+    # Estonia
+    "tallinn": "Estonia",
+    "tartu": "Estonia",
+    "narva": "Estonia",
+    "paldiski": "Estonia",
+    "tapa": "Estonia",
+    "ämari": "Estonia",
+    "amari": "Estonia",
+    "muuga": "Estonia",
+}
+
+OUTSIDE_AREA_TERMS = [
+    "russia", "russian", "moscow", "moskva", "st. petersburg",
+    "saint petersburg", "kaliningrad", "kursk", "belgorod", "bryansk",
+    "ukraine", "ukrainian", "kyiv", "kiev", "odesa", "odessa",
+    "kharkiv", "dnipro", "lviv",
+    "belarus", "belarusian", "minsk",
+    "moldova", "moldovan", "chișinău", "chisinau",
+    "iran", "iranian", "tehran",
+    "israel", "israeli", "gaza",
+    "france", "french", "spain", "spanish",
+    "bulgaria", "bulgarian",
+    "united states", "u.s.", "usa", "american",
+]
+
+
 # ---------------------------------------------------------------------
 # SECURITY RELEVANCE FILTER
 # ---------------------------------------------------------------------
@@ -282,6 +462,15 @@ NEGATIVE_CONTEXT_TERMS = [
     "modernization",
     "tender",
     "procurement",
+    "formula 1",
+    "formula one",
+    "f1",
+    "grand prix",
+    "mercedes-amg",
+    "defense autonomy",
+    "defence autonomy",
+    "defence manufacturing collaboration",
+    "defense manufacturing collaboration",
 
     # Hungarian
     "vezérigazgató",
@@ -324,13 +513,130 @@ def normalize_text(text):
     return re.sub(r"\s+", " ", str(text or "").lower()).strip()
 
 
+def contains_term(text, term):
+    t = normalize_text(text)
+    k = normalize_text(term)
+
+    if not k:
+        return False
+
+    if re.fullmatch(r"[\wÀ-ž-]+", k, flags=re.UNICODE):
+        return re.search(
+            rf"(?<!\w){re.escape(k)}(?!\w)",
+            t,
+            flags=re.UNICODE,
+        ) is not None
+
+    return k in t
+
+
 def contains_phrase(text, phrase):
-    return normalize_text(phrase) in normalize_text(text)
+    return contains_term(text, phrase)
 
 
 def contains_any(text, terms):
-    t = normalize_text(text)
-    return any(normalize_text(term) in t for term in terms)
+    return any(contains_term(text, term) for term in terms)
+
+
+def canonical_country(value):
+    if not value:
+        return None
+
+    raw = str(value).strip()
+
+    if raw in COUNTRY_ALIASES:
+        return COUNTRY_ALIASES[raw]
+
+    low = normalize_text(raw)
+
+    for alias, country in COUNTRY_ALIASES.items():
+        if normalize_text(alias) == low:
+            return country
+
+    return None
+
+
+def explicit_target_countries(text):
+    hits = []
+
+    for country, terms in COUNTRY_TERMS.items():
+        if any(contains_term(text, term) for term in terms):
+            hits.append(country)
+
+    for city, country in CITY_COUNTRY.items():
+        if contains_term(text, city) and country not in hits:
+            hits.append(country)
+
+    return hits
+
+
+def explicit_target_cities(text):
+    hits = []
+
+    for city, country in CITY_COUNTRY.items():
+        if contains_term(text, city):
+            hits.append((city, country))
+
+    return hits
+
+
+def has_outside_area_focus(text):
+    return contains_any(text, OUTSIDE_AREA_TERMS)
+
+
+def event_location_supported(event):
+    """
+    Strict 8-country CEE location gate.
+
+    GDELT coordinates/geocodes are not accepted as standalone proof.
+    The article text must support the monitored country or a monitored city.
+
+    local_events.geojson is already produced by the dedicated strict
+    8-country whitelist, so its validated country property is accepted.
+    """
+    source_file = str(event.get("_source_file") or "").lower()
+    props_country = canonical_country(event.get("country"))
+    text = f"{event.get('title', '')} {event.get('summary', '')}"
+
+    if source_file == "local_events.geojson":
+        return props_country in TARGET_COUNTRIES
+
+    if source_file in ALWAYS_RELEVANT_SOURCE_FILES:
+        return True
+
+    city_hits = explicit_target_cities(text)
+
+    if city_hits:
+        city_countries = {country for _, country in city_hits}
+
+        if len(city_countries) != 1:
+            return False
+
+        detected_country = next(iter(city_countries))
+
+        if props_country and props_country != detected_country:
+            return False
+
+        # A concrete CEE city is strong enough even when another country is
+        # mentioned as actor/context.
+        return True
+
+    country_hits = list(dict.fromkeys(explicit_target_countries(text)))
+
+    if len(country_hits) != 1:
+        return False
+
+    detected_country = country_hits[0]
+
+    if props_country and props_country != detected_country:
+        return False
+
+    # Country-only evidence is not enough when the article clearly focuses
+    # on an external country/region.
+    if has_outside_area_focus(text):
+        return False
+
+    return True
 
 
 def haversine_km(lat1, lon1, lat2, lon2):
@@ -367,6 +673,11 @@ def load_infrastructure():
             continue
 
         for item in payload.get("items", []):
+            country = canonical_country(item.get("country"))
+
+            if country not in TARGET_COUNTRIES:
+                continue
+
             try:
                 item["lat"] = float(item["lat"])
                 item["lon"] = float(item["lon"])
@@ -374,6 +685,7 @@ def load_infrastructure():
             except Exception:
                 continue
 
+            item["country"] = country
             item["_source_file"] = path.name
             items.append(item)
 
@@ -521,6 +833,11 @@ def load_events():
                 or props.get("datetime")
                 or props.get("date")
             )
+            country = (
+                props.get("country")
+                or props.get("event_country")
+                or props.get("location_country")
+            )
 
             event_id = (
                 props.get("id")
@@ -535,14 +852,18 @@ def load_events():
                 "source": source,
                 "time": time,
                 "url": url,
+                "country": country,
                 "lat": lat,
                 "lon": lon,
                 "_source_file": path.name,
             }
 
-            # Critical change:
-            # only security-relevant events are allowed into the proximity
-            # calculation.
+            # Gate 1: must genuinely belong to one of the eight monitored
+            # countries. GDELT geocode alone is not enough.
+            if not event_location_supported(event):
+                continue
+
+            # Gate 2: must be a real security/disruption event.
             if not event_security_relevant(event):
                 continue
 
@@ -745,6 +1066,12 @@ def build():
             "raw_match_count": len(all_matches),
             "top_infrastructure_count": len(top_by_infra),
             "max_distance_km": MAX_DISTANCE_KM,
+            "target_countries": sorted(TARGET_COUNTRIES),
+            "filters": {
+                "location": "strict 8-country text-supported whitelist",
+                "security": "security-relevant incidents only",
+                "gdelt_geocode": "not accepted as standalone location evidence",
+            },
             "deduplication": {
                 "events": "title + url + source + time",
                 "matches": "best event-infrastructure pair",
@@ -767,7 +1094,7 @@ def build():
 
     print(f"Saved: {OUTPUT}")
     print(f"Infrastructure: {len(infrastructure)}")
-    print(f"Security-relevant events: {len(events)}")
+    print(f"Validated CEE security events: {len(events)}")
     print(f"Matches: {len(unique_matches)}")
     print(
         f"Top infrastructure matches: "
@@ -777,3 +1104,4 @@ def build():
 
 if __name__ == "__main__":
     build()
+

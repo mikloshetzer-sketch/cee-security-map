@@ -5,6 +5,7 @@ from collections import Counter, defaultdict
 from email.utils import parsedate_to_datetime
 import hashlib
 import re
+from difflib import SequenceMatcher
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -335,9 +336,8 @@ def load_validated_security_events(days=7):
     Unified risk input:
     local + GDELT + linked + cross-border.
 
-    This is intentionally independent from map display categories, so a
-    GDELT event labelled `other` can still become a drone event when the
-    article evidence clearly supports that classification.
+    First normalize/filter articles, then collapse multiple reports of the
+    same real-world event into one risk incident.
     """
     cutoff = now_utc() - timedelta(days=days)
     candidates = []
@@ -346,48 +346,43 @@ def load_validated_security_events(days=7):
         payload = load_json(path, {"features": []})
 
         for feature in payload.get("features", []):
-            normalized = normalize_security_feature(feature, path.name)
+            normalized = normalize_security_feature(
+                feature,
+                path.name,
+            )
             if not normalized:
                 continue
 
             props = normalized["properties"]
             dt = parse_time(props.get("time"))
+
             if not dt or dt < cutoff:
                 continue
 
             candidates.append(normalized)
 
-    # Event-level conservative deduplication.
-    # Same country + category + calendar day + similar normalized title.
-    seen = {}
-    result = []
+    # Exact article dedup first.
+    exact_seen = set()
+    article_unique = []
 
     for feature in candidates:
         props = feature.get("properties") or {}
-        title = normalize_text(props.get("title") or props.get("name") or "")
-        title_tokens = [
-            token for token in re.findall(r"[\\wÀ-ž-]{4,}", title, flags=re.UNICODE)
-            if token not in {"romania", "hungary", "poland", "latvia", "estonia", "lithuania"}
-        ]
-        title_sig = " ".join(title_tokens[:8])
 
-        dt = parse_time(props.get("time"))
-        day = dt.date().isoformat() if dt else ""
-
-        key = stable_event_key(
-            props.get("country"),
-            props.get("category"),
-            day,
-            title_sig,
+        exact_key = stable_event_key(
+            props.get("url"),
+            props.get("title"),
+            props.get("source"),
+            props.get("time"),
         )
 
-        if key in seen:
+        if exact_key in exact_seen:
             continue
 
-        seen[key] = True
-        result.append(feature)
+        exact_seen.add(exact_key)
+        article_unique.append(feature)
 
-    return result
+    # Then real-world incident clustering.
+    return cluster_risk_incidents(article_unique)
 
 
 def local_event_score(props):
@@ -743,6 +738,8 @@ def country_event_components(local_events):
     result = defaultdict(lambda: {
         "all_score": 0.0,
         "all_count": 0,
+        "article_count": 0,
+        "source_count": 0,
         "military_drone_score": 0.0,
         "military_drone_count": 0,
         "cyber_score": 0.0,
@@ -760,22 +757,22 @@ def country_event_components(local_events):
     for feature in local_events:
         props = feature.get("properties") or {}
         country = norm_country(props.get("country"))
+
         if country not in MONITORED_COUNTRIES:
             continue
 
-        event_key = (
-            props.get("id")
-            or props.get("url")
-            or (
-                props.get("title"),
-                props.get("time"),
-                props.get("source"),
-            )
+        # By this stage each feature is already one clustered incident.
+        event_key = stable_event_key(
+            country,
+            props.get("category"),
+            props.get("time"),
+            "|".join(props.get("risk_titles") or [str(props.get("title") or "")]),
         )
-        dedup_key = (country, str(event_key))
-        if dedup_key in seen:
+
+        if event_key in seen:
             continue
-        seen.add(dedup_key)
+
+        seen.add(event_key)
 
         score = local_event_score(props)
         category = event_category(props)
@@ -784,6 +781,11 @@ def country_event_components(local_events):
         row = result[country]
         row["all_score"] += score
         row["all_count"] += 1
+        row["article_count"] += int(props.get("article_count") or 1)
+        row["source_count"] += max(
+            1,
+            int(props.get("source_count") or 1),
+        )
 
         if category in RISK_CATEGORY_GROUPS["military_drone"]:
             row["military_drone_score"] += score
@@ -803,6 +805,7 @@ def country_event_components(local_events):
             str(props.get("scope") or "").lower() == "crossborder",
             str(props.get("category") or "").lower() == "crossborder",
         ])
+
         if crossborder_flag:
             row["crossborder_score"] += score
             row["crossborder_count"] += 1
@@ -886,6 +889,10 @@ def score_country_risk(country, event_row, prox_row):
     ), 3)
 
     evidence_count = event_row["all_count"] + prox_row["count"]
+    corroboration = max(
+        0,
+        event_row.get("source_count", 0) - event_row["all_count"],
+    )
     active_dimensions = sum(
         1 for name in [
             "incident_pressure", "military_drone", "cyber",
@@ -896,8 +903,9 @@ def score_country_risk(country, event_row, prox_row):
 
     confidence_value = clamp(
         0.20
-        + min(0.45, evidence_count * 0.055)
-        + min(0.25, active_dimensions * 0.05),
+        + min(0.40, evidence_count * 0.055)
+        + min(0.20, active_dimensions * 0.05)
+        + min(0.15, corroboration * 0.015),
         0.0,
         1.0,
     )
@@ -934,6 +942,8 @@ def score_country_risk(country, event_row, prox_row):
         "confidence_value": round(confidence_value, 3),
         "drivers": drivers[:4],
         "local_event_count": event_row["all_count"],
+        "article_count": event_row.get("article_count", event_row["all_count"]),
+        "source_count": event_row.get("source_count", event_row["all_count"]),
         "infra_proximity_count": prox_row["count"],
         "high_critical_infra_count": prox_row["high_critical"],
     }
@@ -985,6 +995,8 @@ def enrich_risk(local_events, prox_matches):
             "dimensions": scored["dimensions"],
             "drivers": scored["drivers"],
             "local_event_count": scored["local_event_count"],
+            "article_count": scored.get("article_count", scored["local_event_count"]),
+            "source_count": scored.get("source_count", scored["local_event_count"]),
             "infra_proximity_count": scored["infra_proximity_count"],
             "high_critical_infra_count": scored["high_critical_infra_count"],
             "model": "cee_country_risk_v2",
@@ -1052,7 +1064,7 @@ def enrich_risk(local_events, prox_matches):
         "scale": "0-10",
         "countries": MONITORED_COUNTRIES,
         "weights": RISK_WEIGHTS,
-        "method": "weighted saturating dimensions rebuilt from current 7-day validated evidence",
+        "method": "weighted saturating dimensions from 7-day incident-clustered validated evidence",
         "important": "previous normalized scores are not cumulatively re-added",
     }
     risk["generated_utc"] = now_utc().isoformat()
@@ -1098,4 +1110,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_utc": "2026-07-25T08:17:46.803083+00:00",
+    "generated_utc": "2026-07-25T10:35:10.748160+00:00",
     "infrastructure_count": 103,
-    "event_count": 25,
-    "match_count": 0,
-    "raw_match_count": 0,
-    "top_infrastructure_count": 0,
+    "event_count": 27,
+    "match_count": 6,
+    "raw_match_count": 6,
+    "top_infrastructure_count": 5,
     "max_distance_km": 50,
     "target_countries": [
       "Czechia",
@@ -24,8 +24,9 @@
     },
     "event_model": {
       "deduplication": "country + incident_type + time + semantic similarity",
-      "location_policy": "country fallback excluded from infrastructure proximity",
-      "compatibility": "incident type must match infrastructure category"
+      "location_policy": "multi-source geolocation after incident clustering; unresolved/coarse locations excluded",
+      "compatibility": "incident type must match infrastructure category",
+      "geolocation": "named place > article city > trusted source coordinate; GDELT fallback never upgraded automatically"
     },
     "deduplication": {
       "events": "exact article dedup then incident-level clustering",
@@ -33,7 +34,741 @@
       "top_matches": "one best match per infrastructure asset"
     }
   },
-  "top_matches": [],
-  "matches": [],
-  "raw_matches": []
+  "top_matches": [
+    {
+      "id": "e3e4162ff137e46d",
+      "level": "critical",
+      "score": 100.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-cernavoda-npp",
+        "name": "Cernavodă Nuclear Power Plant",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "category": "energy",
+        "subtype": "nuclear_power_plant",
+        "criticality": 10.0,
+        "operator": "Nuclearelectrica",
+        "lat": 44.322,
+        "lon": 28.057,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "9f97d3803ce026e2",
+      "level": "watch",
+      "score": 30.88,
+      "distance_km": 34.56,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-military-mk-airbase",
+        "name": "Mihail Kogălniceanu Air Base",
+        "country": "Romania",
+        "city": "Constanța",
+        "category": "military",
+        "subtype": "airbase",
+        "criticality": 10.0,
+        "operator": "Romanian Air Force / NATO",
+        "lat": 44.362,
+        "lon": 28.488,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "86c99278045bd74e",
+      "level": "watch",
+      "score": 6.89,
+      "distance_km": 46.55,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-hazardous-petromidia",
+        "name": "Petromidia Petrochemical Complex",
+        "country": "Romania",
+        "city": "Năvodari",
+        "category": "hazardous",
+        "subtype": "petrochemical_complex",
+        "criticality": 10.0,
+        "operator": "Rompetrol",
+        "lat": 44.335,
+        "lon": 28.642,
+        "source_file": "infra_hazardous.json"
+      }
+    },
+    {
+      "id": "fa99f7d0b0f2d627",
+      "level": "watch",
+      "score": 6.2,
+      "distance_km": 46.55,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-petromidia-refinery",
+        "name": "Petromidia Refinery",
+        "country": "Romania",
+        "city": "Năvodari",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 9.0,
+        "operator": "Rompetrol / KMG International",
+        "lat": 44.335,
+        "lon": 28.642,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "c48c59267afa40ed",
+      "level": "watch",
+      "score": 1.69,
+      "distance_km": 49.15,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-constanta-port",
+        "name": "Port of Constanța",
+        "country": "Romania",
+        "city": "Constanța",
+        "category": "transport",
+        "subtype": "seaport",
+        "criticality": 10.0,
+        "operator": "Port Authority",
+        "lat": 44.173,
+        "lon": 28.638,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ],
+  "matches": [
+    {
+      "id": "e3e4162ff137e46d",
+      "level": "critical",
+      "score": 100.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-cernavoda-npp",
+        "name": "Cernavodă Nuclear Power Plant",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "category": "energy",
+        "subtype": "nuclear_power_plant",
+        "criticality": 10.0,
+        "operator": "Nuclearelectrica",
+        "lat": 44.322,
+        "lon": 28.057,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "71a8ac407b8e1512",
+      "level": "medium",
+      "score": 63.05,
+      "distance_km": 18.47,
+      "event": {
+        "id": "d2123cfe188bdc4d",
+        "title": "A NATO döntött a román légtérbe repült drón hatástalanításáról",
+        "category": "drone",
+        "incident_type": "drone_airspace",
+        "source": "Telex",
+        "source_count": 1,
+        "sources": [
+          "Telex"
+        ],
+        "time": "Fri, 24 Jul 2026 15:19:20 +0200",
+        "url": "https://telex.hu/transtelex/2026/07/24/romania-dron-bukarest-kozeleben-fellepes-buzau-megye",
+        "urls": [
+          "https://telex.hu/transtelex/2026/07/24/romania-dron-bukarest-kozeleben-fellepes-buzau-megye"
+        ],
+        "lat": 44.366,
+        "lon": 27.833,
+        "location_quality": "city",
+        "place": "fetești",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-cernavoda-npp",
+        "name": "Cernavodă Nuclear Power Plant",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "category": "energy",
+        "subtype": "nuclear_power_plant",
+        "criticality": 10.0,
+        "operator": "Nuclearelectrica",
+        "lat": 44.322,
+        "lon": 28.057,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "9f97d3803ce026e2",
+      "level": "watch",
+      "score": 30.88,
+      "distance_km": 34.56,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-military-mk-airbase",
+        "name": "Mihail Kogălniceanu Air Base",
+        "country": "Romania",
+        "city": "Constanța",
+        "category": "military",
+        "subtype": "airbase",
+        "criticality": 10.0,
+        "operator": "Romanian Air Force / NATO",
+        "lat": 44.362,
+        "lon": 28.488,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "86c99278045bd74e",
+      "level": "watch",
+      "score": 6.89,
+      "distance_km": 46.55,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-hazardous-petromidia",
+        "name": "Petromidia Petrochemical Complex",
+        "country": "Romania",
+        "city": "Năvodari",
+        "category": "hazardous",
+        "subtype": "petrochemical_complex",
+        "criticality": 10.0,
+        "operator": "Rompetrol",
+        "lat": 44.335,
+        "lon": 28.642,
+        "source_file": "infra_hazardous.json"
+      }
+    },
+    {
+      "id": "fa99f7d0b0f2d627",
+      "level": "watch",
+      "score": 6.2,
+      "distance_km": 46.55,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-petromidia-refinery",
+        "name": "Petromidia Refinery",
+        "country": "Romania",
+        "city": "Năvodari",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 9.0,
+        "operator": "Rompetrol / KMG International",
+        "lat": 44.335,
+        "lon": 28.642,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "c48c59267afa40ed",
+      "level": "watch",
+      "score": 1.69,
+      "distance_km": 49.15,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-constanta-port",
+        "name": "Port of Constanța",
+        "country": "Romania",
+        "city": "Constanța",
+        "category": "transport",
+        "subtype": "seaport",
+        "criticality": 10.0,
+        "operator": "Port Authority",
+        "lat": 44.173,
+        "lon": 28.638,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ],
+  "raw_matches": [
+    {
+      "id": "e3e4162ff137e46d",
+      "level": "critical",
+      "score": 100.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-cernavoda-npp",
+        "name": "Cernavodă Nuclear Power Plant",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "category": "energy",
+        "subtype": "nuclear_power_plant",
+        "criticality": 10.0,
+        "operator": "Nuclearelectrica",
+        "lat": 44.322,
+        "lon": 28.057,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "fa99f7d0b0f2d627",
+      "level": "watch",
+      "score": 6.2,
+      "distance_km": 46.55,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-petromidia-refinery",
+        "name": "Petromidia Refinery",
+        "country": "Romania",
+        "city": "Năvodari",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 9.0,
+        "operator": "Rompetrol / KMG International",
+        "lat": 44.335,
+        "lon": 28.642,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "c48c59267afa40ed",
+      "level": "watch",
+      "score": 1.69,
+      "distance_km": 49.15,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-constanta-port",
+        "name": "Port of Constanța",
+        "country": "Romania",
+        "city": "Constanța",
+        "category": "transport",
+        "subtype": "seaport",
+        "criticality": 10.0,
+        "operator": "Port Authority",
+        "lat": 44.173,
+        "lon": 28.638,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "9f97d3803ce026e2",
+      "level": "watch",
+      "score": 30.88,
+      "distance_km": 34.56,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-military-mk-airbase",
+        "name": "Mihail Kogălniceanu Air Base",
+        "country": "Romania",
+        "city": "Constanța",
+        "category": "military",
+        "subtype": "airbase",
+        "criticality": 10.0,
+        "operator": "Romanian Air Force / NATO",
+        "lat": 44.362,
+        "lon": 28.488,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "86c99278045bd74e",
+      "level": "watch",
+      "score": 6.89,
+      "distance_km": 46.55,
+      "event": {
+        "id": "5db50074a26a49fa",
+        "title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:15:00Z",
+        "url": "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+        "urls": [
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/"
+        ],
+        "lat": 44.322,
+        "lon": 28.057,
+        "location_quality": "city",
+        "place": "cernavodă",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-hazardous-petromidia",
+        "name": "Petromidia Petrochemical Complex",
+        "country": "Romania",
+        "city": "Năvodari",
+        "category": "hazardous",
+        "subtype": "petrochemical_complex",
+        "criticality": 10.0,
+        "operator": "Rompetrol",
+        "lat": 44.335,
+        "lon": 28.642,
+        "source_file": "infra_hazardous.json"
+      }
+    },
+    {
+      "id": "71a8ac407b8e1512",
+      "level": "medium",
+      "score": 63.05,
+      "distance_km": 18.47,
+      "event": {
+        "id": "d2123cfe188bdc4d",
+        "title": "A NATO döntött a román légtérbe repült drón hatástalanításáról",
+        "category": "drone",
+        "incident_type": "drone_airspace",
+        "source": "Telex",
+        "source_count": 1,
+        "sources": [
+          "Telex"
+        ],
+        "time": "Fri, 24 Jul 2026 15:19:20 +0200",
+        "url": "https://telex.hu/transtelex/2026/07/24/romania-dron-bukarest-kozeleben-fellepes-buzau-megye",
+        "urls": [
+          "https://telex.hu/transtelex/2026/07/24/romania-dron-bukarest-kozeleben-fellepes-buzau-megye"
+        ],
+        "lat": 44.366,
+        "lon": 27.833,
+        "location_quality": "city",
+        "place": "fetești",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-cernavoda-npp",
+        "name": "Cernavodă Nuclear Power Plant",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "category": "energy",
+        "subtype": "nuclear_power_plant",
+        "criticality": 10.0,
+        "operator": "Nuclearelectrica",
+        "lat": 44.322,
+        "lon": 28.057,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ]
 }

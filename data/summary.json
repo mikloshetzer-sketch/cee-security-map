@@ -1,32 +1,92 @@
 {
-  "generated_utc": "2026-07-25T05:20:49Z",
+  "generated_utc": "2026-07-25T06:19:38Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Az infrastruktúra-közelségi modul 150 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 55 magas vagy kritikus szintű.",
+    "Az infrastruktúra-közelségi modul 146 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 57 magas vagy kritikus szintű.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Europe faces rocky path to defense autonomy : Experts.",
+    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Europe faces rocky path to defense autonomy : Experts.",
     "CRITICAL infrastruktúra-jelzés: Bucharest Internet Exchange / Digital Hub (Romania) – 0.5 km-re ettől: Huge scope to strengthen collaboration in defence manufacturing between India and Romania : MEA.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Wildfires trigger mass evacuations across France and Spain.",
-    "CRITICAL infrastruktúra-jelzés: Prague Internet Exchange / NIX.CZ (Czechia) – 0.8 km-re ettől: Stranded tourists flee for their lives by boat as apocalyptic mega - fire triggers total evacuation of French Hampton - while Madrid declares national emergency as Europe burns.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 748.27; 7 napos változás: +10138%).",
-    "Trend: emelkedő (+1398%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2748, GDELT DOC 2734, direkt feed 353, USGS 0, GDACS 2.",
+    "Legerősebb góc: SO ORP Kralupy nad Vltavou, Czechia 🔺 (rácspont 50.25, 14.25; score 752.98; 7 napos változás: +8423%).",
+    "Trend: emelkedő (+1421%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2751, GDELT DOC 2753, direkt feed 353, USGS 0, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+10138%)."
+    "text": "Erősödő hotspot: SO ORP Kralupy nad Vltavou, Czechia (+8423%)."
   },
   "stats": {
-    "score_last7": 2925.767,
-    "score_prev7": 195.309,
-    "change_pct": 1398.02
+    "score_last7": 2942.026,
+    "score_prev7": 193.474,
+    "change_pct": 1420.63
   },
   "rss_count": 200,
   "local_infrastructure": {
     "last_24h_local_events": 0,
-    "last_24h_proximity_matches": 150,
+    "last_24h_proximity_matches": 146,
     "top_proximity": [
+      {
+        "id": "e56a51adb02070e5",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "1492e49305bd7d48",
+          "title": "Europe faces rocky path to defense autonomy : Experts",
+          "category": "military",
+          "source": "GDELT_DOC",
+          "time": "2026-07-25T02:15:00Z",
+          "url": "http://europe.chinadaily.com.cn/a/202607/25/WS6a63fb43a310986e2b467367.html",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
+      {
+        "id": "158975a25ea1e851",
+        "level": "critical",
+        "score": 88.57,
+        "distance_km": 0.8,
+        "event": {
+          "id": "be6905676f4a701c",
+          "title": "Europe faces rocky path to defense autonomy : Experts",
+          "category": "military",
+          "source": "GDELT_DOC",
+          "time": "2026-07-25T02:00:00Z",
+          "url": "http://usa.chinadaily.com.cn/a/202607/25/WS6a63fb43a310986e2b467367.html",
+          "lat": 50.08,
+          "lon": 14.43,
+          "source_file": "gdelt_crossborder.geojson"
+        },
+        "infrastructure": {
+          "id": "cz-digital-prague-ixp",
+          "name": "Prague Internet Exchange / NIX.CZ",
+          "country": "Czechia",
+          "city": "Prague",
+          "category": "digital",
+          "subtype": "internet_exchange",
+          "criticality": 9.0,
+          "operator": "NIX.CZ",
+          "lat": 50.075,
+          "lon": 14.438,
+          "source_file": "infra_digital.json"
+        }
+      },
       {
         "id": "e10374e629e1f8c9",
         "level": "critical",
@@ -249,66 +309,6 @@
           "source": "GDELT_DOC",
           "time": "2026-07-24T21:30:00Z",
           "url": "https://www.romania-actualitati.ro/stiri/romania/resturi-din-drona-doborata-langa-padina-au-fost-identificate-in-judetele-buzau-si-braila-id231952.html",
-          "lat": 44.43,
-          "lon": 26.1,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "ro-digital-bucharest-ixp",
-          "name": "Bucharest Internet Exchange / Digital Hub",
-          "country": "Romania",
-          "city": "Bucharest",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 8.0,
-          "operator": "Multiple operators",
-          "lat": 44.426,
-          "lon": 26.102,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "ada4da0dc7138f23",
-        "level": "critical",
-        "score": 79.24,
-        "distance_km": 0.47,
-        "event": {
-          "id": "1dd1a3b11d758aa9",
-          "title": "Bogdan Chirieac , avertisment dur după drona doborâtă la Buzău : România , tot mai aproape de un conflict major",
-          "category": "other",
-          "source": "GDELT_DOC",
-          "time": "2026-07-24T21:30:00Z",
-          "url": "https://www.ziarulnational.md/bogdan-chirieac-avertisment-dur-dupa-drona-doborata-la-buzau-romania-tot-mai-aproape-de-un-conflict-major/",
-          "lat": 44.43,
-          "lon": 26.1,
-          "source_file": "gdelt_crossborder.geojson"
-        },
-        "infrastructure": {
-          "id": "ro-digital-bucharest-ixp",
-          "name": "Bucharest Internet Exchange / Digital Hub",
-          "country": "Romania",
-          "city": "Bucharest",
-          "category": "digital",
-          "subtype": "internet_exchange_digital_hub",
-          "criticality": 8.0,
-          "operator": "Multiple operators",
-          "lat": 44.426,
-          "lon": 26.102,
-          "source_file": "infra_digital.json"
-        }
-      },
-      {
-        "id": "8b023aab2bfbbc77",
-        "level": "critical",
-        "score": 79.24,
-        "distance_km": 0.47,
-        "event": {
-          "id": "445320b83c9a1ebb",
-          "title": "Drona de la Buzău , ratată de italieni . O amenințare de tip Shahed , Geran 2 . Ultimele informații de la MApN",
-          "category": "drone",
-          "source": "GDELT_DOC",
-          "time": "2026-07-24T21:15:00Z",
-          "url": "https://www.dcnews.ro/drona-de-la-buzau-ratata-de-italieni-o-amenintare-de-tip-shahed-geran-2-ultimele-informatii-de-la-mapn_1071629.html",
           "lat": 44.43,
           "lon": 26.1,
           "source_file": "gdelt_crossborder.geojson"

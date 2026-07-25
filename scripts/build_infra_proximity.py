@@ -4,6 +4,7 @@ import hashlib
 import re
 from pathlib import Path
 from datetime import datetime, timezone
+from urllib.parse import urlparse, unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -192,6 +193,69 @@ CITY_COUNTRY = {
     "muuga": "Estonia",
 }
 
+
+COUNTRY_BOUNDS = {
+    "Hungary": (45.7, 48.7, 16.0, 23.0),
+    "Romania": (43.5, 48.4, 20.0, 30.2),
+    "Slovakia": (47.7, 49.7, 16.7, 22.7),
+    "Czechia": (48.4, 51.2, 12.0, 19.0),
+    "Poland": (49.0, 55.1, 14.0, 24.3),
+    "Lithuania": (53.8, 56.5, 20.8, 26.9),
+    "Latvia": (55.6, 58.2, 20.7, 28.3),
+    "Estonia": (57.4, 59.9, 21.5, 28.3),
+}
+
+CITY_COORDS_VALIDATION = {
+    "budapest": (47.497, 19.040), "paks": (46.622, 18.855),
+    "kecskemét": (46.906, 19.691), "kecskemet": (46.906, 19.691),
+    "szolnok": (47.174, 20.176), "százhalombatta": (47.317, 18.910),
+    "szazhalombatta": (47.317, 18.910), "tiszaújváros": (47.922, 21.052),
+    "tiszaujvaros": (47.922, 21.052),
+
+    "bucharest": (44.426, 26.102), "bucurești": (44.426, 26.102),
+    "bucuresti": (44.426, 26.102), "constanța": (44.173, 28.638),
+    "constanta": (44.173, 28.638), "cernavodă": (44.322, 28.057),
+    "cernavoda": (44.322, 28.057), "năvodari": (44.335, 28.642),
+    "navodari": (44.335, 28.642), "fetești": (44.366, 27.833),
+    "fetesti": (44.366, 27.833), "buzău": (45.150, 26.824),
+    "buzau": (45.150, 26.824), "brăila": (45.269, 27.957),
+    "braila": (45.269, 27.957), "galați": (45.435, 28.008),
+    "galati": (45.435, 28.008), "sulina": (45.156, 29.653),
+    "padina": (44.833, 27.117), "mihail kogălniceanu": (44.362, 28.488),
+    "mihail kogalniceanu": (44.362, 28.488), "cincu": (45.917, 24.783),
+
+    "bratislava": (48.148, 17.107), "košice": (48.716, 21.261),
+    "kosice": (48.716, 21.261), "mochovce": (48.264, 18.455),
+    "sliač": (48.637, 19.134), "sliac": (48.637, 19.134),
+
+    "prague": (50.075, 14.438), "praha": (50.075, 14.438),
+    "temelín": (49.181, 14.376), "temelin": (49.181, 14.376),
+    "dukovany": (49.085, 16.148), "litvínov": (50.604, 13.618),
+    "litvinov": (50.604, 13.618), "kralupy": (50.241, 14.312),
+    "ostrava": (49.820, 18.262),
+
+    "warsaw": (52.229, 21.012), "warszawa": (52.229, 21.012),
+    "płock": (52.576, 19.701), "plock": (52.576, 19.701),
+    "gdańsk": (54.383, 18.670), "gdansk": (54.383, 18.670),
+    "gdynia": (54.533, 18.550), "rzeszów": (50.041, 21.999),
+    "rzeszow": (50.041, 21.999),
+
+    "vilnius": (54.687, 25.279), "kaunas": (54.898, 23.904),
+    "klaipėda": (55.706, 21.127), "klaipeda": (55.706, 21.127),
+    "alytus": (54.396, 24.041), "šiauliai": (55.893, 23.395),
+    "siauliai": (55.893, 23.395), "rukla": (55.000, 24.000),
+
+    "riga": (56.949, 24.105), "ventspils": (57.394, 21.560),
+    "ādaži": (57.070, 24.337), "adazi": (57.070, 24.337),
+    "lielvārde": (56.778, 24.853), "lielvarde": (56.778, 24.853),
+    "inčukalns": (57.098, 24.686), "incukalns": (57.098, 24.686),
+
+    "tallinn": (59.437, 24.753), "tartu": (58.378, 26.729),
+    "narva": (59.377, 27.420), "paldiski": (59.350, 24.050),
+    "tapa": (59.260, 25.958), "ämari": (59.260, 24.208),
+    "amari": (59.260, 24.208), "muuga": (59.500, 24.960),
+}
+
 OUTSIDE_AREA_TERMS = [
     "russia", "russian", "moscow", "moskva", "st. petersburg",
     "saint petersburg", "kaliningrad", "kursk", "belgorod", "bryansk",
@@ -253,111 +317,31 @@ CONTEXTUAL_SECURITY_CATEGORIES = {
 }
 
 SECURITY_EVENT_TERMS = [
-    # Kinetic / military
-    "attack",
-    "attacked",
-    "strike",
-    "airstrike",
-    "air strike",
-    "missile",
-    "rocket",
-    "shelling",
-    "bombing",
-    "explosion",
-    "blast",
-    "drone attack",
-    "uav attack",
-    "shahed",
-    "shot down",
-    "shoot down",
-    "downed",
-    "intercepted",
-    "airspace violation",
-    "airspace breach",
-    "military attack",
-    "armed attack",
-
-    # Hungarian
-    "támadás",
-    "csapás",
-    "rakéta",
-    "robbanás",
-    "dróntámadás",
-    "lelőttek",
-    "lelőtt",
-    "elfogtak",
-    "elfogás",
-    "légtérsértés",
-    "fegyveres támadás",
-
-    # Romanian
-    "atac",
-    "lovitură",
-    "lovitura",
-    "rachetă",
-    "racheta",
-    "explozie",
-    "dronă",
-    "drona",
-    "dronei",
-    "doborât",
-    "doborâtă",
-    "spațiul aerian",
-    "spatiul aerian",
-
-    # Cyber / sabotage
-    "cyberattack",
-    "cyber attack",
-    "ransomware",
-    "ddos",
-    "data breach",
-    "sabotage",
-    "kibertámadás",
-    "szabotázs",
-    "cyberatak",
-    "küberrünnak",
-
-    # Critical infrastructure disruption / hazardous event
-    "industrial accident",
-    "chemical leak",
-    "gas leak",
-    "pipeline leak",
-    "blackout",
-    "power outage",
-    "grid failure",
-    "refinery fire",
-    "airport closed",
-    "airport closure",
-    "port closed",
-    "port closure",
-    "rail disruption",
-    "evacuation",
-    "emergency shutdown",
-
-    # Hungarian
-    "ipari baleset",
-    "vegyi szivárgás",
-    "gázszivárgás",
-    "vezeték sérül",
-    "áramszünet",
-    "hálózati hiba",
-    "finomítótűz",
-    "repülőtér lezár",
-    "kikötő lezár",
-    "vasúti fennakadás",
-    "kiürítés",
-
-    # Generic major fire terms. These require context below.
-    "major fire",
-    "large fire",
-    "tűz",
-    "incendiu",
-    "požiar",
-    "požár",
-    "pożar",
-    "gaisras",
-    "ugunsgrēks",
-    "tulekahju",
+    "attacked", "attack on", "under attack", "strike hit", "struck",
+    "airstrike", "air strike", "missile strike", "missile attack",
+    "rocket attack", "shelling", "bombing", "explosion", "blast",
+    "shot down", "shoot down", "downed", "intercepted",
+    "fired at", "opened fire", "airspace violation", "airspace breach",
+    "breached airspace", "crashed", "crash", "detonated",
+    "megtámadt", "támadás érte", "csapás érte", "rakétatámadás",
+    "robbanás", "lelőtt", "lelőttek", "elfogták", "elfogás",
+    "légtérsértés", "lezuhant", "becsapódott",
+    "atacat", "lovit", "lovitură", "lovitura", "explozie",
+    "doborât", "doborâtă", "doborârea", "interceptat", "interceptată",
+    "a tras asupra", "spațiul aerian", "spatiul aerian",
+    "prăbușit", "prabusit",
+    "cyberattack", "cyber attack", "ransomware attack",
+    "ransomware incident", "ddos attack", "data breach",
+    "systems compromised", "network compromised",
+    "kibertámadás", "adatlopás", "rendszereket feltörték",
+    "sabotage", "szabotázs", "industrial accident", "chemical leak",
+    "gas leak", "pipeline leak", "blackout", "power outage",
+    "grid failure", "refinery fire", "airport closed",
+    "airport closure", "port closed", "port closure",
+    "rail disruption", "evacuation", "emergency shutdown",
+    "ipari baleset", "vegyi szivárgás", "gázszivárgás",
+    "áramszünet", "finomítótűz", "kiürítés",
+    "major fire", "large fire", "incendiu major",
 ]
 
 SECURITY_CONTEXT_TERMS = [
@@ -538,6 +522,55 @@ def contains_any(text, terms):
     return any(contains_term(text, term) for term in terms)
 
 
+def url_evidence_text(url):
+    if not url:
+        return ""
+
+    try:
+        parsed = urlparse(str(url))
+        raw = unquote(f"{parsed.netloc} {parsed.path} {parsed.query}")
+    except Exception:
+        raw = str(url)
+
+    raw = re.sub(r"[-_/?.=&+]+", " ", raw)
+    return normalize_text(raw)
+
+
+def event_evidence_text(event):
+    return " ".join(
+        part for part in [
+            str(event.get("title") or ""),
+            str(event.get("summary") or ""),
+            url_evidence_text(event.get("url")),
+        ]
+        if part
+    )
+
+
+def coordinate_in_country(lat, lon, country):
+    bounds = COUNTRY_BOUNDS.get(country)
+    if not bounds:
+        return False
+    min_lat, max_lat, min_lon, max_lon = bounds
+    return min_lat <= lat <= max_lat and min_lon <= lon <= max_lon
+
+
+def city_coordinate_supported(event, city_hits, max_distance_km=90.0):
+    if not city_hits:
+        return True
+
+    checked = False
+    for city, _country in city_hits:
+        coords = CITY_COORDS_VALIDATION.get(city)
+        if not coords:
+            continue
+        checked = True
+        if haversine_km(event["lat"], event["lon"], coords[0], coords[1]) <= max_distance_km:
+            return True
+
+    return not checked
+
+
 def canonical_country(value):
     if not value:
         return None
@@ -586,17 +619,11 @@ def has_outside_area_focus(text):
 
 def event_location_supported(event):
     """
-    Strict 8-country CEE location gate.
-
-    GDELT coordinates/geocodes are not accepted as standalone proof.
-    The article text must support the monitored country or a monitored city.
-
-    local_events.geojson is already produced by the dedicated strict
-    8-country whitelist, so its validated country property is accepted.
+    Strict 8-country CEE location validation.
+    Text/URL evidence and coordinates must agree.
     """
     source_file = str(event.get("_source_file") or "").lower()
     props_country = canonical_country(event.get("country"))
-    text = f"{event.get('title', '')} {event.get('summary', '')}"
 
     if source_file == "local_events.geojson":
         return props_country in TARGET_COUNTRIES
@@ -604,37 +631,47 @@ def event_location_supported(event):
     if source_file in ALWAYS_RELEVANT_SOURCE_FILES:
         return True
 
-    city_hits = explicit_target_cities(text)
+    evidence = event_evidence_text(event)
+    summary_url = " ".join([
+        str(event.get("summary") or ""),
+        url_evidence_text(event.get("url")),
+    ])
+
+    city_hits = explicit_target_cities(evidence)
+    country_hits = list(dict.fromkeys(explicit_target_countries(evidence)))
 
     if city_hits:
         city_countries = {country for _, country in city_hits}
-
         if len(city_countries) != 1:
             return False
-
         detected_country = next(iter(city_countries))
 
         if props_country and props_country != detected_country:
             return False
+        if not coordinate_in_country(event["lat"], event["lon"], detected_country):
+            return False
+        if not city_coordinate_supported(event, city_hits):
+            return False
 
-        # A concrete CEE city is strong enough even when another country is
-        # mentioned as actor/context.
+        non_title_target_hits = explicit_target_countries(summary_url)
+        if has_outside_area_focus(summary_url) and not non_title_target_hits:
+            return False
+
         return True
-
-    country_hits = list(dict.fromkeys(explicit_target_countries(text)))
 
     if len(country_hits) != 1:
         return False
 
     detected_country = country_hits[0]
-
     if props_country and props_country != detected_country:
         return False
-
-    # Country-only evidence is not enough when the article clearly focuses
-    # on an external country/region.
-    if has_outside_area_focus(text):
+    if not coordinate_in_country(event["lat"], event["lon"], detected_country):
         return False
+
+    if has_outside_area_focus(summary_url):
+        non_title_target_hits = explicit_target_countries(summary_url)
+        if not non_title_target_hits:
+            return False
 
     return True
 
@@ -694,89 +731,62 @@ def load_infrastructure():
 
 def event_security_relevant(event):
     """
-    Second defensive layer for infrastructure proximity.
-
-    An event is allowed to affect infrastructure proximity only when there
-    is actual security / disruption evidence. Ordinary news is rejected even
-    if it is geocoded directly onto an infrastructure asset.
+    Infrastructure proximity requires an actual incident.
+    GDELT military/cyber/drone labels are context only, never sufficient alone.
     """
     source_file = str(event.get("_source_file") or "").lower()
-    category = normalize_text(event.get("category"))
-    text = f"{event.get('title', '')} {event.get('summary', '')}"
+    evidence = event_evidence_text(event)
 
-    # Natural hazards / disaster feeds are incident feeds by definition.
     if source_file in ALWAYS_RELEVANT_SOURCE_FILES:
         return True
 
-    strong_category = category in STRONG_SECURITY_CATEGORIES
-    event_signal = contains_any(text, SECURITY_EVENT_TERMS)
-    context_signal = contains_any(text, SECURITY_CONTEXT_TERMS)
-    negative_signal = contains_any(text, NEGATIVE_CONTEXT_TERMS)
+    negative_signal = contains_any(evidence, NEGATIVE_CONTEXT_TERMS)
+    event_signal = contains_any(evidence, SECURITY_EVENT_TERMS)
+    context_signal = contains_any(evidence, SECURITY_CONTEXT_TERMS)
 
-    # Strong explicit incident wording always wins.
-    if event_signal:
-        # Generic "fire" or similarly broad wording should have context unless
-        # the source/category itself already marks a strong security event.
-        generic_fire_only = (
-            contains_any(
-                text,
-                [
-                    "major fire",
-                    "large fire",
-                    "tűz",
-                    "incendiu",
-                    "požiar",
-                    "požár",
-                    "pożar",
-                    "gaisras",
-                    "ugunsgrēks",
-                    "tulekahju",
-                ],
-            )
-            and not contains_any(
-                text,
-                [
-                    "attack",
-                    "strike",
-                    "explosion",
-                    "blast",
-                    "robbanás",
-                    "explozie",
-                    "sabotage",
-                    "szabotázs",
-                    "cyberattack",
-                    "kibertámadás",
-                    "blackout",
-                    "áramszünet",
-                    "evacuation",
-                    "kiürítés",
-                    "missile",
-                    "rakéta",
-                    "drone",
-                    "drón",
-                    "dronă",
-                    "drona",
-                    "shahed",
-                ],
-            )
+    if negative_signal and not event_signal:
+        return False
+
+    if not event_signal:
+        drone_mention = contains_any(
+            evidence,
+            ["drone", "drón", "uav", "dronă", "drona",
+             "dronei", "dronele", "dronelor", "shahed"],
         )
+        drone_action = contains_any(
+            evidence,
+            ["shot down", "downed", "intercepted", "fired at",
+             "airspace violation", "airspace breach", "breached airspace",
+             "crashed", "explosion",
+             "lelőtt", "lelőttek", "légtérsértés", "lezuhant",
+             "doborât", "doborâtă", "interceptat", "interceptată",
+             "spațiul aerian", "spatiul aerian"],
+        )
+        return drone_mention and drone_action
 
-        if generic_fire_only and not context_signal and not strong_category:
+    if contains_any(evidence, ["major fire", "large fire", "incendiu major"]) and not context_signal:
+        return False
+
+    policy_terms = [
+        "cooperation hub", "collaboration", "ties", "strategy",
+        "autonomy", "manufacturing", "may deploy", "deployment planned",
+        "archaeology", "archaeological", "roman military camp",
+        "training exercise announced", "procurement", "investment",
+        "defence cooperation", "defense cooperation",
+    ]
+    if contains_any(evidence, policy_terms):
+        disruptive_terms = [
+            "explosion", "blast", "shot down", "downed", "intercepted",
+            "airspace violation", "cyberattack", "ransomware attack",
+            "ddos attack", "data breach", "blackout", "power outage",
+            "sabotage", "evacuation", "chemical leak", "gas leak",
+            "robbanás", "lelőtt", "légtérsértés", "kibertámadás",
+            "áramszünet", "szabotázs", "kiürítés", "doborât", "explozie",
+        ]
+        if not contains_any(evidence, disruptive_terms):
             return False
 
-        return True
-
-    # A strong security category can be sufficient, except when the text is
-    # clearly ordinary management/economic/construction reporting.
-    if strong_category:
-        return not negative_signal
-
-    # Contextual categories need BOTH infrastructure/security context and an
-    # incident/disruption signal. Category or proximity alone is not enough.
-    if category in CONTEXTUAL_SECURITY_CATEGORIES:
-        return context_signal and not negative_signal and event_signal
-
-    return False
+    return True
 
 
 def load_events():
@@ -1069,8 +1079,8 @@ def build():
             "target_countries": sorted(TARGET_COUNTRIES),
             "filters": {
                 "location": "strict 8-country text-supported whitelist",
-                "security": "security-relevant incidents only",
-                "gdelt_geocode": "not accepted as standalone location evidence",
+                "security": "actual incident evidence required; GDELT category alone rejected",
+                "gdelt_geocode": "text + URL + country bounds + city-distance validation",
             },
             "deduplication": {
                 "events": "title + url + source + time",
@@ -1104,4 +1114,3 @@ def build():
 
 if __name__ == "__main__":
     build()
-

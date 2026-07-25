@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-07-25T19:33:32.007273+00:00",
+  "generated_utc": "2026-07-25T19:53:32.980523+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 22,
-    "article_count": 58,
-    "source_count": 26
+    "incident_count": 23,
+    "article_count": 62,
+    "source_count": 27
   },
   "country_summary": {
     "Czech Republic": {
@@ -24,12 +24,12 @@
       "category_counts": {}
     },
     "Romania": {
-      "incident_count": 20,
-      "article_count": 56,
-      "source_count": 24,
+      "incident_count": 21,
+      "article_count": 60,
+      "source_count": 25,
       "category_counts": {
         "cyber": 1,
-        "drone": 12,
+        "drone": 13,
         "explosion": 7
       }
     },
@@ -94,6 +94,28 @@
     "Hungary": [],
     "Romania": [
       {
+        "cluster_id": "a1576bdedc21f96d648d",
+        "date": "2026-07-25",
+        "time": "2026-07-25T18:15:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "representative_title": "Căutările resturilor de dronă din zona Sfântu Gheorghe au fost oprite , anunță MApN . Acestea vor fi reluate duminică",
+        "article_count": 1,
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "titles": [
+          "Căutările resturilor de dronă din zona Sfântu Gheorghe au fost oprite , anunță MApN . Acestea vor fi reluate duminică"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/cautarile-resturilor-de-drona-din-zona-sfantu-gheorghe-au-fost-oprite-anunta-mapn-acestea-vor-fi-reluate-duminica-3878487"
+        ],
+        "risk_score_input": 3.125,
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
+      },
+      {
         "cluster_id": "f0478807f4a50602a2c8",
         "date": "2026-07-25",
         "time": "2026-07-25T17:15:00+00:00",
@@ -144,7 +166,7 @@
         "category": "drone",
         "severity": "high",
         "representative_title": "FOTO / Ziua în care România a doborât prima dronă . Filmul evenimentelor de la Padina",
-        "article_count": 26,
+        "article_count": 29,
         "source_count": 2,
         "sources": [
           "GDELT_DOC",
@@ -174,9 +196,12 @@
           "Drona doborâtă în județul Buzău : Au fost încheiate cercetările în teren : Europa FM",
           "Oana Țoiu , după ce armata noastră a doborât două drone în 24 de ore : Granițele României nu sunt negociabile . Despre primul aparat de zbor pus la pământ : Același tip pe care Rusia îl lansează , noapte de noapte , împotriva Ucrainei",
           "Realitatea . NET | Radu Miruță , după doborârea celor două drone : „ Granițele , spațiul aerian și suveranitatea României nu sunt negociabile",
-          "MApN : Drona doborâtă sâmbătă , neutralizată în condiții de siguranță într - o zonă nepopulată",
           "Why did Romania shoot down another drone after an airspace violation ?",
-          "Ministrul Apărării după doborârea dronelor - „ România a demonstrat un lucru simplu . Își apără teritoriul și reacționează ferm"
+          "MApN : Drona doborâtă sâmbătă , neutralizată în condiții de siguranță într - o zonă nepopulată",
+          "Ministrul Apărării după doborârea dronelor - „ România a demonstrat un lucru simplu . Își apără teritoriul și reacționează ferm",
+          "Cum ar fi fost doborâte dronele de un F - 16 românesc . Cele trei tipuri principale de armament ale aeronavei de luptă",
+          "Bruxelles laudă armata română după doborârea a două drone în 24 de ore : „ Securitatea României este securitatea Europei",
+          "Radu Miruță se revoltă , din concediu , pe criticile primite după doborârea dronelor : România își apără teritoriul și reacționează ferm"
         ],
         "urls": [
           "https://opiniabuzau.ro/foto-ziua-in-care-romania-a-doborat-prima-drona-filmul-evenimentelor-de-la-padina/",
@@ -203,9 +228,12 @@
           "https://www.europafm.ro/drona-doborata-in-judetul-buzau-au-fost-incheiate-cercetarile-in-teren/",
           "https://www.romaniatv.net/oana-toiu-dupa-ce-romania-a-doborat-doua-drone-in-24-de-ore-granitele-romaniei-nu-sunt-negociabile-despre-primul-aparat-de-zbor-pus-la-pamant-acelasi-tip-pe-care-rusia-i_9717265.html",
           "https://www.realitatea.net/stiri/politica/radu-miruta-dupa-doborarea-celor-doua-drone-granitele-spatiul-aerian-si-suveranitatea-romaniei-nu-sunt-negociabile-zvhqnv",
-          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
           "https://news.az/news/why-did-romania-shoot-down-another-drone-after-an-airspace-violation",
-          "https://www.ziuaconstanta.ro/stiri/actualitate/ministrul-apararii-dupa-doborarea-dronelor-romania-a-demonstrat-un-lucru-simplu-isi-apara-teritoriul-si-reactioneaza-ferm-947267.html"
+          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+          "https://www.ziuaconstanta.ro/stiri/actualitate/ministrul-apararii-dupa-doborarea-dronelor-romania-a-demonstrat-un-lucru-simplu-isi-apara-teritoriul-si-reactioneaza-ferm-947267.html",
+          "https://stirileprotv.ro/stiri/actualitate/cum-ar-fi-fost-doborate-dronele-de-un-f-16-al-romaniei-expert-cel-mai-probabil-au-folosit-o-racheta-sidewinder.html",
+          "https://www.ziarulnational.md/bruxelles-lauda-armata-romana-dupa-doborarea-a-doua-drone-in-24-de-ore-securitatea-romaniei-este-securitatea-europei/",
+          "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663"
         ],
         "risk_score_input": 2.75,
         "source_file": "gdelt_crossborder.geojson",

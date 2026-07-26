@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-07-25T19:53:32.980523+00:00",
+  "generated_utc": "2026-07-26T02:05:07.747642+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
     "incident_count": 23,
-    "article_count": 62,
+    "article_count": 63,
     "source_count": 27
   },
   "country_summary": {
@@ -25,7 +25,7 @@
     },
     "Romania": {
       "incident_count": 21,
-      "article_count": 60,
+      "article_count": 61,
       "source_count": 25,
       "category_counts": {
         "cyber": 1,
@@ -111,7 +111,7 @@
         "urls": [
           "https://www.digi24.ro/stiri/actualitate/cautarile-resturilor-de-drona-din-zona-sfantu-gheorghe-au-fost-oprite-anunta-mapn-acestea-vor-fi-reluate-duminica-3878487"
         ],
-        "risk_score_input": 3.125,
+        "risk_score_input": 2.75,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },
@@ -133,7 +133,7 @@
         "urls": [
           "https://www.ziuaconstanta.ro/stiri/actualitate/cautarile-efectuate-in-delta-dunarii-pentru-identificarea-resturilor-de-drona-si-de-racheta-interceptoare-au-fost-intrerupte-947273.html"
         ],
-        "risk_score_input": 3.125,
+        "risk_score_input": 2.75,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },
@@ -155,7 +155,7 @@
         "urls": [
           "https://ziare.com/drona/mapn-cautare-drona-tulcea-delta-dunarii-2026234"
         ],
-        "risk_score_input": 3.125,
+        "risk_score_input": 2.75,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },
@@ -166,7 +166,7 @@
         "category": "drone",
         "severity": "high",
         "representative_title": "FOTO / Ziua în care România a doborât prima dronă . Filmul evenimentelor de la Padina",
-        "article_count": 29,
+        "article_count": 30,
         "source_count": 2,
         "sources": [
           "GDELT_DOC",
@@ -177,7 +177,6 @@
           "Mesagerul . ro | Încă o dronă a fost doborâtă în România , lângă Sfântu Gheorghe , de același pilot care a anihilat și drona de ieri",
           "O nouă dronă a fost doborâtă în spațiul aerian românesc",
           "Mesagerul . ro | O nouă alertă la graniță : e deja a doua dronă doborâtă în doar 24 de ore de piloții români , la o zi după incidentul din Buzău de ieri dimineață",
-          "„Cât costă racheta”. Ce spune Statul Major al Apărării despre prețul rachetelor folosite împotriva dronelor deasupra României",
           "Încă o dronă doborâtă pe teritoriul României , anunță Nicușor Dan . Este a doua în mai puțin de 24 de ore",
           "Drona doborâtă în Deltă este reușita aceluiași pilot care a distrus și drona de la Buzău . Armata dă detalii despre operațiune",
           "O nouă dronă doborâtă în spațiul aerian al României",
@@ -190,6 +189,7 @@
           "Nicuşor Dan : O nouă dronă - doborâtă la 10 kilometri vest de Sfântu Gheorghe - Radio Iaşi – Cel mai ascultat radio regional",
           "Cât de puternice sunt avioanele F - 16 Fighting Falcon cu care România a doborât două drone rusești",
           "Oana Țoiu , după doborârea celor două drone , în 48 de ore : „ Granițele României nu sunt negociabile",
+          "„Cât costă racheta”. Ce spune Statul Major al Apărării despre prețul rachetelor folosite împotriva dronelor deasupra României",
           "Două drone doborâte în mai puțin de 24 de ore, „un timp record”. Radu Miruță explică de ce condițiile au fost diferite azi față de ieri",
           "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
           "Cât costă doborârea unei drone în spațiul aerian românesc . Declarațiile ministrului Radu Miruță : „ Am comandat tot ce este nevoie",
@@ -208,8 +208,6 @@
           "https://www.mesagerul.ro/cluj/inca-o-drona-a-fost-doborata-in-romania-langa-sfantu-gheorghe-de-acelasi-pilot-care-a-anihilat-si-drona-de-ieri__59137/",
           "https://www.viata-libera.ro/prima-pagina/262959-o-noua-drona-a-fost-doborata-in-spatiul-aerian-romanesc",
           "https://www.mesagerul.ro/cluj/o-noua-alerta-la-granita-e-deja-a-doua-drona-doborata-in-doar-24-de-ore-de-pilotii-romani-la-o-zi-dupa-incidentul-din-buzau-de-ieri-dimineata__59138/",
-          "https://www.digi24.ro/stiri/actualitate/cat-costa-racheta-ce-spune-statul-major-al-apararii-despre-pretul-rachetelor-folosite-impotriva-dronelor-deasupra-romaniei-3878143",
-          "https://www.digi24.ro/stiri/actualitate/social/parchetul-noi-precizari-dupa-incidentul-cu-drona-shahed-doborata-la-padina-ce-urmeaza-in-ancheta-3878009",
           "https://news.yam.md/ro/story/47059681",
           "https://ziare.com/drona-doborata-delta/sfantu-gheorghe-avion-f-16-2026176",
           "https://news.yam.md/ro/story/47064990",
@@ -222,6 +220,7 @@
           "https://www.radioiasi.ro/stiri/prim-plan/nicusor-dan-o-noua-drona-doborata-la-10-kilometri-vest-de-sfantu-gheorghe/",
           "https://ziare.com/tehnologie/avioane-f-16-drone-rusesti-2026186",
           "https://ampress.ro/oana-toiu-dupa-doborarea-celor-drone-in-48-de-ore-granitele-romaniei-nu-sunt-negociabile/",
+          "https://www.digi24.ro/stiri/actualitate/cat-costa-racheta-ce-spune-statul-major-al-apararii-despre-pretul-rachetelor-folosite-impotriva-dronelor-deasupra-romaniei-3878143",
           "https://www.digi24.ro/stiri/actualitate/radu-miruta-faptul-ca-doua-drone-au-fost-doborate-la-un-interval-de-15-20-de-ore-evident-nu-mai-e-intamplare-nici-pentru-gurile-rele-3878229",
           "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
           "https://www.cancan.ro/cat-costa-doborarea-unei-drone-in-spatiul-aerian-romanesc-declaratiile-ministrului-radu-miruta-am-comandat-tot-ce-este-nevoie-21474964",
@@ -233,7 +232,8 @@
           "https://www.ziuaconstanta.ro/stiri/actualitate/ministrul-apararii-dupa-doborarea-dronelor-romania-a-demonstrat-un-lucru-simplu-isi-apara-teritoriul-si-reactioneaza-ferm-947267.html",
           "https://stirileprotv.ro/stiri/actualitate/cum-ar-fi-fost-doborate-dronele-de-un-f-16-al-romaniei-expert-cel-mai-probabil-au-folosit-o-racheta-sidewinder.html",
           "https://www.ziarulnational.md/bruxelles-lauda-armata-romana-dupa-doborarea-a-doua-drone-in-24-de-ore-securitatea-romaniei-este-securitatea-europei/",
-          "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663"
+          "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663",
+          "https://www.ziarulprofit.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm/"
         ],
         "risk_score_input": 2.75,
         "source_file": "gdelt_crossborder.geojson",
@@ -425,7 +425,7 @@
         "urls": [
           "https://www.winnipegfreepress.com/business/2026/07/23/a-sailor-dies-after-a-ukraine-bound-tanker-catches-fire-off-romania-as-officials-probe-war-link"
         ],
-        "risk_score_input": 2.6,
+        "risk_score_input": 1.43,
         "source_file": "gdelt_linked.geojson",
         "actual_incident_gate": true
       },
@@ -654,7 +654,7 @@
         "urls": [
           "https://www.aktuality.sk/clanok/I8DGSOl/rizikova-dovolenka-v-taliansku-slovakom-radia-sledovat-poziare-pocitat-s-uzavierkami-ciest-a-obmedzeniami-dopravy/"
         ],
-        "risk_score_input": 3.25,
+        "risk_score_input": 2.86,
         "source_file": "local_events.geojson",
         "actual_incident_gate": true
       }

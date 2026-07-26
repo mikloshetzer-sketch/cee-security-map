@@ -151,6 +151,92 @@ TARGET_COUNTRY_TERMS = {
 }
 
 
+
+FOLLOW_UP_TERMS = [
+    # English
+    "search for debris", "searches for debris", "debris search",
+    "wreckage search", "search operation", "searches suspended",
+    "search suspended", "searches stopped", "search stopped",
+    "searches resumed", "search resumed", "investigation continues",
+    "investigation concluded", "investigation completed",
+    "debris identified", "wreckage identified",
+    "what we know", "how it happened", "timeline of events",
+    "cost of the missile", "how much the missile costs",
+    "expert explains", "officials explain", "reaction after",
+    "after the incident",
+
+    # Romanian
+    "căutările resturilor", "cautarile resturilor",
+    "căutările efectuate", "cautarile efectuate",
+    "căutările au fost oprite", "cautarile au fost oprite",
+    "căutările au fost întrerupte", "cautarile au fost intrerupte",
+    "căutările vor fi reluate", "cautarile vor fi reluate",
+    "caută resturile", "cauta resturile",
+    "resturi din drona doborâtă", "resturi din drona doborata",
+    "au fost identificate resturi",
+    "au fost încheiate cercetările", "au fost incheiate cercetarile",
+    "parchetul confirmă", "parchetul confirma",
+    "filmul evenimentelor", "după doborârea", "dupa doborarea",
+
+    # Hungarian
+    "roncsok keresése", "roncskeresés", "maradványok keresése",
+    "vizsgálat folytatódik", "vizsgálat lezárult",
+]
+
+FOLLOW_UP_ONLY_TERMS = [
+    "search for debris", "searches for debris", "debris search",
+    "searches suspended", "search suspended",
+    "searches stopped", "search stopped",
+    "searches resumed", "search resumed",
+    "căutările resturilor", "cautarile resturilor",
+    "căutările efectuate", "cautarile efectuate",
+    "caută resturile", "cauta resturile",
+    "resturi din drona doborâtă", "resturi din drona doborata",
+    "au fost încheiate cercetările", "au fost incheiate cercetarile",
+    "roncsok keresése", "roncskeresés", "maradványok keresése",
+]
+
+NEW_INCIDENT_ACTION_TERMS = [
+    "new drone", "another drone", "second drone", "a second drone",
+    "new airspace violation", "another airspace violation",
+    "shot down another", "another drone was shot down",
+    "new attack", "another attack", "new explosion", "another explosion",
+    "new cyberattack", "another cyberattack",
+
+    "o nouă dronă", "o noua drona",
+    "încă o dronă", "inca o drona",
+    "a doua dronă", "a doua drona",
+    "o nouă alertă", "o noua alerta",
+    "noi atacuri", "un nou atac",
+
+    "újabb drón", "új drón", "második drón",
+    "újabb támadás", "új támadás",
+]
+
+INCIDENT_LOCATION_TERMS = {
+    "buzau_padina": [
+        "buzău", "buzau", "padina", "brăila", "braila",
+    ],
+    "sfantu_gheorghe_delta": [
+        "sfântu gheorghe", "sfantu gheorghe",
+        "delta dunării", "delta dunarii", "deltă", "delta",
+    ],
+    "tulcea_border": [
+        "tulcea", "frontiera româniei", "frontiera romaniei",
+        "granița româniei", "granita romaniei",
+    ],
+    "black_sea_maritime": [
+        "marea neagră", "marea neagra", "black sea",
+        "gas lisbon", "petrolier", "tanker", "navă", "nava",
+    ],
+}
+
+# Maximum time span for follow-up reporting of the same named incident.
+INCIDENT_FOLLOWUP_MAX_HOURS = 120.0
+
+# Short operational window for the same alert / scramble / border event.
+INCIDENT_OPERATIONAL_MAX_HOURS = 6.0
+
 ACTUAL_INCIDENT_REQUIRED_TERMS = {
     "drone": [
         "shot down", "shoot down", "downed", "intercepted",
@@ -542,6 +628,108 @@ def semantic_similarity(text_a, text_b):
     return max(jaccard, containment)
 
 
+
+def incident_location_signature(feature):
+    text = risk_event_text(feature)
+    found = set()
+
+    for location_key, terms in INCIDENT_LOCATION_TERMS.items():
+        if contains_any(text, terms):
+            found.add(location_key)
+
+    return found
+
+
+def is_follow_up_feature(feature):
+    props = feature.get("properties") or {}
+    text = risk_event_text(feature)
+
+    explicit_new = contains_any(text, NEW_INCIDENT_ACTION_TERMS)
+    follow_up = contains_any(text, FOLLOW_UP_TERMS)
+
+    titles = props.get("risk_titles") or props.get("titles") or []
+    if isinstance(titles, list):
+        joined = " ".join(str(x) for x in titles)
+        if contains_any(joined, NEW_INCIDENT_ACTION_TERMS):
+            explicit_new = True
+
+    return follow_up and not explicit_new
+
+
+def is_follow_up_only_feature(feature):
+    text = risk_event_text(feature)
+    return (
+        contains_any(text, FOLLOW_UP_ONLY_TERMS)
+        and not contains_any(text, NEW_INCIDENT_ACTION_TERMS)
+    )
+
+
+def incident_action_signature(feature):
+    text = risk_event_text(feature)
+    signature = set()
+
+    if contains_any(text, DRONE_SHOOTDOWN_TERMS):
+        signature.add("shootdown")
+
+    if contains_any(text, DRONE_AIRSPACE_TERMS):
+        signature.add("airspace")
+
+    if contains_any(text, [
+        "ro-alert", "ro alert", "alertă", "alerta",
+        "scrambled", "fighter jets", "f-16",
+        "elicopter", "helicopter",
+        "avioane de luptă", "avioane de lupta",
+    ]):
+        signature.add("air_alert")
+
+    if contains_any(text, [
+        "ship", "vessel", "tanker", "petrolier",
+        "navă", "nava", "gas lisbon", "cargo ship", "lpg",
+    ]):
+        signature.add("maritime")
+
+    if contains_any(text, [
+        "explosion", "blast", "exploded", "explozie", "robbanás",
+    ]):
+        signature.add("explosion")
+
+    if contains_any(text, CYBER_ATTACK_TERMS):
+        signature.add("cyber")
+
+    return signature
+
+
+def likely_same_named_incident(feature_a, feature_b):
+    text_a = risk_event_text(feature_a)
+    text_b = risk_event_text(feature_b)
+
+    maritime_terms = [
+        "gas lisbon", "tanker", "petrolier", "lpg",
+        "cargo ship", "navă", "nava",
+    ]
+    black_sea_terms = [
+        "marea neagră", "marea neagra", "black sea",
+        "sfântu gheorghe", "sfantu gheorghe",
+    ]
+
+    return (
+        contains_any(text_a, maritime_terms)
+        and contains_any(text_b, maritime_terms)
+        and contains_any(text_a, black_sea_terms)
+        and contains_any(text_b, black_sea_terms)
+    )
+
+
+def different_specific_drone_locations(feature_a, feature_b):
+    loc_a = incident_location_signature(feature_a)
+    loc_b = incident_location_signature(feature_b)
+
+    return (
+        ("buzau_padina" in loc_a and "sfantu_gheorghe_delta" in loc_b)
+        or
+        ("sfantu_gheorghe_delta" in loc_a and "buzau_padina" in loc_b)
+    )
+
 def risk_event_text(feature):
     props = feature.get("properties") or {}
     return " ".join([
@@ -596,6 +784,7 @@ def risk_event_time(feature):
     return parse_time((feature.get("properties") or {}).get("time"))
 
 
+
 def same_risk_incident(feature_a, feature_b):
     pa = feature_a.get("properties") or {}
     pb = feature_b.get("properties") or {}
@@ -616,54 +805,134 @@ def same_risk_incident(feature_a, feature_b):
     drone_family = {"drone", "drone_airspace"}
     cyber_family = {"cyber", "cyber_incident"}
     military_family = {"military", "military_accident"}
+    explosion_family = {"explosion", "kinetic_attack"}
 
-    if category_a != category_b:
-        if not (
-            {category_a, category_b}.issubset(drone_family)
-            or {category_a, category_b}.issubset(cyber_family)
-            or {category_a, category_b}.issubset(military_family)
-        ):
-            return False
+    same_family = (
+        category_a == category_b
+        or {category_a, category_b}.issubset(drone_family)
+        or {category_a, category_b}.issubset(cyber_family)
+        or {category_a, category_b}.issubset(military_family)
+        or {category_a, category_b}.issubset(explosion_family)
+    )
+
+    if not same_family:
+        return False
 
     ta = risk_event_time(feature_a)
     tb = risk_event_time(feature_b)
 
-    if ta and tb:
-        hours = abs(
-            (ta - tb).total_seconds()
-        ) / 3600.0
+    hours = (
+        abs((ta - tb).total_seconds()) / 3600.0
+        if ta and tb
+        else 999999.0
+    )
 
-        if hours > INCIDENT_CLUSTER_MAX_HOURS:
-            return False
-
-        if ta.date() != tb.date() and hours > 6:
-            return False
-
-    sig_a = risk_incident_signature(feature_a)
-    sig_b = risk_incident_signature(feature_b)
+    sig_a = incident_action_signature(feature_a)
+    sig_b = incident_action_signature(feature_b)
     shared = sig_a & sig_b
 
+    # ---------------------------------------------------------
+    # 1. Buzău/Padina and Sfântu Gheorghe/Delta are two
+    #    different Romanian drone shootdowns.
+    # ---------------------------------------------------------
     if (
         category_a in drone_family
         and category_b in drone_family
-        and ta
-        and tb
-        and ta.date() == tb.date()
         and "shootdown" in shared
+        and different_specific_drone_locations(feature_a, feature_b)
+    ):
+        return False
+
+    # ---------------------------------------------------------
+    # 2. Named multi-day maritime event, e.g. Gas Lisbon.
+    # ---------------------------------------------------------
+    if (
+        hours <= INCIDENT_FOLLOWUP_MAX_HOURS
+        and likely_same_named_incident(feature_a, feature_b)
     ):
         return True
 
-    if {"drone", "airspace"}.issubset(shared):
+    # ---------------------------------------------------------
+    # 3. Follow-up reporting belongs to the original incident.
+    # ---------------------------------------------------------
+    if (
+        hours <= INCIDENT_FOLLOWUP_MAX_HOURS
+        and (
+            is_follow_up_feature(feature_a)
+            or is_follow_up_feature(feature_b)
+        )
+    ):
+        loc_a = incident_location_signature(feature_a)
+        loc_b = incident_location_signature(feature_b)
+
+        if loc_a & loc_b:
+            if shared:
+                return True
+
+            if semantic_similarity(
+                risk_event_text(feature_a),
+                risk_event_text(feature_b),
+            ) >= 0.12:
+                return True
+
+    # ---------------------------------------------------------
+    # 4. Short operational window:
+    #    RO-Alert + scramble + nearby drone detection.
+    # ---------------------------------------------------------
+    if (
+        category_a in drone_family
+        and category_b in drone_family
+        and hours <= INCIDENT_OPERATIONAL_MAX_HOURS
+    ):
+        loc_a = incident_location_signature(feature_a)
+        loc_b = incident_location_signature(feature_b)
+        operational = {"air_alert", "airspace"}
+
+        if (
+            loc_a & loc_b
+            and (sig_a & operational)
+            and (sig_b & operational)
+        ):
+            return True
+
+    # ---------------------------------------------------------
+    # 5. Multiple reports of one concrete drone shootdown.
+    # ---------------------------------------------------------
+    if (
+        category_a in drone_family
+        and category_b in drone_family
+        and "shootdown" in shared
+        and hours <= INCIDENT_CLUSTER_MAX_HOURS
+    ):
+        loc_a = incident_location_signature(feature_a)
+        loc_b = incident_location_signature(feature_b)
+
+        if loc_a and loc_b and loc_a & loc_b:
+            return True
+
         return semantic_similarity(
             risk_event_text(feature_a),
             risk_event_text(feature_b),
-        ) >= 0.10
+        ) >= 0.20
 
-    if "cyber" in shared:
+    # ---------------------------------------------------------
+    # 6. Cyber incidents.
+    # ---------------------------------------------------------
+    if (
+        category_a in cyber_family
+        and category_b in cyber_family
+        and hours <= INCIDENT_CLUSTER_MAX_HOURS
+    ):
         return semantic_similarity(
             risk_event_text(feature_a),
             risk_event_text(feature_b),
         ) >= 0.34
+
+    # ---------------------------------------------------------
+    # 7. Generic fallback.
+    # ---------------------------------------------------------
+    if hours > INCIDENT_CLUSTER_MAX_HOURS:
+        return False
 
     return semantic_similarity(
         risk_event_text(feature_a),
@@ -764,13 +1033,15 @@ def cluster_risk_incidents(features):
     return clusters
 
 
+
 def load_validated_security_events(days=7):
     """
     Unified risk input:
     local + GDELT + linked + cross-border.
 
-    First normalize/filter articles, then collapse multiple reports of the
-    same real-world event into one risk incident.
+    Processing chain:
+    article -> strict actual-incident filter -> exact article dedup ->
+    follow-up suppression -> real-world incident clustering.
     """
     cutoff = now_utc() - timedelta(days=days)
     candidates = []
@@ -790,6 +1061,11 @@ def load_validated_security_events(days=7):
             dt = parse_time(props.get("time"))
 
             if not dt or dt < cutoff:
+                continue
+
+            # Pure debris-search / investigation follow-up stories are
+            # diagnostic context, not a new risk incident.
+            if is_follow_up_only_feature(normalized):
                 continue
 
             candidates.append(normalized)
@@ -1119,7 +1395,7 @@ def write_risk_incidents_debug(security_events):
         "generated_utc": now_utc().isoformat(),
         "purpose": (
             "Audit of incident-level records used by cee_country_risk_v2 "
-            "after strict actual-incident filtering."
+            "after strict actual-incident filtering and follow-up-aware clustering."
         ),
         "model": "cee_country_risk_v2",
         "window_days": 7,

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-07-26T02:05:07.747642+00:00",
+  "generated_utc": "2026-07-26T08:21:04.475286+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -24,22 +24,20 @@
       "category_counts": {}
     },
     "Romania": {
-      "incident_count": 21,
-      "article_count": 61,
-      "source_count": 25,
+      "incident_count": 22,
+      "article_count": 62,
+      "source_count": 26,
       "category_counts": {
         "cyber": 1,
-        "drone": 13,
+        "drone": 14,
         "explosion": 7
       }
     },
     "Slovakia": {
-      "incident_count": 1,
-      "article_count": 1,
-      "source_count": 1,
-      "category_counts": {
-        "explosion": 1
-      }
+      "incident_count": 0,
+      "article_count": 0,
+      "source_count": 0,
+      "category_counts": {}
     },
     "Poland": {
       "incident_count": 0,
@@ -93,6 +91,33 @@
     ],
     "Hungary": [],
     "Romania": [
+      {
+        "cluster_id": "85fefcc39623f731f7d6",
+        "date": "2026-07-26",
+        "time": "2026-07-26T03:30:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "representative_title": "Comandantul detașamentului Forțelor Aeriene Române din Lituania , pilot de F - 16 , explicații despre cât de greu este de doborât o dronă",
+        "article_count": 3,
+        "source_count": 2,
+        "sources": [
+          "GDELT_DOC",
+          "HotNews"
+        ],
+        "titles": [
+          "Comandantul detașamentului Forțelor Aeriene Române din Lituania , pilot de F - 16 , explicații despre cât de greu este de doborât o dronă",
+          "Mesajul lui Nicușor Dan pentru Rusia, după ce a treia dronă a fost doborâtă pe teritoriul României",
+          "Cine este generalul român de la NATO care a prezis că e timpul ca „armata să fie lăsată să doboarele drone”"
+        ],
+        "urls": [
+          "https://www.libertatea.ro/stiri/comandantul-detasamentului-fortelor-aeriene-romane-din-lituania-pilot-de-f-16-explicatii-despre-cat-de-greu-este-de-doborat-o-drona-5828619",
+          "https://hotnews.ro/mesajul-lui-nicusor-dan-pentru-rusia-dupa-ce-a-treia-drona-a-fost-doborata-pe-teritoriul-romaniei-2309664",
+          "https://hotnews.ro/interviu-militarul-roman-cu-cea-mai-inalta-functie-in-armata-viitorului-din-nato-vorbeste-dupa-exploziile-dronelor-de-la-galati-si-constanta-fiecare-stat-are-datoria-sa-se-2265627"
+        ],
+        "risk_score_input": 3.125,
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
+      },
       {
         "cluster_id": "a1576bdedc21f96d648d",
         "date": "2026-07-25",
@@ -166,11 +191,10 @@
         "category": "drone",
         "severity": "high",
         "representative_title": "FOTO / Ziua în care România a doborât prima dronă . Filmul evenimentelor de la Padina",
-        "article_count": 30,
-        "source_count": 2,
+        "article_count": 28,
+        "source_count": 1,
         "sources": [
-          "GDELT_DOC",
-          "Digi24"
+          "GDELT_DOC"
         ],
         "titles": [
           "FOTO / Ziua în care România a doborât prima dronă . Filmul evenimentelor de la Padina",
@@ -189,8 +213,6 @@
           "Nicuşor Dan : O nouă dronă - doborâtă la 10 kilometri vest de Sfântu Gheorghe - Radio Iaşi – Cel mai ascultat radio regional",
           "Cât de puternice sunt avioanele F - 16 Fighting Falcon cu care România a doborât două drone rusești",
           "Oana Țoiu , după doborârea celor două drone , în 48 de ore : „ Granițele României nu sunt negociabile",
-          "„Cât costă racheta”. Ce spune Statul Major al Apărării despre prețul rachetelor folosite împotriva dronelor deasupra României",
-          "Două drone doborâte în mai puțin de 24 de ore, „un timp record”. Radu Miruță explică de ce condițiile au fost diferite azi față de ieri",
           "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
           "Cât costă doborârea unei drone în spațiul aerian românesc . Declarațiile ministrului Radu Miruță : „ Am comandat tot ce este nevoie",
           "Drona doborâtă în județul Buzău : Au fost încheiate cercetările în teren : Europa FM",
@@ -220,8 +242,6 @@
           "https://www.radioiasi.ro/stiri/prim-plan/nicusor-dan-o-noua-drona-doborata-la-10-kilometri-vest-de-sfantu-gheorghe/",
           "https://ziare.com/tehnologie/avioane-f-16-drone-rusesti-2026186",
           "https://ampress.ro/oana-toiu-dupa-doborarea-celor-drone-in-48-de-ore-granitele-romaniei-nu-sunt-negociabile/",
-          "https://www.digi24.ro/stiri/actualitate/cat-costa-racheta-ce-spune-statul-major-al-apararii-despre-pretul-rachetelor-folosite-impotriva-dronelor-deasupra-romaniei-3878143",
-          "https://www.digi24.ro/stiri/actualitate/radu-miruta-faptul-ca-doua-drone-au-fost-doborate-la-un-interval-de-15-20-de-ore-evident-nu-mai-e-intamplare-nici-pentru-gurile-rele-3878229",
           "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
           "https://www.cancan.ro/cat-costa-doborarea-unei-drone-in-spatiul-aerian-romanesc-declaratiile-ministrului-radu-miruta-am-comandat-tot-ce-este-nevoie-21474964",
           "https://www.europafm.ro/drona-doborata-in-judetul-buzau-au-fost-incheiate-cercetarile-in-teren/",
@@ -235,7 +255,7 @@
           "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663",
           "https://www.ziarulprofit.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm/"
         ],
-        "risk_score_input": 2.75,
+        "risk_score_input": 2.5,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },
@@ -635,30 +655,7 @@
         "actual_incident_gate": true
       }
     ],
-    "Slovakia": [
-      {
-        "cluster_id": "341b4ea8e820acee9167",
-        "date": "2026-07-25",
-        "time": "2026-07-25T15:35:57+00:00",
-        "category": "explosion",
-        "severity": "high",
-        "representative_title": "Riziková dovolenka v Taliansku. Slovákom radia sledovať požiare, počítať s uzávierkami ciest a obmedzeniami dopravy",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "Aktuality"
-        ],
-        "titles": [
-          "Riziková dovolenka v Taliansku. Slovákom radia sledovať požiare, počítať s uzávierkami ciest a obmedzeniami dopravy"
-        ],
-        "urls": [
-          "https://www.aktuality.sk/clanok/I8DGSOl/rizikova-dovolenka-v-taliansku-slovakom-radia-sledovat-poziare-pocitat-s-uzavierkami-ciest-a-obmedzeniami-dopravy/"
-        ],
-        "risk_score_input": 2.86,
-        "source_file": "local_events.geojson",
-        "actual_incident_gate": true
-      }
-    ],
+    "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
     "Latvia": [],

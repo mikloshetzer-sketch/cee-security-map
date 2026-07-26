@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-07-26T08:21:04.475286+00:00",
+  "generated_utc": "2026-07-26T13:12:06.034133+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 23,
-    "article_count": 63,
-    "source_count": 27
+    "incident_count": 24,
+    "article_count": 65,
+    "source_count": 30
   },
   "country_summary": {
     "Czech Republic": {
@@ -24,12 +24,12 @@
       "category_counts": {}
     },
     "Romania": {
-      "incident_count": 22,
-      "article_count": 62,
-      "source_count": 26,
+      "incident_count": 23,
+      "article_count": 64,
+      "source_count": 29,
       "category_counts": {
         "cyber": 1,
-        "drone": 14,
+        "drone": 15,
         "explosion": 7
       }
     },
@@ -84,7 +84,7 @@
         "urls": [
           "https://www.express.co.uk/news/world/2232243/Czech-Republic-military-helicopter-crash"
         ],
-        "risk_score_input": 2.5,
+        "risk_score_input": 1.375,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       }
@@ -92,30 +92,57 @@
     "Hungary": [],
     "Romania": [
       {
-        "cluster_id": "85fefcc39623f731f7d6",
+        "cluster_id": "fe59e41e5928027513e4",
         "date": "2026-07-26",
-        "time": "2026-07-26T03:30:00+00:00",
+        "time": "2026-07-26T09:04:58+00:00",
         "category": "drone",
-        "severity": "high",
-        "representative_title": "Comandantul detașamentului Forțelor Aeriene Române din Lituania , pilot de F - 16 , explicații despre cât de greu este de doborât o dronă",
-        "article_count": 3,
+        "severity": "info",
+        "representative_title": "Zsinórban a harmadik drónt lőttek le légtérsértés miatt Románia területén",
+        "article_count": 1,
         "source_count": 2,
         "sources": [
+          "Telex",
+          "HVG"
+        ],
+        "titles": [
+          "Zsinórban a harmadik drónt lőttek le légtérsértés miatt Románia területén"
+        ],
+        "urls": [
+          "https://telex.hu/transtelex/2026/07/26/dron-romania-harmadik-legtersertes-sorozat",
+          "https://hvg.hu/vilag/20260726_ujabb-legterserto-dront-lott-le-roman-legiero"
+        ],
+        "risk_score_input": 2.0,
+        "source_file": "local_events.geojson",
+        "actual_incident_gate": true
+      },
+      {
+        "cluster_id": "8cf90287d2d82e5fcd5a",
+        "date": "2026-07-26",
+        "time": "2026-07-26T00:00:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "representative_title": "Bucharest, Bucuresti, Romania",
+        "article_count": 4,
+        "source_count": 3,
+        "sources": [
+          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584",
           "GDELT_DOC",
           "HotNews"
         ],
         "titles": [
+          "Bucharest, Bucuresti, Romania",
           "Comandantul detașamentului Forțelor Aeriene Române din Lituania , pilot de F - 16 , explicații despre cât de greu este de doborât o dronă",
           "Mesajul lui Nicușor Dan pentru Rusia, după ce a treia dronă a fost doborâtă pe teritoriul României",
-          "Cine este generalul român de la NATO care a prezis că e timpul ca „armata să fie lăsată să doboarele drone”"
+          "Cine este generalul român de la NATO care a prezis că rușii vor continua să trimită drone și că e timpul ca „armata să deschidă focul”/ Ce poate face Guvernul"
         ],
         "urls": [
+          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584",
           "https://www.libertatea.ro/stiri/comandantul-detasamentului-fortelor-aeriene-romane-din-lituania-pilot-de-f-16-explicatii-despre-cat-de-greu-este-de-doborat-o-drona-5828619",
           "https://hotnews.ro/mesajul-lui-nicusor-dan-pentru-rusia-dupa-ce-a-treia-drona-a-fost-doborata-pe-teritoriul-romaniei-2309664",
           "https://hotnews.ro/interviu-militarul-roman-cu-cea-mai-inalta-functie-in-armata-viitorului-din-nato-vorbeste-dupa-exploziile-dronelor-de-la-galati-si-constanta-fiecare-stat-are-datoria-sa-se-2265627"
         ],
-        "risk_score_input": 3.125,
-        "source_file": "gdelt_crossborder.geojson",
+        "risk_score_input": 2.75,
+        "source_file": "gdelt_linked.geojson",
         "actual_incident_gate": true
       },
       {

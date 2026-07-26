@@ -153,6 +153,78 @@ TARGET_COUNTRY_TERMS = {
 
 
 
+
+# ============================================================
+# GENERIC INCIDENT RESOLUTION ENGINE
+# Internal-only model. Output schemas remain unchanged.
+# ============================================================
+
+INCIDENT_RESOLUTION_VERSION = "generic_v1"
+
+INCIDENT_TIME_WINDOWS_HOURS = {
+    "drone": 30.0,
+    "drone_airspace": 30.0,
+    "military": 36.0,
+    "military_accident": 48.0,
+    "cyber": 96.0,
+    "cyber_incident": 96.0,
+    "explosion": 72.0,
+    "kinetic_attack": 48.0,
+    "hazardous": 96.0,
+    "hazardous_incident": 96.0,
+    "infrastructure_disruption": 96.0,
+    "sabotage": 120.0,
+    "major_fire": 72.0,
+}
+
+GENERIC_SUBTYPE_PATTERNS = {
+    "shootdown": ["shot down", "shoot down", "downed", "intercepted", "doborât", "doborâtă", "doborata", "lelőtt", "lelőttek"],
+    "airspace_violation": ["airspace violation", "airspace breach", "entered airspace", "spațiul aerian", "spatiul aerian", "légtérsértés", "incursion", "incursiune"],
+    "air_alert": ["ro-alert", "ro alert", "air alert", "alertă", "alerta", "scrambled", "fighter jets", "f-16", "helicopter", "elicopter"],
+    "ransomware": ["ransomware"],
+    "ddos": ["ddos"],
+    "data_breach": ["data breach", "data leak", "adatlopás", "adatszivárgás"],
+    "system_compromise": ["systems compromised", "network compromised", "hacked", "feltörték", "cyberattack", "cyber attack", "kibertámadás"],
+    "military_crash": ["military helicopter crash", "military aircraft crash", "fighter jet crash", "air force aircraft crash", "katonai helikopter lezuhant", "katonai repülő lezuhant", "prăbușit", "prabusit"],
+    "military_accident": ["military accident", "training accident", "military vehicle accident", "katonai baleset"],
+    "explosion": ["explosion", "blast", "exploded", "detonation", "robbanás", "felrobbant", "explozie"],
+    "fire": ["fire", "caught fire", "on fire", "tűz", "kigyulladt", "incendiu"],
+    "sabotage": ["sabotage", "suspected sabotage", "szabotázs"],
+    "blackout": ["blackout", "power outage", "grid failure", "áramszünet"],
+    "transport_disruption": ["rail disruption", "airport closure", "port closure", "vasúti fennakadás", "repülőtér lezár", "kikötő lezár"],
+    "hazardous_leak": ["chemical leak", "gas leak", "toxic leak", "vegyi szivárgás", "gázszivárgás"],
+    "maritime_attack": ["tanker", "cargo ship", "vessel", "navă", "nava", "petrolier", "marine drone", "sea drone", "dronă marină", "drona marina"],
+}
+
+GENERIC_SEQUENCE_TERMS = {
+    "first": ["first", "prima", "első"],
+    "second": ["second", "a doua", "második"],
+    "third": ["third", "a treia", "treia", "harmadik"],
+    "fourth": ["fourth", "a patra", "negyedik"],
+}
+
+GENERIC_FOLLOWUP_PATTERNS = [
+    "after the incident", "after the attack", "after the explosion", "reaction after", "reaction to",
+    "investigation continues", "investigation concluded", "investigation completed", "authorities investigate",
+    "search for debris", "debris search", "wreckage search", "searches suspended", "searches resumed",
+    "what we know", "what we know so far", "timeline", "expert explains", "minister comments", "president comments",
+    "ce știm până acum", "ce stim pana acum", "după incident", "dupa incident", "după atac", "dupa atac",
+    "după explozie", "dupa explozie", "după doborârea", "dupa doborarea", "căutările", "cautarile",
+    "roncsok keresése", "maradványok keresése", "vizsgálat folytatódik", "vizsgálat lezárult",
+]
+
+GENERIC_SUMMARY_PATTERNS = [
+    "in the last two days", "in the last three days", "in 24 hours", "in 48 hours", "in three days",
+    "bilanț", "bilant", "summary", "recap", "overview", "incursions this year", "incursiuni", "year to date",
+    "ce știm până acum", "ce stim pana acum", "what we know so far",
+]
+
+GENERIC_REACTION_PATTERNS = [
+    "nato reacts", "nato response", "nato statement", "minister says", "president says", "ambassador summoned",
+    "reaction after", "reaction to", "condemns", "reacția nato", "reactia nato", "mesaj al nato", "maia sandu",
+    "bruxelles laudă", "bruxelles lauda", "ministrul apărării după", "ministrul apararii dupa", "convocat de urgență", "convocat de urgenta",
+]
+
 REACTION_OR_SUMMARY_TERMS = [
     "nato reacts", "nato response", "nato statement", "nato intervine",
     "reacția nato", "reactia nato", "primul mesaj al nato",
@@ -670,6 +742,148 @@ def semantic_similarity(text_a, text_b):
 
 
 
+
+def incident_category_family(feature):
+    props = feature.get("properties") or {}
+    category = str(props.get("incident_type") or props.get("category") or "unknown").lower()
+    family_map = {
+        "drone_airspace": "drone", "cyber_incident": "cyber", "military_accident": "military",
+        "kinetic_attack": "explosion", "hazardous_incident": "hazardous", "major_fire": "explosion",
+    }
+    return family_map.get(category, category)
+
+
+def incident_subtype_signature(feature):
+    text = risk_event_text(feature)
+    found = set()
+    for subtype, terms in GENERIC_SUBTYPE_PATTERNS.items():
+        if contains_any(text, terms):
+            found.add(subtype)
+    found.add(incident_category_family(feature))
+    return found
+
+
+def incident_sequence_signature(feature):
+    text = risk_event_text(feature)
+    found = set()
+    for key, terms in GENERIC_SEQUENCE_TERMS.items():
+        if contains_any(text, terms):
+            found.add(key)
+    return found
+
+
+def incident_place_tokens(feature):
+    props = feature.get("properties") or {}
+    parts = [props.get("place"), props.get("city"), props.get("location"), props.get("event_place"), props.get("event_location")]
+    text = " ".join(str(x or "") for x in parts) + " " + risk_event_text(feature)
+    tokens = set()
+    country = norm_country(props.get("country"))
+    for term in TARGET_COUNTRY_TERMS.get(country, []):
+        if contains_term(text, term):
+            tokens.add(normalize_text(term))
+    for raw in parts:
+        if not raw:
+            continue
+        for token in re.findall(r"[\wÀ-ž-]{4,}", normalize_text(raw), flags=re.UNICODE):
+            tokens.add(token)
+    return tokens
+
+
+def incident_asset_tokens(feature):
+    props = feature.get("properties") or {}
+    text = " ".join([str(props.get("title") or ""), str(props.get("summary") or props.get("description") or ""), str(props.get("place") or "")])
+    tokens = set()
+    for match in re.findall(r'["„“\']([^"„“\']{3,80})["„“\']', text):
+        cleaned = normalize_text(match)
+        if cleaned:
+            tokens.add(cleaned)
+    for key in ["asset", "facility", "target", "operator", "organization", "ship", "vessel", "airport", "station", "plant", "company"]:
+        value = props.get(key)
+        if value:
+            tokens.add(normalize_text(value))
+    for token in re.findall(r"[\wÀ-ž-]{5,}", text, flags=re.UNICODE):
+        low = normalize_text(token)
+        if any(ch.isdigit() for ch in low):
+            tokens.add(low)
+    return tokens
+
+
+def is_generic_followup(feature):
+    return contains_any(risk_event_text(feature), GENERIC_FOLLOWUP_PATTERNS)
+
+
+def is_generic_summary(feature):
+    return contains_any(risk_event_text(feature), GENERIC_SUMMARY_PATTERNS)
+
+
+def is_generic_reaction(feature):
+    return contains_any(risk_event_text(feature), GENERIC_REACTION_PATTERNS)
+
+
+def incident_time_window_hours(feature):
+    props = feature.get("properties") or {}
+    category = str(props.get("incident_type") or props.get("category") or "unknown").lower()
+    return INCIDENT_TIME_WINDOWS_HOURS.get(category, INCIDENT_TIME_WINDOWS_HOURS.get(incident_category_family(feature), 48.0))
+
+
+def incident_pair_score(feature_a, feature_b):
+    pa = feature_a.get("properties") or {}
+    pb = feature_b.get("properties") or {}
+    if norm_country(pa.get("country")) != norm_country(pb.get("country")):
+        return -999.0
+    if incident_category_family(feature_a) != incident_category_family(feature_b):
+        return -999.0
+    ta, tb = risk_event_time(feature_a), risk_event_time(feature_b)
+    if not ta or not tb:
+        return -999.0
+    hours = abs((ta - tb).total_seconds()) / 3600.0
+    max_window = max(incident_time_window_hours(feature_a), incident_time_window_hours(feature_b))
+    if is_generic_followup(feature_a) or is_generic_followup(feature_b):
+        max_window = max(max_window, 120.0)
+    if hours > max_window:
+        return -999.0
+    score = 0.0
+    if hours <= 3: score += 3.0
+    elif hours <= 12: score += 2.0
+    elif hours <= 24: score += 1.2
+    elif hours <= 48: score += 0.6
+    else: score += 0.2
+    sub_a, sub_b = incident_subtype_signature(feature_a), incident_subtype_signature(feature_b)
+    shared_subtypes = sub_a & sub_b
+    if shared_subtypes:
+        score += min(3.0, 1.2 + 0.7 * len(shared_subtypes))
+    place_a, place_b = incident_place_tokens(feature_a), incident_place_tokens(feature_b)
+    if place_a and place_b:
+        if place_a & place_b:
+            score += min(3.0, 1.5 + 0.5 * len(place_a & place_b))
+        else:
+            score -= 2.5
+    asset_a, asset_b = incident_asset_tokens(feature_a), incident_asset_tokens(feature_b)
+    if asset_a and asset_b and (asset_a & asset_b):
+        score += 3.0
+    seq_a, seq_b = incident_sequence_signature(feature_a), incident_sequence_signature(feature_b)
+    if seq_a and seq_b:
+        if seq_a & seq_b: score += 3.0
+        else: score -= 6.0
+    sim = semantic_similarity(risk_event_text(feature_a), risk_event_text(feature_b))
+    score += min(2.0, sim * 3.0)
+    if is_generic_followup(feature_a) or is_generic_followup(feature_b):
+        score += 0.8
+    return score
+
+
+def generic_same_incident(feature_a, feature_b):
+    return incident_pair_score(feature_a, feature_b) >= 4.2
+
+
+def generic_is_non_primary_article(feature):
+    if is_generic_reaction(feature) or is_generic_summary(feature):
+        return True
+    if is_generic_followup(feature):
+        if not contains_any(risk_event_text(feature), NEW_INCIDENT_ACTION_TERMS):
+            return True
+    return False
+
 def is_reaction_or_summary_feature(feature):
     text = risk_event_text(feature)
     has_primary = contains_any(text, PRIMARY_INCIDENT_TERMS)
@@ -859,118 +1073,10 @@ def risk_event_time(feature):
 
 
 
+
 def same_risk_incident(feature_a, feature_b):
-    pa = feature_a.get("properties") or {}
-    pb = feature_b.get("properties") or {}
-
-    if norm_country(pa.get("country")) != norm_country(pb.get("country")):
-        return False
-
-    category_a = str(pa.get("incident_type") or pa.get("category") or "").lower()
-    category_b = str(pb.get("incident_type") or pb.get("category") or "").lower()
-
-    drone_family = {"drone", "drone_airspace"}
-    cyber_family = {"cyber", "cyber_incident"}
-    military_family = {"military", "military_accident"}
-    explosion_family = {"explosion", "kinetic_attack"}
-
-    same_family = (
-        category_a == category_b
-        or {category_a, category_b}.issubset(drone_family)
-        or {category_a, category_b}.issubset(cyber_family)
-        or {category_a, category_b}.issubset(military_family)
-        or {category_a, category_b}.issubset(explosion_family)
-    )
-    if not same_family:
-        return False
-
-    ta = risk_event_time(feature_a)
-    tb = risk_event_time(feature_b)
-    hours = abs((ta - tb).total_seconds()) / 3600.0 if ta and tb else 999999.0
-
-    sig_a = incident_action_signature(feature_a)
-    sig_b = incident_action_signature(feature_b)
-    shared = sig_a & sig_b
-
-    # Explicit second/third/etc. identifiers must never be merged.
-    if category_a in drone_family and category_b in drone_family:
-        if conflicting_drone_sequence(feature_a, feature_b):
-            return False
-
-        if same_drone_sequence(feature_a, feature_b) and hours <= INCIDENT_FOLLOWUP_MAX_HOURS:
-            return True
-
-    # Buzau/Padina and Sfantu Gheorghe/Delta remain separate shootdowns.
-    if (
-        category_a in drone_family
-        and category_b in drone_family
-        and "shootdown" in shared
-        and different_specific_drone_locations(feature_a, feature_b)
-    ):
-        return False
-
-    # Named multi-day maritime incident.
-    if hours <= INCIDENT_FOLLOWUP_MAX_HOURS and likely_same_named_incident(feature_a, feature_b):
-        return True
-
-    # Follow-up to an existing event.
-    if hours <= INCIDENT_FOLLOWUP_MAX_HOURS and (
-        is_follow_up_feature(feature_a) or is_follow_up_feature(feature_b)
-    ):
-        loc_a = incident_location_signature(feature_a)
-        loc_b = incident_location_signature(feature_b)
-        if loc_a & loc_b:
-            if shared:
-                return True
-            if semantic_similarity(risk_event_text(feature_a), risk_event_text(feature_b)) >= 0.12:
-                return True
-
-    # Operational RO-Alert / scramble window.
-    if (
-        category_a in drone_family
-        and category_b in drone_family
-        and hours <= INCIDENT_OPERATIONAL_MAX_HOURS
-    ):
-        loc_a = incident_location_signature(feature_a)
-        loc_b = incident_location_signature(feature_b)
-        operational = {"air_alert", "airspace"}
-        if loc_a & loc_b and (sig_a & operational) and (sig_b & operational):
-            return True
-
-    # Multiple reports of the same concrete shootdown.
-    if (
-        category_a in drone_family
-        and category_b in drone_family
-        and "shootdown" in shared
-        and hours <= INCIDENT_CLUSTER_MAX_HOURS
-    ):
-        loc_a = incident_location_signature(feature_a)
-        loc_b = incident_location_signature(feature_b)
-
-        if loc_a and loc_b and loc_a & loc_b:
-            return True
-
-        if ta and tb and ta.date() == tb.date():
-            return semantic_similarity(
-                risk_event_text(feature_a),
-                risk_event_text(feature_b),
-            ) >= 0.30
-
-        return False
-
-    if category_a in cyber_family and category_b in cyber_family and hours <= INCIDENT_CLUSTER_MAX_HOURS:
-        return semantic_similarity(
-            risk_event_text(feature_a),
-            risk_event_text(feature_b),
-        ) >= 0.34
-
-    if hours > INCIDENT_CLUSTER_MAX_HOURS:
-        return False
-
-    return semantic_similarity(
-        risk_event_text(feature_a),
-        risk_event_text(feature_b),
-    ) >= INCIDENT_TEXT_SIMILARITY
+    """Backward-compatible wrapper around the generic incident resolver."""
+    return generic_same_incident(feature_a, feature_b)
 
 
 def merge_risk_incident(primary, incoming):
@@ -1032,88 +1138,63 @@ def merge_risk_incident(primary, incoming):
     return primary
 
 
+
 def cluster_risk_incidents(features):
-    clusters = []
-
-    ordered = sorted(
-        features,
-        key=lambda f: risk_event_time(f) or datetime.min.replace(tzinfo=timezone.utc),
-    )
-
+    """Generic ARTICLE -> INCIDENT/FOLLOW-UP resolver; return schema unchanged."""
+    clusters, deferred = [], []
+    ordered = sorted(features, key=lambda f: risk_event_time(f) or datetime.min.replace(tzinfo=timezone.utc))
     for feature in ordered:
         props = feature.setdefault("properties", {})
         props["article_count"] = int(props.get("article_count") or 1)
-        props["risk_sources"] = list(
-            props.get("sources")
-            or ([props.get("source")] if props.get("source") else [])
-        )
-        props["risk_urls"] = list(
-            props.get("urls")
-            or ([props.get("url")] if props.get("url") else [])
-        )
+        props["risk_sources"] = list(props.get("sources") or ([props.get("source")] if props.get("source") else []))
+        props["risk_urls"] = list(props.get("urls") or ([props.get("url")] if props.get("url") else []))
         props["risk_titles"] = [props.get("title")] if props.get("title") else []
-
-        merged = False
+        if generic_is_non_primary_article(feature):
+            deferred.append(feature)
+            continue
+        best_index, best_score = None, -999.0
         for index, existing in enumerate(clusters):
-            if same_risk_incident(existing, feature):
-                clusters[index] = merge_risk_incident(existing, feature)
-                merged = True
-                break
-
-        if not merged:
+            score = incident_pair_score(existing, feature)
+            if score > best_score:
+                best_index, best_score = index, score
+        if best_index is not None and best_score >= 4.2:
+            clusters[best_index] = merge_risk_incident(clusters[best_index], feature)
+        else:
             clusters.append(feature)
-
+    for feature in deferred:
+        best_index, best_score = None, -999.0
+        for index, existing in enumerate(clusters):
+            score = incident_pair_score(existing, feature)
+            if score > best_score:
+                best_index, best_score = index, score
+        if best_index is not None and best_score >= 3.6:
+            clusters[best_index] = merge_risk_incident(clusters[best_index], feature)
     return clusters
 
 
 
-
 def load_validated_security_events(days=7):
-    """
-    Unified risk input:
-    article -> actual-incident filter -> exact dedup ->
-    reaction/summary suppression -> follow-up suppression ->
-    real-world incident clustering.
-    """
+    """Unified inputs; downstream/public output contract unchanged."""
     cutoff = now_utc() - timedelta(days=days)
     candidates = []
-
     for path in SECURITY_EVENT_FILES:
         payload = load_json(path, {"features": []})
-
         for feature in payload.get("features", []):
             normalized = normalize_security_feature(feature, path.name)
             if not normalized:
                 continue
-
             dt = parse_time((normalized.get("properties") or {}).get("time"))
             if not dt or dt < cutoff:
                 continue
-
-            if is_follow_up_only_feature(normalized):
-                continue
-
-            if is_reaction_or_summary_feature(normalized):
-                continue
-
             candidates.append(normalized)
-
-    exact_seen = set()
-    article_unique = []
-
+    exact_seen, article_unique = set(), []
     for feature in candidates:
         props = feature.get("properties") or {}
-        exact_key = stable_event_key(
-            props.get("url"),
-            props.get("title"),
-            props.get("source"),
-            props.get("time"),
-        )
+        exact_key = stable_event_key(props.get("url"), props.get("title"), props.get("source"), props.get("time"))
         if exact_key in exact_seen:
             continue
         exact_seen.add(exact_key)
         article_unique.append(feature)
-
     return cluster_risk_incidents(article_unique)
 
 

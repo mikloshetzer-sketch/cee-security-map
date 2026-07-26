@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_utc": "2026-07-26T13:12:04.166509+00:00",
+    "generated_utc": "2026-07-26T17:51:27.986388+00:00",
     "infrastructure_count": 103,
-    "event_count": 40,
-    "match_count": 0,
-    "raw_match_count": 0,
-    "top_infrastructure_count": 0,
+    "event_count": 43,
+    "match_count": 1,
+    "raw_match_count": 1,
+    "top_infrastructure_count": 1,
     "max_distance_km": 50,
     "target_countries": [
       "Czechia",
@@ -34,7 +34,101 @@
       "top_matches": "one best match per infrastructure asset"
     }
   },
-  "top_matches": [],
+  "top_matches": [
+    {
+      "id": "b61764d98172cb2f",
+      "level": "medium",
+      "score": 63.05,
+      "distance_km": 18.47,
+      "event": {
+        "id": "71c6a401ffca7059",
+        "title": "MApN : Drona doborâtă sâmbătă , neutralizată în condiții de siguranță într - o zonă nepopulată",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:30:00Z",
+        "url": "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+        "urls": [
+          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+          "https://jurnalul.ro/stiri/observator/drona-doborata-buzau-nato-fetesti-f16-ancheta-1039895.html"
+        ],
+        "lat": 44.366,
+        "lon": 27.833,
+        "location_quality": "city",
+        "place": "fetesti",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-cernavoda-npp",
+        "name": "Cernavodă Nuclear Power Plant",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "category": "energy",
+        "subtype": "nuclear_power_plant",
+        "criticality": 10.0,
+        "operator": "Nuclearelectrica",
+        "lat": 44.322,
+        "lon": 28.057,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ],
   "matches": [],
-  "raw_matches": []
+  "raw_matches": [
+    {
+      "id": "b61764d98172cb2f",
+      "level": "medium",
+      "score": 63.05,
+      "distance_km": 18.47,
+      "event": {
+        "id": "71c6a401ffca7059",
+        "title": "MApN : Drona doborâtă sâmbătă , neutralizată în condiții de siguranță într - o zonă nepopulată",
+        "category": "other",
+        "incident_type": "drone_airspace",
+        "source": "GDELT_DOC",
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "time": "2026-07-24T17:30:00Z",
+        "url": "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+        "urls": [
+          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+          "https://jurnalul.ro/stiri/observator/drona-doborata-buzau-nato-fetesti-f16-ancheta-1039895.html"
+        ],
+        "lat": 44.366,
+        "lon": 27.833,
+        "location_quality": "city",
+        "place": "fetesti",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "gdelt_crossborder.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-cernavoda-npp",
+        "name": "Cernavodă Nuclear Power Plant",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "category": "energy",
+        "subtype": "nuclear_power_plant",
+        "criticality": 10.0,
+        "operator": "Nuclearelectrica",
+        "lat": 44.322,
+        "lon": 28.057,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ]
 }

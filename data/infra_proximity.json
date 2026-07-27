@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_utc": "2026-07-27T09:46:11.102177+00:00",
+    "generated_utc": "2026-07-27T14:25:20.703510+00:00",
     "infrastructure_count": 103,
-    "event_count": 40,
-    "match_count": 1,
-    "raw_match_count": 1,
-    "top_infrastructure_count": 1,
+    "event_count": 41,
+    "match_count": 3,
+    "raw_match_count": 3,
+    "top_infrastructure_count": 3,
     "max_distance_km": 50,
     "target_countries": [
       "Czechia",
@@ -80,9 +80,190 @@
         "lon": 28.057,
         "source_file": "critical_infrastructure.json"
       }
+    },
+    {
+      "id": "eba4cb83e0c46419",
+      "level": "medium",
+      "score": 54.11,
+      "distance_km": 16.18,
+      "event": {
+        "id": "cdada6ed04003b8b",
+        "title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
+        "category": "drone",
+        "incident_type": "drone_airspace",
+        "source": "Digi24",
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "time": "Mon, 27 Jul 2026 15:44:22 +0300",
+        "url": "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
+        ],
+        "lat": 44.426,
+        "lon": 26.102,
+        "location_quality": "city",
+        "place": "bucurești",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-henri-coanda-airport",
+        "name": "Bucharest Henri Coandă International Airport",
+        "country": "Romania",
+        "city": "Bucharest",
+        "category": "transport",
+        "subtype": "international_airport",
+        "criticality": 8.0,
+        "operator": "Bucharest Airports",
+        "lat": 44.571,
+        "lon": 26.085,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "6029d6c299c09583",
+      "level": "watch",
+      "score": 4.9,
+      "distance_km": 47.28,
+      "event": {
+        "id": "cdada6ed04003b8b",
+        "title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
+        "category": "drone",
+        "incident_type": "drone_airspace",
+        "source": "Digi24",
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "time": "Mon, 27 Jul 2026 15:44:22 +0300",
+        "url": "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
+        ],
+        "lat": 44.426,
+        "lon": 26.102,
+        "location_quality": "city",
+        "place": "bucurești",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-petrobrazi-refinery",
+        "name": "Petrobrazi Refinery",
+        "country": "Romania",
+        "city": "Brazi",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 9.0,
+        "operator": "OMV Petrom",
+        "lat": 44.848,
+        "lon": 26.029,
+        "source_file": "critical_infrastructure.json"
+      }
     }
   ],
-  "matches": [],
+  "matches": [
+    {
+      "id": "eba4cb83e0c46419",
+      "level": "medium",
+      "score": 54.11,
+      "distance_km": 16.18,
+      "event": {
+        "id": "cdada6ed04003b8b",
+        "title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
+        "category": "drone",
+        "incident_type": "drone_airspace",
+        "source": "Digi24",
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "time": "Mon, 27 Jul 2026 15:44:22 +0300",
+        "url": "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
+        ],
+        "lat": 44.426,
+        "lon": 26.102,
+        "location_quality": "city",
+        "place": "bucurești",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-henri-coanda-airport",
+        "name": "Bucharest Henri Coandă International Airport",
+        "country": "Romania",
+        "city": "Bucharest",
+        "category": "transport",
+        "subtype": "international_airport",
+        "criticality": 8.0,
+        "operator": "Bucharest Airports",
+        "lat": 44.571,
+        "lon": 26.085,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "6029d6c299c09583",
+      "level": "watch",
+      "score": 4.9,
+      "distance_km": 47.28,
+      "event": {
+        "id": "cdada6ed04003b8b",
+        "title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
+        "category": "drone",
+        "incident_type": "drone_airspace",
+        "source": "Digi24",
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "time": "Mon, 27 Jul 2026 15:44:22 +0300",
+        "url": "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
+        ],
+        "lat": 44.426,
+        "lon": 26.102,
+        "location_quality": "city",
+        "place": "bucurești",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-petrobrazi-refinery",
+        "name": "Petrobrazi Refinery",
+        "country": "Romania",
+        "city": "Brazi",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 9.0,
+        "operator": "OMV Petrom",
+        "lat": 44.848,
+        "lon": 26.029,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ],
   "raw_matches": [
     {
       "id": "b61764d98172cb2f",
@@ -127,6 +308,96 @@
         "operator": "Nuclearelectrica",
         "lat": 44.322,
         "lon": 28.057,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "6029d6c299c09583",
+      "level": "watch",
+      "score": 4.9,
+      "distance_km": 47.28,
+      "event": {
+        "id": "cdada6ed04003b8b",
+        "title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
+        "category": "drone",
+        "incident_type": "drone_airspace",
+        "source": "Digi24",
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "time": "Mon, 27 Jul 2026 15:44:22 +0300",
+        "url": "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
+        ],
+        "lat": 44.426,
+        "lon": 26.102,
+        "location_quality": "city",
+        "place": "bucurești",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-energy-petrobrazi-refinery",
+        "name": "Petrobrazi Refinery",
+        "country": "Romania",
+        "city": "Brazi",
+        "category": "energy",
+        "subtype": "oil_refinery",
+        "criticality": 9.0,
+        "operator": "OMV Petrom",
+        "lat": 44.848,
+        "lon": 26.029,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "eba4cb83e0c46419",
+      "level": "medium",
+      "score": 54.11,
+      "distance_km": 16.18,
+      "event": {
+        "id": "cdada6ed04003b8b",
+        "title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
+        "category": "drone",
+        "incident_type": "drone_airspace",
+        "source": "Digi24",
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "time": "Mon, 27 Jul 2026 15:44:22 +0300",
+        "url": "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
+        ],
+        "lat": 44.426,
+        "lon": 26.102,
+        "location_quality": "city",
+        "place": "bucurești",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 2,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-henri-coanda-airport",
+        "name": "Bucharest Henri Coandă International Airport",
+        "country": "Romania",
+        "city": "Bucharest",
+        "category": "transport",
+        "subtype": "international_airport",
+        "criticality": 8.0,
+        "operator": "Bucharest Airports",
+        "lat": 44.571,
+        "lon": 26.085,
         "source_file": "critical_infrastructure.json"
       }
     }

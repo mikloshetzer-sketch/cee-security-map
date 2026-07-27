@@ -1,19 +1,20 @@
 {
-  "generated_utc": "2026-07-27T09:46:13.340681+00:00",
+  "generated_utc": "2026-07-27T14:25:22.968943+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 13,
-    "article_count": 73,
-    "source_count": 20
+    "incident_count": 15,
+    "article_count": 76,
+    "source_count": 22
   },
   "country_summary": {
     "Czech Republic": {
-      "incident_count": 1,
-      "article_count": 1,
-      "source_count": 1,
+      "incident_count": 2,
+      "article_count": 2,
+      "source_count": 2,
       "category_counts": {
+        "explosion": 1,
         "military": 1
       }
     },
@@ -24,12 +25,12 @@
       "category_counts": {}
     },
     "Romania": {
-      "incident_count": 12,
-      "article_count": 72,
-      "source_count": 19,
+      "incident_count": 13,
+      "article_count": 74,
+      "source_count": 20,
       "category_counts": {
         "cyber": 1,
-        "drone": 8,
+        "drone": 9,
         "explosion": 3
       }
     },
@@ -67,6 +68,28 @@
   "countries": {
     "Czech Republic": [
       {
+        "cluster_id": "544a493a185cdb881b3e",
+        "date": "2026-07-27",
+        "time": "2026-07-27T12:46:23+00:00",
+        "category": "explosion",
+        "severity": "high",
+        "representative_title": "Vláda schválila zóny pro snazší výstavbu větrníků. Výrazně je osekala",
+        "article_count": 1,
+        "source_count": 1,
+        "sources": [
+          "Novinky"
+        ],
+        "titles": [
+          "Vláda schválila zóny pro snazší výstavbu větrníků. Výrazně je osekala"
+        ],
+        "urls": [
+          "https://www.novinky.cz/clanek/ekonomika-vlada-schvalila-zony-pro-snazsi-vystavbu-vetrniku-vyrazne-je-osekala-40589951"
+        ],
+        "risk_score_input": 3.25,
+        "source_file": "local_events.geojson",
+        "actual_incident_gate": true
+      },
+      {
         "cluster_id": "e5f541d7afafefd293a2",
         "date": "2026-07-23",
         "time": "2026-07-23T12:15:00+00:00",
@@ -91,6 +114,30 @@
     ],
     "Hungary": [],
     "Romania": [
+      {
+        "cluster_id": "a27a431ccee663104b71",
+        "date": "2026-07-27",
+        "time": "2026-07-27T12:44:22+00:00",
+        "category": "drone",
+        "severity": "high",
+        "representative_title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
+        "article_count": 2,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "titles": [
+          "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
+          "Primele măsuri după doborârea dronelor: ambasadorul român de la Moscova a fost chemat în țară, un diplomat rus - declarat indezirabil"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
+          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
+        ],
+        "risk_score_input": 3.125,
+        "source_file": "local_events.geojson",
+        "actual_incident_gate": true
+      },
       {
         "cluster_id": "4755507f2e00753f8d91",
         "date": "2026-07-26",

@@ -1,20 +1,19 @@
 {
-  "generated_utc": "2026-07-27T14:25:22.968943+00:00",
+  "generated_utc": "2026-07-27T19:25:18.029072+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 15,
-    "article_count": 76,
+    "incident_count": 14,
+    "article_count": 75,
     "source_count": 22
   },
   "country_summary": {
     "Czech Republic": {
-      "incident_count": 2,
-      "article_count": 2,
-      "source_count": 2,
+      "incident_count": 1,
+      "article_count": 1,
+      "source_count": 1,
       "category_counts": {
-        "explosion": 1,
         "military": 1
       }
     },
@@ -27,7 +26,7 @@
     "Romania": {
       "incident_count": 13,
       "article_count": 74,
-      "source_count": 20,
+      "source_count": 21,
       "category_counts": {
         "cyber": 1,
         "drone": 9,
@@ -68,28 +67,6 @@
   "countries": {
     "Czech Republic": [
       {
-        "cluster_id": "544a493a185cdb881b3e",
-        "date": "2026-07-27",
-        "time": "2026-07-27T12:46:23+00:00",
-        "category": "explosion",
-        "severity": "high",
-        "representative_title": "Vláda schválila zóny pro snazší výstavbu větrníků. Výrazně je osekala",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "Novinky"
-        ],
-        "titles": [
-          "Vláda schválila zóny pro snazší výstavbu větrníků. Výrazně je osekala"
-        ],
-        "urls": [
-          "https://www.novinky.cz/clanek/ekonomika-vlada-schvalila-zony-pro-snazsi-vystavbu-vetrniku-vyrazne-je-osekala-40589951"
-        ],
-        "risk_score_input": 3.25,
-        "source_file": "local_events.geojson",
-        "actual_incident_gate": true
-      },
-      {
         "cluster_id": "e5f541d7afafefd293a2",
         "date": "2026-07-23",
         "time": "2026-07-23T12:15:00+00:00",
@@ -122,19 +99,22 @@
         "severity": "high",
         "representative_title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
         "article_count": 2,
-        "source_count": 1,
+        "source_count": 2,
         "sources": [
-          "Digi24"
+          "Digi24",
+          "HotNews"
         ],
         "titles": [
           "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
-          "Primele măsuri după doborârea dronelor: ambasadorul român de la Moscova a fost chemat în țară, un diplomat rus - declarat indezirabil"
+          "Măsuri după doborârea dronelor: ambasadorul român la Moscova a fost chemat în țară; un angajat al ambasadei ruse - declarat indezirabil"
         ],
         "urls": [
           "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
-          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
+          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477",
+          "https://hotnews.ro/radu-miruta-nu-exista-dubiu-procurorul-de-caz-a-confirmat-ca-drona-de-vineri-de-la-buzau-e-de-provenienta-ruseasca-2310716",
+          "https://hotnews.ro/ambasadorul-rusiei-ameninta-romania-ar-insemna-implicarea-directa-a-romaniei-in-actiuni-de-lupta-pe-teritoriul-ucrainei-2310617"
         ],
-        "risk_score_input": 3.125,
+        "risk_score_input": 2.75,
         "source_file": "local_events.geojson",
         "actual_incident_gate": true
       },
@@ -171,7 +151,7 @@
           "https://www.forbes.ro/bilant-mapn-18-incursiuni-ale-dronelor-rusesti-in-spatiul-aerian-romanesc-doar-in-2026-513716",
           "https://business24.ro/incursiuni-drone/bilant-mapn-incursiuni-drone-rusesti-spatiu-aerian-romania-1661716"
         ],
-        "risk_score_input": 2.75,
+        "risk_score_input": 2.5,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },
@@ -309,7 +289,7 @@
           "https://www.radioiasi.ro/stiri/national/resturi-din-drona-doborata-langa-padina-au-fost-identificate-in-judetele-buzau-si-braila/",
           "https://www.europafm.ro/drona-doborata-in-judetul-buzau-au-fost-incheiate-cercetarile-in-teren/"
         ],
-        "risk_score_input": 2.5,
+        "risk_score_input": 1.375,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },

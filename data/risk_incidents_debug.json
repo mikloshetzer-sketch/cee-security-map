@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-07-27T19:39:39.099910+00:00",
+  "generated_utc": "2026-07-27T20:25:23.377984+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 14,
-    "article_count": 78,
-    "source_count": 24
+    "incident_count": 8,
+    "article_count": 81,
+    "source_count": 17
   },
   "country_summary": {
     "Czech Republic": {
@@ -24,13 +24,13 @@
       "category_counts": {}
     },
     "Romania": {
-      "incident_count": 13,
-      "article_count": 77,
-      "source_count": 23,
+      "incident_count": 7,
+      "article_count": 80,
+      "source_count": 16,
       "category_counts": {
         "cyber": 1,
-        "drone": 9,
-        "explosion": 3
+        "drone": 4,
+        "explosion": 2
       }
     },
     "Slovakia": {
@@ -98,11 +98,10 @@
         "category": "drone",
         "severity": "high",
         "representative_title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
-        "article_count": 4,
-        "source_count": 4,
+        "article_count": 7,
+        "source_count": 3,
         "sources": [
           "Digi24",
-          "Agerpres",
           "GDELT_DOC",
           "HotNews"
         ],
@@ -110,45 +109,58 @@
           "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
           "Drone doborâte în România / Oana Ţoiu : Ministrul polonez de Externe - mesaj de solidaritate cu România",
           "România , reacție fermă după dronele rusești doborâte",
-          "Măsuri după doborârea dronelor: ambasadorul român la Moscova a fost chemat în țară; un angajat al ambasadei ruse - declarat indezirabil"
+          "Romania Says It Shot Down 3rd Russian Drone in as Many Days",
+          "Radu Miruță : România a doborât trei drone rusești în trei zile . Ministrul explică de ce nu decolează mereu F - 16 și răspunde despre costurile interceptărilor",
+          "Măsuri după doborârea dronelor: ambasadorul român la Moscova a fost chemat în țară; un angajat al ambasadei ruse - declarat indezirabil",
+          "Oana Țoiu anunță că Polonia condamnă ferm incursiunile ilegale ale dronelor rusești în spațiul aerian al României"
         ],
         "urls": [
           "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
-          "https://agerpres.ro/politic/2026/07/27/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe---mesaj-de-solidaritate-cu-romania--1579719",
           "https://www.stiripesurse.ro/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe-mesaj-de-solidaritate-cu-romania_3907155",
           "https://financiarul.ro/politica/trei-drone-rusesti-doborate-in-24-26-iulie-iar-romania-reactioneaza-ferm/",
+          "https://www.theepochtimes.com/world/romania-says-it-shot-down-3rd-russian-drone-in-as-many-days-6067809",
+          "https://www.mediafax.ro/politic/radu-miruta-romania-a-doborat-trei-drone-rusesti-in-trei-zile-ministrul-explica-de-ce-nu-decoleaza-mereu-f-16-si-raspunde-despre-costurile-interceptarilor-23779881",
           "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477",
           "https://hotnews.ro/radu-miruta-nu-exista-dubiu-procurorul-de-caz-a-confirmat-ca-drona-de-vineri-de-la-buzau-e-de-provenienta-ruseasca-2310716",
-          "https://hotnews.ro/ambasadorul-rusiei-ameninta-romania-ar-insemna-implicarea-directa-a-romaniei-in-actiuni-de-lupta-pe-teritoriul-ucrainei-2310617"
+          "https://hotnews.ro/ambasadorul-rusiei-ameninta-romania-ar-insemna-implicarea-directa-a-romaniei-in-actiuni-de-lupta-pe-teritoriul-ucrainei-2310617",
+          "https://www.mediafax.ro/politic/oana-toiu-anunta-ca-polonia-condamna-ferm-incursiunile-ilegale-ale-dronelor-rusesti-in-spatiul-aerian-al-romaniei-23779897"
         ],
         "risk_score_input": 2.75,
         "source_file": "local_events.geojson",
         "actual_incident_gate": true
       },
       {
-        "cluster_id": "4755507f2e00753f8d91",
-        "date": "2026-07-26",
-        "time": "2026-07-26T16:15:00+00:00",
+        "cluster_id": "2553d3656b0990cfbfaf",
+        "date": "2026-07-25",
+        "time": "2026-07-25T11:00:00+00:00",
         "category": "drone",
         "severity": "high",
-        "representative_title": "Mesajul transmis de NATO după ce România a doborât a treia dronă în trei zile : „ Alianţa este pregătită să reacționeze",
-        "article_count": 10,
-        "source_count": 1,
+        "representative_title": "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
+        "article_count": 29,
+        "source_count": 2,
         "sources": [
-          "GDELT_DOC"
+          "GDELT_DOC",
+          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584"
         ],
         "titles": [
-          "Mesajul transmis de NATO după ce România a doborât a treia dronă în trei zile : „ Alianţa este pregătită să reacționeze",
-          "Drone doborâte în România / Oana Țoiu : Ministrul polonez de Externe - mesaj de solidaritate cu România",
-          "Primul mesaj al NATO , după ce România a doborât a treia dronă în trei zile : „ Alianţa este pregătită să reacționeze",
-          "Maia Sandu , reacție fermă după doborârea celei de - a treia drone . Condamnăm încălcările sistematice ale spațiului aerian românesc de către Rusia . Securitatea României este securitatea Republicii Moldova",
-          "Reacția NATO pentru Digi24 după doborârea celor trei drone pe teritoriul României",
-          "Ce știm până acum despre dronele doborâte de Armata Română . Noi date de la MApN",
-          "Ambasadorul Rusiei , convocat de urgență la MAE după a treia dronă doborâtă în spațiul aerian al României",
-          "Bilanț MApN : 18 incursiuni ale dronelor rusești în spațiul aerian românesc doar în 2026",
-          "Bilanțul MApN indică 33 de incursiuni ale dronelor rusești în spațiul aerian al României"
+          "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
+          "MApN : Drona doborâtă sâmbătă , neutralizată în condiții de siguranță într - o zonă nepopulată",
+          "Ministrul Apărării după doborârea dronelor - „ România a demonstrat un lucru simplu . Își apără teritoriul și reacționează ferm",
+          "Căutările efectuate în Delta Dunării pentru identificarea resturilor de dronă și de rachetă interceptoare au fost întrerupte",
+          "Why did Romania shoot down another drone after an airspace violation ?",
+          "Cât costă doborârea unei drone în spațiul aerian românesc . Declarațiile ministrului Radu Miruță : „ Am comandat tot ce este nevoie"
         ],
         "urls": [
+          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
+          "https://www.ziuaconstanta.ro/stiri/actualitate/ministrul-apararii-dupa-doborarea-dronelor-romania-a-demonstrat-un-lucru-simplu-isi-apara-teritoriul-si-reactioneaza-ferm-947267.html",
+          "https://www.ziuaconstanta.ro/stiri/actualitate/cautarile-efectuate-in-delta-dunarii-pentru-identificarea-resturilor-de-drona-si-de-racheta-interceptoare-au-fost-intrerupte-947273.html",
+          "https://news.az/news/why-did-romania-shoot-down-another-drone-after-an-airspace-violation",
+          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584",
+          "https://www.digi24.ro/stiri/actualitate/trei-drone-doborate-de-pilotii-romani-in-48-de-ore-expert-nato-trebuie-sa-suplimenteze-capabilitatile-in-romania-3879017",
+          "https://www.ziarulprofit.ro/nato-intervine-dupa-ce-romania-a-doborat-3-drone-in-48-de-ore-f-16-opera-sub-controlul-aliantei-suntem-pregatiti-sa-raspundem-24-7/",
+          "https://www.forbes.ro/romania-a-doborat-a-treia-drona-in-trei-zile-locuitorii-din-nordul-judetului-tulcea-au-primit-ro-alert-513706",
+          "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663",
           "https://ziarulunirea.ro/mesajul-transmis-de-nato-dupa-ce-romania-a-doborat-a-treia-drona-in-trei-zile-alianta-este-pregatita-sa-reactioneze-1004349/",
           "https://agerpres.ro/politic/2026/07/27/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe---mesaj-de-solidaritate-cu-romania--1579719",
           "https://adevarul.ro/stiri-interne/evenimente/primul-mesaj-al-nato-dupa-ce-romania-a-doborat-a-2545805.html",
@@ -158,97 +170,7 @@
           "https://hotnews.ro/ce-stim-pana-acum-despre-dronele-doborate-de-armata-romana-noi-date-de-la-mapn-2309862",
           "https://www.bzi.ro/ambasadorul-rusiei-convocat-de-urgenta-la-mae-dupa-a-treia-drona-doborata-in-spatiul-aerian-al-romaniei-5576290",
           "https://www.forbes.ro/bilant-mapn-18-incursiuni-ale-dronelor-rusesti-in-spatiul-aerian-romanesc-doar-in-2026-513716",
-          "https://business24.ro/incursiuni-drone/bilant-mapn-incursiuni-drone-rusesti-spatiu-aerian-romania-1661716"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "f2b050406a699fd9ecc7",
-        "date": "2026-07-25",
-        "time": "2026-07-25T17:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Why did Romania shoot down another drone after an airspace violation ?",
-        "article_count": 6,
-        "source_count": 2,
-        "sources": [
-          "GDELT_DOC",
-          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584"
-        ],
-        "titles": [
-          "Why did Romania shoot down another drone after an airspace violation ?",
-          "Bucharest, Bucuresti, Romania",
-          "Trei drone doborâte de piloții români în 48 de ore . Expert : NATO trebuie să suplimenteze capabilitățile în România",
-          "NATO intervine după ce România a doborât 3 drone în 48 de ore . „ F - 16 opera sub controlul Alianței . Suntem pregătiți să răspundem 24 / 7",
-          "România a doborât a treia dronă în trei zile . Locuitorii din nordul județului Tulcea au primit RO - Alert",
-          "Radu Miruță se revoltă , din concediu , pe criticile primite după doborârea dronelor : România își apără teritoriul și reacționează ferm"
-        ],
-        "urls": [
-          "https://news.az/news/why-did-romania-shoot-down-another-drone-after-an-airspace-violation",
-          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584",
-          "https://www.digi24.ro/stiri/actualitate/trei-drone-doborate-de-pilotii-romani-in-48-de-ore-expert-nato-trebuie-sa-suplimenteze-capabilitatile-in-romania-3879017",
-          "https://www.ziarulprofit.ro/nato-intervine-dupa-ce-romania-a-doborat-3-drone-in-48-de-ore-f-16-opera-sub-controlul-aliantei-suntem-pregatiti-sa-raspundem-24-7/",
-          "https://www.forbes.ro/romania-a-doborat-a-treia-drona-in-trei-zile-locuitorii-din-nordul-judetului-tulcea-au-primit-ro-alert-513706",
-          "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "935a0346fdedf46ecf8b",
-        "date": "2026-07-25",
-        "time": "2026-07-25T15:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
-        "article_count": 4,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
-          "MApN : Drona doborâtă sâmbătă , neutralizată în condiții de siguranță într - o zonă nepopulată",
-          "Ministrul Apărării după doborârea dronelor - „ România a demonstrat un lucru simplu . Își apără teritoriul și reacționează ferm",
-          "Căutările efectuate în Delta Dunării pentru identificarea resturilor de dronă și de rachetă interceptoare au fost întrerupte"
-        ],
-        "urls": [
-          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
-          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
-          "https://www.ziuaconstanta.ro/stiri/actualitate/ministrul-apararii-dupa-doborarea-dronelor-romania-a-demonstrat-un-lucru-simplu-isi-apara-teritoriul-si-reactioneaza-ferm-947267.html",
-          "https://www.ziuaconstanta.ro/stiri/actualitate/cautarile-efectuate-in-delta-dunarii-pentru-identificarea-resturilor-de-drona-si-de-racheta-interceptoare-au-fost-intrerupte-947273.html"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "7826ca5c56af0fb5a91c",
-        "date": "2026-07-25",
-        "time": "2026-07-25T11:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Cât costă doborârea unei drone în spațiul aerian românesc . Declarațiile ministrului Radu Miruță : „ Am comandat tot ce este nevoie",
-        "article_count": 9,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Cât costă doborârea unei drone în spațiul aerian românesc . Declarațiile ministrului Radu Miruță : „ Am comandat tot ce este nevoie",
-          "Militarii români caută resturile dronei distruse în Tulcea . Unde se efectuează operațiunea",
-          "Oana Țoiu , după ce armata noastră a doborât două drone în 24 de ore : Granițele României nu sunt negociabile . Despre primul aparat de zbor pus la pământ : Același tip pe care Rusia îl lansează , noapte de noapte , împotriva Ucrainei",
-          "Cum ar fi fost doborâte dronele de un F - 16 românesc . Cele trei tipuri principale de armament ale aeronavei de luptă",
-          "Comandantul detașamentului Forțelor Aeriene Române din Lituania , pilot de F - 16 , explicații despre cât de greu este de doborât o dronă",
-          "Oana Țoiu , după doborârea celor două drone , în 48 de ore : „ Granițele României nu sunt negociabile",
-          "Realitatea . NET | Radu Miruță , după doborârea celor două drone : „ Granițele , spațiul aerian și suveranitatea României nu sunt negociabile",
-          "Bruxelles laudă armata română după doborârea a două drone în 24 de ore : „ Securitatea României este securitatea Europei",
-          "Radu Miruță se revoltă , din concediu , pe criticile primite după doborârea dronelor : România își apără teritoriul și reacționează ferm"
-        ],
-        "urls": [
+          "https://business24.ro/incursiuni-drone/bilant-mapn-incursiuni-drone-rusesti-spatiu-aerian-romania-1661716",
           "https://www.cancan.ro/cat-costa-doborarea-unei-drone-in-spatiul-aerian-romanesc-declaratiile-ministrului-radu-miruta-am-comandat-tot-ce-este-nevoie-21474964",
           "https://ziare.com/drona/mapn-cautare-drona-tulcea-delta-dunarii-2026234",
           "https://www.romaniatv.net/oana-toiu-dupa-ce-romania-a-doborat-doua-drone-in-24-de-ore-granitele-romaniei-nu-sunt-negociabile-despre-primul-aparat-de-zbor-pus-la-pamant-acelasi-tip-pe-care-rusia-i_9717265.html",
@@ -264,52 +186,13 @@
         "actual_incident_gate": true
       },
       {
-        "cluster_id": "a7abb137b9bb914b94e3",
-        "date": "2026-07-24",
-        "time": "2026-07-24T17:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
-        "article_count": 10,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
-          "Resturi din drona doborâtă și racheta interceptoare , identificate în județul BUZĂU",
-          "Parchetul confirmă : Drona doborâtă în Buzău era de tip Shared ( Geran 2 ). Este muniție rătăcitoare proiectată în Iran",
-          "Resturi din drona doborâtă lângă Padina au fost identificate în judeţele Buzău şi Brăila",
-          "Bogdan Chirieac , avertisment dur după drona doborâtă la Buzău : România , tot mai aproape de un conflict major",
-          "FOTO / Ziua în care România a doborât prima dronă . Filmul evenimentelor de la Padina",
-          "Mesagerul . ro | O nouă alertă la graniță : e deja a doua dronă doborâtă în doar 24 de ore de piloții români , la o zi după incidentul din Buzău de ieri dimineață",
-          "Drona doborâtă în Deltă este reușita aceluiași pilot care a distrus și drona de la Buzău . Armata dă detalii despre operațiune",
-          "Drona doborâtă în județul Buzău : Au fost încheiate cercetările în teren : Europa FM"
-        ],
-        "urls": [
-          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
-          "https://www.radioconstanta.ro/2026/07/24/resturi-din-drona-doborata-si-racheta-interceptoare-identificate-in-judetul-buzau/",
-          "https://www.dcnews.ro/parchetul-confirma-drona-doborata-in-buzau-era-de-tip-shared-geran-2-este-munitie-ratacitoare-proiectata-in-iran_1071662.html",
-          "https://www.romania-actualitati.ro/stiri/romania/resturi-din-drona-doborata-langa-padina-au-fost-identificate-in-judetele-buzau-si-braila-id231952.html",
-          "https://www.ziarulnational.md/bogdan-chirieac-avertisment-dur-dupa-drona-doborata-la-buzau-romania-tot-mai-aproape-de-un-conflict-major/",
-          "https://opiniabuzau.ro/foto-ziua-in-care-romania-a-doborat-prima-drona-filmul-evenimentelor-de-la-padina/",
-          "https://www.mesagerul.ro/cluj/o-noua-alerta-la-granita-e-deja-a-doua-drona-doborata-in-doar-24-de-ore-de-pilotii-romani-la-o-zi-dupa-incidentul-din-buzau-de-ieri-dimineata__59138/",
-          "https://ziare.com/drona-doborata-delta/sfantu-gheorghe-avion-f-16-2026176",
-          "https://www.radioiasi.ro/stiri/national/resturi-din-drona-doborata-langa-padina-au-fost-identificate-in-judetele-buzau-si-braila/",
-          "https://www.europafm.ro/drona-doborata-in-judetul-buzau-au-fost-incheiate-cercetarile-in-teren/"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      },
-      {
         "cluster_id": "4c858daf8db85cc98fe7",
         "date": "2026-07-24",
         "time": "2026-07-24T05:15:00+00:00",
         "category": "drone",
         "severity": "high",
         "representative_title": "Noi atacuri rusești cu drone la graniţa cu România . MApN a ridicat un elicopter , iar populația din Tulcea a primit RO - Alert",
-        "article_count": 17,
+        "article_count": 30,
         "source_count": 1,
         "sources": [
           "GDELT_DOC"
@@ -331,7 +214,9 @@
           "A doua dronă doborâtă în spațiul aerian românesc în două zile consecutive . Anunțul președintelui Nicușor Dan",
           "UPDATE / Același pilot român a doborât ambele drone care au survolat spațiul aerian român în ultimele două zile",
           "A doua dronă doborâtă în spațiul aerian al României , în mai puțin de 24 de ore",
-          "Cât de puternice sunt avioanele F - 16 Fighting Falcon cu care România a doborât două drone rusești"
+          "Cât de puternice sunt avioanele F - 16 Fighting Falcon cu care România a doborât două drone rusești",
+          "O nouă alertă în Marea Neagră . Navă avariată lângă Sfântu Gheorghe",
+          "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă"
         ],
         "urls": [
           "https://www.antena3.ro/actualitate/noi-atacuri-rusesti-cu-drone-la-granita-cu-romania-mapn-a-ridicat-un-elicopter-iar-populatia-din-tulcea-a-primit-ro-alert-796824.html",
@@ -350,57 +235,22 @@
           "https://www.digi24.ro/stiri/actualitate/a-doua-drona-doborata-in-spatiul-aerian-romanesc-anuntul-presedintelui-nicusor-dan-3877929",
           "https://www.zdg.md/stiri/update-acelasi-pilot-roman-a-doborat-ambele-drone-care-au-survolat-spatiul-aerian-roman-in-ultimele-doua-zile/",
           "https://www.observatorulph.ro/national/2794551-a-doua-drona-doborata-in-spatiul-aerian-al-romaniei-in-mai-putin-de-24-de-ore",
-          "https://ziare.com/tehnologie/avioane-f-16-drone-rusesti-2026186"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "17309c5b4ed0748a2e5c",
-        "date": "2026-07-24",
-        "time": "2026-07-24T05:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "O nouă alertă în Marea Neagră . Navă avariată lângă Sfântu Gheorghe",
-        "article_count": 3,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "O nouă alertă în Marea Neagră . Navă avariată lângă Sfântu Gheorghe",
-          "Nicuşor Dan : O nouă dronă - doborâtă la 10 kilometri vest de Sfântu Gheorghe - Radio Iaşi – Cel mai ascultat radio regional",
-          "Căutările resturilor de dronă din zona Sfântu Gheorghe au fost oprite , anunță MApN . Acestea vor fi reluate duminică"
-        ],
-        "urls": [
+          "https://ziare.com/tehnologie/avioane-f-16-drone-rusesti-2026186",
           "https://hotnews.ro/nava-comerciala-marea-neagra-christiana-b-sfantu-gheorghe-drona-marine-mina-2308161",
           "https://www.radioiasi.ro/stiri/prim-plan/nicusor-dan-o-noua-drona-doborata-la-10-kilometri-vest-de-sfantu-gheorghe/",
-          "https://www.digi24.ro/stiri/actualitate/cautarile-resturilor-de-drona-din-zona-sfantu-gheorghe-au-fost-oprite-anunta-mapn-acestea-vor-fi-reluate-duminica-3878487"
+          "https://www.digi24.ro/stiri/actualitate/cautarile-resturilor-de-drona-din-zona-sfantu-gheorghe-au-fost-oprite-anunta-mapn-acestea-vor-fi-reluate-duminica-3878487",
+          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
+          "https://www.radioconstanta.ro/2026/07/24/resturi-din-drona-doborata-si-racheta-interceptoare-identificate-in-judetul-buzau/",
+          "https://www.dcnews.ro/parchetul-confirma-drona-doborata-in-buzau-era-de-tip-shared-geran-2-este-munitie-ratacitoare-proiectata-in-iran_1071662.html",
+          "https://www.romania-actualitati.ro/stiri/romania/resturi-din-drona-doborata-langa-padina-au-fost-identificate-in-judetele-buzau-si-braila-id231952.html",
+          "https://www.ziarulnational.md/bogdan-chirieac-avertisment-dur-dupa-drona-doborata-la-buzau-romania-tot-mai-aproape-de-un-conflict-major/",
+          "https://opiniabuzau.ro/foto-ziua-in-care-romania-a-doborat-prima-drona-filmul-evenimentelor-de-la-padina/",
+          "https://www.mesagerul.ro/cluj/o-noua-alerta-la-granita-e-deja-a-doua-drona-doborata-in-doar-24-de-ore-de-pilotii-romani-la-o-zi-dupa-incidentul-din-buzau-de-ieri-dimineata__59138/",
+          "https://ziare.com/drona-doborata-delta/sfantu-gheorghe-avion-f-16-2026176",
+          "https://www.radioiasi.ro/stiri/national/resturi-din-drona-doborata-langa-padina-au-fost-identificate-in-judetele-buzau-si-braila/",
+          "https://www.europafm.ro/drona-doborata-in-judetul-buzau-au-fost-incheiate-cercetarile-in-teren/"
         ],
         "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "08d94b1f9178ef8d2dbe",
-        "date": "2026-07-21",
-        "time": "2026-07-21T17:30:00+00:00",
-        "category": "explosion",
-        "severity": "high",
-        "representative_title": "Explozie pe un petrolier în Marea Neagră , în apropiere de Sfântu Gheorghe . „ Nava a fost lovită - Vremea noua",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Explozie pe un petrolier în Marea Neagră , în apropiere de Sfântu Gheorghe . „ Nava a fost lovită - Vremea noua"
-        ],
-        "urls": [
-          "https://vremeanoua.ro/explozie-pe-un-petrolier-in-marea-neagra-in-apropiere-de-sfantu-gheorghe-nava-a-fost-lovita/"
-        ],
-        "risk_score_input": 1.43,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },
@@ -411,18 +261,20 @@
         "category": "explosion",
         "severity": "high",
         "representative_title": "Nou incident de securitate în apropierea apelor teritoriale ale României : O navă încărcată cu GPL , care s - ar fi îndreptat spre Ucraina , a fost atacată de o dronă marină",
-        "article_count": 2,
+        "article_count": 3,
         "source_count": 1,
         "sources": [
           "GDELT_DOC"
         ],
         "titles": [
           "Nou incident de securitate în apropierea apelor teritoriale ale României : O navă încărcată cu GPL , care s - ar fi îndreptat spre Ucraina , a fost atacată de o dronă marină",
-          "Explozie , foc și ancore aruncate în plină noapte : cum a supraviețuit echipajul petrolierului „ Gas Lisbon unui posibil atac cu dronă la granița maritimă a României – Ziua Veche"
+          "Explozie , foc și ancore aruncate în plină noapte : cum a supraviețuit echipajul petrolierului „ Gas Lisbon unui posibil atac cu dronă la granița maritimă a României – Ziua Veche",
+          "Explozie pe un petrolier în Marea Neagră , în apropiere de Sfântu Gheorghe . „ Nava a fost lovită - Vremea noua"
         ],
         "urls": [
           "https://cursdeguvernare.ro/explozie-nava-gpl-marea-neagra-atac-drone-incident-securitate.html",
-          "https://www.ziuaveche.ro/actualitate-interna/investigatii/explozie-foc-si-ancore-aruncate-in-plina-noapte-cum-a-supravietuit-echipajul-petrolierului-gas-lisbon-unui-posibil-atac-cu-drona-la-granita-maritima-a-romaniei-349455.html"
+          "https://www.ziuaveche.ro/actualitate-interna/investigatii/explozie-foc-si-ancore-aruncate-in-plina-noapte-cum-a-supravietuit-echipajul-petrolierului-gas-lisbon-unui-posibil-atac-cu-drona-la-granita-maritima-a-romaniei-349455.html",
+          "https://vremeanoua.ro/explozie-pe-un-petrolier-in-marea-neagra-in-apropiere-de-sfantu-gheorghe-nava-a-fost-lovita/"
         ],
         "risk_score_input": 1.43,
         "source_file": "gdelt_crossborder.geojson",

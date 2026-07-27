@@ -845,12 +845,38 @@ def cluster_geo_point(feature):
         return None
 
 
+
+def incident_haversine_km(lat1, lon1, lat2, lon2):
+    """
+    Great-circle distance in kilometres.
+    Internal helper for incident cluster reconciliation only.
+    """
+    import math
+
+    radius_km = 6371.0088
+
+    phi1 = math.radians(float(lat1))
+    phi2 = math.radians(float(lat2))
+    dphi = math.radians(float(lat2) - float(lat1))
+    dlambda = math.radians(float(lon2) - float(lon1))
+
+    a = (
+        math.sin(dphi / 2.0) ** 2
+        + math.cos(phi1)
+        * math.cos(phi2)
+        * math.sin(dlambda / 2.0) ** 2
+    )
+
+    c = 2.0 * math.atan2(math.sqrt(a), math.sqrt(1.0 - a))
+    return radius_km * c
+
+
 def cluster_geo_distance_km(feature_a, feature_b):
     a = cluster_geo_point(feature_a)
     b = cluster_geo_point(feature_b)
     if not a or not b:
         return None
-    return haversine_km(a[0], a[1], b[0], b[1])
+    return incident_haversine_km(a[0], a[1], b[0], b[1])
 
 
 def cluster_hard_conflict(feature_a, feature_b):
@@ -2359,7 +2385,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
 

@@ -161,6 +161,12 @@ TARGET_COUNTRY_TERMS = {
 
 INCIDENT_RESOLUTION_VERSION = "generic_v1"
 
+INCIDENT_RECONCILIATION_VERSION = "cluster_v1"
+CLUSTER_RECONCILIATION_THRESHOLD = 5.4
+CLUSTER_FOLLOWUP_THRESHOLD = 4.7
+CLUSTER_GEO_CONFLICT_KM = 180.0
+CLUSTER_GEO_STRONG_KM = 35.0
+
 INCIDENT_TIME_WINDOWS_HOURS = {
     "drone": 30.0,
     "drone_airspace": 30.0,
@@ -743,6 +749,253 @@ def semantic_similarity(text_a, text_b):
 
 
 
+
+def cluster_evidence_text(feature):
+    props = feature.get("properties") or {}
+    parts = [
+        str(props.get("title") or props.get("name") or ""),
+        str(props.get("summary") or props.get("description") or ""),
+        str(props.get("url") or ""),
+    ]
+    for key in ("risk_titles", "titles", "risk_urls", "urls"):
+        values = props.get(key) or []
+        if isinstance(values, list):
+            parts.extend(str(v or "") for v in values)
+    return " ".join(parts)
+
+
+def cluster_sequence_signature(feature):
+    text = cluster_evidence_text(feature)
+    found = set()
+    for key, terms in GENERIC_SEQUENCE_TERMS.items():
+        if contains_any(text, terms):
+            found.add(key)
+    return found
+
+
+def cluster_subtype_signature(feature):
+    text = cluster_evidence_text(feature)
+    found = set()
+    for subtype, terms in GENERIC_SUBTYPE_PATTERNS.items():
+        if contains_any(text, terms):
+            found.add(subtype)
+    found.add(incident_category_family(feature))
+    return found
+
+
+def cluster_asset_tokens(feature):
+    props = feature.get("properties") or {}
+    text = cluster_evidence_text(feature)
+    normalized = normalize_text(text)
+    tokens = set()
+
+    for key in [
+        "asset", "facility", "target", "operator", "organization",
+        "ship", "vessel", "airport", "station", "plant", "company",
+    ]:
+        value = props.get(key)
+        if value:
+            tokens.add(normalize_text(value))
+
+    for match in re.findall(r'["„“\']([^"„“\']{3,80})["„“\']', text):
+        value = normalize_text(match)
+        if value:
+            tokens.add(value)
+
+    stop = {
+        "romania", "romanian", "drone", "drones", "attack",
+        "incident", "security", "military", "explosion", "black",
+        "marea", "neagra", "spatiul", "aerian", "russian",
+        "russia", "ukraine", "ucraina", "border", "frontiera",
+    }
+
+    for raw in re.findall(r"[A-Za-zÀ-ž0-9_-]{5,}", normalized):
+        token = raw.strip("_-")
+        if not token or token in stop:
+            continue
+        if "-" in raw or "_" in raw or any(ch.isdigit() for ch in raw):
+            tokens.add(token)
+
+    words = re.findall(r"[\wÀ-ž-]+", normalized, flags=re.UNICODE)
+    asset_cues = {
+        "tanker", "petrolier", "vessel", "ship", "nava", "navă",
+        "airport", "aeroport", "plant", "centrala", "registry",
+        "registru", "station", "gara",
+    }
+
+    for i, word in enumerate(words[:-1]):
+        if word in asset_cues:
+            candidate = " ".join(words[i:i+3]).strip()
+            if len(candidate) >= 8:
+                tokens.add(candidate)
+
+    return tokens
+
+
+def cluster_geo_point(feature):
+    geom = feature.get("geometry") or {}
+    if geom.get("type") != "Point":
+        return None
+    coords = geom.get("coordinates") or []
+    if len(coords) < 2:
+        return None
+    try:
+        return float(coords[1]), float(coords[0])
+    except Exception:
+        return None
+
+
+def cluster_geo_distance_km(feature_a, feature_b):
+    a = cluster_geo_point(feature_a)
+    b = cluster_geo_point(feature_b)
+    if not a or not b:
+        return None
+    return haversine_km(a[0], a[1], b[0], b[1])
+
+
+def cluster_hard_conflict(feature_a, feature_b):
+    pa = feature_a.get("properties") or {}
+    pb = feature_b.get("properties") or {}
+
+    if norm_country(pa.get("country")) != norm_country(pb.get("country")):
+        return True
+
+    if incident_category_family(feature_a) != incident_category_family(feature_b):
+        return True
+
+    seq_a = cluster_sequence_signature(feature_a)
+    seq_b = cluster_sequence_signature(feature_b)
+    if seq_a and seq_b and not (seq_a & seq_b):
+        return True
+
+    distance = cluster_geo_distance_km(feature_a, feature_b)
+    if distance is not None and distance > CLUSTER_GEO_CONFLICT_KM:
+        if not (cluster_asset_tokens(feature_a) & cluster_asset_tokens(feature_b)):
+            return True
+
+    return False
+
+
+def cluster_reconciliation_score(feature_a, feature_b):
+    if cluster_hard_conflict(feature_a, feature_b):
+        return -999.0
+
+    ta = risk_event_time(feature_a)
+    tb = risk_event_time(feature_b)
+    if not ta or not tb:
+        return -999.0
+
+    hours = abs((ta - tb).total_seconds()) / 3600.0
+    max_window = max(
+        incident_time_window_hours(feature_a),
+        incident_time_window_hours(feature_b),
+    )
+
+    if (
+        is_generic_followup(feature_a)
+        or is_generic_followup(feature_b)
+        or likely_same_named_incident(feature_a, feature_b)
+    ):
+        max_window = max(max_window, 120.0)
+
+    if hours > max_window:
+        return -999.0
+
+    score = 0.0
+
+    if hours <= 3:
+        score += 2.6
+    elif hours <= 12:
+        score += 2.0
+    elif hours <= 24:
+        score += 1.4
+    elif hours <= 48:
+        score += 0.8
+    else:
+        score += 0.3
+
+    subtype_overlap = cluster_subtype_signature(feature_a) & cluster_subtype_signature(feature_b)
+    if subtype_overlap:
+        score += min(3.0, 1.4 + 0.6 * len(subtype_overlap))
+
+    asset_overlap = cluster_asset_tokens(feature_a) & cluster_asset_tokens(feature_b)
+    if asset_overlap:
+        score += min(4.0, 2.5 + 0.4 * len(asset_overlap))
+
+    seq_a = cluster_sequence_signature(feature_a)
+    seq_b = cluster_sequence_signature(feature_b)
+    if seq_a and seq_b and (seq_a & seq_b):
+        score += 3.0
+
+    distance = cluster_geo_distance_km(feature_a, feature_b)
+    if distance is not None:
+        if distance <= CLUSTER_GEO_STRONG_KM:
+            score += 2.2
+        elif distance <= 80:
+            score += 1.0
+        elif distance <= CLUSTER_GEO_CONFLICT_KM:
+            score += 0.2
+
+    sim = semantic_similarity(
+        cluster_evidence_text(feature_a),
+        cluster_evidence_text(feature_b),
+    )
+    score += min(2.5, sim * 3.5)
+
+    if likely_same_named_incident(feature_a, feature_b):
+        score += 2.5
+
+    if is_generic_followup(feature_a) or is_generic_followup(feature_b):
+        score += 0.6
+
+    return score
+
+
+def reconcile_incident_clusters(clusters):
+    if len(clusters) < 2:
+        return clusters
+
+    current = list(clusters)
+    changed = True
+
+    while changed:
+        changed = False
+        best_pair = None
+        best_score = -999.0
+
+        for i in range(len(current)):
+            for j in range(i + 1, len(current)):
+                a = current[i]
+                b = current[j]
+                score = cluster_reconciliation_score(a, b)
+
+                threshold = CLUSTER_RECONCILIATION_THRESHOLD
+                if (
+                    is_generic_followup(a)
+                    or is_generic_followup(b)
+                    or likely_same_named_incident(a, b)
+                ):
+                    threshold = CLUSTER_FOLLOWUP_THRESHOLD
+
+                if score >= threshold and score > best_score:
+                    best_score = score
+                    best_pair = (i, j)
+
+        if best_pair is None:
+            break
+
+        i, j = best_pair
+        merged = merge_risk_incident(current[i], current[j])
+
+        current = [
+            merged if k == i else item
+            for k, item in enumerate(current)
+            if k != j
+        ]
+        changed = True
+
+    return current
+
 def incident_category_family(feature):
     props = feature.get("properties") or {}
     category = str(props.get("incident_type") or props.get("category") or "unknown").lower()
@@ -1139,38 +1392,75 @@ def merge_risk_incident(primary, incoming):
 
 
 
+
 def cluster_risk_incidents(features):
-    """Generic ARTICLE -> INCIDENT/FOLLOW-UP resolver; return schema unchanged."""
-    clusters, deferred = [], []
-    ordered = sorted(features, key=lambda f: risk_event_time(f) or datetime.min.replace(tzinfo=timezone.utc))
+    """
+    ARTICLE -> FIRST-PASS INCIDENT CLUSTER
+            -> FOLLOW-UP ATTACHMENT
+            -> CLUSTER-TO-CLUSTER RECONCILIATION
+
+    Return type and downstream JSON contract remain unchanged.
+    """
+    clusters = []
+    deferred = []
+
+    ordered = sorted(
+        features,
+        key=lambda f: risk_event_time(f)
+        or datetime.min.replace(tzinfo=timezone.utc),
+    )
+
     for feature in ordered:
         props = feature.setdefault("properties", {})
         props["article_count"] = int(props.get("article_count") or 1)
-        props["risk_sources"] = list(props.get("sources") or ([props.get("source")] if props.get("source") else []))
-        props["risk_urls"] = list(props.get("urls") or ([props.get("url")] if props.get("url") else []))
+        props["risk_sources"] = list(
+            props.get("sources")
+            or ([props.get("source")] if props.get("source") else [])
+        )
+        props["risk_urls"] = list(
+            props.get("urls")
+            or ([props.get("url")] if props.get("url") else [])
+        )
         props["risk_titles"] = [props.get("title")] if props.get("title") else []
+
         if generic_is_non_primary_article(feature):
             deferred.append(feature)
             continue
-        best_index, best_score = None, -999.0
+
+        best_index = None
+        best_score = -999.0
+
         for index, existing in enumerate(clusters):
             score = incident_pair_score(existing, feature)
             if score > best_score:
-                best_index, best_score = index, score
+                best_score = score
+                best_index = index
+
         if best_index is not None and best_score >= 4.2:
-            clusters[best_index] = merge_risk_incident(clusters[best_index], feature)
+            clusters[best_index] = merge_risk_incident(
+                clusters[best_index],
+                feature,
+            )
         else:
             clusters.append(feature)
+
     for feature in deferred:
-        best_index, best_score = None, -999.0
+        best_index = None
+        best_score = -999.0
+
         for index, existing in enumerate(clusters):
             score = incident_pair_score(existing, feature)
             if score > best_score:
-                best_index, best_score = index, score
-        if best_index is not None and best_score >= 3.6:
-            clusters[best_index] = merge_risk_incident(clusters[best_index], feature)
-    return clusters
+                best_score = score
+                best_index = index
 
+        if best_index is not None and best_score >= 3.6:
+            clusters[best_index] = merge_risk_incident(
+                clusters[best_index],
+                feature,
+            )
+
+    return reconcile_incident_clusters(clusters)
 
 
 def load_validated_security_events(days=7):
@@ -2069,5 +2359,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 

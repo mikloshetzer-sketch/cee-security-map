@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-07-28T01:57:34.229931+00:00",
+  "generated_utc": "2026-07-28T08:28:27.013863+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 6,
-    "article_count": 80,
-    "source_count": 10
+    "incident_count": 5,
+    "article_count": 75,
+    "source_count": 8
   },
   "country_summary": {
     "Czech Republic": {
@@ -24,11 +24,11 @@
       "category_counts": {}
     },
     "Romania": {
-      "incident_count": 5,
-      "article_count": 79,
-      "source_count": 9,
+      "incident_count": 4,
+      "article_count": 74,
+      "source_count": 7,
       "category_counts": {
-        "drone": 3,
+        "drone": 2,
         "explosion": 2
       }
     },
@@ -97,12 +97,11 @@
         "category": "drone",
         "severity": "high",
         "representative_title": "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
-        "article_count": 40,
-        "source_count": 3,
+        "article_count": 39,
+        "source_count": 2,
         "sources": [
           "GDELT_DOC",
-          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584",
-          "HotNews"
+          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584"
         ],
         "titles": [
           "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
@@ -132,8 +131,6 @@
           "https://www.forbes.ro/romania-a-doborat-a-treia-drona-in-trei-zile-locuitorii-din-nordul-judetului-tulcea-au-primit-ro-alert-513706",
           "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663",
           "https://ziarulunirea.ro/mesajul-transmis-de-nato-dupa-ce-romania-a-doborat-a-treia-drona-in-trei-zile-alianta-este-pregatita-sa-reactioneze-1004349/",
-          "https://hotnews.ro/radu-miruta-nu-exista-dubiu-procurorul-de-caz-a-confirmat-ca-drona-de-vineri-de-la-buzau-e-de-provenienta-ruseasca-2310716",
-          "https://hotnews.ro/ambasadorul-rusiei-ameninta-romania-ar-insemna-implicarea-directa-a-romaniei-in-actiuni-de-lupta-pe-teritoriul-ucrainei-2310617",
           "https://agerpres.ro/politic/2026/07/27/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe---mesaj-de-solidaritate-cu-romania--1579719",
           "https://www.stiripesurse.ro/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe-mesaj-de-solidaritate-cu-romania_3907155",
           "https://financiarul.ro/politica/trei-drone-rusesti-doborate-in-24-26-iulie-iar-romania-reactioneaza-ferm/",
@@ -255,53 +252,26 @@
         "actual_incident_gate": true
       },
       {
-        "cluster_id": "26e407a38b0d207d8eea",
+        "cluster_id": "bd65db3aab8be895c618",
         "date": "2026-07-21",
-        "time": "2026-07-21T07:45:00+00:00",
+        "time": "2026-07-21T14:30:00+00:00",
         "category": "explosion",
         "severity": "high",
-        "representative_title": "Nou incident de securitate în apropierea apelor teritoriale ale României : O navă încărcată cu GPL , care s - ar fi îndreptat spre Ucraina , a fost atacată de o dronă marină",
-        "article_count": 3,
+        "representative_title": "Explozie , foc și ancore aruncate în plină noapte : cum a supraviețuit echipajul petrolierului „ Gas Lisbon unui posibil atac cu dronă la granița maritimă a României – Ziua Veche",
+        "article_count": 2,
         "source_count": 1,
         "sources": [
           "GDELT_DOC"
         ],
         "titles": [
-          "Nou incident de securitate în apropierea apelor teritoriale ale României : O navă încărcată cu GPL , care s - ar fi îndreptat spre Ucraina , a fost atacată de o dronă marină",
           "Explozie , foc și ancore aruncate în plină noapte : cum a supraviețuit echipajul petrolierului „ Gas Lisbon unui posibil atac cu dronă la granița maritimă a României – Ziua Veche",
           "Explozie pe un petrolier în Marea Neagră , în apropiere de Sfântu Gheorghe . „ Nava a fost lovită - Vremea noua"
         ],
         "urls": [
-          "https://cursdeguvernare.ro/explozie-nava-gpl-marea-neagra-atac-drone-incident-securitate.html",
           "https://www.ziuaveche.ro/actualitate-interna/investigatii/explozie-foc-si-ancore-aruncate-in-plina-noapte-cum-a-supravietuit-echipajul-petrolierului-gas-lisbon-unui-posibil-atac-cu-drona-la-granita-maritima-a-romaniei-349455.html",
           "https://vremeanoua.ro/explozie-pe-un-petrolier-in-marea-neagra-in-apropiere-de-sfantu-gheorghe-nava-a-fost-lovita/"
         ],
         "risk_score_input": 1.43,
-        "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "a4f48806914494c7ae73",
-        "date": "2026-07-21",
-        "time": "2026-07-21T05:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Alertă în România din cauza dronelor rusești . Două aeronave italiene și două F - 16 au decolat de la Mihail Kogălniceanu",
-        "article_count": 3,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Alertă în România din cauza dronelor rusești . Două aeronave italiene și două F - 16 au decolat de la Mihail Kogălniceanu",
-          "Drone detectate lângă frontiera României cu Ucraina . Armata a ridicat avioane de luptă pentru monitorizare"
-        ],
-        "urls": [
-          "https://www.romaniatv.net/alerta-in-romania-din-cauza-dronelor-rusesti-doua-aeronave-italiene-si-doua-f-16-au-decolat-de-la-mihail-kogalniceanu_9707536.html",
-          "https://www.ziarulprofit.ro/alerta-in-romania-din-cauza-dronelor-rusesti-doua-aeronave-italiene-si-doua-f-16-au-decolat-de-la-mihail-kogalniceanu/",
-          "https://stirileprotv.ro/stiri/actualitate/alerta-aeriana-in-romania-dupa-detectarea-unor-drone-la-granita-armata-a-ridicat-avioane-de-lupta-pentru-monitorizare.html"
-        ],
-        "risk_score_input": 1.375,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       }

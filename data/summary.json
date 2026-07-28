@@ -1,122 +1,27 @@
 {
-  "generated_utc": "2026-07-27T20:22:01Z",
+  "generated_utc": "2026-07-28T01:54:04Z",
   "headline": "Közép–Kelet Európa biztonsági helyzet – napi kivonat",
   "bullets": [
-    "Helyi források alapján az elmúlt 24 órában 1 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Romania: 1.",
-    "Az infrastruktúra-közelségi modul 2 friss kapcsolatot azonosított események és kritikus objektumok között; ebből 0 magas vagy kritikus szintű.",
-    "MEDIUM infrastruktúra-jelzés: Bucharest Henri Coandă International Airport (Romania) – 16.2 km-re ettől: Măsuri după doborârea dronelor: ambasadorul român la Moscova a fost chemat în țară; un angajat al ambasadei ruse - declarat indezirabil.",
-    "WATCH infrastruktúra-jelzés: Petrobrazi Refinery (Romania) – 47.3 km-re ettől: Măsuri după doborârea dronelor: ambasadorul român la Moscova a fost chemat în țară; un angajat al ambasadei ruse - declarat indezirabil.",
-    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 793.57; 7 napos változás: +7427%).",
-    "Trend: emelkedő (+1674%) az előző 7 naphoz képest.",
-    "Forráskép: GDELT 0, GDELT linked 2870, GDELT DOC 3012, direkt feed 351, USGS 0, GDACS 2.",
+    "Legerősebb góc: Giurgiu, Romania 🔺 (rácspont 44.25, 26.25; score 828.09; 7 napos változás: +5443%).",
+    "Trend: emelkedő (+1379%) az előző 7 naphoz képest.",
+    "Forráskép: GDELT 0, GDELT linked 2612, GDELT DOC 3099, direkt feed 352, USGS 0, GDACS 2.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "alert": {
     "level": "high",
     "title": "Emelkedő feszültség",
-    "text": "Erősödő hotspot: Giurgiu, Romania (+7427%)."
+    "text": "Erősödő hotspot: Giurgiu, Romania (+5443%)."
   },
   "stats": {
-    "score_last7": 2954.355,
-    "score_prev7": 166.493,
-    "change_pct": 1674.46
+    "score_last7": 2960.008,
+    "score_prev7": 200.096,
+    "change_pct": 1379.3
   },
   "rss_count": 200,
   "local_infrastructure": {
-    "last_24h_local_events": 1,
-    "last_24h_proximity_matches": 2,
-    "top_proximity": [
-      {
-        "id": "eba4cb83e0c46419",
-        "level": "medium",
-        "score": 54.11,
-        "distance_km": 16.18,
-        "event": {
-          "id": "cdada6ed04003b8b",
-          "title": "Măsuri după doborârea dronelor: ambasadorul român la Moscova a fost chemat în țară; un angajat al ambasadei ruse - declarat indezirabil",
-          "category": "drone",
-          "incident_type": "drone_airspace",
-          "source": "Digi24",
-          "source_count": 1,
-          "sources": [
-            "Digi24"
-          ],
-          "time": "Mon, 27 Jul 2026 15:44:22 +0300",
-          "url": "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
-          "urls": [
-            "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
-            "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
-          ],
-          "lat": 44.426,
-          "lon": 26.102,
-          "location_quality": "city",
-          "place": "bucurești",
-          "geolocation_method": "article_city",
-          "geolocation_source_count": 1,
-          "geolocation_evidence_count": 2,
-          "geolocation_negation_filter": true,
-          "source_file": "local_events.geojson"
-        },
-        "infrastructure": {
-          "id": "ro-transport-henri-coanda-airport",
-          "name": "Bucharest Henri Coandă International Airport",
-          "country": "Romania",
-          "city": "Bucharest",
-          "category": "transport",
-          "subtype": "international_airport",
-          "criticality": 8.0,
-          "operator": "Bucharest Airports",
-          "lat": 44.571,
-          "lon": 26.085,
-          "source_file": "critical_infrastructure.json"
-        }
-      },
-      {
-        "id": "6029d6c299c09583",
-        "level": "watch",
-        "score": 4.9,
-        "distance_km": 47.28,
-        "event": {
-          "id": "cdada6ed04003b8b",
-          "title": "Măsuri după doborârea dronelor: ambasadorul român la Moscova a fost chemat în țară; un angajat al ambasadei ruse - declarat indezirabil",
-          "category": "drone",
-          "incident_type": "drone_airspace",
-          "source": "Digi24",
-          "source_count": 1,
-          "sources": [
-            "Digi24"
-          ],
-          "time": "Mon, 27 Jul 2026 15:44:22 +0300",
-          "url": "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
-          "urls": [
-            "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
-            "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477"
-          ],
-          "lat": 44.426,
-          "lon": 26.102,
-          "location_quality": "city",
-          "place": "bucurești",
-          "geolocation_method": "article_city",
-          "geolocation_source_count": 1,
-          "geolocation_evidence_count": 2,
-          "geolocation_negation_filter": true,
-          "source_file": "local_events.geojson"
-        },
-        "infrastructure": {
-          "id": "ro-energy-petrobrazi-refinery",
-          "name": "Petrobrazi Refinery",
-          "country": "Romania",
-          "city": "Brazi",
-          "category": "energy",
-          "subtype": "oil_refinery",
-          "criticality": 9.0,
-          "operator": "OMV Petrom",
-          "lat": 44.848,
-          "lon": 26.029,
-          "source_file": "critical_infrastructure.json"
-        }
-      }
-    ]
+    "last_24h_local_events": 0,
+    "last_24h_proximity_matches": 0,
+    "top_proximity": []
   }
 }

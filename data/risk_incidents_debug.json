@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-07-27T20:25:23.377984+00:00",
+  "generated_utc": "2026-07-28T01:57:34.229931+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 8,
-    "article_count": 81,
-    "source_count": 17
+    "incident_count": 6,
+    "article_count": 80,
+    "source_count": 10
   },
   "country_summary": {
     "Czech Republic": {
@@ -24,12 +24,11 @@
       "category_counts": {}
     },
     "Romania": {
-      "incident_count": 7,
-      "article_count": 80,
-      "source_count": 16,
+      "incident_count": 5,
+      "article_count": 79,
+      "source_count": 9,
       "category_counts": {
-        "cyber": 1,
-        "drone": 4,
+        "drone": 3,
         "explosion": 2
       }
     },
@@ -92,62 +91,24 @@
     "Hungary": [],
     "Romania": [
       {
-        "cluster_id": "a27a431ccee663104b71",
-        "date": "2026-07-27",
-        "time": "2026-07-27T12:44:22+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
-        "article_count": 7,
-        "source_count": 3,
-        "sources": [
-          "Digi24",
-          "GDELT_DOC",
-          "HotNews"
-        ],
-        "titles": [
-          "Un fost ministru bulgar critică politica de achiziții a Sofiei: Românii au cumpărat F-16 la mâna a doua şi cu ele doboară acum dronele",
-          "Drone doborâte în România / Oana Ţoiu : Ministrul polonez de Externe - mesaj de solidaritate cu România",
-          "România , reacție fermă după dronele rusești doborâte",
-          "Romania Says It Shot Down 3rd Russian Drone in as Many Days",
-          "Radu Miruță : România a doborât trei drone rusești în trei zile . Ministrul explică de ce nu decolează mereu F - 16 și răspunde despre costurile interceptărilor",
-          "Măsuri după doborârea dronelor: ambasadorul român la Moscova a fost chemat în țară; un angajat al ambasadei ruse - declarat indezirabil",
-          "Oana Țoiu anunță că Polonia condamnă ferm incursiunile ilegale ale dronelor rusești în spațiul aerian al României"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/externe/un-fost-ministru-bulgar-critica-politica-de-achizitii-a-sofiei-romanii-au-cumparat-f-16-la-mana-a-doua-si-cu-ele-doboara-acum-dronele-3880491",
-          "https://www.stiripesurse.ro/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe-mesaj-de-solidaritate-cu-romania_3907155",
-          "https://financiarul.ro/politica/trei-drone-rusesti-doborate-in-24-26-iulie-iar-romania-reactioneaza-ferm/",
-          "https://www.theepochtimes.com/world/romania-says-it-shot-down-3rd-russian-drone-in-as-many-days-6067809",
-          "https://www.mediafax.ro/politic/radu-miruta-romania-a-doborat-trei-drone-rusesti-in-trei-zile-ministrul-explica-de-ce-nu-decoleaza-mereu-f-16-si-raspunde-despre-costurile-interceptarilor-23779881",
-          "https://www.digi24.ro/stiri/actualitate/primele-masuri-diplomatice-dupa-doborarea-celor-trei-drone-ambasadorul-roman-de-la-moscova-a-fost-chemat-in-tara-un-rus-e-indezirabil-3880477",
-          "https://hotnews.ro/radu-miruta-nu-exista-dubiu-procurorul-de-caz-a-confirmat-ca-drona-de-vineri-de-la-buzau-e-de-provenienta-ruseasca-2310716",
-          "https://hotnews.ro/ambasadorul-rusiei-ameninta-romania-ar-insemna-implicarea-directa-a-romaniei-in-actiuni-de-lupta-pe-teritoriul-ucrainei-2310617",
-          "https://www.mediafax.ro/politic/oana-toiu-anunta-ca-polonia-condamna-ferm-incursiunile-ilegale-ale-dronelor-rusesti-in-spatiul-aerian-al-romaniei-23779897"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "local_events.geojson",
-        "actual_incident_gate": true
-      },
-      {
         "cluster_id": "2553d3656b0990cfbfaf",
         "date": "2026-07-25",
         "time": "2026-07-25T11:00:00+00:00",
         "category": "drone",
         "severity": "high",
         "representative_title": "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
-        "article_count": 29,
-        "source_count": 2,
+        "article_count": 40,
+        "source_count": 3,
         "sources": [
           "GDELT_DOC",
-          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584"
+          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584",
+          "HotNews"
         ],
         "titles": [
           "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
           "MApN : Drona doborâtă sâmbătă , neutralizată în condiții de siguranță într - o zonă nepopulată",
           "Ministrul Apărării după doborârea dronelor - „ România a demonstrat un lucru simplu . Își apără teritoriul și reacționează ferm",
           "Căutările efectuate în Delta Dunării pentru identificarea resturilor de dronă și de rachetă interceptoare au fost întrerupte",
-          "Why did Romania shoot down another drone after an airspace violation ?",
           "Cât costă doborârea unei drone în spațiul aerian românesc . Declarațiile ministrului Radu Miruță : „ Am comandat tot ce este nevoie"
         ],
         "urls": [
@@ -155,22 +116,6 @@
           "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
           "https://www.ziuaconstanta.ro/stiri/actualitate/ministrul-apararii-dupa-doborarea-dronelor-romania-a-demonstrat-un-lucru-simplu-isi-apara-teritoriul-si-reactioneaza-ferm-947267.html",
           "https://www.ziuaconstanta.ro/stiri/actualitate/cautarile-efectuate-in-delta-dunarii-pentru-identificarea-resturilor-de-drona-si-de-racheta-interceptoare-au-fost-intrerupte-947273.html",
-          "https://news.az/news/why-did-romania-shoot-down-another-drone-after-an-airspace-violation",
-          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584",
-          "https://www.digi24.ro/stiri/actualitate/trei-drone-doborate-de-pilotii-romani-in-48-de-ore-expert-nato-trebuie-sa-suplimenteze-capabilitatile-in-romania-3879017",
-          "https://www.ziarulprofit.ro/nato-intervine-dupa-ce-romania-a-doborat-3-drone-in-48-de-ore-f-16-opera-sub-controlul-aliantei-suntem-pregatiti-sa-raspundem-24-7/",
-          "https://www.forbes.ro/romania-a-doborat-a-treia-drona-in-trei-zile-locuitorii-din-nordul-judetului-tulcea-au-primit-ro-alert-513706",
-          "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663",
-          "https://ziarulunirea.ro/mesajul-transmis-de-nato-dupa-ce-romania-a-doborat-a-treia-drona-in-trei-zile-alianta-este-pregatita-sa-reactioneze-1004349/",
-          "https://agerpres.ro/politic/2026/07/27/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe---mesaj-de-solidaritate-cu-romania--1579719",
-          "https://adevarul.ro/stiri-interne/evenimente/primul-mesaj-al-nato-dupa-ce-romania-a-doborat-a-2545805.html",
-          "https://www.romaniatv.net/maia-sandu-reactie-ferma-dupa-doborarea-celei-de-a-treia-drone-condamnam-incalcarile-sistematice-ale-spatiului-aerian-romanesc-de-catre-rusia-securitatea-romaniei-este-securitatea-republic_9717964.html",
-          "https://www.digi24.ro/stiri/actualitate/reactia-nato-pentru-digi24-dupa-doborarea-celor-trei-drone-pe-teritoriul-romaniei-3879027",
-          "https://www.ziarulprofit.ro/maia-sandu-reactie-ferma-dupa-doborarea-celei-de-a-treia-drone-condamnam-incalcarile-sistematice-ale-spatiului-aerian-romanesc-de-catre-rusia-securitatea-romaniei-este-securitatea-republic/",
-          "https://hotnews.ro/ce-stim-pana-acum-despre-dronele-doborate-de-armata-romana-noi-date-de-la-mapn-2309862",
-          "https://www.bzi.ro/ambasadorul-rusiei-convocat-de-urgenta-la-mae-dupa-a-treia-drona-doborata-in-spatiul-aerian-al-romaniei-5576290",
-          "https://www.forbes.ro/bilant-mapn-18-incursiuni-ale-dronelor-rusesti-in-spatiul-aerian-romanesc-doar-in-2026-513716",
-          "https://business24.ro/incursiuni-drone/bilant-mapn-incursiuni-drone-rusesti-spatiu-aerian-romania-1661716",
           "https://www.cancan.ro/cat-costa-doborarea-unei-drone-in-spatiul-aerian-romanesc-declaratiile-ministrului-radu-miruta-am-comandat-tot-ce-este-nevoie-21474964",
           "https://ziare.com/drona/mapn-cautare-drona-tulcea-delta-dunarii-2026234",
           "https://www.romaniatv.net/oana-toiu-dupa-ce-romania-a-doborat-doua-drone-in-24-de-ore-granitele-romaniei-nu-sunt-negociabile-despre-primul-aparat-de-zbor-pus-la-pamant-acelasi-tip-pe-care-rusia-i_9717265.html",
@@ -179,7 +124,35 @@
           "https://ampress.ro/oana-toiu-dupa-doborarea-celor-drone-in-48-de-ore-granitele-romaniei-nu-sunt-negociabile/",
           "https://www.realitatea.net/stiri/politica/radu-miruta-dupa-doborarea-celor-doua-drone-granitele-spatiul-aerian-si-suveranitatea-romaniei-nu-sunt-negociabile-zvhqnv",
           "https://www.ziarulnational.md/bruxelles-lauda-armata-romana-dupa-doborarea-a-doua-drone-in-24-de-ore-securitatea-romaniei-este-securitatea-europei/",
-          "https://www.ziarulprofit.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm/"
+          "https://www.ziarulprofit.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm/",
+          "https://news.az/news/why-did-romania-shoot-down-another-drone-after-an-airspace-violation",
+          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584",
+          "https://www.digi24.ro/stiri/actualitate/trei-drone-doborate-de-pilotii-romani-in-48-de-ore-expert-nato-trebuie-sa-suplimenteze-capabilitatile-in-romania-3879017",
+          "https://www.ziarulprofit.ro/nato-intervine-dupa-ce-romania-a-doborat-3-drone-in-48-de-ore-f-16-opera-sub-controlul-aliantei-suntem-pregatiti-sa-raspundem-24-7/",
+          "https://www.forbes.ro/romania-a-doborat-a-treia-drona-in-trei-zile-locuitorii-din-nordul-judetului-tulcea-au-primit-ro-alert-513706",
+          "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663",
+          "https://ziarulunirea.ro/mesajul-transmis-de-nato-dupa-ce-romania-a-doborat-a-treia-drona-in-trei-zile-alianta-este-pregatita-sa-reactioneze-1004349/",
+          "https://hotnews.ro/radu-miruta-nu-exista-dubiu-procurorul-de-caz-a-confirmat-ca-drona-de-vineri-de-la-buzau-e-de-provenienta-ruseasca-2310716",
+          "https://hotnews.ro/ambasadorul-rusiei-ameninta-romania-ar-insemna-implicarea-directa-a-romaniei-in-actiuni-de-lupta-pe-teritoriul-ucrainei-2310617",
+          "https://agerpres.ro/politic/2026/07/27/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe---mesaj-de-solidaritate-cu-romania--1579719",
+          "https://www.stiripesurse.ro/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe-mesaj-de-solidaritate-cu-romania_3907155",
+          "https://financiarul.ro/politica/trei-drone-rusesti-doborate-in-24-26-iulie-iar-romania-reactioneaza-ferm/",
+          "https://www.theepochtimes.com/world/romania-says-it-shot-down-3rd-russian-drone-in-as-many-days-6067809",
+          "https://www.mediafax.ro/politic/radu-miruta-romania-a-doborat-trei-drone-rusesti-in-trei-zile-ministrul-explica-de-ce-nu-decoleaza-mereu-f-16-si-raspunde-despre-costurile-interceptarilor-23779881",
+          "https://www.obiectiv.info/kelemen-hunor-dronele-care-au-incalcat-spa-iul-aerian-al-romaniei-trebuiau-doborate-inca-de-la-primele-incidente_119051.html",
+          "https://ziare.com/drone-doborate-romania/tace-simion-privinta-drone-doborate-armata-romana-2026615",
+          "https://www.libertatea.ro/stiri/drona-ruseasca-spatiu-aerian-romania-radu-miruta-originea-celorlalte-drone-inca-verificata-5830585",
+          "https://www.libertatea.ro/stiri/dronele-doborate-de-romania-maria-zaharova-acuza-masuri-neprietenoase-si-avertizeaza-cu-un-raspuns-cuvenit-5830522",
+          "https://adevarul.ro/politica/nicusor-dan-ii-trimite-la-washington-pe-2546090.html",
+          "https://adevarul.ro/stiri-interne/evenimente/primul-mesaj-al-nato-dupa-ce-romania-a-doborat-a-2545805.html",
+          "https://www.romaniatv.net/maia-sandu-reactie-ferma-dupa-doborarea-celei-de-a-treia-drone-condamnam-incalcarile-sistematice-ale-spatiului-aerian-romanesc-de-catre-rusia-securitatea-romaniei-este-securitatea-republic_9717964.html",
+          "https://www.digi24.ro/stiri/actualitate/reactia-nato-pentru-digi24-dupa-doborarea-celor-trei-drone-pe-teritoriul-romaniei-3879027",
+          "https://www.ziarulprofit.ro/maia-sandu-reactie-ferma-dupa-doborarea-celei-de-a-treia-drone-condamnam-incalcarile-sistematice-ale-spatiului-aerian-romanesc-de-catre-rusia-securitatea-romaniei-este-securitatea-republic/",
+          "https://hotnews.ro/ce-stim-pana-acum-despre-dronele-doborate-de-armata-romana-noi-date-de-la-mapn-2309862",
+          "https://www.bzi.ro/ambasadorul-rusiei-convocat-de-urgenta-la-mae-dupa-a-treia-drona-doborata-in-spatiul-aerian-al-romaniei-5576290",
+          "https://www.forbes.ro/bilant-mapn-18-incursiuni-ale-dronelor-rusesti-in-spatiul-aerian-romanesc-doar-in-2026-513716",
+          "https://business24.ro/incursiuni-drone/bilant-mapn-incursiuni-drone-rusesti-spatiu-aerian-romania-1661716",
+          "https://www.mediafax.ro/politic/oana-toiu-anunta-ca-polonia-condamna-ferm-incursiunile-ilegale-ale-dronelor-rusesti-in-spatiul-aerian-al-romaniei-23779897"
         ],
         "risk_score_input": 2.5,
         "source_file": "gdelt_crossborder.geojson",
@@ -255,6 +228,33 @@
         "actual_incident_gate": true
       },
       {
+        "cluster_id": "343363228ecaa7636046",
+        "date": "2026-07-22",
+        "time": "2026-07-22T00:00:00+00:00",
+        "category": "explosion",
+        "severity": "high",
+        "representative_title": "Reni, Odes'ka Oblast, Ukraine",
+        "article_count": 3,
+        "source_count": 3,
+        "sources": [
+          "https://www.romania-insider.com/romania-defense-minister-black-sea-attack-july-2026",
+          "https://www.winnipegfreepress.com/business/2026/07/23/a-sailor-dies-after-a-ukraine-bound-tanker-catches-fire-off-romania-as-officials-probe-war-link",
+          "https://english.pravda.ru/news/hotspots/167494-cargo-ship-explosion-romania-ukraine-route/"
+        ],
+        "titles": [
+          "Reni, Odes'ka Oblast, Ukraine",
+          "Romania"
+        ],
+        "urls": [
+          "https://www.romania-insider.com/romania-defense-minister-black-sea-attack-july-2026",
+          "https://www.winnipegfreepress.com/business/2026/07/23/a-sailor-dies-after-a-ukraine-bound-tanker-catches-fire-off-romania-as-officials-probe-war-link",
+          "https://english.pravda.ru/news/hotspots/167494-cargo-ship-explosion-romania-ukraine-route/"
+        ],
+        "risk_score_input": 1.43,
+        "source_file": "gdelt_linked.geojson",
+        "actual_incident_gate": true
+      },
+      {
         "cluster_id": "26e407a38b0d207d8eea",
         "date": "2026-07-21",
         "time": "2026-07-21T07:45:00+00:00",
@@ -303,63 +303,6 @@
         ],
         "risk_score_input": 1.375,
         "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "78d7e843193894530a00",
-        "date": "2026-07-21",
-        "time": "2026-07-21T00:00:00+00:00",
-        "category": "explosion",
-        "severity": "high",
-        "representative_title": "Reni, Odes'ka Oblast, Ukraine",
-        "article_count": 7,
-        "source_count": 7,
-        "sources": [
-          "https://www.romania-insider.com/gas-tanker-fire-black-sea-romania-july-2026",
-          "https://www.mediafax.ro/english/nicusor-dan-the-lpg-gas-lisbon-was-struck-outside-romanias-territorial-waters-23776186",
-          "https://www.stiripesurse.ro/romanian-naval-authority-says-gas-lisbon-fire-under-constant-monitoring-no-risk-to-coast_3905332",
-          "https://maritime-executive.com/article/lpg-tanker-on-fire-off-romania-after-apparent-russian-attack",
-          "https://www.romania-insider.com/romania-defense-minister-black-sea-attack-july-2026",
-          "https://www.winnipegfreepress.com/business/2026/07/23/a-sailor-dies-after-a-ukraine-bound-tanker-catches-fire-off-romania-as-officials-probe-war-link",
-          "https://english.pravda.ru/news/hotspots/167494-cargo-ship-explosion-romania-ukraine-route/"
-        ],
-        "titles": [
-          "Reni, Odes'ka Oblast, Ukraine",
-          "Romania"
-        ],
-        "urls": [
-          "https://www.romania-insider.com/gas-tanker-fire-black-sea-romania-july-2026",
-          "https://www.mediafax.ro/english/nicusor-dan-the-lpg-gas-lisbon-was-struck-outside-romanias-territorial-waters-23776186",
-          "https://www.stiripesurse.ro/romanian-naval-authority-says-gas-lisbon-fire-under-constant-monitoring-no-risk-to-coast_3905332",
-          "https://maritime-executive.com/article/lpg-tanker-on-fire-off-romania-after-apparent-russian-attack",
-          "https://www.romania-insider.com/romania-defense-minister-black-sea-attack-july-2026",
-          "https://www.winnipegfreepress.com/business/2026/07/23/a-sailor-dies-after-a-ukraine-bound-tanker-catches-fire-off-romania-as-officials-probe-war-link",
-          "https://english.pravda.ru/news/hotspots/167494-cargo-ship-explosion-romania-ukraine-route/"
-        ],
-        "risk_score_input": 1.43,
-        "source_file": "gdelt_linked.geojson",
-        "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "a6f1c742d5d37c2055c8",
-        "date": "2026-07-21",
-        "time": "2026-07-21T00:00:00+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "representative_title": "Bucharest, Bucuresti, Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://balkaninsight.com/2026/07/21/land-registry-cyberattack-exposes-holes-in-romanias-digital-defences/bi/"
-        ],
-        "titles": [
-          "Bucharest, Bucuresti, Romania"
-        ],
-        "urls": [
-          "https://balkaninsight.com/2026/07/21/land-registry-cyberattack-exposes-holes-in-romanias-digital-defences/bi/"
-        ],
-        "risk_score_input": 1.155,
-        "source_file": "gdelt_linked.geojson",
         "actual_incident_gate": true
       }
     ],

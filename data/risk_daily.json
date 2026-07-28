@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-07-28T08:28:27.015895+00:00",
+  "generated_utc": "2026-07-28T13:52:06.939814+00:00",
   "country_scores": {
     "Czech Republic": {
       "normalized": 0.794,
@@ -64,26 +64,25 @@
       }
     },
     "Romania": {
-      "normalized": 2.352,
-      "overall": "elevated",
+      "normalized": 1.788,
+      "overall": "normal",
       "confidence": "medium",
-      "confidence_value": 0.565,
+      "confidence_value": 0.58,
       "dimensions": {
-        "incident_pressure": 4.024,
-        "military_drone": 4.366,
+        "incident_pressure": 3.594,
+        "military_drone": 3.548,
         "cyber": 0.0,
         "infrastructure": 0.0,
         "crossborder": 0.0,
-        "trend": 2.714
+        "trend": 0.0
       },
       "drivers": [
         "biztonsági incidensnyomás",
-        "katonai és drónaktivitás",
-        "friss aktivitási trend"
+        "katonai és drónaktivitás"
       ],
       "local_event_count": 4,
-      "article_count": 74,
-      "source_count": 7,
+      "article_count": 77,
+      "source_count": 8,
       "infra_proximity_count": 0,
       "high_critical_infra_count": 0,
       "infrastructure_risk_source": "none",
@@ -98,22 +97,25 @@
       }
     },
     "Slovakia": {
-      "normalized": 0.0,
+      "normalized": 1.736,
       "overall": "normal",
       "confidence": "low",
-      "confidence_value": 0.2,
+      "confidence_value": 0.305,
       "dimensions": {
-        "incident_pressure": 0.0,
+        "incident_pressure": 2.453,
         "military_drone": 0.0,
         "cyber": 0.0,
         "infrastructure": 0.0,
         "crossborder": 0.0,
-        "trend": 0.0
+        "trend": 10.0
       },
-      "drivers": [],
-      "local_event_count": 0,
-      "article_count": 0,
-      "source_count": 0,
+      "drivers": [
+        "friss aktivitási trend",
+        "biztonsági incidensnyomás"
+      ],
+      "local_event_count": 1,
+      "article_count": 1,
+      "source_count": 1,
       "infra_proximity_count": 0,
       "high_critical_infra_count": 0,
       "infrastructure_risk_source": "none",
@@ -251,23 +253,42 @@
   "countries": [
     {
       "country": "Romania",
-      "overall": "elevated",
-      "overall_score": 2.352,
-      "normalized": 2.352,
+      "overall": "normal",
+      "overall_score": 1.788,
+      "normalized": 1.788,
       "confidence": "medium",
-      "confidence_value": 0.565,
+      "confidence_value": 0.58,
       "drivers": [
         "biztonsági incidensnyomás",
-        "katonai és drónaktivitás",
-        "friss aktivitási trend"
+        "katonai és drónaktivitás"
       ],
       "dimensions": {
-        "incident_pressure": 4.024,
-        "military_drone": 4.366,
+        "incident_pressure": 3.594,
+        "military_drone": 3.548,
         "cyber": 0.0,
         "infrastructure": 0.0,
         "crossborder": 0.0,
-        "trend": 2.714
+        "trend": 0.0
+      }
+    },
+    {
+      "country": "Slovakia",
+      "overall": "normal",
+      "overall_score": 1.736,
+      "normalized": 1.736,
+      "confidence": "low",
+      "confidence_value": 0.305,
+      "drivers": [
+        "friss aktivitási trend",
+        "biztonsági incidensnyomás"
+      ],
+      "dimensions": {
+        "incident_pressure": 2.453,
+        "military_drone": 0.0,
+        "cyber": 0.0,
+        "infrastructure": 0.0,
+        "crossborder": 0.0,
+        "trend": 10.0
       }
     },
     {
@@ -291,23 +312,6 @@
     },
     {
       "country": "Hungary",
-      "overall": "normal",
-      "overall_score": 0.0,
-      "normalized": 0.0,
-      "confidence": "low",
-      "confidence_value": 0.2,
-      "drivers": [],
-      "dimensions": {
-        "incident_pressure": 0.0,
-        "military_drone": 0.0,
-        "cyber": 0.0,
-        "infrastructure": 0.0,
-        "crossborder": 0.0,
-        "trend": 0.0
-      }
-    },
-    {
-      "country": "Slovakia",
       "overall": "normal",
       "overall_score": 0.0,
       "normalized": 0.0,
@@ -394,18 +398,18 @@
   ],
   "region": {
     "overall": "normal",
-    "overall_score": 0.393,
+    "overall_score": 0.54,
     "confidence": "low",
-    "confidence_value": 0.265,
+    "confidence_value": 0.28,
     "dimension_scores": {
-      "incident_pressure": 0.654,
-      "military_drone": 0.815,
+      "incident_pressure": 0.907,
+      "military_drone": 0.713,
       "cyber": 0.0,
       "infrastructure": 0.0,
       "crossborder": 0.0,
-      "trend": 0.339
+      "trend": 1.25
     },
-    "evidence_count": 5
+    "evidence_count": 6
   },
   "model": {
     "name": "cee_country_risk_v2",

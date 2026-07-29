@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-07-29T08:33:53.268607+00:00",
+  "generated_utc": "2026-07-29T14:03:37.432408+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
     "incident_count": 6,
-    "article_count": 76,
-    "source_count": 8
+    "article_count": 79,
+    "source_count": 10
   },
   "country_summary": {
     "Czech Republic": {
@@ -18,19 +18,17 @@
       }
     },
     "Hungary": {
-      "incident_count": 1,
-      "article_count": 1,
-      "source_count": 1,
-      "category_counts": {
-        "cyber": 1
-      }
+      "incident_count": 0,
+      "article_count": 0,
+      "source_count": 0,
+      "category_counts": {}
     },
     "Romania": {
-      "incident_count": 4,
-      "article_count": 74,
-      "source_count": 6,
+      "incident_count": 5,
+      "article_count": 78,
+      "source_count": 9,
       "category_counts": {
-        "drone": 3,
+        "drone": 4,
         "explosion": 1
       }
     },
@@ -90,48 +88,55 @@
         "actual_incident_gate": true
       }
     ],
-    "Hungary": [
-      {
-        "cluster_id": "afa4ad0c3b014dcc215a",
-        "date": "2026-07-29",
-        "time": "2026-07-29T08:03:00+00:00",
-        "category": "cyber",
-        "severity": "high",
-        "representative_title": "Ketyeg az óra: így tudnak felkészülni a magyar érintettek az AI-alapú kibertámadásokra",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "HVG"
-        ],
-        "titles": [
-          "Ketyeg az óra: így tudnak felkészülni a magyar érintettek az AI-alapú kibertámadásokra"
-        ],
-        "urls": [
-          "https://hvg.hu/tudomany/20260729_magyar-cegek-az-ai-alapu-kibertamadasok-felkeszules-ey-kutatas"
-        ],
-        "risk_score_input": 3.125,
-        "source_file": "local_events.geojson",
-        "actual_incident_gate": true
-      }
-    ],
+    "Hungary": [],
     "Romania": [
       {
-        "cluster_id": "4b8a9cd7c3ce16035fb5",
+        "cluster_id": "fdd848506922d4ab2e7a",
         "date": "2026-07-29",
-        "time": "2026-07-29T04:00:49+00:00",
+        "time": "2026-07-29T10:45:00+00:00",
         "category": "drone",
         "severity": "high",
-        "representative_title": "Aritmetica nu e vina Armatei Române. Da, e scump să dobori dronele cu rachete. Dar în SUA și Europa mințile cele mai strălucite se străduiesc să caute soluții / Ce au găsit pentru avioanele F-16",
-        "article_count": 1,
-        "source_count": 1,
+        "representative_title": "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
+        "article_count": 3,
+        "source_count": 2,
         "sources": [
-          "HotNews"
+          "GDELT_DOC",
+          "G4Media"
         ],
         "titles": [
-          "Aritmetica nu e vina Armatei Române. Da, e scump să dobori dronele cu rachete. Dar în SUA și Europa mințile cele mai strălucite se străduiesc să caute soluții / Ce au găsit pentru avioanele F-16"
+          "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
+          "Zaharova califică doborârea dronelor drept „ incidente regizate și amenință din nou România",
+          "Polonia avertizează cu privire la noua lege rusă care justifică intervenţiile în alte ţări / Ministrul polonez al Apărării: „În ultimele două săptămâni au fost interceptate trei avioane militare ruse în Marea Baltică și trei drone ruseşti au fost doborâte pe teritoriul României”"
         ],
         "urls": [
-          "https://hotnews.ro/aritmetica-nu-e-vina-armatei-romane-da-e-scump-sa-dobori-dronele-cu-rachete-dar-in-sua-si-europa-mintile-cele-mai-stralucite-se-straduiesc-sa-caute-solutii-ce-au-gasit-pentru-avioanele-f-16-2311499"
+          "https://ziare.com/drone-rusesti/granita-razboi-ucraina-f-16-ridicate-ro-alert-tulcea-mapn-2026906",
+          "https://news.yam.md/ro/story/48086962",
+          "https://www.g4media.ro/polonia-avertizeaza-cu-privire-la-noua-lege-rusa-care-justifica-interventiile-in-alte-tari-ministrul-polonez-al-apararii-in-ultimele-doua-saptamani-au-fost-interceptate-trei-avioane-milita.html"
+        ],
+        "risk_score_input": 3.125,
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
+      },
+      {
+        "cluster_id": "67f33e4427970d841ddc",
+        "date": "2026-07-29",
+        "time": "2026-07-29T09:20:39+00:00",
+        "category": "drone",
+        "severity": "high",
+        "representative_title": "Megrendezett volt a sorozatos romániai drónos légtérsértés az orosz külügyi szóvivő szerint",
+        "article_count": 2,
+        "source_count": 2,
+        "sources": [
+          "Telex",
+          "GDELT_DOC"
+        ],
+        "titles": [
+          "Megrendezett volt a sorozatos romániai drónos légtérsértés az orosz külügyi szóvivő szerint",
+          "RO - ALERT issued after group of drones detected near Romania river border with Ukraine"
+        ],
+        "urls": [
+          "https://telex.hu/transtelex/2026/07/29/oroszorszag-romania-zaharova-dronok",
+          "https://www.stiripesurse.ro/ro-alert-issued-after-group-of-drones-detected-near-romanias-river-border-with-ukraine_3907655"
         ],
         "risk_score_input": 3.125,
         "source_file": "local_events.geojson",

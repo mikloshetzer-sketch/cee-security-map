@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-07-29T14:03:37.432408+00:00",
+  "generated_utc": "2026-07-29T19:12:11.691270+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 6,
-    "article_count": 79,
+    "incident_count": 7,
+    "article_count": 83,
     "source_count": 10
   },
   "country_summary": {
@@ -25,8 +25,8 @@
     },
     "Romania": {
       "incident_count": 5,
-      "article_count": 78,
-      "source_count": 9,
+      "article_count": 81,
+      "source_count": 8,
       "category_counts": {
         "drone": 4,
         "explosion": 1
@@ -39,10 +39,12 @@
       "category_counts": {}
     },
     "Poland": {
-      "incident_count": 0,
-      "article_count": 0,
-      "source_count": 0,
-      "category_counts": {}
+      "incident_count": 1,
+      "article_count": 1,
+      "source_count": 1,
+      "category_counts": {
+        "cyber": 1
+      }
     },
     "Lithuania": {
       "incident_count": 0,
@@ -97,23 +99,28 @@
         "category": "drone",
         "severity": "high",
         "representative_title": "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
-        "article_count": 3,
-        "source_count": 2,
+        "article_count": 6,
+        "source_count": 1,
         "sources": [
-          "GDELT_DOC",
-          "G4Media"
+          "GDELT_DOC"
         ],
         "titles": [
           "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
           "Zaharova califică doborârea dronelor drept „ incidente regizate și amenință din nou România",
-          "Polonia avertizează cu privire la noua lege rusă care justifică intervenţiile în alte ţări / Ministrul polonez al Apărării: „În ultimele două săptămâni au fost interceptate trei avioane militare ruse în Marea Baltică și trei drone ruseşti au fost doborâte pe teritoriul României”"
+          "Doi piloți care au doborât drone în România și Lituania , înaintați în grad . Au fost recompensați și militarii din echipajele de sprijin",
+          "Militarii români care au doborât drone rusești în România și Lituania , înaintați în grad în mod excepțional",
+          "Militarii români care au doborât drone în Lituania și România , avansați în grad pentru apărarea spațiului aerian",
+          "Zece militari al Forțelor Aeriene Române , înaintați în grad după doborârea dronelor rusești în România și Lituania : România este mai sigură datorită lor"
         ],
         "urls": [
           "https://ziare.com/drone-rusesti/granita-razboi-ucraina-f-16-ridicate-ro-alert-tulcea-mapn-2026906",
           "https://news.yam.md/ro/story/48086962",
-          "https://www.g4media.ro/polonia-avertizeaza-cu-privire-la-noua-lege-rusa-care-justifica-interventiile-in-alte-tari-ministrul-polonez-al-apararii-in-ultimele-doua-saptamani-au-fost-interceptate-trei-avioane-milita.html"
+          "https://www.antena3.ro/actualitate/doi-piloti-care-au-doborat-drone-in-romania-si-lituania-inaintati-in-grad-au-fost-recompensati-si-militarii-din-echipajele-de-sprijin-797495.html",
+          "https://adevarul.ro/politica/militarii-romani-care-au-doborat-drone-rusesti-in-2546515.html",
+          "https://www.ziarulnational.md/militarii-romani-care-au-doborat-drone-in-lituania-si-romania-avansati-in-grad-pentru-apararea-spatiului-aerian/",
+          "https://www.caleaeuropeana.ro/zece-militari-al-fortelor-aeriene-romane-inaintati-in-grad-dupa-doborarea-dronelor-rusesti-in-romania-si-lituania-romania-este-mai-sigura-datorita-lor/"
         ],
-        "risk_score_input": 3.125,
+        "risk_score_input": 2.75,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },
@@ -138,7 +145,7 @@
           "https://telex.hu/transtelex/2026/07/29/oroszorszag-romania-zaharova-dronok",
           "https://www.stiripesurse.ro/ro-alert-issued-after-group-of-drones-detected-near-romanias-river-border-with-ukraine_3907655"
         ],
-        "risk_score_input": 3.125,
+        "risk_score_input": 2.75,
         "source_file": "local_events.geojson",
         "actual_incident_gate": true
       },
@@ -305,7 +312,30 @@
       }
     ],
     "Slovakia": [],
-    "Poland": [],
+    "Poland": [
+      {
+        "cluster_id": "d307d0059a9aaeb06a2e",
+        "date": "2026-07-29",
+        "time": "2026-07-29T00:00:00+00:00",
+        "category": "cyber",
+        "severity": "medium",
+        "representative_title": "Poland",
+        "article_count": 1,
+        "source_count": 1,
+        "sources": [
+          "https://www.theepochtimes.com/us/coordinated-cyberattack-hits-more-than-30-minnesota-water-systems-6068685"
+        ],
+        "titles": [
+          "Poland"
+        ],
+        "urls": [
+          "https://www.theepochtimes.com/us/coordinated-cyberattack-hits-more-than-30-minnesota-water-systems-6068685"
+        ],
+        "risk_score_input": 2.31,
+        "source_file": "gdelt_linked.geojson",
+        "actual_incident_gate": true
+      }
+    ],
     "Lithuania": [],
     "Latvia": [],
     "Estonia": []

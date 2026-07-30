@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-07-29T19:12:11.691270+00:00",
+  "generated_utc": "2026-07-30T01:41:10.301696+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
     "incident_count": 7,
     "article_count": 83,
-    "source_count": 10
+    "source_count": 9
   },
   "country_summary": {
     "Czech Republic": {
@@ -26,7 +26,7 @@
     "Romania": {
       "incident_count": 5,
       "article_count": 81,
-      "source_count": 8,
+      "source_count": 7,
       "category_counts": {
         "drone": 4,
         "explosion": 1
@@ -99,7 +99,7 @@
         "category": "drone",
         "severity": "high",
         "representative_title": "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
-        "article_count": 6,
+        "article_count": 7,
         "source_count": 1,
         "sources": [
           "GDELT_DOC"
@@ -110,7 +110,8 @@
           "Doi piloți care au doborât drone în România și Lituania , înaintați în grad . Au fost recompensați și militarii din echipajele de sprijin",
           "Militarii români care au doborât drone rusești în România și Lituania , înaintați în grad în mod excepțional",
           "Militarii români care au doborât drone în Lituania și România , avansați în grad pentru apărarea spațiului aerian",
-          "Zece militari al Forțelor Aeriene Române , înaintați în grad după doborârea dronelor rusești în România și Lituania : România este mai sigură datorită lor"
+          "Zece militari al Forțelor Aeriene Române , înaintați în grad după doborârea dronelor rusești în România și Lituania : România este mai sigură datorită lor",
+          "Terenul agricol de la Padina unde a fost doborâtă drona rusească , în aer !"
         ],
         "urls": [
           "https://ziare.com/drone-rusesti/granita-razboi-ucraina-f-16-ridicate-ro-alert-tulcea-mapn-2026906",
@@ -118,7 +119,8 @@
           "https://www.antena3.ro/actualitate/doi-piloti-care-au-doborat-drone-in-romania-si-lituania-inaintati-in-grad-au-fost-recompensati-si-militarii-din-echipajele-de-sprijin-797495.html",
           "https://adevarul.ro/politica/militarii-romani-care-au-doborat-drone-rusesti-in-2546515.html",
           "https://www.ziarulnational.md/militarii-romani-care-au-doborat-drone-in-lituania-si-romania-avansati-in-grad-pentru-apararea-spatiului-aerian/",
-          "https://www.caleaeuropeana.ro/zece-militari-al-fortelor-aeriene-romane-inaintati-in-grad-dupa-doborarea-dronelor-rusesti-in-romania-si-lituania-romania-este-mai-sigura-datorita-lor/"
+          "https://www.caleaeuropeana.ro/zece-militari-al-fortelor-aeriene-romane-inaintati-in-grad-dupa-doborarea-dronelor-rusesti-in-romania-si-lituania-romania-este-mai-sigura-datorita-lor/",
+          "https://opiniabuzau.ro/terenul-agricol-de-la-padina-unde-a-fost-doborata-drona-ruseasca-in-aer/"
         ],
         "risk_score_input": 2.75,
         "source_file": "gdelt_crossborder.geojson",
@@ -286,24 +288,21 @@
         "actual_incident_gate": true
       },
       {
-        "cluster_id": "8334da93bc57fc413bbe",
-        "date": "2026-07-23",
-        "time": "2026-07-23T00:00:00+00:00",
+        "cluster_id": "6303e480665ca10f856c",
+        "date": "2026-07-24",
+        "time": "2026-07-24T00:00:00+00:00",
         "category": "explosion",
         "severity": "high",
-        "representative_title": "Reni, Odes'ka Oblast, Ukraine",
-        "article_count": 2,
-        "source_count": 2,
+        "representative_title": "Romania",
+        "article_count": 1,
+        "source_count": 1,
         "sources": [
-          "https://www.winnipegfreepress.com/business/2026/07/23/a-sailor-dies-after-a-ukraine-bound-tanker-catches-fire-off-romania-as-officials-probe-war-link",
           "https://english.pravda.ru/news/hotspots/167494-cargo-ship-explosion-romania-ukraine-route/"
         ],
         "titles": [
-          "Reni, Odes'ka Oblast, Ukraine",
           "Romania"
         ],
         "urls": [
-          "https://www.winnipegfreepress.com/business/2026/07/23/a-sailor-dies-after-a-ukraine-bound-tanker-catches-fire-off-romania-as-officials-probe-war-link",
           "https://english.pravda.ru/news/hotspots/167494-cargo-ship-explosion-romania-ukraine-route/"
         ],
         "risk_score_input": 1.43,
@@ -331,7 +330,7 @@
         "urls": [
           "https://www.theepochtimes.com/us/coordinated-cyberattack-hits-more-than-30-minnesota-water-systems-6068685"
         ],
-        "risk_score_input": 2.31,
+        "risk_score_input": 2.1,
         "source_file": "gdelt_linked.geojson",
         "actual_incident_gate": true
       }

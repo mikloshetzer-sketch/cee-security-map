@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-07-30T01:41:10.301696+00:00",
+  "generated_utc": "2026-07-30T08:20:20.978533+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 7,
-    "article_count": 83,
-    "source_count": 9
+    "incident_count": 8,
+    "article_count": 86,
+    "source_count": 12
   },
   "country_summary": {
     "Czech Republic": {
@@ -25,8 +25,8 @@
     },
     "Romania": {
       "incident_count": 5,
-      "article_count": 81,
-      "source_count": 7,
+      "article_count": 80,
+      "source_count": 6,
       "category_counts": {
         "drone": 4,
         "explosion": 1
@@ -39,11 +39,12 @@
       "category_counts": {}
     },
     "Poland": {
-      "incident_count": 1,
-      "article_count": 1,
-      "source_count": 1,
+      "incident_count": 2,
+      "article_count": 5,
+      "source_count": 5,
       "category_counts": {
-        "cyber": 1
+        "cyber": 1,
+        "explosion": 1
       }
     },
     "Lithuania": {
@@ -93,13 +94,41 @@
     "Hungary": [],
     "Romania": [
       {
+        "cluster_id": "de1392c2c14002e7f8cf",
+        "date": "2026-07-29",
+        "time": "2026-07-29T13:00:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "representative_title": "RO - ALERT issued after group of drones detected near Romania river border with Ukraine",
+        "article_count": 4,
+        "source_count": 1,
+        "sources": [
+          "GDELT_DOC"
+        ],
+        "titles": [
+          "RO - ALERT issued after group of drones detected near Romania river border with Ukraine",
+          "Doi piloți care au doborât drone în România și Lituania , înaintați în grad . Au fost recompensați și militarii din echipajele de sprijin",
+          "Militarii români care au doborât drone în Lituania și România , avansați în grad pentru apărarea spațiului aerian",
+          "Zece militari al Forțelor Aeriene Române , înaintați în grad după doborârea dronelor rusești în România și Lituania : România este mai sigură datorită lor"
+        ],
+        "urls": [
+          "https://www.stiripesurse.ro/ro-alert-issued-after-group-of-drones-detected-near-romanias-river-border-with-ukraine_3907655",
+          "https://www.antena3.ro/actualitate/doi-piloti-care-au-doborat-drone-in-romania-si-lituania-inaintati-in-grad-au-fost-recompensati-si-militarii-din-echipajele-de-sprijin-797495.html",
+          "https://www.ziarulnational.md/militarii-romani-care-au-doborat-drone-in-lituania-si-romania-avansati-in-grad-pentru-apararea-spatiului-aerian/",
+          "https://www.caleaeuropeana.ro/zece-militari-al-fortelor-aeriene-romane-inaintati-in-grad-dupa-doborarea-dronelor-rusesti-in-romania-si-lituania-romania-este-mai-sigura-datorita-lor/"
+        ],
+        "risk_score_input": 2.75,
+        "source_file": "gdelt_crossborder.geojson",
+        "actual_incident_gate": true
+      },
+      {
         "cluster_id": "fdd848506922d4ab2e7a",
         "date": "2026-07-29",
         "time": "2026-07-29T10:45:00+00:00",
         "category": "drone",
         "severity": "high",
         "representative_title": "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
-        "article_count": 7,
+        "article_count": 4,
         "source_count": 1,
         "sources": [
           "GDELT_DOC"
@@ -107,48 +136,17 @@
         "titles": [
           "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
           "Zaharova califică doborârea dronelor drept „ incidente regizate și amenință din nou România",
-          "Doi piloți care au doborât drone în România și Lituania , înaintați în grad . Au fost recompensați și militarii din echipajele de sprijin",
           "Militarii români care au doborât drone rusești în România și Lituania , înaintați în grad în mod excepțional",
-          "Militarii români care au doborât drone în Lituania și România , avansați în grad pentru apărarea spațiului aerian",
-          "Zece militari al Forțelor Aeriene Române , înaintați în grad după doborârea dronelor rusești în România și Lituania : România este mai sigură datorită lor",
           "Terenul agricol de la Padina unde a fost doborâtă drona rusească , în aer !"
         ],
         "urls": [
           "https://ziare.com/drone-rusesti/granita-razboi-ucraina-f-16-ridicate-ro-alert-tulcea-mapn-2026906",
           "https://news.yam.md/ro/story/48086962",
-          "https://www.antena3.ro/actualitate/doi-piloti-care-au-doborat-drone-in-romania-si-lituania-inaintati-in-grad-au-fost-recompensati-si-militarii-din-echipajele-de-sprijin-797495.html",
           "https://adevarul.ro/politica/militarii-romani-care-au-doborat-drone-rusesti-in-2546515.html",
-          "https://www.ziarulnational.md/militarii-romani-care-au-doborat-drone-in-lituania-si-romania-avansati-in-grad-pentru-apararea-spatiului-aerian/",
-          "https://www.caleaeuropeana.ro/zece-militari-al-fortelor-aeriene-romane-inaintati-in-grad-dupa-doborarea-dronelor-rusesti-in-romania-si-lituania-romania-este-mai-sigura-datorita-lor/",
           "https://opiniabuzau.ro/terenul-agricol-de-la-padina-unde-a-fost-doborata-drona-ruseasca-in-aer/"
         ],
         "risk_score_input": 2.75,
         "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "67f33e4427970d841ddc",
-        "date": "2026-07-29",
-        "time": "2026-07-29T09:20:39+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Megrendezett volt a sorozatos romániai drónos légtérsértés az orosz külügyi szóvivő szerint",
-        "article_count": 2,
-        "source_count": 2,
-        "sources": [
-          "Telex",
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Megrendezett volt a sorozatos romániai drónos légtérsértés az orosz külügyi szóvivő szerint",
-          "RO - ALERT issued after group of drones detected near Romania river border with Ukraine"
-        ],
-        "urls": [
-          "https://telex.hu/transtelex/2026/07/29/oroszorszag-romania-zaharova-dronok",
-          "https://www.stiripesurse.ro/ro-alert-issued-after-group-of-drones-detected-near-romanias-river-border-with-ukraine_3907655"
-        ],
-        "risk_score_input": 2.75,
-        "source_file": "local_events.geojson",
         "actual_incident_gate": true
       },
       {
@@ -312,6 +310,35 @@
     ],
     "Slovakia": [],
     "Poland": [
+      {
+        "cluster_id": "a6c929b803ad0a9ce266",
+        "date": "2026-07-30",
+        "time": "2026-07-30T00:00:00+00:00",
+        "category": "explosion",
+        "severity": "high",
+        "representative_title": "Przewodow, Lubelskie, Poland",
+        "article_count": 4,
+        "source_count": 4,
+        "sources": [
+          "https://www.news8000.com/news/national-world/unidentified-projectile-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack/article_6049e3f2-906a-5798-9d16-9ddfec0d9b9c.html",
+          "https://kesq.com/news/national-world/cnn-world/2026/07/29/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
+          "https://krdo.com/news/national-world/cnn-world/2026/07/30/explosions-heard-in-kyiv-as-air-force-warns-of-incoming-missiles/",
+          "Novinky"
+        ],
+        "titles": [
+          "Przewodow, Lubelskie, Poland",
+          "V Polsku explodovala ruská řízená střela Ch-101, našli obrovský kráter"
+        ],
+        "urls": [
+          "https://www.news8000.com/news/national-world/unidentified-projectile-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack/article_6049e3f2-906a-5798-9d16-9ddfec0d9b9c.html",
+          "https://kesq.com/news/national-world/cnn-world/2026/07/29/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
+          "https://krdo.com/news/national-world/cnn-world/2026/07/30/explosions-heard-in-kyiv-as-air-force-warns-of-incoming-missiles/",
+          "https://www.novinky.cz/clanek/valka-na-ukrajine-v-polsku-dopadl-a-explodoval-neznamy-objekt-nasli-obrovsky-krater-40590417"
+        ],
+        "risk_score_input": 2.86,
+        "source_file": "gdelt_linked.geojson",
+        "actual_incident_gate": true
+      },
       {
         "cluster_id": "d307d0059a9aaeb06a2e",
         "date": "2026-07-29",

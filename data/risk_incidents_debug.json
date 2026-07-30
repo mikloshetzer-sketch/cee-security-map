@@ -1,21 +1,19 @@
 {
-  "generated_utc": "2026-07-30T08:20:20.978533+00:00",
+  "generated_utc": "2026-07-30T13:41:22.638194+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
     "incident_count": 8,
-    "article_count": 86,
-    "source_count": 12
+    "article_count": 90,
+    "source_count": 15
   },
   "country_summary": {
     "Czech Republic": {
-      "incident_count": 1,
-      "article_count": 1,
-      "source_count": 1,
-      "category_counts": {
-        "military": 1
-      }
+      "incident_count": 0,
+      "article_count": 0,
+      "source_count": 0,
+      "category_counts": {}
     },
     "Hungary": {
       "incident_count": 0,
@@ -25,7 +23,7 @@
     },
     "Romania": {
       "incident_count": 5,
-      "article_count": 80,
+      "article_count": 81,
       "source_count": 6,
       "category_counts": {
         "drone": 4,
@@ -39,11 +37,12 @@
       "category_counts": {}
     },
     "Poland": {
-      "incident_count": 2,
-      "article_count": 5,
-      "source_count": 5,
+      "incident_count": 3,
+      "article_count": 9,
+      "source_count": 9,
       "category_counts": {
         "cyber": 1,
+        "drone": 1,
         "explosion": 1
       }
     },
@@ -67,30 +66,7 @@
     }
   },
   "countries": {
-    "Czech Republic": [
-      {
-        "cluster_id": "e5f541d7afafefd293a2",
-        "date": "2026-07-23",
-        "time": "2026-07-23T12:15:00+00:00",
-        "category": "military",
-        "severity": "high",
-        "representative_title": "At least one dead as military helicopter crashes near Czech Republic town | World | News",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "At least one dead as military helicopter crashes near Czech Republic town | World | News"
-        ],
-        "urls": [
-          "https://www.express.co.uk/news/world/2232243/Czech-Republic-military-helicopter-crash"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson",
-        "actual_incident_gate": true
-      }
-    ],
+    "Czech Republic": [],
     "Hungary": [],
     "Romania": [
       {
@@ -100,7 +76,7 @@
         "category": "drone",
         "severity": "high",
         "representative_title": "RO - ALERT issued after group of drones detected near Romania river border with Ukraine",
-        "article_count": 4,
+        "article_count": 5,
         "source_count": 1,
         "sources": [
           "GDELT_DOC"
@@ -109,15 +85,17 @@
           "RO - ALERT issued after group of drones detected near Romania river border with Ukraine",
           "Doi piloți care au doborât drone în România și Lituania , înaintați în grad . Au fost recompensați și militarii din echipajele de sprijin",
           "Militarii români care au doborât drone în Lituania și România , avansați în grad pentru apărarea spațiului aerian",
+          "Dronele doborâte de România ar fi fost trimise deliberat de Rusia , susține consilierul lui Zelenski",
           "Zece militari al Forțelor Aeriene Române , înaintați în grad după doborârea dronelor rusești în România și Lituania : România este mai sigură datorită lor"
         ],
         "urls": [
           "https://www.stiripesurse.ro/ro-alert-issued-after-group-of-drones-detected-near-romanias-river-border-with-ukraine_3907655",
           "https://www.antena3.ro/actualitate/doi-piloti-care-au-doborat-drone-in-romania-si-lituania-inaintati-in-grad-au-fost-recompensati-si-militarii-din-echipajele-de-sprijin-797495.html",
           "https://www.ziarulnational.md/militarii-romani-care-au-doborat-drone-in-lituania-si-romania-avansati-in-grad-pentru-apararea-spatiului-aerian/",
+          "https://adevarul.ro/stiri-externe/europa/dronele-rusesti-doborate-de-romania-ar-fi-fost-2546665.html",
           "https://www.caleaeuropeana.ro/zece-militari-al-fortelor-aeriene-romane-inaintati-in-grad-dupa-doborarea-dronelor-rusesti-in-romania-si-lituania-romania-este-mai-sigura-datorita-lor/"
         ],
-        "risk_score_input": 2.75,
+        "risk_score_input": 2.5,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },
@@ -145,7 +123,7 @@
           "https://adevarul.ro/politica/militarii-romani-care-au-doborat-drone-rusesti-in-2546515.html",
           "https://opiniabuzau.ro/terenul-agricol-de-la-padina-unde-a-fost-doborata-drona-ruseasca-in-aer/"
         ],
-        "risk_score_input": 2.75,
+        "risk_score_input": 2.5,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
       },
@@ -317,25 +295,54 @@
         "category": "explosion",
         "severity": "high",
         "representative_title": "Przewodow, Lubelskie, Poland",
-        "article_count": 4,
-        "source_count": 4,
+        "article_count": 7,
+        "source_count": 7,
         "sources": [
           "https://www.news8000.com/news/national-world/unidentified-projectile-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack/article_6049e3f2-906a-5798-9d16-9ddfec0d9b9c.html",
           "https://kesq.com/news/national-world/cnn-world/2026/07/29/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
           "https://krdo.com/news/national-world/cnn-world/2026/07/30/explosions-heard-in-kyiv-as-air-force-warns-of-incoming-missiles/",
-          "Novinky"
+          "https://www.dailymirror.lk/breaking-news/Unidentified-object-lands-deep-inside-Poland-causing-explosion-as-Russia-launches-deadly-Ukraine-wide-attack/108-346961",
+          "https://www.abc57.com/news/unidentified-object-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack",
+          "https://kesq.com/news/national-world/cnn-world/2026/07/30/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
+          "https://english.pravda.ru/news/world/167557-poland-blast-russia-investigation/"
         ],
         "titles": [
           "Przewodow, Lubelskie, Poland",
-          "V Polsku explodovala ruská řízená střela Ch-101, našli obrovský kráter"
+          "Poland",
+          "Tokary, Opolskie, Poland"
         ],
         "urls": [
           "https://www.news8000.com/news/national-world/unidentified-projectile-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack/article_6049e3f2-906a-5798-9d16-9ddfec0d9b9c.html",
           "https://kesq.com/news/national-world/cnn-world/2026/07/29/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
           "https://krdo.com/news/national-world/cnn-world/2026/07/30/explosions-heard-in-kyiv-as-air-force-warns-of-incoming-missiles/",
-          "https://www.novinky.cz/clanek/valka-na-ukrajine-v-polsku-dopadl-a-explodoval-neznamy-objekt-nasli-obrovsky-krater-40590417"
+          "https://www.dailymirror.lk/breaking-news/Unidentified-object-lands-deep-inside-Poland-causing-explosion-as-Russia-launches-deadly-Ukraine-wide-attack/108-346961",
+          "https://www.abc57.com/news/unidentified-object-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack",
+          "https://kesq.com/news/national-world/cnn-world/2026/07/30/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
+          "https://english.pravda.ru/news/world/167557-poland-blast-russia-investigation/"
         ],
         "risk_score_input": 2.86,
+        "source_file": "gdelt_linked.geojson",
+        "actual_incident_gate": true
+      },
+      {
+        "cluster_id": "a5705464a11ae0165e2a",
+        "date": "2026-07-30",
+        "time": "2026-07-30T00:00:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "representative_title": "Warsaw, (PL67), Poland",
+        "article_count": 1,
+        "source_count": 1,
+        "sources": [
+          "https://www.themoscowtimes.com/2026/07/30/russian-missile-likely-crashed-in-eastern-poland-pm-tusk-says-a93379"
+        ],
+        "titles": [
+          "Warsaw, (PL67), Poland"
+        ],
+        "urls": [
+          "https://www.themoscowtimes.com/2026/07/30/russian-missile-likely-crashed-in-eastern-poland-pm-tusk-says-a93379"
+        ],
+        "risk_score_input": 2.75,
         "source_file": "gdelt_linked.geojson",
         "actual_incident_gate": true
       },

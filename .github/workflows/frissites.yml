@@ -11,6 +11,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repo
@@ -22,6 +23,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
       - name: Install dependencies
         run: |
@@ -29,13 +31,92 @@ jobs:
           pip install -r requirements.txt
           pip install feedparser
 
+      - name: Validate security taxonomy and classifier
+        run: |
+          python -m json.tool security_taxonomy.json > /dev/null
+          python -m py_compile scripts/security_classifier.py
+
+          python scripts/security_classifier.py \
+            --title "Russian missile fell in eastern Poland" \
+            --summary "Authorities secured the impact site." \
+            --country Poland \
+            --compact > classifier_test.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          result = json.loads(
+              Path("classifier_test.json").read_text(encoding="utf-8")
+          )
+
+          assert result.get("matched_rule_id"), result
+          assert result.get("family") == "air", result
+          assert result.get("actual_incident") is True, result
+
+          print(
+              "Classifier test passed:",
+              result["matched_rule_id"],
+              result["confidence"]
+          )
+          PY
+
+          rm classifier_test.json
+
       - name: Run updater
         run: |
           python scripts/update_data.py
 
-      - name: Fetch local media events
+      - name: Fetch and classify local media events
         run: |
           python scripts/fetch_local_sources.py
+
+      - name: Validate classified local events
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/local_events.geojson")
+
+          if not path.exists():
+              raise SystemExit("Missing data/local_events.geojson")
+
+          payload = json.loads(path.read_text(encoding="utf-8"))
+
+          if payload.get("type") != "FeatureCollection":
+              raise SystemExit(
+                  "data/local_events.geojson is not a FeatureCollection"
+              )
+
+          features = payload.get("features", [])
+
+          required_fields = (
+              "incident_family",
+              "incident_subcategory",
+              "incident_subtype",
+              "classification_confidence",
+              "matched_rule_id",
+              "article_role",
+              "actual_incident",
+              "fingerprint",
+          )
+
+          for index, feature in enumerate(features):
+              properties = feature.get("properties", {})
+              missing = [
+                  field
+                  for field in required_fields
+                  if field not in properties
+              ]
+
+              if missing:
+                  raise SystemExit(
+                      f"Feature {index} is missing classifier fields: {missing}"
+                  )
+
+          print(f"Validated {len(features)} classified local events.")
+          PY
 
       - name: Build infrastructure proximity report
         run: |
@@ -61,7 +142,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "auto: update data"
+          git commit -m "auto: update classified CEE security data"
 
           git pull --rebase origin main
           git push

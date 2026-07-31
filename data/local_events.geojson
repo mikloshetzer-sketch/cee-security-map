@@ -1,73 +1,242 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-07-31T02:08:21.343886+00:00",
+  "generated_utc": "2026-07-31T08:16:22.566321+00:00",
+  "classifier_version": "1.0.0",
+  "taxonomy_version": "1.0.0",
   "features": [
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.854,
-          46.572
+          19.1451,
+          51.9194
         ]
       },
       "properties": {
-        "title": "Tisza-kormány: bejelentették Paks leállását, extrém napok várnak Magyarországra",
-        "summary": "<p>A vártnál gyengébb lett a magyar gazdaság második negyedéves teljesítménye: a GDP az előző negyedévhez képest 0,4%-kal nőtt, ami elmarad az elemzők által várt 0,7%-os bővüléstől. Délelőtt közös sajtótájékoztatót tart Magyar Péter és Markus Söder bajor miniszterelnök, ahol a hosszú évek után újrainduló magyar–bajor kapcsolatok jegyében tartott találkozó részleteit ismertetik. A rendkívüli hőség és a Duna történelmi mélységű, mínusz 121 centiméteres vízállása miatt az MVM Paksi Atomerőmű 50 százalékkal csökkentette a 2. blokk teljesítményét. A hőség miatt a közlekedési tárca a hétvégére részlegesen feloldja a kamionstopot is: szombat éjszaka és vasárnap kora reggel a nehézgépjárművek ismét közlekedhetnek a hazai utakon.</p>",
-        "source": "Portfolio",
-        "country": "Hungary",
-        "place": "Paks",
-        "url": "https://www.portfolio.hu/gazdasag/20260730/tisza-kormany-bejelentettek-paks-leallasat-extrem-napok-varnak-magyarorszagra-852940",
-        "time": "Thu, 30 Jul 2026 21:42:00 +0200",
-        "category": "local_media",
+        "id": "69fdedaf6875cb83c2b3",
+        "title": "Raketa, která dopadla na východě Polska, byla zřejmě ruská, uvedl Tusk",
+        "summary": "Raketa, která dopadla na východě Polska, byla zřejmě ruská, uvedl tamní premiér Donald Tusk. Chce ale mít větší jistotu o jejím typu a o tom, kdo ji vyslal. Ukrajinský ministr zahraničí Andrij Sybiha již dříve uvedl, že se jednalo o ruskou raketu Ch-101. Proti střele zasahoval vojenský letoun F-16. Kráter po jejím dopadu našly polské úřady v poli asi 45 kilometrů jižně od východopolského Lublina. Tusk později dodal, že není důvod si myslet, že cílem rakety bylo Polsko.",
+        "source": "CT24",
+        "url": "https://ct24.ceskatelevize.cz/clanek/svet/na-vychode-polska-znely-sireny-hasici-proveruji-krater-v-poli-376093",
+        "published": "Thu, 30 Jul 2026 05:17:43 GMT",
+        "country": "Poland",
+        "city": null,
+        "family": "air",
+        "subcategory": "missile",
+        "subtype": "missile_impact",
+        "object": "missile",
+        "action": "impact",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
         "severity": "high",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": true,
-        "source_count": 1,
-        "sources": [
-          "Portfolio"
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "missile",
+          "subtype": "missile_impact",
+          "object": "missile",
+          "action": "impact",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Poland",
+          "event_date": "Thu, 30 Ju",
+          "hash": "9f9a51e0f2ac67bf2494605e"
+        },
+        "classifier_version": "1.0.0",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "missile",
+            "raketa"
+          ],
+          "actions": [
+            "impact",
+            "dopadla"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Czechia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
         ],
-        "urls": [
-          "https://www.portfolio.hu/gazdasag/20260730/tisza-kormany-bejelentettek-paks-leallasat-extrem-napok-varnak-magyarorszagra-852940"
-        ],
-        "merged_titles": [
-          "Tisza-kormány: bejelentették Paks leállását, extrém napok várnak Magyarországra"
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.5033,
-          47.1625
-        ]
-      },
-      "properties": {
-        "title": "Nem zéró az esélye annak, hogy a lakosság energiafogyasztását is korlátozni kell majd",
-        "summary": "<p>Komoly bizonytalanságok övezik Magyarország következő heteinek energiaellátását a rendkívüli hőség és az erőművi kiesések miatt. Aszódi Attila szerint az importlehetőségek beszűkülése esetén végső eszközként gördülő áramszünetekre is sor kerülhet. Azóta ugyanakkor kiderült, hogy a Dunamenti Erőmű már vasárnap újraindulhat.</p>",
-        "source": "Portfolio",
-        "country": "Hungary",
-        "place": "Hungary",
-        "url": "https://www.portfolio.hu/gazdasag/20260730/nem-zero-az-eselye-annak-hogy-a-lakossag-energiafogyasztasat-is-korlatozni-kell-majd-853220",
-        "time": "Thu, 30 Jul 2026 21:33:00 +0200",
-        "category": "energy",
-        "severity": "medium",
+        "rejection_reason": null,
+        "place": "Poland",
+        "time": "Thu, 30 Jul 2026 05:17:43 GMT",
+        "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
-        "force_included": true,
+        "force_included": false,
         "source_count": 1,
         "sources": [
-          "Portfolio"
+          "CT24"
         ],
         "urls": [
-          "https://www.portfolio.hu/gazdasag/20260730/nem-zero-az-eselye-annak-hogy-a-lakossag-energiafogyasztasat-is-korlatozni-kell-majd-853220"
+          "https://ct24.ceskatelevize.cz/clanek/svet/na-vychode-polska-znely-sireny-hasici-proveruji-krater-v-poli-376093"
         ],
         "merged_titles": [
-          "Nem zéró az esélye annak, hogy a lakosság energiafogyasztását is korlátozni kell majd"
-        ]
+          "Raketa, která dopadla na východě Polska, byla zřejmě ruská, uvedl Tusk"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "incident_object": "missile",
+        "incident_action": "impact",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
       }
     },
     {
@@ -80,15 +249,452 @@
         ]
       },
       "properties": {
+        "id": "75f17b6d5d95a588a251",
+        "title": "PM Tusk says Russian Kh-101 missile likely crashed in eastern Poland",
+        "summary": "According to Ukraine, the object that entered Polish airspace was a Russian Kh-101 cruise missile.",
+        "source": "NotesFromPoland",
+        "url": "https://notesfrompoland.com/2026/07/30/unidentified-object-crashes-in-poland-after-russian-attack-on-ukraine/",
+        "published": "Thu, 30 Jul 2026 08:23:39 +0000",
+        "country": "Poland",
+        "city": null,
+        "family": "air",
+        "subcategory": "missile",
+        "subtype": "missile_impact",
+        "object": "missile",
+        "action": "entered",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "missile",
+          "subtype": "missile_impact",
+          "object": "missile",
+          "action": "entered",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Poland",
+          "event_date": "Thu, 30 Ju",
+          "hash": "4938abda4a51c366d8373b40"
+        },
+        "classifier_version": "1.0.0",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "missile",
+            "cruise missile"
+          ],
+          "actions": [
+            "entered",
+            "impact",
+            "crashed"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "russian",
+            "ukraine"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Poland",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "airspace"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "place": "Poland",
+        "time": "Thu, 30 Jul 2026 08:23:39 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "NotesFromPoland"
+        ],
+        "urls": [
+          "https://notesfrompoland.com/2026/07/30/unidentified-object-crashes-in-poland-after-russian-attack-on-ukraine/"
+        ],
+        "merged_titles": [
+          "PM Tusk says Russian Kh-101 missile likely crashed in eastern Poland"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "incident_object": "missile",
+        "incident_action": "entered",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.1451,
+          51.9194
+        ]
+      },
+      "properties": {
+        "id": "1dd0dca5ba20c40a2ec1",
         "title": "Polish Prime Minister: Missile that fell overnight was likely launched by Russia",
         "summary": "<p>Polish Prime Minister Donald Tusk has said that the object that fell in a field in the east of the country in the early morning of the 30th of July is most likely a Russian missile, writes the BBC. The object created a ten-meter-wide crater in a field near the village of Tarnawa. The village [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/polish-prime-minister-missile-that-fell-overnight-was-likely-launched-by-russia-282363\">Polish Prime Minister: Missile that fell overnight was likely launched by Russia</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
         "source": "BNN",
-        "country": "Poland",
-        "place": "Poland",
         "url": "https://bnn-news.com/polish-prime-minister-missile-that-fell-overnight-was-likely-launched-by-russia-282363",
+        "published": "Thu, 30 Jul 2026 10:05:07 +0000",
+        "country": "Poland",
+        "city": null,
+        "family": "air",
+        "subcategory": "missile",
+        "subtype": "missile_impact",
+        "object": "missile",
+        "action": "impact",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "missile",
+          "subtype": "missile_impact",
+          "object": "missile",
+          "action": "impact",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Poland",
+          "event_date": "Thu, 30 Ju",
+          "hash": "03f68ecdfe2a833ad39afd6a"
+        },
+        "classifier_version": "1.0.0",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "missile",
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "impact",
+            "fell"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "russian"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "place": "Poland",
         "time": "Thu, 30 Jul 2026 10:05:07 +0000",
-        "category": "local_media",
-        "severity": "info",
+        "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
@@ -101,7 +707,15 @@
         ],
         "merged_titles": [
           "Polish Prime Minister: Missile that fell overnight was likely launched by Russia"
-        ]
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "incident_object": "missile",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
       }
     },
     {
@@ -109,33 +723,471 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.0136,
-          58.5953
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "title": "Estonian firefighters to help put out wildfires in Italy",
-        "summary": "Estonia's Rescue Services Agency will send a team of 20 firefighters to Italy to support local efforts to put out wildfires as southern Europe battles blazes and extreme heat.",
-        "source": "ERR",
-        "country": "Estonia",
-        "place": "Estonia",
-        "url": "https://news.err.ee/1610088232/estonian-firefighters-to-help-put-out-wildfires-in-italy",
-        "time": "Tue, 28 Jul 2026 17:05:00 +0300",
-        "category": "fire",
-        "severity": "medium",
+        "id": "bc7a0a0e310ec9ebe97b",
+        "title": "Three drones shot down in three days – Romania accuses Russia of violations",
+        "summary": "<p>On the 26th of July, a Romanian fighter jet shot down a drone that had violated the country&#8217;s airspace, the third in just three days, and Romanian President Nicușor Dan accused Moscow of unacceptable violations, writes Politico. The incident on Sunday, the 26th of July, marks another time that the conflict in Ukraine has affected [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/three-drones-shot-down-in-three-days-romania-accuses-russia-of-violations-282209\">Three drones shot down in three days – Romania accuses Russia of violations</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/three-drones-shot-down-in-three-days-romania-accuses-russia-of-violations-282209",
+        "published": "Mon, 27 Jul 2026 08:47:35 +0000",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_shootdown",
+        "object": "drone",
+        "action": "shot_down",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_shootdown",
+          "object": "drone",
+          "action": "shot_down",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Mon, 27 Ju",
+          "hash": "ece4626698ff2b3704889be3"
+        },
+        "classifier_version": "1.0.0",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "military_aircraft",
+            "fighter",
+            "fighter jet",
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "shot_down",
+            "shot down"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "ukraine"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "airspace"
+            ]
+          }
+        ],
+        "rejection_reason": null,
+        "place": "Romania",
+        "time": "Mon, 27 Jul 2026 08:47:35 +0000",
+        "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "ERR"
+          "BNN"
         ],
         "urls": [
-          "https://news.err.ee/1610088232/estonian-firefighters-to-help-put-out-wildfires-in-italy"
+          "https://bnn-news.com/three-drones-shot-down-in-three-days-romania-accuses-russia-of-violations-282209"
         ],
         "merged_titles": [
-          "Estonian firefighters to help put out wildfires in Italy"
+          "Three drones shot down in three days – Romania accuses Russia of violations"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "incident_object": "drone",
+        "incident_action": "shot_down",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
         ]
+      },
+      "properties": {
+        "id": "0e28787d7ce310a1370d",
+        "title": "Romania shoots down drone that entered its airspace",
+        "summary": "<p>Romanian President Nicusor Dan said on the 24th of July that a Romanian F-16 fighter jet had shot down a drone that had entered country&#8217;s airspace, Reuters reports. This is the first time Romania has shot down a drone in its airspace, but there have been previous violations. The president did not specify the origin [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/romania-shoots-down-drone-that-entered-its-airspace-282176\">Romania shoots down drone that entered its airspace</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/romania-shoots-down-drone-that-entered-its-airspace-282176",
+        "published": "Fri, 24 Jul 2026 12:23:33 +0000",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "drone",
+        "action": "entered",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "drone",
+          "action": "entered",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Fri, 24 Ju",
+          "hash": "ae2c05abecc492cbeadf53ef"
+        },
+        "classifier_version": "1.0.0",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "military_aircraft",
+            "fighter",
+            "fighter jet",
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "entered",
+            "shot_down",
+            "shot down"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "place": "Romania",
+        "time": "Fri, 24 Jul 2026 12:23:33 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "BNN"
+        ],
+        "urls": [
+          "https://bnn-news.com/romania-shoots-down-drone-that-entered-its-airspace-282176"
+        ],
+        "merged_titles": [
+          "Romania shoots down drone that entered its airspace"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "drone",
+        "incident_action": "entered",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
       }
     }
   ]

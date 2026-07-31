@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-07-30T19:23:47.685363+00:00",
+  "generated_utc": "2026-07-31T02:08:39.618011+00:00",
   "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
     "incident_count": 8,
-    "article_count": 94,
+    "article_count": 95,
     "source_count": 17
   },
   "country_summary": {
@@ -16,18 +16,19 @@
       "category_counts": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "article_count": 0,
-      "source_count": 0,
-      "category_counts": {}
+      "incident_count": 1,
+      "article_count": 1,
+      "source_count": 1,
+      "category_counts": {
+        "infrastructure_disruption": 1
+      }
     },
     "Romania": {
-      "incident_count": 5,
+      "incident_count": 4,
       "article_count": 83,
-      "source_count": 6,
+      "source_count": 5,
       "category_counts": {
-        "drone": 4,
-        "explosion": 1
+        "drone": 4
       }
     },
     "Slovakia": {
@@ -67,7 +68,30 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "cluster_id": "aacf0480d1b0b93e22b4",
+        "date": "2026-07-30",
+        "time": "2026-07-30T19:33:00+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "representative_title": "Nem zéró az esélye annak, hogy a lakosság energiafogyasztását is korlátozni kell majd",
+        "article_count": 1,
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "titles": [
+          "Nem zéró az esélye annak, hogy a lakosság energiafogyasztását is korlátozni kell majd"
+        ],
+        "urls": [
+          "https://www.portfolio.hu/gazdasag/20260730/nem-zero-az-eselye-annak-hogy-a-lakossag-energiafogyasztasat-is-korlatozni-kell-majd-853220"
+        ],
+        "risk_score_input": 1.32,
+        "source_file": "local_events.geojson",
+        "actual_incident_gate": true
+      }
+    ],
     "Romania": [
       {
         "cluster_id": "de1392c2c14002e7f8cf",
@@ -110,7 +134,7 @@
         "category": "drone",
         "severity": "high",
         "representative_title": "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
-        "article_count": 4,
+        "article_count": 5,
         "source_count": 1,
         "sources": [
           "GDELT_DOC"
@@ -119,12 +143,14 @@
           "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
           "Zaharova califică doborârea dronelor drept „ incidente regizate și amenință din nou România",
           "Militarii români care au doborât drone rusești în România și Lituania , înaintați în grad în mod excepțional",
+          "Consilierul lui Zelenski , avertisment după dronele doborâte în România . Mihailo Podoliak : Rusia vrea să impună noi reguli în Europa prin instrumentul fricii",
           "Terenul agricol de la Padina unde a fost doborâtă drona rusească , în aer !"
         ],
         "urls": [
           "https://ziare.com/drone-rusesti/granita-razboi-ucraina-f-16-ridicate-ro-alert-tulcea-mapn-2026906",
           "https://news.yam.md/ro/story/48086962",
           "https://adevarul.ro/politica/militarii-romani-care-au-doborat-drone-rusesti-in-2546515.html",
+          "https://ziare.com/drone-doborate-romania/consilier-zelenski-avertisment-incidente-aviatice-2027221",
           "https://opiniabuzau.ro/terenul-agricol-de-la-padina-unde-a-fost-doborata-drona-ruseasca-in-aer/"
         ],
         "risk_score_input": 2.5,
@@ -266,28 +292,6 @@
         "risk_score_input": 1.375,
         "source_file": "gdelt_crossborder.geojson",
         "actual_incident_gate": true
-      },
-      {
-        "cluster_id": "6303e480665ca10f856c",
-        "date": "2026-07-24",
-        "time": "2026-07-24T00:00:00+00:00",
-        "category": "explosion",
-        "severity": "high",
-        "representative_title": "Romania",
-        "article_count": 1,
-        "source_count": 1,
-        "sources": [
-          "https://english.pravda.ru/news/hotspots/167494-cargo-ship-explosion-romania-ukraine-route/"
-        ],
-        "titles": [
-          "Romania"
-        ],
-        "urls": [
-          "https://english.pravda.ru/news/hotspots/167494-cargo-ship-explosion-romania-ukraine-route/"
-        ],
-        "risk_score_input": 1.43,
-        "source_file": "gdelt_linked.geojson",
-        "actual_incident_gate": true
       }
     ],
     "Slovakia": [],
@@ -327,7 +331,7 @@
           "https://english.pravda.ru/news/world/167557-poland-blast-russia-investigation/",
           "https://economictimes.indiatimes.com/news/international/world-news/russia-blamed-for-missile-that-blasted-crater-in-polish-field/articleshow/132743187.cms"
         ],
-        "risk_score_input": 2.86,
+        "risk_score_input": 2.6,
         "source_file": "gdelt_linked.geojson",
         "actual_incident_gate": true
       },
@@ -349,7 +353,7 @@
         "urls": [
           "https://www.themoscowtimes.com/2026/07/30/russian-missile-likely-crashed-in-eastern-poland-pm-tusk-says-a93379"
         ],
-        "risk_score_input": 2.75,
+        "risk_score_input": 2.5,
         "source_file": "gdelt_linked.geojson",
         "actual_incident_gate": true
       },

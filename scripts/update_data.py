@@ -21,6 +21,8 @@ from xml.etree import ElementTree as ET
 import requests
 from dateutil import parser as dateparser
 
+from security_classifier import CLASSIFIER_VERSION, SecurityClassifier
+
 # ============================================================
 # PATHS
 # ============================================================
@@ -29,6 +31,8 @@ DATA_DIR = os.path.join(ROOT, "data")
 CACHE_PATH = os.path.join(DATA_DIR, "geocode_cache.json")
 COUNTRIES_CACHE_PATH = os.path.join(DATA_DIR, "cee_countries.geojson")
 TRUSTED_RSS_PATH = os.path.join(DATA_DIR, "trusted_rss.json")
+TAXONOMY_PATH = os.path.join(ROOT, "security_taxonomy.json")
+CLASSIFIER = SecurityClassifier(TAXONOMY_PATH)
 
 USER_AGENT = "cee-security-map/5.1 (github actions)"
 TIMEOUT = 30
@@ -604,6 +608,72 @@ def classify_news_item(title: str, description: str) -> str:
     fallback = classify_from_text(f"{title} {description}")
     return fallback or "other"
 
+def classify_security_content(
+    *,
+    title: str,
+    summary: str = "",
+    url: str = "",
+    source: str = "",
+    published: Optional[str] = None,
+    country: Optional[str] = None,
+    city: Optional[str] = None,
+    latitude: Optional[float] = None,
+    longitude: Optional[float] = None,
+    source_count: int = 1,
+    extra_context: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    """Run the canonical taxonomy classifier and return pipeline-friendly fields."""
+    incident = CLASSIFIER.classify(
+        title=title or "",
+        summary=summary or "",
+        source=source or "",
+        url=url or "",
+        published=published,
+        country=country,
+        city=city,
+        latitude=latitude,
+        longitude=longitude,
+        source_is_official=False,
+        source_count=max(1, int(source_count or 1)),
+        extra_context=extra_context or {},
+    )
+
+    risk_eligible = bool(
+        incident.actual_incident
+        and incident.matched_rule_id
+        and incident.article_role == "incident"
+    )
+
+    return {
+        "incident_family": incident.family,
+        "incident_subcategory": incident.subcategory,
+        "incident_subtype": incident.subtype,
+        "incident_object": incident.object,
+        "incident_action": incident.action,
+        "incident_actor": incident.actor,
+        "incident_target": incident.target,
+        "severity": incident.severity,
+        "classification_confidence": incident.confidence,
+        "matched_rule_id": incident.matched_rule_id,
+        "article_role": incident.article_role,
+        "actual_incident": incident.actual_incident,
+        "risk_eligible": risk_eligible,
+        "fingerprint": incident.fingerprint,
+        "classification_source": "security_classifier",
+        "classifier_version": incident.classifier_version,
+        "taxonomy_version": incident.taxonomy_version,
+        "rejection_reason": incident.rejection_reason,
+    }
+
+
+def security_feature_is_eligible(classification: Dict[str, Any]) -> bool:
+    return bool(
+        classification.get("matched_rule_id")
+        and classification.get("actual_incident") is True
+        and classification.get("risk_eligible") is True
+    )
+
+
 def impact_multiplier(title: str, description: str) -> float:
     txt = f"{title} {description}".lower()
     mult = 1.0
@@ -841,6 +911,19 @@ class TrustedStory:
     signal_score: float
     confidence_boost: float
     match_terms: List[str]
+    incident_family: Optional[str]
+    incident_subcategory: Optional[str]
+    incident_subtype: Optional[str]
+    incident_action: Optional[str]
+    article_role: str
+    actual_incident: bool
+    risk_eligible: bool
+    classification_confidence: float
+    matched_rule_id: Optional[str]
+    classification_source: str
+    classifier_version: str
+    taxonomy_version: str
+    rejection_reason: Optional[str]
 
 def rss_strip_html(text: str) -> str:
     text = re.sub(r"<[^>]+>", " ", text or "")
@@ -997,6 +1080,17 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
     signal_score = round(source_weight * recency * dimension_factor * country_factor, 4)
     confidence_boost = round(min(0.35, 0.14 + source_weight * 0.18 + (0.05 if country_hint else 0.0)), 4)
 
+    classification = classify_security_content(
+        title=title,
+        summary=summary,
+        url=url,
+        source=feed["name"],
+        published=published_utc,
+        country=country_hint,
+        source_count=1,
+        extra_context={"pipeline": "trusted_rss", "feed_id": feed["id"]},
+    )
+
     return TrustedStory(
         story_id=make_story_id(url, title),
         source_id=feed["id"],
@@ -1014,6 +1108,19 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
         signal_score=signal_score,
         confidence_boost=confidence_boost,
         match_terms=sorted(set(country_terms + dim_terms)),
+        incident_family=classification["incident_family"],
+        incident_subcategory=classification["incident_subcategory"],
+        incident_subtype=classification["incident_subtype"],
+        incident_action=classification["incident_action"],
+        article_role=classification["article_role"],
+        actual_incident=classification["actual_incident"],
+        risk_eligible=classification["risk_eligible"],
+        classification_confidence=classification["classification_confidence"],
+        matched_rule_id=classification["matched_rule_id"],
+        classification_source=classification["classification_source"],
+        classifier_version=classification["classifier_version"],
+        taxonomy_version=classification["taxonomy_version"],
+        rejection_reason=classification["rejection_reason"],
     )
 
 def fetch_rss_feed(url: str) -> bytes:
@@ -1058,6 +1165,9 @@ def build_trusted_rss_output(stories: List[TrustedStory], errors: List[Dict[str,
         "summary": {
             "top_countries": sorted(by_country.items(), key=lambda x: x[1], reverse=True)[:10],
             "top_sources": sorted(by_source.items(), key=lambda x: x[1], reverse=True),
+            "actual_incidents": sum(1 for s in stories if s.actual_incident),
+            "risk_eligible": sum(1 for s in stories if s.risk_eligible),
+            "background_or_reaction": sum(1 for s in stories if not s.risk_eligible),
         },
         "errors": errors,
     }
@@ -1294,8 +1404,23 @@ def fetch_gdelt_geo(geoms: Dict[str, Dict[str, Any]], days: int = 7, maxpoints_p
                 if not in_cee_countries(lon, lat, geoms):
                     continue
                 p = f.get("properties") or {}
-                p["category"] = bucket_name
+                classification = classify_security_content(
+                    title=p.get("title") or "",
+                    summary=f"GDELT search bucket: {bucket_name}",
+                    url=p.get("url") or p.get("search_url") or "",
+                    source="GDELT",
+                    published=p.get("time"),
+                    country=p.get("country_hint"),
+                    latitude=lat,
+                    longitude=lon,
+                    source_count=1,
+                    extra_context={"pipeline": "gdelt_geo", "gdelt_bucket": bucket_name},
+                )
+                if not security_feature_is_eligible(classification):
+                    continue
+                p["category"] = classification["incident_family"]
                 p["gdelt_bucket"] = bucket_name
+                p.update(classification)
                 f["properties"] = p
                 all_out.append(f)
 
@@ -1346,35 +1471,54 @@ def gdelt_crossborder_query(country: str, days: int = 7, maxrecords: int = 75) -
 
     for a in articles:
         title = compact_ws(a.get("title") or "")
-        source_domain = a.get("domain") or ""
+        source_domain = compact_ws(a.get("domain") or "")
         urlx = a.get("url") or None
         seendate = a.get("seendate") or ""
-        dt = parse_time_iso(seendate)
-        if dt is None:
-            dt = datetime.now(timezone.utc)
+        dt = parse_time_iso(seendate) or datetime.now(timezone.utc)
 
         text_probe = f"{title} {source_domain}"
-        rel_hits = relation_matches(country, text_probe)
-        lon, lat = pick_relation_coordinate(country, rel_hits)
+        country_mentions = detect_country_mentions(title)
+        if country not in country_mentions:
+            continue
 
-        out.append(
-            to_feature(
-                lon, lat,
-                {
-                    "source": "GDELT_DOC",
-                    "kind": "news_crossborder",
-                    "type": "News",
-                    "time": to_utc_z(dt),
-                    "title": title or country,
-                    "description": source_domain,
-                    "url": urlx,
-                    "country_hint": country,
-                    "relation_hits": rel_hits,
-                    "category": classify_news_item(title, source_domain),
-                    "impact_mult": impact_multiplier(title, source_domain),
-                },
-            )
+        rel_hits = relation_matches(country, text_probe)
+        if not rel_hits:
+            continue
+
+        lon, lat = pick_relation_coordinate(country, rel_hits)
+        classification = classify_security_content(
+            title=title,
+            summary=source_domain,
+            url=urlx or "",
+            source="GDELT_DOC",
+            published=to_utc_z(dt),
+            country=country,
+            latitude=lat,
+            longitude=lon,
+            source_count=1,
+            extra_context={
+                "pipeline": "gdelt_crossborder",
+                "relation_hits": ",".join(rel_hits),
+            },
         )
+        if not security_feature_is_eligible(classification):
+            continue
+
+        props = {
+            "source": "GDELT_DOC",
+            "kind": "news_crossborder",
+            "type": "News",
+            "time": to_utc_z(dt),
+            "title": title or country,
+            "description": source_domain,
+            "url": urlx,
+            "country_hint": country,
+            "relation_hits": rel_hits,
+            "category": classification["incident_family"],
+            "impact_mult": impact_multiplier(title, source_domain),
+        }
+        props.update(classification)
+        out.append(to_feature(lon, lat, props))
 
     return out
 
@@ -1424,25 +1568,37 @@ def fetch_direct_news_feeds(days: int = 7) -> List[Dict[str, Any]]:
                 rel_hits = relation_matches(country, full_text)
                 lon, lat = pick_relation_coordinate(country, rel_hits)
 
-                out.append(
-                    to_feature(
-                        lon, lat,
-                        {
-                            "source": "DIRECT_FEED",
-                            "feed_name": feed["name"],
-                            "kind": "news_direct",
-                            "type": "News",
-                            "time": to_utc_z(dt),
-                            "title": title or country,
-                            "description": desc[:800],
-                            "url": link or None,
-                            "country_hint": country,
-                            "relation_hits": rel_hits,
-                            "category": classify_news_item(title, desc),
-                            "impact_mult": impact_multiplier(title, desc),
-                        },
-                    )
+                classification = classify_security_content(
+                    title=title,
+                    summary=desc,
+                    url=link,
+                    source=feed["name"],
+                    published=to_utc_z(dt),
+                    country=country,
+                    latitude=lat,
+                    longitude=lon,
+                    source_count=1,
+                    extra_context={"pipeline": "direct_feed", "relation_hits": ",".join(rel_hits)},
                 )
+                if not security_feature_is_eligible(classification):
+                    continue
+
+                props = {
+                    "source": "DIRECT_FEED",
+                    "feed_name": feed["name"],
+                    "kind": "news_direct",
+                    "type": "News",
+                    "time": to_utc_z(dt),
+                    "title": title or country,
+                    "description": desc[:800],
+                    "url": link or None,
+                    "country_hint": country,
+                    "relation_hits": rel_hits,
+                    "category": classification["incident_family"],
+                    "impact_mult": impact_multiplier(title, desc),
+                }
+                props.update(classification)
+                out.append(to_feature(lon, lat, props))
 
     return out
 
@@ -2659,3 +2815,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

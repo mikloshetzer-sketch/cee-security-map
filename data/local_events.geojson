@@ -1,8 +1,8 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-07-31T08:40:28.593339+00:00",
-  "classifier_version": "1.0.0",
-  "taxonomy_version": "1.0.0",
+  "generated_utc": "2026-07-31T11:49:33.438421+00:00",
+  "classifier_version": "1.0.1",
+  "taxonomy_version": "1.0.1",
   "features": [
     {
       "type": "Feature",
@@ -49,8 +49,8 @@
           "event_date": "Thu, 30 Ju",
           "hash": "9f9a51e0f2ac67bf2494605e"
         },
-        "classifier_version": "1.0.0",
-        "taxonomy_version": "1.0.0",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.1",
         "matched_terms": {
           "article_role": [],
           "objects": [
@@ -84,6 +84,7 @@
             "subcategory": "missile",
             "subtype": "missile_impact",
             "severity": "high",
+            "priority": 50,
             "score": 2.29,
             "matched": true,
             "missing": [],
@@ -95,10 +96,71 @@
             "subcategory": "drone",
             "subtype": "drone_strike",
             "severity": "high",
+            "priority": 140,
             "score": 1.1,
             "matched": false,
             "missing": [
               "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 130,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 120,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 110,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 100,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
             ],
             "matched_context": []
           },
@@ -108,6 +170,7 @@
             "subcategory": "missile",
             "subtype": "missile_detection",
             "severity": "medium",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -121,79 +184,11 @@
             "subcategory": "missile",
             "subtype": "missile_interception",
             "severity": "high",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
               "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
             ],
             "matched_context": []
           },
@@ -203,11 +198,27 @@
             "subcategory": "explosive_attack",
             "subtype": "explosive_attack",
             "severity": "high",
+            "priority": 50,
             "score": 0.0,
             "matched": false,
             "missing": [
               "objects:all:explosive_device",
               "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 50,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged",
+              "targets:any:communications,energy,government,transport"
             ],
             "matched_context": []
           }
@@ -249,19 +260,19 @@
         ]
       },
       "properties": {
-        "id": "75f17b6d5d95a588a251",
-        "title": "PM Tusk says Russian Kh-101 missile likely crashed in eastern Poland",
+        "id": "31aa9c57302963289cde",
+        "title": "Russian missile that crashed in Poland carried “significant amount” of explosive material",
         "summary": "According to Ukraine, the object that entered Polish airspace was a Russian Kh-101 cruise missile.",
         "source": "NotesFromPoland",
-        "url": "https://notesfrompoland.com/2026/07/30/unidentified-object-crashes-in-poland-after-russian-attack-on-ukraine/",
-        "published": "Thu, 30 Jul 2026 08:23:39 +0000",
+        "url": "https://notesfrompoland.com/2026/07/31/russian-missile-that-crashed-in-poland-carried-significant-amount-of-explosive-material/",
+        "published": "Fri, 31 Jul 2026 11:00:12 +0000",
         "country": "Poland",
         "city": null,
         "family": "air",
         "subcategory": "missile",
         "subtype": "missile_impact",
         "object": "missile",
-        "action": "entered",
+        "action": "impact",
         "actor": "russia",
         "target": "unknown",
         "context": [],
@@ -277,23 +288,21 @@
           "subcategory": "missile",
           "subtype": "missile_impact",
           "object": "missile",
-          "action": "entered",
+          "action": "impact",
           "actor": "russia",
           "target": "unknown",
           "place": "Poland",
-          "event_date": "Thu, 30 Ju",
-          "hash": "4938abda4a51c366d8373b40"
+          "event_date": "Fri, 31 Ju",
+          "hash": "2c36bfca78d26db5e38fe517"
         },
-        "classifier_version": "1.0.0",
-        "taxonomy_version": "1.0.0",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.1",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "missile",
-            "cruise missile"
+            "missile"
           ],
           "actions": [
-            "entered",
             "impact",
             "crashed"
           ],
@@ -325,21 +334,53 @@
             "subcategory": "missile",
             "subtype": "missile_impact",
             "severity": "high",
+            "priority": 50,
             "score": 2.29,
             "matched": true,
             "missing": [],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "score": 1.2,
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 140,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:military_aircraft"
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 130,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 120,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
             ],
             "matched_context": []
           },
@@ -349,23 +390,27 @@
             "subcategory": "drone",
             "subtype": "drone_intrusion",
             "severity": "medium",
-            "score": 1.1,
+            "priority": 110,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:drone"
+              "objects:all:drone",
+              "actions:all:entered"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.STRIKE",
+            "rule_id": "AIR.DRONE.DETECTION",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "score": 1.1,
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 100,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:drone"
+              "objects:all:drone",
+              "actions:all:detected"
             ],
             "matched_context": []
           },
@@ -375,6 +420,7 @@
             "subcategory": "missile",
             "subtype": "missile_detection",
             "severity": "medium",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -388,6 +434,7 @@
             "subcategory": "missile",
             "subtype": "missile_interception",
             "severity": "high",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -396,59 +443,32 @@
             "matched_context": []
           },
           {
-            "rule_id": "BORDER.ILLEGAL.CROSSING",
-            "family": "border_security",
-            "subcategory": "illegal_crossing",
-            "subtype": "illegal_border_crossing",
-            "severity": "low",
-            "score": 1.1,
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 50,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "context:any"
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
-            "family": "transport",
-            "subcategory": "aviation",
-            "subtype": "airport_closure",
-            "severity": "medium",
-            "score": 0.85,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "actions:all:closed"
-            ],
-            "matched_context": [
-              "airspace"
-            ]
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 50,
             "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
+              "actions:all:sabotaged",
+              "targets:any:communications,energy,government,transport"
             ],
             "matched_context": []
           }
@@ -465,16 +485,18 @@
           "NotesFromPoland"
         ],
         "urls": [
+          "https://notesfrompoland.com/2026/07/31/russian-missile-that-crashed-in-poland-carried-significant-amount-of-explosive-material/",
           "https://notesfrompoland.com/2026/07/30/unidentified-object-crashes-in-poland-after-russian-attack-on-ukraine/"
         ],
         "merged_titles": [
+          "Russian missile that crashed in Poland carried “significant amount” of explosive material",
           "PM Tusk says Russian Kh-101 missile likely crashed in eastern Poland"
         ],
         "incident_family": "air",
         "incident_subcategory": "missile",
         "incident_subtype": "missile_impact",
         "incident_object": "missile",
-        "incident_action": "entered",
+        "incident_action": "impact",
         "incident_actor": "russia",
         "incident_target": "unknown",
         "classification_confidence": 0.82
@@ -525,8 +547,8 @@
           "event_date": "Thu, 30 Ju",
           "hash": "03f68ecdfe2a833ad39afd6a"
         },
-        "classifier_version": "1.0.0",
-        "taxonomy_version": "1.0.0",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.1",
         "matched_terms": {
           "article_role": [],
           "objects": [
@@ -565,6 +587,7 @@
             "subcategory": "missile",
             "subtype": "missile_impact",
             "severity": "high",
+            "priority": 50,
             "score": 2.29,
             "matched": true,
             "missing": [],
@@ -576,10 +599,71 @@
             "subcategory": "drone",
             "subtype": "drone_strike",
             "severity": "high",
+            "priority": 140,
             "score": 1.1,
             "matched": false,
             "missing": [
               "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 130,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 120,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 110,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 100,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
             ],
             "matched_context": []
           },
@@ -589,6 +673,7 @@
             "subcategory": "missile",
             "subtype": "missile_detection",
             "severity": "medium",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -602,23 +687,11 @@
             "subcategory": "missile",
             "subtype": "missile_interception",
             "severity": "high",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
               "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
             ],
             "matched_context": []
           },
@@ -628,6 +701,7 @@
             "subcategory": "intrusion",
             "subtype": "cyber_intrusion",
             "severity": "high",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -641,52 +715,11 @@
             "subcategory": "operational_disruption",
             "subtype": "cyber_operational_disruption",
             "severity": "medium",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
               "actions:all:disrupted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
             ],
             "matched_context": []
           }
@@ -763,8 +796,8 @@
           "event_date": "Mon, 27 Ju",
           "hash": "ece4626698ff2b3704889be3"
         },
-        "classifier_version": "1.0.0",
-        "taxonomy_version": "1.0.0",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.1",
         "matched_terms": {
           "article_role": [],
           "objects": [
@@ -806,34 +839,23 @@
             "subcategory": "drone",
             "subtype": "drone_shootdown",
             "severity": "high",
+            "priority": 130,
             "score": 2.26,
             "matched": true,
             "missing": [],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.DETECTION",
+            "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 140,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
+              "actions:any:attacked,exploded,impact"
             ],
             "matched_context": []
           },
@@ -843,6 +865,7 @@
             "subcategory": "drone",
             "subtype": "drone_interception",
             "severity": "medium",
+            "priority": 120,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -851,15 +874,30 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.STRIKE",
+            "rule_id": "AIR.DRONE.INTRUSION",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 110,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:any:attacked,exploded,impact"
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 100,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
             ],
             "matched_context": []
           },
@@ -869,23 +907,11 @@
             "subcategory": "missile",
             "subtype": "missile_interception",
             "severity": "high",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
               "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:damaged,entered,impact"
             ],
             "matched_context": []
           },
@@ -895,6 +921,7 @@
             "subcategory": "intrusion",
             "subtype": "cyber_intrusion",
             "severity": "high",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -908,6 +935,7 @@
             "subcategory": "operational_disruption",
             "subtype": "cyber_operational_disruption",
             "severity": "medium",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -921,6 +949,7 @@
             "subcategory": "aviation",
             "subtype": "airport_closure",
             "severity": "medium",
+            "priority": 50,
             "score": 0.85,
             "matched": false,
             "missing": [
@@ -930,6 +959,21 @@
             "matched_context": [
               "airspace"
             ]
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 50,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
           }
         ],
         "rejection_reason": null,
@@ -978,34 +1022,34 @@
         "country": "Romania",
         "city": null,
         "family": "air",
-        "subcategory": "aircraft",
-        "subtype": "military_aircraft_incident",
+        "subcategory": "drone",
+        "subtype": "drone_shootdown",
         "object": "drone",
         "action": "entered",
         "actor": "unknown",
         "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "medium",
+        "severity": "high",
         "confidence": 0.76,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
         "fingerprint": {
           "country": "Romania",
           "family": "air",
-          "subcategory": "aircraft",
-          "subtype": "military_aircraft_incident",
+          "subcategory": "drone",
+          "subtype": "drone_shootdown",
           "object": "drone",
           "action": "entered",
           "actor": "unknown",
           "target": "unknown",
           "place": "Romania",
           "event_date": "Fri, 24 Ju",
-          "hash": "ae2c05abecc492cbeadf53ef"
+          "hash": "fe3d439ff6c316952524e19d"
         },
-        "classifier_version": "1.0.0",
-        "taxonomy_version": "1.0.0",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.1",
         "matched_terms": {
           "article_role": [],
           "objects": [
@@ -1039,12 +1083,13 @@
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
             "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "score": 2.32,
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 130,
+            "score": 2.26,
             "matched": true,
             "missing": [],
             "matched_context": []
@@ -1055,32 +1100,35 @@
             "subcategory": "drone",
             "subtype": "drone_intrusion",
             "severity": "medium",
+            "priority": 110,
             "score": 2.26,
             "matched": true,
             "missing": [],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 20,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_shootdown",
+            "subtype": "drone_strike",
             "severity": "high",
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
+            "priority": 140,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:detected"
+              "actions:any:attacked,exploded,impact"
             ],
             "matched_context": []
           },
@@ -1090,6 +1138,7 @@
             "subcategory": "drone",
             "subtype": "drone_interception",
             "severity": "medium",
+            "priority": 120,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -1098,15 +1147,16 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.STRIKE",
+            "rule_id": "AIR.DRONE.DETECTION",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 100,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:any:attacked,exploded,impact"
+              "actions:all:detected"
             ],
             "matched_context": []
           },
@@ -1116,6 +1166,7 @@
             "subcategory": "missile",
             "subtype": "missile_interception",
             "severity": "high",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -1129,6 +1180,7 @@
             "subcategory": "intrusion",
             "subtype": "cyber_intrusion",
             "severity": "high",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -1142,6 +1194,7 @@
             "subcategory": "operational_disruption",
             "subtype": "cyber_operational_disruption",
             "severity": "medium",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -1155,6 +1208,7 @@
             "subcategory": "illegal_crossing",
             "subtype": "illegal_border_crossing",
             "severity": "low",
+            "priority": 50,
             "score": 1.1,
             "matched": false,
             "missing": [
@@ -1181,8 +1235,8 @@
           "Romania shoots down drone that entered its airspace"
         ],
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
         "incident_object": "drone",
         "incident_action": "entered",
         "incident_actor": "unknown",

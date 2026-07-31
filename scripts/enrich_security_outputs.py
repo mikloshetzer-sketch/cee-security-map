@@ -159,9 +159,9 @@ TARGET_COUNTRY_TERMS = {
 # Internal-only model. Output schemas remain unchanged.
 # ============================================================
 
-INCIDENT_RESOLUTION_VERSION = "generic_v1"
+INCIDENT_RESOLUTION_VERSION = "taxonomy_classifier_v2"
 
-INCIDENT_RECONCILIATION_VERSION = "cluster_v1"
+INCIDENT_RECONCILIATION_VERSION = "classifier_cluster_v2"
 CLUSTER_RECONCILIATION_THRESHOLD = 5.4
 CLUSTER_FOLLOWUP_THRESHOLD = 4.7
 CLUSTER_GEO_CONFLICT_KM = 180.0
@@ -523,6 +523,244 @@ def security_evidence_text(props):
     ])
 
 
+# ============================================================
+# CLASSIFIER OUTPUT ADAPTER
+# security_taxonomy.json + security_classifier.py are authoritative
+# for newly collected local-media events. Legacy inference remains only
+# for older history and GDELT-derived records that do not yet contain
+# classifier fields.
+# ============================================================
+
+CLASSIFIER_MIN_CONFIDENCE = 0.68
+
+CLASSIFIER_FAMILY_TO_LEGACY_CATEGORY = {
+    "air": "military",
+    "ground": "military",
+    "maritime": "infrastructure_disruption",
+    "cyber": "cyber",
+    "energy": "infrastructure_disruption",
+    "critical_infrastructure": "infrastructure_disruption",
+    "industrial": "hazardous",
+    "cbrn": "hazardous",
+    "border_security": "military",
+    "terrorism": "kinetic_attack",
+    "public_order": "public_order",
+    "transport": "infrastructure_disruption",
+    "natural_hazard": "natural_hazard",
+    "intelligence": "intelligence",
+}
+
+CLASSIFIER_SUBCATEGORY_TO_LEGACY_CATEGORY = {
+    "drone": "drone",
+    "missile": "kinetic_attack",
+    "aircraft": "military",
+    "airspace": "drone_airspace",
+    "explosive_attack": "kinetic_attack",
+    "sabotage": "sabotage",
+    "armed_incident": "military",
+    "military_movement": "military",
+    "intrusion": "cyber",
+    "ransomware": "cyber",
+    "ddos": "cyber",
+    "data_breach": "cyber",
+    "operational_disruption": "cyber",
+    "gps_interference": "cyber",
+    "power_grid": "infrastructure_disruption",
+    "oil_gas": "energy",
+    "nuclear": "hazardous",
+    "fuel_supply": "energy",
+    "communications": "infrastructure_disruption",
+    "water": "infrastructure_disruption",
+    "public_services": "infrastructure_disruption",
+    "government_systems": "cyber",
+    "explosion": "explosion",
+    "fire": "major_fire",
+    "chemical_release": "hazardous",
+    "industrial_accident": "hazardous",
+    "chemical": "hazardous",
+    "biological": "hazardous",
+    "radiological": "hazardous",
+    "attack": "kinetic_attack",
+}
+
+CLASSIFIER_SUBTYPE_TO_LEGACY_CATEGORY = {
+    "drone_detection": "drone",
+    "drone_intrusion": "drone_airspace",
+    "drone_interception": "drone_airspace",
+    "drone_shootdown": "drone",
+    "drone_strike": "kinetic_attack",
+    "missile_detection": "military",
+    "missile_interception": "kinetic_attack",
+    "missile_impact": "kinetic_attack",
+    "military_aircraft_incident": "military_accident",
+    "explosive_attack": "kinetic_attack",
+    "ship_attack": "kinetic_attack",
+    "cyber_intrusion": "cyber",
+    "cyber_operational_disruption": "cyber",
+    "gps_jamming_or_spoofing": "cyber",
+    "energy_asset_fire": "major_fire",
+    "energy_asset_explosion": "explosion",
+    "energy_service_outage": "infrastructure_disruption",
+    "critical_infrastructure_disruption": "infrastructure_disruption",
+    "industrial_explosion": "explosion",
+    "industrial_fire": "major_fire",
+    "chemical_release": "hazardous",
+    "radiological_release": "hazardous",
+    "border_violence": "military",
+    "terrorist_attack": "kinetic_attack",
+    "rail_disruption": "infrastructure_disruption",
+    "airport_closure": "infrastructure_disruption",
+}
+
+
+def classifier_fields_present(props):
+    return bool(
+        props.get("matched_rule_id")
+        or props.get("incident_family")
+        or props.get("family")
+        or props.get("incident_subtype")
+        or props.get("subtype")
+        or "actual_incident" in props
+    )
+
+
+def classifier_confidence(props):
+    raw = (
+        props.get("classification_confidence")
+        if props.get("classification_confidence") is not None
+        else props.get("confidence")
+    )
+    try:
+        return float(raw or 0.0)
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def classifier_family(props):
+    return str(
+        props.get("incident_family")
+        or props.get("family")
+        or ""
+    ).strip().lower()
+
+
+def classifier_subcategory(props):
+    return str(
+        props.get("incident_subcategory")
+        or props.get("subcategory")
+        or ""
+    ).strip().lower()
+
+
+def classifier_subtype(props):
+    return str(
+        props.get("incident_subtype")
+        or props.get("subtype")
+        or ""
+    ).strip().lower()
+
+
+def classifier_action(props):
+    return str(
+        props.get("incident_action")
+        or props.get("action")
+        or ""
+    ).strip().lower()
+
+
+def classifier_object(props):
+    return str(
+        props.get("incident_object")
+        or props.get("object")
+        or ""
+    ).strip().lower()
+
+
+def classifier_actor(props):
+    return str(
+        props.get("incident_actor")
+        or props.get("actor")
+        or ""
+    ).strip().lower()
+
+
+def classifier_target(props):
+    return str(
+        props.get("incident_target")
+        or props.get("target")
+        or ""
+    ).strip().lower()
+
+
+def classifier_article_role(props):
+    return str(props.get("article_role") or "").strip().lower()
+
+
+def classifier_actual_incident(props):
+    value = props.get("actual_incident")
+    if isinstance(value, bool):
+        return value
+    if value is None:
+        return None
+    return str(value).strip().lower() in {"1", "true", "yes"}
+
+
+def classifier_legacy_category(props):
+    subtype = classifier_subtype(props)
+    subcategory = classifier_subcategory(props)
+    family = classifier_family(props)
+
+    return (
+        CLASSIFIER_SUBTYPE_TO_LEGACY_CATEGORY.get(subtype)
+        or CLASSIFIER_SUBCATEGORY_TO_LEGACY_CATEGORY.get(subcategory)
+        or CLASSIFIER_FAMILY_TO_LEGACY_CATEGORY.get(family)
+        or subtype
+        or subcategory
+        or family
+        or None
+    )
+
+
+def classifier_fingerprint(props):
+    value = props.get("fingerprint")
+    return value if isinstance(value, dict) else {}
+
+
+def classifier_fingerprint_hash(props):
+    return str(classifier_fingerprint(props).get("hash") or "").strip()
+
+
+def classifier_place_value(props):
+    fingerprint = classifier_fingerprint(props)
+    return str(
+        fingerprint.get("place")
+        or props.get("place")
+        or props.get("city")
+        or props.get("location")
+        or ""
+    ).strip().lower()
+
+
+def classified_feature_is_usable(props):
+    if not classifier_fields_present(props):
+        return False
+
+    if classifier_actual_incident(props) is not True:
+        return False
+
+    role = classifier_article_role(props)
+    if role in {
+        "reaction", "analysis", "summary", "procurement",
+        "exercise", "historical"
+    }:
+        return False
+
+    if not props.get("matched_rule_id"):
+        return False
+
+    return classifier_confidence(props) >= CLASSIFIER_MIN_CONFIDENCE
+
+
 def has_actual_incident_signal(text, category):
     category = str(category or "").lower()
 
@@ -620,6 +858,39 @@ def normalize_security_feature(feature, source_file):
     if country not in MONITORED_COUNTRIES:
         return None
 
+    dt = parse_time(
+        props.get("time")
+        or props.get("datetime")
+        or props.get("date")
+    )
+    if not dt:
+        return None
+
+    if classifier_fields_present(props):
+        if not classified_feature_is_usable(props):
+            return None
+
+        category = classifier_legacy_category(props)
+        if not category:
+            return None
+
+        props["country"] = country
+        props["category"] = category
+        props["incident_type"] = category
+        props["time"] = dt.isoformat()
+        props["classification_confidence"] = classifier_confidence(props)
+        props["_classification_source"] = "security_classifier"
+        props["_actual_incident_gate"] = True
+        props["_risk_source_file"] = source_file
+
+        return {
+            "type": "Feature",
+            "geometry": feature.get("geometry"),
+            "properties": props,
+        }
+
+    # Compatibility path for historical and GDELT records that pre-date
+    # security_classifier.py.
     category = infer_security_category(props)
     if not category:
         return None
@@ -629,14 +900,6 @@ def normalize_security_feature(feature, source_file):
         country,
         category,
     ):
-        return None
-
-    dt = parse_time(
-        props.get("time")
-        or props.get("datetime")
-        or props.get("date")
-    )
-    if not dt:
         return None
 
     props["country"] = country
@@ -660,6 +923,7 @@ def normalize_security_feature(feature, source_file):
         else:
             props["severity"] = "info"
 
+    props["_classification_source"] = "legacy_fallback"
     props["_risk_source_file"] = source_file
     props["_actual_incident_gate"] = True
 
@@ -889,6 +1153,38 @@ def cluster_hard_conflict(feature_a, feature_b):
     if incident_category_family(feature_a) != incident_category_family(feature_b):
         return True
 
+    subtype_a = classifier_subtype(pa)
+    subtype_b = classifier_subtype(pb)
+    if subtype_a and subtype_b and subtype_a != subtype_b:
+        return True
+
+    action_a = classifier_action(pa)
+    action_b = classifier_action(pb)
+    if action_a and action_b and action_a != action_b:
+        incompatible_actions = {
+            frozenset({"detected", "impact"}),
+            frozenset({"detected", "exploded"}),
+            frozenset({"entered", "impact"}),
+            frozenset({"entered", "exploded"}),
+        }
+        if frozenset({action_a, action_b}) in incompatible_actions:
+            return True
+
+    actor_a = classifier_actor(pa)
+    actor_b = classifier_actor(pb)
+    if (
+        actor_a and actor_b
+        and actor_a != "unknown"
+        and actor_b != "unknown"
+        and actor_a != actor_b
+    ):
+        return True
+
+    fp_a = classifier_fingerprint_hash(pa)
+    fp_b = classifier_fingerprint_hash(pb)
+    if fp_a and fp_b and fp_a == fp_b:
+        return False
+
     seq_a = cluster_sequence_signature(feature_a)
     seq_b = cluster_sequence_signature(feature_b)
     if seq_a and seq_b and not (seq_a & seq_b):
@@ -1024,20 +1320,59 @@ def reconcile_incident_clusters(clusters):
 
 def incident_category_family(feature):
     props = feature.get("properties") or {}
-    category = str(props.get("incident_type") or props.get("category") or "unknown").lower()
+
+    family = classifier_family(props)
+    if family:
+        return family
+
+    category = str(
+        props.get("incident_type")
+        or props.get("category")
+        or "unknown"
+    ).lower()
+
     family_map = {
-        "drone_airspace": "drone", "cyber_incident": "cyber", "military_accident": "military",
-        "kinetic_attack": "explosion", "hazardous_incident": "hazardous", "major_fire": "explosion",
+        "drone": "air",
+        "drone_airspace": "air",
+        "military": "ground",
+        "military_accident": "ground",
+        "kinetic_attack": "ground",
+        "cyber_incident": "cyber",
+        "explosion": "industrial",
+        "major_fire": "industrial",
+        "hazardous": "industrial",
+        "hazardous_incident": "industrial",
+        "infrastructure_disruption": "critical_infrastructure",
+        "energy": "energy",
+        "sabotage": "ground",
     }
     return family_map.get(category, category)
 
 
 def incident_subtype_signature(feature):
-    text = risk_event_text(feature)
+    props = feature.get("properties") or {}
     found = set()
-    for subtype, terms in GENERIC_SUBTYPE_PATTERNS.items():
-        if contains_any(text, terms):
-            found.add(subtype)
+
+    subtype = classifier_subtype(props)
+    subcategory = classifier_subcategory(props)
+    action = classifier_action(props)
+    object_name = classifier_object(props)
+
+    if subtype:
+        found.add(subtype)
+    if subcategory:
+        found.add(subcategory)
+    if action:
+        found.add(f"action:{action}")
+    if object_name:
+        found.add(f"object:{object_name}")
+
+    if not found:
+        text = risk_event_text(feature)
+        for legacy_subtype, terms in GENERIC_SUBTYPE_PATTERNS.items():
+            if contains_any(text, terms):
+                found.add(legacy_subtype)
+
     found.add(incident_category_family(feature))
     return found
 
@@ -1088,21 +1423,66 @@ def incident_asset_tokens(feature):
 
 
 def is_generic_followup(feature):
+    props = feature.get("properties") or {}
+    role = classifier_article_role(props)
+    if role:
+        return role == "followup"
     return contains_any(risk_event_text(feature), GENERIC_FOLLOWUP_PATTERNS)
 
 
 def is_generic_summary(feature):
+    props = feature.get("properties") or {}
+    role = classifier_article_role(props)
+    if role:
+        return role == "summary"
     return contains_any(risk_event_text(feature), GENERIC_SUMMARY_PATTERNS)
 
 
 def is_generic_reaction(feature):
+    props = feature.get("properties") or {}
+    role = classifier_article_role(props)
+    if role:
+        return role == "reaction"
     return contains_any(risk_event_text(feature), GENERIC_REACTION_PATTERNS)
 
 
 def incident_time_window_hours(feature):
     props = feature.get("properties") or {}
-    category = str(props.get("incident_type") or props.get("category") or "unknown").lower()
-    return INCIDENT_TIME_WINDOWS_HOURS.get(category, INCIDENT_TIME_WINDOWS_HOURS.get(incident_category_family(feature), 48.0))
+
+    family = classifier_family(props)
+    if family:
+        family_windows = {
+            "air": 36.0,
+            "ground": 48.0,
+            "maritime": 72.0,
+            "cyber": 96.0,
+            "energy": 96.0,
+            "critical_infrastructure": 96.0,
+            "industrial": 72.0,
+            "cbrn": 120.0,
+            "border_security": 48.0,
+            "terrorism": 120.0,
+            "public_order": 24.0,
+            "transport": 72.0,
+            "natural_hazard": 96.0,
+            "intelligence": 168.0,
+        }
+        return family_windows.get(family, 48.0)
+
+    category = str(
+        props.get("incident_type")
+        or props.get("category")
+        or "unknown"
+    ).lower()
+
+    return INCIDENT_TIME_WINDOWS_HOURS.get(
+        category,
+        INCIDENT_TIME_WINDOWS_HOURS.get(
+            classifier_legacy_category(props)
+            or category,
+            48.0
+        )
+    )
 
 
 def incident_pair_score(feature_a, feature_b):
@@ -1307,9 +1687,37 @@ def risk_event_text(feature):
 
 def risk_incident_signature(feature):
     props = feature.get("properties") or {}
-    category = str(props.get("incident_type") or props.get("category") or "").lower()
-    text = risk_event_text(feature)
     signature = set()
+
+    family = classifier_family(props)
+    subtype = classifier_subtype(props)
+    subcategory = classifier_subcategory(props)
+    action = classifier_action(props)
+    object_name = classifier_object(props)
+    actor = classifier_actor(props)
+    target = classifier_target(props)
+
+    for value, prefix in (
+        (family, "family"),
+        (subcategory, "subcategory"),
+        (subtype, "subtype"),
+        (action, "action"),
+        (object_name, "object"),
+        (actor, "actor"),
+        (target, "target"),
+    ):
+        if value and value != "unknown":
+            signature.add(f"{prefix}:{value}")
+
+    if signature:
+        return signature
+
+    category = str(
+        props.get("incident_type")
+        or props.get("category")
+        or ""
+    ).lower()
+    text = risk_event_text(feature)
 
     if category in {"drone", "drone_airspace"} or contains_any(
         text, SECURITY_INCIDENT_PATTERNS["drone"]
@@ -1331,7 +1739,10 @@ def risk_incident_signature(feature):
 
     if category in {"military", "military_accident"}:
         signature.add("military")
-        if contains_any(text, ["crash", "crashed", "lezuhant", "prăbușit", "prabusit"]):
+        if contains_any(
+            text,
+            ["crash", "crashed", "lezuhant", "prăbușit", "prabusit"]
+        ):
             signature.add("accident")
 
     if category in {"explosion", "kinetic_attack"}:
@@ -1390,24 +1801,77 @@ def merge_risk_incident(primary, incoming):
 
     titles = list(
         pp.get("risk_titles")
+        or pp.get("merged_titles")
         or ([pp.get("title")] if pp.get("title") else [])
     )
-    incoming_title = ip.get("title")
-    if incoming_title and incoming_title not in titles:
-        titles.append(incoming_title)
+
+    for incoming_title in (
+        ip.get("risk_titles")
+        or ip.get("merged_titles")
+        or ([ip.get("title")] if ip.get("title") else [])
+    ):
+        if incoming_title and incoming_title not in titles:
+            titles.append(incoming_title)
 
     pp["risk_sources"] = sources
     pp["risk_urls"] = urls
     pp["risk_titles"] = titles
+    pp["sources"] = sources
+    pp["urls"] = urls
+    pp["merged_titles"] = titles
     pp["source_count"] = len(sources)
     pp["article_count"] = int(pp.get("article_count") or 1) + int(
         ip.get("article_count") or 1
     )
 
-    severity_rank = {"info": 0, "low": 1, "medium": 2, "high": 3, "critical": 4}
-    if severity_rank.get(str(ip.get("severity") or "").lower(), 0) > \
-       severity_rank.get(str(pp.get("severity") or "").lower(), 0):
+    severity_rank = {
+        "info": 0,
+        "low": 1,
+        "medium": 2,
+        "high": 3,
+        "critical": 4,
+    }
+    if (
+        severity_rank.get(str(ip.get("severity") or "").lower(), 0)
+        > severity_rank.get(str(pp.get("severity") or "").lower(), 0)
+    ):
         pp["severity"] = ip.get("severity")
+
+    primary_confidence = classifier_confidence(pp)
+    incoming_confidence = classifier_confidence(ip)
+
+    # The highest-confidence classifier result becomes the representative
+    # structured incident model for the merged cluster.
+    if incoming_confidence > primary_confidence:
+        structured_keys = (
+            "family", "subcategory", "subtype", "object", "action",
+            "actor", "target", "context", "consequences",
+            "incident_family", "incident_subcategory", "incident_subtype",
+            "incident_object", "incident_action", "incident_actor",
+            "incident_target", "article_role", "actual_incident",
+            "matched_rule_id", "fingerprint", "classifier_version",
+            "taxonomy_version", "classification_confidence", "confidence",
+            "matched_terms", "negative_terms", "confidence_components",
+            "candidate_rules", "rejection_reason",
+        )
+        for key in structured_keys:
+            if key in ip:
+                pp[key] = ip[key]
+
+    rule_ids = list(pp.get("matched_rule_ids") or [])
+    for rule_id in (pp.get("matched_rule_id"), ip.get("matched_rule_id")):
+        if rule_id and rule_id not in rule_ids:
+            rule_ids.append(rule_id)
+    if rule_ids:
+        pp["matched_rule_ids"] = rule_ids
+
+    fingerprint_hashes = list(pp.get("fingerprint_hashes") or [])
+    for props in (pp, ip):
+        fp_hash = classifier_fingerprint_hash(props)
+        if fp_hash and fp_hash not in fingerprint_hashes:
+            fingerprint_hashes.append(fp_hash)
+    if fingerprint_hashes:
+        pp["fingerprint_hashes"] = fingerprint_hashes
 
     t_primary = parse_time(pp.get("time"))
     t_incoming = parse_time(ip.get("time"))
@@ -1723,11 +2187,7 @@ def write_risk_incidents_debug(security_events):
             continue
 
         dt = parse_time(props.get("time"))
-        category = str(
-            props.get("incident_type")
-            or props.get("category")
-            or "unknown"
-        ).lower()
+        category = event_category(props)
 
         titles = list(
             props.get("risk_titles")
@@ -1784,7 +2244,19 @@ def write_risk_incidents_debug(security_events):
             "urls": urls,
             "risk_score_input": local_event_score(props),
             "source_file": props.get("_risk_source_file"),
+            "classification_source": props.get("_classification_source"),
             "actual_incident_gate": props.get("_actual_incident_gate", False),
+            "incident_family": classifier_family(props) or None,
+            "incident_subcategory": classifier_subcategory(props) or None,
+            "incident_subtype": classifier_subtype(props) or None,
+            "incident_action": classifier_action(props) or None,
+            "incident_object": classifier_object(props) or None,
+            "incident_actor": classifier_actor(props) or None,
+            "incident_target": classifier_target(props) or None,
+            "article_role": classifier_article_role(props) or None,
+            "classification_confidence": classifier_confidence(props),
+            "matched_rule_id": props.get("matched_rule_id"),
+            "fingerprint_hash": classifier_fingerprint_hash(props) or None,
         })
 
     country_summary = {}
@@ -1982,6 +2454,9 @@ def saturating_score(value, scale):
 
 
 def event_category(props):
+    if classifier_fields_present(props):
+        return classifier_legacy_category(props) or "unknown"
+
     return str(
         props.get("incident_type")
         or props.get("category")
@@ -2385,4 +2860,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

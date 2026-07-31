@@ -188,6 +188,11 @@ class SecurityClassifier:
         self.lexicons = self.taxonomy.get("lexicons", {})
         self.article_roles = self.taxonomy.get("article_roles", {})
         self.composition_rules = self.taxonomy.get("composition_rules", [])
+        self._composition_rules_by_id = {
+            str(rule.get("rule_id")): rule
+            for rule in self.composition_rules
+            if isinstance(rule, Mapping) and rule.get("rule_id")
+        }
         self.negative_contexts = self.taxonomy.get("negative_contexts", {})
         self.severity_model = self.taxonomy.get("severity_model", {})
         self.confidence_model = self.taxonomy.get("confidence_model", {})
@@ -250,8 +255,23 @@ class SecurityClassifier:
         subtype = best_candidate.subtype if best_candidate else "unknown"
         matched_rule_id = best_candidate.rule_id if best_candidate else None
 
-        primary_object = self._first_key(matched["objects"])
-        primary_action = self._first_key(matched["actions"])
+        # Object and action must describe the winning composition rule, not
+        # merely the first lexicon term found in the article. A report may say
+        # that a drone "entered" the airspace and was then "shot down". When
+        # AIR.DRONE.SHOOTDOWN wins, the canonical action must therefore be
+        # shot_down rather than entered.
+        primary_object = self._candidate_dimension_value(
+            candidate=best_candidate,
+            dimension="objects",
+            matched=matched,
+            fallback=self._first_key(matched["objects"]),
+        )
+        primary_action = self._candidate_dimension_value(
+            candidate=best_candidate,
+            dimension="actions",
+            matched=matched,
+            fallback=self._first_key(matched["actions"]),
+        )
         primary_actor = self._first_key(matched["actors"])
         primary_target = self._first_key(matched["targets"])
 
@@ -677,6 +697,39 @@ class SecurityClassifier:
             if candidate.matched:
                 return candidate
         return None
+
+    def _candidate_dimension_value(
+        self,
+        *,
+        candidate: RuleCandidate | None,
+        dimension: str,
+        matched: Mapping[str, Mapping[str, Sequence[str]]],
+        fallback: str,
+    ) -> str:
+        """Return the canonical dimension value required by the winning rule.
+
+        Composition rules may use either ``actions``/``objects`` (all mode)
+        or ``actions_any``/``objects_any``. Values are considered in taxonomy
+        order and must also be present in the article's lexicon matches. The
+        fallback preserves backwards compatibility when no rule is selected.
+        """
+        if candidate is None:
+            return fallback
+
+        rule = self._composition_rules_by_id.get(candidate.rule_id, {})
+        requires = rule.get("requires", {}) if isinstance(rule, Mapping) else {}
+        available = set(matched.get(dimension, {}).keys())
+
+        for key in (dimension, f"{dimension}_any"):
+            values = requires.get(key, [])
+            if not isinstance(values, Sequence) or isinstance(values, (str, bytes)):
+                continue
+            for value in values:
+                canonical = str(value)
+                if canonical in available:
+                    return canonical
+
+        return fallback
 
     @staticmethod
     def _collect_context_terms(

@@ -195,13 +195,14 @@ CEE_COUNTRY_KEYWORDS = {
     "Czech Republic": ["czech republic", "czech", "prague", "csehország", "cseh"],
     "Slovakia": ["slovakia", "bratislava", "slovak", "szlovákia", "szlovák", "fico"],
     "Romania": ["romania", "bucharest", "romanian", "románia", "román", "black sea"],
-    "Latvia": ["latvia", "riga", "latvian", "lettország", "lett"],
+    "Latvia": ["latvia", "riga", "latvian", "lettország"],
     "Lithuania": ["lithuania", "vilnius", "lithuanian", "litvánia", "litván", "kaliningrad"],
-    "Estonia": ["estonia", "tallinn", "estonian", "észtország", "észt"],
+    "Estonia": ["estonia", "tallinn", "estonian", "észtország"],
 }
 
 DEFAULT_COUNTRY_BY_SOURCE = {
     "telex_belfold": "Hungary",
+    "telex_gazdasag": "Hungary",
 }
 
 # Explicit location hints used by Trusted RSS. Coordinates are [longitude, latitude].
@@ -378,9 +379,9 @@ CEE_ALIASES = {
     "Czech Republic": ["czech republic", "czech", "prague", "csehország", "cseh"],
     "Slovakia": ["slovakia", "slovak", "bratislava", "fico", "szlovákia", "szlovák"],
     "Romania": ["romania", "romanian", "bucharest", "románia", "román"],
-    "Latvia": ["latvia", "latvian", "riga", "lettország", "lett"],
+    "Latvia": ["latvia", "latvian", "riga", "lettország"],
     "Lithuania": ["lithuania", "lithuanian", "vilnius", "kaliningrad", "litvánia", "litván"],
-    "Estonia": ["estonia", "estonian", "tallinn", "észtország", "észt"],
+    "Estonia": ["estonia", "estonian", "tallinn", "észtország"],
 }
 
 COUNTRY_CENTROIDS = {
@@ -1150,22 +1151,36 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
         return None
 
     city_hint, city_country, latitude, longitude, location_terms = detect_explicit_location(blob)
-    country_hint, country_terms = infer_country_from_text(blob)
+    blob_country, blob_country_terms = infer_country_from_text(blob)
+    title_country, title_country_terms = infer_country_from_text(title.casefold())
+    default_country = DEFAULT_COUNTRY_BY_SOURCE.get(feed.get("id", ""))
 
-    # Explicit city/location beats generic country keywords.
+    # Location priority:
+    # 1) explicit city/place; 2) explicit country in the title;
+    # 3) domestic source default; 4) country inferred from the full text.
+    # This prevents ordinary Hungarian words such as "lett" from moving a
+    # domestic Telex story to Latvia, while still allowing an explicit foreign
+    # country in the headline to override the source default.
+    country_hint: Optional[str] = None
+    country_terms: List[str] = []
     location_source: Optional[str] = None
+
     if city_country:
         country_hint = city_country
-        country_terms = sorted(set(country_terms + location_terms))
+        country_terms = sorted(set(location_terms + blob_country_terms))
         location_source = "explicit_location"
-    elif country_hint:
+    elif title_country:
+        country_hint = title_country
+        country_terms = title_country_terms
+        location_source = "explicit_title_country"
+    elif default_country:
+        country_hint = default_country
+        country_terms = [f"source_default:{feed.get('id', '')}"]
+        location_source = "source_default"
+    elif blob_country:
+        country_hint = blob_country
+        country_terms = blob_country_terms
         location_source = "explicit_country"
-    else:
-        default_country = DEFAULT_COUNTRY_BY_SOURCE.get(feed.get("id", ""))
-        if default_country:
-            country_hint = default_country
-            country_terms = [f"source_default:{feed.get('id', '')}"]
-            location_source = "source_default"
 
     dims, dim_terms = infer_dimensions_from_text(blob)
 
@@ -1791,6 +1806,127 @@ def classify_gdelt_export_row(fullname: str, sourceurl: str, event_code: str, ro
 
     return classify_from_text(probe) or "other"
 
+def country_for_coordinates(lon: float, lat: float, geoms: Dict[str, Dict[str, Any]]) -> Optional[str]:
+    """Return the CEE country containing a point, or None when unresolved."""
+    for country in CEE_COUNTRIES:
+        geom = geoms.get(country)
+        if geom and point_in_feature(lon, lat, geom):
+            return country
+    return None
+
+
+def gdelt_linked_classification(
+    ev: Dict[str, Any],
+    *,
+    lat: float,
+    lon: float,
+    geoms: Dict[str, Dict[str, Any]],
+) -> Dict[str, Any]:
+    """Classify an aggregated GDELT Export record without losing the layer.
+
+    GDELT Export usually provides a CAMEO event code and location but not a
+    readable article title. We first run the canonical classifier using a
+    synthetic, transparent description. If the taxonomy cannot compose a rule,
+    high-action CAMEO roots receive a conservative structured fallback.
+    Background/diplomatic CAMEO records remain visible but never affect risk.
+    """
+    category = str(ev.get("category") or "other")
+    root = str(ev.get("event_root_code") or "")
+    event_codes = sorted(str(c) for c in (ev.get("event_codes") or []) if c)
+    location = str(ev.get("location") or "unknown")
+    sources = list(ev.get("sources") or [])
+    country = country_for_coordinates(lon, lat, geoms)
+
+    title = f"{category.replace('_', ' ').title()} event near {location}"
+    summary = (
+        f"GDELT CAMEO root {root}; event codes {', '.join(event_codes) or 'unknown'}; "
+        f"aggregated from {len(sources)} source URL(s)."
+    )
+    classification = classify_security_content(
+        title=title,
+        summary=summary,
+        url=sources[0] if sources else "",
+        source="GDELT_EXPORT",
+        published=ev.get("time"),
+        country=country,
+        city=location if location != "unknown" else None,
+        latitude=lat,
+        longitude=lon,
+        source_count=max(1, len(sources)),
+        extra_context={
+            "pipeline": "gdelt_export_linked",
+            "cameo_root": root,
+            "cameo_codes": ",".join(event_codes),
+            "legacy_category": category,
+        },
+    )
+
+    if security_feature_is_eligible(classification):
+        return classification
+
+    actionable_roots = {"14", "15", "18", "19", "20"}
+    actionable_categories = {
+        "violence", "police", "protest", "border", "military", "drone",
+        "cyber", "energy", "infrastructure",
+    }
+    is_actionable = root in actionable_roots or category in actionable_categories
+
+    family_map = {
+        "violence": "kinetic",
+        "police": "law_enforcement",
+        "protest": "civil_unrest",
+        "border": "border",
+        "military": "military",
+        "drone": "air",
+        "cyber": "cyber",
+        "energy": "infrastructure",
+        "infrastructure": "infrastructure",
+    }
+
+    if is_actionable:
+        return {
+            "incident_family": family_map.get(category, "security"),
+            "incident_subcategory": category,
+            "incident_subtype": f"gdelt_cameo_{root or 'event'}",
+            "incident_object": "unknown",
+            "incident_action": category,
+            "incident_actor": "unknown",
+            "incident_target": location,
+            "severity": "medium" if root not in {"18", "19", "20"} else "high",
+            "classification_confidence": 0.58,
+            "matched_rule_id": f"GDELT.CAMEO.{root or 'STRUCTURED'}",
+            "article_role": "incident",
+            "actual_incident": True,
+            "risk_eligible": True,
+            "fingerprint": None,
+            "classification_source": "gdelt_cameo_structured",
+            "classifier_version": CLASSIFIER_VERSION,
+            "taxonomy_version": getattr(CLASSIFIER, "taxonomy_version", "unknown"),
+            "rejection_reason": None,
+        }
+
+    return {
+        "incident_family": "background",
+        "incident_subcategory": category,
+        "incident_subtype": f"gdelt_cameo_{root or 'background'}",
+        "incident_object": "unknown",
+        "incident_action": "reported",
+        "incident_actor": "unknown",
+        "incident_target": location,
+        "severity": "low",
+        "classification_confidence": 0.35,
+        "matched_rule_id": None,
+        "article_role": "background",
+        "actual_incident": False,
+        "risk_eligible": False,
+        "fingerprint": None,
+        "classification_source": "gdelt_cameo_background",
+        "classifier_version": CLASSIFIER_VERSION,
+        "taxonomy_version": getattr(CLASSIFIER, "taxonomy_version", "unknown"),
+        "rejection_reason": classification.get("rejection_reason") or "non_actionable_cameo_record",
+    }
+
+
 def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: int = 14) -> List[Dict[str, Any]]:
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(days=lookback_days)
@@ -1885,28 +2021,45 @@ def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: i
     for ev in live_agg.values():
         lat = ev["lat_sum"] / max(1, ev["n"])
         lon = ev["lon_sum"] / max(1, ev["n"])
-        live_features.append(
-            to_feature(
-                lon, lat,
-                {
-                    "source": "GDELT",
-                    "kind": "news_linked",
-                    "type": "News",
-                    "time": ev["time"],
-                    "date": ev["date"],
-                    "title": ev["location"],
-                    "location": ev["location"],
-                    "category": ev["category"],
-                    "event_root_code": ev["event_root_code"],
-                    "event_codes": sorted([c for c in ev["event_codes"] if c]),
-                    "gdelt_ids_count": len(ev["gdelt_ids"]),
-                    "sources_count": len(ev["sources"]),
-                    "sources": ev["sources"],
-                    "url": ev["sources"][0] if ev["sources"] else None,
-                    "impact_mult": impact_multiplier(ev["location"], " ".join(ev["sources"][:3])),
-                },
-            )
+        country_hint = country_for_coordinates(lon, lat, geoms)
+        classification = gdelt_linked_classification(
+            ev, lat=lat, lon=lon, geoms=geoms
         )
+        display_category = (
+            classification.get("incident_subcategory")
+            or ev.get("category")
+            or "other"
+        )
+        description = (
+            f"GDELT linked event: {display_category}; "
+            f"CAMEO root {ev.get('event_root_code') or 'unknown'}; "
+            f"{len(ev.get('sources') or [])} source(s)."
+        )
+        props = {
+            "source": "GDELT",
+            "kind": "news_linked",
+            "type": "News",
+            "time": ev["time"],
+            "date": ev["date"],
+            "title": f"{display_category.replace('_', ' ').title()} – {ev['location']}",
+            "description": description,
+            "summary": description,
+            "location": ev["location"],
+            "country_hint": country_hint,
+            "city_hint": ev["location"] if ev["location"] != "unknown" else None,
+            "location_source": "gdelt_export_coordinates",
+            "category": display_category,
+            "legacy_category": ev["category"],
+            "event_root_code": ev["event_root_code"],
+            "event_codes": sorted([c for c in ev["event_codes"] if c]),
+            "gdelt_ids_count": len(ev["gdelt_ids"]),
+            "sources_count": len(ev["sources"]),
+            "sources": ev["sources"],
+            "url": ev["sources"][0] if ev["sources"] else None,
+            "impact_mult": impact_multiplier(ev["location"], " ".join(ev["sources"][:3])),
+        }
+        props.update(classification)
+        live_features.append(to_feature(lon, lat, props))
 
     live_features.sort(
         key=lambda f: (
@@ -1923,6 +2076,13 @@ def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: i
 def score_feature(props: Dict[str, Any]) -> float:
     src = props.get("source")
     kind = props.get("kind")
+
+    # News-derived layers may remain visible as context, but only explicitly
+    # risk-eligible records may influence hotspots, early warning or trends.
+    if src in {"GDELT", "GDELT_DOC", "DIRECT_FEED"}:
+        if props.get("risk_eligible") is not True:
+            return 0.0
+
     base = 0.1
 
     if src == "GDELT" and kind in ("news_linked",):
@@ -1992,6 +2152,8 @@ def build_hotspots_with_trend(all_features: List[Dict[str, Any]], cell_deg: floa
         props = f.get("properties") or {}
         dt = parse_time_iso(props.get("time"))
         s = score_feature(props) * time_decay(dt, now)
+        if s <= 0:
+            continue
 
         k = grid_key(lon, lat, cell_deg)
         bucket = acc.get(k)
@@ -2091,6 +2253,8 @@ def build_early_warning(all_features: List[Dict[str, Any]], cell_deg: float = 0.
             continue
 
         s = score_feature(props)
+        if s <= 0:
+            continue
         k = grid_key(lon, lat, cell_deg)
         b = get_bucket(k)
 
@@ -2766,6 +2930,16 @@ def main() -> int:
     prev_gdacs = load_geojson_features(os.path.join(DATA_DIR, "gdacs.geojson"))
     prev_gdelt = load_geojson_features(os.path.join(DATA_DIR, "gdelt.geojson"))
     prev_gdelt_linked = load_geojson_features(os.path.join(DATA_DIR, "gdelt_linked.geojson"))
+    # Drop legacy linked records that do not carry the unified eligibility model.
+    # Both incident and background records are retained once upgraded, but only
+    # risk_eligible=True records can affect analytical outputs.
+    prev_gdelt_linked = [
+        feature
+        for feature in prev_gdelt_linked
+        if (feature.get("properties") or {}).get("classification_source")
+        in {"security_classifier", "gdelt_cameo_structured", "gdelt_cameo_background"}
+        and "risk_eligible" in (feature.get("properties") or {})
+    ]
     prev_gdelt_cross = load_geojson_features(os.path.join(DATA_DIR, "gdelt_crossborder.geojson"))
     # Never merge old, unclassified GDELT DOC records back into the new output.
     prev_gdelt_cross = [

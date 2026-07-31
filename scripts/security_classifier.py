@@ -32,7 +32,7 @@ from typing import Any, Iterable, Mapping, Sequence
 
 
 LOGGER = logging.getLogger("security_classifier")
-CLASSIFIER_VERSION = "1.0.0"
+CLASSIFIER_VERSION = "1.0.1"
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TAXONOMY_PATH = REPO_ROOT / "security_taxonomy.json"
@@ -103,6 +103,7 @@ class RuleCandidate:
     subcategory: str
     subtype: str
     severity: str
+    priority: int
     score: float
     matched: bool
     missing: list[str] = field(default_factory=list)
@@ -644,6 +645,7 @@ class SecurityClassifier:
                         .get(rule["family"], {})
                         .get("default_severity", "medium")
                     ),
+                    priority=int(rule.get("priority", 0) or 0),
                     score=round(score, 4),
                     matched=matched_rule,
                     missing=missing,
@@ -651,8 +653,12 @@ class SecurityClassifier:
                 )
             )
 
+        # Deterministic precedence: matched rules first, then explicit
+        # taxonomy priority, then evidence score. This prevents a generic
+        # aircraft rule from outranking a drone-specific rule merely because
+        # the article also mentions an F-16.
         candidates.sort(
-            key=lambda item: (item.matched, item.score),
+            key=lambda item: (item.matched, item.priority, item.score),
             reverse=True,
         )
         return candidates

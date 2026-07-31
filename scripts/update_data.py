@@ -200,6 +200,59 @@ CEE_COUNTRY_KEYWORDS = {
     "Estonia": ["estonia", "tallinn", "estonian", "észtország", "észt"],
 }
 
+DEFAULT_COUNTRY_BY_SOURCE = {
+    "telex_belfold": "Hungary",
+}
+
+# Explicit location hints used by Trusted RSS. Coordinates are [longitude, latitude].
+# Only unambiguous forms are included; uncertain matches are deliberately ignored.
+CEE_LOCATION_HINTS = {
+    "Budapest": {
+        "country": "Hungary",
+        "coordinates": (19.0402, 47.4979),
+        "aliases": [
+            "budapest", "allee", "móricz zsigmond körtér",
+            "moric zsigmond korter", "váli-kert", "vali-kert",
+        ],
+    },
+    "Warsaw": {
+        "country": "Poland",
+        "coordinates": (21.0122, 52.2297),
+        "aliases": ["warsaw", "warszawa", "varsó", "varso"],
+    },
+    "Prague": {
+        "country": "Czech Republic",
+        "coordinates": (14.4378, 50.0755),
+        "aliases": ["prague", "praha", "prága", "praga"],
+    },
+    "Bratislava": {
+        "country": "Slovakia",
+        "coordinates": (17.1077, 48.1486),
+        "aliases": ["bratislava", "pozsony"],
+    },
+    "Bucharest": {
+        "country": "Romania",
+        "coordinates": (26.1025, 44.4268),
+        "aliases": ["bucharest", "bucurești", "bucuresti", "bukarest"],
+    },
+    "Riga": {
+        "country": "Latvia",
+        "coordinates": (24.1052, 56.9496),
+        "aliases": ["riga"],
+    },
+    "Vilnius": {
+        "country": "Lithuania",
+        "coordinates": (25.2797, 54.6872),
+        "aliases": ["vilnius"],
+    },
+    "Tallinn": {
+        "country": "Estonia",
+        "coordinates": (24.7536, 59.4370),
+        "aliases": ["tallinn"],
+    },
+}
+
+
 DIMENSION_KEYWORDS = {
     "political": [
         "election", "government", "parliament", "president", "prime minister",
@@ -558,13 +611,36 @@ def feed_item_time(raw: str) -> Optional[datetime]:
     except Exception:
         return None
 
+def contains_term(text: str, term: str) -> bool:
+    """Match a term as a complete token/phrase, never inside another word."""
+    haystack = (text or "").casefold()
+    needle = (term or "").strip().casefold()
+    if not needle:
+        return False
+    pattern = rf"(?<!\w){re.escape(needle)}(?!\w)"
+    return re.search(pattern, haystack, flags=re.UNICODE) is not None
+
 def detect_country_mentions(text: str) -> List[str]:
-    t = (text or "").lower()
     hits: List[str] = []
     for country, aliases in CEE_ALIASES.items():
-        if any(a in t for a in aliases):
+        if any(contains_term(text, alias) for alias in aliases):
             hits.append(country)
     return hits
+
+def detect_explicit_location(text: str) -> Tuple[Optional[str], Optional[str], Optional[float], Optional[float], List[str]]:
+    matched: List[Tuple[str, Dict[str, Any], str]] = []
+    for city, spec in CEE_LOCATION_HINTS.items():
+        for alias in spec.get("aliases", []):
+            if contains_term(text, alias):
+                matched.append((city, spec, alias))
+                break
+    if not matched:
+        return None, None, None, None, []
+
+    # Prefer the longest, most specific location alias.
+    city, spec, alias = max(matched, key=lambda item: len(item[2]))
+    lon, lat = spec["coordinates"]
+    return city, spec["country"], lat, lon, [alias]
 
 def relation_matches(country: str, text: str) -> List[str]:
     rels = COUNTRY_RELATIONS.get(country, [])
@@ -906,6 +982,10 @@ class TrustedStory:
     published_utc: Optional[str]
     fetched_utc: str
     country_hint: Optional[str]
+    city_hint: Optional[str]
+    latitude: Optional[float]
+    longitude: Optional[float]
+    location_source: Optional[str]
     dimensions: List[str]
     scope: List[str]
     signal_score: float
@@ -977,17 +1057,25 @@ def infer_country_from_text(blob: str) -> Tuple[Optional[str], List[str]]:
     matches: List[Tuple[str, str]] = []
     for country, keywords in CEE_COUNTRY_KEYWORDS.items():
         for kw in keywords:
-            if kw in blob:
+            if contains_term(blob, kw):
                 matches.append((country, kw))
+
     if not matches:
         return None, []
+
     counts: Dict[str, int] = {}
-    used_terms: List[str] = []
+    terms_by_country: Dict[str, List[str]] = {}
     for country, kw in matches:
         counts[country] = counts.get(country, 0) + 1
-        used_terms.append(kw)
-    best = sorted(counts.items(), key=lambda x: x[1], reverse=True)[0][0]
-    return best, sorted(set(used_terms))
+        terms_by_country.setdefault(country, []).append(kw)
+
+    ranked = sorted(counts.items(), key=lambda item: (-item[1], item[0]))
+    # A tie between countries is ambiguous; do not invent a location.
+    if len(ranked) > 1 and ranked[0][1] == ranked[1][1]:
+        return None, []
+
+    best = ranked[0][0]
+    return best, sorted(set(terms_by_country.get(best, [])))
 
 def infer_dimensions_from_text(blob: str) -> Tuple[List[str], List[str]]:
     dims: List[str] = []
@@ -1061,7 +1149,24 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
     if should_exclude_rss(blob):
         return None
 
+    city_hint, city_country, latitude, longitude, location_terms = detect_explicit_location(blob)
     country_hint, country_terms = infer_country_from_text(blob)
+
+    # Explicit city/location beats generic country keywords.
+    location_source: Optional[str] = None
+    if city_country:
+        country_hint = city_country
+        country_terms = sorted(set(country_terms + location_terms))
+        location_source = "explicit_location"
+    elif country_hint:
+        location_source = "explicit_country"
+    else:
+        default_country = DEFAULT_COUNTRY_BY_SOURCE.get(feed.get("id", ""))
+        if default_country:
+            country_hint = default_country
+            country_terms = [f"source_default:{feed.get('id', '')}"]
+            location_source = "source_default"
+
     dims, dim_terms = infer_dimensions_from_text(blob)
 
     if country_hint is None and not any(
@@ -1087,6 +1192,9 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
         source=feed["name"],
         published=published_utc,
         country=country_hint,
+        city=city_hint,
+        latitude=latitude,
+        longitude=longitude,
         source_count=1,
         extra_context={"pipeline": "trusted_rss", "feed_id": feed["id"]},
     )
@@ -1103,6 +1211,10 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
         published_utc=published_utc,
         fetched_utc=datetime.now(timezone.utc).isoformat(),
         country_hint=country_hint,
+        city_hint=city_hint,
+        latitude=latitude,
+        longitude=longitude,
+        location_source=location_source,
         dimensions=dims,
         scope=list(feed.get("scope", [])),
         signal_score=signal_score,
@@ -1511,10 +1623,15 @@ def gdelt_crossborder_query(country: str, days: int = 7, maxrecords: int = 75) -
             "time": to_utc_z(dt),
             "title": title or country,
             "description": source_domain,
+            "summary": source_domain,
             "url": urlx,
             "country_hint": country,
             "relation_hits": rel_hits,
-            "category": classification["incident_family"],
+            "category": (
+                classification.get("incident_subcategory")
+                or classification.get("incident_family")
+                or "other"
+            ),
             "impact_mult": impact_multiplier(title, source_domain),
         }
         props.update(classification)
@@ -2650,6 +2767,15 @@ def main() -> int:
     prev_gdelt = load_geojson_features(os.path.join(DATA_DIR, "gdelt.geojson"))
     prev_gdelt_linked = load_geojson_features(os.path.join(DATA_DIR, "gdelt_linked.geojson"))
     prev_gdelt_cross = load_geojson_features(os.path.join(DATA_DIR, "gdelt_crossborder.geojson"))
+    # Never merge old, unclassified GDELT DOC records back into the new output.
+    prev_gdelt_cross = [
+        feature
+        for feature in prev_gdelt_cross
+        if (feature.get("properties") or {}).get("classification_source") == "security_classifier"
+        and (feature.get("properties") or {}).get("matched_rule_id")
+        and (feature.get("properties") or {}).get("actual_incident") is True
+        and (feature.get("properties") or {}).get("risk_eligible") is True
+    ]
     prev_direct_news = load_geojson_features(os.path.join(DATA_DIR, "direct_news.geojson"))
 
     try:
@@ -2815,4 +2941,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

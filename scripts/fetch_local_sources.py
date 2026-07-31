@@ -7,6 +7,8 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from datetime import datetime, timezone
 
+from security_classifier import CLASSIFIER_VERSION, SecurityClassifier
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 
@@ -15,6 +17,9 @@ OUTPUT_FILE = DATA / "local_events.geojson"
 DEBUG_FILE = DATA / "local_events_debug.json"
 
 MAX_ITEMS_PER_SOURCE = 50
+
+TAXONOMY_FILE = ROOT / "security_taxonomy.json"
+CLASSIFIER = SecurityClassifier(TAXONOMY_FILE)
 
 TARGET_COUNTRIES = {
     "Hungary",
@@ -671,17 +676,14 @@ def is_foreign_focus(title, summary, event_country):
 
 
 def rejection_reason(text, country):
+    """
+    Geography-level rejection only.
+
+    Incident relevance, article role, severity and confidence are decided by
+    security_classifier.py using security_taxonomy.json.
+    """
     if country not in TARGET_COUNTRIES:
         return "outside_target_countries"
-
-    if has_negative(text):
-        return "negative_keyword"
-
-    if not is_security_relevant(text):
-        return "not_security_relevant"
-
-    if not has_positive(text, country):
-        return "no_positive_keyword"
 
     return None
 
@@ -742,10 +744,67 @@ def build_feature(entry, source_name, country):
 
         lat, lon = fallback_coords
         place = event_country
+        city = None
         geocode_quality = "country_fallback"
 
-    category = classify_category(combined)
-    severity = estimate_severity(combined)
+    incident = CLASSIFIER.classify(
+        title=title_text,
+        summary=summary_text,
+        source=source_name,
+        url=str(link or ""),
+        published=published,
+        country=event_country,
+        city=city,
+        latitude=lat,
+        longitude=lon,
+        source_is_official=False,
+        source_count=1,
+        extra_context={
+            "feed_country": country,
+            "geocode_quality": geocode_quality
+        }
+    )
+
+    if not incident.matched_rule_id:
+        return None, "classifier_no_matching_rule"
+
+    if not incident.actual_incident:
+        return None, incident.rejection_reason or "classifier_not_actual_incident"
+
+    properties = incident.to_geojson_properties()
+
+    properties.update({
+        "title": title_text,
+        "summary": summary_text[:800],
+        "source": source_name,
+        "country": event_country,
+        "place": place,
+        "url": link,
+        "time": published,
+        "category": incident.family,
+        "severity": incident.severity,
+        "kind": "local_media",
+        "geocode_quality": geocode_quality,
+        "force_included": False,
+        "source_count": 1,
+        "sources": [source_name],
+        "urls": [link] if link else [],
+        "merged_titles": [title_text],
+        "incident_family": incident.family,
+        "incident_subcategory": incident.subcategory,
+        "incident_subtype": incident.subtype,
+        "incident_object": incident.object,
+        "incident_action": incident.action,
+        "incident_actor": incident.actor,
+        "incident_target": incident.target,
+        "classification_confidence": incident.confidence,
+        "matched_rule_id": incident.matched_rule_id,
+        "article_role": incident.article_role,
+        "actual_incident": incident.actual_incident,
+        "fingerprint": incident.fingerprint,
+        "classifier_version": incident.classifier_version,
+        "taxonomy_version": incident.taxonomy_version
+    })
 
     return {
         "type": "Feature",
@@ -753,24 +812,7 @@ def build_feature(entry, source_name, country):
             "type": "Point",
             "coordinates": [lon, lat]
         },
-        "properties": {
-            "title": title,
-            "summary": summary_text[:800],
-            "source": source_name,
-            "country": event_country,
-            "place": place,
-            "url": link,
-            "time": published,
-            "category": category,
-            "severity": severity,
-            "kind": "local_media",
-            "geocode_quality": geocode_quality,
-            "force_included": has_force_include(combined),
-            "source_count": 1,
-            "sources": [source_name],
-            "urls": [link] if link else [],
-            "merged_titles": [title_text]
-        }
+        "properties": properties
     }, None
 
 
@@ -993,8 +1035,28 @@ def same_event(feature_a, feature_b):
     if pa.get("country") != pb.get("country"):
         return False
 
-    if pa.get("category") != pb.get("category"):
+    family_a = pa.get("incident_family") or pa.get("family") or pa.get("category")
+    family_b = pb.get("incident_family") or pb.get("family") or pb.get("category")
+
+    if family_a != family_b:
         return False
+
+    subtype_a = pa.get("incident_subtype") or pa.get("subtype")
+    subtype_b = pb.get("incident_subtype") or pb.get("subtype")
+
+    if subtype_a and subtype_b and subtype_a != subtype_b:
+        return False
+
+    fingerprint_a = pa.get("fingerprint") or {}
+    fingerprint_b = pb.get("fingerprint") or {}
+
+    if (
+        isinstance(fingerprint_a, dict)
+        and isinstance(fingerprint_b, dict)
+        and fingerprint_a.get("hash")
+        and fingerprint_a.get("hash") == fingerprint_b.get("hash")
+    ):
+        return True
 
     time_a = parse_event_time(pa.get("time"))
     time_b = parse_event_time(pb.get("time"))
@@ -1112,6 +1174,27 @@ def merge_event_features(primary, incoming):
     if severity_rank(ip.get("severity")) > severity_rank(pp.get("severity")):
         pp["severity"] = ip.get("severity")
 
+    incoming_confidence = float(
+        ip.get("classification_confidence") or ip.get("confidence") or 0.0
+    )
+    primary_confidence = float(
+        pp.get("classification_confidence") or pp.get("confidence") or 0.0
+    )
+
+    if incoming_confidence > primary_confidence:
+        for key in (
+            "family", "subcategory", "subtype", "object", "action", "actor",
+            "target", "context", "consequences", "article_role",
+            "actual_incident", "matched_rule_id", "fingerprint",
+            "classifier_version", "taxonomy_version", "matched_terms",
+            "negative_terms", "confidence_components", "candidate_rules",
+            "rejection_reason", "incident_family", "incident_subcategory",
+            "incident_subtype", "incident_object", "incident_action",
+            "incident_actor", "incident_target", "classification_confidence",
+        ):
+            if key in ip:
+                pp[key] = ip[key]
+
     if location_rank(incoming) > location_rank(primary):
         primary["geometry"] = incoming.get("geometry", primary.get("geometry"))
         pp["place"] = ip.get("place", pp.get("place"))
@@ -1190,6 +1273,8 @@ def main():
     geojson = {
         "type": "FeatureCollection",
         "generated_utc": datetime.now(timezone.utc).isoformat(),
+        "classifier_version": CLASSIFIER_VERSION,
+        "taxonomy_version": CLASSIFIER.metadata.get("version", ""),
         "features": features
     }
 
@@ -1198,6 +1283,8 @@ def main():
         "max_items_per_source": MAX_ITEMS_PER_SOURCE,
         "included_count": len(features),
         "debug_count": len(debug),
+        "classifier_version": CLASSIFIER_VERSION,
+        "taxonomy_version": CLASSIFIER.metadata.get("version", ""),
         "rows": debug[:2000]
     }
 

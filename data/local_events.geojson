@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-07-31T13:56:06.358143+00:00",
+  "generated_utc": "2026-07-31T14:40:59.064474+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.1",
   "features": [
@@ -239,6 +239,255 @@
         ],
         "merged_titles": [
           "Raketa, která dopadla na východě Polska, byla zřejmě ruská, uvedl Tusk"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "incident_object": "missile",
+        "incident_action": "impact",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.1451,
+          51.9194
+        ]
+      },
+      "properties": {
+        "id": "f4b528ba6639d04cb976",
+        "title": "Ruská raketa odhalila slabinu Polska. Sirény zněly, lidé ale nevěděli proč",
+        "summary": "Raketa, která v noci na čtvrtek vstoupila do polského vzdušného prostoru a dopadla na pole nedaleko Lublinu, byla ruská řízená střela Ch-101. Potvrdil to oficiálně podle stanice RMF FM náměstek polského ministra obrany Cezary Tomczyk.",
+        "source": "SeznamZpravy",
+        "url": "https://www.seznamzpravy.cz/clanek/zahranicni-stredni-evropa-ruska-raketa-odhalila-slabinu-polska-sireny-znely-lide-ale-nevedeli-proc-312177",
+        "published": "Fri, 31 Jul 2026 16:30:00 +0200",
+        "country": "Poland",
+        "city": null,
+        "family": "air",
+        "subcategory": "missile",
+        "subtype": "missile_impact",
+        "object": "missile",
+        "action": "impact",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "missile",
+          "subtype": "missile_impact",
+          "object": "missile",
+          "action": "impact",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Poland",
+          "event_date": "Fri, 31 Ju",
+          "hash": "58ecf5ab4218957f56d64a4c"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.1",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "missile",
+            "raketa"
+          ],
+          "actions": [
+            "impact",
+            "dopadla"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Czechia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 50,
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 140,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 130,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 120,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 110,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 100,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 50,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 50,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 50,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 50,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged",
+              "targets:any:communications,energy,government,transport"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "place": "Poland",
+        "time": "Fri, 31 Jul 2026 16:07:32 +0200",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 2,
+        "sources": [
+          "SeznamZpravy",
+          "Novinky"
+        ],
+        "urls": [
+          "https://www.seznamzpravy.cz/clanek/zahranicni-stredni-evropa-ruska-raketa-odhalila-slabinu-polska-sireny-znely-lide-ale-nevedeli-proc-312177",
+          "https://www.novinky.cz/clanek/zahranicni-potvrzeno-do-polska-dopadla-ruska-raketa-ch-101-40590732"
+        ],
+        "merged_titles": [
+          "Ruská raketa odhalila slabinu Polska. Sirény zněly, lidé ale nevěděli proč",
+          "Potvrzeno: Do Polska dopadla ruská raketa Ch-101"
         ],
         "incident_family": "air",
         "incident_subcategory": "missile",

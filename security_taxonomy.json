@@ -1,0 +1,1686 @@
+{
+  "metadata": {
+    "name": "CEE Security Knowledge Base",
+    "version": "1.0.0",
+    "schema_version": "1.0",
+    "language": "multilingual",
+    "description": "Machine-readable taxonomy and rule base for classifying security incidents in Central and Eastern Europe.",
+    "supported_languages": [
+      "en",
+      "hu",
+      "ro",
+      "pl",
+      "sk",
+      "cs",
+      "lt",
+      "lv",
+      "et"
+    ],
+    "design_principle": "Incidents are composed from object + action + context + evidence instead of one standalone rule per event type."
+  },
+  "runtime": {
+    "normalization": {
+      "lowercase": true,
+      "unicode_normalization": "NFKC",
+      "collapse_whitespace": true,
+      "strip_html": true,
+      "whole_term_matching": true
+    },
+    "classification": {
+      "allow_multiple_candidates": true,
+      "select_highest_confidence": true,
+      "minimum_acceptance_confidence": 0.68,
+      "minimum_incident_confidence": 0.72,
+      "minimum_followup_confidence": 0.62,
+      "default_actual_incident": false
+    }
+  },
+  "families": {
+    "air": {
+      "label": "Air security",
+      "default_severity": "medium",
+      "subcategories": [
+        "drone",
+        "missile",
+        "aircraft",
+        "airspace"
+      ]
+    },
+    "ground": {
+      "label": "Ground security",
+      "default_severity": "medium",
+      "subcategories": [
+        "explosive_attack",
+        "sabotage",
+        "armed_incident",
+        "military_movement"
+      ]
+    },
+    "maritime": {
+      "label": "Maritime security",
+      "default_severity": "medium",
+      "subcategories": [
+        "ship_incident",
+        "sea_drone",
+        "mine",
+        "port_security",
+        "navigation_disruption"
+      ]
+    },
+    "cyber": {
+      "label": "Cyber security",
+      "default_severity": "medium",
+      "subcategories": [
+        "intrusion",
+        "ransomware",
+        "ddos",
+        "data_breach",
+        "operational_disruption",
+        "gps_interference"
+      ]
+    },
+    "energy": {
+      "label": "Energy security",
+      "default_severity": "medium",
+      "subcategories": [
+        "power_grid",
+        "oil_gas",
+        "nuclear",
+        "fuel_supply"
+      ]
+    },
+    "critical_infrastructure": {
+      "label": "Critical infrastructure",
+      "default_severity": "medium",
+      "subcategories": [
+        "communications",
+        "water",
+        "public_services",
+        "government_systems"
+      ]
+    },
+    "industrial": {
+      "label": "Industrial safety and security",
+      "default_severity": "medium",
+      "subcategories": [
+        "explosion",
+        "fire",
+        "chemical_release",
+        "industrial_accident"
+      ]
+    },
+    "cbrn": {
+      "label": "CBRN security",
+      "default_severity": "high",
+      "subcategories": [
+        "chemical",
+        "biological",
+        "radiological",
+        "nuclear"
+      ]
+    },
+    "border_security": {
+      "label": "Border security",
+      "default_severity": "low",
+      "subcategories": [
+        "illegal_crossing",
+        "smuggling",
+        "border_closure",
+        "border_violence",
+        "airspace_border_incident"
+      ]
+    },
+    "terrorism": {
+      "label": "Terrorism",
+      "default_severity": "high",
+      "subcategories": [
+        "attack",
+        "plot",
+        "arrest",
+        "threat"
+      ]
+    },
+    "public_order": {
+      "label": "Public order",
+      "default_severity": "low",
+      "subcategories": [
+        "riot",
+        "violent_protest",
+        "mass_disorder",
+        "evacuation"
+      ]
+    },
+    "transport": {
+      "label": "Transport security",
+      "default_severity": "medium",
+      "subcategories": [
+        "rail",
+        "aviation",
+        "road",
+        "port",
+        "shipping"
+      ]
+    },
+    "natural_hazard": {
+      "label": "Natural hazard",
+      "default_severity": "medium",
+      "subcategories": [
+        "flood",
+        "wildfire",
+        "earthquake",
+        "storm",
+        "landslide"
+      ]
+    },
+    "intelligence": {
+      "label": "Intelligence and counterintelligence",
+      "default_severity": "medium",
+      "subcategories": [
+        "espionage",
+        "foreign_interference",
+        "disinformation",
+        "classified_information"
+      ]
+    }
+  },
+  "lexicons": {
+    "objects": {
+      "drone": [
+        "drone",
+        "uav",
+        "unmanned aerial vehicle",
+        "shahed",
+        "drón",
+        "pilóta nélküli légi jármű",
+        "dronă",
+        "drona",
+        "bezzałogowiec",
+        "dron",
+        "bezpilotné lietadlo",
+        "bezpilotní letoun",
+        "bepilotis orlaivis",
+        "bezpilota lidaparāts",
+        "mehitamata õhusõiduk"
+      ],
+      "missile": [
+        "missile",
+        "rocket",
+        "cruise missile",
+        "ballistic missile",
+        "guided missile",
+        "projectile",
+        "rakéta",
+        "robotrepülőgép",
+        "lövedék",
+        "rachetă",
+        "racheta",
+        "pocisk",
+        "raketa",
+        "řízená střela",
+        "sparnuotoji raketa",
+        "raķete",
+        "rakett"
+      ],
+      "military_aircraft": [
+        "fighter",
+        "fighter jet",
+        "bomber",
+        "military aircraft",
+        "helicopter",
+        "transport aircraft",
+        "vadászgép",
+        "bombázó",
+        "katonai repülőgép",
+        "helikopter",
+        "avion militar",
+        "elicopter",
+        "samolot wojskowy",
+        "śmigłowiec",
+        "vojenské lietadlo",
+        "vrtuľník",
+        "vojenské letadlo",
+        "vrtulník"
+      ],
+      "explosive_device": [
+        "ied",
+        "improvised explosive device",
+        "bomb",
+        "explosive device",
+        "mine",
+        "pokolgép",
+        "robbanószerkezet",
+        "bomba",
+        "mină",
+        "ładunek wybuchowy",
+        "nálož",
+        "výbušné zařízení"
+      ],
+      "ship": [
+        "ship",
+        "vessel",
+        "tanker",
+        "cargo ship",
+        "warship",
+        "boat",
+        "hajó",
+        "tartályhajó",
+        "hadihajó",
+        "navă",
+        "vas",
+        "statok",
+        "okręt",
+        "loď",
+        "plavidlo",
+        "laivas",
+        "kuģis",
+        "laev"
+      ],
+      "energy_asset": [
+        "power plant",
+        "nuclear plant",
+        "substation",
+        "transformer",
+        "refinery",
+        "pipeline",
+        "gas storage",
+        "lng terminal",
+        "fuel depot",
+        "erőmű",
+        "atomerőmű",
+        "alállomás",
+        "transzformátor",
+        "finomító",
+        "vezeték",
+        "gáztároló",
+        "centrala",
+        "rafinărie",
+        "conductă",
+        "elektrownia",
+        "rafineria",
+        "rurociąg"
+      ],
+      "critical_infrastructure": [
+        "critical infrastructure",
+        "airport",
+        "airbase",
+        "railway",
+        "bridge",
+        "port",
+        "telecommunication network",
+        "data center",
+        "water utility",
+        "government system",
+        "kritikus infrastruktúra",
+        "repülőtér",
+        "vasút",
+        "híd",
+        "kikötő",
+        "távközlési hálózat",
+        "adatközpont"
+      ],
+      "cyber_system": [
+        "network",
+        "server",
+        "database",
+        "information system",
+        "scada",
+        "it system",
+        "website",
+        "communication system",
+        "hálózat",
+        "szerver",
+        "adatbázis",
+        "informatikai rendszer",
+        "rețea",
+        "serwer",
+        "sieć",
+        "informačný systém",
+        "informační systém"
+      ]
+    },
+    "actions": {
+      "detected": [
+        "detected",
+        "spotted",
+        "observed",
+        "tracked",
+        "észleltek",
+        "észlelt",
+        "megfigyeltek",
+        "detectat",
+        "observat",
+        "wykryto",
+        "zauważono",
+        "zistený",
+        "pozorovaný",
+        "detekován"
+      ],
+      "entered": [
+        "entered",
+        "crossed into",
+        "penetrated",
+        "incursion",
+        "breached",
+        "belépett",
+        "átrepült",
+        "behatolt",
+        "pătruns",
+        "a intrat",
+        "wtargnął",
+        "naruszył",
+        "vnikol",
+        "prenikol",
+        "vstoupil"
+      ],
+      "intercepted": [
+        "intercepted",
+        "engaged",
+        "air defence engaged",
+        "elfogták",
+        "légvédelem reagált",
+        "interceptat",
+        "przechwycony",
+        "zachytený",
+        "zachycen"
+      ],
+      "shot_down": [
+        "shot down",
+        "downed",
+        "destroyed in the air",
+        "lelőtték",
+        "megsemmisítették a levegőben",
+        "doborât",
+        "zestrzelony",
+        "zostrelený",
+        "sestřelen"
+      ],
+      "impact": [
+        "fell",
+        "crashed",
+        "impacted",
+        "hit",
+        "struck",
+        "landed",
+        "lezuhant",
+        "becsapódott",
+        "talált",
+        "căzut",
+        "s-a prăbușit",
+        "a lovit",
+        "spadł",
+        "uderzył",
+        "dopadla",
+        "zasiahla"
+      ],
+      "exploded": [
+        "exploded",
+        "detonated",
+        "blast occurred",
+        "felrobbant",
+        "detonált",
+        "a explodat",
+        "eksplodował",
+        "vybuchol",
+        "explodoval"
+      ],
+      "burned": [
+        "burned",
+        "caught fire",
+        "fire broke out",
+        "kigyulladt",
+        "tűz ütött ki",
+        "a luat foc",
+        "wybuchł pożar",
+        "začal horieť",
+        "vypukl požár"
+      ],
+      "damaged": [
+        "damaged",
+        "destroyed",
+        "disabled",
+        "megrongálta",
+        "megsemmisítette",
+        "károsította",
+        "avariat",
+        "distrus",
+        "uszkodził",
+        "zničil",
+        "poškodil"
+      ],
+      "disrupted": [
+        "disrupted",
+        "interrupted",
+        "halted",
+        "suspended",
+        "leállt",
+        "megszakadt",
+        "felfüggesztették",
+        "întrerupt",
+        "oprit",
+        "wstrzymano",
+        "prerušený",
+        "přerušen"
+      ],
+      "compromised": [
+        "hacked",
+        "compromised",
+        "breached",
+        "unauthorized access",
+        "feltörték",
+        "kompromittálták",
+        "illetéktelen hozzáférés",
+        "atacat cibernetic",
+        "przejęto",
+        "napadnutý",
+        "napaden"
+      ],
+      "jammed": [
+        "jammed",
+        "interfered with",
+        "spoofed",
+        "gps interference",
+        "zavarták",
+        "hamis jelet sugároztak",
+        "bruiaj",
+        "zakłócono",
+        "rušenie",
+        "rušení"
+      ],
+      "leaked": [
+        "leaked",
+        "released",
+        "spilled",
+        "escaped",
+        "szivárgott",
+        "kiszabadult",
+        "deversat",
+        "wyciekł",
+        "unikol",
+        "unikl"
+      ],
+      "closed": [
+        "closed",
+        "shut down",
+        "sealed off",
+        "lezárták",
+        "bezárták",
+        "închis",
+        "zamknięto",
+        "uzavretý",
+        "uzavřen"
+      ],
+      "evacuated": [
+        "evacuated",
+        "ordered to leave",
+        "kiürítették",
+        "evakuálták",
+        "evacuat",
+        "ewakuowano",
+        "evakuovaný",
+        "evakuován"
+      ],
+      "arrested": [
+        "arrested",
+        "detained",
+        "őrizetbe vették",
+        "letartóztatták",
+        "arestat",
+        "zatrzymano",
+        "zadržaný",
+        "zadržen"
+      ],
+      "attacked": [
+        "attacked",
+        "assaulted",
+        "struck",
+        "targeted",
+        "megtámadta",
+        "csapást mért",
+        "atacat",
+        "zaatakował",
+        "napadol",
+        "zaútočil"
+      ],
+      "sabotaged": [
+        "sabotaged",
+        "tampered with",
+        "szabotálták",
+        "megrongálták",
+        "sabotat",
+        "sabotaż",
+        "sabotovaný",
+        "sabotován"
+      ]
+    },
+    "targets": {
+      "civilian": [
+        "civilian",
+        "residential building",
+        "home",
+        "school",
+        "hospital",
+        "civil",
+        "lakóépület",
+        "iskola",
+        "kórház",
+        "civil",
+        "locuință",
+        "szkoła",
+        "szpital"
+      ],
+      "military": [
+        "military base",
+        "airbase",
+        "barracks",
+        "radar",
+        "military installation",
+        "katonai bázis",
+        "laktanya",
+        "radar",
+        "bază militară",
+        "baza wojskowa"
+      ],
+      "energy": [
+        "power plant",
+        "refinery",
+        "pipeline",
+        "substation",
+        "fuel depot",
+        "erőmű",
+        "finomító",
+        "vezeték",
+        "alállomás",
+        "rafinărie",
+        "elektrownia"
+      ],
+      "transport": [
+        "airport",
+        "railway",
+        "station",
+        "bridge",
+        "port",
+        "road",
+        "repülőtér",
+        "vasút",
+        "állomás",
+        "híd",
+        "kikötő"
+      ],
+      "communications": [
+        "telecom",
+        "communication network",
+        "data center",
+        "fiber optic",
+        "távközlés",
+        "adatközpont",
+        "optikai kábel"
+      ],
+      "government": [
+        "government building",
+        "ministry",
+        "parliament",
+        "municipality",
+        "kormányzati épület",
+        "minisztérium",
+        "parlament",
+        "önkormányzat"
+      ]
+    },
+    "actors": {
+      "russia": [
+        "russia",
+        "russian",
+        "oroszország",
+        "orosz",
+        "rusia",
+        "rusiei",
+        "rosja",
+        "rosyjski",
+        "rusko",
+        "ruský"
+      ],
+      "ukraine": [
+        "ukraine",
+        "ukrainian",
+        "ukrajna",
+        "ukrán",
+        "ucraina",
+        "ukraiński",
+        "ukrajina"
+      ],
+      "belarus": [
+        "belarus",
+        "belarusian",
+        "fehéroroszország",
+        "bieloruś",
+        "białoruski",
+        "bielorusko"
+      ],
+      "nato": [
+        "nato",
+        "north atlantic alliance",
+        "észak-atlanti szövetség"
+      ],
+      "unknown": [
+        "unknown",
+        "unidentified",
+        "ismeretlen",
+        "azonosítatlan",
+        "necunoscut",
+        "nieznany",
+        "neznámy"
+      ]
+    },
+    "consequences": {
+      "fatality": [
+        "killed",
+        "dead",
+        "fatality",
+        "halálos áldozat",
+        "meghalt",
+        "decedat",
+        "zginął",
+        "mŕtvy",
+        "zemřel"
+      ],
+      "injury": [
+        "injured",
+        "wounded",
+        "sérült",
+        "megsebesült",
+        "rănit",
+        "ranny",
+        "zranený",
+        "zraněn"
+      ],
+      "major_damage": [
+        "major damage",
+        "severe damage",
+        "destroyed",
+        "súlyos kár",
+        "megsemmisült",
+        "pagube majore",
+        "poważne szkody"
+      ],
+      "service_outage": [
+        "outage",
+        "service disruption",
+        "blackout",
+        "áramszünet",
+        "szolgáltatáskimaradás",
+        "pană de curent",
+        "awaria zasilania"
+      ],
+      "evacuation": [
+        "evacuation",
+        "evacuated",
+        "kiürítés",
+        "evakuálás",
+        "evacuare",
+        "ewakuacja"
+      ],
+      "contamination": [
+        "contamination",
+        "toxic cloud",
+        "radiation",
+        "szennyezés",
+        "mérgező felhő",
+        "sugárzás",
+        "contaminare",
+        "skażenie"
+      ]
+    }
+  },
+  "article_roles": {
+    "incident": {
+      "positive_terms": [
+        "reported",
+        "occurred",
+        "happened",
+        "authorities confirmed",
+        "történt",
+        "bekövetkezett",
+        "megerősítették"
+      ],
+      "default_actual_incident": true
+    },
+    "followup": {
+      "positive_terms": [
+        "investigation continues",
+        "new details",
+        "debris recovered",
+        "damage assessment",
+        "vizsgálat folytatódik",
+        "új részletek",
+        "roncsokat találtak"
+      ],
+      "default_actual_incident": false
+    },
+    "reaction": {
+      "positive_terms": [
+        "condemned",
+        "reacted",
+        "called for",
+        "minister said",
+        "president said",
+        "nato response",
+        "elítélte",
+        "reagált",
+        "felszólított",
+        "miniszter szerint"
+      ],
+      "default_actual_incident": false
+    },
+    "analysis": {
+      "positive_terms": [
+        "analysis",
+        "expert says",
+        "what it means",
+        "background",
+        "elemzés",
+        "szakértő szerint",
+        "háttér"
+      ],
+      "default_actual_incident": false
+    },
+    "summary": {
+      "positive_terms": [
+        "weekly summary",
+        "daily overview",
+        "timeline",
+        "összefoglaló",
+        "heti áttekintés",
+        "idővonal"
+      ],
+      "default_actual_incident": false
+    },
+    "procurement": {
+      "positive_terms": [
+        "procurement",
+        "purchase",
+        "contract",
+        "delivery",
+        "order",
+        "beszerzés",
+        "vásárlás",
+        "szerződés",
+        "szállítás"
+      ],
+      "default_actual_incident": false
+    },
+    "exercise": {
+      "positive_terms": [
+        "exercise",
+        "drill",
+        "training",
+        "simulation",
+        "hadgyakorlat",
+        "gyakorlat",
+        "kiképzés",
+        "szimuláció"
+      ],
+      "default_actual_incident": false
+    },
+    "historical": {
+      "positive_terms": [
+        "anniversary",
+        "years ago",
+        "historical",
+        "évforduló",
+        "éve történt",
+        "történelmi"
+      ],
+      "default_actual_incident": false
+    }
+  },
+  "composition_rules": [
+    {
+      "rule_id": "AIR.DRONE.DETECTION",
+      "family": "air",
+      "subcategory": "drone",
+      "subtype": "drone_detection",
+      "requires": {
+        "objects": [
+          "drone"
+        ],
+        "actions": [
+          "detected"
+        ]
+      },
+      "severity": "low"
+    },
+    {
+      "rule_id": "AIR.DRONE.INTRUSION",
+      "family": "air",
+      "subcategory": "drone",
+      "subtype": "drone_intrusion",
+      "requires": {
+        "objects": [
+          "drone"
+        ],
+        "actions": [
+          "entered"
+        ]
+      },
+      "severity": "medium"
+    },
+    {
+      "rule_id": "AIR.DRONE.INTERCEPT",
+      "family": "air",
+      "subcategory": "drone",
+      "subtype": "drone_interception",
+      "requires": {
+        "objects": [
+          "drone"
+        ],
+        "actions": [
+          "intercepted"
+        ]
+      },
+      "severity": "medium"
+    },
+    {
+      "rule_id": "AIR.DRONE.SHOOTDOWN",
+      "family": "air",
+      "subcategory": "drone",
+      "subtype": "drone_shootdown",
+      "requires": {
+        "objects": [
+          "drone"
+        ],
+        "actions": [
+          "shot_down"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "AIR.DRONE.STRIKE",
+      "family": "air",
+      "subcategory": "drone",
+      "subtype": "drone_strike",
+      "requires": {
+        "objects": [
+          "drone"
+        ],
+        "actions_any": [
+          "impact",
+          "exploded",
+          "attacked"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "AIR.MISSILE.DETECTION",
+      "family": "air",
+      "subcategory": "missile",
+      "subtype": "missile_detection",
+      "requires": {
+        "objects": [
+          "missile"
+        ],
+        "actions": [
+          "detected"
+        ]
+      },
+      "severity": "medium"
+    },
+    {
+      "rule_id": "AIR.MISSILE.INTERCEPT",
+      "family": "air",
+      "subcategory": "missile",
+      "subtype": "missile_interception",
+      "requires": {
+        "objects": [
+          "missile"
+        ],
+        "actions_any": [
+          "intercepted",
+          "shot_down"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "AIR.MISSILE.IMPACT",
+      "family": "air",
+      "subcategory": "missile",
+      "subtype": "missile_impact",
+      "requires": {
+        "objects": [
+          "missile"
+        ],
+        "actions_any": [
+          "impact",
+          "exploded"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "AIR.AIRCRAFT.INCIDENT",
+      "family": "air",
+      "subcategory": "aircraft",
+      "subtype": "military_aircraft_incident",
+      "requires": {
+        "objects": [
+          "military_aircraft"
+        ],
+        "actions_any": [
+          "entered",
+          "impact",
+          "damaged"
+        ]
+      },
+      "severity": "medium"
+    },
+    {
+      "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+      "family": "ground",
+      "subcategory": "explosive_attack",
+      "subtype": "explosive_attack",
+      "requires": {
+        "objects": [
+          "explosive_device"
+        ],
+        "actions_any": [
+          "exploded",
+          "attacked"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "GROUND.SABOTAGE",
+      "family": "ground",
+      "subcategory": "sabotage",
+      "subtype": "sabotage",
+      "requires": {
+        "actions": [
+          "sabotaged"
+        ],
+        "targets_any": [
+          "energy",
+          "transport",
+          "communications",
+          "government"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "MARITIME.SHIP.ATTACK",
+      "family": "maritime",
+      "subcategory": "ship_incident",
+      "subtype": "ship_attack",
+      "requires": {
+        "objects": [
+          "ship"
+        ],
+        "actions_any": [
+          "attacked",
+          "damaged",
+          "exploded"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "MARITIME.PORT.DISRUPTION",
+      "family": "maritime",
+      "subcategory": "port_security",
+      "subtype": "port_disruption",
+      "requires": {
+        "targets": [
+          "transport"
+        ],
+        "actions_any": [
+          "closed",
+          "disrupted",
+          "damaged"
+        ]
+      },
+      "severity": "medium"
+    },
+    {
+      "rule_id": "CYBER.INTRUSION",
+      "family": "cyber",
+      "subcategory": "intrusion",
+      "subtype": "cyber_intrusion",
+      "requires": {
+        "objects": [
+          "cyber_system"
+        ],
+        "actions": [
+          "compromised"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+      "family": "cyber",
+      "subcategory": "operational_disruption",
+      "subtype": "cyber_operational_disruption",
+      "requires": {
+        "objects": [
+          "cyber_system"
+        ],
+        "actions": [
+          "disrupted"
+        ]
+      },
+      "severity": "medium"
+    },
+    {
+      "rule_id": "CYBER.GPS.INTERFERENCE",
+      "family": "cyber",
+      "subcategory": "gps_interference",
+      "subtype": "gps_jamming_or_spoofing",
+      "requires": {
+        "actions": [
+          "jammed"
+        ]
+      },
+      "severity": "medium"
+    },
+    {
+      "rule_id": "ENERGY.ASSET.FIRE",
+      "family": "energy",
+      "subcategory": "oil_gas",
+      "subtype": "energy_asset_fire",
+      "requires": {
+        "objects": [
+          "energy_asset"
+        ],
+        "actions": [
+          "burned"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "ENERGY.ASSET.EXPLOSION",
+      "family": "energy",
+      "subcategory": "oil_gas",
+      "subtype": "energy_asset_explosion",
+      "requires": {
+        "objects": [
+          "energy_asset"
+        ],
+        "actions": [
+          "exploded"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "ENERGY.SERVICE.OUTAGE",
+      "family": "energy",
+      "subcategory": "power_grid",
+      "subtype": "energy_service_outage",
+      "requires": {
+        "objects": [
+          "energy_asset"
+        ],
+        "actions": [
+          "disrupted"
+        ]
+      },
+      "severity": "medium"
+    },
+    {
+      "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+      "family": "critical_infrastructure",
+      "subcategory": "public_services",
+      "subtype": "critical_infrastructure_disruption",
+      "requires": {
+        "objects": [
+          "critical_infrastructure"
+        ],
+        "actions_any": [
+          "disrupted",
+          "damaged",
+          "closed"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "INDUSTRIAL.EXPLOSION",
+      "family": "industrial",
+      "subcategory": "explosion",
+      "subtype": "industrial_explosion",
+      "requires": {
+        "actions": [
+          "exploded"
+        ]
+      },
+      "context_any": [
+        "factory",
+        "plant",
+        "warehouse",
+        "industrial site",
+        "gyár",
+        "üzem",
+        "raktár"
+      ],
+      "severity": "high"
+    },
+    {
+      "rule_id": "INDUSTRIAL.FIRE",
+      "family": "industrial",
+      "subcategory": "fire",
+      "subtype": "industrial_fire",
+      "requires": {
+        "actions": [
+          "burned"
+        ]
+      },
+      "context_any": [
+        "factory",
+        "plant",
+        "warehouse",
+        "industrial site",
+        "gyár",
+        "üzem",
+        "raktár"
+      ],
+      "severity": "medium"
+    },
+    {
+      "rule_id": "INDUSTRIAL.CHEMICAL.RELEASE",
+      "family": "industrial",
+      "subcategory": "chemical_release",
+      "subtype": "chemical_release",
+      "requires": {
+        "actions": [
+          "leaked"
+        ]
+      },
+      "context_any": [
+        "chemical",
+        "toxic",
+        "gas",
+        "hazardous",
+        "vegyi",
+        "mérgező",
+        "gáz"
+      ],
+      "severity": "high"
+    },
+    {
+      "rule_id": "CBRN.RADIOLOGICAL.RELEASE",
+      "family": "cbrn",
+      "subcategory": "radiological",
+      "subtype": "radiological_release",
+      "requires": {
+        "actions": [
+          "leaked"
+        ]
+      },
+      "context_any": [
+        "radiation",
+        "radioactive",
+        "sugárzás",
+        "radioaktív"
+      ],
+      "severity": "critical"
+    },
+    {
+      "rule_id": "BORDER.ILLEGAL.CROSSING",
+      "family": "border_security",
+      "subcategory": "illegal_crossing",
+      "subtype": "illegal_border_crossing",
+      "requires": {
+        "actions": [
+          "entered"
+        ]
+      },
+      "context_any": [
+        "border",
+        "határ",
+        "frontier"
+      ],
+      "severity": "low"
+    },
+    {
+      "rule_id": "BORDER.VIOLENCE",
+      "family": "border_security",
+      "subcategory": "border_violence",
+      "subtype": "border_violence",
+      "requires": {
+        "actions_any": [
+          "attacked",
+          "exploded"
+        ]
+      },
+      "context_any": [
+        "border",
+        "határ",
+        "frontier"
+      ],
+      "severity": "high"
+    },
+    {
+      "rule_id": "TERRORISM.ATTACK",
+      "family": "terrorism",
+      "subcategory": "attack",
+      "subtype": "terrorist_attack",
+      "requires": {
+        "actions_any": [
+          "attacked",
+          "exploded"
+        ]
+      },
+      "context_any": [
+        "terrorist",
+        "terrorism",
+        "terrortámadás"
+      ],
+      "severity": "critical"
+    },
+    {
+      "rule_id": "TERRORISM.PLOT",
+      "family": "terrorism",
+      "subcategory": "plot",
+      "subtype": "terrorist_plot",
+      "requires": {
+        "actions": [
+          "arrested"
+        ]
+      },
+      "context_any": [
+        "terrorist plot",
+        "planned attack",
+        "merényletet tervezett"
+      ],
+      "severity": "high"
+    },
+    {
+      "rule_id": "PUBLIC.ORDER.VIOLENCE",
+      "family": "public_order",
+      "subcategory": "violent_protest",
+      "subtype": "violent_public_disorder",
+      "requires": {
+        "actions_any": [
+          "attacked",
+          "damaged",
+          "burned"
+        ]
+      },
+      "context_any": [
+        "protest",
+        "demonstration",
+        "riot",
+        "tüntetés",
+        "zavargás"
+      ],
+      "severity": "medium"
+    },
+    {
+      "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+      "family": "transport",
+      "subcategory": "rail",
+      "subtype": "rail_disruption",
+      "requires": {
+        "targets": [
+          "transport"
+        ],
+        "actions": [
+          "disrupted"
+        ]
+      },
+      "context_any": [
+        "rail",
+        "railway",
+        "train",
+        "vasút",
+        "vonat"
+      ],
+      "severity": "medium"
+    },
+    {
+      "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+      "family": "transport",
+      "subcategory": "aviation",
+      "subtype": "airport_closure",
+      "requires": {
+        "targets": [
+          "transport"
+        ],
+        "actions": [
+          "closed"
+        ]
+      },
+      "context_any": [
+        "airport",
+        "airspace",
+        "repülőtér",
+        "légtér"
+      ],
+      "severity": "medium"
+    },
+    {
+      "rule_id": "NATURAL.FLOOD",
+      "family": "natural_hazard",
+      "subcategory": "flood",
+      "subtype": "flood",
+      "context_any": [
+        "flood",
+        "flash flood",
+        "árvíz",
+        "villámárvíz",
+        "inundație",
+        "powódź"
+      ],
+      "severity": "medium"
+    },
+    {
+      "rule_id": "NATURAL.WILDFIRE",
+      "family": "natural_hazard",
+      "subcategory": "wildfire",
+      "subtype": "wildfire",
+      "context_any": [
+        "wildfire",
+        "forest fire",
+        "erdőtűz",
+        "incendiu forestier",
+        "pożar lasu"
+      ],
+      "severity": "medium"
+    },
+    {
+      "rule_id": "INTELLIGENCE.ESPIONAGE",
+      "family": "intelligence",
+      "subcategory": "espionage",
+      "subtype": "espionage_case",
+      "requires": {
+        "actions": [
+          "arrested"
+        ]
+      },
+      "context_any": [
+        "espionage",
+        "spy",
+        "kémkedés",
+        "spionaj",
+        "szpiegostwo"
+      ],
+      "severity": "high"
+    },
+    {
+      "rule_id": "INTELLIGENCE.FOREIGN.INTERFERENCE",
+      "family": "intelligence",
+      "subcategory": "foreign_interference",
+      "subtype": "foreign_interference",
+      "context_any": [
+        "foreign interference",
+        "influence operation",
+        "külföldi beavatkozás",
+        "befolyásolási művelet"
+      ],
+      "severity": "medium"
+    }
+  ],
+  "negative_contexts": {
+    "global": [
+      "procurement",
+      "purchase",
+      "contract",
+      "order",
+      "delivery",
+      "exercise",
+      "drill",
+      "training",
+      "simulation",
+      "museum",
+      "exhibition",
+      "anniversary",
+      "historical",
+      "video game",
+      "film",
+      "novel",
+      "concert",
+      "festival",
+      "beszerzés",
+      "vásárlás",
+      "szerződés",
+      "szállítás",
+      "hadgyakorlat",
+      "gyakorlat",
+      "kiképzés",
+      "szimuláció",
+      "múzeum",
+      "kiállítás",
+      "évforduló",
+      "történelmi"
+    ],
+    "drone_specific": [
+      "drone photography",
+      "drone racing",
+      "drone show",
+      "agricultural drone",
+      "drónfotózás",
+      "drónverseny",
+      "drónshow",
+      "mezőgazdasági drón"
+    ],
+    "cyber_specific": [
+      "cybersecurity conference",
+      "cyber training",
+      "awareness campaign",
+      "kiberbiztonsági konferencia",
+      "kiberképzés",
+      "tudatossági kampány"
+    ]
+  },
+  "severity_model": {
+    "levels": [
+      "info",
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ],
+    "base_by_family": {
+      "air": "medium",
+      "ground": "medium",
+      "maritime": "medium",
+      "cyber": "medium",
+      "energy": "medium",
+      "critical_infrastructure": "medium",
+      "industrial": "medium",
+      "cbrn": "high",
+      "border_security": "low",
+      "terrorism": "high",
+      "public_order": "low",
+      "transport": "medium",
+      "natural_hazard": "medium",
+      "intelligence": "medium"
+    },
+    "upgrade_rules": [
+      {
+        "when_consequence": "fatality",
+        "minimum": "critical"
+      },
+      {
+        "when_consequence": "major_damage",
+        "minimum": "high"
+      },
+      {
+        "when_consequence": "contamination",
+        "minimum": "critical"
+      },
+      {
+        "when_target": "civilian",
+        "and_action_any": [
+          "attacked",
+          "exploded",
+          "impact"
+        ],
+        "minimum": "high"
+      },
+      {
+        "when_target": "energy",
+        "and_action_any": [
+          "attacked",
+          "exploded",
+          "burned",
+          "damaged"
+        ],
+        "minimum": "high"
+      },
+      {
+        "when_target": "government",
+        "and_action_any": [
+          "attacked",
+          "exploded"
+        ],
+        "minimum": "high"
+      },
+      {
+        "when_multiple_sources_at_least": 3,
+        "confidence_only": true
+      }
+    ],
+    "downgrade_rules": [
+      {
+        "when_article_role": [
+          "reaction",
+          "analysis",
+          "summary",
+          "historical"
+        ],
+        "to": "info"
+      },
+      {
+        "when_action": "detected",
+        "and_no_consequence": true,
+        "maximum": "low"
+      }
+    ]
+  },
+  "confidence_model": {
+    "base": 0.2,
+    "weights": {
+      "object_match": 0.2,
+      "action_match": 0.2,
+      "target_match": 0.08,
+      "actor_match": 0.06,
+      "country_match": 0.1,
+      "city_match": 0.08,
+      "consequence_match": 0.08,
+      "official_source_signal": 0.08,
+      "multiple_source_signal": 0.06,
+      "supporting_evidence": 0.06
+    },
+    "penalties": {
+      "country_fallback": 0.08,
+      "negative_context": 0.45,
+      "article_role_non_incident": 0.35,
+      "ambiguous_country": 0.25,
+      "missing_action": 0.2,
+      "missing_object": 0.2
+    },
+    "caps": {
+      "maximum": 0.99,
+      "minimum": 0.0
+    }
+  },
+  "fingerprint": {
+    "fields": [
+      "country",
+      "family",
+      "subcategory",
+      "subtype",
+      "object",
+      "action",
+      "actor",
+      "target",
+      "place",
+      "event_date"
+    ],
+    "normalization": {
+      "actor_unknown_value": "unknown",
+      "target_unknown_value": "unknown",
+      "place_fallback_to_country": true,
+      "date_granularity": "day"
+    }
+  },
+  "deduplication": {
+    "default": {
+      "max_time_difference_hours": 30,
+      "max_distance_km": 140,
+      "minimum_text_similarity": 0.24,
+      "require_same_country": true,
+      "require_same_family": true
+    },
+    "family_overrides": {
+      "cyber": {
+        "max_time_difference_hours": 72,
+        "max_distance_km": null,
+        "require_same_subtype": true
+      },
+      "natural_hazard": {
+        "max_time_difference_hours": 48,
+        "max_distance_km": 250
+      },
+      "air": {
+        "max_time_difference_hours": 36,
+        "max_distance_km": 180,
+        "require_same_subcategory": true
+      }
+    },
+    "hard_conflicts": [
+      "different_country",
+      "different_family",
+      "different_subcategory_when_required",
+      "different_specific_place_over_threshold",
+      "different_actor_with_explicit_attribution",
+      "different_event_date_over_window"
+    ]
+  },
+  "output_schema": {
+    "required_fields": [
+      "actual_incident",
+      "family",
+      "subcategory",
+      "subtype",
+      "object",
+      "action",
+      "actor",
+      "target",
+      "severity",
+      "confidence",
+      "article_role",
+      "matched_rule_id",
+      "fingerprint"
+    ],
+    "defaults": {
+      "actual_incident": false,
+      "family": "unknown",
+      "subcategory": "unknown",
+      "subtype": "unknown",
+      "object": "unknown",
+      "action": "unknown",
+      "actor": "unknown",
+      "target": "unknown",
+      "severity": "info",
+      "confidence": 0.0,
+      "article_role": "unknown",
+      "matched_rule_id": null,
+      "fingerprint": {}
+    }
+  },
+  "debug": {
+    "store_classifier_version": true,
+    "store_matched_rule_id": true,
+    "store_candidate_rules": true,
+    "store_matched_terms": true,
+    "store_negative_terms": true,
+    "store_confidence_components": true,
+    "store_rejection_reason": true
+  }
+}

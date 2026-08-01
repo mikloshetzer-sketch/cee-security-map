@@ -1,630 +1,1289 @@
-{
-  "generated_utc": "2026-07-31T12:17:54.793057+00:00",
-  "purpose": "Audit of incident-level records used by cee_country_risk_v2 after strict actual-incident filtering, reaction/summary suppression and follow-up-aware clustering.",
-  "model": "cee_country_risk_v2",
-  "window_days": 7,
-  "totals": {
-    "incident_count": 11,
-    "article_count": 96,
-    "source_count": 25
-  },
-  "country_summary": {
-    "Czech Republic": {
-      "incident_count": 0,
-      "article_count": 0,
-      "source_count": 0,
-      "category_counts": {}
-    },
-    "Hungary": {
-      "incident_count": 0,
-      "article_count": 0,
-      "source_count": 0,
-      "category_counts": {}
-    },
-    "Romania": {
-      "incident_count": 8,
-      "article_count": 82,
-      "source_count": 11,
-      "category_counts": {
-        "drone": 8
-      }
-    },
-    "Slovakia": {
-      "incident_count": 0,
-      "article_count": 0,
-      "source_count": 0,
-      "category_counts": {}
-    },
-    "Poland": {
-      "incident_count": 3,
-      "article_count": 14,
-      "source_count": 14,
-      "category_counts": {
-        "cyber": 1,
-        "explosion": 1,
-        "kinetic_attack": 1
-      }
-    },
-    "Lithuania": {
-      "incident_count": 0,
-      "article_count": 0,
-      "source_count": 0,
-      "category_counts": {}
-    },
-    "Latvia": {
-      "incident_count": 0,
-      "article_count": 0,
-      "source_count": 0,
-      "category_counts": {}
-    },
-    "Estonia": {
-      "incident_count": 0,
-      "article_count": 0,
-      "source_count": 0,
-      "category_counts": {}
-    }
-  },
-  "countries": {
-    "Czech Republic": [],
-    "Hungary": [],
-    "Romania": [
-      {
-        "cluster_id": "40740f8d66068c3955a7",
-        "date": "2026-07-31",
-        "time": "2026-07-31T08:30:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Câteva drone au intrat pe scurt timp în spațiul aerian al României noaptea trecută . În Tulcea au fost emise două alerte",
-        "article_count": 2,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Câteva drone au intrat pe scurt timp în spațiul aerian al României noaptea trecută . În Tulcea au fost emise două alerte",
-          "Cum vede consilierul președintelui Zelenski incursiunile rusești în spațiul aerian al României : „ Fără război nu există viitor pentru Rusia"
-        ],
-        "urls": [
-          "https://www.zdg.md/stiri/cateva-drone-au-intrat-pe-scurt-timp-in-spatiul-aerian-al-romaniei-noaptea-trecuta-in-tulcea-au-fost-emise-doua-alerte/",
-          "https://ziare.com/razboi-ucraina/rusia-drone-romania-consilier-zelenski-2027330"
-        ],
-        "risk_score_input": 3.125,
-        "source_file": "gdelt_crossborder.geojson",
-        "classification_source": "legacy_fallback",
-        "actual_incident_gate": true,
-        "incident_family": null,
-        "incident_subcategory": null,
-        "incident_subtype": null,
-        "incident_action": null,
-        "incident_object": null,
-        "incident_actor": null,
-        "incident_target": null,
-        "article_role": null,
-        "classification_confidence": 0.0,
-        "matched_rule_id": null,
-        "fingerprint_hash": null
-      },
-      {
-        "cluster_id": "de1392c2c14002e7f8cf",
-        "date": "2026-07-29",
-        "time": "2026-07-29T13:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "RO - ALERT issued after group of drones detected near Romania river border with Ukraine",
-        "article_count": 7,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "RO - ALERT issued after group of drones detected near Romania river border with Ukraine",
-          "Doi piloți care au doborât drone în România și Lituania , înaintați în grad . Au fost recompensați și militarii din echipajele de sprijin",
-          "Militarii români care au doborât drone în Lituania și România , avansați în grad pentru apărarea spațiului aerian",
-          "Dronele doborâte de România ar fi fost trimise deliberat de Rusia , susține consilierul lui Zelenski",
-          "Consilierul lui Zelenski , după ce mai multe drone au fost doborâte în România : Nu a fost o greșeală",
-          "Primul interviu cu pilotul român care a doborât două drone rusești : Alarma a sunat în cursul nopții de mai multe ori . N - am știut pentru ce decolăm VIDEO",
-          "Zece militari al Forțelor Aeriene Române , înaintați în grad după doborârea dronelor rusești în România și Lituania : România este mai sigură datorită lor"
-        ],
-        "urls": [
-          "https://www.stiripesurse.ro/ro-alert-issued-after-group-of-drones-detected-near-romanias-river-border-with-ukraine_3907655",
-          "https://www.antena3.ro/actualitate/doi-piloti-care-au-doborat-drone-in-romania-si-lituania-inaintati-in-grad-au-fost-recompensati-si-militarii-din-echipajele-de-sprijin-797495.html",
-          "https://www.ziarulnational.md/militarii-romani-care-au-doborat-drone-in-lituania-si-romania-avansati-in-grad-pentru-apararea-spatiului-aerian/",
-          "https://adevarul.ro/stiri-externe/europa/dronele-rusesti-doborate-de-romania-ar-fi-fost-2546665.html",
-          "https://www.stiripesurse.ro/consilierul-lui-zelenski-dupa-ce-mai-multe-drone-au-fost-doborate-in-romania-nu-a-fost-o-greseala_3908041",
-          "https://ziare.com/drone-rusesti-romania/pilot-interviu-2027264",
-          "https://www.caleaeuropeana.ro/zece-militari-al-fortelor-aeriene-romane-inaintati-in-grad-dupa-doborarea-dronelor-rusesti-in-romania-si-lituania-romania-este-mai-sigura-datorita-lor/"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson",
-        "classification_source": "legacy_fallback",
-        "actual_incident_gate": true,
-        "incident_family": null,
-        "incident_subcategory": null,
-        "incident_subtype": null,
-        "incident_action": null,
-        "incident_object": null,
-        "incident_actor": null,
-        "incident_target": null,
-        "article_role": null,
-        "classification_confidence": 0.0,
-        "matched_rule_id": null,
-        "fingerprint_hash": null
-      },
-      {
-        "cluster_id": "fdd848506922d4ab2e7a",
-        "date": "2026-07-29",
-        "time": "2026-07-29T10:45:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
-        "article_count": 5,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Două F - 16 ridicate și mesaj RO - Alert în Tulcea . Grup de drone în preajma frontierei României cu Ucraina",
-          "Zaharova califică doborârea dronelor drept „ incidente regizate și amenință din nou România",
-          "Militarii români care au doborât drone rusești în România și Lituania , înaintați în grad în mod excepțional",
-          "Consilierul lui Zelenski , avertisment după dronele doborâte în România . Mihailo Podoliak : Rusia vrea să impună noi reguli în Europa prin instrumentul fricii",
-          "Terenul agricol de la Padina unde a fost doborâtă drona rusească , în aer !"
-        ],
-        "urls": [
-          "https://ziare.com/drone-rusesti/granita-razboi-ucraina-f-16-ridicate-ro-alert-tulcea-mapn-2026906",
-          "https://news.yam.md/ro/story/48086962",
-          "https://adevarul.ro/politica/militarii-romani-care-au-doborat-drone-rusesti-in-2546515.html",
-          "https://ziare.com/drone-doborate-romania/consilier-zelenski-avertisment-incidente-aviatice-2027221",
-          "https://opiniabuzau.ro/terenul-agricol-de-la-padina-unde-a-fost-doborata-drona-ruseasca-in-aer/"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_crossborder.geojson",
-        "classification_source": "legacy_fallback",
-        "actual_incident_gate": true,
-        "incident_family": null,
-        "incident_subcategory": null,
-        "incident_subtype": null,
-        "incident_action": null,
-        "incident_object": null,
-        "incident_actor": null,
-        "incident_target": null,
-        "article_role": null,
-        "classification_confidence": 0.0,
-        "matched_rule_id": null,
-        "fingerprint_hash": null
-      },
-      {
-        "cluster_id": "9105bc1a63280ea48219",
-        "date": "2026-07-26",
-        "time": "2026-07-26T17:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Kelemen Hunor : Dronele care au încălcat spațiul aerian al României trebuiau doborâte încă de la primele incidente",
-        "article_count": 10,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Kelemen Hunor : Dronele care au încălcat spațiul aerian al României trebuiau doborâte încă de la primele incidente",
-          "De ce tace Simion în privința dronelor doborâte de armata română . Explicațiile lui Petrișor Peiu",
-          "Dronele doborâte de România . Maria Zaharova acuză „ măsuri neprietenoase și avertizează cu un „ răspuns cuvenit",
-          "Nicușor Dan îi trimite la Washington pe consilierul pentru securitate națională și pe șeful Armatei după dronele rusești doborâte în România",
-          "Oana Țoiu a discutat telefonic cu Radek Sikorski despre intensificarea colaborării între statele de pe flancul estic al NATO . Polonia condamnă ferm incursiunea ilegală a dronelor în spațiul aerian al României",
-          "Ce știm până acum despre dronele doborâte de Armata Română . Noi date de la MApN",
-          "Ambasadorul Rusiei , convocat de urgență la MAE după a treia dronă doborâtă în spațiul aerian al României",
-          "Bilanț MApN : 18 incursiuni ale dronelor rusești în spațiul aerian românesc doar în 2026",
-          "Bilanțul MApN indică 33 de incursiuni ale dronelor rusești în spațiul aerian al României",
-          "Oana Țoiu anunță că Polonia condamnă ferm incursiunile ilegale ale dronelor rusești în spațiul aerian al României"
-        ],
-        "urls": [
-          "https://www.obiectiv.info/kelemen-hunor-dronele-care-au-incalcat-spa-iul-aerian-al-romaniei-trebuiau-doborate-inca-de-la-primele-incidente_119051.html",
-          "https://ziare.com/drone-doborate-romania/tace-simion-privinta-drone-doborate-armata-romana-2026615",
-          "https://www.libertatea.ro/stiri/dronele-doborate-de-romania-maria-zaharova-acuza-masuri-neprietenoase-si-avertizeaza-cu-un-raspuns-cuvenit-5830522",
-          "https://adevarul.ro/politica/nicusor-dan-ii-trimite-la-washington-pe-2546090.html",
-          "https://www.caleaeuropeana.ro/oana-toiu-a-discutat-telefonic-cu-radek-sikorski-despre-intensificarea-colaborarii-intre-statele-de-pe-flancul-estic-al-nato-polonia-condamna-ferm-incursiunea-ilegala-a-dronelor-in-spatiul-aerian-al/",
-          "https://hotnews.ro/ce-stim-pana-acum-despre-dronele-doborate-de-armata-romana-noi-date-de-la-mapn-2309862",
-          "https://www.bzi.ro/ambasadorul-rusiei-convocat-de-urgenta-la-mae-dupa-a-treia-drona-doborata-in-spatiul-aerian-al-romaniei-5576290",
-          "https://www.forbes.ro/bilant-mapn-18-incursiuni-ale-dronelor-rusesti-in-spatiul-aerian-romanesc-doar-in-2026-513716",
-          "https://business24.ro/incursiuni-drone/bilant-mapn-incursiuni-drone-rusesti-spatiu-aerian-romania-1661716",
-          "https://www.mediafax.ro/politic/oana-toiu-anunta-ca-polonia-condamna-ferm-incursiunile-ilegale-ale-dronelor-rusesti-in-spatiul-aerian-al-romaniei-23779897"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson",
-        "classification_source": "legacy_fallback",
-        "actual_incident_gate": true,
-        "incident_family": null,
-        "incident_subcategory": null,
-        "incident_subtype": null,
-        "incident_action": null,
-        "incident_object": null,
-        "incident_actor": null,
-        "incident_target": null,
-        "article_role": null,
-        "classification_confidence": 0.0,
-        "matched_rule_id": null,
-        "fingerprint_hash": null
-      },
-      {
-        "cluster_id": "bbb790ba7bc08abe54ee",
-        "date": "2026-07-26",
-        "time": "2026-07-26T16:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Three drones shot down in three days – Romania accuses Russia of violations",
-        "article_count": 11,
-        "source_count": 2,
-        "sources": [
-          "BNN",
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Three drones shot down in three days – Romania accuses Russia of violations",
-          "Drone doborâte în România / Oana Țoiu : Ministrul polonez de Externe - mesaj de solidaritate cu România",
-          "Drone doborâte în România / Oana Ţoiu : Ministrul polonez de Externe - mesaj de solidaritate cu România",
-          "România , reacție fermă după dronele rusești doborâte",
-          "Romania Says It Shot Down 3rd Russian Drone in as Many Days",
-          "Radu Miruță : România a doborât trei drone rusești în trei zile . Ministrul explică de ce nu decolează mereu F - 16 și răspunde despre costurile interceptărilor",
-          "Alertă de securitate la graniță : Radu Miruță confirmă originea uneia dintre drone , dar ancheta continuă",
-          "Identitatea piloților care au doborât dronele rămâne un mister . Baza Aerienă Borcea dezminte informațiile care circulă . „ Orice informație poate fi colectată de inamic",
-          "Primul mesaj al NATO , după ce România a doborât a treia dronă în trei zile : „ Alianţa este pregătită să reacționeze",
-          "Maia Sandu , reacție fermă după doborârea celei de - a treia drone . Condamnăm încălcările sistematice ale spațiului aerian românesc de către Rusia . Securitatea României este securitatea Republicii Moldova"
-        ],
-        "urls": [
-          "https://bnn-news.com/three-drones-shot-down-in-three-days-romania-accuses-russia-of-violations-282209",
-          "https://agerpres.ro/politic/2026/07/27/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe---mesaj-de-solidaritate-cu-romania--1579719",
-          "https://www.stiripesurse.ro/drone-doborate-in-romania-oana-toiu-ministrul-polonez-de-externe-mesaj-de-solidaritate-cu-romania_3907155",
-          "https://financiarul.ro/politica/trei-drone-rusesti-doborate-in-24-26-iulie-iar-romania-reactioneaza-ferm/",
-          "https://www.theepochtimes.com/world/romania-says-it-shot-down-3rd-russian-drone-in-as-many-days-6067809",
-          "https://www.mediafax.ro/politic/radu-miruta-romania-a-doborat-trei-drone-rusesti-in-trei-zile-ministrul-explica-de-ce-nu-decoleaza-mereu-f-16-si-raspunde-despre-costurile-interceptarilor-23779881",
-          "https://www.libertatea.ro/stiri/drona-ruseasca-spatiu-aerian-romania-radu-miruta-originea-celorlalte-drone-inca-verificata-5830585",
-          "https://ziare.com/drone-rusesti-romania/speculatii-identitate-piloti-baza-aeriana-borcea-2026691",
-          "https://adevarul.ro/stiri-interne/evenimente/primul-mesaj-al-nato-dupa-ce-romania-a-doborat-a-2545805.html",
-          "https://www.romaniatv.net/maia-sandu-reactie-ferma-dupa-doborarea-celei-de-a-treia-drone-condamnam-incalcarile-sistematice-ale-spatiului-aerian-romanesc-de-catre-rusia-securitatea-romaniei-este-securitatea-republic_9717964.html",
-          "https://www.ziarulprofit.ro/maia-sandu-reactie-ferma-dupa-doborarea-celei-de-a-treia-drone-condamnam-incalcarile-sistematice-ale-spatiului-aerian-romanesc-de-catre-rusia-securitatea-romaniei-este-securitatea-republic/"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier",
-        "actual_incident_gate": true,
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "incident_action": "shot_down",
-        "incident_object": "drone",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "article_role": "incident",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "ece4626698ff2b3704889be3"
-      },
-      {
-        "cluster_id": "6d35685e5aad537baf12",
-        "date": "2026-07-25",
-        "time": "2026-07-25T11:00:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Comandantul detașamentului Forțelor Aeriene Române din Lituania , pilot de F - 16 , explicații despre cât de greu este de doborât o dronă",
-        "article_count": 11,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Comandantul detașamentului Forțelor Aeriene Române din Lituania , pilot de F - 16 , explicații despre cât de greu este de doborât o dronă",
-          "Trei drone doborâte de piloții români în 48 de ore . Expert : NATO trebuie să suplimenteze capabilitățile în România",
-          "NATO intervine după ce România a doborât 3 drone în 48 de ore . „ F - 16 opera sub controlul Alianței . Suntem pregătiți să răspundem 24 / 7",
-          "România a doborât a treia dronă în trei zile . Locuitorii din nordul județului Tulcea au primit RO - Alert",
-          "Mesajul transmis de NATO după ce România a doborât a treia dronă în trei zile : „ Alianţa este pregătită să reacționeze",
-          "Oana Țoiu , după doborârea celor două drone , în 48 de ore : „ Granițele României nu sunt negociabile",
-          "Realitatea . NET | Radu Miruță , după doborârea celor două drone : „ Granițele , spațiul aerian și suveranitatea României nu sunt negociabile",
-          "Bruxelles laudă armata română după doborârea a două drone în 24 de ore : „ Securitatea României este securitatea Europei",
-          "Radu Miruță se revoltă , din concediu , pe criticile primite după doborârea dronelor : România își apără teritoriul și reacționează ferm",
-          "Reacția NATO pentru Digi24 după doborârea celor trei drone pe teritoriul României"
-        ],
-        "urls": [
-          "https://www.libertatea.ro/stiri/comandantul-detasamentului-fortelor-aeriene-romane-din-lituania-pilot-de-f-16-explicatii-despre-cat-de-greu-este-de-doborat-o-drona-5828619",
-          "https://www.digi24.ro/stiri/actualitate/trei-drone-doborate-de-pilotii-romani-in-48-de-ore-expert-nato-trebuie-sa-suplimenteze-capabilitatile-in-romania-3879017",
-          "https://www.ziarulprofit.ro/nato-intervine-dupa-ce-romania-a-doborat-3-drone-in-48-de-ore-f-16-opera-sub-controlul-aliantei-suntem-pregatiti-sa-raspundem-24-7/",
-          "https://www.forbes.ro/romania-a-doborat-a-treia-drona-in-trei-zile-locuitorii-din-nordul-judetului-tulcea-au-primit-ro-alert-513706",
-          "https://ziarulunirea.ro/mesajul-transmis-de-nato-dupa-ce-romania-a-doborat-a-treia-drona-in-trei-zile-alianta-este-pregatita-sa-reactioneze-1004349/",
-          "https://ampress.ro/oana-toiu-dupa-doborarea-celor-drone-in-48-de-ore-granitele-romaniei-nu-sunt-negociabile/",
-          "https://www.realitatea.net/stiri/politica/radu-miruta-dupa-doborarea-celor-doua-drone-granitele-spatiul-aerian-si-suveranitatea-romaniei-nu-sunt-negociabile-zvhqnv",
-          "https://www.ziarulnational.md/bruxelles-lauda-armata-romana-dupa-doborarea-a-doua-drone-in-24-de-ore-securitatea-romaniei-este-securitatea-europei/",
-          "https://www.stiripesurse.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm_3906663",
-          "https://www.ziarulprofit.ro/radu-miruta-se-revolta-din-concediu-pe-criticile-primite-dupa-doborarea-dronelor-romania-isi-apara-teritoriul-si-reactioneaza-ferm/",
-          "https://www.digi24.ro/stiri/actualitate/reactia-nato-pentru-digi24-dupa-doborarea-celor-trei-drone-pe-teritoriul-romaniei-3879027"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson",
-        "classification_source": "legacy_fallback",
-        "actual_incident_gate": true,
-        "incident_family": null,
-        "incident_subcategory": null,
-        "incident_subtype": null,
-        "incident_action": null,
-        "incident_object": null,
-        "incident_actor": null,
-        "incident_target": null,
-        "article_role": null,
-        "classification_confidence": 0.0,
-        "matched_rule_id": null,
-        "fingerprint_hash": null
-      },
-      {
-        "cluster_id": "f22144c61bba18ddfa20",
-        "date": "2026-07-24",
-        "time": "2026-07-24T16:45:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Dronele pătrund tot mai adânc în spațiul aerian al României . Tudor Curtifan : E un nou prag al escaladării , însă am depășit blocajul psihologic",
-        "article_count": 32,
-        "source_count": 1,
-        "sources": [
-          "GDELT_DOC"
-        ],
-        "titles": [
-          "Dronele pătrund tot mai adânc în spațiul aerian al României . Tudor Curtifan : E un nou prag al escaladării , însă am depășit blocajul psihologic",
-          "ANIMAȚIE . Traseul dronei militare doborâte , în premieră , de un F - 16 în România . Cum a ajuns la 90 de kilometri de București",
-          "Misterul dronei doborâte în România . Ce spune generalul Dorin Toma despre adevăratul scop",
-          "Mesagerul . ro | Încă o dronă a fost doborâtă în România , lângă Sfântu Gheorghe , de același pilot care a anihilat și drona de ieri",
-          "O nouă dronă a fost doborâtă în spațiul aerian românesc",
-          "Încă o dronă doborâtă pe teritoriul României , anunță Nicușor Dan . Este a doua în mai puțin de 24 de ore",
-          "O nouă dronă doborâtă în spațiul aerian al României",
-          "Încă o dronă rusească doborâtă pe teritoriul României , anunță Nicușor Dan . A doua în mai puțin de 24 de ore",
-          "Radu Miruță : O nouă dronă intrată ilegal în spațiul aerian al României a fost doborâtă de un F - 16 românesc",
-          "A doua dronă doborâtă în spațiul aerian românesc în două zile consecutive . Anunțul președintelui Nicușor Dan",
-          "UPDATE / Același pilot român a doborât ambele drone care au survolat spațiul aerian român în ultimele două zile",
-          "A doua dronă doborâtă în spațiul aerian al României , în mai puțin de 24 de ore",
-          "Cât de puternice sunt avioanele F - 16 Fighting Falcon cu care România a doborât două drone rusești",
-          "Cât costă doborârea unei drone în spațiul aerian românesc . Declarațiile ministrului Radu Miruță : „ Am comandat tot ce este nevoie",
-          "Militarii români caută resturile dronei distruse în Tulcea . Unde se efectuează operațiunea",
-          "Oana Țoiu , după ce armata noastră a doborât două drone în 24 de ore : Granițele României nu sunt negociabile . Despre primul aparat de zbor pus la pământ : Același tip pe care Rusia îl lansează , noapte de noapte , împotriva Ucrainei",
-          "Cum ar fi fost doborâte dronele de un F - 16 românesc . Cele trei tipuri principale de armament ale aeronavei de luptă",
-          "Oficialii MApN neagă că drona doborâtă la Buzău ar fi survolat baze militare sau centrala de la Cernavodă",
-          "Resturi din drona doborâtă și racheta interceptoare , identificate în județul BUZĂU",
-          "Parchetul confirmă : Drona doborâtă în Buzău era de tip Shared ( Geran 2 ). Este muniție rătăcitoare proiectată în Iran",
-          "Resturi din drona doborâtă lângă Padina au fost identificate în judeţele Buzău şi Brăila",
-          "Bogdan Chirieac , avertisment dur după drona doborâtă la Buzău : România , tot mai aproape de un conflict major",
-          "Mesagerul . ro | O nouă alertă la graniță : e deja a doua dronă doborâtă în doar 24 de ore de piloții români , la o zi după incidentul din Buzău de ieri dimineață",
-          "Drona doborâtă în Deltă este reușita aceluiași pilot care a distrus și drona de la Buzău . Armata dă detalii despre operațiune",
-          "Drona doborâtă în județul Buzău : Au fost încheiate cercetările în teren : Europa FM",
-          "Nicuşor Dan : O nouă dronă - doborâtă la 10 kilometri vest de Sfântu Gheorghe - Radio Iaşi – Cel mai ascultat radio regional",
-          "Căutările resturilor de dronă din zona Sfântu Gheorghe au fost oprite , anunță MApN . Acestea vor fi reluate duminică",
-          "MApN : Drona - doborâtă sâmbătă în condiții de siguranță într - o zonă nepopulată",
-          "MApN : Drona doborâtă sâmbătă , neutralizată în condiții de siguranță într - o zonă nepopulată",
-          "Ministrul Apărării după doborârea dronelor - „ România a demonstrat un lucru simplu . Își apără teritoriul și reacționează ferm",
-          "Căutările efectuate în Delta Dunării pentru identificarea resturilor de dronă și de rachetă interceptoare au fost întrerupte"
-        ],
-        "urls": [
-          "https://www.dcnews.ro/dronele-patrund-tot-mai-adanc-in-spatiul-aerian-al-romaniei-tudor-curtifan-e-un-nou-prag-al-escaladarii-insa-am-depasit-blocajul-psihologic_1071551.html",
-          "https://stirileprotv.ro/stiri/actualitate/animatie-traseul-dronei-militare-anihilate-de-un-f-16-in-romania-cum-a-ajuns-la-90-de-kilometri-de-bucuresti.html",
-          "https://www.capital.ro/misterul-dronei-doborate-in-romania-ce-spune-generalul-dorin-toma-despre-adevaratul-scop.html",
-          "https://www.mesagerul.ro/cluj/inca-o-drona-a-fost-doborata-in-romania-langa-sfantu-gheorghe-de-acelasi-pilot-care-a-anihilat-si-drona-de-ieri__59137/",
-          "https://www.viata-libera.ro/prima-pagina/262959-o-noua-drona-a-fost-doborata-in-spatiul-aerian-romanesc",
-          "https://news.yam.md/ro/story/47059681",
-          "https://news.yam.md/ro/story/47064990",
-          "https://news.yam.md/ro/story/47070267",
-          "https://www.ziuaconstanta.ro/stiri/actualitate/radu-miruta-o-noua-drona-intrata-ilegal-in-spatiul-aerian-al-romaniei-a-fost-doborata-de-un-f-16-romanesc-947225.html",
-          "https://www.digi24.ro/stiri/actualitate/a-doua-drona-doborata-in-spatiul-aerian-romanesc-anuntul-presedintelui-nicusor-dan-3877929",
-          "https://www.zdg.md/stiri/update-acelasi-pilot-roman-a-doborat-ambele-drone-care-au-survolat-spatiul-aerian-roman-in-ultimele-doua-zile/",
-          "https://www.observatorulph.ro/national/2794551-a-doua-drona-doborata-in-spatiul-aerian-al-romaniei-in-mai-putin-de-24-de-ore",
-          "https://ziare.com/tehnologie/avioane-f-16-drone-rusesti-2026186",
-          "https://www.cancan.ro/cat-costa-doborarea-unei-drone-in-spatiul-aerian-romanesc-declaratiile-ministrului-radu-miruta-am-comandat-tot-ce-este-nevoie-21474964",
-          "https://ziare.com/drona/mapn-cautare-drona-tulcea-delta-dunarii-2026234",
-          "https://www.romaniatv.net/oana-toiu-dupa-ce-romania-a-doborat-doua-drone-in-24-de-ore-granitele-romaniei-nu-sunt-negociabile-despre-primul-aparat-de-zbor-pus-la-pamant-acelasi-tip-pe-care-rusia-i_9717265.html",
-          "https://stirileprotv.ro/stiri/actualitate/cum-ar-fi-fost-doborate-dronele-de-un-f-16-al-romaniei-expert-cel-mai-probabil-au-folosit-o-racheta-sidewinder.html",
-          "https://www.ziarulnational.md/oficialii-mapn-neaga-ca-drona-doborata-la-buzau-ar-fi-survolat-baze-militare-sau-centrala-de-la-cernavoda/",
-          "https://www.radioconstanta.ro/2026/07/24/resturi-din-drona-doborata-si-racheta-interceptoare-identificate-in-judetul-buzau/",
-          "https://www.dcnews.ro/parchetul-confirma-drona-doborata-in-buzau-era-de-tip-shared-geran-2-este-munitie-ratacitoare-proiectata-in-iran_1071662.html",
-          "https://www.romania-actualitati.ro/stiri/romania/resturi-din-drona-doborata-langa-padina-au-fost-identificate-in-judetele-buzau-si-braila-id231952.html",
-          "https://www.ziarulnational.md/bogdan-chirieac-avertisment-dur-dupa-drona-doborata-la-buzau-romania-tot-mai-aproape-de-un-conflict-major/",
-          "https://www.mesagerul.ro/cluj/o-noua-alerta-la-granita-e-deja-a-doua-drona-doborata-in-doar-24-de-ore-de-pilotii-romani-la-o-zi-dupa-incidentul-din-buzau-de-ieri-dimineata__59138/",
-          "https://ziare.com/drona-doborata-delta/sfantu-gheorghe-avion-f-16-2026176",
-          "https://www.radioiasi.ro/stiri/national/resturi-din-drona-doborata-langa-padina-au-fost-identificate-in-judetele-buzau-si-braila/",
-          "https://www.europafm.ro/drona-doborata-in-judetul-buzau-au-fost-incheiate-cercetarile-in-teren/",
-          "https://www.radioiasi.ro/stiri/prim-plan/nicusor-dan-o-noua-drona-doborata-la-10-kilometri-vest-de-sfantu-gheorghe/",
-          "https://www.digi24.ro/stiri/actualitate/cautarile-resturilor-de-drona-din-zona-sfantu-gheorghe-au-fost-oprite-anunta-mapn-acestea-vor-fi-reluate-duminica-3878487",
-          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
-          "https://www.radioconstanta.ro/2026/07/25/mapn-drona-doborata-sambata-neutralizata-in-conditii-de-siguranta-intr-o-zona-nepopulata/",
-          "https://www.ziuaconstanta.ro/stiri/actualitate/ministrul-apararii-dupa-doborarea-dronelor-romania-a-demonstrat-un-lucru-simplu-isi-apara-teritoriul-si-reactioneaza-ferm-947267.html",
-          "https://www.ziuaconstanta.ro/stiri/actualitate/cautarile-efectuate-in-delta-dunarii-pentru-identificarea-resturilor-de-drona-si-de-racheta-interceptoare-au-fost-intrerupte-947273.html"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "gdelt_crossborder.geojson",
-        "classification_source": "legacy_fallback",
-        "actual_incident_gate": true,
-        "incident_family": null,
-        "incident_subcategory": null,
-        "incident_subtype": null,
-        "incident_action": null,
-        "incident_object": null,
-        "incident_actor": null,
-        "incident_target": null,
-        "article_role": null,
-        "classification_confidence": 0.0,
-        "matched_rule_id": null,
-        "fingerprint_hash": null
-      },
-      {
-        "cluster_id": "5db2f936c2d819f53c62",
-        "date": "2026-07-24",
-        "time": "2026-07-24T12:23:33+00:00",
-        "category": "drone",
-        "severity": "high",
-        "representative_title": "Romania shoots down drone that entered its airspace",
-        "article_count": 4,
-        "source_count": 3,
-        "sources": [
-          "BNN",
-          "GDELT_DOC",
-          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584"
-        ],
-        "titles": [
-          "Romania shoots down drone that entered its airspace",
-          "FOTO / Ziua în care România a doborât prima dronă . Filmul evenimentelor de la Padina",
-          "Why did Romania shoot down another drone after an airspace violation ?",
-          "Bucharest, Bucuresti, Romania"
-        ],
-        "urls": [
-          "https://bnn-news.com/romania-shoots-down-drone-that-entered-its-airspace-282176",
-          "https://opiniabuzau.ro/foto-ziua-in-care-romania-a-doborat-prima-drona-filmul-evenimentelor-de-la-padina/",
-          "https://news.az/news/why-did-romania-shoot-down-another-drone-after-an-airspace-violation",
-          "https://www.newsweek.com/romania-says-f-16-downed-drone-in-nato-airspace-12245584"
-        ],
-        "risk_score_input": 1.375,
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier",
-        "actual_incident_gate": true,
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "incident_action": "shot_down",
-        "incident_object": "drone",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "article_role": "incident",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "fa65767ce1b1b0cba2acd642"
-      }
-    ],
-    "Slovakia": [],
-    "Poland": [
-      {
-        "cluster_id": "286e48274862bf48cfe0",
-        "date": "2026-07-30",
-        "time": "2026-07-30T00:00:00+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "representative_title": "Warsaw, (PL67), Poland",
-        "article_count": 4,
-        "source_count": 4,
-        "sources": [
-          "https://www.themoscowtimes.com/2026/07/30/russian-missile-likely-crashed-in-eastern-poland-pm-tusk-says-a93379",
-          "CT24",
-          "NotesFromPoland",
-          "BNN"
-        ],
-        "titles": [
-          "Warsaw, (PL67), Poland",
-          "Raketa, která dopadla na východě Polska, byla zřejmě ruská, uvedl Tusk",
-          "Russian missile that crashed in Poland carried “significant amount” of explosive material",
-          "Polish Prime Minister: Missile that fell overnight was likely launched by Russia"
-        ],
-        "urls": [
-          "https://www.themoscowtimes.com/2026/07/30/russian-missile-likely-crashed-in-eastern-poland-pm-tusk-says-a93379",
-          "https://ct24.ceskatelevize.cz/clanek/svet/na-vychode-polska-znely-sireny-hasici-proveruji-krater-v-poli-376093",
-          "https://notesfrompoland.com/2026/07/31/russian-missile-that-crashed-in-poland-carried-significant-amount-of-explosive-material/",
-          "https://notesfrompoland.com/2026/07/30/unidentified-object-crashes-in-poland-after-russian-attack-on-ukraine/",
-          "https://bnn-news.com/polish-prime-minister-missile-that-fell-overnight-was-likely-launched-by-russia-282363"
-        ],
-        "risk_score_input": 2.5,
-        "source_file": "gdelt_linked.geojson",
-        "classification_source": "legacy_fallback",
-        "actual_incident_gate": true,
-        "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "incident_action": "impact",
-        "incident_object": "missile",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "article_role": "incident",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
-        "fingerprint_hash": "2c36bfca78d26db5e38fe517"
-      },
-      {
-        "cluster_id": "a6c929b803ad0a9ce266",
-        "date": "2026-07-30",
-        "time": "2026-07-30T00:00:00+00:00",
-        "category": "explosion",
-        "severity": "high",
-        "representative_title": "Przewodow, Lubelskie, Poland",
-        "article_count": 8,
-        "source_count": 8,
-        "sources": [
-          "https://www.news8000.com/news/national-world/unidentified-projectile-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack/article_6049e3f2-906a-5798-9d16-9ddfec0d9b9c.html",
-          "https://kesq.com/news/national-world/cnn-world/2026/07/29/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
-          "https://krdo.com/news/national-world/cnn-world/2026/07/30/explosions-heard-in-kyiv-as-air-force-warns-of-incoming-missiles/",
-          "https://www.dailymirror.lk/breaking-news/Unidentified-object-lands-deep-inside-Poland-causing-explosion-as-Russia-launches-deadly-Ukraine-wide-attack/108-346961",
-          "https://www.abc57.com/news/unidentified-object-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack",
-          "https://kesq.com/news/national-world/cnn-world/2026/07/30/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
-          "https://english.pravda.ru/news/world/167557-poland-blast-russia-investigation/",
-          "https://economictimes.indiatimes.com/news/international/world-news/russia-blamed-for-missile-that-blasted-crater-in-polish-field/articleshow/132743187.cms"
-        ],
-        "titles": [
-          "Przewodow, Lubelskie, Poland",
-          "Poland",
-          "Tokary, Opolskie, Poland",
-          "Warsaw, (PL67), Poland"
-        ],
-        "urls": [
-          "https://www.news8000.com/news/national-world/unidentified-projectile-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack/article_6049e3f2-906a-5798-9d16-9ddfec0d9b9c.html",
-          "https://kesq.com/news/national-world/cnn-world/2026/07/29/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
-          "https://krdo.com/news/national-world/cnn-world/2026/07/30/explosions-heard-in-kyiv-as-air-force-warns-of-incoming-missiles/",
-          "https://www.dailymirror.lk/breaking-news/Unidentified-object-lands-deep-inside-Poland-causing-explosion-as-Russia-launches-deadly-Ukraine-wide-attack/108-346961",
-          "https://www.abc57.com/news/unidentified-object-lands-deep-inside-poland-causing-explosion-as-russia-launches-deadly-ukraine-wide-attack",
-          "https://kesq.com/news/national-world/cnn-world/2026/07/30/unidentified-projectile-causes-explosion-in-poland-as-russia-launches-large-attack-on-ukraine/",
-          "https://english.pravda.ru/news/world/167557-poland-blast-russia-investigation/",
-          "https://economictimes.indiatimes.com/news/international/world-news/russia-blamed-for-missile-that-blasted-crater-in-polish-field/articleshow/132743187.cms"
-        ],
-        "risk_score_input": 2.6,
-        "source_file": "gdelt_linked.geojson",
-        "classification_source": "legacy_fallback",
-        "actual_incident_gate": true,
-        "incident_family": null,
-        "incident_subcategory": null,
-        "incident_subtype": null,
-        "incident_action": null,
-        "incident_object": null,
-        "incident_actor": null,
-        "incident_target": null,
-        "article_role": null,
-        "classification_confidence": 0.0,
-        "matched_rule_id": null,
-        "fingerprint_hash": null
-      },
-      {
-        "cluster_id": "d307d0059a9aaeb06a2e",
-        "date": "2026-07-29",
-        "time": "2026-07-29T00:00:00+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "representative_title": "Poland",
-        "article_count": 2,
-        "source_count": 2,
-        "sources": [
-          "https://www.theepochtimes.com/us/coordinated-cyberattack-hits-more-than-30-minnesota-water-systems-6068685",
-          "https://www.zerohedge.com/technology/coordinated-cyberattack-hits-more-30-minnesota-water-systems"
-        ],
-        "titles": [
-          "Poland"
-        ],
-        "urls": [
-          "https://www.theepochtimes.com/us/coordinated-cyberattack-hits-more-than-30-minnesota-water-systems-6068685",
-          "https://www.zerohedge.com/technology/coordinated-cyberattack-hits-more-30-minnesota-water-systems"
-        ],
-        "risk_score_input": 2.1,
-        "source_file": "gdelt_linked.geojson",
-        "classification_source": "legacy_fallback",
-        "actual_incident_gate": true,
-        "incident_family": null,
-        "incident_subcategory": null,
-        "incident_subtype": null,
-        "incident_action": null,
-        "incident_object": null,
-        "incident_actor": null,
-        "incident_target": null,
-        "article_role": null,
-        "classification_confidence": 0.0,
-        "matched_rule_id": null,
-        "fingerprint_hash": null
-      }
-    ],
-    "Lithuania": [],
-    "Latvia": [],
-    "Estonia": []
-  }
+import json
+from pathlib import Path
+from datetime import datetime, timezone, timedelta
+from collections import Counter, defaultdict
+from email.utils import parsedate_to_datetime
+import hashlib
+import re
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA = ROOT / "data"
+HISTORY = DATA / "history"
+
+SUMMARY = DATA / "summary.json"
+WEEKLY = DATA / "weekly.json"
+META = DATA / "meta.json"
+RISK_DAILY = DATA / "risk_daily.json"
+RISK_DEBUG = DATA / "risk_incidents_debug.json"
+
+LOCAL_EVENTS = DATA / "local_events.geojson"
+LOCAL_HISTORY = HISTORY / "local_events_history.geojson"
+
+INFRA_PROX = DATA / "infra_proximity.json"
+INFRA_PROX_HISTORY = HISTORY / "infra_proximity_history.json"
+
+GDELT_CROSSBORDER = DATA / "gdelt_crossborder.geojson"
+
+# Risk input is intentionally narrow. GDELT GEO, GDELT Linked and Trusted RSS
+# remain dashboard/context layers and must never directly affect country risk.
+SECURITY_EVENT_FILES = [
+    LOCAL_EVENTS,
+    LOCAL_HISTORY,
+    GDELT_CROSSBORDER,
+]
+
+LOCAL_RISK_FILES = {LOCAL_EVENTS.name, LOCAL_HISTORY.name}
+CROSSBORDER_RISK_FILE = GDELT_CROSSBORDER.name
+
+COUNTRY_NAME_MAP = {
+    "Czechia": "Czech Republic",
+    "Czech Republic": "Czech Republic",
+    "Hungary": "Hungary",
+    "Romania": "Romania",
+    "Slovakia": "Slovakia",
+    "Poland": "Poland",
+    "Lithuania": "Lithuania",
+    "Latvia": "Latvia",
+    "Estonia": "Estonia",
 }
+
+MONITORED_COUNTRIES = [
+    "Czech Republic",
+    "Hungary",
+    "Romania",
+    "Slovakia",
+    "Poland",
+    "Lithuania",
+    "Latvia",
+    "Estonia",
+]
+
+RISK_CATEGORY_GROUPS = {
+    "military_drone": {"military", "drone", "drone_airspace", "kinetic_attack", "military_accident"},
+    "cyber": {"cyber", "cyber_incident"},
+    "infrastructure": {
+        "explosion", "fire", "hazardous", "energy", "transport",
+        "infrastructure_disruption", "sabotage", "major_fire", "hazardous_incident"
+    },
+}
+
+RISK_WEIGHTS = {
+    "incident_pressure": 0.30,
+    "military_drone": 0.20,
+    "cyber": 0.15,
+    "infrastructure": 0.15,
+    "crossborder": 0.10,
+    "trend": 0.10,
+}
+
+
+
+def now_utc():
+    return datetime.now(timezone.utc)
+
+
+def load_json(path, default):
+    if not path.exists():
+        return default
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return default
+
+
+def save_json(path, payload):
+    path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+
+
+def parse_time(value):
+    if not value:
+        return None
+
+    raw = str(value).strip()
+
+    try:
+        return datetime.fromisoformat(
+            raw.replace("Z", "+00:00")
+        ).astimezone(timezone.utc)
+    except Exception:
+        pass
+
+    try:
+        dt = parsedate_to_datetime(raw)
+        if dt is None:
+            return None
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def age_hours(value):
+    dt = parse_time(value)
+    if not dt:
+        return None
+    return (now_utc() - dt).total_seconds() / 3600
+
+
+def norm_country(country):
+    return COUNTRY_NAME_MAP.get(country, country or "Unknown")
+
+
+
+TARGET_COUNTRY_TERMS = {
+    "Czech Republic": ["czech republic", "czechia", "czech", "česko", "praha", "prague"],
+    "Hungary": ["hungary", "hungarian", "magyarország", "magyar", "budapest", "paks", "kecskemét"],
+    "Romania": [
+        "romania", "românia", "romanian", "român", "románia",
+        "bucharest", "bucurești", "bucuresti", "fetești", "fetesti",
+        "buzău", "buzau", "brăila", "braila", "constanța", "constanta",
+        "cernavodă", "cernavoda", "sfântu gheorghe", "sfantu gheorghe"
+    ],
+    "Slovakia": ["slovakia", "slovak", "slovensko", "bratislava", "košice", "kosice"],
+    "Poland": ["poland", "polish", "polska", "warsaw", "warszawa", "rzeszów", "rzeszow"],
+    "Lithuania": ["lithuania", "lithuanian", "lietuva", "vilnius", "kaunas", "klaipėda", "klaipeda"],
+    "Latvia": ["latvia", "latvian", "latvija", "riga", "ventspils"],
+    "Estonia": ["estonia", "estonian", "eesti", "tallinn", "tartu", "narva"],
+}
+
+SECURITY_INCIDENT_PATTERNS = {
+    "drone": [
+        "drone", "drón", "uav", "shahed", "dronă", "drona",
+        "dronei", "dronele", "dronelor"
+    ],
+    "cyber": [
+        "cyberattack", "cyber attack", "ransomware attack",
+        "ddos attack", "data breach", "kibertámadás"
+    ],
+    "military": [
+        "military helicopter crash", "military aircraft crash",
+        "fighter jet crash", "airspace violation", "airspace breach",
+        "shot down", "intercepted", "missile attack", "airstrike",
+        "rakétatámadás", "légtérsértés", "lelőtt", "doborât"
+    ],
+    "explosion": ["explosion", "blast", "robbanás", "explozie"],
+    "hazardous": [
+        "chemical leak", "gas leak", "industrial accident",
+        "vegyi szivárgás", "gázszivárgás"
+    ],
+    "infrastructure": [
+        "blackout", "power outage", "grid failure",
+        "airport closure", "port closure", "rail disruption",
+        "áramszünet"
+    ],
+}
+
+NOISE_TERMS = [
+    "formula 1", "formula one", "f1", "grand prix", "motorsport",
+    "archaeology", "archaeological", "roman military camp",
+    "street racing", "road safety", "traffic accident",
+    "trade talks", "investment", "procurement", "construction",
+    "appointment", "ceo", "director appointed",
+]
+
+
+def normalize_text(value):
+    return re.sub(r"\\s+", " ", str(value or "").lower()).strip()
+
+
+def contains_term(text, term):
+    t = normalize_text(text)
+    k = normalize_text(term)
+    if not k:
+        return False
+
+    if re.fullmatch(r"[\\wÀ-ž-]+", k, flags=re.UNICODE):
+        return re.search(
+            rf"(?<!\\w){re.escape(k)}(?!\\w)",
+            t,
+            flags=re.UNICODE,
+        ) is not None
+
+    return k in t
+
+
+def contains_any(text, terms):
+    return any(contains_term(text, term) for term in terms)
+
+
+def stable_event_key(*parts):
+    raw = "|".join(str(p or "") for p in parts)
+    return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:20]
+
+
+def detect_security_country(props, fallback_path=None):
+    raw_country = norm_country(
+        props.get("country")
+        or props.get("event_country")
+        or props.get("location_country")
+    )
+
+    if raw_country in MONITORED_COUNTRIES:
+        return raw_country
+
+    text = " ".join([
+        str(props.get("title") or props.get("name") or ""),
+        str(props.get("summary") or props.get("description") or ""),
+        str(props.get("url") or props.get("search_url") or ""),
+    ])
+
+    hits = []
+    for country, terms in TARGET_COUNTRY_TERMS.items():
+        if any(contains_term(text, term) for term in terms):
+            hits.append(country)
+
+    hits = list(dict.fromkeys(hits))
+    return hits[0] if len(hits) == 1 else None
+
+
+def canonical_risk_category(props):
+    """Return the classifier-backed category used by the risk model.
+
+    This function never promotes a background or legacy record using free-text
+    keyword guessing. It only translates already validated classifier fields.
+    """
+    family = str(props.get("incident_family") or props.get("family") or "").lower()
+    subcategory = str(
+        props.get("incident_subcategory")
+        or props.get("subcategory")
+        or ""
+    ).lower()
+    subtype = str(props.get("incident_subtype") or props.get("subtype") or "").lower()
+    existing = str(props.get("category") or "").lower()
+
+    if subcategory == "drone" or subtype.startswith("drone_"):
+        return "drone"
+    if subcategory == "missile" or subtype.startswith("missile_"):
+        return "kinetic_attack"
+    if family == "cyber" or subcategory == "cyber":
+        return "cyber"
+    if family in {"air", "military"}:
+        return "military"
+    if family in {"infrastructure", "energy"}:
+        if subcategory in {"fire", "explosion", "hazardous", "sabotage"}:
+            return subcategory
+        return "infrastructure_disruption"
+    if family in {"public_safety", "hazard"}:
+        if subcategory in {"fire", "explosion", "hazardous"}:
+            return subcategory
+
+    allowed_existing = {
+        "drone", "drone_airspace", "cyber", "cyber_incident",
+        "military", "military_accident", "kinetic_attack",
+        "explosion", "fire", "hazardous", "hazardous_incident",
+        "sabotage", "infrastructure_disruption", "major_fire",
+        "energy", "transport",
+    }
+    return existing if existing in allowed_existing else None
+
+
+def feature_passes_risk_gate(props, source_file):
+    """Apply source-specific admission rules for risk evidence.
+
+    Local-event files are generated directly by ``SecurityClassifier`` but older
+    compatible records do not necessarily contain ``classification_source`` or
+    ``risk_eligible``. Their classifier provenance is proven by the combination
+    of ``actual_incident``, ``matched_rule_id``, ``article_role`` and classifier
+    version/taxonomy fields.
+
+    GDELT cross-border records use the strict explicit gate. Legacy/fallback
+    records are never admitted.
+    """
+    if props.get("actual_incident") is not True:
+        return False
+    if not props.get("matched_rule_id"):
+        return False
+
+    article_role = str(props.get("article_role") or "incident").lower()
+    if article_role != "incident":
+        return False
+
+    if source_file in LOCAL_RISK_FILES:
+        # Local records may legitimately predate these two explicit fields.
+        # Reject an explicit false flag, but allow a missing one.
+        if props.get("risk_eligible") is False:
+            return False
+
+        classification_source = props.get("classification_source")
+        if classification_source not in {None, "", "security_classifier"}:
+            return False
+
+        # Require additional classifier evidence when classification_source is
+        # absent, preventing old keyword-only local records from entering risk.
+        if not classification_source and not (
+            props.get("classifier_version")
+            and props.get("taxonomy_version")
+            and (
+                props.get("incident_family")
+                or props.get("family")
+            )
+        ):
+            return False
+
+        return True
+
+    if source_file == CROSSBORDER_RISK_FILE:
+        return (
+            props.get("classification_source") == "security_classifier"
+            and props.get("risk_eligible") is True
+        )
+
+    return False
+
+
+def normalize_security_feature(feature, source_file):
+    props = dict(feature.get("properties") or {})
+
+    if not feature_passes_risk_gate(props, source_file):
+        return None
+
+    country = detect_security_country(props, source_file)
+    if country not in MONITORED_COUNTRIES:
+        return None
+
+    category = canonical_risk_category(props)
+    if not category:
+        return None
+
+    dt = parse_time(
+        props.get("time")
+        or props.get("datetime")
+        or props.get("date")
+    )
+    if not dt:
+        return None
+
+    props["country"] = country
+    props["category"] = category
+    props["incident_type"] = category
+    props["time"] = dt.isoformat()
+    props["_risk_source_file"] = source_file
+
+    if source_file == CROSSBORDER_RISK_FILE:
+        props["crossborder"] = True
+
+    if not props.get("severity"):
+        if category in {"drone", "military", "kinetic_attack", "explosion"}:
+            props["severity"] = "high"
+        elif category in {"cyber", "hazardous", "sabotage"}:
+            props["severity"] = "medium"
+        else:
+            props["severity"] = "info"
+
+    return {
+        "type": "Feature",
+        "geometry": feature.get("geometry"),
+        "properties": props,
+    }
+
+
+def load_validated_security_events(days=7):
+    """Load only validated incident evidence used by the risk model.
+
+    Included:
+      * local_events.geojson and its history, classifier-validated;
+      * gdelt_crossborder.geojson, under the stricter risk gate.
+
+    Excluded by design:
+      * gdelt.geojson;
+      * gdelt_linked.geojson;
+      * trusted_rss.json;
+      * every legacy_fallback/background/reaction record.
+    """
+    cutoff = now_utc() - timedelta(days=days)
+    candidates = []
+
+    for path in SECURITY_EVENT_FILES:
+        payload = load_json(path, {"features": []})
+
+        for feature in payload.get("features", []):
+            normalized = normalize_security_feature(feature, path.name)
+            if not normalized:
+                continue
+
+            props = normalized["properties"]
+            dt = parse_time(props.get("time"))
+            if not dt or dt < cutoff:
+                continue
+
+            candidates.append(normalized)
+
+    # Prefer classifier fingerprint. Fall back conservatively to source URL/title.
+    seen = set()
+    result = []
+
+    for feature in candidates:
+        props = feature.get("properties") or {}
+        fingerprint = props.get("fingerprint") or {}
+        if isinstance(fingerprint, dict):
+            fingerprint_hash = fingerprint.get("hash")
+        else:
+            fingerprint_hash = str(fingerprint or "")
+
+        dt = parse_time(props.get("time"))
+        day = dt.date().isoformat() if dt else ""
+        title = normalize_text(props.get("title") or props.get("name") or "")
+        title_tokens = [
+            token for token in re.findall(r"[\wÀ-ž-]{4,}", title, flags=re.UNICODE)
+            if token not in {
+                "romania", "hungary", "poland", "latvia", "estonia",
+                "lithuania", "slovakia", "czechia",
+            }
+        ]
+        title_sig = " ".join(title_tokens[:10])
+
+        key = fingerprint_hash or stable_event_key(
+            props.get("country"),
+            props.get("incident_subtype") or props.get("category"),
+            day,
+            props.get("url") or title_sig,
+        )
+
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append(feature)
+
+    return result
+
+
+def local_event_score(props):
+    severity = str(props.get("severity") or "info").lower()
+    category = str(props.get("category") or "local_media").lower()
+    geocode_quality = str(props.get("geocode_quality") or "").lower()
+
+    score = 0.4
+
+    if severity == "high":
+        score += 1.2
+    elif severity == "medium":
+        score += 0.8
+    else:
+        score += 0.3
+
+    if category in {"explosion", "fire", "hazardous", "energy"}:
+        score += 1.0
+    elif category in {"cyber", "military", "drone"}:
+        score += 0.9
+    elif category in {"transport"}:
+        score += 0.6
+
+    if geocode_quality == "city":
+        score += 0.5
+
+    h = age_hours(props.get("time"))
+    if h is not None:
+        if h <= 6:
+            score *= 1.25
+        elif h <= 24:
+            score *= 1.10
+        elif h > 72:
+            score *= 0.55
+
+    return round(score, 3)
+
+
+def proximity_score(match):
+    level = str(match.get("level") or "watch").lower()
+    infra = match.get("infrastructure") or {}
+    event = match.get("event") or {}
+
+    score = {
+        "critical": 4.0,
+        "high": 2.8,
+        "medium": 1.6,
+        "watch": 0.8
+    }.get(level, 0.6)
+
+    try:
+        score += float(infra.get("criticality") or 5) / 10
+    except Exception:
+        pass
+
+    source_file = event.get("source_file") or ""
+    if source_file == "local_events.geojson":
+        score *= 1.25
+
+    h = age_hours(event.get("time"))
+    if h is not None:
+        if h <= 6:
+            score *= 1.25
+        elif h <= 24:
+            score *= 1.10
+        elif h > 72:
+            score *= 0.6
+
+    return round(score, 3)
+
+
+def load_local_events(days=7):
+    features = []
+
+    for path in [LOCAL_EVENTS, LOCAL_HISTORY]:
+        payload = load_json(path, {"features": []})
+        for f in payload.get("features", []):
+            props = f.get("properties") or {}
+            dt = parse_time(props.get("time"))
+            if not dt:
+                continue
+            if dt >= now_utc() - timedelta(days=days):
+                features.append(f)
+
+    return features
+
+
+def proximity_event_passes_risk_gate(event):
+    source_file = str(event.get("source_file") or event.get("_risk_source_file") or "")
+
+    # Context-only sources can never contribute through infrastructure proximity.
+    if source_file in {"gdelt.geojson", "gdelt_linked.geojson", "trusted_rss.json"}:
+        return False
+
+    if source_file == CROSSBORDER_RISK_FILE:
+        return bool(
+            event.get("classification_source") == "security_classifier"
+            and event.get("actual_incident") is True
+            and event.get("risk_eligible") is True
+            and str(event.get("article_role") or "").lower() == "incident"
+            and event.get("matched_rule_id")
+        )
+
+    if source_file in LOCAL_RISK_FILES or not source_file:
+        return bool(
+            event.get("classification_source") == "security_classifier"
+            and event.get("actual_incident") is True
+            and event.get("risk_eligible") is not False
+            and str(event.get("article_role") or "incident").lower() == "incident"
+            and event.get("matched_rule_id")
+        )
+
+    return False
+
+
+def load_proximity(days=7):
+    matches = []
+    cutoff = now_utc() - timedelta(days=days)
+    seen = set()
+
+    for path in [INFRA_PROX, INFRA_PROX_HISTORY]:
+        payload = load_json(path, {"matches": []})
+
+        for m in payload.get("matches", []):
+            event = m.get("event") or {}
+            infra = m.get("infrastructure") or {}
+
+            dt = parse_time(event.get("time"))
+            if not dt or dt < cutoff:
+                continue
+
+            if not proximity_event_passes_risk_gate(event):
+                continue
+
+            location_quality = str(
+                event.get("location_quality")
+                or event.get("geocode_quality")
+                or ""
+            ).lower()
+            if location_quality not in {
+                "city", "specific_place", "precise"
+            }:
+                continue
+
+            if not (event.get("geolocation_method") or event.get("geocode_quality")):
+                continue
+
+            key = (
+                event.get("id")
+                or event.get("fingerprint_hash")
+                or event.get("url")
+                or stable_event_key(event.get("title"), event.get("time")),
+                infra.get("id") or infra.get("name"),
+            )
+            if key in seen:
+                continue
+
+            seen.add(key)
+            matches.append(m)
+
+    return matches
+
+
+def build_local_stats(local_events):
+    by_country = defaultdict(lambda: {
+        "count": 0,
+        "score": 0.0,
+        "categories": Counter(),
+        "high_events": []
+    })
+
+    for f in local_events:
+        props = f.get("properties") or {}
+        country = norm_country(props.get("country"))
+        score = local_event_score(props)
+
+        by_country[country]["count"] += 1
+        by_country[country]["score"] += score
+        by_country[country]["categories"][props.get("category") or "local_media"] += 1
+
+        if props.get("severity") in {"high", "medium"}:
+            by_country[country]["high_events"].append({
+                "title": props.get("title"),
+                "source": props.get("source"),
+                "url": props.get("url"),
+                "time": props.get("time"),
+                "category": props.get("category"),
+                "severity": props.get("severity"),
+                "place": props.get("place")
+            })
+
+    return by_country
+
+
+def build_proximity_stats(matches):
+    by_country = defaultdict(lambda: {
+        "count": 0,
+        "score": 0.0,
+        "levels": Counter(),
+        "top": []
+    })
+
+    for m in matches:
+        infra = m.get("infrastructure") or {}
+        country = norm_country(infra.get("country"))
+        score = proximity_score(m)
+        level = m.get("level") or "watch"
+
+        by_country[country]["count"] += 1
+        by_country[country]["score"] += score
+        by_country[country]["levels"][level] += 1
+        by_country[country]["top"].append(m)
+
+    for country in by_country:
+        by_country[country]["top"].sort(
+            key=lambda x: proximity_score(x),
+            reverse=True
+        )
+        by_country[country]["top"] = by_country[country]["top"][:5]
+
+    return by_country
+
+
+def enrich_summary(local_events, prox_matches):
+    summary = load_json(SUMMARY, {
+        "generated_utc": now_utc().isoformat(),
+        "headline": "Napi kivonat",
+        "bullets": []
+    })
+
+    local_24h = [
+        f for f in local_events
+        if (age_hours((f.get("properties") or {}).get("time")) or 999) <= 24
+    ]
+
+    prox_24h = [
+        m for m in prox_matches
+        if (age_hours((m.get("event") or {}).get("time")) or 999) <= 24
+    ]
+
+    bullets = summary.get("bullets") or []
+
+    added = []
+
+    if local_24h:
+        countries = Counter(
+            norm_country((f.get("properties") or {}).get("country"))
+            for f in local_24h
+        )
+        top = ", ".join([f"{c}: {n}" for c, n in countries.most_common(4)])
+        added.append(
+            f"Helyi források alapján az elmúlt 24 órában {len(local_24h)} infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: {top}."
+        )
+
+    if prox_24h:
+        critical = [m for m in prox_24h if m.get("level") in {"critical", "high"}]
+        added.append(
+            f"Az infrastruktúra-közelségi modul {len(prox_24h)} friss kapcsolatot azonosított események és kritikus objektumok között; ebből {len(critical)} magas vagy kritikus szintű."
+        )
+
+    if prox_24h:
+        top = sorted(prox_24h, key=lambda x: proximity_score(x), reverse=True)[:3]
+        for m in top:
+            ev = m.get("event") or {}
+            infra = m.get("infrastructure") or {}
+            added.append(
+                f"{m.get('level', 'watch').upper()} infrastruktúra-jelzés: {infra.get('name')} ({infra.get('country')}) – {round(m.get('distance_km', 0), 1)} km-re ettől: {ev.get('title')}."
+            )
+
+    summary["bullets"] = added + bullets
+    summary["local_infrastructure"] = {
+        "last_24h_local_events": len(local_24h),
+        "last_24h_proximity_matches": len(prox_24h),
+        "top_proximity": prox_24h[:10]
+    }
+
+    save_json(SUMMARY, summary)
+
+
+def enrich_weekly(local_events, prox_matches):
+    weekly = load_json(WEEKLY, {
+        "generated_utc": now_utc().isoformat(),
+        "headline": "Közép–Kelet-Európa heti biztonsági brief",
+        "bullets": [],
+        "examples": []
+    })
+
+    local_stats = build_local_stats(local_events)
+    prox_stats = build_proximity_stats(prox_matches)
+
+    bullets = weekly.get("bullets") or []
+    added = []
+
+    if local_events:
+        top_local = sorted(
+            local_stats.items(),
+            key=lambda x: x[1]["score"],
+            reverse=True
+        )[:4]
+        txt = ", ".join([f"{c}: {round(v['score'], 1)}" for c, v in top_local])
+        added.append(
+            f"A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: {txt}."
+        )
+
+    if prox_matches:
+        top_prox = sorted(
+            prox_stats.items(),
+            key=lambda x: x[1]["score"],
+            reverse=True
+        )[:4]
+        txt = ", ".join([f"{c}: {round(v['score'], 1)}" for c, v in top_prox])
+        added.append(
+            f"A kritikus infrastruktúra-közelségi mutató alapján a heti kitettség fő országai: {txt}."
+        )
+
+    weekly["bullets"] = added + bullets
+    weekly["local_infrastructure_weekly"] = {
+        "local_event_count_7d": len(local_events),
+        "proximity_match_count_7d": len(prox_matches),
+        "local_by_country": {
+            c: {
+                "count": v["count"],
+                "score": round(v["score"], 3),
+                "categories": dict(v["categories"]),
+                "high_events": v["high_events"][:5]
+            }
+            for c, v in local_stats.items()
+        },
+        "proximity_by_country": {
+            c: {
+                "count": v["count"],
+                "score": round(v["score"], 3),
+                "levels": dict(v["levels"]),
+                "top": v["top"][:3]
+            }
+            for c, v in prox_stats.items()
+        }
+    }
+
+    examples = weekly.get("examples") or []
+    for f in local_events[:10]:
+        p = f.get("properties") or {}
+        examples.append({
+            "title": p.get("title"),
+            "url": p.get("url"),
+            "domain": p.get("source"),
+            "time_utc": p.get("time"),
+            "type": "local_event"
+        })
+
+    weekly["examples"] = examples[:40]
+
+    if "weekly_assessment_plain" in weekly:
+        weekly["weekly_assessment_plain"] = added + weekly.get("weekly_assessment_plain", [])
+
+    save_json(WEEKLY, weekly)
+
+
+
+def clamp(value, low=0.0, high=10.0):
+    return max(low, min(high, float(value)))
+
+
+def saturating_score(value, scale):
+    """
+    Convert an unbounded activity value to 0..10 without allowing one large
+    raw count to force every country to the ceiling.
+    """
+    value = max(0.0, float(value or 0.0))
+    scale = max(0.001, float(scale))
+    return round(10.0 * value / (value + scale), 3)
+
+
+def event_category(props):
+    return str(
+        props.get("incident_type")
+        or props.get("category")
+        or "unknown"
+    ).lower()
+
+
+def country_event_components(local_events):
+    result = defaultdict(lambda: {
+        "all_score": 0.0,
+        "all_count": 0,
+        "military_drone_score": 0.0,
+        "military_drone_count": 0,
+        "cyber_score": 0.0,
+        "cyber_count": 0,
+        "infrastructure_score": 0.0,
+        "infrastructure_count": 0,
+        "crossborder_score": 0.0,
+        "crossborder_count": 0,
+        "recent_24h_score": 0.0,
+        "previous_24_72h_score": 0.0,
+    })
+
+    seen = set()
+
+    for feature in local_events:
+        props = feature.get("properties") or {}
+        country = norm_country(props.get("country"))
+        if country not in MONITORED_COUNTRIES:
+            continue
+
+        event_key = (
+            props.get("id")
+            or props.get("url")
+            or (
+                props.get("title"),
+                props.get("time"),
+                props.get("source"),
+            )
+        )
+        dedup_key = (country, str(event_key))
+        if dedup_key in seen:
+            continue
+        seen.add(dedup_key)
+
+        score = local_event_score(props)
+        category = event_category(props)
+        age = age_hours(props.get("time"))
+
+        row = result[country]
+        row["all_score"] += score
+        row["all_count"] += 1
+
+        if category in RISK_CATEGORY_GROUPS["military_drone"]:
+            row["military_drone_score"] += score
+            row["military_drone_count"] += 1
+
+        if category in RISK_CATEGORY_GROUPS["cyber"]:
+            row["cyber_score"] += score
+            row["cyber_count"] += 1
+
+        if category in RISK_CATEGORY_GROUPS["infrastructure"]:
+            row["infrastructure_score"] += score
+            row["infrastructure_count"] += 1
+
+        crossborder_flag = any([
+            props.get("crossborder") is True,
+            props.get("cross_border") is True,
+            str(props.get("scope") or "").lower() == "crossborder",
+            str(props.get("category") or "").lower() == "crossborder",
+        ])
+        if crossborder_flag:
+            row["crossborder_score"] += score
+            row["crossborder_count"] += 1
+
+        if age is not None:
+            if age <= 24:
+                row["recent_24h_score"] += score
+            elif age <= 72:
+                row["previous_24_72h_score"] += score
+
+    return result
+
+
+def country_proximity_components(prox_matches):
+    result = defaultdict(lambda: {
+        "score": 0.0,
+        "count": 0,
+        "high_critical": 0,
+    })
+
+    seen = set()
+
+    for match in prox_matches:
+        infra = match.get("infrastructure") or {}
+        event = match.get("event") or {}
+        country = norm_country(infra.get("country"))
+
+        if country not in MONITORED_COUNTRIES:
+            continue
+
+        dedup_key = (
+            country,
+            event.get("id"),
+            infra.get("id") or infra.get("name"),
+        )
+        if dedup_key in seen:
+            continue
+        seen.add(dedup_key)
+
+        score = proximity_score(match)
+        result[country]["score"] += score
+        result[country]["count"] += 1
+
+        if str(match.get("level") or "").lower() in {"high", "critical"}:
+            result[country]["high_critical"] += 1
+
+    return result
+
+
+def score_country_risk(country, event_row, prox_row):
+    incident_pressure = saturating_score(event_row["all_score"], 10.0)
+    military_drone = saturating_score(event_row["military_drone_score"], 5.0)
+    cyber = saturating_score(event_row["cyber_score"], 4.0)
+
+    infra_raw = event_row["infrastructure_score"] + prox_row["score"] * 1.35
+    infrastructure = saturating_score(infra_raw, 6.0)
+
+    crossborder = saturating_score(event_row["crossborder_score"], 4.0)
+
+    recent = event_row["recent_24h_score"]
+    previous_daily = event_row["previous_24_72h_score"] / 2.0
+
+    if recent <= 0 and previous_daily <= 0:
+        trend = 0.0
+    else:
+        ratio = (recent + 0.5) / (previous_daily + 0.5)
+        trend = clamp(5.0 + 3.2 * (ratio - 1.0), 0.0, 10.0)
+
+    dimensions = {
+        "incident_pressure": incident_pressure,
+        "military_drone": military_drone,
+        "cyber": cyber,
+        "infrastructure": infrastructure,
+        "crossborder": crossborder,
+        "trend": round(trend, 3),
+    }
+
+    normalized = round(sum(
+        dimensions[name] * weight
+        for name, weight in RISK_WEIGHTS.items()
+    ), 3)
+
+    evidence_count = event_row["all_count"] + prox_row["count"]
+    active_dimensions = sum(
+        1 for name in [
+            "incident_pressure", "military_drone", "cyber",
+            "infrastructure", "crossborder"
+        ]
+        if dimensions[name] > 0
+    )
+
+    confidence_value = clamp(
+        0.20
+        + min(0.45, evidence_count * 0.055)
+        + min(0.25, active_dimensions * 0.05),
+        0.0,
+        1.0,
+    )
+
+    if confidence_value >= 0.72:
+        confidence = "high"
+    elif confidence_value >= 0.45:
+        confidence = "medium"
+    else:
+        confidence = "low"
+
+    drivers = []
+    driver_labels = {
+        "incident_pressure": "biztonsági incidensnyomás",
+        "military_drone": "katonai és drónaktivitás",
+        "cyber": "kiberincidensek",
+        "infrastructure": "kritikus infrastruktúra-kitettség",
+        "crossborder": "határon átnyúló nyomás",
+        "trend": "friss aktivitási trend",
+    }
+
+    for name, value in sorted(
+        dimensions.items(),
+        key=lambda item: item[1] * RISK_WEIGHTS[item[0]],
+        reverse=True,
+    ):
+        if value >= 2.0:
+            drivers.append(driver_labels[name])
+
+    return {
+        "normalized": normalized,
+        "dimensions": dimensions,
+        "confidence": confidence,
+        "confidence_value": round(confidence_value, 3),
+        "drivers": drivers[:4],
+        "local_event_count": event_row["all_count"],
+        "infra_proximity_count": prox_row["count"],
+        "high_critical_infra_count": prox_row["high_critical"],
+    }
+
+
+def risk_level(score):
+    if score >= 8.0:
+        return "critical"
+    if score >= 5.0:
+        return "tense"
+    if score >= 2.0:
+        return "elevated"
+    return "normal"
+
+
+def enrich_risk(local_events, prox_matches):
+    """
+    Rebuild country risk from current validated evidence.
+
+    Important: the previous normalized value is NOT used as a new baseline.
+    This prevents the enrichment workflow from adding the same bonus again
+    on every run and gradually pushing all countries toward 10.
+    """
+    risk = load_json(RISK_DAILY, {
+        "generated_utc": now_utc().isoformat(),
+        "country_scores": {},
+        "countries": [],
+        "region": {}
+    })
+
+    event_components = country_event_components(local_events)
+    proximity_components = country_proximity_components(prox_matches)
+
+    country_scores = {}
+    countries = []
+
+    for country in MONITORED_COUNTRIES:
+        event_row = event_components[country]
+        prox_row = proximity_components[country]
+
+        scored = score_country_risk(country, event_row, prox_row)
+        normalized = scored["normalized"]
+
+        row = {
+            "normalized": normalized,
+            "overall": risk_level(normalized),
+            "confidence": scored["confidence"],
+            "confidence_value": scored["confidence_value"],
+            "dimensions": scored["dimensions"],
+            "drivers": scored["drivers"],
+            "local_event_count": scored["local_event_count"],
+            "infra_proximity_count": scored["infra_proximity_count"],
+            "high_critical_infra_count": scored["high_critical_infra_count"],
+            "model": "cee_country_risk_v2",
+            "weights": RISK_WEIGHTS,
+        }
+
+        country_scores[country] = row
+
+        countries.append({
+            "country": country,
+            "overall": row["overall"],
+            "overall_score": normalized,
+            "normalized": normalized,
+            "confidence": row["confidence"],
+            "confidence_value": row["confidence_value"],
+            "drivers": row["drivers"],
+            "dimensions": row["dimensions"],
+        })
+
+    countries.sort(key=lambda x: x["normalized"], reverse=True)
+
+    # Regional score: activity-sensitive mean. It remains comparable over time
+    # but does not become identical to the highest-risk country.
+    region_scores = [x["normalized"] for x in countries]
+    region_score = round(sum(region_scores) / len(MONITORED_COUNTRIES), 3)
+
+    evidence_total = sum(
+        x["local_event_count"] + x["infra_proximity_count"]
+        for x in country_scores.values()
+    )
+    confidence_values = [
+        x["confidence_value"] for x in country_scores.values()
+    ]
+    region_confidence_value = round(
+        sum(confidence_values) / len(confidence_values),
+        3,
+    )
+
+    dimension_scores = {}
+    for dimension in RISK_WEIGHTS:
+        dimension_scores[dimension] = round(
+            sum(
+                country_scores[c]["dimensions"][dimension]
+                for c in MONITORED_COUNTRIES
+            ) / len(MONITORED_COUNTRIES),
+            3,
+        )
+
+    risk["country_scores"] = country_scores
+    risk["countries"] = countries
+    risk["region"] = {
+        "overall": risk_level(region_score),
+        "overall_score": region_score,
+        "confidence": (
+            "high" if region_confidence_value >= 0.72
+            else "medium" if region_confidence_value >= 0.45
+            else "low"
+        ),
+        "confidence_value": region_confidence_value,
+        "dimension_scores": dimension_scores,
+        "evidence_count": evidence_total,
+    }
+    risk["model"] = {
+        "name": "cee_country_risk_v2",
+        "scale": "0-10",
+        "countries": MONITORED_COUNTRIES,
+        "weights": RISK_WEIGHTS,
+        "method": "weighted saturating dimensions rebuilt from current 7-day validated evidence",
+        "important": "previous normalized scores are not cumulatively re-added",
+    }
+    risk["generated_utc"] = now_utc().isoformat()
+
+    save_json(RISK_DAILY, risk)
+
+
+def enrich_meta(local_events, prox_matches):
+    meta = load_json(META, {"generated_utc": now_utc().isoformat(), "counts": {}})
+    counts = meta.get("counts") or {}
+
+    counts["local_events"] = sum(
+        1 for f in local_events
+        if (f.get("properties") or {}).get("_risk_source_file") in LOCAL_RISK_FILES
+    )
+    counts["validated_security_events"] = len(local_events)
+    counts["validated_crossborder_events"] = sum(
+        1 for f in local_events
+        if (f.get("properties") or {}).get("_risk_source_file") == CROSSBORDER_RISK_FILE
+    )
+    counts["infra_proximity_matches"] = len(prox_matches)
+
+    meta["counts"] = counts
+    meta["local_infrastructure"] = {
+        "enabled": True,
+        "local_events": "local_events.geojson",
+        "infra_proximity": "infra_proximity.json",
+        "history": {
+            "local_events": "history/local_events_history.geojson",
+            "infra_proximity": "history/infra_proximity_history.json"
+        }
+    }
+
+    save_json(META, meta)
+
+
+def save_risk_debug(security_events, days=7):
+    """Write an auditable list of the exact event records admitted to risk."""
+    country_summary = {
+        country: {
+            "incident_count": 0,
+            "category_counts": {},
+            "source_files": {},
+        }
+        for country in MONITORED_COUNTRIES
+    }
+    countries = {country: [] for country in MONITORED_COUNTRIES}
+
+    category_counters = defaultdict(Counter)
+    source_counters = defaultdict(Counter)
+
+    for feature in security_events:
+        props = feature.get("properties") or {}
+        country = norm_country(props.get("country"))
+        if country not in countries:
+            continue
+
+        category = event_category(props)
+        source_file = props.get("_risk_source_file") or "unknown"
+        category_counters[country][category] += 1
+        source_counters[country][source_file] += 1
+
+        fingerprint = props.get("fingerprint") or {}
+        fingerprint_hash = (
+            fingerprint.get("hash")
+            if isinstance(fingerprint, dict)
+            else str(fingerprint or "") or None
+        )
+
+        countries[country].append({
+            "id": props.get("id"),
+            "date": (parse_time(props.get("time")).date().isoformat()
+                     if parse_time(props.get("time")) else None),
+            "time": props.get("time"),
+            "category": category,
+            "severity": props.get("severity"),
+            "title": props.get("title") or props.get("name"),
+            "source": props.get("source"),
+            "url": props.get("url"),
+            "source_file": source_file,
+            "classification_source": (
+                props.get("classification_source") or "security_classifier_compatible_local"
+            ),
+            "actual_incident": props.get("actual_incident"),
+            "risk_eligible": props.get("risk_eligible"),
+            "article_role": props.get("article_role"),
+            "incident_family": props.get("incident_family") or props.get("family"),
+            "incident_subcategory": props.get("incident_subcategory") or props.get("subcategory"),
+            "incident_subtype": props.get("incident_subtype") or props.get("subtype"),
+            "classification_confidence": (
+                props.get("classification_confidence") or props.get("confidence")
+            ),
+            "matched_rule_id": props.get("matched_rule_id"),
+            "fingerprint_hash": fingerprint_hash,
+        })
+
+    for country in MONITORED_COUNTRIES:
+        countries[country].sort(key=lambda row: row.get("time") or "", reverse=True)
+        country_summary[country] = {
+            "incident_count": len(countries[country]),
+            "category_counts": dict(category_counters[country]),
+            "source_files": dict(source_counters[country]),
+        }
+
+    payload = {
+        "generated_utc": now_utc().isoformat(),
+        "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
+        "model": "cee_country_risk_v2",
+        "window_days": days,
+        "totals": {
+            "incident_count": len(security_events),
+            "local_event_count": sum(
+                1 for f in security_events
+                if (f.get("properties") or {}).get("_risk_source_file") in LOCAL_RISK_FILES
+            ),
+            "crossborder_event_count": sum(
+                1 for f in security_events
+                if (f.get("properties") or {}).get("_risk_source_file") == CROSSBORDER_RISK_FILE
+            ),
+        },
+        "country_summary": country_summary,
+        "countries": countries,
+    }
+    save_json(RISK_DEBUG, payload)
+
+
+def main():
+    security_events = load_validated_security_events(days=7)
+    prox_matches = load_proximity(days=7)
+
+    enrich_summary(security_events, prox_matches)
+    enrich_weekly(security_events, prox_matches)
+    enrich_risk(security_events, prox_matches)
+    enrich_meta(security_events, prox_matches)
+    save_risk_debug(security_events, days=7)
+
+    print("Security outputs enriched.")
+    print(f"Validated security events 7d: {len(security_events)}")
+    print(f"Validated infrastructure proximity matches 7d: {len(prox_matches)}")
+
+
+if __name__ == "__main__":
+    main()

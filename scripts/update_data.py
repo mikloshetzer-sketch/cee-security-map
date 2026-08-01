@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import html
 import io
 import json
 import math
@@ -15,6 +16,8 @@ from dataclasses import asdict, dataclass
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from typing import Any, Dict, List, Optional, Tuple
+from html.parser import HTMLParser
+from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
 
@@ -31,6 +34,7 @@ DATA_DIR = os.path.join(ROOT, "data")
 CACHE_PATH = os.path.join(DATA_DIR, "geocode_cache.json")
 COUNTRIES_CACHE_PATH = os.path.join(DATA_DIR, "cee_countries.geojson")
 TRUSTED_RSS_PATH = os.path.join(DATA_DIR, "trusted_rss.json")
+ARTICLE_TEXT_CACHE_PATH = os.path.join(DATA_DIR, "article_text_cache.json")
 TAXONOMY_PATH = os.path.join(ROOT, "security_taxonomy.json")
 CLASSIFIER = SecurityClassifier(TAXONOMY_PATH)
 
@@ -68,6 +72,16 @@ MAX_SOURCES_PER_EVENT = 8
 # ============================================================
 MAX_RSS_ITEMS_PER_FEED = 50
 MAX_RSS_OUTPUT_ITEMS = 200
+
+# Targeted full-article enrichment. The same cache is shared with the local-source
+# pipeline, so a URL is downloaded at most once unless the cache entry expires.
+MAX_ARTICLE_FETCHES_TOTAL = 40
+MAX_ARTICLE_FETCHES_TRUSTED_RSS = 24
+MAX_ARTICLE_FETCHES_GDELT_LINKED = 16
+ARTICLE_FETCH_TIMEOUT = 10
+ARTICLE_CACHE_MAX_AGE_DAYS = 14
+ARTICLE_TEXT_MAX_CHARS = 16000
+ARTICLE_EXCERPT_CHARS = 1200
 
 TRUSTED_RSS_FEEDS = [
     {
@@ -767,6 +781,313 @@ def pick_relation_coordinate(country: str, rel_hits: List[str]) -> Tuple[float, 
             return BORDER_CENTROIDS[zone]
     return COUNTRY_CENTROIDS[country]
 
+
+# ============================================================
+# TARGETED FULL-ARTICLE ENRICHMENT
+# ============================================================
+class _ParagraphExtractor(HTMLParser):
+    """Small dependency-free HTML main-text extractor."""
+
+    BLOCK_TAGS = {"p", "article", "section", "main", "h1", "h2", "h3", "li"}
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self._capture_depth = 0
+        self._parts: List[str] = []
+        self._skip_depth = 0
+
+    def handle_starttag(self, tag: str, attrs) -> None:
+        tag = tag.lower()
+        if tag in {"script", "style", "noscript", "svg", "form", "nav", "footer", "header"}:
+            self._skip_depth += 1
+            return
+        if self._skip_depth == 0 and tag in self.BLOCK_TAGS:
+            self._capture_depth += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if tag in {"script", "style", "noscript", "svg", "form", "nav", "footer", "header"}:
+            if self._skip_depth:
+                self._skip_depth -= 1
+            return
+        if self._skip_depth == 0 and tag in self.BLOCK_TAGS and self._capture_depth:
+            self._capture_depth -= 1
+            self._parts.append("\n")
+
+    def handle_data(self, data: str) -> None:
+        if self._skip_depth == 0 and self._capture_depth > 0:
+            value = compact_ws(data)
+            if value:
+                self._parts.append(value)
+
+    def text(self) -> str:
+        value = " ".join(self._parts)
+        return compact_ws(value)
+
+
+def _extract_jsonld_article_body(html_text: str) -> str:
+    candidates: List[str] = []
+    for match in re.finditer(
+        r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+        html_text or "",
+        flags=re.I | re.S,
+    ):
+        raw = html.unescape(match.group(1)).strip()
+        if not raw:
+            continue
+        try:
+            payload = json.loads(raw)
+        except Exception:
+            continue
+
+        stack = payload if isinstance(payload, list) else [payload]
+        while stack:
+            item = stack.pop()
+            if isinstance(item, list):
+                stack.extend(item)
+            elif isinstance(item, dict):
+                body = item.get("articleBody")
+                if isinstance(body, str) and len(compact_ws(body)) >= 200:
+                    candidates.append(compact_ws(body))
+                for value in item.values():
+                    if isinstance(value, (dict, list)):
+                        stack.append(value)
+    return max(candidates, key=len) if candidates else ""
+
+
+def extract_article_text(html_text: str) -> str:
+    body = _extract_jsonld_article_body(html_text)
+    if body:
+        return body[:ARTICLE_TEXT_MAX_CHARS]
+
+    parser = _ParagraphExtractor()
+    try:
+        parser.feed(html_text or "")
+    except Exception:
+        return ""
+    return parser.text()[:ARTICLE_TEXT_MAX_CHARS]
+
+
+def load_article_text_cache() -> Dict[str, Any]:
+    if not os.path.exists(ARTICLE_TEXT_CACHE_PATH):
+        return {"version": 1, "items": {}}
+    try:
+        with open(ARTICLE_TEXT_CACHE_PATH, "r", encoding="utf-8") as f:
+            payload = json.load(f) or {}
+        if not isinstance(payload, dict):
+            return {"version": 1, "items": {}}
+        payload.setdefault("version", 1)
+        payload.setdefault("items", {})
+        return payload
+    except Exception:
+        return {"version": 1, "items": {}}
+
+
+def save_article_text_cache(payload: Dict[str, Any]) -> None:
+    payload["updated_utc"] = to_utc_z(datetime.now(timezone.utc))
+    with open(ARTICLE_TEXT_CACHE_PATH, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+
+
+def taxonomy_candidate_terms() -> List[str]:
+    terms: set[str] = set()
+    lexicons = getattr(CLASSIFIER, "taxonomy", None) or getattr(CLASSIFIER, "data", None)
+    if not isinstance(lexicons, dict):
+        try:
+            with open(TAXONOMY_PATH, "r", encoding="utf-8") as f:
+                lexicons = json.load(f)
+        except Exception:
+            lexicons = {}
+    for group in (lexicons.get("lexicons") or {}).values():
+        if not isinstance(group, dict):
+            continue
+        for values in group.values():
+            if not isinstance(values, list):
+                continue
+            for term in values:
+                norm = compact_ws(str(term).casefold())
+                if len(norm) >= 4:
+                    terms.add(norm)
+    terms.update(str(x).casefold() for x in HIGH_IMPACT_TERMS if len(str(x)) >= 4)
+    return sorted(terms, key=len, reverse=True)
+
+
+ARTICLE_CANDIDATE_TERMS = taxonomy_candidate_terms()
+
+
+def article_is_candidate(title: str, summary: str, country_hint: Optional[str] = None) -> bool:
+    blob = compact_ws(f"{title} {summary}").casefold()
+    if not blob:
+        return False
+    if country_hint:
+        return True
+    if any(contains_term(blob, term) for term in ARTICLE_CANDIDATE_TERMS[:500]):
+        return True
+    return any(
+        contains_term(blob, alias)
+        for aliases in CEE_COUNTRY_KEYWORDS.values()
+        for alias in aliases
+    )
+
+
+def split_article_sentences(text: str) -> List[str]:
+    parts = re.split(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÖŐÚÜŰČĆŁŚŽŠȚÎĂÂ])", text or "")
+    return [compact_ws(x) for x in parts if 40 <= len(compact_ws(x)) <= 1200][:80]
+
+
+def classify_article_events(
+    *,
+    title: str,
+    summary: str,
+    body: str,
+    url: str,
+    source: str,
+    published: Optional[str],
+    country: Optional[str],
+    city: Optional[str],
+    latitude: Optional[float],
+    longitude: Optional[float],
+    pipeline: str,
+) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
+    full_summary = compact_ws(" ".join(x for x in [summary, body] if x))[:ARTICLE_TEXT_MAX_CHARS]
+    primary = classify_security_content(
+        title=title,
+        summary=full_summary,
+        url=url,
+        source=source,
+        published=published,
+        country=country,
+        city=city,
+        latitude=latitude,
+        longitude=longitude,
+        source_count=1,
+        extra_context={"pipeline": pipeline, "full_article_enriched": bool(body)},
+    )
+
+    found: Dict[str, Dict[str, Any]] = {}
+    if primary.get("matched_rule_id"):
+        found[str(primary["matched_rule_id"])] = {
+            "matched_rule_id": primary.get("matched_rule_id"),
+            "incident_family": primary.get("incident_family"),
+            "incident_subcategory": primary.get("incident_subcategory"),
+            "incident_subtype": primary.get("incident_subtype"),
+            "incident_action": primary.get("incident_action"),
+            "severity": primary.get("severity"),
+            "classification_confidence": primary.get("classification_confidence"),
+            "actual_incident": primary.get("actual_incident"),
+        }
+
+    # Sentence-level passes preserve secondary events from compound articles.
+    for sentence in split_article_sentences(body):
+        if not article_is_candidate(sentence, "", country):
+            continue
+        result = classify_security_content(
+            title=sentence,
+            summary="",
+            url=url,
+            source=source,
+            published=published,
+            country=country,
+            city=city,
+            latitude=latitude,
+            longitude=longitude,
+            source_count=1,
+            extra_context={"pipeline": pipeline, "sentence_level": True},
+        )
+        rule_id = result.get("matched_rule_id")
+        if not rule_id or result.get("actual_incident") is not True:
+            continue
+        candidate = {
+            "matched_rule_id": rule_id,
+            "incident_family": result.get("incident_family"),
+            "incident_subcategory": result.get("incident_subcategory"),
+            "incident_subtype": result.get("incident_subtype"),
+            "incident_action": result.get("incident_action"),
+            "severity": result.get("severity"),
+            "classification_confidence": result.get("classification_confidence"),
+            "actual_incident": True,
+            "evidence_excerpt": sentence[:500],
+        }
+        previous = found.get(str(rule_id))
+        if previous is None or float(candidate.get("classification_confidence") or 0) > float(previous.get("classification_confidence") or 0):
+            found[str(rule_id)] = candidate
+
+    secondary = [
+        value for key, value in found.items()
+        if key != primary.get("matched_rule_id")
+    ]
+    secondary.sort(
+        key=lambda x: float(x.get("classification_confidence") or 0),
+        reverse=True,
+    )
+    return primary, secondary[:8]
+
+
+class ArticleTextFetcher:
+    def __init__(self, cache: Dict[str, Any], total_limit: int) -> None:
+        self.cache = cache
+        self.total_limit = total_limit
+        self.fetch_count = 0
+        self.pipeline_counts: Dict[str, int] = {}
+
+    def _fresh_cache(self, entry: Dict[str, Any]) -> bool:
+        fetched = parse_time_iso(entry.get("fetched_utc"))
+        if fetched is None:
+            return False
+        return datetime.now(timezone.utc) - fetched <= timedelta(days=ARTICLE_CACHE_MAX_AGE_DAYS)
+
+    def get(self, url: str, pipeline: str, pipeline_limit: int) -> Tuple[str, str]:
+        if not url or not str(url).startswith(("http://", "https://")):
+            return "", "invalid_url"
+        parsed = urlparse(url)
+        if parsed.path.lower().endswith((".pdf", ".zip", ".jpg", ".jpeg", ".png", ".gif", ".mp4")):
+            return "", "unsupported_type"
+
+        items = self.cache.setdefault("items", {})
+        cached = items.get(url)
+        if isinstance(cached, dict) and self._fresh_cache(cached):
+            return str(cached.get("text") or ""), "cache"
+
+        used = self.pipeline_counts.get(pipeline, 0)
+        if self.fetch_count >= self.total_limit or used >= pipeline_limit:
+            return "", "budget_exhausted"
+
+        self.fetch_count += 1
+        self.pipeline_counts[pipeline] = used + 1
+        try:
+            response = requests.get(
+                url,
+                headers={
+                    "User-Agent": USER_AGENT,
+                    "Accept": "text/html,application/xhtml+xml",
+                    "Accept-Language": "en,hu;q=0.8",
+                },
+                timeout=ARTICLE_FETCH_TIMEOUT,
+                allow_redirects=True,
+            )
+            response.raise_for_status()
+            content_type = response.headers.get("Content-Type", "")
+            if "html" not in content_type.lower() and "<html" not in response.text[:500].lower():
+                return "", "non_html"
+            article_text = extract_article_text(response.text)
+            items[url] = {
+                "fetched_utc": to_utc_z(datetime.now(timezone.utc)),
+                "status": "ok" if article_text else "empty",
+                "text": article_text,
+                "chars": len(article_text),
+                "final_url": response.url,
+            }
+            return article_text, "network"
+        except Exception as exc:
+            items[url] = {
+                "fetched_utc": to_utc_z(datetime.now(timezone.utc)),
+                "status": "error",
+                "text": "",
+                "error": str(exc)[:300],
+            }
+            return "", "error"
+
+
 # ============================================================
 # DEDUP
 # ============================================================
@@ -1005,6 +1326,11 @@ class TrustedStory:
     classifier_version: str
     taxonomy_version: str
     rejection_reason: Optional[str]
+    full_article_enriched: bool
+    article_text_chars: int
+    article_fetch_source: Optional[str]
+    article_text_excerpt: Optional[str]
+    secondary_incidents: List[Dict[str, Any]]
 
 def rss_strip_html(text: str) -> str:
     text = re.sub(r"<[^>]+>", " ", text or "")
@@ -1138,7 +1464,7 @@ def parse_rss_xml(xml_bytes: bytes) -> List[Dict[str, Any]]:
 
     return items
 
-def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[TrustedStory]:
+def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any], article_fetcher: ArticleTextFetcher) -> Optional[TrustedStory]:
     title = rss_strip_html(item.get("title", ""))
     summary = rss_strip_html(item.get("summary", "") or item.get("description", ""))
     url = (item.get("link") or "").strip()
@@ -1146,12 +1472,23 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
     if not title or not url:
         return None
 
-    blob = rss_blob(title, summary)
-    if should_exclude_rss(blob):
+    initial_blob = rss_blob(title, summary)
+    if should_exclude_rss(initial_blob):
         return None
 
-    city_hint, city_country, latitude, longitude, location_terms = detect_explicit_location(blob)
-    blob_country, blob_country_terms = infer_country_from_text(blob)
+    initial_country, _ = infer_country_from_text(initial_blob)
+    article_body = ""
+    article_fetch_source: Optional[str] = None
+    if article_is_candidate(title, summary, initial_country):
+        article_body, article_fetch_source = article_fetcher.get(
+            url,
+            pipeline="trusted_rss",
+            pipeline_limit=MAX_ARTICLE_FETCHES_TRUSTED_RSS,
+        )
+
+    enriched_blob = rss_blob(title, compact_ws(f"{summary} {article_body}"))
+    city_hint, city_country, latitude, longitude, location_terms = detect_explicit_location(enriched_blob)
+    blob_country, blob_country_terms = infer_country_from_text(enriched_blob)
     title_country, title_country_terms = infer_country_from_text(title.casefold())
     default_country = DEFAULT_COUNTRY_BY_SOURCE.get(feed.get("id", ""))
 
@@ -1182,7 +1519,7 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
         country_terms = blob_country_terms
         location_source = "explicit_country"
 
-    dims, dim_terms = infer_dimensions_from_text(blob)
+    dims, dim_terms = infer_dimensions_from_text(enriched_blob)
 
     if country_hint is None and not any(
         s in feed.get("scope", [])
@@ -1200,9 +1537,10 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
     signal_score = round(source_weight * recency * dimension_factor * country_factor, 4)
     confidence_boost = round(min(0.35, 0.14 + source_weight * 0.18 + (0.05 if country_hint else 0.0)), 4)
 
-    classification = classify_security_content(
+    classification, secondary_incidents = classify_article_events(
         title=title,
         summary=summary,
+        body=article_body,
         url=url,
         source=feed["name"],
         published=published_utc,
@@ -1210,9 +1548,11 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
         city=city_hint,
         latitude=latitude,
         longitude=longitude,
-        source_count=1,
-        extra_context={"pipeline": "trusted_rss", "feed_id": feed["id"]},
+        pipeline="trusted_rss",
     )
+    # Trusted RSS is a context layer. It may describe a genuine incident, but it
+    # never enters risk/hotspot calculations directly.
+    classification["risk_eligible"] = False
 
     return TrustedStory(
         story_id=make_story_id(url, title),
@@ -1248,6 +1588,11 @@ def normalize_rss_item(feed: Dict[str, Any], item: Dict[str, Any]) -> Optional[T
         classifier_version=classification["classifier_version"],
         taxonomy_version=classification["taxonomy_version"],
         rejection_reason=classification["rejection_reason"],
+        full_article_enriched=bool(article_body),
+        article_text_chars=len(article_body),
+        article_fetch_source=article_fetch_source,
+        article_text_excerpt=article_body[:ARTICLE_EXCERPT_CHARS] if article_body else None,
+        secondary_incidents=secondary_incidents,
     )
 
 def fetch_rss_feed(url: str) -> bytes:
@@ -1299,7 +1644,7 @@ def build_trusted_rss_output(stories: List[TrustedStory], errors: List[Dict[str,
         "errors": errors,
     }
 
-def fetch_trusted_rss() -> Dict[str, Any]:
+def fetch_trusted_rss(article_fetcher: ArticleTextFetcher) -> Dict[str, Any]:
     all_stories: List[TrustedStory] = []
     errors: List[Dict[str, str]] = []
 
@@ -1308,7 +1653,7 @@ def fetch_trusted_rss() -> Dict[str, Any]:
             xml_bytes = fetch_rss_feed(feed["url"])
             items = parse_rss_xml(xml_bytes)[:MAX_RSS_ITEMS_PER_FEED]
             for item in items:
-                story = normalize_rss_item(feed, item)
+                story = normalize_rss_item(feed, item, article_fetcher)
                 if story:
                     all_stories.append(story)
         except Exception as exc:
@@ -1927,7 +2272,7 @@ def gdelt_linked_classification(
     }
 
 
-def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: int = 14) -> List[Dict[str, Any]]:
+def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: int = 14, article_fetcher: Optional[ArticleTextFetcher] = None) -> List[Dict[str, Any]]:
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(days=lookback_days)
 
@@ -2022,16 +2367,62 @@ def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: i
         lat = ev["lat_sum"] / max(1, ev["n"])
         lon = ev["lon_sum"] / max(1, ev["n"])
         country_hint = country_for_coordinates(lon, lat, geoms)
-        classification = gdelt_linked_classification(
+        structured_classification = gdelt_linked_classification(
             ev, lat=lat, lon=lon, geoms=geoms
         )
+
+        article_bodies: List[str] = []
+        fetch_sources: List[str] = []
+        candidate_title = f"{ev.get('category') or 'News'} – {ev.get('location') or 'unknown'}"
+        if article_fetcher and article_is_candidate(
+            candidate_title,
+            " ".join(ev.get("sources") or []),
+            country_hint,
+        ):
+            for source_url in (ev.get("sources") or [])[:2]:
+                body, source_kind = article_fetcher.get(
+                    source_url,
+                    pipeline="gdelt_linked",
+                    pipeline_limit=MAX_ARTICLE_FETCHES_GDELT_LINKED,
+                )
+                if body:
+                    article_bodies.append(body)
+                    fetch_sources.append(source_kind)
+
+        article_body = compact_ws(" ".join(article_bodies))[:ARTICLE_TEXT_MAX_CHARS]
+        if article_body:
+            classification, secondary_incidents = classify_article_events(
+                title=candidate_title,
+                summary=ev.get("location") or "",
+                body=article_body,
+                url=(ev.get("sources") or [None])[0] or "",
+                source="GDELT",
+                published=ev.get("time"),
+                country=country_hint,
+                city=ev.get("location") if ev.get("location") != "unknown" else None,
+                latitude=lat,
+                longitude=lon,
+                pipeline="gdelt_linked",
+            )
+            if not classification.get("matched_rule_id"):
+                classification = structured_classification
+            else:
+                classification["classification_source"] = "security_classifier_context"
+        else:
+            classification = structured_classification
+            secondary_incidents = []
+
+        # GDELT Linked is context-only by design. Even genuine incidents stay
+        # visible but never influence risk, hotspot or early-warning scores.
+        classification["risk_eligible"] = False
+
         display_category = (
             classification.get("incident_subcategory")
             or ev.get("category")
             or "other"
         )
         description = (
-            f"GDELT linked event: {display_category}; "
+            f"GDELT linked context: {display_category}; "
             f"CAMEO root {ev.get('event_root_code') or 'unknown'}; "
             f"{len(ev.get('sources') or [])} source(s)."
         )
@@ -2057,6 +2448,12 @@ def fetch_gdelt_export_linked(geoms: Dict[str, Dict[str, Any]], lookback_days: i
             "sources": ev["sources"],
             "url": ev["sources"][0] if ev["sources"] else None,
             "impact_mult": impact_multiplier(ev["location"], " ".join(ev["sources"][:3])),
+            "full_article_enriched": bool(article_body),
+            "article_text_chars": len(article_body),
+            "article_fetch_sources": fetch_sources,
+            "article_text_excerpt": article_body[:ARTICLE_EXCERPT_CHARS] if article_body else None,
+            "secondary_incidents": secondary_incidents,
+            "context_only": True,
         }
         props.update(classification)
         live_features.append(to_feature(lon, lat, props))
@@ -2926,6 +3323,12 @@ def main() -> int:
     geoms = load_or_build_country_geoms()
     ensure_cee_borders(geoms)
 
+    article_cache = load_article_text_cache()
+    article_fetcher = ArticleTextFetcher(
+        article_cache,
+        total_limit=MAX_ARTICLE_FETCHES_TOTAL,
+    )
+
     prev_usgs = load_geojson_features(os.path.join(DATA_DIR, "usgs.geojson"))
     prev_gdacs = load_geojson_features(os.path.join(DATA_DIR, "gdacs.geojson"))
     prev_gdelt = load_geojson_features(os.path.join(DATA_DIR, "gdelt.geojson"))
@@ -2937,7 +3340,7 @@ def main() -> int:
         feature
         for feature in prev_gdelt_linked
         if (feature.get("properties") or {}).get("classification_source")
-        in {"security_classifier", "gdelt_cameo_structured", "gdelt_cameo_background"}
+        in {"security_classifier", "security_classifier_context", "gdelt_cameo_structured", "gdelt_cameo_background"}
         and "risk_eligible" in (feature.get("properties") or {})
     ]
     prev_gdelt_cross = load_geojson_features(os.path.join(DATA_DIR, "gdelt_crossborder.geojson"))
@@ -2971,7 +3374,7 @@ def main() -> int:
         gdelt_geo_new, gdelt_debug = [], {"ok": False, "error": str(e)}
 
     try:
-        gdelt_linked_new = fetch_gdelt_export_linked(geoms, lookback_days=GDELT_EXPORT_DAYS)
+        gdelt_linked_new = fetch_gdelt_export_linked(geoms, lookback_days=GDELT_EXPORT_DAYS, article_fetcher=article_fetcher)
     except Exception as e:
         print(f"[GDELT EXPORT] fetch failed: {e}")
         gdelt_linked_new = []
@@ -2989,7 +3392,7 @@ def main() -> int:
         direct_news_new = []
 
     try:
-        trusted_rss_payload = fetch_trusted_rss()
+        trusted_rss_payload = fetch_trusted_rss(article_fetcher)
         save_trusted_rss(trusted_rss_payload)
         print(f"[RSS] trusted_rss.json created with {trusted_rss_payload.get('count', 0)} stories.")
     except Exception as e:
@@ -3002,6 +3405,13 @@ def main() -> int:
             "errors": [{"feed_id": "all", "feed_name": "trusted_rss", "error": str(e)}],
         }
         save_trusted_rss(trusted_rss_payload)
+
+    save_article_text_cache(article_cache)
+    print(
+        f"[ARTICLE] fetched={article_fetcher.fetch_count} "
+        f"trusted={article_fetcher.pipeline_counts.get('trusted_rss', 0)} "
+        f"gdelt_linked={article_fetcher.pipeline_counts.get('gdelt_linked', 0)}"
+    )
 
     usgs_merged = merge_dedup(clamp_times(prev_usgs), clamp_times(usgs_new))
     gdacs_merged = merge_dedup(clamp_times(prev_gdacs), clamp_times(gdacs_new))
@@ -3027,7 +3437,8 @@ def main() -> int:
     with open(os.path.join(DATA_DIR, "gdelt_debug.json"), "w", encoding="utf-8") as f:
         json.dump(gdelt_debug, f, ensure_ascii=False, indent=2)
 
-    all_feats = gdelt + gdelt_linked + gdelt_cross + direct_news + gdacs + usgs
+    all_feats = gdelt + gdelt_cross + direct_news + gdacs + usgs
+    context_feats = gdelt_linked
 
     hotspot_geo, top_hotspots = build_hotspots_with_trend(all_feats, cell_deg=0.5, top_n=10)
 
@@ -3093,6 +3504,14 @@ def main() -> int:
             "output": "trusted_rss.json",
         },
         "direct_feeds": [f["name"] for f in DIRECT_FEEDS],
+        "article_enrichment": {
+            "enabled": True,
+            "cache": "article_text_cache.json",
+            "fetched_this_run": article_fetcher.fetch_count,
+            "pipeline_counts": article_fetcher.pipeline_counts,
+            "trusted_rss_limit": MAX_ARTICLE_FETCHES_TRUSTED_RSS,
+            "gdelt_linked_limit": MAX_ARTICLE_FETCHES_GDELT_LINKED,
+        },
         "weekly_brief": {
             "enabled": True,
             "structure": [

@@ -2,6 +2,9 @@ import json
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from collections import Counter, defaultdict
+from email.utils import parsedate_to_datetime
+import hashlib
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -17,6 +20,18 @@ LOCAL_HISTORY = HISTORY / "local_events_history.geojson"
 
 INFRA_PROX = DATA / "infra_proximity.json"
 INFRA_PROX_HISTORY = HISTORY / "infra_proximity_history.json"
+
+GDELT = DATA / "gdelt.geojson"
+GDELT_LINKED = DATA / "gdelt_linked.geojson"
+GDELT_CROSSBORDER = DATA / "gdelt_crossborder.geojson"
+
+SECURITY_EVENT_FILES = [
+    LOCAL_EVENTS,
+    LOCAL_HISTORY,
+    GDELT,
+    GDELT_LINKED,
+    GDELT_CROSSBORDER,
+]
 
 COUNTRY_NAME_MAP = {
     "Czechia": "Czech Republic",
@@ -84,8 +99,23 @@ def save_json(path, payload):
 def parse_time(value):
     if not value:
         return None
+
+    raw = str(value).strip()
+
     try:
-        return datetime.fromisoformat(str(value).replace("Z", "+00:00")).astimezone(timezone.utc)
+        return datetime.fromisoformat(
+            raw.replace("Z", "+00:00")
+        ).astimezone(timezone.utc)
+    except Exception:
+        pass
+
+    try:
+        dt = parsedate_to_datetime(raw)
+        if dt is None:
+            return None
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
     except Exception:
         return None
 
@@ -99,6 +129,265 @@ def age_hours(value):
 
 def norm_country(country):
     return COUNTRY_NAME_MAP.get(country, country or "Unknown")
+
+
+
+TARGET_COUNTRY_TERMS = {
+    "Czech Republic": ["czech republic", "czechia", "czech", "česko", "praha", "prague"],
+    "Hungary": ["hungary", "hungarian", "magyarország", "magyar", "budapest", "paks", "kecskemét"],
+    "Romania": [
+        "romania", "românia", "romanian", "român", "románia",
+        "bucharest", "bucurești", "bucuresti", "fetești", "fetesti",
+        "buzău", "buzau", "brăila", "braila", "constanța", "constanta",
+        "cernavodă", "cernavoda", "sfântu gheorghe", "sfantu gheorghe"
+    ],
+    "Slovakia": ["slovakia", "slovak", "slovensko", "bratislava", "košice", "kosice"],
+    "Poland": ["poland", "polish", "polska", "warsaw", "warszawa", "rzeszów", "rzeszow"],
+    "Lithuania": ["lithuania", "lithuanian", "lietuva", "vilnius", "kaunas", "klaipėda", "klaipeda"],
+    "Latvia": ["latvia", "latvian", "latvija", "riga", "ventspils"],
+    "Estonia": ["estonia", "estonian", "eesti", "tallinn", "tartu", "narva"],
+}
+
+SECURITY_INCIDENT_PATTERNS = {
+    "drone": [
+        "drone", "drón", "uav", "shahed", "dronă", "drona",
+        "dronei", "dronele", "dronelor"
+    ],
+    "cyber": [
+        "cyberattack", "cyber attack", "ransomware attack",
+        "ddos attack", "data breach", "kibertámadás"
+    ],
+    "military": [
+        "military helicopter crash", "military aircraft crash",
+        "fighter jet crash", "airspace violation", "airspace breach",
+        "shot down", "intercepted", "missile attack", "airstrike",
+        "rakétatámadás", "légtérsértés", "lelőtt", "doborât"
+    ],
+    "explosion": ["explosion", "blast", "robbanás", "explozie"],
+    "hazardous": [
+        "chemical leak", "gas leak", "industrial accident",
+        "vegyi szivárgás", "gázszivárgás"
+    ],
+    "infrastructure": [
+        "blackout", "power outage", "grid failure",
+        "airport closure", "port closure", "rail disruption",
+        "áramszünet"
+    ],
+}
+
+NOISE_TERMS = [
+    "formula 1", "formula one", "f1", "grand prix", "motorsport",
+    "archaeology", "archaeological", "roman military camp",
+    "street racing", "road safety", "traffic accident",
+    "trade talks", "investment", "procurement", "construction",
+    "appointment", "ceo", "director appointed",
+]
+
+
+def normalize_text(value):
+    return re.sub(r"\\s+", " ", str(value or "").lower()).strip()
+
+
+def contains_term(text, term):
+    t = normalize_text(text)
+    k = normalize_text(term)
+    if not k:
+        return False
+
+    if re.fullmatch(r"[\\wÀ-ž-]+", k, flags=re.UNICODE):
+        return re.search(
+            rf"(?<!\\w){re.escape(k)}(?!\\w)",
+            t,
+            flags=re.UNICODE,
+        ) is not None
+
+    return k in t
+
+
+def contains_any(text, terms):
+    return any(contains_term(text, term) for term in terms)
+
+
+def stable_event_key(*parts):
+    raw = "|".join(str(p or "") for p in parts)
+    return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:20]
+
+
+def detect_security_country(props, fallback_path=None):
+    raw_country = norm_country(
+        props.get("country")
+        or props.get("event_country")
+        or props.get("location_country")
+    )
+
+    if raw_country in MONITORED_COUNTRIES:
+        return raw_country
+
+    text = " ".join([
+        str(props.get("title") or props.get("name") or ""),
+        str(props.get("summary") or props.get("description") or ""),
+        str(props.get("url") or props.get("search_url") or ""),
+    ])
+
+    hits = []
+    for country, terms in TARGET_COUNTRY_TERMS.items():
+        if any(contains_term(text, term) for term in terms):
+            hits.append(country)
+
+    hits = list(dict.fromkeys(hits))
+    return hits[0] if len(hits) == 1 else None
+
+
+def infer_security_category(props):
+    explicit = str(
+        props.get("incident_type")
+        or props.get("category")
+        or props.get("gdelt_bucket")
+        or ""
+    ).lower()
+
+    text = " ".join([
+        str(props.get("title") or props.get("name") or ""),
+        str(props.get("summary") or props.get("description") or ""),
+        str(props.get("url") or props.get("search_url") or ""),
+    ])
+
+    if contains_any(text, NOISE_TERMS):
+        return None
+
+    # Strong text evidence overrides an upstream "other" label.
+    if contains_any(text, SECURITY_INCIDENT_PATTERNS["drone"]):
+        if contains_any(text, [
+            "shot down", "downed", "intercepted", "airspace",
+            "fired at", "lelőtt", "légtér", "doborât",
+            "spațiul aerian", "spatiul aerian"
+        ]):
+            return "drone"
+
+    if contains_any(text, SECURITY_INCIDENT_PATTERNS["cyber"]):
+        return "cyber"
+
+    if contains_any(text, SECURITY_INCIDENT_PATTERNS["military"]):
+        return "military"
+
+    if contains_any(text, SECURITY_INCIDENT_PATTERNS["explosion"]):
+        return "explosion"
+
+    if contains_any(text, SECURITY_INCIDENT_PATTERNS["hazardous"]):
+        return "hazardous"
+
+    if contains_any(text, SECURITY_INCIDENT_PATTERNS["infrastructure"]):
+        return "infrastructure_disruption"
+
+    if explicit in {
+        "drone", "drone_airspace", "cyber", "cyber_incident",
+        "military", "military_accident", "kinetic_attack",
+        "explosion", "hazardous", "hazardous_incident",
+        "sabotage", "infrastructure_disruption", "major_fire"
+    }:
+        return explicit
+
+    return None
+
+
+def normalize_security_feature(feature, source_file):
+    props = dict(feature.get("properties") or {})
+    country = detect_security_country(props, source_file)
+    if country not in MONITORED_COUNTRIES:
+        return None
+
+    category = infer_security_category(props)
+    if not category:
+        return None
+
+    dt = parse_time(
+        props.get("time")
+        or props.get("datetime")
+        or props.get("date")
+    )
+    if not dt:
+        return None
+
+    props["country"] = country
+    props["category"] = category
+    props["incident_type"] = props.get("incident_type") or category
+    props["time"] = dt.isoformat()
+
+    if not props.get("severity"):
+        if category in {"drone", "military", "kinetic_attack", "explosion"}:
+            props["severity"] = "high"
+        elif category in {"cyber", "hazardous", "sabotage"}:
+            props["severity"] = "medium"
+        else:
+            props["severity"] = "info"
+
+    props["_risk_source_file"] = source_file
+
+    return {
+        "type": "Feature",
+        "geometry": feature.get("geometry"),
+        "properties": props,
+    }
+
+
+def load_validated_security_events(days=7):
+    """
+    Unified risk input:
+    local + GDELT + linked + cross-border.
+
+    This is intentionally independent from map display categories, so a
+    GDELT event labelled `other` can still become a drone event when the
+    article evidence clearly supports that classification.
+    """
+    cutoff = now_utc() - timedelta(days=days)
+    candidates = []
+
+    for path in SECURITY_EVENT_FILES:
+        payload = load_json(path, {"features": []})
+
+        for feature in payload.get("features", []):
+            normalized = normalize_security_feature(feature, path.name)
+            if not normalized:
+                continue
+
+            props = normalized["properties"]
+            dt = parse_time(props.get("time"))
+            if not dt or dt < cutoff:
+                continue
+
+            candidates.append(normalized)
+
+    # Event-level conservative deduplication.
+    # Same country + category + calendar day + similar normalized title.
+    seen = {}
+    result = []
+
+    for feature in candidates:
+        props = feature.get("properties") or {}
+        title = normalize_text(props.get("title") or props.get("name") or "")
+        title_tokens = [
+            token for token in re.findall(r"[\\wÀ-ž-]{4,}", title, flags=re.UNICODE)
+            if token not in {"romania", "hungary", "poland", "latvia", "estonia", "lithuania"}
+        ]
+        title_sig = " ".join(title_tokens[:8])
+
+        dt = parse_time(props.get("time"))
+        day = dt.date().isoformat() if dt else ""
+
+        key = stable_event_key(
+            props.get("country"),
+            props.get("category"),
+            day,
+            title_sig,
+        )
+
+        if key in seen:
+            continue
+
+        seen[key] = True
+        result.append(feature)
+
+    return result
 
 
 def local_event_score(props):
@@ -188,16 +477,46 @@ def load_local_events(days=7):
 
 def load_proximity(days=7):
     matches = []
+    cutoff = now_utc() - timedelta(days=days)
+    seen = set()
 
     for path in [INFRA_PROX, INFRA_PROX_HISTORY]:
         payload = load_json(path, {"matches": []})
+
         for m in payload.get("matches", []):
             event = m.get("event") or {}
+            infra = m.get("infrastructure") or {}
+
             dt = parse_time(event.get("time"))
-            if not dt:
+            if not dt or dt < cutoff:
                 continue
-            if dt >= now_utc() - timedelta(days=days):
-                matches.append(m)
+
+            # Reject legacy proximity rows created before the validated
+            # incident/geolocation model existed.
+            if not event.get("incident_type"):
+                continue
+
+            location_quality = str(
+                event.get("location_quality") or ""
+            ).lower()
+
+            if location_quality not in {
+                "city", "specific_place", "precise"
+            }:
+                continue
+
+            if not event.get("geolocation_method"):
+                continue
+
+            key = (
+                event.get("id"),
+                infra.get("id") or infra.get("name"),
+            )
+            if key in seen:
+                continue
+
+            seen.add(key)
+            matches.append(m)
 
     return matches
 
@@ -746,6 +1065,7 @@ def enrich_meta(local_events, prox_matches):
     counts = meta.get("counts") or {}
 
     counts["local_events"] = len(local_events)
+    counts["validated_security_events"] = len(local_events)
     counts["infra_proximity_matches"] = len(prox_matches)
 
     meta["counts"] = counts
@@ -763,19 +1083,18 @@ def enrich_meta(local_events, prox_matches):
 
 
 def main():
-    local_events = load_local_events(days=7)
+    security_events = load_validated_security_events(days=7)
     prox_matches = load_proximity(days=7)
 
-    enrich_summary(local_events, prox_matches)
-    enrich_weekly(local_events, prox_matches)
-    enrich_risk(local_events, prox_matches)
-    enrich_meta(local_events, prox_matches)
+    enrich_summary(security_events, prox_matches)
+    enrich_weekly(security_events, prox_matches)
+    enrich_risk(security_events, prox_matches)
+    enrich_meta(security_events, prox_matches)
 
     print("Security outputs enriched.")
-    print(f"Local events 7d: {len(local_events)}")
-    print(f"Infrastructure proximity matches 7d: {len(prox_matches)}")
+    print(f"Validated security events 7d: {len(security_events)}")
+    print(f"Validated infrastructure proximity matches 7d: {len(prox_matches)}")
 
 
 if __name__ == "__main__":
     main()
-

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-01T09:41:56.901006+00:00",
+  "generated_utc": "2026-08-01T13:11:51.736245+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,9 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "infrastructure_disruption": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
       "incident_count": 1,
@@ -60,7 +64,29 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "9f97f6d73793262298d5",
+        "date": "2026-08-01",
+        "time": "2026-08-01T08:47:43+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Criză energetică în Ungaria: centrala nucleară de la Paks mai produce doar 480MW, din 2000MW. Restricții la consumul de apă",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/criza-energetica-in-ungaria-premierul-peter-magyar-anunta-ca-centrala-nucleara-de-la-paks-mai-produce-doar-480mw-din-2000mw-3888703",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "b8481a14632531bf76c02e1e"
+      }
+    ],
     "Romania": [
       {
         "id": "bc7a0a0e310ec9ebe97b",

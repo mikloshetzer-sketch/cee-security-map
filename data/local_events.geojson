@@ -1,9 +1,258 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-01T09:41:48.676059+00:00",
+  "generated_utc": "2026-08-01T13:11:43.414094+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.854,
+          46.572
+        ]
+      },
+      "properties": {
+        "id": "9f97f6d73793262298d5",
+        "title": "Criză energetică în Ungaria: centrala nucleară de la Paks mai produce doar 480MW, din 2000MW. Restricții la consumul de apă",
+        "summary": "Premierul ungar Peter Magyar a anunțat sâmbătă dimineață că principala centrală nucleară a țării, de la Paks, mai produce doar 480 de MW de energie, de aproape patru ori mai puțin decât capacitatea maximă, de 2.000 de MW. Aceasta centrală produce în mod normal jumătate din necesarul de energie al Ungariei. Din cauza valului de căldură, a fost impusă o restricție pentru apă, de nivel 1, în toată țara, și au intrat în vigoare reguli stricte. La Budapesta a fost doborât un record de căldură vechi de un secol, iar zilele următoare ar putea aduce noi maxime. Valul de căldură afectează deja funcționarea magazinelor: acestea își reduc consumul de energie electrică.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/criza-energetica-in-ungaria-premierul-peter-magyar-anunta-ca-centrala-nucleara-de-la-paks-mai-produce-doar-480mw-din-2000mw-3888703",
+        "published": "Sat, 01 Aug 2026 11:47:43 +0300",
+        "country": "Hungary",
+        "city": "Paks",
+        "family": "energy",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
+        "object": "energy_asset",
+        "action": "disrupted",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "energy",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
+          "object": "energy_asset",
+          "action": "disrupted",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Paks",
+          "event_date": "Sat, 01 Au",
+          "hash": "b8481a14632531bf76c02e1e"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "energy_asset",
+            "centrala"
+          ],
+          "actions": [
+            "shot_down",
+            "doborât",
+            "disrupted",
+            "oprit"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:burned"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 7723,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Premierul ungar Peter Magyar a anunțat sâmbătă dimineață că principala centrală nucleară a țării, de la Paks, mai produce doar 480 de MW de energie, de aproape patru ori mai puțin decât capacitatea maximă, de 2.000 de MW. Aceasta centrală produce în mod normal jumătate din necesarul de energie al Ungariei. Din cauza valului de căldură, a fost impusă o restricție pentru apă, de nivel 1, în toată țara, și au intrat în vigoare reguli stricte. La Budapesta a fost doborât un record de căldură vechi de un secol, iar zilele următoare ar putea aduce noi maxime. Valul de căldură afectează deja funcționarea magazinelor: acestea își reduc consumul de energie electrică. Într-un mesaj publicat pe Facebook , Peter Magyar anunță că „nivelul apei Dunării a continuat să scadă, iar la Paks s-a înregistrat o nouă oprire a centralei. Producția actuală este de doar 480 de megawați, față de nivelul normal de 2000 de megawați. În scurt timp vor fi făcute anunțuri importante cu privire la deciziile luate pe t",
+        "place": "Paks",
+        "time": "Sat, 01 Aug 2026 11:47:43 +0300",
+        "category": "energy",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/criza-energetica-in-ungaria-premierul-peter-magyar-anunta-ca-centrala-nucleara-de-la-paks-mai-produce-doar-480mw-din-2000mw-3888703"
+        ],
+        "merged_titles": [
+          "Criză energetică în Ungaria: centrala nucleară de la Paks mai produce doar 480MW, din 2000MW. Restricții la consumul de apă"
+        ],
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "incident_object": "energy_asset",
+        "incident_action": "disrupted",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

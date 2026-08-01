@@ -1,10 +1,10 @@
 {
   "metadata": {
     "name": "CEE Security Knowledge Base",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "schema_version": "1.0",
     "language": "multilingual",
-    "description": "Machine-readable taxonomy and rule base for classifying security incidents in Central and Eastern Europe. Rule priority added to resolve specific-object conflicts deterministically.",
+    "description": "Machine-readable taxonomy and rule base for classifying security incidents in Central and Eastern Europe.",
     "supported_languages": [
       "en",
       "hu",
@@ -847,8 +847,7 @@
           "detected"
         ]
       },
-      "severity": "low",
-      "priority": 100
+      "severity": "low"
     },
     {
       "rule_id": "AIR.DRONE.INTRUSION",
@@ -863,8 +862,7 @@
           "entered"
         ]
       },
-      "severity": "medium",
-      "priority": 110
+      "severity": "medium"
     },
     {
       "rule_id": "AIR.DRONE.INTERCEPT",
@@ -879,8 +877,7 @@
           "intercepted"
         ]
       },
-      "severity": "medium",
-      "priority": 120
+      "severity": "medium"
     },
     {
       "rule_id": "AIR.DRONE.SHOOTDOWN",
@@ -895,8 +892,7 @@
           "shot_down"
         ]
       },
-      "severity": "high",
-      "priority": 130
+      "severity": "high"
     },
     {
       "rule_id": "AIR.DRONE.STRIKE",
@@ -913,8 +909,7 @@
           "attacked"
         ]
       },
-      "severity": "high",
-      "priority": 140
+      "severity": "high"
     },
     {
       "rule_id": "AIR.MISSILE.DETECTION",
@@ -929,8 +924,7 @@
           "detected"
         ]
       },
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "AIR.MISSILE.INTERCEPT",
@@ -946,8 +940,7 @@
           "shot_down"
         ]
       },
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "AIR.MISSILE.IMPACT",
@@ -963,8 +956,7 @@
           "exploded"
         ]
       },
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "AIR.AIRCRAFT.INCIDENT",
@@ -981,8 +973,7 @@
           "damaged"
         ]
       },
-      "severity": "medium",
-      "priority": 20
+      "severity": "medium"
     },
     {
       "rule_id": "GROUND.EXPLOSIVE.ATTACK",
@@ -998,8 +989,7 @@
           "attacked"
         ]
       },
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "GROUND.SABOTAGE",
@@ -1017,8 +1007,7 @@
           "government"
         ]
       },
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "MARITIME.SHIP.ATTACK",
@@ -1035,8 +1024,7 @@
           "exploded"
         ]
       },
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "MARITIME.PORT.DISRUPTION",
@@ -1053,8 +1041,7 @@
           "damaged"
         ]
       },
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "CYBER.INTRUSION",
@@ -1069,8 +1056,7 @@
           "compromised"
         ]
       },
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
@@ -1085,8 +1071,7 @@
           "disrupted"
         ]
       },
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "CYBER.GPS.INTERFERENCE",
@@ -1098,8 +1083,7 @@
           "jammed"
         ]
       },
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "ENERGY.ASSET.FIRE",
@@ -1114,8 +1098,7 @@
           "burned"
         ]
       },
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "ENERGY.ASSET.EXPLOSION",
@@ -1130,8 +1113,7 @@
           "exploded"
         ]
       },
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "ENERGY.SERVICE.OUTAGE",
@@ -1146,8 +1128,7 @@
           "disrupted"
         ]
       },
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
@@ -1164,8 +1145,7 @@
           "closed"
         ]
       },
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "INDUSTRIAL.EXPLOSION",
@@ -1186,8 +1166,7 @@
         "üzem",
         "raktár"
       ],
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "INDUSTRIAL.FIRE",
@@ -1208,8 +1187,7 @@
         "üzem",
         "raktár"
       ],
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "INDUSTRIAL.CHEMICAL.RELEASE",
@@ -1230,8 +1208,7 @@
         "mérgező",
         "gáz"
       ],
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "CBRN.RADIOLOGICAL.RELEASE",
@@ -1249,8 +1226,7 @@
         "sugárzás",
         "radioaktív"
       ],
-      "severity": "critical",
-      "priority": 50
+      "severity": "critical"
     },
     {
       "rule_id": "BORDER.ILLEGAL.CROSSING",
@@ -1267,8 +1243,7 @@
         "határ",
         "frontier"
       ],
-      "severity": "low",
-      "priority": 50
+      "severity": "low"
     },
     {
       "rule_id": "BORDER.VIOLENCE",
@@ -1286,8 +1261,7 @@
         "határ",
         "frontier"
       ],
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "TERRORISM.ATTACK",
@@ -1305,8 +1279,7 @@
         "terrorism",
         "terrortámadás"
       ],
-      "severity": "critical",
-      "priority": 50
+      "severity": "critical"
     },
     {
       "rule_id": "TERRORISM.PLOT",
@@ -1323,8 +1296,7 @@
         "planned attack",
         "merényletet tervezett"
       ],
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "PUBLIC.ORDER.VIOLENCE",
@@ -1345,8 +1317,7 @@
         "tüntetés",
         "zavargás"
       ],
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "TRANSPORT.RAIL.DISRUPTION",
@@ -1368,8 +1339,7 @@
         "vasút",
         "vonat"
       ],
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "TRANSPORT.AVIATION.CLOSURE",
@@ -1390,8 +1360,7 @@
         "repülőtér",
         "légtér"
       ],
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "NATURAL.FLOOD",
@@ -1406,8 +1375,7 @@
         "inundație",
         "powódź"
       ],
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "NATURAL.WILDFIRE",
@@ -1421,8 +1389,7 @@
         "incendiu forestier",
         "pożar lasu"
       ],
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     },
     {
       "rule_id": "INTELLIGENCE.ESPIONAGE",
@@ -1441,8 +1408,7 @@
         "spionaj",
         "szpiegostwo"
       ],
-      "severity": "high",
-      "priority": 50
+      "severity": "high"
     },
     {
       "rule_id": "INTELLIGENCE.FOREIGN.INTERFERENCE",
@@ -1455,8 +1421,7 @@
         "külföldi beavatkozás",
         "befolyásolási művelet"
       ],
-      "severity": "medium",
-      "priority": 50
+      "severity": "medium"
     }
   ],
   "negative_contexts": {

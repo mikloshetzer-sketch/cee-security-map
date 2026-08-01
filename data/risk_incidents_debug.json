@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-01T06:41:56.554627+00:00",
+  "generated_utc": "2026-08-01T09:41:56.901006+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -34,12 +34,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 3,
+      "incident_count": 2,
       "category_counts": {
-        "kinetic_attack": 3
+        "kinetic_attack": 2
       },
       "source_files": {
-        "local_events.geojson": 3
+        "local_events.geojson": 2
       }
     },
     "Lithuania": {
@@ -86,27 +86,6 @@
     ],
     "Slovakia": [],
     "Poland": [
-      {
-        "id": "f4b528ba6639d04cb976",
-        "date": "2026-07-31",
-        "time": "2026-07-31T14:30:00+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Ruská raketa odhalila slabinu Polska. Sirény zněly, lidé ale nevěděli proč",
-        "source": "SeznamZpravy",
-        "url": "https://www.seznamzpravy.cz/clanek/zahranicni-stredni-evropa-ruska-raketa-odhalila-slabinu-polska-sireny-znely-lide-ale-nevedeli-proc-312177",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
-        "fingerprint_hash": "58ecf5ab4218957f56d64a4c"
-      },
       {
         "id": "1dd0dca5ba20c40a2ec1",
         "date": "2026-07-30",

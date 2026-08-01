@@ -14,6 +14,7 @@ SUMMARY = DATA / "summary.json"
 WEEKLY = DATA / "weekly.json"
 META = DATA / "meta.json"
 RISK_DAILY = DATA / "risk_daily.json"
+RISK_DEBUG = DATA / "risk_incidents_debug.json"
 
 LOCAL_EVENTS = DATA / "local_events.geojson"
 LOCAL_HISTORY = HISTORY / "local_events_history.geojson"
@@ -281,9 +282,17 @@ def canonical_risk_category(props):
 
 
 def feature_passes_risk_gate(props, source_file):
-    """Apply the source-specific admission rules for risk evidence."""
-    if props.get("classification_source") != "security_classifier":
-        return False
+    """Apply source-specific admission rules for risk evidence.
+
+    Local-event files are generated directly by ``SecurityClassifier`` but older
+    compatible records do not necessarily contain ``classification_source`` or
+    ``risk_eligible``. Their classifier provenance is proven by the combination
+    of ``actual_incident``, ``matched_rule_id``, ``article_role`` and classifier
+    version/taxonomy fields.
+
+    GDELT cross-border records use the strict explicit gate. Legacy/fallback
+    records are never admitted.
+    """
     if props.get("actual_incident") is not True:
         return False
     if not props.get("matched_rule_id"):
@@ -293,14 +302,35 @@ def feature_passes_risk_gate(props, source_file):
     if article_role != "incident":
         return False
 
-    if source_file == CROSSBORDER_RISK_FILE:
-        # Cross-border GDELT is accepted only with the explicit strict flag.
-        return props.get("risk_eligible") is True
-
     if source_file in LOCAL_RISK_FILES:
-        # Current local records may predate the explicit risk_eligible field.
-        # A present false value is always respected; absence remains compatible.
-        return props.get("risk_eligible") is not False
+        # Local records may legitimately predate these two explicit fields.
+        # Reject an explicit false flag, but allow a missing one.
+        if props.get("risk_eligible") is False:
+            return False
+
+        classification_source = props.get("classification_source")
+        if classification_source not in {None, "", "security_classifier"}:
+            return False
+
+        # Require additional classifier evidence when classification_source is
+        # absent, preventing old keyword-only local records from entering risk.
+        if not classification_source and not (
+            props.get("classifier_version")
+            and props.get("taxonomy_version")
+            and (
+                props.get("incident_family")
+                or props.get("family")
+            )
+        ):
+            return False
+
+        return True
+
+    if source_file == CROSSBORDER_RISK_FILE:
+        return (
+            props.get("classification_source") == "security_classifier"
+            and props.get("risk_eligible") is True
+        )
 
     return False
 
@@ -1150,6 +1180,96 @@ def enrich_meta(local_events, prox_matches):
     save_json(META, meta)
 
 
+def save_risk_debug(security_events, days=7):
+    """Write an auditable list of the exact event records admitted to risk."""
+    country_summary = {
+        country: {
+            "incident_count": 0,
+            "category_counts": {},
+            "source_files": {},
+        }
+        for country in MONITORED_COUNTRIES
+    }
+    countries = {country: [] for country in MONITORED_COUNTRIES}
+
+    category_counters = defaultdict(Counter)
+    source_counters = defaultdict(Counter)
+
+    for feature in security_events:
+        props = feature.get("properties") or {}
+        country = norm_country(props.get("country"))
+        if country not in countries:
+            continue
+
+        category = event_category(props)
+        source_file = props.get("_risk_source_file") or "unknown"
+        category_counters[country][category] += 1
+        source_counters[country][source_file] += 1
+
+        fingerprint = props.get("fingerprint") or {}
+        fingerprint_hash = (
+            fingerprint.get("hash")
+            if isinstance(fingerprint, dict)
+            else str(fingerprint or "") or None
+        )
+
+        countries[country].append({
+            "id": props.get("id"),
+            "date": (parse_time(props.get("time")).date().isoformat()
+                     if parse_time(props.get("time")) else None),
+            "time": props.get("time"),
+            "category": category,
+            "severity": props.get("severity"),
+            "title": props.get("title") or props.get("name"),
+            "source": props.get("source"),
+            "url": props.get("url"),
+            "source_file": source_file,
+            "classification_source": (
+                props.get("classification_source") or "security_classifier_compatible_local"
+            ),
+            "actual_incident": props.get("actual_incident"),
+            "risk_eligible": props.get("risk_eligible"),
+            "article_role": props.get("article_role"),
+            "incident_family": props.get("incident_family") or props.get("family"),
+            "incident_subcategory": props.get("incident_subcategory") or props.get("subcategory"),
+            "incident_subtype": props.get("incident_subtype") or props.get("subtype"),
+            "classification_confidence": (
+                props.get("classification_confidence") or props.get("confidence")
+            ),
+            "matched_rule_id": props.get("matched_rule_id"),
+            "fingerprint_hash": fingerprint_hash,
+        })
+
+    for country in MONITORED_COUNTRIES:
+        countries[country].sort(key=lambda row: row.get("time") or "", reverse=True)
+        country_summary[country] = {
+            "incident_count": len(countries[country]),
+            "category_counts": dict(category_counters[country]),
+            "source_files": dict(source_counters[country]),
+        }
+
+    payload = {
+        "generated_utc": now_utc().isoformat(),
+        "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
+        "model": "cee_country_risk_v2",
+        "window_days": days,
+        "totals": {
+            "incident_count": len(security_events),
+            "local_event_count": sum(
+                1 for f in security_events
+                if (f.get("properties") or {}).get("_risk_source_file") in LOCAL_RISK_FILES
+            ),
+            "crossborder_event_count": sum(
+                1 for f in security_events
+                if (f.get("properties") or {}).get("_risk_source_file") == CROSSBORDER_RISK_FILE
+            ),
+        },
+        "country_summary": country_summary,
+        "countries": countries,
+    }
+    save_json(RISK_DEBUG, payload)
+
+
 def main():
     security_events = load_validated_security_events(days=7)
     prox_matches = load_proximity(days=7)
@@ -1158,6 +1278,7 @@ def main():
     enrich_weekly(security_events, prox_matches)
     enrich_risk(security_events, prox_matches)
     enrich_meta(security_events, prox_matches)
+    save_risk_debug(security_events, days=7)
 
     print("Security outputs enriched.")
     print(f"Validated security events 7d: {len(security_events)}")
@@ -1166,4 +1287,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

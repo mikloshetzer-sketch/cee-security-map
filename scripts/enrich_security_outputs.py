@@ -21,17 +21,18 @@ LOCAL_HISTORY = HISTORY / "local_events_history.geojson"
 INFRA_PROX = DATA / "infra_proximity.json"
 INFRA_PROX_HISTORY = HISTORY / "infra_proximity_history.json"
 
-GDELT = DATA / "gdelt.geojson"
-GDELT_LINKED = DATA / "gdelt_linked.geojson"
 GDELT_CROSSBORDER = DATA / "gdelt_crossborder.geojson"
 
+# Risk input is intentionally narrow. GDELT GEO, GDELT Linked and Trusted RSS
+# remain dashboard/context layers and must never directly affect country risk.
 SECURITY_EVENT_FILES = [
     LOCAL_EVENTS,
     LOCAL_HISTORY,
-    GDELT,
-    GDELT_LINKED,
     GDELT_CROSSBORDER,
 ]
+
+LOCAL_RISK_FILES = {LOCAL_EVENTS.name, LOCAL_HISTORY.name}
+CROSSBORDER_RISK_FILE = GDELT_CROSSBORDER.name
 
 COUNTRY_NAME_MAP = {
     "Czechia": "Czech Republic",
@@ -238,65 +239,83 @@ def detect_security_country(props, fallback_path=None):
     return hits[0] if len(hits) == 1 else None
 
 
-def infer_security_category(props):
-    explicit = str(
-        props.get("incident_type")
-        or props.get("category")
-        or props.get("gdelt_bucket")
+def canonical_risk_category(props):
+    """Return the classifier-backed category used by the risk model.
+
+    This function never promotes a background or legacy record using free-text
+    keyword guessing. It only translates already validated classifier fields.
+    """
+    family = str(props.get("incident_family") or props.get("family") or "").lower()
+    subcategory = str(
+        props.get("incident_subcategory")
+        or props.get("subcategory")
         or ""
     ).lower()
+    subtype = str(props.get("incident_subtype") or props.get("subtype") or "").lower()
+    existing = str(props.get("category") or "").lower()
 
-    text = " ".join([
-        str(props.get("title") or props.get("name") or ""),
-        str(props.get("summary") or props.get("description") or ""),
-        str(props.get("url") or props.get("search_url") or ""),
-    ])
-
-    if contains_any(text, NOISE_TERMS):
-        return None
-
-    # Strong text evidence overrides an upstream "other" label.
-    if contains_any(text, SECURITY_INCIDENT_PATTERNS["drone"]):
-        if contains_any(text, [
-            "shot down", "downed", "intercepted", "airspace",
-            "fired at", "lelőtt", "légtér", "doborât",
-            "spațiul aerian", "spatiul aerian"
-        ]):
-            return "drone"
-
-    if contains_any(text, SECURITY_INCIDENT_PATTERNS["cyber"]):
+    if subcategory == "drone" or subtype.startswith("drone_"):
+        return "drone"
+    if subcategory == "missile" or subtype.startswith("missile_"):
+        return "kinetic_attack"
+    if family == "cyber" or subcategory == "cyber":
         return "cyber"
-
-    if contains_any(text, SECURITY_INCIDENT_PATTERNS["military"]):
+    if family in {"air", "military"}:
         return "military"
-
-    if contains_any(text, SECURITY_INCIDENT_PATTERNS["explosion"]):
-        return "explosion"
-
-    if contains_any(text, SECURITY_INCIDENT_PATTERNS["hazardous"]):
-        return "hazardous"
-
-    if contains_any(text, SECURITY_INCIDENT_PATTERNS["infrastructure"]):
+    if family in {"infrastructure", "energy"}:
+        if subcategory in {"fire", "explosion", "hazardous", "sabotage"}:
+            return subcategory
         return "infrastructure_disruption"
+    if family in {"public_safety", "hazard"}:
+        if subcategory in {"fire", "explosion", "hazardous"}:
+            return subcategory
 
-    if explicit in {
+    allowed_existing = {
         "drone", "drone_airspace", "cyber", "cyber_incident",
         "military", "military_accident", "kinetic_attack",
-        "explosion", "hazardous", "hazardous_incident",
-        "sabotage", "infrastructure_disruption", "major_fire"
-    }:
-        return explicit
+        "explosion", "fire", "hazardous", "hazardous_incident",
+        "sabotage", "infrastructure_disruption", "major_fire",
+        "energy", "transport",
+    }
+    return existing if existing in allowed_existing else None
 
-    return None
+
+def feature_passes_risk_gate(props, source_file):
+    """Apply the source-specific admission rules for risk evidence."""
+    if props.get("classification_source") != "security_classifier":
+        return False
+    if props.get("actual_incident") is not True:
+        return False
+    if not props.get("matched_rule_id"):
+        return False
+
+    article_role = str(props.get("article_role") or "incident").lower()
+    if article_role != "incident":
+        return False
+
+    if source_file == CROSSBORDER_RISK_FILE:
+        # Cross-border GDELT is accepted only with the explicit strict flag.
+        return props.get("risk_eligible") is True
+
+    if source_file in LOCAL_RISK_FILES:
+        # Current local records may predate the explicit risk_eligible field.
+        # A present false value is always respected; absence remains compatible.
+        return props.get("risk_eligible") is not False
+
+    return False
 
 
 def normalize_security_feature(feature, source_file):
     props = dict(feature.get("properties") or {})
+
+    if not feature_passes_risk_gate(props, source_file):
+        return None
+
     country = detect_security_country(props, source_file)
     if country not in MONITORED_COUNTRIES:
         return None
 
-    category = infer_security_category(props)
+    category = canonical_risk_category(props)
     if not category:
         return None
 
@@ -310,8 +329,12 @@ def normalize_security_feature(feature, source_file):
 
     props["country"] = country
     props["category"] = category
-    props["incident_type"] = props.get("incident_type") or category
+    props["incident_type"] = category
     props["time"] = dt.isoformat()
+    props["_risk_source_file"] = source_file
+
+    if source_file == CROSSBORDER_RISK_FILE:
+        props["crossborder"] = True
 
     if not props.get("severity"):
         if category in {"drone", "military", "kinetic_attack", "explosion"}:
@@ -321,8 +344,6 @@ def normalize_security_feature(feature, source_file):
         else:
             props["severity"] = "info"
 
-    props["_risk_source_file"] = source_file
-
     return {
         "type": "Feature",
         "geometry": feature.get("geometry"),
@@ -331,13 +352,17 @@ def normalize_security_feature(feature, source_file):
 
 
 def load_validated_security_events(days=7):
-    """
-    Unified risk input:
-    local + GDELT + linked + cross-border.
+    """Load only validated incident evidence used by the risk model.
 
-    This is intentionally independent from map display categories, so a
-    GDELT event labelled `other` can still become a drone event when the
-    article evidence clearly supports that classification.
+    Included:
+      * local_events.geojson and its history, classifier-validated;
+      * gdelt_crossborder.geojson, under the stricter risk gate.
+
+    Excluded by design:
+      * gdelt.geojson;
+      * gdelt_linked.geojson;
+      * trusted_rss.json;
+      * every legacy_fallback/background/reaction record.
     """
     cutoff = now_utc() - timedelta(days=days)
     candidates = []
@@ -357,34 +382,40 @@ def load_validated_security_events(days=7):
 
             candidates.append(normalized)
 
-    # Event-level conservative deduplication.
-    # Same country + category + calendar day + similar normalized title.
-    seen = {}
+    # Prefer classifier fingerprint. Fall back conservatively to source URL/title.
+    seen = set()
     result = []
 
     for feature in candidates:
         props = feature.get("properties") or {}
-        title = normalize_text(props.get("title") or props.get("name") or "")
-        title_tokens = [
-            token for token in re.findall(r"[\\wÀ-ž-]{4,}", title, flags=re.UNICODE)
-            if token not in {"romania", "hungary", "poland", "latvia", "estonia", "lithuania"}
-        ]
-        title_sig = " ".join(title_tokens[:8])
+        fingerprint = props.get("fingerprint") or {}
+        if isinstance(fingerprint, dict):
+            fingerprint_hash = fingerprint.get("hash")
+        else:
+            fingerprint_hash = str(fingerprint or "")
 
         dt = parse_time(props.get("time"))
         day = dt.date().isoformat() if dt else ""
+        title = normalize_text(props.get("title") or props.get("name") or "")
+        title_tokens = [
+            token for token in re.findall(r"[\wÀ-ž-]{4,}", title, flags=re.UNICODE)
+            if token not in {
+                "romania", "hungary", "poland", "latvia", "estonia",
+                "lithuania", "slovakia", "czechia",
+            }
+        ]
+        title_sig = " ".join(title_tokens[:10])
 
-        key = stable_event_key(
+        key = fingerprint_hash or stable_event_key(
             props.get("country"),
-            props.get("category"),
+            props.get("incident_subtype") or props.get("category"),
             day,
-            title_sig,
+            props.get("url") or title_sig,
         )
 
         if key in seen:
             continue
-
-        seen[key] = True
+        seen.add(key)
         result.append(feature)
 
     return result
@@ -475,6 +506,34 @@ def load_local_events(days=7):
     return features
 
 
+def proximity_event_passes_risk_gate(event):
+    source_file = str(event.get("source_file") or event.get("_risk_source_file") or "")
+
+    # Context-only sources can never contribute through infrastructure proximity.
+    if source_file in {"gdelt.geojson", "gdelt_linked.geojson", "trusted_rss.json"}:
+        return False
+
+    if source_file == CROSSBORDER_RISK_FILE:
+        return bool(
+            event.get("classification_source") == "security_classifier"
+            and event.get("actual_incident") is True
+            and event.get("risk_eligible") is True
+            and str(event.get("article_role") or "").lower() == "incident"
+            and event.get("matched_rule_id")
+        )
+
+    if source_file in LOCAL_RISK_FILES or not source_file:
+        return bool(
+            event.get("classification_source") == "security_classifier"
+            and event.get("actual_incident") is True
+            and event.get("risk_eligible") is not False
+            and str(event.get("article_role") or "incident").lower() == "incident"
+            and event.get("matched_rule_id")
+        )
+
+    return False
+
+
 def load_proximity(days=7):
     matches = []
     cutoff = now_utc() - timedelta(days=days)
@@ -491,25 +550,27 @@ def load_proximity(days=7):
             if not dt or dt < cutoff:
                 continue
 
-            # Reject legacy proximity rows created before the validated
-            # incident/geolocation model existed.
-            if not event.get("incident_type"):
+            if not proximity_event_passes_risk_gate(event):
                 continue
 
             location_quality = str(
-                event.get("location_quality") or ""
+                event.get("location_quality")
+                or event.get("geocode_quality")
+                or ""
             ).lower()
-
             if location_quality not in {
                 "city", "specific_place", "precise"
             }:
                 continue
 
-            if not event.get("geolocation_method"):
+            if not (event.get("geolocation_method") or event.get("geocode_quality")):
                 continue
 
             key = (
-                event.get("id"),
+                event.get("id")
+                or event.get("fingerprint_hash")
+                or event.get("url")
+                or stable_event_key(event.get("title"), event.get("time")),
                 infra.get("id") or infra.get("name"),
             )
             if key in seen:
@@ -1064,8 +1125,15 @@ def enrich_meta(local_events, prox_matches):
     meta = load_json(META, {"generated_utc": now_utc().isoformat(), "counts": {}})
     counts = meta.get("counts") or {}
 
-    counts["local_events"] = len(local_events)
+    counts["local_events"] = sum(
+        1 for f in local_events
+        if (f.get("properties") or {}).get("_risk_source_file") in LOCAL_RISK_FILES
+    )
     counts["validated_security_events"] = len(local_events)
+    counts["validated_crossborder_events"] = sum(
+        1 for f in local_events
+        if (f.get("properties") or {}).get("_risk_source_file") == CROSSBORDER_RISK_FILE
+    )
     counts["infra_proximity_matches"] = len(prox_matches)
 
     meta["counts"] = counts
@@ -1098,3 +1166,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

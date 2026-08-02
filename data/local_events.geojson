@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-02T02:06:31.427466+00:00",
+  "generated_utc": "2026-08-02T08:19:57.801267+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -265,62 +265,79 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.854,
-          46.572
+          22.568,
+          51.247
         ]
       },
       "properties": {
-        "id": "9f97f6d73793262298d5",
-        "title": "Criză energetică în Ungaria: centrala nucleară de la Paks mai produce doar 480MW, din 2000MW. Restricții la consumul de apă",
-        "summary": "Premierul ungar Peter Magyar a anunțat sâmbătă dimineață că principala centrală nucleară a țării, de la Paks, mai produce doar 480 de MW de energie, de aproape patru ori mai puțin decât capacitatea maximă, de 2.000 de MW. Aceasta centrală produce în mod normal jumătate din necesarul de energie al Ungariei. Din cauza valului de căldură, a fost impusă o restricție pentru apă, de nivel 1, în toată țara, și au intrat în vigoare reguli stricte. La Budapesta a fost doborât un record de căldură vechi de un secol, iar zilele următoare ar putea aduce noi maxime. Valul de căldură afectează deja funcționarea magazinelor: acestea își reduc consumul de energie electrică.",
+        "id": "85f60c46201b6f85285d",
+        "title": "De la Radușne la Lublin: cum expun rachetele folosite de Rusia vulnerabilitatea apărării aeriene europene",
+        "summary": "Revenirea aparentă a rachetelor balistice nord-coreene în arsenalul folosit de Rusia împotriva Ucrainei și pătrunderea, în timpul aceleiași ofensive, a unei presupuse rachete rusești în spațiul aerian al Poloniei arată că vulnerabilitățile apărării aeriene ucrainene reprezintă deja un risc direct pentru Europa. Atacul a distrus o casă din Radușne și a lovit trei generații ale aceleiași familii, în timp ce incidentul din regiunea Lublin a demonstrat că efectele războiului pot depăși oricând granițele Ucrainei.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/criza-energetica-in-ungaria-premierul-peter-magyar-anunta-ca-centrala-nucleara-de-la-paks-mai-produce-doar-480mw-din-2000mw-3888703",
-        "published": "Sat, 01 Aug 2026 11:47:43 +0300",
-        "country": "Hungary",
-        "city": "Paks",
-        "family": "energy",
-        "subcategory": "power_grid",
-        "subtype": "energy_service_outage",
-        "object": "energy_asset",
-        "action": "disrupted",
-        "actor": "unknown",
-        "target": "unknown",
+        "url": "https://www.digi24.ro/stiri/externe/de-la-radusne-la-lublin-cum-expun-rachetele-folosite-de-rusia-vulnerabilitatea-apararii-aeriene-europene-3887445",
+        "published": "Sun, 02 Aug 2026 07:11:32 +0300",
+        "country": "Poland",
+        "city": "Lublin",
+        "family": "air",
+        "subcategory": "missile",
+        "subtype": "missile_impact",
+        "object": "missile",
+        "action": "impact",
+        "actor": "russia",
+        "target": "civilian",
         "context": [],
         "consequences": [],
-        "severity": "medium",
-        "confidence": 0.84,
+        "severity": "high",
+        "confidence": 0.98,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
         "fingerprint": {
-          "country": "Hungary",
-          "family": "energy",
-          "subcategory": "power_grid",
-          "subtype": "energy_service_outage",
-          "object": "energy_asset",
-          "action": "disrupted",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Paks",
-          "event_date": "Sat, 01 Au",
-          "hash": "b8481a14632531bf76c02e1e"
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "missile",
+          "subtype": "missile_impact",
+          "object": "missile",
+          "action": "impact",
+          "actor": "russia",
+          "target": "civilian",
+          "place": "Lublin",
+          "event_date": "Sun, 02 Au",
+          "hash": "4a58a92fc3f55dcb9105c2c1"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "energy_asset",
-            "centrala"
+            "missile",
+            "rachetă",
+            "racheta"
           ],
           "actions": [
-            "shot_down",
-            "doborât",
+            "detected",
+            "detectat",
+            "entered",
+            "pătruns",
+            "impact",
+            "căzut",
+            "a lovit",
+            "damaged",
+            "distrus",
             "disrupted",
             "oprit"
           ],
-          "targets": [],
-          "actors": [],
+          "targets": [
+            "civilian",
+            "locuință"
+          ],
+          "actors": [
+            "russia",
+            "rusia",
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -332,16 +349,30 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
           "country_match": 0.1,
           "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
             "severity": "medium",
             "priority": 0,
             "score": 2.26,
@@ -350,10 +381,80 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.3,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_shootdown",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
@@ -373,229 +474,8 @@
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile"
+              "actions:any:intercepted,shot_down"
             ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.FIRE",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_fire",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:burned"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:exploded"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 7723,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Premierul ungar Peter Magyar a anunțat sâmbătă dimineață că principala centrală nucleară a țării, de la Paks, mai produce doar 480 de MW de energie, de aproape patru ori mai puțin decât capacitatea maximă, de 2.000 de MW. Aceasta centrală produce în mod normal jumătate din necesarul de energie al Ungariei. Din cauza valului de căldură, a fost impusă o restricție pentru apă, de nivel 1, în toată țara, și au intrat în vigoare reguli stricte. La Budapesta a fost doborât un record de căldură vechi de un secol, iar zilele următoare ar putea aduce noi maxime. Valul de căldură afectează deja funcționarea magazinelor: acestea își reduc consumul de energie electrică. Într-un mesaj publicat pe Facebook , Peter Magyar anunță că „nivelul apei Dunării a continuat să scadă, iar la Paks s-a înregistrat o nouă oprire a centralei. Producția actuală este de doar 480 de megawați, față de nivelul normal de 2000 de megawați. În scurt timp vor fi făcute anunțuri importante cu privire la deciziile luate pe t",
-        "place": "Paks",
-        "time": "Sat, 01 Aug 2026 11:47:43 +0300",
-        "category": "energy",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/externe/criza-energetica-in-ungaria-premierul-peter-magyar-anunta-ca-centrala-nucleara-de-la-paks-mai-produce-doar-480mw-din-2000mw-3888703"
-        ],
-        "merged_titles": [
-          "Criză energetică în Ungaria: centrala nucleară de la Paks mai produce doar 480MW, din 2000MW. Restricții la consumul de apă"
-        ],
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "incident_object": "energy_asset",
-        "incident_action": "disrupted",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.84
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.057,
-          44.322
-        ]
-      },
-      "properties": {
-        "id": "8f76a5b7048ab70c7131",
-        "title": "Măsuri în trei țări vecine după ce a secat Dunărea. Tramvaiele circulă mai încet, iluminatul e raționalizat pe timpul nopții",
-        "summary": "Scăderea dramatică a debitului Dunării din cauza secetei a declanșat o criză energetică regională. În timp ce România a instituit stare de alertă și încearcă să devieze un braț al Dunării pentru Centrala Nucleară Cernavodă, trei țări vecine au trecut deja la măsuri care sunt resimțite de oameni. Dunărea, care traversează 10 țări, din sud-vestul &#8230;",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/masuri-in-trei-tari-vecine-dupa-ce-a-secat-dunarea-tramvaiele-circula-mai-incet-iluminatul-e-rationalizat-pe-timpul-noptii-2314889",
-        "published": "Sat, 01 Aug 2026 17:01:41 +0000",
-        "country": "Romania",
-        "city": "Cernavodă",
-        "family": "energy",
-        "subcategory": "power_grid",
-        "subtype": "energy_service_outage",
-        "object": "energy_asset",
-        "action": "disrupted",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.84,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "energy",
-          "subcategory": "power_grid",
-          "subtype": "energy_service_outage",
-          "object": "energy_asset",
-          "action": "disrupted",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Cernavodă",
-          "event_date": "Sat, 01 Au",
-          "hash": "4161ee18850b06e67cf309f4"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "ship",
-            "navă",
-            "energy_asset",
-            "centrala"
-          ],
-          "actions": [
-            "disrupted",
-            "oprit"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
             "matched_context": []
           },
           {
@@ -608,155 +488,40 @@
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:any:attacked,damaged,exploded"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.FIRE",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_fire",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:burned"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:exploded"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
+              "objects:all:ship"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 6879,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Scăderea dramatică a debitului Dunării din cauza secetei a declanșat o criză energetică regională. În timp ce România a instituit stare de alertă și încearcă să devieze un braț al Dunării pentru Centrala Nucleară Cernavodă, trei țări vecine au trecut deja la măsuri care sunt resimțite de oameni. Dunărea, care traversează 10 țări, din sud-vestul Germaniei până la Marea Neagră, a scăzut la niveluri minim-record pe o mare parte a cursului său. Nivelul apelor continuă să scadă alarmant și ridică riscuri pentru Centrala Nucleară Cernavodă. Primul reactor a fost scos din funcțiune în urmă cu câteva zile, iar Nuclearelectrica ia în calcul să oprească și reactorul 2. Dacă cel de-al doilea reactor va fi oprit, România va rămâne, la fel ca Ungaria, fără nicio producție de energie nucleară. Probleme sunt și în țările dunărene vecine, precum Ungaria, Serbia și Bulgaria, care au început să impună restricții pentru a evita adâncirea crizei energetice. Ungaria se confruntă cu o situația extraordinară",
-        "place": "Cernavodă",
-        "time": "Sat, 01 Aug 2026 17:01:41 +0000",
-        "category": "energy",
+        "article_text_chars": 5903,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Revenirea aparentă a rachetelor balistice nord-coreene în arsenalul folosit de Rusia împotriva Ucrainei și pătrunderea, în timpul aceleiași ofensive, a unei presupuse rachete rusești în spațiul aerian al Poloniei arată că vulnerabilitățile apărării aeriene ucrainene reprezintă deja un risc direct pentru Europa. Atacul a distrus o casă din Radușne și a lovit trei generații ale aceleiași familii, în timp ce incidentul din regiunea Lublin a demonstrat că efectele războiului pot depăși oricând granițele Ucrainei, scrie Kyiv Post . Potrivit concluziilor preliminare ale autorităților ucrainene, Rusia a folosit o rachetă nord-coreeană pentru a ataca localitatea Radușne, aflată în apropiere de Krivoi Rog. Racheta a lovit direct locuința familiei Voronov și a distrus-o complet. Șase persoane au fost confirmate decedate, iar alte patru erau considerate moarte, în timp ce examinările medico-legale continuau. „În Radușne, lângă Krivoi Rog, o rachetă balistică a lovit direct o casă”, a declarat pre",
+        "place": "Lublin",
+        "time": "Sun, 02 Aug 2026 07:11:32 +0300",
+        "category": "air",
         "kind": "local_media",
         "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "HotNews"
+          "Digi24"
         ],
         "urls": [
-          "https://hotnews.ro/masuri-in-trei-tari-vecine-dupa-ce-a-secat-dunarea-tramvaiele-circula-mai-incet-iluminatul-e-rationalizat-pe-timpul-noptii-2314889"
+          "https://www.digi24.ro/stiri/externe/de-la-radusne-la-lublin-cum-expun-rachetele-folosite-de-rusia-vulnerabilitatea-apararii-aeriene-europene-3887445"
         ],
         "merged_titles": [
-          "Măsuri în trei țări vecine după ce a secat Dunărea. Tramvaiele circulă mai încet, iluminatul e raționalizat pe timpul nopții"
+          "De la Radușne la Lublin: cum expun rachetele folosite de Rusia vulnerabilitatea apărării aeriene europene"
         ],
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "incident_object": "energy_asset",
-        "incident_action": "disrupted",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.84
+        "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "incident_object": "missile",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "civilian",
+        "classification_confidence": 0.98
       }
     },
     {

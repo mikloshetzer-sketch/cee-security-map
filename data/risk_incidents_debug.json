@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-02T02:06:39.611333+00:00",
+  "generated_utc": "2026-08-02T08:20:06.410328+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 6,
-    "local_event_count": 6,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,23 +15,21 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "transport": 1,
-        "infrastructure_disruption": 1
+        "transport": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "infrastructure_disruption": 1,
         "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Slovakia": {
@@ -40,12 +38,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 2,
+      "incident_count": 3,
       "category_counts": {
-        "kinetic_attack": 2
+        "kinetic_attack": 3
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 3
       }
     },
     "Lithuania": {
@@ -87,51 +85,9 @@
         "classification_confidence": 0.92,
         "matched_rule_id": "TRANSPORT.RAIL.DISRUPTION",
         "fingerprint_hash": "b0c28bd0bb9a56be53422c2e"
-      },
-      {
-        "id": "9f97f6d73793262298d5",
-        "date": "2026-08-01",
-        "time": "2026-08-01T08:47:43+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Criză energetică în Ungaria: centrala nucleară de la Paks mai produce doar 480MW, din 2000MW. Restricții la consumul de apă",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/criza-energetica-in-ungaria-premierul-peter-magyar-anunta-ca-centrala-nucleara-de-la-paks-mai-produce-doar-480mw-din-2000mw-3888703",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "b8481a14632531bf76c02e1e"
       }
     ],
     "Romania": [
-      {
-        "id": "8f76a5b7048ab70c7131",
-        "date": "2026-08-01",
-        "time": "2026-08-01T17:01:41+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Măsuri în trei țări vecine după ce a secat Dunărea. Tramvaiele circulă mai încet, iluminatul e raționalizat pe timpul nopții",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/masuri-in-trei-tari-vecine-dupa-ce-a-secat-dunarea-tramvaiele-circula-mai-incet-iluminatul-e-rationalizat-pe-timpul-noptii-2314889",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "4161ee18850b06e67cf309f4"
-      },
       {
         "id": "bc7a0a0e310ec9ebe97b",
         "date": "2026-07-27",
@@ -156,6 +112,27 @@
     ],
     "Slovakia": [],
     "Poland": [
+      {
+        "id": "85f60c46201b6f85285d",
+        "date": "2026-08-02",
+        "time": "2026-08-02T04:11:32+00:00",
+        "category": "kinetic_attack",
+        "severity": "high",
+        "title": "De la Radușne la Lublin: cum expun rachetele folosite de Rusia vulnerabilitatea apărării aeriene europene",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/de-la-radusne-la-lublin-cum-expun-rachetele-folosite-de-rusia-vulnerabilitatea-apararii-aeriene-europene-3887445",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "fingerprint_hash": "4a58a92fc3f55dcb9105c2c1"
+      },
       {
         "id": "1dd0dca5ba20c40a2ec1",
         "date": "2026-07-30",

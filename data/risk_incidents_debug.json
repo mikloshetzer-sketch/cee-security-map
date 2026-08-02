@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-02T08:20:06.410328+00:00",
+  "generated_utc": "2026-08-02T13:14:58.335448+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -24,12 +24,13 @@
       }
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
+        "infrastructure_disruption": 1,
         "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Slovakia": {
@@ -38,12 +39,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 3,
+      "incident_count": 2,
       "category_counts": {
-        "kinetic_attack": 3
+        "kinetic_attack": 2
       },
       "source_files": {
-        "local_events.geojson": 3
+        "local_events.geojson": 2
       }
     },
     "Lithuania": {
@@ -89,6 +90,27 @@
     ],
     "Romania": [
       {
+        "id": "96bd29ac97fe91eead32",
+        "date": "2026-08-02",
+        "time": "2026-08-02T11:15:00+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "O stâncă, aruncată în aer pentru devierea Dunării: „Operațiunea se reia mâine. Vom mări gradual încărcătura cu explozibil”, anunță Armata",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/o-stanca-aruncata-in-aer-deviata-dunarea-criza-energetica-centrala-cernavoda-2315229",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "f0be1d7df6e6bf1fabbd6f27"
+      },
+      {
         "id": "bc7a0a0e310ec9ebe97b",
         "date": "2026-07-27",
         "time": "2026-07-27T08:47:35+00:00",
@@ -112,27 +134,6 @@
     ],
     "Slovakia": [],
     "Poland": [
-      {
-        "id": "85f60c46201b6f85285d",
-        "date": "2026-08-02",
-        "time": "2026-08-02T04:11:32+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "De la Radușne la Lublin: cum expun rachetele folosite de Rusia vulnerabilitatea apărării aeriene europene",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/de-la-radusne-la-lublin-cum-expun-rachetele-folosite-de-rusia-vulnerabilitatea-apararii-aeriene-europene-3887445",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
-        "fingerprint_hash": "4a58a92fc3f55dcb9105c2c1"
-      },
       {
         "id": "1dd0dca5ba20c40a2ec1",
         "date": "2026-07-30",

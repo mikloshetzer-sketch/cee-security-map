@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-02T13:14:58.335448+00:00",
+  "generated_utc": "2026-08-02T19:10:54.640933+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,22 +15,17 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 1,
-      "category_counts": {
-        "transport": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "infrastructure_disruption": 1,
         "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Slovakia": {
@@ -65,51 +60,8 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
-      {
-        "id": "f464be64428803ceede6",
-        "date": "2026-08-01",
-        "time": "2026-08-01T16:57:29+00:00",
-        "category": "transport",
-        "severity": "medium",
-        "title": "Három év után újraindultak a személyvonatok Komló és Dombóvár között",
-        "source": "Telex",
-        "url": "https://telex.hu/belfold/2026/08/01/komlo-dombovar-vasut-kozlekedes-ujraindult-vitezy-david-hegyi-zsolt",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "transport",
-        "incident_subcategory": "rail",
-        "incident_subtype": "rail_disruption",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "TRANSPORT.RAIL.DISRUPTION",
-        "fingerprint_hash": "b0c28bd0bb9a56be53422c2e"
-      }
-    ],
+    "Hungary": [],
     "Romania": [
-      {
-        "id": "96bd29ac97fe91eead32",
-        "date": "2026-08-02",
-        "time": "2026-08-02T11:15:00+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "O stâncă, aruncată în aer pentru devierea Dunării: „Operațiunea se reia mâine. Vom mări gradual încărcătura cu explozibil”, anunță Armata",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/o-stanca-aruncata-in-aer-deviata-dunarea-criza-energetica-centrala-cernavoda-2315229",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "f0be1d7df6e6bf1fabbd6f27"
-      },
       {
         "id": "bc7a0a0e310ec9ebe97b",
         "date": "2026-07-27",

@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-03T09:40:52.130186+00:00",
+  "generated_utc": "2026-08-03T14:30:15.106625+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,60 +14,56 @@
         ]
       },
       "properties": {
-        "id": "9cddafe3adbe7e7dc271",
-        "title": "Letartóztatták a drónozó magyart, aki miatt le kellett zárni Split repülőterét",
-        "summary": "Drónozásnak ugyan nem volt túl nagy az a tíz perc, de az okozott kár annál jelentősebb.",
-        "source": "Telex",
-        "url": "https://telex.hu/kulfold/2026/08/02/letartoztattak-a-dronozo-magyart-aki-miatt-le-kellett-zarni-split-repuloteret",
-        "published": "Sun, 02 Aug 2026 16:36:48 +0200",
+        "id": "9febf3c78feb79e55672",
+        "title": "Egy kis időre felfüggesztették az áram áthaladását a magyar–szlovén határon",
+        "summary": "Tizenhét percre felfüggesztették a Magyarországot Szlovéniával összekötő interkonnektort.",
+        "source": "HVG",
+        "url": "https://hvg.hu/itthon/20260803_aram-halozat-magyar-szloven-hatar",
+        "published": "Mon, 03 Aug 2026 11:33:22 Z",
         "country": "Hungary",
         "city": null,
-        "family": "maritime",
-        "subcategory": "port_security",
-        "subtype": "port_disruption",
-        "object": "critical_infrastructure",
+        "family": "energy",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
+        "object": "energy_asset",
         "action": "disrupted",
         "actor": "unknown",
-        "target": "transport",
+        "target": "energy",
         "context": [],
         "consequences": [],
         "severity": "medium",
         "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
         "fingerprint": {
           "country": "Hungary",
-          "family": "maritime",
-          "subcategory": "port_security",
-          "subtype": "port_disruption",
-          "object": "critical_infrastructure",
+          "family": "energy",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
+          "object": "energy_asset",
           "action": "disrupted",
           "actor": "unknown",
-          "target": "transport",
+          "target": "energy",
           "place": "Hungary",
-          "event_date": "Sun, 02 Au",
-          "hash": "a4b9583b2a6d0a51d1db70bc"
+          "event_date": "Mon, 03 Au",
+          "hash": "bf9924cc79e4c9fc45d43181"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "critical_infrastructure",
-            "repülőtér"
+            "energy_asset",
+            "vezeték"
           ],
           "actions": [
-            "detected",
-            "észleltek",
             "disrupted",
-            "felfüggesztették",
-            "arrested",
-            "letartóztatták"
+            "felfüggesztették"
           ],
           "targets": [
-            "transport",
-            "repülőtér"
+            "energy",
+            "vezeték"
           ],
           "actors": [],
           "consequences": [],
@@ -83,258 +79,6 @@
           "action_match": 0.2,
           "target_match": 0.08,
           "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.2,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
-            "family": "transport",
-            "subcategory": "aviation",
-            "subtype": "airport_closure",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.95,
-            "matched": false,
-            "missing": [
-              "actions:all:closed"
-            ],
-            "matched_context": [
-              "repülőtér"
-            ]
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:drone"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:energy_asset"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TERRORISM.PLOT",
-            "family": "terrorism",
-            "subcategory": "plot",
-            "subtype": "terrorist_plot",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1258,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Felfüggesztették a légi forgalmat a horvátországi Split repülőterén, a Szent Jeromos repülőtéren péntek este, miután a futópályák közelében drónt észleltek – írta a Slobodna Dalmacija , amit az Index vett észre. Két járatot töröltek, és több járat jelentős késést szenvedett. A rendőrség gyorsan azonosította az elkövetőt, aki egy magyar férfi, volt, őt letartóztattak és kihallgatták, az ügyben nyomozás indult. Megalapozott gyanú merült fel, hogy pénteken 20:50 és 21:00 között a 36 éves magyar állampolgár a légi forgalmi törvénybe ütköző módon működtette a drónt, a légi járművek számára kijelölt korlátozott légtérben repült. Drónozásnak ugyan nem volt túl nagy az a tíz perc, de az okozott kár annál jelentősebb, voltak olyan utasok, akiknek aznap már nem indult másik járatuk, őket el kellett szállásolni, mások jelentős késéssel érték el úti céljukat. A repülőtér lezárása alatt több repülőgép kénytelen volt várakozva körözni Split környékén, vagy másik repülőtéren leszállni. Azok az induló",
-        "place": "Hungary",
-        "time": "Sun, 02 Aug 2026 16:36:48 +0200",
-        "category": "maritime",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Telex"
-        ],
-        "urls": [
-          "https://telex.hu/kulfold/2026/08/02/letartoztattak-a-dronozo-magyart-aki-miatt-le-kellett-zarni-split-repuloteret"
-        ],
-        "merged_titles": [
-          "Letartóztatták a drónozó magyart, aki miatt le kellett zárni Split repülőterét"
-        ],
-        "incident_family": "maritime",
-        "incident_subcategory": "port_security",
-        "incident_subtype": "port_disruption",
-        "incident_object": "critical_infrastructure",
-        "incident_action": "disrupted",
-        "incident_actor": "unknown",
-        "incident_target": "transport",
-        "classification_confidence": 0.84
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.854,
-          46.572
-        ]
-      },
-      "properties": {
-        "id": "34ea2e1cbafa89b4eace",
-        "title": "Paks: az atomerőmű leállítása nem jelent biztonságikockázat-növekedést",
-        "summary": "Az atomerőmű kommunikációs igazgatója szerint a blokkok leállítása, majd későbbi újraindítása rutinfeladat, a folyamattal járó kockázat jelentéktelen.",
-        "source": "HVG",
-        "url": "https://hvg.hu/itthon/20260803_paks-atomeromu-leallitas-biztonsagi-kockazat-mvm-paksi-atomeromu-zrt-kommunikacios-igazgato-kovacs-antal",
-        "published": "Mon, 03 Aug 2026 05:02:12 Z",
-        "country": "Hungary",
-        "city": "Paks",
-        "family": "energy",
-        "subcategory": "power_grid",
-        "subtype": "energy_service_outage",
-        "object": "energy_asset",
-        "action": "disrupted",
-        "actor": "unknown",
-        "target": "energy",
-        "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.92,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint": {
-          "country": "Hungary",
-          "family": "energy",
-          "subcategory": "power_grid",
-          "subtype": "energy_service_outage",
-          "object": "energy_asset",
-          "action": "disrupted",
-          "actor": "unknown",
-          "target": "energy",
-          "place": "Paks",
-          "event_date": "Mon, 03 Au",
-          "hash": "031a3f5b588b694365f25fe1"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "energy_asset",
-            "erőmű",
-            "atomerőmű"
-          ],
-          "actions": [
-            "disrupted",
-            "leállt"
-          ],
-          "targets": [
-            "energy",
-            "erőmű",
-            "government",
-            "parlament"
-          ],
-          "actors": [],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Hungary",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "country_match": 0.1,
-          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
@@ -357,7 +101,7 @@
             "subtype": "sabotage",
             "severity": "high",
             "priority": 0,
-            "score": 1.2,
+            "score": 1.1,
             "matched": false,
             "missing": [
               "actions:all:sabotaged"
@@ -450,58 +194,56 @@
             "matched_context": []
           },
           {
-            "rule_id": "INDUSTRIAL.EXPLOSION",
-            "family": "industrial",
-            "subcategory": "explosion",
-            "subtype": "industrial_explosion",
-            "severity": "high",
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
             "priority": 0,
-            "score": 0.85,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "actions:all:exploded"
+              "objects:all:drone",
+              "actions:all:detected"
             ],
-            "matched_context": [
-              "üzem"
-            ]
+            "matched_context": []
           },
           {
-            "rule_id": "INDUSTRIAL.FIRE",
-            "family": "industrial",
-            "subcategory": "fire",
-            "subtype": "industrial_fire",
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 0.85,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "actions:all:burned"
+              "objects:all:drone",
+              "actions:all:entered"
             ],
-            "matched_context": [
-              "üzem"
-            ]
+            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 3723,
+        "article_text_chars": 982,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Az atomerőmű kommunikációs igazgatója szerint a blokkok leállítása, majd későbbi újraindítása rutinfeladat, a folyamattal járó kockázat jelentéktelen. A paksi atomerőmű leállítása nem jelent biztonsági kockázatnövekedést. A blokkok leállítása és újraindítása az atomerőmű gárdájának rutinfeladat, a tervezett éves karbantartások alkalmával ezt a folyamatot minden évben elvégzik, az erőmű történetében eddig hozzávetőleg 160 alkalommal hajtották már végre – írta az MTI megkeresésére Kovács Antal, az MVM Paksi Atomerőmű Zrt. kommunikációs vezetője vasárnap este. Az MTI azután kereste meg az erőművet a leállítási folyamat részletei iránt érdeklődve, hogy a Duna alacsony vízállása miatt vasárnap hajnalban lekapcsolták az utolsó előtti termelő gépegységet. Magyar Péter miniszterelnök vasárnap este pedig arról beszélt, hogy a folyó apadásától függően vagy még vasárnap vagy valamikor hétfőn leáll a paksi atomerőmű utolsó még üzemelő turbinája is. https://hvg.hu/itthon/20260802_magyar-peter-a-neh",
-        "place": "Paks",
-        "time": "Mon, 03 Aug 2026 05:02:12 Z",
+        "article_text_excerpt": "Tizenhét percre felfüggesztették a Magyarországot Szlovéniával összekötő interkonnektort. Felfüggesztettek az áramhálózaton egy határkeresztező kapacitást a magyar–szlovén határnál mintegy negyedórára. A tájékoztatás szerint a Mavir interkonnektorján 11:34-kor függesztették fel technikai probléma miatt, és 11:51-kor ért véget a felfüggesztés. Az interkonnektor olyan vezeték, amelyen a két ország hálózata között mindkét irányban átirányítható az áram, azaz ott lehet áramot importálni és exportálni is. A szóban forgó vezetéknek a magyar oldalán Pince található, a szlovén oldalon Cirkovce. Szlovénia – Horvátország és Szerbia mellett – Magyarország azon szomszédai közé tartozik, ahova napközben Magyarországról érkezik áram. Mintegy egy órával a felfüggesztés vége után a holadelej.hu adatai szerint 246 MW áram áramlott Magyarországról Szlovénia felé ezen a határon. Az Országos Mentőszolgálat megosztotta a hívást, amelyben a mentésirányító és a kisfiú beszélgetése hallható.",
+        "place": "Hungary",
+        "time": "Mon, 03 Aug 2026 11:33:22 Z",
         "category": "energy",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
           "HVG"
         ],
         "urls": [
-          "https://hvg.hu/itthon/20260803_paks-atomeromu-leallitas-biztonsagi-kockazat-mvm-paksi-atomeromu-zrt-kommunikacios-igazgato-kovacs-antal"
+          "https://hvg.hu/itthon/20260803_aram-halozat-magyar-szloven-hatar"
         ],
         "merged_titles": [
-          "Paks: az atomerőmű leállítása nem jelent biztonságikockázat-növekedést"
+          "Egy kis időre felfüggesztették az áram áthaladását a magyar–szlovén határon"
         ],
         "incident_family": "energy",
         "incident_subcategory": "power_grid",
@@ -510,7 +252,256 @@
         "incident_action": "disrupted",
         "incident_actor": "unknown",
         "incident_target": "energy",
-        "classification_confidence": 0.92
+        "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.057,
+          44.322
+        ]
+      },
+      "properties": {
+        "id": "9592c8fbe452e01c2d2d",
+        "title": "Guvernul cere marilor consumatori să reducă voluntar consumul de energie. Ilie Bolojan: „Dacia și Ford au oprit deja producția”",
+        "summary": "Guvernul a convenit cu reprezentanții marilor consumatori industriali reducerea voluntară a consumului de energie în intervalul 19:00-23:00, în contextul crizei energetice provocate de seceta severă și de debitul extrem de redus al Dunării. Premierul interimar Ilie Bolojan a anunțat luni că mai multe companii își vor adapta programul de funcționare în orele de vârf, în timp ce autoritățile vor reduce iluminatul arhitectural și intensitatea iluminatului public acolo unde este posibil.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/economie/energie/guvernul-cere-marilor-consumatori-sa-reduca-voluntar-consumul-de-energie-ilie-bolojan-dacia-si-ford-au-oprit-deja-productia-3890809",
+        "published": "Mon, 03 Aug 2026 17:14:29 +0300",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "family": "energy",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
+        "object": "energy_asset",
+        "action": "disrupted",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "energy",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
+          "object": "energy_asset",
+          "action": "disrupted",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Cernavodă",
+          "event_date": "Mon, 03 Au",
+          "hash": "d411fadba2097f79d1aed77f"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "energy_asset",
+            "centrala"
+          ],
+          "actions": [
+            "disrupted",
+            "oprit"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:burned"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 8647,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Guvernul a convenit cu reprezentanții marilor consumatori industriali reducerea voluntară a consumului de energie în intervalul 19:00-23:00, în contextul crizei energetice provocate de seceta severă și de debitul extrem de redus al Dunării. Premierul interimar Ilie Bolojan a anunțat luni că mai multe companii își vor adapta programul de funcționare în orele de vârf, în timp ce autoritățile vor reduce iluminatul arhitectural și intensitatea iluminatului public acolo unde este posibil. Declarațiile au fost făcute după o întâlnire în format online cu reprezentanții a aproximativ 80 de companii al căror consum anual depășește 50.000 MWh, precum și cu reprezentanți ai patronatelor. La discuțiile privind reducerea voluntară a consumului au participat peste 140 de persoane, potrivit premierului. Setarile tale privind cookie-urile nu permit afisarea continutul din aceasta sectiune. Poti actualiza setarile modulelor coookie direct din browser sau de aici – e nevoie sa accepti cookie-urile socia",
+        "place": "Cernavodă",
+        "time": "Mon, 03 Aug 2026 17:14:29 +0300",
+        "category": "energy",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/economie/energie/guvernul-cere-marilor-consumatori-sa-reduca-voluntar-consumul-de-energie-ilie-bolojan-dacia-si-ford-au-oprit-deja-productia-3890809"
+        ],
+        "merged_titles": [
+          "Guvernul cere marilor consumatori să reducă voluntar consumul de energie. Ilie Bolojan: „Dacia și Ford au oprit deja producția”"
+        ],
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "incident_object": "energy_asset",
+        "incident_action": "disrupted",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
       }
     },
     {

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-03T09:40:59.813669+00:00",
+  "generated_utc": "2026-08-03T14:30:23.052627+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -24,9 +24,13 @@
       }
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "infrastructure_disruption": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -62,14 +66,14 @@
     "Czech Republic": [],
     "Hungary": [
       {
-        "id": "34ea2e1cbafa89b4eace",
+        "id": "9febf3c78feb79e55672",
         "date": "2026-08-03",
-        "time": "2026-08-03T05:02:12+00:00",
+        "time": "2026-08-03T11:33:22+00:00",
         "category": "infrastructure_disruption",
         "severity": "medium",
-        "title": "Paks: az atomerőmű leállítása nem jelent biztonságikockázat-növekedést",
+        "title": "Egy kis időre felfüggesztették az áram áthaladását a magyar–szlovén határon",
         "source": "HVG",
-        "url": "https://hvg.hu/itthon/20260803_paks-atomeromu-leallitas-biztonsagi-kockazat-mvm-paksi-atomeromu-zrt-kommunikacios-igazgato-kovacs-antal",
+        "url": "https://hvg.hu/itthon/20260803_aram-halozat-magyar-szloven-hatar",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -78,12 +82,34 @@
         "incident_family": "energy",
         "incident_subcategory": "power_grid",
         "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.92,
+        "classification_confidence": 0.84,
         "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "031a3f5b588b694365f25fe1"
+        "fingerprint_hash": "bf9924cc79e4c9fc45d43181"
       }
     ],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "9592c8fbe452e01c2d2d",
+        "date": "2026-08-03",
+        "time": "2026-08-03T14:14:29+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Guvernul cere marilor consumatori să reducă voluntar consumul de energie. Ilie Bolojan: „Dacia și Ford au oprit deja producția”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/economie/energie/guvernul-cere-marilor-consumatori-sa-reduca-voluntar-consumul-de-energie-ilie-bolojan-dacia-si-ford-au-oprit-deja-productia-3890809",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "d411fadba2097f79d1aed77f"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {

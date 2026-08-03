@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-03T02:11:35.929792+00:00",
+  "generated_utc": "2026-08-03T09:40:59.813669+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 6,
-    "local_event_count": 6,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -24,14 +24,9 @@
       }
     },
     "Romania": {
-      "incident_count": 3,
-      "category_counts": {
-        "drone": 2,
-        "infrastructure_disruption": 1
-      },
-      "source_files": {
-        "local_events.geojson": 3
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -67,14 +62,14 @@
     "Czech Republic": [],
     "Hungary": [
       {
-        "id": "f82116b61f4f9d453e86",
-        "date": "2026-08-02",
-        "time": "2026-08-02T22:35:00+00:00",
+        "id": "34ea2e1cbafa89b4eace",
+        "date": "2026-08-03",
+        "time": "2026-08-03T05:02:12+00:00",
         "category": "infrastructure_disruption",
         "severity": "medium",
-        "title": "Energiakrízis: így készülnek a Paksi Atomerőmű lekapcsolására",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/uzlet/20260803/energiakrizis-igy-keszulnek-a-paksi-atomeromu-lekapcsolasara-853658",
+        "title": "Paks: az atomerőmű leállítása nem jelent biztonságikockázat-növekedést",
+        "source": "HVG",
+        "url": "https://hvg.hu/itthon/20260803_paks-atomeromu-leallitas-biztonsagi-kockazat-mvm-paksi-atomeromu-zrt-kommunikacios-igazgato-kovacs-antal",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -83,76 +78,12 @@
         "incident_family": "energy",
         "incident_subcategory": "power_grid",
         "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.98,
+        "classification_confidence": 0.92,
         "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "1cb0a1345529d578dc15d614"
+        "fingerprint_hash": "031a3f5b588b694365f25fe1"
       }
     ],
-    "Romania": [
-      {
-        "id": "e9058301c43ed8c2fa56",
-        "date": "2026-08-02",
-        "time": "2026-08-02T14:17:08+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Locuitorii din județul Tulcea au primit al doilea mesaj RO-Alert într-o zi. Resturi de dronă au căzut în zona localităţii Periprava",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/locuitorii-din-judetul-tulcea-au-primit-al-doilea-mesaj-ro-alert-intr-o-zi-precizarile-ministerului-apararii-3889665",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "f35d398b79fa15f9c966a328"
-      },
-      {
-        "id": "29b89cbb113b90567b97",
-        "date": "2026-08-02",
-        "time": "2026-08-02T13:23:09+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Operațiunea de deviere a Dunării, oprită după două explozii controlate. „Mâine vom reuşi să rupem această stâncă”. Imagini de la încercările Armatei",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/operatiunea-de-deviere-a-dunarii-oprita-dupa-doua-explozii-controlate-maine-vom-reusi-sa-rupem-aceasta-stanca-imagini-de-la-incercarile-armatei-2315366",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "f0be1d7df6e6bf1fabbd6f27"
-      },
-      {
-        "id": "bc7a0a0e310ec9ebe97b",
-        "date": "2026-07-27",
-        "time": "2026-07-27T08:47:35+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Three drones shot down in three days – Romania accuses Russia of violations",
-        "source": "BNN",
-        "url": "https://bnn-news.com/three-drones-shot-down-in-three-days-romania-accuses-russia-of-violations-282209",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "ece4626698ff2b3704889be3"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [
       {

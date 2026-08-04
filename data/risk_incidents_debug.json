@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-04T08:34:29.697447+00:00",
+  "generated_utc": "2026-08-04T14:01:02.517478+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "infrastructure_disruption": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -30,12 +34,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 3,
+      "incident_count": 2,
       "category_counts": {
-        "kinetic_attack": 3
+        "kinetic_attack": 2
       },
       "source_files": {
-        "local_events.geojson": 3
+        "local_events.geojson": 2
       }
     },
     "Lithuania": {
@@ -57,30 +61,31 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
-    "Slovakia": [],
-    "Poland": [
+    "Romania": [
       {
-        "id": "0fa67a5770263f61a824",
+        "id": "200274d64fbcc633f92d",
         "date": "2026-08-04",
-        "time": "2026-08-04T08:21:35+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "„Măsuri care nu o să vă placă”: Un fost ambasador al SUA afirmă că NATO ar trebui să avertizeze Moscova cu privire la incursiunile ruse",
+        "time": "2026-08-04T10:46:17+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Cât mai poate funcționa Unitatea 2 de la Cernavodă. Romeo Urjan, directorul centralei: „Nu avem un scenariu negru”",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/masuri-care-nu-o-sa-va-placa-un-fost-ambasador-al-sua-afirma-ca-nato-ar-trebui-sa-avertizeze-moscova-cu-privire-la-incursiunile-ruse-3891789",
+        "url": "https://www.digi24.ro/stiri/economie/energie/cat-mai-poate-functiona-unitatea-2-de-la-cernavoda-romeo-urjan-directorul-centralei-nu-avem-un-scenariu-negru-3892035",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
-        "fingerprint_hash": "d2074ce89c735735e0de8fb8"
-      },
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "0041b881390410fc2c8aea33"
+      }
+    ],
+    "Slovakia": [],
+    "Poland": [
       {
         "id": "1dd0dca5ba20c40a2ec1",
         "date": "2026-07-30",

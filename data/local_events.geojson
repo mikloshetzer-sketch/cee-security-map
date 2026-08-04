@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-04T01:57:51.636997+00:00",
+  "generated_utc": "2026-08-04T08:34:22.337634+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,62 +14,62 @@
         ]
       },
       "properties": {
-        "id": "ef55ffa1283345b04e75",
-        "title": "Avioanele de vânătoare F-16 poloneze au interceptat un avion de spionaj rus la 60 km de țărmul Mării Baltice",
-        "summary": "Avioanele de vânătoare poloneze au interceptat un alt avion de recunoaștere rus deasupra Mării Baltice, la aproximativ 60 de kilometri de țărm, acesta fiind cel mai recent dintr-o serie de incidente similare din ultimele zile.",
+        "id": "0fa67a5770263f61a824",
+        "title": "„Măsuri care nu o să vă placă”: Un fost ambasador al SUA afirmă că NATO ar trebui să avertizeze Moscova cu privire la incursiunile ruse",
+        "summary": "NATO ar trebui să avertizeze Moscova că incursiunile rusești continue cu rachete pe teritoriul aliaților ar determina luarea unor măsuri „care nu o să vă placă”, a declarat pentru TVP World fostul ambasador al SUA în Polonia, Daniel Fried. El a adăugat că Varșovia nu trebuie lăsată să răspundă singură unor provocări de acest gen.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ue/avioanele-de-vanatoare-f-16-poloneze-au-interceptat-un-avion-de-spionaj-rus-la-60-km-de-tarmul-marii-baltice-3891115",
-        "published": "Mon, 03 Aug 2026 21:14:04 +0300",
+        "url": "https://www.digi24.ro/stiri/externe/masuri-care-nu-o-sa-va-placa-un-fost-ambasador-al-sua-afirma-ca-nato-ar-trebui-sa-avertizeze-moscova-cu-privire-la-incursiunile-ruse-3891789",
+        "published": "Tue, 04 Aug 2026 11:21:35 +0300",
         "country": "Poland",
         "city": "Tarnawa-Kolonia",
         "family": "air",
-        "subcategory": "aircraft",
-        "subtype": "military_aircraft_incident",
-        "object": "military_aircraft",
-        "action": "entered",
-        "actor": "nato",
-        "target": "military",
+        "subcategory": "missile",
+        "subtype": "missile_impact",
+        "object": "missile",
+        "action": "impact",
+        "actor": "russia",
+        "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "medium",
-        "confidence": 0.98,
+        "severity": "high",
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
         "fingerprint": {
           "country": "Poland",
           "family": "air",
-          "subcategory": "aircraft",
-          "subtype": "military_aircraft_incident",
-          "object": "military_aircraft",
-          "action": "entered",
-          "actor": "nato",
-          "target": "military",
+          "subcategory": "missile",
+          "subtype": "missile_impact",
+          "object": "missile",
+          "action": "impact",
+          "actor": "russia",
+          "target": "unknown",
           "place": "Tarnawa-Kolonia",
-          "event_date": "Mon, 03 Au",
-          "hash": "419fe886aaf18fef7e6cccd7"
+          "event_date": "Tue, 04 Au",
+          "hash": "d2074ce89c735735e0de8fb8"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "military_aircraft",
-            "avion militar"
+            "missile",
+            "rachetă",
+            "racheta"
           ],
           "actions": [
             "entered",
             "pătruns",
-            "intercepted",
-            "interceptat",
             "impact",
             "s-a prăbușit"
           ],
-          "targets": [
-            "military",
-            "radar"
-          ],
+          "targets": [],
           "actors": [
+            "russia",
+            "rusiei",
+            "ukraine",
+            "ucraina",
             "nato"
           ],
           "consequences": [],
@@ -83,7 +83,6 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
           "actor_match": 0.06,
           "country_match": 0.1,
           "city_match": 0.08,
@@ -91,15 +90,29 @@
         },
         "candidate_rules": [
           {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.AIRCRAFT.INCIDENT",
             "family": "air",
             "subcategory": "aircraft",
             "subtype": "military_aircraft_incident",
             "severity": "medium",
             "priority": 0,
-            "score": 2.42,
-            "matched": true,
-            "missing": [],
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
             "matched_context": []
           },
           {
@@ -107,20 +120,6 @@
             "family": "air",
             "subcategory": "drone",
             "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:drone"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
             "score": 1.1,
@@ -145,6 +144,20 @@
             "matched_context": []
           },
           {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.MISSILE.INTERCEPT",
             "family": "air",
             "subcategory": "missile",
@@ -154,21 +167,7 @@
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
+              "actions:any:intercepted,shot_down"
             ],
             "matched_context": []
           },
@@ -187,22 +186,6 @@
             "matched_context": []
           },
           {
-            "rule_id": "INTELLIGENCE.ESPIONAGE",
-            "family": "intelligence",
-            "subcategory": "espionage",
-            "subtype": "espionage_case",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.85,
-            "matched": false,
-            "missing": [
-              "actions:all:arrested"
-            ],
-            "matched_context": [
-              "spionaj"
-            ]
-          },
-          {
             "rule_id": "AIR.DRONE.DETECTION",
             "family": "air",
             "subcategory": "drone",
@@ -214,6 +197,21 @@
             "missing": [
               "objects:all:drone",
               "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
             ],
             "matched_context": []
           },
@@ -235,11 +233,11 @@
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 1567,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Avioanele de vânătoare poloneze au interceptat un alt avion de recunoaștere rus deasupra Mării Baltice, la aproximativ 60 de kilometri de țărm, acesta fiind cel mai recent dintr-o serie de incidente similare din ultimele zile. Două avioane de vânătoare poloneze F-16 au interceptat aeronava rusă Il-20 în largul orașului de coastă Łeba, luni, înainte de prânz, a declarat ministrul Apărării, Władysław Kosiniak-Kamysz. Aeronava a rămas în spațiul aerian internațional și nu a încălcat teritoriul polonez, a adăugat acesta, scrie TVP World. Il-20 este un avion militar de recunoaștere utilizat pentru culegerea de informații privind sistemele radar, de comunicații și de apărare aeriană. Cel mai clar caz a avut loc pe 15–16 iulie, când Polonia a ridicat avioane de luptă după ce aeronave militare rusești au operat în apropierea spațiului aerian NATO, deasupra Mării Baltice. Pe 15 iulie, avioane poloneze au fost trimise pentru a intercepta un avion rusesc de recunoaștere Il-20, iar a doua zi avioa",
+        "article_text_chars": 2891,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "NATO ar trebui să avertizeze Moscova că incursiunile rusești continue cu rachete pe teritoriul aliaților ar determina luarea unor măsuri „care nu o să vă placă”, a declarat pentru TVP World fostul ambasador al SUA în Polonia, Daniel Fried. El a adăugat că Varșovia nu trebuie lăsată să răspundă singură unor provocări de acest gen. O rachetă de croazieră rusă de tip Kh-101 a pătruns joi în spațiul aerian polonez în timpul unui atac de amploare asupra vestului Ucrainei. Racheta, despre care autoritățile poloneze au afirmat că transporta o cantitate „semnificativă” de material exploziv, s-a prăbușit în apropierea satului Tarnawa-Kolonia, situat în estul țării, la aproximativ 80 de kilometri de granița cu Ucraina. Setarile tale privind cookie-urile nu permit afisarea continutul din aceasta sectiune. Poti actualiza setarile modulelor coookie direct din browser sau de aici – e nevoie sa accepti cookie-urile social media Fried a afirmat că Polonia, un stat-cheie de pe flancul estic al NATO, „n",
         "place": "Tarnawa-Kolonia",
-        "time": "Mon, 03 Aug 2026 21:14:04 +0300",
+        "time": "Tue, 04 Aug 2026 11:21:35 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "city",
@@ -249,268 +247,19 @@
           "Digi24"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/externe/ue/avioanele-de-vanatoare-f-16-poloneze-au-interceptat-un-avion-de-spionaj-rus-la-60-km-de-tarmul-marii-baltice-3891115"
+          "https://www.digi24.ro/stiri/externe/masuri-care-nu-o-sa-va-placa-un-fost-ambasador-al-sua-afirma-ca-nato-ar-trebui-sa-avertizeze-moscova-cu-privire-la-incursiunile-ruse-3891789"
         ],
         "merged_titles": [
-          "Avioanele de vânătoare F-16 poloneze au interceptat un avion de spionaj rus la 60 km de țărmul Mării Baltice"
+          "„Măsuri care nu o să vă placă”: Un fost ambasador al SUA afirmă că NATO ar trebui să avertizeze Moscova cu privire la incursiunile ruse"
         ],
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "incident_object": "military_aircraft",
-        "incident_action": "entered",
-        "incident_actor": "nato",
-        "incident_target": "military",
-        "classification_confidence": 0.98
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.057,
-          44.322
-        ]
-      },
-      "properties": {
-        "id": "425b0a4a56b090edbe2a",
-        "title": "Șeful Centralei de la Cernavodă spune cât mai poate funcționa Unitatea 2. Noi măsuri luate în calcul după explozia de pe Dunăre",
-        "summary": "Directorul CNE Cernavodă, Romeo Urjan, a declarat luni seară că Unitatea 2 este la parametri normali în momentul de față, însă, conform prognozelor actuale, mai poate funcționa doar cinci zile. Din cauza nivelului scăzut al Dunării, reactorul 1 este oprit de marțea trecută. „Centrala nucleară de la Cernavodă funcționează în momentul de față cu Unitatea &#8230;",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/cand-estimeaza-seful-centralei-de-la-cernavoda-ca-mai-poate-functiona-unitatea-2-romeo-urjan-indica-masurile-suplimentare-dupa-explozia-de-azi-2316425",
-        "published": "Mon, 03 Aug 2026 18:48:10 +0000",
-        "country": "Romania",
-        "city": "Cernavodă",
-        "family": "energy",
-        "subcategory": "power_grid",
-        "subtype": "energy_service_outage",
-        "object": "energy_asset",
-        "action": "disrupted",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.84,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "energy",
-          "subcategory": "power_grid",
-          "subtype": "energy_service_outage",
-          "object": "energy_asset",
-          "action": "disrupted",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Cernavodă",
-          "event_date": "Mon, 03 Au",
-          "hash": "d411fadba2097f79d1aed77f"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "energy_asset",
-            "centrala"
-          ],
-          "actions": [
-            "disrupted",
-            "oprit"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.FIRE",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_fire",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:burned"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:exploded"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 2396,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Directorul CNE Cernavodă, Romeo Urjan, a declarat luni seară că Unitatea 2 este la parametri normali în momentul de față, însă, conform prognozelor actuale, mai poate funcționa doar cinci zile. Din cauza nivelului scăzut al Dunării, reactorul 1 este oprit de marția trecută. „Centrala nucleară de la Cernavodă funcționează în momentul de față cu Unitatea 2, în funcțiune normală, la putere nominală (…). Unitatea 2 funcționează la parametri normali. Nu facem compromisuri, funcționăm în condiții de securitate nucleară, siguranță pentru populație, pentru mediu, pentru angajați, pentru echipamente”, a declarat Romeo Urjan, luni seară, la Antena 3 . Întrebat cât estimează că mai poate funcționa Unitatea 2 de la Cernavodă, el a adăugat: „Bazat pe prognoza pe care o avem acum și scăderea prognozată, de 2-3 centimetri pe zi, debitul pe care îl avem, noi prognozăm cinci zile de funcționare în momentul de față”. Armata a dinamitat luni stânca Pârjoaia din Dunăre pentru a devia un debit mai mare căt",
-        "place": "Cernavodă",
-        "time": "Mon, 03 Aug 2026 18:48:10 +0000",
-        "category": "energy",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "HotNews"
-        ],
-        "urls": [
-          "https://hotnews.ro/cand-estimeaza-seful-centralei-de-la-cernavoda-ca-mai-poate-functiona-unitatea-2-romeo-urjan-indica-masurile-suplimentare-dupa-explozia-de-azi-2316425"
-        ],
-        "merged_titles": [
-          "Șeful Centralei de la Cernavodă spune cât mai poate funcționa Unitatea 2. Noi măsuri luate în calcul după explozia de pe Dunăre"
-        ],
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "incident_object": "energy_asset",
-        "incident_action": "disrupted",
-        "incident_actor": "unknown",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "incident_object": "missile",
+        "incident_action": "impact",
+        "incident_actor": "russia",
         "incident_target": "unknown",
-        "classification_confidence": 0.84
+        "classification_confidence": 0.9
       }
     },
     {

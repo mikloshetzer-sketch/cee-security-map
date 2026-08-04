@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-04T01:57:58.669445+00:00",
+  "generated_utc": "2026-08-04T08:34:29.697447+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "infrastructure_disruption": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -36,8 +32,7 @@
     "Poland": {
       "incident_count": 3,
       "category_counts": {
-        "military": 1,
-        "kinetic_attack": 2
+        "kinetic_attack": 3
       },
       "source_files": {
         "local_events.geojson": 3
@@ -62,51 +57,29 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "425b0a4a56b090edbe2a",
-        "date": "2026-08-03",
-        "time": "2026-08-03T18:48:10+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Șeful Centralei de la Cernavodă spune cât mai poate funcționa Unitatea 2. Noi măsuri luate în calcul după explozia de pe Dunăre",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/cand-estimeaza-seful-centralei-de-la-cernavoda-ca-mai-poate-functiona-unitatea-2-romeo-urjan-indica-masurile-suplimentare-dupa-explozia-de-azi-2316425",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "d411fadba2097f79d1aed77f"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [
       {
-        "id": "ef55ffa1283345b04e75",
-        "date": "2026-08-03",
-        "time": "2026-08-03T18:14:04+00:00",
-        "category": "military",
-        "severity": "medium",
-        "title": "Avioanele de vânătoare F-16 poloneze au interceptat un avion de spionaj rus la 60 km de țărmul Mării Baltice",
+        "id": "0fa67a5770263f61a824",
+        "date": "2026-08-04",
+        "time": "2026-08-04T08:21:35+00:00",
+        "category": "kinetic_attack",
+        "severity": "high",
+        "title": "„Măsuri care nu o să vă placă”: Un fost ambasador al SUA afirmă că NATO ar trebui să avertizeze Moscova cu privire la incursiunile ruse",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ue/avioanele-de-vanatoare-f-16-poloneze-au-interceptat-un-avion-de-spionaj-rus-la-60-km-de-tarmul-marii-baltice-3891115",
+        "url": "https://www.digi24.ro/stiri/externe/masuri-care-nu-o-sa-va-placa-un-fost-ambasador-al-sua-afirma-ca-nato-ar-trebui-sa-avertizeze-moscova-cu-privire-la-incursiunile-ruse-3891789",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "419fe886aaf18fef7e6cccd7"
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "fingerprint_hash": "d2074ce89c735735e0de8fb8"
       },
       {
         "id": "1dd0dca5ba20c40a2ec1",

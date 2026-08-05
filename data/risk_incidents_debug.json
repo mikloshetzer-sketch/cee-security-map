@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-05T08:34:23.442528+00:00",
+  "generated_utc": "2026-08-05T13:58:18.285792+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -61,6 +61,27 @@
     "Slovakia": [],
     "Poland": [
       {
+        "id": "31aa9c57302963289cde",
+        "date": "2026-07-31",
+        "time": "2026-07-31T11:00:12+00:00",
+        "category": "kinetic_attack",
+        "severity": "high",
+        "title": "Russian missile that crashed in Poland carried “significant amount” of explosive material",
+        "source": "NotesFromPoland",
+        "url": "https://notesfrompoland.com/2026/07/31/russian-missile-that-crashed-in-poland-carried-significant-amount-of-explosive-material/",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "fingerprint_hash": "2c36bfca78d26db5e38fe517"
+      },
+      {
         "id": "1dd0dca5ba20c40a2ec1",
         "date": "2026-07-30",
         "time": "2026-07-30T10:05:07+00:00",
@@ -80,27 +101,6 @@
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.MISSILE.IMPACT",
         "fingerprint_hash": "03f68ecdfe2a833ad39afd6a"
-      },
-      {
-        "id": "31aa9c57302963289cde",
-        "date": "2026-07-30",
-        "time": "2026-07-30T08:23:39+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Russian missile that crashed in Poland carried “significant amount” of explosive material",
-        "source": "NotesFromPoland",
-        "url": "https://notesfrompoland.com/2026/07/31/russian-missile-that-crashed-in-poland-carried-significant-amount-of-explosive-material/",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
-        "fingerprint_hash": "2c36bfca78d26db5e38fe517"
       }
     ],
     "Lithuania": [],

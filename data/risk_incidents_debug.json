@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-04T19:33:33.743806+00:00",
+  "generated_utc": "2026-08-05T01:57:32.000678+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,9 +20,14 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 2,
+      "category_counts": {
+        "infrastructure_disruption": 1,
+        "kinetic_attack": 1
+      },
+      "source_files": {
+        "local_events.geojson": 2
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,7 +62,50 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "341cc24c4a7cb1e1cd09",
+        "date": "2026-08-04",
+        "time": "2026-08-04T18:32:36+00:00",
+        "category": "kinetic_attack",
+        "severity": "low",
+        "title": "Ce se va întâmpla când racheta SpaceX scăpată de sub control se va izbi de Lună, cu viteza de 8.700 km/h",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/ce-se-va-intampla-cand-racheta-spacex-scapata-de-sub-control-se-va-izbi-de-luna-cu-viteza-de-circa-243-de-kilometri-pe-secunda-2317161",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_detection",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "AIR.MISSILE.DETECTION",
+        "fingerprint_hash": "3729c36aafab3718b7a76b2f"
+      },
+      {
+        "id": "4f81c250952dc0848788",
+        "date": "2026-08-04",
+        "time": "2026-08-04T13:15:24+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Ce soluții se iau în calcul pentru rezolvarea crizei energetice. Radu Miruță: E analizată și situația scufundării a patru barje",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/ce-solutii-se-iau-in-calcul-pentru-rezolvarea-crizei-energetice-radu-miruta-e-analizata-si-situatia-scufundarii-a-patru-barje-3892571",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "0041b881390410fc2c8aea33"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-06T01:57:48.552414+00:00",
+  "generated_utc": "2026-08-06T08:30:01.473395+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "infrastructure_disruption": 1
+        "infrastructure_disruption": 1,
+        "kinetic_attack": 1
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Slovakia": {
@@ -63,14 +64,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "80aa969e4c79814688c9",
-        "date": "2026-08-05",
-        "time": "2026-08-05T14:51:39+00:00",
+        "id": "2f4c9c372c13706fb24b",
+        "date": "2026-08-06",
+        "time": "2026-08-06T07:48:32+00:00",
         "category": "infrastructure_disruption",
         "severity": "medium",
-        "title": "Scufundarea barjelor în Dunăre pentru creșterea debitului spre Cernavodă, amânată pentru joi. În zonă sunt curenți extrem de puternici",
+        "title": "Unitatea 2 de la Cernavodă ar putea fi oprită dacă Dunărea continuă să scadă. Ce spune directorul centralei",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/patru-barje-incarcate-cu-roca-vor-fi-scufundate-astazi-in-dunare-pentru-a-creste-debitul-apei-spre-centrala-de-la-cernavoda-3893403",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/unitatea-2-de-la-cernavoda-ar-putea-fi-oprita-daca-dunarea-continua-sa-scada-ce-spune-directorul-centralei-3895233",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -81,7 +82,28 @@
         "incident_subtype": "energy_service_outage",
         "classification_confidence": 0.84,
         "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "85c797fb97cde358485afce0"
+        "fingerprint_hash": "e23b7338bb64c5ea74d4e4d7"
+      },
+      {
+        "id": "a6615874be07fd40c4d2",
+        "date": "2026-08-06",
+        "time": "2026-08-06T06:01:02+00:00",
+        "category": "kinetic_attack",
+        "severity": "high",
+        "title": "Ce au descoperit cercetătorii după ce fragmentul din racheta SpaceX s-a prăbușit pe Lună. Norul uriaș detectat de un telescop din Chile",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/mapamond/ce-au-descoperit-cercetatorii-dupa-ce-fragmentul-din-racheta-spacex-s-a-prabusit-pe-luna-norul-urias-detectat-de-un-telescop-din-chile-3895095",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_impact",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "fingerprint_hash": "ec40ac50f9be6e870feebc4d"
       }
     ],
     "Slovakia": [],

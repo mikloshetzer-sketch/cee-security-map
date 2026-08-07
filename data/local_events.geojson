@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-07T12:54:22.071324+00:00",
+  "generated_utc": "2026-08-07T18:56:03.910253+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -240,7 +240,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 11968,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "1988. december 21. néhány másodperc alatt vált a modern repülés történetének egyik legsötétebb napjává. A Pan American World (Pan Am) Airways 103-as járata alig fél órával londoni felszállása után a skóciai Lockerbie fölött a levegőben felrobbant, majd a repülő darabjai a kisvárosra zuhantak. A fedélzeten tartózkodó 259 ember meghalt, a becsapódó roncsok pedig további 11 embert öltek meg. A világ egyik legismertebb légi katasztrófájának négy magyar áldozata is volt. A tragédia közel negyven évvel később is a világ legismertebb terrortámadásai közé tartozik, merthogy a 103-as járatot terroristák robbantották fel. Nemcsak azért ez a világ egyik legismertebb terrorcselekménye, mert a nyomozás több mint három évig tartott, és példátlan nemzetközi együttműködést igényelt, hanem azért is, mert az ügy körül máig rengeteg a vitatott részlet. Bár hivatalosan két líbiai hírszerzőt neveztek meg felelősként, az elmúlt évtizedekben számos alternatív elmélet látott napvilágot, amik szerint a történe",
         "place": "Hungary",
         "time": "Fri, 07 Aug 2026 11:54:00 +0200",
@@ -273,65 +273,74 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.057,
-          44.322
+          19.5033,
+          47.1625
         ]
       },
       "properties": {
-        "id": "8085c6e024118050b7c9",
-        "title": "A început operațiunea de scufundare a barjelor în Dunăre pentru devierea cursului spre centrala de la Cernavodă",
-        "summary": "Ultima dintre cele patru barje care vor fi scufundate pentru redirecționarea unei părți din debitul Dunării către brațul Bala a fost încărcată, în timp ce autoritățile încearcă să asigure alimentarea cu apă de răcire a Centralei Nuclearoelectrice Cernavodă. Premierul interimar Ilie Bolojan avertizează că, dacă nivelul fluviului va continua să scadă cu până la trei centimetri pe zi, reactorul rămas în funcțiune mai poate fi operat doar încă patru-cinci zile în actualele condiții.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/economie/ultima-barja-pentru-redirectionarea-dunarii-spre-cernavoda-a-fost-incarcata-operatiunea-de-scufundare-incepe-in-urmatoarele-ore-3896849",
-        "published": "Fri, 07 Aug 2026 15:37:27 +0300",
-        "country": "Romania",
-        "city": "Cernavodă",
+        "id": "29b3b4dd6c749e0e6dbf",
+        "title": "Tűz ütött ki a Mol pozsonyi olajfinomítójában",
+        "summary": "Sűrű füst szállt a finomító fölött és a helyiek egy robbanást is hallottak.",
+        "source": "HVG",
+        "url": "https://hvg.hu/gazdasag/20260807_tuz-mol-pozsony-olajfinomito",
+        "published": "Fri, 07 Aug 2026 17:14:22 Z",
+        "country": "Hungary",
+        "city": null,
         "family": "energy",
-        "subcategory": "power_grid",
-        "subtype": "energy_service_outage",
+        "subcategory": "oil_gas",
+        "subtype": "energy_asset_fire",
         "object": "energy_asset",
-        "action": "disrupted",
+        "action": "burned",
         "actor": "unknown",
-        "target": "unknown",
+        "target": "energy",
         "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.84,
+        "consequences": [
+          "injury"
+        ],
+        "severity": "high",
+        "confidence": 0.92,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "matched_rule_id": "ENERGY.ASSET.FIRE",
         "fingerprint": {
-          "country": "Romania",
+          "country": "Hungary",
           "family": "energy",
-          "subcategory": "power_grid",
-          "subtype": "energy_service_outage",
+          "subcategory": "oil_gas",
+          "subtype": "energy_asset_fire",
           "object": "energy_asset",
-          "action": "disrupted",
+          "action": "burned",
           "actor": "unknown",
-          "target": "unknown",
-          "place": "Cernavodă",
+          "target": "energy",
+          "place": "Hungary",
           "event_date": "Fri, 07 Au",
-          "hash": "8bf24395129122c8c6027309"
+          "hash": "37b2295a9ad4bb0e3d1a1043"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
-          "article_role": [],
+          "article_role": [
+            "történt"
+          ],
           "objects": [
             "energy_asset",
-            "centrala"
+            "finomító"
           ],
           "actions": [
-            "disrupted",
-            "întrerupt",
-            "oprit"
+            "burned",
+            "tűz ütött ki"
           ],
-          "targets": [],
+          "targets": [
+            "energy",
+            "finomító"
+          ],
           "actors": [],
-          "consequences": [],
+          "consequences": [
+            "injury",
+            "sérült"
+          ],
           "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
           ]
         },
         "negative_terms": [],
@@ -339,51 +348,12 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
+          "target_match": 0.08,
           "country_match": 0.1,
-          "city_match": 0.08,
+          "consequence_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
-          {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          },
           {
             "rule_id": "ENERGY.ASSET.FIRE",
             "family": "energy",
@@ -391,10 +361,22 @@
             "subtype": "energy_asset_fire",
             "severity": "high",
             "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:burned"
+              "actions:all:sabotaged"
             ],
             "matched_context": []
           },
@@ -413,30 +395,43 @@
             "matched_context": []
           },
           {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
             "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "targets:all:transport",
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INDUSTRIAL.FIRE",
+            "family": "industrial",
+            "subcategory": "fire",
+            "subtype": "industrial_fire",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
               "context:any"
             ],
             "matched_context": []
@@ -485,37 +480,52 @@
               "actions:all:intercepted"
             ],
             "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 8289,
+        "article_text_chars": 1588,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Primele două dintre cele patru barje destinate redirecționării unei părți din debitul Dunării către brațul Dunărea Veche au fost scufundate controlat, vineri, în cadrul intervenției de urgență menite să asigure alimentarea cu apă de răcire a Centralei Nuclearoelectrice Cernavodă. Operațiunea are loc în contextul debitului minim istoric al fluviului, iar premierul interimar Ilie Bolojan avertizează că reactorul rămas în funcțiune mai poate opera doar patru-cinci zile dacă nivelul Dunării continuă să scadă. ACTUALIZARE 15:19 Primele două dintre cele patru barje care vor redirecționa o parte din debitul Dunării către brațul Bala au fost scufundate controlat, vineri, în încercarea de a crește nivelul apei necesare răcirii reactorului rămas în funcțiune la Centrala Nuclearoelectrică Cernavodă, în contextul debitului minim istoric al fluviului. Operațiunea a început vineri, după mai multe ore de întârziere și două amânări. Primele două barje, încărcate cu tone de piatră, au fost amplasate în",
-        "place": "Cernavodă",
-        "time": "Fri, 07 Aug 2026 15:37:27 +0300",
+        "article_text_excerpt": "Sűrű füst szállt a finomító fölött és a helyiek egy robbanást is hallottak. Tűz ütött ki a Mol pozsonyi finomítótelepén – közölte a pénteki kormányszóvivői tájékoztatón egy frissen érkezett információra hivatkozva Magyar Péter. Közlése szerint egy tartály gyulladt ki; nem történt sérülés és az esetnek elvileg ellátásbiztonsági következménye sincsen. https://hvg.hu/itthon/20260807_energiavalsag-allamfovalasztas-magyar-peter-elo-kozvetites-kormanyzati-tajekoztato Az Új Szónak Anton Molnár, a vállalat szóvivője azt mondta, hogy a tűzesetet az egyik kőolajtermékeket tároló tartály sérülése előzte meg, majd a benne lévő anyag meggyulladt. Elmondta, hogy egy kétfalú tartályról van szó, amely megfelel a legszigorúbb biztonsági előírásoknak. A tűz nem terjedt át más technológiai egységekre és tárolókra, a finomító termelését nem akadályozta, a balesetben senki nem sérült meg. Hozzátette: a helyszínen már alig látható füst, a lángok gyakorlatilag kialudtak, és azokat rövid időn belül teljesen e",
+        "place": "Hungary",
+        "time": "Fri, 07 Aug 2026 17:14:22 Z",
         "category": "energy",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Digi24"
+          "HVG"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/economie/ultima-barja-pentru-redirectionarea-dunarii-spre-cernavoda-a-fost-incarcata-operatiunea-de-scufundare-incepe-in-urmatoarele-ore-3896849"
+          "https://hvg.hu/gazdasag/20260807_tuz-mol-pozsony-olajfinomito"
         ],
         "merged_titles": [
-          "A început operațiunea de scufundare a barjelor în Dunăre pentru devierea cursului spre centrala de la Cernavodă"
+          "Tűz ütött ki a Mol pozsonyi olajfinomítójában"
         ],
         "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
+        "incident_subcategory": "oil_gas",
+        "incident_subtype": "energy_asset_fire",
         "incident_object": "energy_asset",
-        "incident_action": "disrupted",
+        "incident_action": "burned",
         "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.84
+        "incident_target": "energy",
+        "classification_confidence": 0.92
       }
     },
     {

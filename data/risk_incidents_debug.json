@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-07T12:54:29.493454+00:00",
+  "generated_utc": "2026-08-07T18:56:11.490044+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,11 +15,6 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Romania": {
       "incident_count": 1,
       "category_counts": {
         "infrastructure_disruption": 1
@@ -27,6 +22,11 @@
       "source_files": {
         "local_events.geojson": 1
       }
+    },
+    "Romania": {
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -60,30 +60,30 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
-    "Romania": [
+    "Hungary": [
       {
-        "id": "8085c6e024118050b7c9",
+        "id": "29b3b4dd6c749e0e6dbf",
         "date": "2026-08-07",
-        "time": "2026-08-07T12:37:27+00:00",
+        "time": "2026-08-07T17:14:22+00:00",
         "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "A început operațiunea de scufundare a barjelor în Dunăre pentru devierea cursului spre centrala de la Cernavodă",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/economie/ultima-barja-pentru-redirectionarea-dunarii-spre-cernavoda-a-fost-incarcata-operatiunea-de-scufundare-incepe-in-urmatoarele-ore-3896849",
+        "severity": "high",
+        "title": "Tűz ütött ki a Mol pozsonyi olajfinomítójában",
+        "source": "HVG",
+        "url": "https://hvg.hu/gazdasag/20260807_tuz-mol-pozsony-olajfinomito",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "8bf24395129122c8c6027309"
+        "incident_subcategory": "oil_gas",
+        "incident_subtype": "energy_asset_fire",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "ENERGY.ASSET.FIRE",
+        "fingerprint_hash": "37b2295a9ad4bb0e3d1a1043"
       }
     ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [
       {

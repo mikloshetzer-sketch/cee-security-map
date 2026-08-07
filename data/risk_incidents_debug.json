@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-07T02:23:31.983087+00:00",
+  "generated_utc": "2026-08-07T07:13:48.629937+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
-      "category_counts": {
-        "drone": 2
-      },
-      "source_files": {
-        "local_events.geojson": 2
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -34,13 +30,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "military": 1,
         "kinetic_attack": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Lithuania": {
@@ -62,73 +57,9 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "444f69f600f455908f76",
-        "date": "2026-08-06",
-        "time": "2026-08-06T19:06:05+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Nivelul scăzut al apelor Dunării în Bulgaria dezvăluie un pod din epoca romană",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/nivelul-scazut-al-apelor-dunarii-in-bulgaria-dezvaluie-un-pod-din-epoca-romana.html",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "f8b5debff560b6a3710f7358"
-      },
-      {
-        "id": "2bfcdc13676043c903cb",
-        "date": "2026-08-06",
-        "time": "2026-08-06T13:55:52+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "„Nu vedem motive să imităm gesturile teatrale ale altora”. Ce pregătește MAE de la Moscova după expulzarea diplomatului de la București",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/rusia/nu-vedem-motive-sa-imitam-gesturile-teatrale-ale-altora-ce-pregateste-mae-de-la-moscova-dupa-expulzarea-diplomatului-de-la-bucuresti-3896037",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "2460a095b78b97cd87d34ce7"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [
-      {
-        "id": "6d34a18179846458f238",
-        "date": "2026-08-06",
-        "time": "2026-08-06T17:57:25+00:00",
-        "category": "military",
-        "severity": "critical",
-        "title": "Hiszpania. Tragedia w Pirenejach. Polski turysta nie żyje",
-        "source": "TVN24",
-        "url": "https://tvn24.pl/tvnmeteo/swiat/hiszpania-tragedia-w-pirenejach-polski-turysta-nie-zyje-st9177828?source=rss",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "022270dec2887005cd90cb71"
-      },
       {
         "id": "2a00c891218014452f12",
         "date": "2026-08-06",

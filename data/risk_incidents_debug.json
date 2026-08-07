@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-06T13:56:44.552157+00:00",
+  "generated_utc": "2026-08-07T00:03:40.232044+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -32,7 +32,8 @@
     "Poland": {
       "incident_count": 2,
       "category_counts": {
-        "kinetic_attack": 2
+        "military": 1,
+        "kinetic_attack": 1
       },
       "source_files": {
         "local_events.geojson": 2
@@ -61,6 +62,27 @@
     "Slovakia": [],
     "Poland": [
       {
+        "id": "6d34a18179846458f238",
+        "date": "2026-08-06",
+        "time": "2026-08-06T17:57:25+00:00",
+        "category": "military",
+        "severity": "critical",
+        "title": "Hiszpania. Tragedia w Pirenejach. Polski turysta nie żyje",
+        "source": "TVN24",
+        "url": "https://tvn24.pl/tvnmeteo/swiat/hiszpania-tragedia-w-pirenejach-polski-turysta-nie-zyje-st9177828?source=rss",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "022270dec2887005cd90cb71"
+      },
+      {
         "id": "2a00c891218014452f12",
         "date": "2026-08-06",
         "time": "2026-08-06T12:37:07+00:00",
@@ -80,27 +102,6 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.MISSILE.IMPACT",
         "fingerprint_hash": "7509e98f6af7d4ee71fc295b"
-      },
-      {
-        "id": "31aa9c57302963289cde",
-        "date": "2026-07-31",
-        "time": "2026-07-31T11:00:12+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Russian missile that crashed in Poland carried “significant amount” of explosive material",
-        "source": "NotesFromPoland",
-        "url": "https://notesfrompoland.com/2026/07/31/russian-missile-that-crashed-in-poland-carried-significant-amount-of-explosive-material/",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
-        "fingerprint_hash": "2c36bfca78d26db5e38fe517"
       }
     ],
     "Lithuania": [],

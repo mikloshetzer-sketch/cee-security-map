@@ -1,9 +1,260 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-06T13:56:36.431103+00:00",
+  "generated_utc": "2026-08-07T00:03:33.312083+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.102,
+          44.426
+        ]
+      },
+      "properties": {
+        "id": "86648de0189b3fe82d51",
+        "title": "Ministerul de Externe de la București face precizări în legătură cu românca arestată în Germania pentru spionaj",
+        "summary": "Un cetăţean român acuzat de spionaj a fost arestat în Germania, în baza unui mandat emis de Curtea Federală de Justiţie din Rheine, anunţă Ministerul Afacerilor Externe (MAE). Ministerul precizează că, până în prezent, nu au fost înregistrate solicitări de asistenţă consulară din partea cetăţeanului sau a familiei sale.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/ue/ministerul-de-externe-de-la-bucuresti-face-precizari-in-legatura-cu-romanca-arestata-in-germania-pentru-spionaj-3896601",
+        "published": "Thu, 06 Aug 2026 22:55:44 +0300",
+        "country": "Romania",
+        "city": "București",
+        "family": "intelligence",
+        "subcategory": "espionage",
+        "subtype": "espionage_case",
+        "object": "drone",
+        "action": "arrested",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [
+          "spionaj"
+        ],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "INTELLIGENCE.ESPIONAGE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "intelligence",
+          "subcategory": "espionage",
+          "subtype": "espionage_case",
+          "object": "drone",
+          "action": "arrested",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "București",
+          "event_date": "Thu, 06 Au",
+          "hash": "ee1398e2ba8a8b76905cf0fa"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "arrested",
+            "arestat"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "INTELLIGENCE.ESPIONAGE",
+            "family": "intelligence",
+            "subcategory": "espionage",
+            "subtype": "espionage_case",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.13,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "spionaj"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TERRORISM.PLOT",
+            "family": "terrorism",
+            "subcategory": "plot",
+            "subtype": "terrorist_plot",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2708,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Un cetăţean român acuzat de spionaj a fost arestat în Germania, în baza unui mandat emis de Curtea Federală de Justiţie din Rheine, anunţă Ministerul Afacerilor Externe (MAE). Ministerul precizează că, până în prezent, nu au fost înregistrate solicitări de asistenţă consulară din partea cetăţeanului sau a familiei sale. MAE a transmis, joi seară, precizări privind arestarea, în Germania, a unui cetăţean român acuzat de spionaj. „Autorităţile germane au pus în executare un mandat de arestare emis de Curtea Federală de Justiţie din Rheine (Renania de Nord-Westfalia) prin care a fost arestat un cetăţean român. Menţionăm că, până la acest moment, la nivelul Consulatului General al României la Bonn nu au fost înregistrate solicitări de asistenţă consulară din partea cetăţeanului român în cauză sau a familiei acestuia”, a precizat MAE. Reamintim că s erviciile secrete ruse ar fi plănuit să-l asasineze pe Stefan Thumann, directorul producătorului german de drone Donaustahl, c onform informați",
+        "place": "București",
+        "time": "Thu, 06 Aug 2026 22:55:44 +0300",
+        "category": "intelligence",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/ue/ministerul-de-externe-de-la-bucuresti-face-precizari-in-legatura-cu-romanca-arestata-in-germania-pentru-spionaj-3896601"
+        ],
+        "merged_titles": [
+          "Ministerul de Externe de la București face precizări în legătură cu românca arestată în Germania pentru spionaj"
+        ],
+        "incident_family": "intelligence",
+        "incident_subcategory": "espionage",
+        "incident_subtype": "espionage_case",
+        "incident_object": "drone",
+        "incident_action": "arrested",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
+      }
+    },
     {
       "type": "Feature",
       "geometry": {
@@ -14,59 +265,61 @@
         ]
       },
       "properties": {
-        "id": "31aa9c57302963289cde",
-        "title": "Russian missile that crashed in Poland carried “significant amount” of explosive material",
-        "summary": "The missile travelled about 100 km over Polish territory after entering from Ukraine.",
-        "source": "NotesFromPoland",
-        "url": "https://notesfrompoland.com/2026/07/31/russian-missile-that-crashed-in-poland-carried-significant-amount-of-explosive-material/",
-        "published": "Fri, 31 Jul 2026 11:00:12 +0000",
+        "id": "6d34a18179846458f238",
+        "title": "Hiszpania. Tragedia w Pirenejach. Polski turysta nie żyje",
+        "summary": "<img alt=\"Hiszpania. Tragedia w Pirenejach. Polski turysta nie żyje\" src=\"https://tvn24.pl/najnowsze/cdn-zdjecie-dolina-aran-ph9177841/alternates/LANDSCAPE_1280\" />\n    W środę w Pirenejach zginął polski turysta. Mężczyzna spadł w przepaść. Na miejsce wysłano ratowników i śmigłowiec.",
+        "source": "TVN24",
+        "url": "https://tvn24.pl/tvnmeteo/swiat/hiszpania-tragedia-w-pirenejach-polski-turysta-nie-zyje-st9177828?source=rss",
+        "published": "Thu, 06 Aug 2026 17:57:25 GMT",
         "country": "Poland",
         "city": null,
         "family": "air",
-        "subcategory": "missile",
-        "subtype": "missile_impact",
-        "object": "missile",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
         "action": "impact",
-        "actor": "russia",
+        "actor": "unknown",
         "target": "unknown",
         "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.82,
+        "consequences": [
+          "fatality"
+        ],
+        "severity": "critical",
+        "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
         "fingerprint": {
           "country": "Poland",
           "family": "air",
-          "subcategory": "missile",
-          "subtype": "missile_impact",
-          "object": "missile",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
           "action": "impact",
-          "actor": "russia",
+          "actor": "unknown",
           "target": "unknown",
           "place": "Poland",
-          "event_date": "Fri, 31 Ju",
-          "hash": "2c36bfca78d26db5e38fe517"
+          "event_date": "Thu, 06 Au",
+          "hash": "022270dec2887005cd90cb71"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "missile"
+            "military_aircraft",
+            "śmigłowiec"
           ],
           "actions": [
             "impact",
-            "crashed"
+            "spadł"
           ],
           "targets": [],
-          "actors": [
-            "russia",
-            "russian",
-            "ukraine"
+          "actors": [],
+          "consequences": [
+            "fatality",
+            "zginął"
           ],
-          "consequences": [],
           "extra_context": [
             "feed_country=Poland",
             "geocode_quality=country_fallback"
@@ -77,19 +330,19 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "actor_match": 0.06,
           "country_match": 0.1,
+          "consequence_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.MISSILE.IMPACT",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
             "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
             "priority": 0,
-            "score": 2.29,
+            "score": 2.32,
             "matched": true,
             "missing": [],
             "matched_context": []
@@ -109,44 +362,16 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.DETECTION",
+            "rule_id": "AIR.MISSILE.IMPACT",
             "family": "air",
             "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
+            "subtype": "missile_impact",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
+              "objects:all:missile"
             ],
             "matched_context": []
           },
@@ -211,6 +436,36 @@
             "matched_context": []
           },
           {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "GROUND.EXPLOSIVE.ATTACK",
             "family": "ground",
             "subcategory": "explosive_attack",
@@ -232,29 +487,29 @@
         "article_fetch_source": "fetch_limit",
         "article_text_excerpt": "",
         "place": "Poland",
-        "time": "Fri, 31 Jul 2026 11:00:12 +0000",
+        "time": "Thu, 06 Aug 2026 17:57:25 GMT",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "NotesFromPoland"
+          "TVN24"
         ],
         "urls": [
-          "https://notesfrompoland.com/2026/07/31/russian-missile-that-crashed-in-poland-carried-significant-amount-of-explosive-material/"
+          "https://tvn24.pl/tvnmeteo/swiat/hiszpania-tragedia-w-pirenejach-polski-turysta-nie-zyje-st9177828?source=rss"
         ],
         "merged_titles": [
-          "Russian missile that crashed in Poland carried “significant amount” of explosive material"
+          "Hiszpania. Tragedia w Pirenejach. Polski turysta nie żyje"
         ],
         "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "incident_object": "missile",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
         "incident_action": "impact",
-        "incident_actor": "russia",
+        "incident_actor": "unknown",
         "incident_target": "unknown",
-        "classification_confidence": 0.82
+        "classification_confidence": 0.84
       }
     },
     {

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-07T07:13:48.629937+00:00",
+  "generated_utc": "2026-08-07T12:54:29.493454+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "infrastructure_disruption": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,7 +61,29 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "8085c6e024118050b7c9",
+        "date": "2026-08-07",
+        "time": "2026-08-07T12:37:27+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "A început operațiunea de scufundare a barjelor în Dunăre pentru devierea cursului spre centrala de la Cernavodă",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/economie/ultima-barja-pentru-redirectionarea-dunarii-spre-cernavoda-a-fost-incarcata-operatiunea-de-scufundare-incepe-in-urmatoarele-ore-3896849",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "8bf24395129122c8c6027309"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {

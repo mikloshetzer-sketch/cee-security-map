@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-07T00:03:33.312083+00:00",
+  "generated_utc": "2026-08-07T02:23:24.945624+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -227,7 +227,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 2708,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Un cetăţean român acuzat de spionaj a fost arestat în Germania, în baza unui mandat emis de Curtea Federală de Justiţie din Rheine, anunţă Ministerul Afacerilor Externe (MAE). Ministerul precizează că, până în prezent, nu au fost înregistrate solicitări de asistenţă consulară din partea cetăţeanului sau a familiei sale. MAE a transmis, joi seară, precizări privind arestarea, în Germania, a unui cetăţean român acuzat de spionaj. „Autorităţile germane au pus în executare un mandat de arestare emis de Curtea Federală de Justiţie din Rheine (Renania de Nord-Westfalia) prin care a fost arestat un cetăţean român. Menţionăm că, până la acest moment, la nivelul Consulatului General al României la Bonn nu au fost înregistrate solicitări de asistenţă consulară din partea cetăţeanului român în cauză sau a familiei acestuia”, a precizat MAE. Reamintim că s erviciile secrete ruse ar fi plănuit să-l asasineze pe Stefan Thumann, directorul producătorului german de drone Donaustahl, c onform informați",
         "place": "București",
         "time": "Thu, 06 Aug 2026 22:55:44 +0300",
@@ -253,6 +253,504 @@
         "incident_actor": "unknown",
         "incident_target": "unknown",
         "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.102,
+          44.426
+        ]
+      },
+      "properties": {
+        "id": "2bfcdc13676043c903cb",
+        "title": "„Nu vedem motive să imităm gesturile teatrale ale altora”. Ce pregătește MAE de la Moscova după expulzarea diplomatului de la București",
+        "summary": "Rusia nu îşi va rechema ambasadorul din România pentru consultări, dar expulzarea unui diplomat rus de către Bucureşti va primi un răspuns adecvat, a declarat joi, într-o conferinţă de presă, Aleksei Fadeev, director adjunct al Departamentului pentru comunicare din Ministerul rus al Afacerilor Externe, transmite TASS.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/rusia/nu-vedem-motive-sa-imitam-gesturile-teatrale-ale-altora-ce-pregateste-mae-de-la-moscova-dupa-expulzarea-diplomatului-de-la-bucuresti-3896037",
+        "published": "Thu, 06 Aug 2026 16:55:52 +0300",
+        "country": "Romania",
+        "city": "București",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_shootdown",
+        "object": "drone",
+        "action": "shot_down",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_shootdown",
+          "object": "drone",
+          "action": "shot_down",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "București",
+          "event_date": "Thu, 06 Au",
+          "hash": "2460a095b78b97cd87d34ce7"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "shot_down",
+            "doborât"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "rusiei"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1125,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Rusia nu îşi va rechema ambasadorul din România pentru consultări, dar expulzarea unui diplomat rus de către Bucureşti va primi un răspuns adecvat, a declarat joi, într-o conferinţă de presă, Aleksei Fadeev, director adjunct al Departamentului pentru comunicare din Ministerul rus al Afacerilor Externe, transmite TASS. „Respingem pretenţiile formulate de partea română. Nu vedem motive să imităm gesturile teatrale ale altora. Nu intenţionăm să ne retragem ambasadorul de la Bucureşti pentru consultări”, a spus oficialul din MAE rus. „În ceea ce priveşte consecinţele expulzării diplomatului rus din România, aşa cum s-a menţionat deja, acest gest neprietenos va primi cu siguranţă un răspuns adecvat, în forma şi în termenele pe care Ministerul Afacerilor Externe al Rusiei le va considera corespunzătoare şi optime”, a punctat Aleksei Fadeev. Ministerul de Externe al României a anunţat că Bucureştiul expulzează un diplomat al Federaţiei Ruse după ce, în decurs de trei zile, Forţele Aeriene Rom",
+        "place": "București",
+        "time": "Thu, 06 Aug 2026 16:55:52 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/rusia/nu-vedem-motive-sa-imitam-gesturile-teatrale-ale-altora-ce-pregateste-mae-de-la-moscova-dupa-expulzarea-diplomatului-de-la-bucuresti-3896037"
+        ],
+        "merged_titles": [
+          "„Nu vedem motive să imităm gesturile teatrale ale altora”. Ce pregătește MAE de la Moscova după expulzarea diplomatului de la București"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "incident_object": "drone",
+        "incident_action": "shot_down",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "444f69f600f455908f76",
+        "title": "Nivelul scăzut al apelor Dunării în Bulgaria dezvăluie un pod din epoca romană",
+        "summary": "<p>Nivelurile excepțional de scăzute ale apelor Dunării au scos la iveală porțiuni din fundațiile vechiului Pod al lui Constantin I oferind arheologilor bulgari o ocazie rară de a documenta ceea ce ei descriu drept una dintre cele mai impresionante realizări inginerești ale Imperiului Roman, transmite Reuters. O serie de valuri de căldură care au doborât [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/nivelul-scazut-al-apelor-dunarii-in-bulgaria-dezvaluie-un-pod-din-epoca-romana.html",
+        "published": "Thu, 06 Aug 2026 19:06:05 +0000",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_shootdown",
+        "object": "drone",
+        "action": "shot_down",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_shootdown",
+          "object": "drone",
+          "action": "shot_down",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Thu, 06 Au",
+          "hash": "f8b5debff560b6a3710f7358"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "shot_down",
+            "doborât",
+            "damaged",
+            "distrus"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1689,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. Nivelurile excepțional de scăzute ale apelor Dunării au scos la iveală porțiuni din fundațiile vechiului Pod al lui Constantin I oferind arheologilor bulgari o ocazie rară de a documenta ceea ce ei descriu drept una dintre cele mai impresionante realizări inginerești ale Imperiului Roman, transmite Reuters. O serie de valuri de căldură care au doborât recorduri în Europa în această vară a provocat o secetă severă în anumite părți ale continentului, afectând cursuri de apă importante precum Dunărea și Rinul. „Pentru arheologi, aceste momente sunt extrem de valoroase, deoarece natura dezvăluie pentru scurt timp un obiect care, în cea mai mare parte a timpului, rămâne ascuns sub apele Dunării”, a declarat Pavel Popov, de la Muzeul Istoric Regional din Pleven. „Ne oferă o ocazie rară de a-l observa, documenta și studia în mediul său natural.” Podul",
+        "place": "Romania",
+        "time": "Thu, 06 Aug 2026 19:06:05 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "G4Media"
+        ],
+        "urls": [
+          "https://www.g4media.ro/nivelul-scazut-al-apelor-dunarii-in-bulgaria-dezvaluie-un-pod-din-epoca-romana.html"
+        ],
+        "merged_titles": [
+          "Nivelul scăzut al apelor Dunării în Bulgaria dezvăluie un pod din epoca romană"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "incident_object": "drone",
+        "incident_action": "shot_down",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
       }
     },
     {

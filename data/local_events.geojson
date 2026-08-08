@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-07T18:56:03.910253+00:00",
+  "generated_utc": "2026-08-08T01:11:02.466043+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -500,7 +500,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1588,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Sűrű füst szállt a finomító fölött és a helyiek egy robbanást is hallottak. Tűz ütött ki a Mol pozsonyi finomítótelepén – közölte a pénteki kormányszóvivői tájékoztatón egy frissen érkezett információra hivatkozva Magyar Péter. Közlése szerint egy tartály gyulladt ki; nem történt sérülés és az esetnek elvileg ellátásbiztonsági következménye sincsen. https://hvg.hu/itthon/20260807_energiavalsag-allamfovalasztas-magyar-peter-elo-kozvetites-kormanyzati-tajekoztato Az Új Szónak Anton Molnár, a vállalat szóvivője azt mondta, hogy a tűzesetet az egyik kőolajtermékeket tároló tartály sérülése előzte meg, majd a benne lévő anyag meggyulladt. Elmondta, hogy egy kétfalú tartályról van szó, amely megfelel a legszigorúbb biztonsági előírásoknak. A tűz nem terjedt át más technológiai egységekre és tárolókra, a finomító termelését nem akadályozta, a balesetben senki nem sérült meg. Hozzátette: a helyszínen már alig látható füst, a lángok gyakorlatilag kialudtak, és azokat rövid időn belül teljesen e",
         "place": "Hungary",
         "time": "Fri, 07 Aug 2026 17:14:22 Z",
@@ -526,6 +526,263 @@
         "incident_actor": "unknown",
         "incident_target": "energy",
         "classification_confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5033,
+          47.1625
+        ]
+      },
+      "properties": {
+        "id": "d245ae9bc9a27a3c6749",
+        "title": "Drona cu explozibil de la Leipzig: Moscova denunță o 'provocare complet fabricată'",
+        "summary": "",
+        "source": "Agerpres",
+        "url": "https://agerpres.ro/politic-extern/2026/08/07/drona-cu-explozibil-de-la-leipzig-moscova-denunta-o-provocare-complet-fabricata--1583242",
+        "published": null,
+        "country": "Hungary",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Hungary",
+          "event_date": "unknown-date",
+          "hash": "a43f0a98af175e3c8a796d44"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă",
+            "drona",
+            "cyber_system",
+            "website"
+          ],
+          "actions": [
+            "detected",
+            "observat",
+            "entered",
+            "pătruns",
+            "burned",
+            "a luat foc",
+            "disrupted",
+            "întrerupt"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "rusiei",
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 7350,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Agerpres – Agenția Națională de Presă: Știri de actualitate cu informații de încredere pentru o societate bine informată. Ambasada Rusiei la Berlin a afirmat vineri că incidentul în care a fost implicată o dronă explozivă pe aeroportul din Leipzig, importantă platformă de transport material militar pentru Germania, NATO și susținerea Ucrainei, a fost o 'provocare complet fabricată' menită să acuze Moscova, relatează AFP. 'Principalul pericol cu este confruntată Germania astăzi nu rezidă în pretinsele 'atacuri hibride' ale Moscovei, care nu există, ci în politicienii care elaborează cu entuziasm scenarii de război iminent cu Rusia', a postat instituția pe site-ul său de internet. Cancelarul german Friedrich Merz a reunit vineri consiliul național de securitate după descoperirea în noaptea de marți spre miercuri a unei drone explozibile pe aeroportul din Leipzig, care a întrerupt timp de mai multe ore traficul aerian. Miercuri seară, ministrul de interne Alexander Dobrindt a alertat priv",
+        "place": "Hungary",
+        "time": null,
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Agerpres"
+        ],
+        "urls": [
+          "https://agerpres.ro/politic-extern/2026/08/07/drona-cu-explozibil-de-la-leipzig-moscova-denunta-o-provocare-complet-fabricata--1583242"
+        ],
+        "merged_titles": [
+          "Drona cu explozibil de la Leipzig: Moscova denunță o 'provocare complet fabricată'"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
       }
     },
     {

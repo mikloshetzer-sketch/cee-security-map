@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-08T06:48:23.996154+00:00",
+  "generated_utc": "2026-08-08T12:40:55.771549+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 7,
+    "local_event_count": 7,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -24,9 +24,13 @@
       }
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 5,
+      "category_counts": {
+        "drone": 5
+      },
+      "source_files": {
+        "local_events.geojson": 5
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -83,7 +87,113 @@
         "fingerprint_hash": "37b2295a9ad4bb0e3d1a1043"
       }
     ],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "11bcd06d4522416007fd",
+        "date": "2026-08-08",
+        "time": "2026-08-08T12:36:12+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Radu Miruță: „Am găsit cea mai eficientă metodă pentru doborârea dronelor rusești. Funcționează cu succes”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/radu-miruta-am-gasit-cea-mai-eficienta-metoda-pentru-doborarea-dronelor-rusesti-functioneaza-cu-succes-3898387",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "7b9b4c222e533f2c9130c49c"
+      },
+      {
+        "id": "38a851cd87328472d39f",
+        "date": "2026-08-08",
+        "time": "2026-08-08T12:23:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Incident grav de securitate: O dronă a intrat din România în Bulgaria şi a explodat la 100 de metri de graniţă. Reacția MApN",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/incident-grav-de-securitate-o-drona-a-intrat-din-romania-in-bulgaria-si-a-explodat-la-100-de-metri-de-granita-3898321",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "50ccd5596d28e14262645d98"
+      },
+      {
+        "id": "54128a21e593a95b5e56",
+        "date": "2026-08-08",
+        "time": "2026-08-08T11:03:45+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Felrobbant egy drón a román–bolgár határon",
+        "source": "24.hu",
+        "url": "https://24.hu/kulfold/2026/08/08/felrobbant-egy-dron-a-roman-bolgar-hataron/",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "0af40f6e32e5908aa3df24f5"
+      },
+      {
+        "id": "e2a53bdb9b409d9db2d7",
+        "date": "2026-08-08",
+        "time": "2026-08-08T10:22:25+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Azonosítatlan drón repült be Bulgária légterébe, majd felrobbant",
+        "source": "Telex",
+        "url": "https://telex.hu/kulfold/2026/08/08/azonositatlan-dron-bulgaria-romania-felrobbant",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "34d2b6336e49124faa4c69bb"
+      },
+      {
+        "id": "f71b4caa856ad32692ec",
+        "date": "2026-08-08",
+        "time": "2026-08-08T10:21:29+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "O dronă a intrat din România în Bulgaria și a explodat lângă graniță, anunță premierul bulgar / Reacție la București",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/o-drona-a-intrat-din-romania-in-bulgaria-si-a-explodat-langa-granita-anunta-premierul-bulgar-2320064",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "9b5bf9f711370f8eba9605e0"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {

@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-08T12:40:49.646186+00:00",
+  "generated_utc": "2026-08-08T18:35:26.370412+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -16,7 +16,7 @@
       "properties": {
         "id": "e2a53bdb9b409d9db2d7",
         "title": "Azonosítatlan drón repült be Bulgária légterébe, majd felrobbant",
-        "summary": "<p>Premierul bulgar, Rumen Radev, a declarat sâmbătă, după o reuniune a Consiliului de Securitate din cadrul Consiliului de Miniştri, că o dronă a intrat în spaţiul aerian al Bulgariei dinspre nord, la ora 8:10, şi a explodat la aproximativ 100 de metri în interiorul teritoriului bulgar, transmite BTA, transmite Agerpres. UPDATE 14:58 Ministerul român al [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
+        "summary": "A bolgár kormányfő szerint a drón Románia felől lépett be a légtérbe, majd ezer méterre a transzbalkáni gázvezeték kompresszorállomásától robbant fel Kardamnál.",
         "source": "Telex",
         "url": "https://telex.hu/kulfold/2026/08/08/azonositatlan-dron-bulgaria-romania-felrobbant",
         "published": "Sat, 08 Aug 2026 14:20:14 +0200",
@@ -28,8 +28,10 @@
         "object": "drone",
         "action": "exploded",
         "actor": "unknown",
-        "target": "military",
-        "context": [],
+        "target": "unknown",
+        "context": [
+          "határ"
+        ],
         "consequences": [],
         "severity": "high",
         "confidence": 0.82,
@@ -44,10 +46,518 @@
           "object": "drone",
           "action": "exploded",
           "actor": "unknown",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Sat, 08 Au",
+          "hash": "8455f5bfceaf653f9c8ed914"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "drón"
+          ],
+          "actions": [
+            "exploded",
+            "felrobbant"
+          ],
+          "targets": [],
+          "actors": [
+            "unknown",
+            "azonosítatlan"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.1,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "határ"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 828,
+        "article_fetch_source": "cache",
+        "article_text_excerpt": "Egy azonosítatlan drón robbant fel szombaton Bulgáriában, a román határ közelében – írja a hatóságokra hivatkozva az Euronews. Rumen Radev bolgár miniszterelnök közlése szerint a drón Románia felől lépett be Bulgária légtérbe, majd ezer méterre a transzbalkáni gázvezeték kompresszorállomásától robbant fel Kardamnál. „A drón által keltett zajt a román határrendészet észlelte, majd egy hangos robbanást hallott a határőrség” – mondta a sajtótájékoztatóján Radev, aki közölte az esetnek nincs áldozata, és nem keletkezett kár az épületekben vagy az infrastruktúrában. A miniszterelnök ugyanakkor azt nyilatkozta, hogy sem a bolgár, sem a román hatóságok nem észlelték előzetesen a drónt, miközben az áthaladt a légterükön, ezért fokozott megfigyelési műveleteket fognak végrehajtani a régióban. Az ügyben vizsgálatot indítottak.",
+        "place": "Romania",
+        "time": "Sat, 08 Aug 2026 14:20:14 +0200",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Telex"
+        ],
+        "urls": [
+          "https://telex.hu/kulfold/2026/08/08/azonositatlan-dron-bulgaria-romania-felrobbant"
+        ],
+        "merged_titles": [
+          "Azonosítatlan drón repült be Bulgária légterébe, majd felrobbant"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "exploded",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "f55a2aec9ac5f5cd8afe",
+        "title": "Felrobbant egy Romániából Bulgáriába berepülő drón a határ közelében",
+        "summary": "Ráadásul a Törökországot Ukrajnával összekötő Transz-Balkán gázvezeték közelében - jelentette be Rumen Radev bolgár kormányfő.",
+        "source": "HVG",
+        "url": "https://hvg.hu/vilag/20260808_felrobbant-egy-romaniabol-bulgariaba-berepulo-dron-a-hatar-kozeleben",
+        "published": "Sat, 08 Aug 2026 15:11:48 Z",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "exploded",
+        "actor": "ukraine",
+        "target": "unknown",
+        "context": [
+          "határ"
+        ],
+        "consequences": [
+          "injury"
+        ],
+        "severity": "high",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "exploded",
+          "actor": "ukraine",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Sat, 08 Au",
+          "hash": "a2e47420e4b7c89c51cf7a27"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [
+            "történt",
+            "megerősítették"
+          ],
+          "objects": [
+            "drone",
+            "drón"
+          ],
+          "actions": [
+            "exploded",
+            "felrobbant"
+          ],
+          "targets": [],
+          "actors": [
+            "ukraine",
+            "ukrajna",
+            "ukrán"
+          ],
+          "consequences": [
+            "injury",
+            "sérült"
+          ],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.1,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "határ"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2629,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Ráadásul a Törökországot Ukrajnával összekötő Transz-Balkán gázvezeték közelében - jelentette be Rumen Radev bolgár kormányfő. A drón Bulgária északkeleti részén, Kardam határfalu átkelőjének közvetlen közelében robbant fel, egy kilométerre a gázvezeték kompresszorállomásától. A robbanásban nem sérült meg senki - közölte a miniszterelnök a közösségi médiában közzétett videójában. Radev azt is elmondta, hogy a drónt sem a román, sem a bolgár légtérben nem észlelték a robbanás előtt, ami azt bizonyítja, hogy továbbra is kihívást jelent a pilóta nélküli repülőszerkezetek észlelése és azonosítása. Dimitar Sztojanov bolgár védelmi miniszter szombat délután arról számolt be, hogy a drón egy mezőn csapódott be, és egy Maja típusú álcadrón volt, amelyet legnagyobb részt az ukrán fegyveres erők alkalmaznak. \"Jelen állás szerint semmi sem utal arra, hogy szándékosan elkövetett incidensről lenne szó\" - tudatta a tárcavezető. Ukrajna szombaton közölte, nem támadta szándékosan Bulgáriát, és ígérete",
+        "place": "Romania",
+        "time": "Sat, 08 Aug 2026 15:11:48 Z",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HVG"
+        ],
+        "urls": [
+          "https://hvg.hu/vilag/20260808_felrobbant-egy-romaniabol-bulgariaba-berepulo-dron-a-hatar-kozeleben"
+        ],
+        "merged_titles": [
+          "Felrobbant egy Romániából Bulgáriába berepülő drón a határ közelében"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "exploded",
+        "incident_actor": "ukraine",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "9a21c3a32c58c8238953",
+        "title": "Prima reacție a MAE după ce Bulgaria a anunţat că o dronă venind dinspre România a explodat în spaţiul său aerian",
+        "summary": "Ministerul de Externe a transmis, sâmbătă, că este în contact cu omologii bulgari şi cu Ministerul Apărării Naţionale pe tema dronei prăbuşite pe teritoriul Bulgariei, în apropierea frontierei cu România, iar ţara noastră este pregătită să ofere asistenţa necesară în materie.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/prima-reactie-a-mae-dupa-ce-bulgaria-a-anuntat-ca-o-drona-venind-dinspre-romania-a-explodat-in-spatiul-sau-aerian-3898555",
+        "published": "Sat, 08 Aug 2026 18:39:40 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "exploded",
+        "actor": "nato",
+        "target": "military",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "exploded",
+          "actor": "nato",
           "target": "military",
           "place": "Romania",
           "event_date": "Sat, 08 Au",
-          "hash": "34d2b6336e49124faa4c69bb"
+          "hash": "83d15abe0121d76654c29eef"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -70,7 +580,9 @@
             "military",
             "radar"
           ],
-          "actors": [],
+          "actors": [
+            "nato"
+          ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -83,6 +595,7 @@
           "object_match": 0.2,
           "action_match": 0.2,
           "target_match": 0.08,
+          "actor_match": 0.06,
           "country_match": 0.1,
           "supporting_evidence": 0.06
         },
@@ -224,302 +737,33 @@
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 828,
+        "article_text_chars": 2517,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Egy azonosítatlan drón robbant fel szombaton Bulgáriában, a román határ közelében – írja a hatóságokra hivatkozva az Euronews. Rumen Radev bolgár miniszterelnök közlése szerint a drón Románia felől lépett be Bulgária légtérbe, majd ezer méterre a transzbalkáni gázvezeték kompresszorállomásától robbant fel Kardamnál. „A drón által keltett zajt a román határrendészet észlelte, majd egy hangos robbanást hallott a határőrség” – mondta a sajtótájékoztatóján Radev, aki közölte az esetnek nincs áldozata, és nem keletkezett kár az épületekben vagy az infrastruktúrában. A miniszterelnök ugyanakkor azt nyilatkozta, hogy sem a bolgár, sem a román hatóságok nem észlelték előzetesen a drónt, miközben az áthaladt a légterükön, ezért fokozott megfigyelési műveleteket fognak végrehajtani a régióban. Az ügyben vizsgálatot indítottak.",
+        "article_text_excerpt": "Ministerul de Externe a transmis, sâmbătă, că este în contact cu omologii bulgari şi cu Ministerul Apărării Naţionale pe tema dronei prăbuşite pe teritoriul Bulgariei, în apropierea frontierei cu România, iar ţara noastră este pregătită să ofere asistenţa necesară în materie. Potrivit unor precizări de presă transmise, sâmbătă, de Ministerul Afacerilor Externe, România a fost notificată asupra exploziei şi prăbuşirii unei drone pe teritoriul Bulgariei, în apropierea frontierei cu România; MAE este în contact cu omologii bulgari, care au informat asupra incidentului. „Suntem, totodată, în contact cu MApN, inclusiv pentru aspecte care privesc informarea Aliaţilor NATO. Aşteptăm rezultatele anchetei autorităţilor bulgare. România este pregătită să ofere asistenţa necesară în materie”, a adăugat MAE. Ministerul Apărării Naţionale a precizat anterior, în legătură cu explozia produsă pe teritoriul Bulgariei sâmbătă, în jurul orei 8:20, în proximitatea frontierei cu România, că sistemele de s",
         "place": "Romania",
-        "time": "Sat, 08 Aug 2026 10:22:25 +0000",
+        "time": "Sat, 08 Aug 2026 18:39:40 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
-        "source_count": 4,
+        "source_count": 1,
         "sources": [
-          "Telex",
-          "HotNews",
-          "G4Media",
-          "Economica.net"
+          "Digi24"
         ],
         "urls": [
-          "https://telex.hu/kulfold/2026/08/08/azonositatlan-dron-bulgaria-romania-felrobbant",
-          "https://hotnews.ro/reactia-mapn-dupa-ce-bulgaria-a-anuntat-ca-o-drona-a-intrat-din-romania-si-a-explodat-pe-teritoriul-sau-2320088",
-          "https://www.g4media.ro/drona-romania-bulgaria-explozie-statie-comprimare-gaze-trans-balkan-nato.html",
-          "https://www.economica.net/o-drona-a-intrat-din-romania-in-bulgaria-si-a-explodat-la-100-de-metri-de-frontiera-foarte-aproape-de-instalatiile-gazoductului-transbalcanic_966446.html"
+          "https://www.digi24.ro/stiri/prima-reactie-a-mae-dupa-ce-bulgaria-a-anuntat-ca-o-drona-venind-dinspre-romania-a-explodat-in-spatiul-sau-aerian-3898555"
         ],
         "merged_titles": [
-          "Azonosítatlan drón repült be Bulgária légterébe, majd felrobbant",
-          "Reacția MApN după ce Bulgaria a anunțat că o dronă a intrat din România și a explodat pe teritoriul său",
-          "VIDEO UPDATE | Premierul Bulgariei susține că o dronă a intrat dinspre România și a explodat la 100 de metri în interiorul Bulgariei, lângă o stație de comprimare a gazelor / MApN: „Sistemele de supraveghere radar nu au detectat niciun vehicul aerian”",
-          "UPDATE: O dronă a intrat din România în Bulgaria şi a explodat la 100 de metri de frontieră, foarte aproape de instalațiile gazoductului transbalcanic"
+          "Prima reacție a MAE după ce Bulgaria a anunţat că o dronă venind dinspre România a explodat în spaţiul său aerian"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
         "incident_object": "drone",
         "incident_action": "exploded",
-        "incident_actor": "unknown",
+        "incident_actor": "nato",
         "incident_target": "military",
-        "classification_confidence": 0.84
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.5033,
-          47.1625
-        ]
-      },
-      "properties": {
-        "id": "29b3b4dd6c749e0e6dbf",
-        "title": "Tűz ütött ki a Mol pozsonyi olajfinomítójában",
-        "summary": "Sűrű füst szállt a finomító fölött és a helyiek egy robbanást is hallottak.",
-        "source": "HVG",
-        "url": "https://hvg.hu/gazdasag/20260807_tuz-mol-pozsony-olajfinomito",
-        "published": "Fri, 07 Aug 2026 17:14:22 Z",
-        "country": "Hungary",
-        "city": null,
-        "family": "energy",
-        "subcategory": "oil_gas",
-        "subtype": "energy_asset_fire",
-        "object": "energy_asset",
-        "action": "burned",
-        "actor": "unknown",
-        "target": "energy",
-        "context": [],
-        "consequences": [
-          "injury"
-        ],
-        "severity": "high",
-        "confidence": 0.92,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "ENERGY.ASSET.FIRE",
-        "fingerprint": {
-          "country": "Hungary",
-          "family": "energy",
-          "subcategory": "oil_gas",
-          "subtype": "energy_asset_fire",
-          "object": "energy_asset",
-          "action": "burned",
-          "actor": "unknown",
-          "target": "energy",
-          "place": "Hungary",
-          "event_date": "Fri, 07 Au",
-          "hash": "37b2295a9ad4bb0e3d1a1043"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [
-            "történt"
-          ],
-          "objects": [
-            "energy_asset",
-            "finomító"
-          ],
-          "actions": [
-            "burned",
-            "tűz ütött ki"
-          ],
-          "targets": [
-            "energy",
-            "finomító"
-          ],
-          "actors": [],
-          "consequences": [
-            "injury",
-            "sérült"
-          ],
-          "extra_context": [
-            "feed_country=Hungary",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "country_match": 0.1,
-          "consequence_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "ENERGY.ASSET.FIRE",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_fire",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:exploded"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:disrupted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "INDUSTRIAL.FIRE",
-            "family": "industrial",
-            "subcategory": "fire",
-            "subtype": "industrial_fire",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "PUBLIC.ORDER.VIOLENCE",
-            "family": "public_order",
-            "subcategory": "violent_protest",
-            "subtype": "violent_public_disorder",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1588,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Sűrű füst szállt a finomító fölött és a helyiek egy robbanást is hallottak. Tűz ütött ki a Mol pozsonyi finomítótelepén – közölte a pénteki kormányszóvivői tájékoztatón egy frissen érkezett információra hivatkozva Magyar Péter. Közlése szerint egy tartály gyulladt ki; nem történt sérülés és az esetnek elvileg ellátásbiztonsági következménye sincsen. https://hvg.hu/itthon/20260807_energiavalsag-allamfovalasztas-magyar-peter-elo-kozvetites-kormanyzati-tajekoztato Az Új Szónak Anton Molnár, a vállalat szóvivője azt mondta, hogy a tűzesetet az egyik kőolajtermékeket tároló tartály sérülése előzte meg, majd a benne lévő anyag meggyulladt. Elmondta, hogy egy kétfalú tartályról van szó, amely megfelel a legszigorúbb biztonsági előírásoknak. A tűz nem terjedt át más technológiai egységekre és tárolókra, a finomító termelését nem akadályozta, a balesetben senki nem sérült meg. Hozzátette: a helyszínen már alig látható füst, a lángok gyakorlatilag kialudtak, és azokat rövid időn belül teljesen e",
-        "place": "Hungary",
-        "time": "Fri, 07 Aug 2026 17:14:22 Z",
-        "category": "energy",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "HVG"
-        ],
-        "urls": [
-          "https://hvg.hu/gazdasag/20260807_tuz-mol-pozsony-olajfinomito"
-        ],
-        "merged_titles": [
-          "Tűz ütött ki a Mol pozsonyi olajfinomítójában"
-        ],
-        "incident_family": "energy",
-        "incident_subcategory": "oil_gas",
-        "incident_subtype": "energy_asset_fire",
-        "incident_object": "energy_asset",
-        "incident_action": "burned",
-        "incident_actor": "unknown",
-        "incident_target": "energy",
-        "classification_confidence": 0.92
+        "classification_confidence": 0.9
       }
     },
     {
@@ -532,29 +776,25 @@
         ]
       },
       "properties": {
-        "id": "54128a21e593a95b5e56",
-        "title": "Felrobbant egy drón a román–bolgár határon",
-        "summary": "<p>Egy kilométerre egy gázvezeték kompresszorállomásától.</p>\n<p>The post <a href=\"https://24.hu/kulfold/2026/08/08/felrobbant-egy-dron-a-roman-bolgar-hataron/\" target=\"_blank\">Felrobbant egy drón a román–bolgár határon</a> first appeared on <a href=\"https://24.hu/\" target=\"_blank\">24.hu</a>.</p>",
-        "source": "24.hu",
-        "url": "https://24.hu/kulfold/2026/08/08/felrobbant-egy-dron-a-roman-bolgar-hataron/",
-        "published": "Sat, 08 Aug 2026 11:03:45 +0000",
+        "id": "9cc6a5dd7e42cc09bade",
+        "title": "Drona care a explodat în Bulgaria, aproape de România, a fost identificată. Ce arată analiza preliminară a epavei",
+        "summary": "Autoritățile bulgare au identificat drona care s-a prăbușit și a explodat sâmbătă dimineață în apropierea graniței cu România, la circa un kilometru de o stație de comprimare a gazelor de pe traseul gazoductului Trans-Balkan.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/drona-care-a-explodat-in-bulgaria-aproape-de-romania-a-fost-identificata-ce-arata-analiza-preliminara-a-epavei-3898517",
+        "published": "Sat, 08 Aug 2026 19:24:45 +0300",
         "country": "Romania",
         "city": null,
         "family": "air",
         "subcategory": "drone",
         "subtype": "drone_strike",
         "object": "drone",
-        "action": "exploded",
+        "action": "impact",
         "actor": "unknown",
-        "target": "government",
-        "context": [
-          "határ"
-        ],
-        "consequences": [
-          "injury"
-        ],
+        "target": "military",
+        "context": [],
+        "consequences": [],
         "severity": "high",
-        "confidence": 0.92,
+        "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
         "matched_rule_id": "AIR.DRONE.STRIKE",
@@ -564,12 +804,12 @@
           "subcategory": "drone",
           "subtype": "drone_strike",
           "object": "drone",
-          "action": "exploded",
+          "action": "impact",
           "actor": "unknown",
-          "target": "government",
+          "target": "military",
           "place": "Romania",
           "event_date": "Sat, 08 Au",
-          "hash": "0af40f6e32e5908aa3df24f5"
+          "hash": "5add760ddb0b58d195c41eba"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -577,23 +817,25 @@
           "article_role": [],
           "objects": [
             "drone",
-            "drón"
+            "dronă",
+            "drona"
           ],
           "actions": [
+            "entered",
+            "a intrat",
+            "impact",
+            "s-a prăbușit",
             "exploded",
-            "felrobbant"
+            "a explodat"
           ],
           "targets": [
-            "government",
-            "minisztérium"
+            "military",
+            "radar"
           ],
           "actors": [],
-          "consequences": [
-            "injury",
-            "sérült"
-          ],
+          "consequences": [],
           "extra_context": [
-            "feed_country=Hungary",
+            "feed_country=Romania",
             "geocode_quality=country_fallback"
           ]
         },
@@ -604,7 +846,6 @@
           "action_match": 0.2,
           "target_match": 0.08,
           "country_match": 0.1,
-          "consequence_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
@@ -615,24 +856,50 @@
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 2.32,
+            "score": 2.42,
             "matched": true,
             "missing": [],
             "matched_context": []
           },
           {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
             "priority": 0,
-            "score": 2.1,
+            "score": 2.26,
             "matched": true,
             "missing": [],
-            "matched_context": [
-              "határ"
-            ]
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
           },
           {
             "rule_id": "AIR.DRONE.DETECTION",
@@ -645,20 +912,6 @@
             "matched": false,
             "missing": [
               "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
             ],
             "matched_context": []
           },
@@ -687,20 +940,6 @@
             "matched": false,
             "missing": [
               "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
             ],
             "matched_context": []
           },
@@ -719,20 +958,6 @@
             "matched_context": []
           },
           {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
-            "matched_context": []
-          },
-          {
             "rule_id": "MARITIME.SHIP.ATTACK",
             "family": "maritime",
             "subcategory": "ship_incident",
@@ -745,37 +970,303 @@
               "objects:all:ship"
             ],
             "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 575,
+        "article_text_chars": 1471,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Felrobbant egy Románia irányából Bulgáriába berepülő drón szombat reggel a román–bolgár határ mellett, a Törökországot Ukrajnával összekötő Transzbalkán gázvezeték közelében – jelentette be Rumen Radev bolgár kormányfő. A drón Bulgária északkeleti részén, Kardam határfalu átkelőjének közvetlen közelében robbant fel, egy kilométerre a gázvezeték kompresszorállomásától. A robbanásban nem sérült meg senki – közölte a miniszterelnök a közösségi oldalakra feltöltött videójában. A bolgár határőrség és a védelmi minisztérium vizsgálja a felrobbant drón hátterét – tette hozzá.",
+        "article_text_excerpt": "Autoritățile bulgare au identificat drona care s-a prăbușit și a explodat sâmbătă dimineață în apropierea graniței cu România, la circa un kilometru de o stație de comprimare a gazelor de pe traseul gazoductului Trans-Balkan. Ministerul Apărării de la Sofia a anunţat că drona care s-a prăbuşit sâmbătă dimineaţa pe un câmp din Bulgaria la circa un kilometru de staţia de comprimare a gazelor de pe traseul gazoductului Trans-Balkan este o dronă-momeală de tip Maya, un aparat de zbor „utilizat pe scară largă de forţele armate ucrainene”, transmite Agerpres. „În prezent, nu există indicii că ar fi fost vorba despre un incident deliberat”, a adăugat ministerul într-un comunicat, pe baza unei analize preliminare a epavei găsite pe un câmp situat foarte aproape de graniţa cu România. Anterior, premierul bulgar Rumen Radev a declarat, după o reuniune a Consiliului de Securitate din cadrul guvernului, că o dronă a intrat în spaţiul aerian al Bulgariei dinspre nord, la ora 08:10, şi a explodat la",
         "place": "Romania",
-        "time": "Sat, 08 Aug 2026 11:03:45 +0000",
+        "time": "Sat, 08 Aug 2026 19:24:45 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "24.hu"
+          "Digi24"
         ],
         "urls": [
-          "https://24.hu/kulfold/2026/08/08/felrobbant-egy-dron-a-roman-bolgar-hataron/"
+          "https://www.digi24.ro/stiri/actualitate/drona-care-a-explodat-in-bulgaria-aproape-de-romania-a-fost-identificata-ce-arata-analiza-preliminara-a-epavei-3898517"
         ],
         "merged_titles": [
-          "Felrobbant egy drón a román–bolgár határon"
+          "Drona care a explodat în Bulgaria, aproape de România, a fost identificată. Ce arată analiza preliminară a epavei"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
         "incident_object": "drone",
-        "incident_action": "exploded",
+        "incident_action": "impact",
         "incident_actor": "unknown",
-        "incident_target": "government",
-        "classification_confidence": 0.92
+        "incident_target": "military",
+        "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "709090c0b28933c494de",
+        "title": "Piloții români care au doborât drone, lăudați de colegii din NATO. Radu Miruță: „Sunt niște artiști”. Ce i-a spus un comandant britanic",
+        "summary": "Piloții români care au participat la misiunile de doborâre a dronelor în România și în alte state europene au atras aprecierea colegilor din NATO. Ministrul interimar al Apărării, Radu Miruță, a dezvăluit, sâmbătă, la emisiunea „În fața ta” de la Digi24, ce i-a spus un comandant britanic despre performanța unuia dintre piloții români și a vorbit despre profesionalismul militarilor implicați în aceste misiuni.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/pilotii-romani-care-au-doborat-drone-laudati-de-colegii-din-nato-radu-miruta-sunt-niste-artisti-ce-i-a-spus-un-comandant-britanic-3898449",
+        "published": "Sat, 08 Aug 2026 16:50:20 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_shootdown",
+        "object": "drone",
+        "action": "shot_down",
+        "actor": "ukraine",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_shootdown",
+          "object": "drone",
+          "action": "shot_down",
+          "actor": "ukraine",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Sat, 08 Au",
+          "hash": "bb27d973d94c3733bec62237"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "shot_down",
+            "doborât"
+          ],
+          "targets": [],
+          "actors": [
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2684,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Piloții români care au participat la misiunile de doborâre a dronelor în România și în alte state europene au atras aprecierea colegilor din NATO. Ministrul interimar al Apărării, Radu Miruță, a dezvăluit, sâmbătă, la emisiunea „În fața ta” de la Digi24, ce i-a spus un comandant britanic despre performanța unuia dintre piloții români și a vorbit despre profesionalismul militarilor implicați în aceste misiuni. Piloţii români care au intervenit pentru doborârea unor drone ostile intrate în spaţiul aerian românesc, dar şi în Lituania şi Polonia, sunt apreciaţi de colegii lor de breaslă din alte ţări. „Era un comandant din Marea Britanie şi mi-a zis: „Domnul ministru, nu vă daţi seama, între noi, piloţii, ce artă a reuşit acest băiat. Este o chestiune profesională fantastică pe care un pilot o reuşeşte”. Sunt convins că aşa este şi meritul acestor oameni este unul dincolo de pasiunea şi de obligaţia pe care o au, sunt nişte artişti care reuşesc să facă nişte lucruri fantastice şi să se vor",
+        "place": "Romania",
+        "time": "Sat, 08 Aug 2026 16:50:20 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/pilotii-romani-care-au-doborat-drone-laudati-de-colegii-din-nato-radu-miruta-sunt-niste-artisti-ce-i-a-spus-un-comandant-britanic-3898449"
+        ],
+        "merged_titles": [
+          "Piloții români care au doborât drone, lăudați de colegii din NATO. Radu Miruță: „Sunt niște artiști”. Ce i-a spus un comandant britanic"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "incident_object": "drone",
+        "incident_action": "shot_down",
+        "incident_actor": "ukraine",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
       }
     },
     {
@@ -793,7 +1284,7 @@
         "summary": "Ministrul interimar al Apărării, Radu Miruță, a declarat sâmbătă, în emisiunea „În fața ta” de la Digi24, că în urma cercetărilor efectuate privind incursiunile cu drone rusești în spațiul aerian al României, armata a găsit cea mai eficientă metodă de a doborî aceste aparate de zbor. „Am găsit cheia acestei dinamici. Metoda funcționează cu succes”, a subliniat Miruță.",
         "source": "Digi24",
         "url": "https://www.digi24.ro/stiri/actualitate/politica/radu-miruta-am-gasit-cea-mai-eficienta-metoda-pentru-doborarea-dronelor-rusesti-functioneaza-cu-succes-3898387",
-        "published": "Sat, 08 Aug 2026 15:36:12 +0300",
+        "published": "Sat, 08 Aug 2026 16:54:42 +0300",
         "country": "Romania",
         "city": "Buzău",
         "family": "air",
@@ -1006,10 +1497,10 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 4170,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Ministrul interimar al Apărării, Radu Miruță, a declarat sâmbătă, în emisiunea „În fața ta” de la Digi24, că în urma cercetărilor efectuate privind incursiunile cu drone rusești în spațiul aerian al României, armata a găsit cea mai eficientă metodă de a doborî aceste aparate de zbor. „Am găsit cheia acestei dinamici. Metoda funcționează cu succes”, a subliniat Miruță. „România nu a început să doboare drone într-o zi de vineri doar pentru că așa s-a nimerit în calendar. La fiecare zece zile sau două săptămâni, în Ministerul Apărării se face o analiză a evenimentelor recente pentru a vedea ce poate fi îmbunătățit, astfel încât scenariile pe care încă nu le acoperim să fie acoperite. Cea mai simplă soluție ar fi să cumpărăm tehnologie. Am făcut și acest lucru, însă echipamentele nu sosesc imediat. Avem capabilități care au fost amplasate după o anumită filozofie operațională și într-o anumită configurație. Acestea au fost repoziționate permanent. În cazul dronelor ale căror resturi au fos",
         "place": "Buzău",
-        "time": "Sat, 08 Aug 2026 15:36:12 +0300",
+        "time": "Sat, 08 Aug 2026 16:54:42 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "city",
@@ -1049,7 +1540,7 @@
         "summary": "O dronă a pătruns sâmbătă dimineaţă în spaţiul aerian al Bulgariei dinspre România şi a explodat la aproximativ 100 de metri în interiorul teritoriului bulgar, a declarat premierul Rumen Radev, în urma unei reuniuni a Consiliului de Securitate din cadrul Consiliului de Miniştri, transmite BTA.",
         "source": "Digi24",
         "url": "https://www.digi24.ro/stiri/actualitate/incident-grav-de-securitate-o-drona-a-intrat-din-romania-in-bulgaria-si-a-explodat-la-100-de-metri-de-granita-3898321",
-        "published": "Sat, 08 Aug 2026 15:23:00 +0300",
+        "published": "Sat, 08 Aug 2026 16:09:53 +0300",
         "country": "Romania",
         "city": null,
         "family": "air",
@@ -1265,10 +1756,10 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 4911,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "O dronă a pătruns sâmbătă dimineaţă în spaţiul aerian al Bulgariei dinspre România şi a explodat la aproximativ 100 de metri în interiorul teritoriului bulgar, a anunțat premierul Rumen Radev, în urma unei reuniuni a Consiliului de Securitate din cadrul Consiliului de Miniştri, transmite BTA . MApN a transmis că sistemele de supraveghere radar nu au detectat niciun vehicul aerian. ACTUALIZARE 14.20 MApN a transmis că sistemele de supraveghere radar nu au detectat niciun vehicul aerian care să fi traversat spațiul aerian al României către Bulgaria. „În legătură cu explozia produsă pe teritoriul Bulgariei, în ziua de 8 august, în jurul orei 08.20, în proximitatea frontierei cu România, Ministerul Apărării Naționale precizează că sistemele de supraveghere radar ale MApN nu au detectat niciun vehicul aerian care să fi traversat spațiul aerian al României către Bulgaria. De asemenea, în intervalul de timp anterior producerii exploziei, nu au fost înregistrate evoluții ale unor ținte aeriene",
         "place": "Romania",
-        "time": "Sat, 08 Aug 2026 15:23:00 +0300",
+        "time": "Sat, 08 Aug 2026 16:09:53 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
@@ -1298,30 +1789,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.102,
-          44.426
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "id": "f71b4caa856ad32692ec",
-        "title": "O dronă a intrat din România în Bulgaria și a explodat lângă graniță, anunță premierul bulgar / Reacție la București",
-        "summary": "Incidentul s-a produs în imediata apropiere a fostului punct de trecere a frontierei Kardam, situat la granița dintre Bulgaria și România, într-o zonă cu numeroase obiective energetice critice, potrivit premierului bulgar Rumen Radev citat de Agerpres și Mediapool. UPDATE 14:30 „Supraveghere radar ale MApN nu au detectat niciun vehicul aerian care să fi traversat spațiul &#8230;",
+        "id": "9bc0e2691d5a9ccf7316",
+        "title": "Explicațiile Ucrainei pentru incidentul cu dronă de la granița Bulgariei cu România",
+        "summary": "Ambasadoarea Ucrainei la Sofia a fost convocată la Ministerul bulgar al afacerilor externe, luni, pe tema incidentului cu drona care a explodat în apropierea localității Kardam, la granița Bulgariei cu România, conform anunțului făcut de reprezentanții ei, sâmbătă, pentru AFP. Kievul a precizat că este „într-un contact strâns cu partea bulgară pentru a clarifica împrejurările” &#8230;",
         "source": "HotNews",
-        "url": "https://hotnews.ro/o-drona-a-intrat-din-romania-in-bulgaria-si-a-explodat-langa-granita-anunta-premierul-bulgar-2320064",
-        "published": "Sat, 08 Aug 2026 10:21:29 +0000",
+        "url": "https://hotnews.ro/explicatiile-ucrainei-pentru-incidentul-de-la-granita-bulgariei-cu-romania-ambasadoarea-kievului-convocata-de-sofia-2320237",
+        "published": "Sat, 08 Aug 2026 18:07:29 +0000",
         "country": "Romania",
-        "city": "București",
+        "city": null,
         "family": "air",
         "subcategory": "drone",
         "subtype": "drone_strike",
         "object": "drone",
         "action": "impact",
-        "actor": "ukraine",
+        "actor": "russia",
         "target": "military",
         "context": [],
         "consequences": [],
         "severity": "high",
-        "confidence": 0.98,
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
         "matched_rule_id": "AIR.DRONE.STRIKE",
@@ -1332,11 +1823,11 @@
           "subtype": "drone_strike",
           "object": "drone",
           "action": "impact",
-          "actor": "ukraine",
+          "actor": "russia",
           "target": "military",
-          "place": "București",
+          "place": "Romania",
           "event_date": "Sat, 08 Au",
-          "hash": "9b5bf9f711370f8eba9605e0"
+          "hash": "db3c1782b40adcfd42bd135a"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -1350,12 +1841,8 @@
           "actions": [
             "detected",
             "detectat",
-            "entered",
-            "a intrat",
-            "shot_down",
-            "doborât",
             "impact",
-            "căzut",
+            "s-a prăbușit",
             "exploded",
             "a explodat"
           ],
@@ -1364,14 +1851,13 @@
             "radar"
           ],
           "actors": [
-            "ukraine",
-            "ucraina",
-            "nato"
+            "russia",
+            "rusia"
           ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
-            "geocode_quality=city"
+            "geocode_quality=country_fallback"
           ]
         },
         "negative_terms": [],
@@ -1382,7 +1868,6 @@
           "target_match": 0.08,
           "actor_match": 0.06,
           "country_match": 0.1,
-          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
@@ -1411,15 +1896,45 @@
             "matched_context": []
           },
           {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.DRONE.INTRUSION",
             "family": "air",
             "subcategory": "drone",
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
             "matched_context": []
           },
           {
@@ -1428,6 +1943,198 @@
             "subcategory": "drone",
             "subtype": "drone_shootdown",
             "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2381,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Ambasadoarea Ucrainei la Sofia a fost convocată la Ministerul bulgar al afacerilor externe, luni, pe tema incidentului cu drona care a explodat în apropierea localității Kardam, la granița Bulgariei cu România, conform anunțului făcut de reprezentanții ei, sâmbătă, pentru AFP. Kievul a precizat că este „într-un contact strâns cu partea bulgară pentru a clarifica împrejurările” incidentului și neagă că ar fi vizat Bulgaria cu vreo dronă. „Putem spune cu certitudine că Forțele Armate ale Ucrainei nu au direcționat intenționat niciun element către Bulgaria”, a declarat purtătorul de cuvânt al Ministerului ucrainean de externe, Georgiy Tykhyi, care a pus incidentul pe seama războiului declanșat de Rusia. La prânz, prim-ministrul bulgar Rumen Radev a anunțat în cadrul unei conferințe de presă că o dronă s-a prăbușit și a explodat la ora 8:10 dimineața pe teritoriul bulgar, la granița cu România, în apropierea unor infrastructuri energetice critice. Analizele preliminare arată că a fost vorb",
+        "place": "Romania",
+        "time": "Sat, 08 Aug 2026 18:07:29 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "urls": [
+          "https://hotnews.ro/explicatiile-ucrainei-pentru-incidentul-de-la-granita-bulgariei-cu-romania-ambasadoarea-kievului-convocata-de-sofia-2320237"
+        ],
+        "merged_titles": [
+          "Explicațiile Ucrainei pentru incidentul cu dronă de la granița Bulgariei cu România"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "military",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "d26343ca00f73c6f48e0",
+        "title": "Bulgaria a anunțat primele informații despre drona care a intrat din România și a explodat pe teritoriul său. De unde provine",
+        "summary": "Ministerul Apărării de la Sofia consideră că drona care a explodat în apropierea localității Kardam, la granița sa cu România, era de origine ucraineană, iar pătrunderea pe teritoriul bulgar a fost accidentală, relatează publicația bulgară Mediapool. Analiza inițială a rămășițelor dronei care a căzut sâmbătă dimineață pe teritoriul bulgar arată că este vorba, cel mai &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/bulgaria-a-anuntat-primele-informatii-despre-drona-care-a-intrat-din-romania-si-a-explodat-pe-teritoriul-sau-de-unde-provine-2320192",
+        "published": "Sat, 08 Aug 2026 16:07:18 +0000",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Sat, 08 Au",
+          "hash": "f2678c1ede15c0c4f30b8ae5"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "drona"
+          ],
+          "actions": [
+            "entered",
+            "a intrat",
+            "impact",
+            "căzut",
+            "exploded",
+            "a explodat"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.42,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
             "priority": 0,
             "score": 2.26,
             "matched": true,
@@ -1463,6 +2170,20 @@
             "matched_context": []
           },
           {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.DRONE.INTERCEPT",
             "family": "air",
             "subcategory": "drone",
@@ -1477,30 +2198,16 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.DETECTION",
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
             "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile"
+              "actions:all:shot_down"
             ],
             "matched_context": []
           },
@@ -1517,37 +2224,65 @@
               "objects:all:explosive_device"
             ],
             "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 3927,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Incidentul s-a produs în imediata apropiere a fostului punct de trecere a frontierei Kardam, situat la granița dintre Bulgaria și România, într-o zonă cu numeroase obiective energetice critice, potrivit premierului bulgar Rumen Radev citat de Agerpres și Mediapool . UPDATE 14:30 „Supraveghere radar ale MApN nu au detectat niciun vehicul aerian care să fi traversat spațiul aerian al României către Bulgaria”, a anunțat Ministerul Apărării într-un comunicat de presă. Drona a intrat pe teritoriul bulgar la ora locală 8.10 (aceeași în România) și a explodat la aproximativ 100 de metri într-un lan de florea-soarelui, a declarat premierul Rumen Radev, în urma unei reuniuni a Consiliului de Securitate din cadrul Consiliului de Miniștri, precizează BTA și BGnes . Locul prăbușirii se află în apropierea unor infrastructuri energetice critice: la aproximativ 200 de metri de o stație de compresoare din România, la 200 de metri de fostul punct de trecere a frontierei Kardam dintre Bulgaria și Români",
-        "place": "București",
-        "time": "Sat, 08 Aug 2026 10:21:29 +0000",
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Romania",
+        "time": "Sat, 08 Aug 2026 16:07:18 +0000",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
           "HotNews"
         ],
         "urls": [
-          "https://hotnews.ro/o-drona-a-intrat-din-romania-in-bulgaria-si-a-explodat-langa-granita-anunta-premierul-bulgar-2320064"
+          "https://hotnews.ro/bulgaria-a-anuntat-primele-informatii-despre-drona-care-a-intrat-din-romania-si-a-explodat-pe-teritoriul-sau-de-unde-provine-2320192"
         ],
         "merged_titles": [
-          "O dronă a intrat din România în Bulgaria și a explodat lângă graniță, anunță premierul bulgar / Reacție la București"
+          "Bulgaria a anunțat primele informații despre drona care a intrat din România și a explodat pe teritoriul său. De unde provine"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
         "incident_object": "drone",
         "incident_action": "impact",
-        "incident_actor": "ukraine",
-        "incident_target": "military",
-        "classification_confidence": 0.98
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
       }
     },
     {

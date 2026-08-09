@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-08T18:35:34.046503+00:00",
+  "generated_utc": "2026-08-09T01:12:52.915621+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 10,
-    "local_event_count": 10,
+    "incident_count": 11,
+    "local_event_count": 11,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 9,
+      "incident_count": 10,
       "category_counts": {
-        "drone": 9
+        "drone": 10
       },
       "source_files": {
-        "local_events.geojson": 9
+        "local_events.geojson": 10
       }
     },
     "Slovakia": {
@@ -121,9 +121,9 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
-        "classification_confidence": 0.76,
+        "classification_confidence": 0.92,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "f2678c1ede15c0c4f30b8ae5"
+        "fingerprint_hash": "ee5dd4ccbafaa0652c6636ac"
       },
       {
         "id": "9a21c3a32c58c8238953",
@@ -166,6 +166,27 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "a2e47420e4b7c89c51cf7a27"
+      },
+      {
+        "id": "8a7f6d1a9bea545dff84",
+        "date": "2026-08-08",
+        "time": "2026-08-08T15:04:51+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Drona prăbuşită în Bulgaria este un aparat de zbor „utilizat pe scară largă” de armata ucraineană",
+        "source": "Economica.net",
+        "url": "https://www.economica.net/drona-prabusita-in-bulgaria-este-un-aparat-de-zbor-utilizat-pe-scara-larga-de-armata-ucraineana_966506.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "5915ec308144b498de1c6066"
       },
       {
         "id": "11bcd06d4522416007fd",

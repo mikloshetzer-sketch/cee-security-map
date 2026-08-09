@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-09T01:12:52.915621+00:00",
+  "generated_utc": "2026-08-09T06:52:24.408592+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 11,
-    "local_event_count": 11,
+    "incident_count": 7,
+    "local_event_count": 7,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 10,
+      "incident_count": 6,
       "category_counts": {
-        "drone": 10
+        "drone": 6
       },
       "source_files": {
-        "local_events.geojson": 10
+        "local_events.geojson": 6
       }
     },
     "Slovakia": {
@@ -105,27 +105,6 @@
         "fingerprint_hash": "5add760ddb0b58d195c41eba"
       },
       {
-        "id": "d26343ca00f73c6f48e0",
-        "date": "2026-08-08",
-        "time": "2026-08-08T16:07:18+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Bulgaria a anunțat primele informații despre drona care a intrat din România și a explodat pe teritoriul său. De unde provine",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/bulgaria-a-anuntat-primele-informatii-despre-drona-care-a-intrat-din-romania-si-a-explodat-pe-teritoriul-sau-de-unde-provine-2320192",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "ee5dd4ccbafaa0652c6636ac"
-      },
-      {
         "id": "9a21c3a32c58c8238953",
         "date": "2026-08-08",
         "time": "2026-08-08T15:39:40+00:00",
@@ -168,48 +147,6 @@
         "fingerprint_hash": "a2e47420e4b7c89c51cf7a27"
       },
       {
-        "id": "8a7f6d1a9bea545dff84",
-        "date": "2026-08-08",
-        "time": "2026-08-08T15:04:51+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Drona prăbuşită în Bulgaria este un aparat de zbor „utilizat pe scară largă” de armata ucraineană",
-        "source": "Economica.net",
-        "url": "https://www.economica.net/drona-prabusita-in-bulgaria-este-un-aparat-de-zbor-utilizat-pe-scara-larga-de-armata-ucraineana_966506.html",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "5915ec308144b498de1c6066"
-      },
-      {
-        "id": "11bcd06d4522416007fd",
-        "date": "2026-08-08",
-        "time": "2026-08-08T13:54:42+00:00",
-        "category": "drone",
-        "severity": "medium",
-        "title": "Radu Miruță: „Am găsit cea mai eficientă metodă pentru doborârea dronelor rusești. Funcționează cu succes”",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/politica/radu-miruta-am-gasit-cea-mai-eficienta-metoda-pentru-doborarea-dronelor-rusesti-functioneaza-cu-succes-3898387",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "7b9b4c222e533f2c9130c49c"
-      },
-      {
         "id": "709090c0b28933c494de",
         "date": "2026-08-08",
         "time": "2026-08-08T13:50:20+00:00",
@@ -229,27 +166,6 @@
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
         "fingerprint_hash": "bb27d973d94c3733bec62237"
-      },
-      {
-        "id": "38a851cd87328472d39f",
-        "date": "2026-08-08",
-        "time": "2026-08-08T13:09:53+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Incident grav de securitate: O dronă a intrat din România în Bulgaria şi a explodat la 100 de metri de graniţă. Reacția MApN",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/incident-grav-de-securitate-o-drona-a-intrat-din-romania-in-bulgaria-si-a-explodat-la-100-de-metri-de-granita-3898321",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "50ccd5596d28e14262645d98"
       },
       {
         "id": "e2a53bdb9b409d9db2d7",

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-09T06:52:24.408592+00:00",
+  "generated_utc": "2026-08-09T12:43:53.252922+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 7,
-    "local_event_count": 7,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 6,
+      "incident_count": 4,
       "category_counts": {
-        "drone": 6
+        "drone": 3,
+        "infrastructure_disruption": 1
       },
       "source_files": {
-        "local_events.geojson": 6
+        "local_events.geojson": 4
       }
     },
     "Slovakia": {
@@ -63,14 +64,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "9bc0e2691d5a9ccf7316",
-        "date": "2026-08-08",
-        "time": "2026-08-08T18:07:29+00:00",
+        "id": "c73f9fe6924cffa4b591",
+        "date": "2026-08-09",
+        "time": "2026-08-09T11:30:04+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Explicațiile Ucrainei pentru incidentul cu dronă de la granița Bulgariei cu România",
+        "title": "O nouă ipoteză privind drona care a explodat în Bulgaria, lansată de un fost ministru al Apărării",
         "source": "HotNews",
-        "url": "https://hotnews.ro/explicatiile-ucrainei-pentru-incidentul-de-la-granita-bulgariei-cu-romania-ambasadoarea-kievului-convocata-de-sofia-2320237",
+        "url": "https://hotnews.ro/o-noua-ipoteza-privind-drona-care-a-explodat-in-bulgaria-lansata-de-un-fost-ministru-al-apararii-2320453",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -79,51 +80,30 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
+        "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "db3c1782b40adcfd42bd135a"
+        "fingerprint_hash": "a1f0290a90902126e171b360"
       },
       {
-        "id": "9cc6a5dd7e42cc09bade",
-        "date": "2026-08-08",
-        "time": "2026-08-08T16:24:45+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Drona care a explodat în Bulgaria, aproape de România, a fost identificată. Ce arată analiza preliminară a epavei",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/drona-care-a-explodat-in-bulgaria-aproape-de-romania-a-fost-identificata-ce-arata-analiza-preliminara-a-epavei-3898517",
+        "id": "3deed52737c28fac7dda",
+        "date": "2026-08-09",
+        "time": "2026-08-09T07:12:29+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Primele efecte ale operațiunii de pe Dunăre: Apa a crescut cu 8 cm peste prognoză. Ce urmează",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/primele-efecte-ale-operatiunii-de-pe-dunare-unitatea-2-functioneaza-normal-apa-a-crescut-cu-8-centimetri-peste-prognoza-2320347",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
         "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "5add760ddb0b58d195c41eba"
-      },
-      {
-        "id": "9a21c3a32c58c8238953",
-        "date": "2026-08-08",
-        "time": "2026-08-08T15:39:40+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Prima reacție a MAE după ce Bulgaria a anunţat că o dronă venind dinspre România a explodat în spaţiul său aerian",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/prima-reactie-a-mae-dupa-ce-bulgaria-a-anuntat-ca-o-drona-venind-dinspre-romania-a-explodat-in-spatiul-sau-aerian-3898555",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "83d15abe0121d76654c29eef"
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "5e6b5a84308f79bee0cc3716"
       },
       {
         "id": "f55a2aec9ac5f5cd8afe",
@@ -145,27 +125,6 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "a2e47420e4b7c89c51cf7a27"
-      },
-      {
-        "id": "709090c0b28933c494de",
-        "date": "2026-08-08",
-        "time": "2026-08-08T13:50:20+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Piloții români care au doborât drone, lăudați de colegii din NATO. Radu Miruță: „Sunt niște artiști”. Ce i-a spus un comandant britanic",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/pilotii-romani-care-au-doborat-drone-laudati-de-colegii-din-nato-radu-miruta-sunt-niste-artisti-ce-i-a-spus-un-comandant-britanic-3898449",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "bb27d973d94c3733bec62237"
       },
       {
         "id": "e2a53bdb9b409d9db2d7",

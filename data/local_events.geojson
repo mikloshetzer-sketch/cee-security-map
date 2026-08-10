@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-10T07:26:48.294829+00:00",
+  "generated_utc": "2026-08-10T12:59:01.318362+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,58 +14,69 @@
         ]
       },
       "properties": {
-        "id": "a069c26215593027c993",
-        "title": "Oana Gheorghiu, atac la PSD: „Se comportă precum copiii din curtea școlii care fac bullying”. Ce spune despre alegerile anticipate",
-        "summary": "Vicepremierul Oana Gheorghiu a criticat dur, în direct la Digi24, opoziția PSD față de legea salarizării și susține că partidul ar trece „linii roșii” din interese politice. În același timp, oficialul spune că alegerile anticipate ar putea deveni ultima soluție dacă actualul Parlament nu va reuși să formeze și să voteze un nou Guvern.",
+        "id": "fb556f51a086a4bc0a52",
+        "title": "Ce mesaj i-a transmis Sofia ambasadoarei Ucrainei, după ce o dronă a intrat în Bulgaria și s-a prăbușit lângă România",
+        "summary": "Şefa diplomaţiei bulgare Velislava Petrova s-a întâlnit luni, la sediul Ministerului de Externe de la Sofia, cu ambasadoarea Ucrainei în Bulgaria, Olesia Ilaşciuk, după ce sâmbătă o dronă a pătruns în spaţiul aerian al Bulgariei, în apropiere de graniţa cu România.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/politica/oana-gheorghiu-atac-la-psd-se-comporta-precum-copiii-din-curtea-scolii-care-fac-bullying-ce-spune-despre-alegerile-anticipate-3899493",
-        "published": "Sun, 09 Aug 2026 23:13:39 +0300",
+        "url": "https://www.digi24.ro/stiri/externe/ce-mesaj-i-a-transmis-sofia-ambasadoarei-ucrainei-dupa-ce-o-drona-a-intrat-in-bulgaria-si-s-a-prabusit-langa-romania-3900461",
+        "published": "Mon, 10 Aug 2026 15:35:22 +0300",
         "country": "Romania",
         "city": null,
-        "family": "ground",
-        "subcategory": "explosive_attack",
-        "subtype": "explosive_attack",
-        "object": "explosive_device",
-        "action": "attacked",
-        "actor": "unknown",
-        "target": "government",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "ukraine",
+        "target": "military",
         "context": [],
         "consequences": [],
         "severity": "high",
-        "confidence": 0.84,
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "GROUND.EXPLOSIVE.ATTACK",
+        "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
           "country": "Romania",
-          "family": "ground",
-          "subcategory": "explosive_attack",
-          "subtype": "explosive_attack",
-          "object": "explosive_device",
-          "action": "attacked",
-          "actor": "unknown",
-          "target": "government",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "ukraine",
+          "target": "military",
           "place": "Romania",
-          "event_date": "Sun, 09 Au",
-          "hash": "ce3a2148aebe8969776e3a3c"
+          "event_date": "Mon, 10 Au",
+          "hash": "caa25c95be39f6723002a58f"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "explosive_device",
-            "mine"
+            "drone",
+            "dronă",
+            "drona"
           ],
           "actions": [
-            "attacked",
-            "atacat"
+            "entered",
+            "pătruns",
+            "a intrat",
+            "impact",
+            "căzut",
+            "s-a prăbușit",
+            "exploded",
+            "a explodat"
           ],
           "targets": [
-            "government",
-            "parlament"
+            "military",
+            "radar"
           ],
-          "actors": [],
+          "actors": [
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -78,22 +89,11 @@
           "object_match": 0.2,
           "action_match": 0.2,
           "target_match": 0.08,
+          "actor_match": 0.06,
           "country_match": 0.1,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.29,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
           {
             "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
@@ -101,24 +101,104 @@
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 2.42,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
             "matched": false,
             "missing": [
-              "objects:all:drone"
+              "objects:all:missile"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:sabotaged"
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
             ],
             "matched_context": []
           },
@@ -137,254 +217,6 @@
             "matched_context": []
           },
           {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TERRORISM.ATTACK",
-            "family": "terrorism",
-            "subcategory": "attack",
-            "subtype": "terrorist_attack",
-            "severity": "critical",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "PUBLIC.ORDER.VIOLENCE",
-            "family": "public_order",
-            "subcategory": "violent_protest",
-            "subtype": "violent_public_disorder",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 3613,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Vicepremierul Oana Gheorghiu a criticat dur, în direct la Digi24, opoziția PSD față de legea salarizării și susține că partidul ar trece „linii roșii” din interese politice. În același timp, oficialul spune că alegerile anticipate ar putea deveni ultima soluție dacă actualul Parlament nu va reuși să formeze și să voteze un nou Guvern. Vicepremierul Oana Gheorghiu a atacat poziția PSD față de legea salarizării și acuză partidul că transformă negocierile politice într-un conflict care depășește limitele normale. Gheorghiu susține că proiectul de lege urmărește să introducă principii unitare în sistemul de salarizare și afirmă că angajații nu vor pierde venituri. „Legea asta vine să traseze o coloană vertebrală, astfel încât toată lumea, la muncă egală, să primească un salariu egal și, evident, se acordă niște sporuri în acele meserii care sunt mai complicate. Nu există reducere de venituri. (...) Nimeni nu va pierde niciun ban”, a declarat Oana Gheorghiu. Vicepremierul a ironizat protest",
-        "place": "Romania",
-        "time": "Sun, 09 Aug 2026 23:13:39 +0300",
-        "category": "ground",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/actualitate/politica/oana-gheorghiu-atac-la-psd-se-comporta-precum-copiii-din-curtea-scolii-care-fac-bullying-ce-spune-despre-alegerile-anticipate-3899493"
-        ],
-        "merged_titles": [
-          "Oana Gheorghiu, atac la PSD: „Se comportă precum copiii din curtea școlii care fac bullying”. Ce spune despre alegerile anticipate"
-        ],
-        "incident_family": "ground",
-        "incident_subcategory": "explosive_attack",
-        "incident_subtype": "explosive_attack",
-        "incident_object": "explosive_device",
-        "incident_action": "attacked",
-        "incident_actor": "unknown",
-        "incident_target": "government",
-        "classification_confidence": 0.84
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.057,
-          44.322
-        ]
-      },
-      "properties": {
-        "id": "5033e70e895e8787ddb9",
-        "title": "„Pericolul nu a trecut” la Cernavodă. Avertismentul  coordonatorului intervenției de pe Dunăre",
-        "summary": "Cei 8 cm „câștigați” înseamnă că am reușit să redirecționăm spre Cernavodă aproximativ 50 de metri cubi de apă pe secundă, însă pericolul nu a trecut, întrucât în orice moment barjele pot fi dislocate din poziția actuală și se poate diminua, sau chiar anula, redirecționarea debitului suplimentar spre centrala nucleară, a transmis, duminică, secretarul de &#8230;",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/pericolul-nu-a-trecut-la-cernavoda-coordonatorul-interventiei-de-la-bala-curentii-dunarii-sunt-puternici-si-pot-fi-foarte-imprevizibili-2320582",
-        "published": "Sun, 09 Aug 2026 17:32:21 +0000",
-        "country": "Romania",
-        "city": "Cernavodă",
-        "family": "energy",
-        "subcategory": "power_grid",
-        "subtype": "energy_service_outage",
-        "object": "energy_asset",
-        "action": "disrupted",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.84,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "energy",
-          "subcategory": "power_grid",
-          "subtype": "energy_service_outage",
-          "object": "energy_asset",
-          "action": "disrupted",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Cernavodă",
-          "event_date": "Sun, 09 Au",
-          "hash": "5e6b5a84308f79bee0cc3716"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "energy_asset",
-            "centrala"
-          ],
-          "actions": [
-            "disrupted",
-            "oprit"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.FIRE",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_fire",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:burned"
-            ],
-            "matched_context": []
-          },
-          {
             "rule_id": "ENERGY.ASSET.EXPLOSION",
             "family": "energy",
             "subcategory": "oil_gas",
@@ -394,114 +226,40 @@
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:exploded"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
+              "objects:all:energy_asset"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 2845,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Cei 8 cm „câștigați” înseamnă că am reușit să redirecționăm spre Cernavodă aproximativ 50 de metri cubi de apă pe secundă, însă pericolul nu a trecut, întrucât în orice moment barjele pot fi dislocate din poziția actuală și se poate diminua, sau chiar anula, redirecționarea debitului suplimentar spre centrala nucleară, a transmis, duminică, secretarul de stat în Ministerul Transporturilor și Infrastructurii Ionel Scrioșteanu, pe pagina sa de Facebook . „Mă bucur mult că eforturile noastre din ultima săptămână pentru intervenţia din zona Bala au avut rezultate bune şi reactorul 2 de la Centrala nucleară Cernavodă rămâne în funcţiune. Practic, am reuşit să inversăm trendul de scădere cu unul de uşoară creştere. Conform estimărilor, cei 8 cm «câştigaţi» înseamnă că am reuşit să redirecţionăm spre Cernavodă aproximativ 50 metri cubi de apă pe secundă”, a scris Scrioșteanu. El apreciază că a fost cea mai dificilă operaţiune la care a participat de când este în funcţie „Coordonarea intervenț",
-        "place": "Cernavodă",
-        "time": "Sun, 09 Aug 2026 17:32:21 +0000",
-        "category": "energy",
+        "article_text_chars": 2646,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Şefa diplomaţiei bulgare Velislava Petrova s-a întâlnit luni, la sediul Ministerului de Externe de la Sofia, cu ambasadoarea Ucrainei în Bulgaria, Olesia Ilaşciuk, după ce sâmbătă o dronă a pătruns în spaţiul aerian al Bulgariei, în apropiere de graniţa cu România. O analiză preliminară a indicat că aeronava fără pilot era cel mai probabil o dronă de tip Maya folosită de forţele armate ale Ucrainei, informează BTA, potrivit Agerpres. În cadrul întrevederii, Velislava Petrova a comunicat îngrijorarea serioasă a Bulgariei şi a spus că orice intruziune neautorizată în spaţiul său aerian este inacceptabilă. Bulgaria a cerut Ucrainei să furnizeze toate informaţiile disponibile care ar putea ajuta la stabilirea circumstanţelor complete ale incidentului. În opinia exprimată de ministrul bulgar de externe, este esenţial să se adopte măsuri necesare pentru a preveni incidente similare în viitor. De asemenea, a fost menţionată necesitatea existenţei unor canale de comunicare directe şi eficiente",
+        "place": "Romania",
+        "time": "Mon, 10 Aug 2026 15:35:22 +0300",
+        "category": "air",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "HotNews"
+          "Digi24"
         ],
         "urls": [
-          "https://hotnews.ro/pericolul-nu-a-trecut-la-cernavoda-coordonatorul-interventiei-de-la-bala-curentii-dunarii-sunt-puternici-si-pot-fi-foarte-imprevizibili-2320582"
+          "https://www.digi24.ro/stiri/externe/ce-mesaj-i-a-transmis-sofia-ambasadoarei-ucrainei-dupa-ce-o-drona-a-intrat-in-bulgaria-si-s-a-prabusit-langa-romania-3900461"
         ],
         "merged_titles": [
-          "„Pericolul nu a trecut” la Cernavodă. Avertismentul  coordonatorului intervenției de pe Dunăre"
+          "Ce mesaj i-a transmis Sofia ambasadoarei Ucrainei, după ce o dronă a intrat în Bulgaria și s-a prăbușit lângă România"
         ],
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "incident_object": "energy_asset",
-        "incident_action": "disrupted",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.84
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "ukraine",
+        "incident_target": "military",
+        "classification_confidence": 0.9
       }
     },
     {

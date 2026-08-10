@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-10T01:15:44.009790+00:00",
+  "generated_utc": "2026-08-10T07:26:48.294829+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -227,7 +227,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 3613,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Vicepremierul Oana Gheorghiu a criticat dur, în direct la Digi24, opoziția PSD față de legea salarizării și susține că partidul ar trece „linii roșii” din interese politice. În același timp, oficialul spune că alegerile anticipate ar putea deveni ultima soluție dacă actualul Parlament nu va reuși să formeze și să voteze un nou Guvern. Vicepremierul Oana Gheorghiu a atacat poziția PSD față de legea salarizării și acuză partidul că transformă negocierile politice într-un conflict care depășește limitele normale. Gheorghiu susține că proiectul de lege urmărește să introducă principii unitare în sistemul de salarizare și afirmă că angajații nu vor pierde venituri. „Legea asta vine să traseze o coloană vertebrală, astfel încât toată lumea, la muncă egală, să primească un salariu egal și, evident, se acordă niște sporuri în acele meserii care sunt mai complicate. Nu există reducere de venituri. (...) Nimeni nu va pierde niciun ban”, a declarat Oana Gheorghiu. Vicepremierul a ironizat protest",
         "place": "Romania",
         "time": "Sun, 09 Aug 2026 23:13:39 +0300",
@@ -253,268 +253,6 @@
         "incident_actor": "unknown",
         "incident_target": "government",
         "classification_confidence": 0.84
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9668,
-          45.9432
-        ]
-      },
-      "properties": {
-        "id": "b277f86b5150cbcfcfea",
-        "title": "Ipoteza unui sabotor pe teritoriul României în cazul dronei prăbușite în Bulgaria, luată în calcul. Ce scrie presa bulgară",
-        "summary": "Sâmbătă dimineaţa, puţin după ora 8:00, o dronă a pătruns în spaţiul aerian bulgar dinspre România, în apropierea vechiului punct de control Kardam din Dobrici, şi s-a dezintegrat într-un câmp de floarea-soarelui, la aproximativ o sută de metri în interiorul ţării şi la câţiva paşi de o staţie de compresoare a gazoductului Transbalcanic. Nimeni nu a fost rănit şi nicio clădire nu a fost afectată. O dronă inofensivă pe care nimeni nu a văzut-o venind este cel mai ieftin avertisment pe care această ţară îl va primi vreodată, scrie Novinte.com într-un comentariu.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ipoteza-unui-sabotor-pe-teritoriul-romaniei-in-cazul-dronei-prabusite-in-bulgaria-luata-in-calcul-ce-scrie-presa-bulgara-3899141",
-        "published": "Sun, 09 Aug 2026 16:27:19 +0300",
-        "country": "Romania",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "exploded",
-        "actor": "russia",
-        "target": "military",
-        "context": [],
-        "consequences": [
-          "injury"
-        ],
-        "severity": "high",
-        "confidence": 0.98,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "exploded",
-          "actor": "russia",
-          "target": "military",
-          "place": "Romania",
-          "event_date": "Sun, 09 Au",
-          "hash": "15aac479c5a45abbf223cf04"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "shahed",
-            "dronă",
-            "drona"
-          ],
-          "actions": [
-            "detected",
-            "detectat",
-            "entered",
-            "pătruns",
-            "intercepted",
-            "interceptat",
-            "shot_down",
-            "doborât",
-            "exploded",
-            "a explodat",
-            "jammed",
-            "bruiaj"
-          ],
-          "targets": [
-            "military",
-            "radar"
-          ],
-          "actors": [
-            "russia",
-            "rusia",
-            "rusiei",
-            "nato"
-          ],
-          "consequences": [
-            "injury",
-            "rănit"
-          ],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "consequence_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.GPS.INTERFERENCE",
-            "family": "cyber",
-            "subcategory": "gps_interference",
-            "subtype": "gps_jamming_or_spoofing",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.13,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.2,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 6626,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Sâmbătă dimineaţa, puţin după ora 8:00, o dronă a pătruns în spaţiul aerian bulgar dinspre România, în apropierea vechiului punct de control Kardam din Dobrici, şi s-a dezintegrat într-un câmp de floarea-soarelui, la aproximativ o sută de metri în interiorul ţării şi la câţiva paşi de o staţie de compresoare a gazoductului Transbalcanic. Nimeni nu a fost rănit şi nicio clădire nu a fost afectată. O dronă inofensivă pe care nimeni nu a văzut-o venind este cel mai ieftin avertisment pe care această ţară îl va primi vreodată, scrie Novinte.com într-un comentariu. Mai important decât naţionalitatea dronei este faptul că nimeni nu a detectat-o. Nici radarul bulgar, nici cel român, şi nici o alertă din partea Centrului de Operaţiuni Aeriene Combinate al NATO de la Torrejon, care ar trebui să supravegheze tocmai acest spaţiu aerian. Prim-ministrul Radev a recunoscut acest lucru şi a admis, în acelaşi timp, că achiziţionarea unui radar tridimensional modern este blocată „de ani de zile”. Şeful",
-        "place": "Romania",
-        "time": "Sun, 09 Aug 2026 16:27:19 +0300",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/externe/ipoteza-unui-sabotor-pe-teritoriul-romaniei-in-cazul-dronei-prabusite-in-bulgaria-luata-in-calcul-ce-scrie-presa-bulgara-3899141"
-        ],
-        "merged_titles": [
-          "Ipoteza unui sabotor pe teritoriul României în cazul dronei prăbușite în Bulgaria, luată în calcul. Ce scrie presa bulgară"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "exploded",
-        "incident_actor": "russia",
-        "incident_target": "military",
-        "classification_confidence": 0.98
       }
     },
     {
@@ -738,7 +476,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 2845,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Cei 8 cm „câștigați” înseamnă că am reușit să redirecționăm spre Cernavodă aproximativ 50 de metri cubi de apă pe secundă, însă pericolul nu a trecut, întrucât în orice moment barjele pot fi dislocate din poziția actuală și se poate diminua, sau chiar anula, redirecționarea debitului suplimentar spre centrala nucleară, a transmis, duminică, secretarul de stat în Ministerul Transporturilor și Infrastructurii Ionel Scrioșteanu, pe pagina sa de Facebook . „Mă bucur mult că eforturile noastre din ultima săptămână pentru intervenţia din zona Bala au avut rezultate bune şi reactorul 2 de la Centrala nucleară Cernavodă rămâne în funcţiune. Practic, am reuşit să inversăm trendul de scădere cu unul de uşoară creştere. Conform estimărilor, cei 8 cm «câştigaţi» înseamnă că am reuşit să redirecţionăm spre Cernavodă aproximativ 50 metri cubi de apă pe secundă”, a scris Scrioșteanu. El apreciază că a fost cea mai dificilă operaţiune la care a participat de când este în funcţie „Coordonarea intervenț",
         "place": "Cernavodă",
         "time": "Sun, 09 Aug 2026 17:32:21 +0000",

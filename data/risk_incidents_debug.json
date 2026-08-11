@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-11T07:04:13.411856+00:00",
+  "generated_utc": "2026-08-11T12:57:30.536302+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,18 +15,18 @@
       "source_files": {}
     },
     "Hungary": {
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
+    },
+    "Romania": {
       "incident_count": 1,
       "category_counts": {
-        "cyber": 1
+        "drone": 1
       },
       "source_files": {
         "local_events.geojson": 1
       }
-    },
-    "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -60,30 +60,30 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
+    "Hungary": [],
+    "Romania": [
       {
-        "id": "d77b3a681660ca09999d",
+        "id": "00642b9b2f72594e8293",
         "date": "2026-08-11",
-        "time": "2026-08-11T05:44:00+00:00",
-        "category": "cyber",
+        "time": "2026-08-11T12:18:03+00:00",
+        "category": "drone",
         "severity": "high",
-        "title": "Kibertámadás a Kincstár ellen: a nyugdíj- és a családtámogatási rendszerekhez is hozzáférhettek a hackerek",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/uzlet/20260811/kibertamadas-a-kincstar-ellen-a-nyugdij-es-a-csaladtamogatasi-rendszerekhez-is-hozzaferhettek-a-hackerek-855422",
+        "title": "Oana Țoiu, despre reacția Rusiei în cazul Podului Giurgiulești: „E o nemulțumire față de creșterea influenței regionale a României”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/oana-toiu-despre-reactia-rusiei-in-cazul-podului-giurgiulesti-e-o-nemultumire-fata-de-cresterea-influentei-regionale-a-romaniei-3901919",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "cyber",
-        "incident_subcategory": "intrusion",
-        "incident_subtype": "cyber_intrusion",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "CYBER.INTRUSION",
-        "fingerprint_hash": "9a08f449cc5a897edb0c87a2"
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "3029a56cdf5e1e1bf37c28f3"
       }
     ],
-    "Romania": [],
     "Slovakia": [],
     "Poland": [
       {

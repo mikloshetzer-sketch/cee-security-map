@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-11T01:15:12.272791+00:00",
+  "generated_utc": "2026-08-11T07:04:13.411856+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,18 +15,18 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Romania": {
       "incident_count": 1,
       "category_counts": {
-        "drone": 1
+        "cyber": 1
       },
       "source_files": {
         "local_events.geojson": 1
       }
+    },
+    "Romania": {
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -60,30 +60,30 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
-    "Romania": [
+    "Hungary": [
       {
-        "id": "fb556f51a086a4bc0a52",
-        "date": "2026-08-10",
-        "time": "2026-08-10T12:35:22+00:00",
-        "category": "drone",
+        "id": "d77b3a681660ca09999d",
+        "date": "2026-08-11",
+        "time": "2026-08-11T05:44:00+00:00",
+        "category": "cyber",
         "severity": "high",
-        "title": "Ce mesaj i-a transmis Sofia ambasadoarei Ucrainei, după ce o dronă a intrat în Bulgaria și s-a prăbușit lângă România",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ce-mesaj-i-a-transmis-sofia-ambasadoarei-ucrainei-dupa-ce-o-drona-a-intrat-in-bulgaria-si-s-a-prabusit-langa-romania-3900461",
+        "title": "Kibertámadás a Kincstár ellen: a nyugdíj- és a családtámogatási rendszerekhez is hozzáférhettek a hackerek",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/uzlet/20260811/kibertamadas-a-kincstar-ellen-a-nyugdij-es-a-csaladtamogatasi-rendszerekhez-is-hozzaferhettek-a-hackerek-855422",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "caa25c95be39f6723002a58f"
+        "incident_family": "cyber",
+        "incident_subcategory": "intrusion",
+        "incident_subtype": "cyber_intrusion",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "CYBER.INTRUSION",
+        "fingerprint_hash": "9a08f449cc5a897edb0c87a2"
       }
     ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [
       {

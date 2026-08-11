@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-11T01:15:05.325031+00:00",
+  "generated_utc": "2026-08-11T07:04:06.393506+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,77 +9,66 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9668,
-          45.9432
+          19.5033,
+          47.1625
         ]
       },
       "properties": {
-        "id": "fb556f51a086a4bc0a52",
-        "title": "Ce mesaj i-a transmis Sofia ambasadoarei Ucrainei, după ce o dronă a intrat în Bulgaria și s-a prăbușit lângă România",
-        "summary": "Şefa diplomaţiei bulgare Velislava Petrova s-a întâlnit luni, la sediul Ministerului de Externe de la Sofia, cu ambasadoarea Ucrainei în Bulgaria, Olesia Ilaşciuk, după ce sâmbătă o dronă a pătruns în spaţiul aerian al Bulgariei, în apropiere de graniţa cu România.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ce-mesaj-i-a-transmis-sofia-ambasadoarei-ucrainei-dupa-ce-o-drona-a-intrat-in-bulgaria-si-s-a-prabusit-langa-romania-3900461",
-        "published": "Mon, 10 Aug 2026 15:35:22 +0300",
-        "country": "Romania",
+        "id": "d77b3a681660ca09999d",
+        "title": "Kibertámadás a Kincstár ellen: a nyugdíj- és a családtámogatási rendszerekhez is hozzáférhettek a hackerek",
+        "summary": "<p>Súlyos kibertámadás érte a Magyar Államkincstár (MÁK) informatikai rendszerét, amelynek során a hackerek a mezőgazdasági támogatások mellett a nyugdíj-, a családtámogatási és az önkormányzati számlavezetési adatokhoz is teljes hozzáférést szereztek - számolt be a <a href=\"https://nepszava.hu/3330659_mak-kibertamadas-oroszok-algirek-szerver-zsarolo-virus\" rel=\"noopener\" target=\"_blank\">Népszava</a>.</p>",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/uzlet/20260811/kibertamadas-a-kincstar-ellen-a-nyugdij-es-a-csaladtamogatasi-rendszerekhez-is-hozzaferhettek-a-hackerek-855422",
+        "published": "Tue, 11 Aug 2026 07:44:00 +0200",
+        "country": "Hungary",
         "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
-        "actor": "ukraine",
-        "target": "military",
+        "family": "cyber",
+        "subcategory": "intrusion",
+        "subtype": "cyber_intrusion",
+        "object": "cyber_system",
+        "action": "compromised",
+        "actor": "russia",
+        "target": "unknown",
         "context": [],
         "consequences": [],
         "severity": "high",
-        "confidence": 0.9,
+        "confidence": 0.82,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "CYBER.INTRUSION",
         "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
-          "actor": "ukraine",
-          "target": "military",
-          "place": "Romania",
-          "event_date": "Mon, 10 Au",
-          "hash": "caa25c95be39f6723002a58f"
+          "country": "Hungary",
+          "family": "cyber",
+          "subcategory": "intrusion",
+          "subtype": "cyber_intrusion",
+          "object": "cyber_system",
+          "action": "compromised",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Hungary",
+          "event_date": "Tue, 11 Au",
+          "hash": "9a08f449cc5a897edb0c87a2"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone",
-            "dronă",
-            "drona"
+            "cyber_system",
+            "hálózat"
           ],
           "actions": [
-            "entered",
-            "pătruns",
-            "a intrat",
-            "impact",
-            "căzut",
-            "s-a prăbușit",
-            "exploded",
-            "a explodat"
+            "compromised",
+            "feltörték"
           ],
-          "targets": [
-            "military",
-            "radar"
-          ],
+          "targets": [],
           "actors": [
-            "ukraine",
-            "ucraina",
-            "nato"
+            "russia",
+            "orosz"
           ],
           "consequences": [],
           "extra_context": [
-            "feed_country=Romania",
+            "feed_country=Hungary",
             "geocode_quality=country_fallback"
           ]
         },
@@ -88,30 +77,17 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
           "actor_match": 0.06,
           "country_match": 0.1,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
             "severity": "high",
-            "priority": 0,
-            "score": 2.42,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
             "priority": 0,
             "score": 2.26,
             "matched": true,
@@ -119,30 +95,16 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.2,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
             "severity": "medium",
             "priority": 0,
-            "score": 1.2,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:military_aircraft"
+              "actions:all:disrupted"
             ],
             "matched_context": []
           },
@@ -153,10 +115,26 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
             ],
             "matched_context": []
           },
@@ -167,9 +145,10 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:intercepted"
             ],
             "matched_context": []
@@ -181,85 +160,104 @@
             "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:shot_down"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:explosive_device"
+              "objects:all:drone",
+              "actions:any:attacked,exploded,impact"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:ship"
+              "objects:all:missile",
+              "actions:all:detected"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:energy_asset"
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 2646,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Şefa diplomaţiei bulgare Velislava Petrova s-a întâlnit luni, la sediul Ministerului de Externe de la Sofia, cu ambasadoarea Ucrainei în Bulgaria, Olesia Ilaşciuk, după ce sâmbătă o dronă a pătruns în spaţiul aerian al Bulgariei, în apropiere de graniţa cu România. O analiză preliminară a indicat că aeronava fără pilot era cel mai probabil o dronă de tip Maya folosită de forţele armate ale Ucrainei, informează BTA, potrivit Agerpres. În cadrul întrevederii, Velislava Petrova a comunicat îngrijorarea serioasă a Bulgariei şi a spus că orice intruziune neautorizată în spaţiul său aerian este inacceptabilă. Bulgaria a cerut Ucrainei să furnizeze toate informaţiile disponibile care ar putea ajuta la stabilirea circumstanţelor complete ale incidentului. În opinia exprimată de ministrul bulgar de externe, este esenţial să se adopte măsuri necesare pentru a preveni incidente similare în viitor. De asemenea, a fost menţionată necesitatea existenţei unor canale de comunicare directe şi eficiente",
-        "place": "Romania",
-        "time": "Mon, 10 Aug 2026 15:35:22 +0300",
-        "category": "air",
+        "article_text_chars": 4376,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Az Állami Számvevőszék már 2019-ben figyelmeztetett az Országos Nyugdíjbiztosítási Főigazgatóságtól átvett informatikai hálózat adatvédelmi kockázataira. A lap azt írja, a kockázatokat fokozza, hogy az érintett, kritikus fontosságú szoftverek egy részét külső partner, a New Age Software (NAS) Kft. fejleszti és tartja karban, amellyel a Kincstár legutóbb is százmilliós nagyságrendű szerződést kötött. A probléma a lap szerint túlmutat a nyugdíj- és családtámogatási rendszeren, mivel a hackerek a megszerzett jogosultságokkal az önkormányzati hálózatokhoz is eljuthattak. A kincstári számlavezetési modell bevezetése óta az önkormányzatok forrásainak túlnyomó részét a Kincstár kezeli, ami több százmilliárd forintos állományt jelent. A Népszava azt írta, a támadás menete rávilágított az állami informatikai védelem hiányosságaira. A behatolók egy ismert, ám az üzemeltetők által nem frissített szoftveres sebezhetőséget használtak ki. Miután egy webszerveren keresztül bejutottak, könnyedén megsz",
+        "place": "Hungary",
+        "time": "Tue, 11 Aug 2026 07:44:00 +0200",
+        "category": "cyber",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Digi24"
+          "Portfolio"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/externe/ce-mesaj-i-a-transmis-sofia-ambasadoarei-ucrainei-dupa-ce-o-drona-a-intrat-in-bulgaria-si-s-a-prabusit-langa-romania-3900461"
+          "https://www.portfolio.hu/uzlet/20260811/kibertamadas-a-kincstar-ellen-a-nyugdij-es-a-csaladtamogatasi-rendszerekhez-is-hozzaferhettek-a-hackerek-855422"
         ],
         "merged_titles": [
-          "Ce mesaj i-a transmis Sofia ambasadoarei Ucrainei, după ce o dronă a intrat în Bulgaria și s-a prăbușit lângă România"
+          "Kibertámadás a Kincstár ellen: a nyugdíj- és a családtámogatási rendszerekhez is hozzáférhettek a hackerek"
         ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
-        "incident_actor": "ukraine",
-        "incident_target": "military",
-        "classification_confidence": 0.9
+        "incident_family": "cyber",
+        "incident_subcategory": "intrusion",
+        "incident_subtype": "cyber_intrusion",
+        "incident_object": "cyber_system",
+        "incident_action": "compromised",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
       }
     },
     {

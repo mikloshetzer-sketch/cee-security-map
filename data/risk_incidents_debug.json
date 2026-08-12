@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-12T07:22:24.054692+00:00",
+  "generated_utc": "2026-08-12T12:57:26.845867+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -62,25 +62,25 @@
     "Czech Republic": [],
     "Hungary": [
       {
-        "id": "65a38a6552282279ef5d",
+        "id": "cdbf12daf5ca4b046208",
         "date": "2026-08-12",
-        "time": "2026-08-12T06:42:00+00:00",
+        "time": "2026-08-12T10:32:00+00:00",
         "category": "infrastructure_disruption",
-        "severity": "high",
-        "title": "Erős számokat hozott a CoreWeave, felrobbant az árfolyam",
+        "severity": "medium",
+        "title": "A jelenlegi formájában fenntarthatatlan a Hungarikum Program, szünetelteti a minisztérium a kifizetéseket",
         "source": "Portfolio",
-        "url": "https://www.portfolio.hu/uzlet/20260812/eros-szamokat-hozott-a-coreweave-felrobbant-az-arfolyam-855676",
+        "url": "https://www.portfolio.hu/gazdasag/20260812/a-jelenlegi-formajaban-fenntarthatatlan-a-hungarikum-program-szunetelteti-a-miniszterium-a-kifizeteseket-855768",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "energy",
-        "incident_subcategory": "oil_gas",
-        "incident_subtype": "energy_asset_explosion",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "ENERGY.ASSET.EXPLOSION",
-        "fingerprint_hash": "2ef33798d715f166dcd41a43"
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "02a8f0ba8b5956417580a0f0"
       }
     ],
     "Romania": [],

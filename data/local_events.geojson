@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-12T07:22:18.847033+00:00",
+  "generated_utc": "2026-08-12T12:57:21.563044+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,60 +14,60 @@
         ]
       },
       "properties": {
-        "id": "65a38a6552282279ef5d",
-        "title": "Erős számokat hozott a CoreWeave, felrobbant az árfolyam",
-        "summary": "<p>A CoreWeave a kedden közzétett, a várakozásokat felülmúló második negyedéves gyorsjelentése után megemelte az egész évre vonatkozó tőkeberuházási és bevételi előrejelzését, miután a mesterséges intelligenciára épülő felhőszolgáltatásai iránti kereslet tovább erősödött. A vállalat részvényeinek árfolyama a zárás utáni kereskedésben több mint 15 százalékkal ugrott meg.</p>",
+        "id": "cdbf12daf5ca4b046208",
+        "title": "A jelenlegi formájában fenntarthatatlan a Hungarikum Program, szünetelteti a minisztérium a kifizetéseket",
+        "summary": "<p>Átfogó felülvizsgálaton esik át a Hungarikum program, mivel a szaktárca szerint a jelenlegi rendszer fenntarthatatlan. A cél az, hogy a cím odaítélése a jövőben mentes legyen a politikai befolyástól; a folyamatban lévő, több mint egymilliárd forintos keretösszegű idei pályázatok kifizetését pedig határozatlan időre felfüggesztették - jelentette a <a href=\"https://telex.hu/belfold/2026/08/12/hungarikum-ertektar-palyazat-felulvizsgalat-megszuntetes\" rel=\"noopener\" target=\"_blank\">Telex</a>.</p>",
         "source": "Portfolio",
-        "url": "https://www.portfolio.hu/uzlet/20260812/eros-szamokat-hozott-a-coreweave-felrobbant-az-arfolyam-855676",
-        "published": "Wed, 12 Aug 2026 08:42:00 +0200",
+        "url": "https://www.portfolio.hu/gazdasag/20260812/a-jelenlegi-formajaban-fenntarthatatlan-a-hungarikum-program-szunetelteti-a-miniszterium-a-kifizeteseket-855768",
+        "published": "Wed, 12 Aug 2026 12:32:00 +0200",
         "country": "Hungary",
         "city": null,
         "family": "energy",
-        "subcategory": "oil_gas",
-        "subtype": "energy_asset_explosion",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
         "object": "energy_asset",
-        "action": "exploded",
+        "action": "disrupted",
         "actor": "russia",
-        "target": "unknown",
+        "target": "government",
         "context": [],
         "consequences": [],
-        "severity": "high",
-        "confidence": 0.82,
+        "severity": "medium",
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "ENERGY.ASSET.EXPLOSION",
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
         "fingerprint": {
           "country": "Hungary",
           "family": "energy",
-          "subcategory": "oil_gas",
-          "subtype": "energy_asset_explosion",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
           "object": "energy_asset",
-          "action": "exploded",
+          "action": "disrupted",
           "actor": "russia",
-          "target": "unknown",
+          "target": "government",
           "place": "Hungary",
           "event_date": "Wed, 12 Au",
-          "hash": "2ef33798d715f166dcd41a43"
+          "hash": "02a8f0ba8b5956417580a0f0"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
-          "article_role": [
-            "történt"
-          ],
+          "article_role": [],
           "objects": [
             "energy_asset",
             "atomerőmű"
           ],
           "actions": [
-            "exploded",
-            "felrobbant"
+            "disrupted",
+            "felfüggesztették"
           ],
-          "targets": [],
+          "targets": [
+            "government",
+            "minisztérium"
+          ],
           "actors": [
             "russia",
-            "orosz",
-            "nato"
+            "orosz"
           ],
           "consequences": [],
           "extra_context": [
@@ -80,17 +80,18 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
+          "target_match": 0.08,
           "actor_match": 0.06,
           "country_match": 0.1,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
             "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
-            "severity": "high",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
             "priority": 0,
             "score": 2.26,
             "matched": true,
@@ -98,58 +99,44 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:drone"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "rule_id": "GROUND.SABOTAGE",
             "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:explosive_device"
+              "actions:all:sabotaged"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "MARITIME.SHIP.ATTACK",
+            "rule_id": "MARITIME.PORT.DISRUPTION",
             "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:ship"
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
             ],
             "matched_context": []
           },
@@ -168,69 +155,86 @@
             "matched_context": []
           },
           {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
             "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
             "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:disrupted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "INDUSTRIAL.EXPLOSION",
-            "family": "industrial",
-            "subcategory": "explosion",
-            "subtype": "industrial_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
+              "targets:all:transport",
               "context:any"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "context:any"
+              "objects:all:drone",
+              "actions:all:detected"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "TERRORISM.ATTACK",
-            "family": "terrorism",
-            "subcategory": "attack",
-            "subtype": "terrorist_attack",
-            "severity": "critical",
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "context:any"
+              "objects:all:drone",
+              "actions:all:entered"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 4472,
+        "article_text_chars": 4134,
         "article_fetch_source": "network",
-        "article_text_excerpt": "A más technológiai cégek számára hardverkapacitást és felhőinfrastruktúrát biztosító AI-felhőszolgáltató az egyre növekvő rendelésállományra, az áremelésekre, valamint az idén üzembe álló új számítási kapacitásokra hivatkozva emelte meg a 2026-os bevételi és korrigált működési eredménycélját is. A CoreWeave szoros kapcsolatot ápol az Nvidiával, ami kulcsszereplővé tette a céget a keresett Nvidia-chipekre épülő kapacitások piacán, és olyan ügyfeleket vonzott magához, mint a Meta, az Anthropic vagy a Caterpillar. A vállalat második negyedéves rendelésállománya 104,2 milliárd dollárra nőtt az előző negyedévi 99,4 milliárd dollárról. Ezen felül a harmadik negyedév eddigi részében több mint 25 milliárd dollárnyi nettó új ügyfélkötelezettséget kötött le . A rövid távú kapacitások lényegében mind elkeltek, így a cég egyre kedvezőbb feltételekkel köt számítási kapacitásra vonatkozó megállapodásokat – mondta Michael Intrator vezérigazgató az elemzői konferencián. A CoreWeave – amelynek egyik le",
+        "article_text_excerpt": "Az Agrárminisztérium tájékoztatása szerint a jövőben kizárólag szakmailag megalapozott döntések alapján kaphatja meg bármi a hungarikum minősítést. A tárca úgy véli, a megnevezésnek valódi rangot kell képviselnie, ezért nem tartják helyesnek, hogy egymástól kulturális súlyukban és jelentőségükben alapvetően eltérő értékeket pusztán a cím alapján azonos szinten kezeljenek. A minisztérium olyan elismerést szeretne kialakítani, amely mögött valós szakmai teljesítmény és széles körben elfogadott nemzeti érték áll. A koncepcióváltás miatt a korábbi döntéseket is áttekintik, a költségvetés felülvizsgálatával párhuzamosan pedig leállították a HUNG-2026 pályázatok finanszírozását. Ennek keretösszegét röviddel az idei tavaszi választások előtt emelték meg félmilliárd forinttal, így elérte az 1,15 milliárd forintot. A Herman Ottó Intézet már értesítette a nyerteseket a támogatások folyósításának szüneteltetéséről, egyúttal felhívták a figyelmet arra, hogy aki elkezdi a vállalt program megvalósít",
         "place": "Hungary",
-        "time": "Wed, 12 Aug 2026 08:42:00 +0200",
+        "time": "Wed, 12 Aug 2026 12:32:00 +0200",
         "category": "energy",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
@@ -240,19 +244,19 @@
           "Portfolio"
         ],
         "urls": [
-          "https://www.portfolio.hu/uzlet/20260812/eros-szamokat-hozott-a-coreweave-felrobbant-az-arfolyam-855676"
+          "https://www.portfolio.hu/gazdasag/20260812/a-jelenlegi-formajaban-fenntarthatatlan-a-hungarikum-program-szunetelteti-a-miniszterium-a-kifizeteseket-855768"
         ],
         "merged_titles": [
-          "Erős számokat hozott a CoreWeave, felrobbant az árfolyam"
+          "A jelenlegi formájában fenntarthatatlan a Hungarikum Program, szünetelteti a minisztérium a kifizetéseket"
         ],
         "incident_family": "energy",
-        "incident_subcategory": "oil_gas",
-        "incident_subtype": "energy_asset_explosion",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
         "incident_object": "energy_asset",
-        "incident_action": "exploded",
+        "incident_action": "disrupted",
         "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.82
+        "incident_target": "government",
+        "classification_confidence": 0.9
       }
     },
     {

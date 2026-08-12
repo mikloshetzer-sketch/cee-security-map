@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-12T01:22:53.722811+00:00",
+  "generated_utc": "2026-08-12T07:22:18.847033+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,25 +9,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9668,
-          45.9432
+          19.5033,
+          47.1625
         ]
       },
       "properties": {
-        "id": "854e66e7a5e89a358375",
-        "title": "Bulgaria nu a primit încă un răspuns de la Ucraina privind drona prăbuşită lângă graniţa cu România. „Vom insista din nou”",
-        "summary": "Ministrul bulgar al apărării, Dimitar Stoianov, a declarat marţi că solicitarea de informaţii privind drona ucraineană prăbușită, trimisă Ucrainei prin intermediul serviciilor de securitate bulgare, a rămas în continuare fără răspuns, în pofida întâlnirii de luni dintre şefa diplomaţiei bulgare, Velislava Petrova, şi ambasadoarea Ucrainei în Bulgaria, Olesia Ilaşciuk, informează BTA, potrivit Agerpres.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/bulgaria-nu-a-primit-inca-un-raspuns-de-la-ucraina-privind-drona-prabusita-langa-granita-cu-romania-vom-insista-din-nou-3902075",
-        "published": "Tue, 11 Aug 2026 16:29:31 +0300",
-        "country": "Romania",
+        "id": "65a38a6552282279ef5d",
+        "title": "Erős számokat hozott a CoreWeave, felrobbant az árfolyam",
+        "summary": "<p>A CoreWeave a kedden közzétett, a várakozásokat felülmúló második negyedéves gyorsjelentése után megemelte az egész évre vonatkozó tőkeberuházási és bevételi előrejelzését, miután a mesterséges intelligenciára épülő felhőszolgáltatásai iránti kereslet tovább erősödött. A vállalat részvényeinek árfolyama a zárás utáni kereskedésben több mint 15 százalékkal ugrott meg.</p>",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/uzlet/20260812/eros-szamokat-hozott-a-coreweave-felrobbant-az-arfolyam-855676",
+        "published": "Wed, 12 Aug 2026 08:42:00 +0200",
+        "country": "Hungary",
         "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
-        "actor": "ukraine",
+        "family": "energy",
+        "subcategory": "oil_gas",
+        "subtype": "energy_asset_explosion",
+        "object": "energy_asset",
+        "action": "exploded",
+        "actor": "russia",
         "target": "unknown",
         "context": [],
         "consequences": [],
@@ -35,46 +35,43 @@
         "confidence": 0.82,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "ENERGY.ASSET.EXPLOSION",
         "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
-          "actor": "ukraine",
+          "country": "Hungary",
+          "family": "energy",
+          "subcategory": "oil_gas",
+          "subtype": "energy_asset_explosion",
+          "object": "energy_asset",
+          "action": "exploded",
+          "actor": "russia",
           "target": "unknown",
-          "place": "Romania",
-          "event_date": "Tue, 11 Au",
-          "hash": "8f5e0e3c0f8c0070dd5b4f94"
+          "place": "Hungary",
+          "event_date": "Wed, 12 Au",
+          "hash": "2ef33798d715f166dcd41a43"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
-          "article_role": [],
+          "article_role": [
+            "történt"
+          ],
           "objects": [
-            "drone",
-            "dronă",
-            "drona"
+            "energy_asset",
+            "atomerőmű"
           ],
           "actions": [
-            "entered",
-            "pătruns",
-            "a intrat",
-            "impact",
-            "căzut",
             "exploded",
-            "a explodat"
+            "felrobbant"
           ],
           "targets": [],
           "actors": [
-            "ukraine",
-            "ucraina"
+            "russia",
+            "orosz",
+            "nato"
           ],
           "consequences": [],
           "extra_context": [
-            "feed_country=Romania",
+            "feed_country=Hungary",
             "geocode_quality=country_fallback"
           ]
         },
@@ -89,27 +86,29 @@
         },
         "candidate_rules": [
           {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
             "subcategory": "drone",
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 2.42,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
             "matched_context": []
           },
           {
@@ -119,66 +118,10 @@
             "subtype": "missile_impact",
             "severity": "high",
             "priority": 0,
-            "score": 1.2,
+            "score": 1.1,
             "matched": false,
             "missing": [
               "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.2,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
             ],
             "matched_context": []
           },
@@ -211,47 +154,103 @@
             "matched_context": []
           },
           {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "rule_id": "ENERGY.ASSET.FIRE",
             "family": "energy",
             "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
+            "subtype": "energy_asset_fire",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:energy_asset"
+              "actions:all:burned"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INDUSTRIAL.EXPLOSION",
+            "family": "industrial",
+            "subcategory": "explosion",
+            "subtype": "industrial_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TERRORISM.ATTACK",
+            "family": "terrorism",
+            "subcategory": "attack",
+            "subtype": "terrorist_attack",
+            "severity": "critical",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 2568,
+        "article_text_chars": 4472,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Ministrul bulgar al apărării, Dimitar Stoianov, a declarat marţi că solicitarea de informaţii privind drona ucraineană prăbușită, trimisă Ucrainei prin intermediul serviciilor de securitate bulgare, a rămas în continuare fără răspuns, în pofida întâlnirii de luni dintre şefa diplomaţiei bulgare, Velislava Petrova, şi ambasadoarea Ucrainei în Bulgaria, Olesia Ilaşciuk, informează BTA, potrivit Agerpres. Drona a pătruns sâmbătă în spaţiul aerian bulgar şi a explodat la aproximativ o sută de metri în interiorul teritoriului bulgar, în apropierea fostului punct de trecere a frontierei Kardam, la graniţa cu România, şi a unei conducte strategice de gaze. Aparatul a căzut pe un câmp de floarea-soarelui şi nu a provocat victime. O analiză preliminară a indicat că aeronava fără pilot era cel mai probabil o dronă de tip Maya folosită de forţele armate ale Ucrainei. Ministrul bulgar al apărării a declarat ca a vorbit din nou în cursul zilei de marţi cu şeful serviciului de informaţii militare şi",
-        "place": "Romania",
-        "time": "Tue, 11 Aug 2026 16:29:31 +0300",
-        "category": "air",
+        "article_text_excerpt": "A más technológiai cégek számára hardverkapacitást és felhőinfrastruktúrát biztosító AI-felhőszolgáltató az egyre növekvő rendelésállományra, az áremelésekre, valamint az idén üzembe álló új számítási kapacitásokra hivatkozva emelte meg a 2026-os bevételi és korrigált működési eredménycélját is. A CoreWeave szoros kapcsolatot ápol az Nvidiával, ami kulcsszereplővé tette a céget a keresett Nvidia-chipekre épülő kapacitások piacán, és olyan ügyfeleket vonzott magához, mint a Meta, az Anthropic vagy a Caterpillar. A vállalat második negyedéves rendelésállománya 104,2 milliárd dollárra nőtt az előző negyedévi 99,4 milliárd dollárról. Ezen felül a harmadik negyedév eddigi részében több mint 25 milliárd dollárnyi nettó új ügyfélkötelezettséget kötött le . A rövid távú kapacitások lényegében mind elkeltek, így a cég egyre kedvezőbb feltételekkel köt számítási kapacitásra vonatkozó megállapodásokat – mondta Michael Intrator vezérigazgató az elemzői konferencián. A CoreWeave – amelynek egyik le",
+        "place": "Hungary",
+        "time": "Wed, 12 Aug 2026 08:42:00 +0200",
+        "category": "energy",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Digi24"
+          "Portfolio"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/externe/bulgaria-nu-a-primit-inca-un-raspuns-de-la-ucraina-privind-drona-prabusita-langa-granita-cu-romania-vom-insista-din-nou-3902075"
+          "https://www.portfolio.hu/uzlet/20260812/eros-szamokat-hozott-a-coreweave-felrobbant-az-arfolyam-855676"
         ],
         "merged_titles": [
-          "Bulgaria nu a primit încă un răspuns de la Ucraina privind drona prăbuşită lângă graniţa cu România. „Vom insista din nou”"
+          "Erős számokat hozott a CoreWeave, felrobbant az árfolyam"
         ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
-        "incident_actor": "ukraine",
+        "incident_family": "energy",
+        "incident_subcategory": "oil_gas",
+        "incident_subtype": "energy_asset_explosion",
+        "incident_object": "energy_asset",
+        "incident_action": "exploded",
+        "incident_actor": "russia",
         "incident_target": "unknown",
         "classification_confidence": 0.82
       }

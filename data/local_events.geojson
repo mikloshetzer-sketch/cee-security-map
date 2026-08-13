@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-13T07:26:57.826785+00:00",
+  "generated_utc": "2026-08-13T12:58:42.002663+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,19 +14,19 @@
         ]
       },
       "properties": {
-        "id": "8633c0c14a6d1b6ef709",
-        "title": "Váratlanul lezuhant egy Apache katonai helikopter, meghalt két amerikai katona",
-        "summary": "<p>Két amerikai katona meghalt, miután lezuhant egy Apache harci helikopter a texasi Bell megyében szerdán – közölték a helyi hatóságok a Reuters tudósítása szerint.</p>",
+        "id": "8b04d100a7fbb408535e",
+        "title": "Energiakrízis: fontos bejelentésekkel készül Magyar Péter",
+        "summary": "<p>Kedden világszerte leállt a Petlibro okosetetőinek felhőszolgáltatása, aminek következtében számos háziállat maradt étlen. A vállalat azóta a rendszer fokozatos helyreállításán dolgozik - írta meg a <a href=\"https://www.theverge.com/tech/979295/petlibro-outage-smart-pet-feeders\" rel=\"noopener\" target=\"_blank\">The Verge</a>.</p>",
         "source": "Portfolio",
-        "url": "https://www.portfolio.hu/global/20260813/varatlanul-lezuhant-egy-apache-katonai-helikopter-meghalt-ket-amerikai-katona-855920",
-        "published": "Thu, 13 Aug 2026 07:13:00 +0200",
+        "url": "https://www.portfolio.hu/gazdasag/20260813/energiakrizis-fontos-bejelentesekkel-keszul-magyar-peter-856082",
+        "published": "Thu, 13 Aug 2026 14:45:00 +0200",
         "country": "Hungary",
         "city": null,
-        "family": "air",
-        "subcategory": "aircraft",
-        "subtype": "military_aircraft_incident",
-        "object": "military_aircraft",
-        "action": "impact",
+        "family": "energy",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
+        "object": "energy_asset",
+        "action": "disrupted",
         "actor": "unknown",
         "target": "unknown",
         "context": [],
@@ -34,22 +34,22 @@
           "fatality"
         ],
         "severity": "critical",
-        "confidence": 0.84,
+        "confidence": 0.76,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
         "fingerprint": {
           "country": "Hungary",
-          "family": "air",
-          "subcategory": "aircraft",
-          "subtype": "military_aircraft_incident",
-          "object": "military_aircraft",
-          "action": "impact",
+          "family": "energy",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
+          "object": "energy_asset",
+          "action": "disrupted",
           "actor": "unknown",
           "target": "unknown",
           "place": "Hungary",
           "event_date": "Thu, 13 Au",
-          "hash": "62877d3219352f68c039ddc0"
+          "hash": "5a61077bb71da69eaa4a9c3b"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -58,23 +58,21 @@
             "történt"
           ],
           "objects": [
-            "military_aircraft",
-            "helicopter",
-            "helikopter",
             "energy_asset",
             "atomerőmű"
           ],
           "actions": [
-            "impact",
-            "crashed",
-            "hit",
-            "lezuhant"
+            "disrupted",
+            "leállt"
           ],
           "targets": [],
-          "actors": [],
+          "actors": [
+            "unknown",
+            "ismeretlen"
+          ],
           "consequences": [
             "fatality",
-            "killed",
+            "halálos áldozat",
             "meghalt"
           ],
           "extra_context": [
@@ -87,48 +85,49 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
+          "actor_match": 0.06,
           "country_match": 0.1,
           "consequence_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
             "severity": "medium",
             "priority": 0,
-            "score": 2.32,
+            "score": 2.26,
             "matched": true,
             "missing": [],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone"
+              "targets:all:transport"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile"
+              "objects:all:cyber_system"
             ],
             "matched_context": []
           },
@@ -161,16 +160,31 @@
             "matched_context": []
           },
           {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
             "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:disrupted"
+              "targets:all:transport",
+              "context:any"
             ],
             "matched_context": []
           },
@@ -218,31 +232,16 @@
               "actions:all:intercepted"
             ],
             "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 3522,
+        "article_text_chars": 2725,
         "article_fetch_source": "network",
-        "article_text_excerpt": "A szerencsétlenség a texasi Fort Hood katonai támaszponthoz tartozó, AH-64-es típusú helikopterrel történt, a bázis egyik hadműveleti feladata során. A gép egy mezőre zuhant le Bell megyében, mintegy száz kilométerre északra az állam fővárosától, Austintól. Később mindkét katona halálát megállapították. A becsapódás következtében bozóttűz ütött ki, amelynek megfékezésére több helyi tűzoltóegységet is a helyszínre vezényeltek. Az incidens után készült felvételeken égő roncsdarabok, sűrű füst és elszenesedett terület látható. Two soldiers were killed when a U.S. Army Apache helicopter from Fort Hood crashed in Salado, Texas, on Wednesday, the Army and local law enforcement officials said.Officials said the helicopter crashed into a field and didn't hit any homes or other structures. pic.twitter.com/kcUpfRWBzC https://t.co/kcUpfRWBzC A Fort Hood támaszpont megerősítette a balesetet és a két katona halálát, személyazonosságukat a hozzátartozók értesítéséig nem hozták nyilvánosságra. Greg A",
+        "article_text_excerpt": "Az elmúlt napokban a Duna Paksnál mért és várható vízszintje vált a legfontosabb témává a közbeszédben. A kormány kihelyezett ülést tartott szerdán a Paksi Atomerőműben, ahol több lényeges válságkezelő döntést is hoztak az atomerőmű folyamatos működtetésének érdekében. Címlapkép forrása: MTI Fotó/Purger Tamás Kiss Gergellyel, a Signifer Csoport igazgatósági tagjával beszélgettünk. 21 helyszínen összesen 144 mobilcellát telepítettek. Örülnek a befektetők, újabb engedély jött meg. Nagyon fontos vízmozgatási kísérletet jelent. Leállt az okosetetők felhőszolgáltatása. A felületes képernyőfogyasztás ára: hogyan szorítja vissza a kognitív képességeket az olvasás hiánya? Az 50 ezer forintos kata éveken át szinte verhetetlen ajánlatnak tűnt. Egyszerű volt, kiszámítható, és egy átlagos vállalkozói bevétel mellett jóval több pénzt hagyott az ember zsebében, m Miközben 2007-ben a régió lakosságának alig tizede vásárolt online, mára több mint kétharmaduk rendel az internetről. A különbségek azonba",
         "place": "Hungary",
-        "time": "Thu, 13 Aug 2026 07:13:00 +0200",
-        "category": "air",
+        "time": "Thu, 13 Aug 2026 12:35:00 +0200",
+        "category": "energy",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
@@ -251,18 +250,276 @@
           "Portfolio"
         ],
         "urls": [
-          "https://www.portfolio.hu/global/20260813/varatlanul-lezuhant-egy-apache-katonai-helikopter-meghalt-ket-amerikai-katona-855920"
+          "https://www.portfolio.hu/gazdasag/20260813/energiakrizis-fontos-bejelentesekkel-keszul-magyar-peter-856082",
+          "https://www.portfolio.hu/global/20260813/robbanas-tortent-az-europai-nagyvaros-kikotojeben-halalos-aldozat-is-van-856072",
+          "https://www.portfolio.hu/uzlet/20260813/varatlanul-osszeomlott-az-okosrendszer-etel-es-ital-nelkul-maradtak-a-haziallatok-szerte-a-vilagon-856054"
         ],
         "merged_titles": [
-          "Váratlanul lezuhant egy Apache katonai helikopter, meghalt két amerikai katona"
+          "Energiakrízis: fontos bejelentésekkel készül Magyar Péter",
+          "Robbanás történt az európai nagyváros kikötőjében: halálos áldozat is van",
+          "Váratlanul összeomlott az  \"okosrendszer\", étel és ital nélkül maradtak a háziállatok szerte a világon"
         ],
-        "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "incident_object": "military_aircraft",
-        "incident_action": "impact",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "incident_object": "energy_asset",
+        "incident_action": "disrupted",
         "incident_actor": "unknown",
         "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5033,
+          47.1625
+        ]
+      },
+      "properties": {
+        "id": "07f8bf6e441d9403e756",
+        "title": "Látványos felvételeken, ahogy a hatalmas tűz tombol Magyarországon",
+        "summary": "<p>Széles körű hatósági és civil összefogással fékezték meg azt a hatalmas kiterjedésű tüzet, amely Öskün lakóingatlanokat is elért. A lángok miatt főutat kellett lezárni, a beavatkozó egységek pedig kiemelt feladatként kezelték a helyi lakosság védelmét - számolt be a Veszprém vármegyei rendrőség Facebook-oldalán.</p>",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/gazdasag/20260813/latvanyos-felveteleken-ahogy-a-hatalmas-tuz-tombol-magyarorszagon-856076",
+        "published": "Thu, 13 Aug 2026 14:02:00 +0200",
+        "country": "Hungary",
+        "city": null,
+        "family": "energy",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
+        "object": "energy_asset",
+        "action": "disrupted",
+        "actor": "unknown",
+        "target": "civilian",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "energy",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
+          "object": "energy_asset",
+          "action": "disrupted",
+          "actor": "unknown",
+          "target": "civilian",
+          "place": "Hungary",
+          "event_date": "Thu, 13 Au",
+          "hash": "0a45678beabf1c7b42a103dd"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "energy_asset",
+            "atomerőmű"
+          ],
+          "actions": [
+            "disrupted",
+            "leállt",
+            "closed",
+            "lezárták"
+          ],
+          "targets": [
+            "civilian",
+            "civil"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:burned"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 3413,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "A tájékoztatásból kiderült, hogy jelentős területen pusztító lángok megállítása érdekében példátlan együttműködés jött létre a különböző szervezetek között. A kárelhárításban a tűzoltók és a rendőrök mellett részt vett a Magyar Honvédség légi egysége, a Készenléti Rendőrség több pilótája, továbbá számos polgárőr és önkéntes is. A mentésben részt vevők összehangoltan, egyszerre több helyszínen dolgoztak a helyzet stabilizálásán. A tűz továbbterjedésének megakadályozása és a biztonságos munkavégzés érdekében az érintett főutat teljesen lezárták, a forgalmat pedig biztonságos útvonalakra terelték. Mivel a lángok gyorsan elérték Öskü belterületét, és több házat is közvetlenül fenyegettek, a hatóságok és az önkéntesek elsődleges prioritásként az ott élők biztonságba helyezéséről és védelméről gondoskodtak. A címlapkép illusztráció. Címlapkép forrása: Getty Images Ennek a cikknek az előkészítésében AI-asszisztens működött közre, a végleges tartalmat újságírónk szerkesztette és ellenőrizte. K",
+        "place": "Hungary",
+        "time": "Thu, 13 Aug 2026 14:02:00 +0200",
+        "category": "energy",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "urls": [
+          "https://www.portfolio.hu/gazdasag/20260813/latvanyos-felveteleken-ahogy-a-hatalmas-tuz-tombol-magyarorszagon-856076"
+        ],
+        "merged_titles": [
+          "Látványos felvételeken, ahogy a hatalmas tűz tombol Magyarországon"
+        ],
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "incident_object": "energy_asset",
+        "incident_action": "disrupted",
+        "incident_actor": "unknown",
+        "incident_target": "civilian",
         "classification_confidence": 0.84
       }
     },
@@ -277,11 +534,11 @@
       },
       "properties": {
         "id": "98fdf9ba8b5867c8d766",
-        "title": "Fragment dintr-o dronă, observat în mare la Costineşti. Autoritățile au evacuat zona",
+        "title": "Fragment dintr-o dronă, fără explozibil, observat în mare la Costineşti. Miruță: „Ce vedem e rezultatul unui război real”",
         "summary": "Un fragment dintr-o posibilă dronă a fost observat, joi dimineaţă, în mare, la Costineşti, iar oamenii aflaţi pe plajă au filmat obiectul.",
         "source": "Digi24",
         "url": "https://www.digi24.ro/stiri/actualitate/fragment-dintr-o-posibila-drona-observat-in-mare-la-costinesti-3904527",
-        "published": "Thu, 13 Aug 2026 10:03:46 +0300",
+        "published": "Thu, 13 Aug 2026 14:03:45 +0300",
         "country": "Romania",
         "city": null,
         "family": "air",
@@ -323,8 +580,6 @@
             "detected",
             "detectat",
             "observat",
-            "evacuated",
-            "evacuat",
             "attacked",
             "atacat"
           ],
@@ -491,10 +746,10 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1517,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Este alertă pe o plajă din Costinești. Resturi dintr-o dronă au fost descoperite în apa mării, foarte aproape de țărm. Autoritățile intervin chiar în aceste momente. ACTUALIZARE 10:01 Autoritățile au confirmat că este vorba de o dronă aeriană. La fața locului se află în continuare echipe ale Poliției, Jandarmeriei, Pazei de Coastă. Zona a fost evacuată și s-a făcut preventiv un perimetru de protecție ȘTIREA INIȚIALĂ. Obiectul suspect a fost observat în jurul orei 8:30 pe plaja din Costinești, relatează corespondentul Digi24, Iulia Stanciu. Un turist a văzut în apă obiectul, care are aproximativ 1m. Deasupra lui se văd mai multe antene. Martorii spun că este posibil să fie resturi dintr-o dronă maritimă sau o dronă aeriană. Acum, la fața locului au ajuns polițiștii. Zona de lângă dig a fost evacuată, iar turiștiiau fost îndepărtați din acea zonă. Obiectul plutește în derivă, foarte aproape de plajă, iar marea este destul de agitată Anchetatorii urmează să stabilească despre ce fel de ob",
         "place": "Romania",
-        "time": "Thu, 13 Aug 2026 10:03:46 +0300",
+        "time": "Thu, 13 Aug 2026 14:03:45 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
@@ -507,7 +762,7 @@
           "https://www.digi24.ro/stiri/actualitate/fragment-dintr-o-posibila-drona-observat-in-mare-la-costinesti-3904527"
         ],
         "merged_titles": [
-          "Fragment dintr-o dronă, observat în mare la Costineşti. Autoritățile au evacuat zona"
+          "Fragment dintr-o dronă, fără explozibil, observat în mare la Costineşti. Miruță: „Ce vedem e rezultatul unui război real”"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
@@ -524,572 +779,57 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9668,
-          45.9432
+          28.057,
+          44.322
         ]
       },
       "properties": {
-        "id": "c10f3f4a9e208bffa033",
-        "title": "Rusia a atacat portul Izmail din Ucraina, la granița cu România. Incendiu la infrastructura portuară",
-        "summary": "Rusia a atacat în cursul nopţii zona portului Izmail, cel mai mare port ucrainean de la Dunăre, provocând pagube şi declanşând un incendiu, au anunţat autorităţile regionale din Odesa, citate de Reuters.",
+        "id": "f06b8bd9aa2d3fec1be5",
+        "title": "Centrala nucleară de la Cernavodă s-a oprit. Efectele deconectării reactorului 2 au început să se vadă din primele minute",
+        "summary": "Centrala nucleară de la Cernavodă, care în ultimele zile a furnizat în Sistemul Energetic Naţional aproximativ 680 de megawaţi, a fost închisă treptat. Procedurile de deconectare a reactorului 2 au început astăzi, la ora 7:00, iar aproximativ de la 11:00 centrala nu mai furnizează deloc energie în sistem. Încă nu este clar când va fi repusă în funcţiune centrala. Până la acel moment, România se bazează pe importuri.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/rusia-a-atacat-portul-izmail-din-ucraina-la-granita-cu-romania-incendiu-la-infrastructura-portuara-3904483",
-        "published": "Thu, 13 Aug 2026 08:33:05 +0300",
+        "url": "https://www.digi24.ro/stiri/economie/energie/centrala-nucleara-de-la-cernavoda-se-opreste-astazi-pe-termen-nedeterminat-deconectarea-reactorului-2-se-face-treptat-3904427",
+        "published": "Thu, 13 Aug 2026 14:54:12 +0300",
         "country": "Romania",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
-        "actor": "russia",
-        "target": "transport",
-        "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.9,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
-          "actor": "russia",
-          "target": "transport",
-          "place": "Romania",
-          "event_date": "Thu, 13 Au",
-          "hash": "0ecadfa85e314ee44009e4fa"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "critical_infrastructure",
-            "port"
-          ],
-          "actions": [
-            "detected",
-            "detectat",
-            "entered",
-            "pătruns",
-            "impact",
-            "a lovit",
-            "attacked",
-            "atacat"
-          ],
-          "targets": [
-            "transport",
-            "port"
-          ],
-          "actors": [
-            "russia",
-            "rusia",
-            "rusiei",
-            "ukraine",
-            "ucraina"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.42,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.2,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 999,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Rusia a atacat în cursul nopţii zona portului Izmail, cel mai mare port ucrainean de la Dunăre, provocând pagube şi declanşând un incendiu, au anunţat autorităţile regionale din Odesa, citate de Reuters. Izmail, situat în sudul regiunii Odesa, în apropierea frontierei cu România, vis-a-vis de localitatea Plaurul, este un important punct de tranzit pentru cereale şi alte mărfuri. Atacul are loc la o zi după ce Ucraina a lovit Novorossiisk, unul dintre principalele huburi pentru exporturile de cereale ale Rusiei de la Marea Neagră. Ministerul român al Apărării a anunţat că România a ridicat de la sol două aeronave de luptă pentru monitorizarea situaţiei. Potrivit ministerului, o ţintă aeriană a pătruns în spaţiul aerian naţional şi a rămas aproximativ 10 minute, înainte de a se îndrepta spre teritoriul Ucrainei. Radarele Armatei au detectat drone lângă Tulcea: un aparat a pătruns pe teritoriul României. RO-Alert emis, avioane F-16 mobilizate Urmărește știrile Digi24.ro și pe Google News",
-        "place": "Romania",
-        "time": "Thu, 13 Aug 2026 08:33:05 +0300",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/externe/rusia-a-atacat-portul-izmail-din-ucraina-la-granita-cu-romania-incendiu-la-infrastructura-portuara-3904483"
-        ],
-        "merged_titles": [
-          "Rusia a atacat portul Izmail din Ucraina, la granița cu România. Incendiu la infrastructura portuară"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
-        "incident_actor": "russia",
-        "incident_target": "transport",
-        "classification_confidence": 0.9
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9668,
-          45.9432
-        ]
-      },
-      "properties": {
-        "id": "9144e9d38e9e313fac1c",
-        "title": "Radarele Armatei au detectat drone lângă Tulcea: un aparat a pătruns pe teritoriul României. RO-Alert emis, avioane F-16 mobilizate",
-        "summary": "Radarele Armatei au detectat din nou ţinte aeriene în apropierea României, iar două aeronave F-16 ale Forţelor Aeriene Române au fost ridicate de la sol pentru monitorizarea situaţiei. În zona de nord a judeţului Tulcea a fost emis un mesaj RO-Alert. Cinci drone au fost urmărite, iar una a pătruns pentru scurt timp pe teritoriul naţional, dar apoi a ieşit.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/radarele-armatei-au-detectat-drone-langa-tulcea-ro-alert-emis-avioane-f-16-mobilizate-un-aparat-a-patruns-pe-teritoriul-romaniei-3904455",
-        "published": "Thu, 13 Aug 2026 08:47:51 +0300",
-        "country": "Romania",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_detection",
-        "object": "drone",
-        "action": "detected",
-        "actor": "ukraine",
-        "target": "military",
-        "context": [],
-        "consequences": [],
-        "severity": "low",
-        "confidence": 0.76,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_detection",
-          "object": "drone",
-          "action": "detected",
-          "actor": "ukraine",
-          "target": "military",
-          "place": "Romania",
-          "event_date": "Thu, 13 Au",
-          "hash": "76c59635a47932315dc9a87e"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "dronă"
-          ],
-          "actions": [
-            "detected",
-            "detectat",
-            "entered",
-            "a intrat"
-          ],
-          "targets": [
-            "military",
-            "radar"
-          ],
-          "actors": [
-            "ukraine",
-            "ucraina"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.ILLEGAL.CROSSING",
-            "family": "border_security",
-            "subcategory": "illegal_crossing",
-            "subtype": "illegal_border_crossing",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Romania",
-        "time": "Thu, 13 Aug 2026 04:27:38 +0000",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 2,
-        "sources": [
-          "Digi24",
-          "HotNews"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/actualitate/evenimente/radarele-armatei-au-detectat-drone-langa-tulcea-ro-alert-emis-avioane-f-16-mobilizate-un-aparat-a-patruns-pe-teritoriul-romaniei-3904455",
-          "https://hotnews.ro/cinci-tinte-monitorizate-de-radarele-armatei-o-drona-a-patruns-10-minute-in-romania-avioane-f-16-ridicate-de-urgenta-ro-alert-in-tulcea-2323529"
-        ],
-        "merged_titles": [
-          "Radarele Armatei au detectat drone lângă Tulcea: un aparat a pătruns pe teritoriul României. RO-Alert emis, avioane F-16 mobilizate",
-          "O nouă alertă la granița României: O dronă a intrat 10 minute în țară, apoi s-au auzit explozii în Ucraina. Avioane F-16 ridicate"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "incident_object": "drone",
-        "incident_action": "detected",
-        "incident_actor": "ukraine",
-        "incident_target": "military",
-        "classification_confidence": 0.9
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.638,
-          44.173
-        ]
-      },
-      "properties": {
-        "id": "3f90da27dbab43fd5e5c",
-        "title": "Constanța: Alertă a autorităților după ce o dronă a căzut în apropierea stabilopozilor din stațiunea Costinești",
-        "summary": "",
-        "source": "Agerpres",
-        "url": "https://agerpres.ro/social/2026/08/13/constanta-alerta-a-autoritatilor-dupa-ce-o-drona-a-cazut-in-apropierea-stabilopozilor-din-statiunea---1584514",
-        "published": null,
-        "country": "Romania",
-        "city": "Constanța",
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
+        "city": "Cernavodă",
+        "family": "energy",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
+        "object": "energy_asset",
+        "action": "disrupted",
         "actor": "unknown",
         "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "high",
+        "severity": "medium",
         "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
         "fingerprint": {
           "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
+          "family": "energy",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
+          "object": "energy_asset",
+          "action": "disrupted",
           "actor": "unknown",
           "target": "unknown",
-          "place": "Constanța",
-          "event_date": "unknown-date",
-          "hash": "cc0c020c22ef2a074572f30c"
+          "place": "Cernavodă",
+          "event_date": "Thu, 13 Au",
+          "hash": "cd0a559cba2ba3e27b305c42"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone",
-            "dronă"
+            "energy_asset",
+            "centrala"
           ],
           "actions": [
-            "impact",
-            "căzut"
+            "disrupted",
+            "oprit"
           ],
           "targets": [],
           "actors": [],
@@ -1110,15 +850,100 @@
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
             "priority": 0,
-            "score": 2.32,
+            "score": 2.26,
             "matched": true,
             "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:burned"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
             "matched_context": []
           },
           {
@@ -1128,9 +953,10 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:detected"
             ],
             "matched_context": []
@@ -1142,9 +968,10 @@
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:entered"
             ],
             "matched_context": []
@@ -1156,97 +983,11 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
             ],
             "matched_context": []
           }
@@ -1256,27 +997,27 @@
         "article_text_chars": 0,
         "article_fetch_source": "fetch_limit",
         "article_text_excerpt": "",
-        "place": "Constanța",
-        "time": null,
-        "category": "air",
+        "place": "Cernavodă",
+        "time": "Thu, 13 Aug 2026 14:54:12 +0300",
+        "category": "energy",
         "kind": "local_media",
         "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Agerpres"
+          "Digi24"
         ],
         "urls": [
-          "https://agerpres.ro/social/2026/08/13/constanta-alerta-a-autoritatilor-dupa-ce-o-drona-a-cazut-in-apropierea-stabilopozilor-din-statiunea---1584514"
+          "https://www.digi24.ro/stiri/economie/energie/centrala-nucleara-de-la-cernavoda-se-opreste-astazi-pe-termen-nedeterminat-deconectarea-reactorului-2-se-face-treptat-3904427"
         ],
         "merged_titles": [
-          "Constanța: Alertă a autorităților după ce o dronă a căzut în apropierea stabilopozilor din stațiunea Costinești"
+          "Centrala nucleară de la Cernavodă s-a oprit. Efectele deconectării reactorului 2 au început să se vadă din primele minute"
         ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "incident_object": "energy_asset",
+        "incident_action": "disrupted",
         "incident_actor": "unknown",
         "incident_target": "unknown",
         "classification_confidence": 0.84

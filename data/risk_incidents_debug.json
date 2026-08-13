@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-13T12:58:48.343049+00:00",
+  "generated_utc": "2026-08-13T19:04:14.520683+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,19 +15,14 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 2,
-      "category_counts": {
-        "infrastructure_disruption": 2
-      },
-      "source_files": {
-        "local_events.geojson": 2
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
       "incident_count": 2,
       "category_counts": {
-        "drone": 1,
-        "infrastructure_disruption": 1
+        "drone": 2
       },
       "source_files": {
         "local_events.geojson": 2
@@ -61,81 +56,17 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
-      {
-        "id": "07f8bf6e441d9403e756",
-        "date": "2026-08-13",
-        "time": "2026-08-13T12:02:00+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Látványos felvételeken, ahogy a hatalmas tűz tombol Magyarországon",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/gazdasag/20260813/latvanyos-felveteleken-ahogy-a-hatalmas-tuz-tombol-magyarorszagon-856076",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "0a45678beabf1c7b42a103dd"
-      },
-      {
-        "id": "8b04d100a7fbb408535e",
-        "date": "2026-08-13",
-        "time": "2026-08-13T10:35:00+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "critical",
-        "title": "Energiakrízis: fontos bejelentésekkel készül Magyar Péter",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/gazdasag/20260813/energiakrizis-fontos-bejelentesekkel-keszul-magyar-peter-856082",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "5a61077bb71da69eaa4a9c3b"
-      }
-    ],
+    "Hungary": [],
     "Romania": [
       {
-        "id": "f06b8bd9aa2d3fec1be5",
+        "id": "6a8579c6a2fac744b92c",
         "date": "2026-08-13",
-        "time": "2026-08-13T11:54:12+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Centrala nucleară de la Cernavodă s-a oprit. Efectele deconectării reactorului 2 au început să se vadă din primele minute",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/economie/energie/centrala-nucleara-de-la-cernavoda-se-opreste-astazi-pe-termen-nedeterminat-deconectarea-reactorului-2-se-face-treptat-3904427",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "cd0a559cba2ba3e27b305c42"
-      },
-      {
-        "id": "98fdf9ba8b5867c8d766",
-        "date": "2026-08-13",
-        "time": "2026-08-13T11:03:45+00:00",
+        "time": "2026-08-13T18:56:18+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Fragment dintr-o dronă, fără explozibil, observat în mare la Costineşti. Miruță: „Ce vedem e rezultatul unui război real”",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/fragment-dintr-o-posibila-drona-observat-in-mare-la-costinesti-3904527",
+        "title": "Radu Miruță, despre drona explodată în Bulgaria: Ucraina nu confirmă că a venit din România",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/radu-miruta-despre-drona-explodata-in-bulgaria-ucraina-nu-confirma-ca-a-venit-din-romania.html",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -146,7 +77,28 @@
         "incident_subtype": "drone_strike",
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "8d116e7db74a4e4aef1c83f6"
+        "fingerprint_hash": "ec416113ec7d56755efac9e9"
+      },
+      {
+        "id": "6fd0336beac77b4f44bb",
+        "date": "2026-08-13",
+        "time": "2026-08-13T14:12:07+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "A treia alertă de dronă într-o zi: avioane F-18 spaniole au fost ridicate în aer. Aparatul fără pilot a intrat 12 minute în România",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/a-treia-alerta-de-drona-in-tulcea-intr-o-singura-zi-avioane-f-18-ale-fortelor-aeriene-si-spatiale-spaniole-au-fost-ridicate-in-aer-3905283",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "973b30475bae8ca1cda0b096"
       }
     ],
     "Slovakia": [],

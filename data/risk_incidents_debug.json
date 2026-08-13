@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-12T19:03:03.869309+00:00",
+  "generated_utc": "2026-08-13T01:23:26.229937+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 2,
+      "category_counts": {
+        "drone": 2
+      },
+      "source_files": {
+        "local_events.geojson": 2
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,7 +61,50 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "5c70485571ebe4f27ed5",
+        "date": "2026-08-12",
+        "time": "2026-08-12T16:40:48+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "NATO, mesaj ferm după discuția despre incidentele aeriene din România și Polonia. „În apărarea teritoriului aliat”",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/nato-mesaj-ferm-dupa-discutia-despre-incidentele-aeriene-din-romania-si-polonia-demonstreaza-toleranta-crescanda-a-rusiei-la-risc-2323317",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "273b69c31b2790f8525a0c3c"
+      },
+      {
+        "id": "dde87c7da88218609391",
+        "date": "2026-08-12",
+        "time": "2026-08-12T13:55:48+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Aliații NATO condamnă dur Rusia și califică încălcările spațiului aerian din România și Polonia drept „periculoase și inacceptabile”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/aliatii-nato-condamna-dur-rusia-si-califica-incalcarile-spatiului-aerian-din-romania-si-polonia-drept-periculoase-si-inacceptabile-3903809",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint_hash": "aa0ff2406cd797d8724d3842"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {

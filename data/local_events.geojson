@@ -1,9 +1,515 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-12T19:02:57.003099+00:00",
+  "generated_utc": "2026-08-13T01:23:20.069477+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "dde87c7da88218609391",
+        "title": "Aliații NATO condamnă dur Rusia și califică încălcările spațiului aerian din România și Polonia drept „periculoase și inacceptabile”",
+        "summary": "Aliații NATO au condamnat miercuri recentele încălcări ale spațiului aerian din România și Polonia, pe care le-au calificat drept „periculoase și inacceptabile”, și au transmis că Rusia poartă întreaga responsabilitate pentru acestea. Aliații au discutat incidentele în cadrul unei reuniuni a Consiliului Nord-Atlantic și și-au exprimat solidaritatea deplină cu statele afectate.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/aliatii-nato-condamna-dur-rusia-si-califica-incalcarile-spatiului-aerian-din-romania-si-polonia-drept-periculoase-si-inacceptabile-3903809",
+        "published": "Wed, 12 Aug 2026 16:55:48 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_shootdown",
+        "object": "drone",
+        "action": "shot_down",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_shootdown",
+          "object": "drone",
+          "action": "shot_down",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Wed, 12 Au",
+          "hash": "aa0ff2406cd797d8724d3842"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "shot_down",
+            "doborât"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "rusiei",
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 3242,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Aliații NATO au condamnat miercuri recentele încălcări ale spațiului aerian din România și Polonia, pe care le-au calificat drept „periculoase și inacceptabile”, și au transmis că Rusia poartă întreaga responsabilitate pentru acestea. Aliații au discutat incidentele în cadrul unei reuniuni a Consiliului Nord-Atlantic și și-au exprimat solidaritatea deplină cu statele afectate. Reuniunea a avut loc miercuri dimineață, 12 august, pe fondul recentelor incidente cu drone și al încălcărilor spațiului aerian al României și Poloniei. „Aliații au reiterat că Rusia poartă întreaga responsabilitate pentru încălcările spațiului aerian, care sunt periculoase și inacceptabile și demonstrează disponibilitatea tot mai mare a Rusiei de a-și asuma riscuri”, se arată în comunicatul publicat de NATO. Alianța a transmis că statele membre rămân unite și ferme în apărarea teritoriului aliat și a salutat reacția rapidă a NATO și a autorităților naționale în fața incidentelor. NATO a precizat că își consolide",
+        "place": "Romania",
+        "time": "Wed, 12 Aug 2026 16:55:48 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/aliatii-nato-condamna-dur-rusia-si-califica-incalcarile-spatiului-aerian-din-romania-si-polonia-drept-periculoase-si-inacceptabile-3903809"
+        ],
+        "merged_titles": [
+          "Aliații NATO condamnă dur Rusia și califică încălcările spațiului aerian din România și Polonia drept „periculoase și inacceptabile”"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "incident_object": "drone",
+        "incident_action": "shot_down",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "5c70485571ebe4f27ed5",
+        "title": "NATO, mesaj ferm după discuția despre incidentele aeriene din România și Polonia. „În apărarea teritoriului aliat”",
+        "summary": "Ambasadorii statelor din NATO s-au întâlnit miercuri în Consiliul Nord-Atlantic pentru a discuta despre recentele încălcări ale spațiilor aeriene din România și Polonia, precum și despre incidentele în care au fost implicate drone, conform unui comunicat transmis de Alianță. Reprezentanții statelor NATO „și-au exprimat solidaritatea deplină și susținerea față de aliații afectați”, a declarat Alianța &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/nato-mesaj-ferm-dupa-discutia-despre-incidentele-aeriene-din-romania-si-polonia-demonstreaza-toleranta-crescanda-a-rusiei-la-risc-2323317",
+        "published": "Wed, 12 Aug 2026 16:40:48 +0000",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Wed, 12 Au",
+          "hash": "273b69c31b2790f8525a0c3c"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "missile",
+            "rachetă"
+          ],
+          "actions": [
+            "entered",
+            "pătruns",
+            "impact",
+            "căzut"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "rusiei",
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2581,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Ambasadorii statelor din NATO s-au întâlnit miercuri în Consiliul Nord-Atlantic pentru a discuta despre recentele încălcări ale spațiilor aeriene din România și Polonia, precum și despre incidentele în care au fost implicate drone, conform unui comunicat transmis de Alianță. Reprezentanții statelor NATO „și-au exprimat solidaritatea deplină și susținerea față de aliații afectați”, a declarat Alianța în comunicatul de presă . NATO spune că „aliații au reiterat că Rusia poartă întreaga responsabilitate pentru încălcările spațiului aerian, care sunt periculoase și inacceptabile, și demonstrează toleranța crescândă a Rusiei la risc”. Aliații „sunt uniți și hotărâți în apărarea teritoriului aliat”, conform comunicatului. „Aceștia au lăudat acțiunile rapide ale NATO și ale autorităților naționale în a răspunde decisiv la evenimente. NATO continuă să își consolideze apărarea integrată aeriană și antirachetă în toată Alianța, iar Aliații au subliniat acțiunile pe care le-au întreprins pentru a",
+        "place": "Romania",
+        "time": "Wed, 12 Aug 2026 16:40:48 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "urls": [
+          "https://hotnews.ro/nato-mesaj-ferm-dupa-discutia-despre-incidentele-aeriene-din-romania-si-polonia-demonstreaza-toleranta-crescanda-a-rusiei-la-risc-2323317"
+        ],
+        "merged_titles": [
+          "NATO, mesaj ferm după discuția despre incidentele aeriene din România și Polonia. „În apărarea teritoriului aliat”"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

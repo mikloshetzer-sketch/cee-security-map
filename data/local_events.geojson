@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-13T19:04:07.686125+00:00",
+  "generated_utc": "2026-08-14T01:22:43.435319+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,275 +14,19 @@
         ]
       },
       "properties": {
-        "id": "6fd0336beac77b4f44bb",
-        "title": "A treia alertă de dronă într-o zi: avioane F-18 spaniole au fost ridicate în aer. Aparatul fără pilot a intrat 12 minute în România",
-        "summary": "Reprezentanții Ministerului Apărării Naționale au emis a treia alertă, joi, după ce Rusia a trimis mai multe drone în regiunea Ismail din Ucriana. MApN a anunțat că două avioane spaniole care staționează în România au fost ridicate de urgență de la sol.",
+        "id": "d78d51551ede586da6d2",
+        "title": "Radu Miruță: După explozia dronei din Portul Constanţa, comunicarea cu oficialii ucraineni se face „aproape în timp real”",
+        "summary": "Ministrul interimar al Apărării, Radu Miruţă, a declarat că după incidentul din Portul Constanţa, unde o dronă ucraineană a explodat, în luna iunie, comunicarea dintre oficialii români şi cei ucraineni pe zona militară a devenit „mai rapidă” şi se desfăşoară „aproape în timp real”.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/a-treia-alerta-de-drona-in-tulcea-intr-o-singura-zi-avioane-f-18-ale-fortelor-aeriene-si-spatiale-spaniole-au-fost-ridicate-in-aer-3905283",
-        "published": "Thu, 13 Aug 2026 17:12:07 +0300",
-        "country": "Romania",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_detection",
-        "object": "drone",
-        "action": "detected",
-        "actor": "russia",
-        "target": "military",
-        "context": [],
-        "consequences": [],
-        "severity": "low",
-        "confidence": 0.9,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_detection",
-          "object": "drone",
-          "action": "detected",
-          "actor": "russia",
-          "target": "military",
-          "place": "Romania",
-          "event_date": "Thu, 13 Au",
-          "hash": "973b30475bae8ca1cda0b096"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "dronă"
-          ],
-          "actions": [
-            "detected",
-            "detectat",
-            "entered",
-            "a intrat"
-          ],
-          "targets": [
-            "military",
-            "radar"
-          ],
-          "actors": [
-            "russia",
-            "rusia",
-            "ukraine",
-            "ucraina"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.ILLEGAL.CROSSING",
-            "family": "border_security",
-            "subcategory": "illegal_crossing",
-            "subtype": "illegal_border_crossing",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1182,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Reprezentanții Ministerului Apărării Naționale au emis a treia alertă , joi, după ce Rusia a trimis mai multe drone în regiunea Ismail din Ucraina. MApN a anunțat că două avioane spaniole care staționează în România au fost ridicate de urgență de la sol. Reprezentanții Armatei au transmis: „Sistemul de supraveghere radar al MApN a detectat joi, 13 august, la ora 15.17, o țintă aeriană în proximitatea frontierei fluviale cu Ucraina. Două aeronave F-18 ale Forțelor Aeriene și Spațiale Spaniole, din cadrul Bazei 57 Aeriană „Mihail Kogălniceanu”, au fost ridicate de la sol la ora 15.20 pentru monitorizarea situației. Centrul Național Militar de Comandă (nucleu) a notificat Inspectoratul General pentru Situații de Urgență cu privire la instituirea măsurilor de alertare a populației din Nordul județului Tulcea. Un mesaj RO-Alert a fost transmis la ora 15:25. Revenim cu noi detalii pe măsură ce acestea vor fi disponibile” Setarile tale privind cookie-urile nu permit afisarea continutul din ac",
-        "place": "Romania",
-        "time": "Thu, 13 Aug 2026 17:12:07 +0300",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/actualitate/a-treia-alerta-de-drona-in-tulcea-intr-o-singura-zi-avioane-f-18-ale-fortelor-aeriene-si-spatiale-spaniole-au-fost-ridicate-in-aer-3905283"
-        ],
-        "merged_titles": [
-          "A treia alertă de dronă într-o zi: avioane F-18 spaniole au fost ridicate în aer. Aparatul fără pilot a intrat 12 minute în România"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "incident_object": "drone",
-        "incident_action": "detected",
-        "incident_actor": "russia",
-        "incident_target": "military",
-        "classification_confidence": 0.9
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9668,
-          45.9432
-        ]
-      },
-      "properties": {
-        "id": "6a8579c6a2fac744b92c",
-        "title": "Radu Miruță, despre drona explodată în Bulgaria: Ucraina nu confirmă că a venit din România",
-        "summary": "<p>Ministrul interimar al Apărării, Radu Miruță, spune că Ucraina nu a confirmat că drona care a explodat în Bulgaria ar fi venit din România. Aparatul nu a fost detectat de radarele militare române și bulgare sau de cele ale Poliției de Frontieră. „Am luat legătura cu omologii de la Ministerul Apărării din Ucraina pe linia [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/radu-miruta-despre-drona-explodata-in-bulgaria-ucraina-nu-confirma-ca-a-venit-din-romania.html",
-        "published": "Thu, 13 Aug 2026 18:56:18 +0000",
+        "url": "https://www.digi24.ro/stiri/actualitate/radu-miruta-dupa-explozia-dronei-din-portul-constanta-comunicarea-cu-oficialii-ucraineni-se-face-aproape-in-timp-real-3905881",
+        "published": "Thu, 13 Aug 2026 23:22:02 +0300",
         "country": "Romania",
         "city": null,
         "family": "air",
         "subcategory": "drone",
         "subtype": "drone_strike",
         "object": "drone",
-        "action": "exploded",
+        "action": "impact",
         "actor": "ukraine",
         "target": "unknown",
         "context": [],
@@ -298,12 +42,12 @@
           "subcategory": "drone",
           "subtype": "drone_strike",
           "object": "drone",
-          "action": "exploded",
+          "action": "impact",
           "actor": "ukraine",
           "target": "unknown",
           "place": "Romania",
           "event_date": "Thu, 13 Au",
-          "hash": "ec416113ec7d56755efac9e9"
+          "hash": "63148671d3af4fda24dc5f06"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -311,11 +55,12 @@
           "article_role": [],
           "objects": [
             "drone",
+            "dronă",
             "drona"
           ],
           "actions": [
-            "detected",
-            "detectat",
+            "impact",
+            "căzut",
             "exploded",
             "a explodat"
           ],
@@ -347,9 +92,23 @@
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 2.32,
+            "score": 2.42,
             "matched": true,
             "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
             "matched_context": []
           },
           {
@@ -359,9 +118,11 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
             "matched_context": []
           },
           {
@@ -407,30 +168,16 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.DETECTION",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
             "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
             "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
+              "objects:all:military_aircraft"
             ],
             "matched_context": []
           },
@@ -478,34 +225,287 @@
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
+        "full_article_enriched": true,
+        "article_text_chars": 2188,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Ministrul interimar al Apărării, Radu Miruţă, a declarat că după incidentul din Portul Constanţa, unde o dronă ucraineană a explodat, în luna iunie, comunicarea dintre oficialii români şi cei ucraineni pe zona militară a devenit „mai rapidă” şi se desfăşoară „aproape în timp real”. „După evenimentul de la Constanţa, eu pot să vă spun pe zona militară, este mai rapidă, în sensul în care am cerut un canal de comunicare direct între colegii de la Forţele Navale, care au o persoană de contact care răspunde în permanenţă şi infirmăm sau confirmăm cu ei, aproape în timp real, diverse evenimente pentru care noi avem nevoie de date”, a declarat Radu Miruţă, la B1 TV, citat de News.ro. Ministrul interimar al Apărării a spus că autorităţile din România nu au date privind drona care a explodat la finalul săptămânii trecute în Bulgaria, radarele româneşti neînregistrând prezenţa aparatului de zbor în spaţiul aerian al României, iar autorităţile naţionale nefiind parte din ancheta oficialilor din B",
         "place": "Romania",
-        "time": "Thu, 13 Aug 2026 18:56:18 +0000",
+        "time": "Thu, 13 Aug 2026 23:22:02 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "G4Media"
+          "Digi24"
         ],
         "urls": [
-          "https://www.g4media.ro/radu-miruta-despre-drona-explodata-in-bulgaria-ucraina-nu-confirma-ca-a-venit-din-romania.html"
+          "https://www.digi24.ro/stiri/actualitate/radu-miruta-dupa-explozia-dronei-din-portul-constanta-comunicarea-cu-oficialii-ucraineni-se-face-aproape-in-timp-real-3905881"
         ],
         "merged_titles": [
-          "Radu Miruță, despre drona explodată în Bulgaria: Ucraina nu confirmă că a venit din România"
+          "Radu Miruță: După explozia dronei din Portul Constanţa, comunicarea cu oficialii ucraineni se face „aproape în timp real”"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "ukraine",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "76d19343d0ff735eaef3",
+        "title": "Turiști nemulțumiți că au fost evacuați de pe plaja din Costinești din cauza unei drone. „E frumos să nu ne lăsați să trecem la mare?”",
+        "summary": "Noi alerte de securitate au pus pe jar autoritățile din România. Două drone au fost semnalate în județul Tulcea, iar o a treia, în apele Mării Negre, la Costinești. Până să fie analizată drona găsită pe mare, plaja a fost evacuată. Au fost însă și turiști nemulțumiți, care s-au certat cu forțele de ordine.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/turisti-nemultumiti-ca-au-fost-evacuati-de-pe-plaja-din-costinesti-din-cauza-unei-drone-e-frumos-sa-nu-ne-lasati-sa-trecem-la-mare-3905389",
+        "published": "Thu, 13 Aug 2026 17:43:04 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "exploded",
+        "actor": "unknown",
+        "target": "transport",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "exploded",
+          "actor": "unknown",
+          "target": "transport",
+          "place": "Romania",
+          "event_date": "Thu, 13 Au",
+          "hash": "91463f17318f72188078fd12"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă",
+            "drona",
+            "critical_infrastructure",
+            "port"
+          ],
+          "actions": [
+            "entered",
+            "pătruns",
+            "exploded",
+            "a explodat",
+            "evacuated",
+            "evacuat"
+          ],
+          "targets": [
+            "transport",
+            "port"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2130,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Noi alerte de securitate au pus pe jar autoritățile din România. Două drone au fost semnalate în județul Tulcea, iar o a treia, în apele Mării Negre, la Costinești. Până să fie analizată drona găsită pe mare, plaja a fost evacuată. Au fost însă și turiști nemulțumiți, care s-au certat cu forțele de ordine. Alarma s-a dat la ora 8 dimineața. Un salvamar care patrula pe plaja din Costinești a văzut drona plutind pe mare, foarte aproape de țărm. Nicu Serefim, șeful salvamarilor din Costinești: Ni s-a semnalat de cei care lucrează în port că e un obiect, când l-am văzut era o dronă. Bineînțeles că am sunat la 112, până să vină poliția am dat oamenii din apă și de pe plajă, nu știam despre ce e vorba. Am luat măsurile care consideram că sunt necesare. A venit valul și l-a scos pe dig. Ne așteptam să explodeze, dar nu a explodat. E pe dig, bucăți. Militari, polițiști, jandarmi și specialiști din SRI au împânzit zona și au evacuat plaja. Câțiva turiști revoltați că nu pot ajunge în apă s-au c",
+        "place": "Romania",
+        "time": "Thu, 13 Aug 2026 17:43:04 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/turisti-nemultumiti-ca-au-fost-evacuati-de-pe-plaja-din-costinesti-din-cauza-unei-drone-e-frumos-sa-nu-ne-lasati-sa-trecem-la-mare-3905389"
+        ],
+        "merged_titles": [
+          "Turiști nemulțumiți că au fost evacuați de pe plaja din Costinești din cauza unei drone. „E frumos să nu ne lăsați să trecem la mare?”"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
         "incident_object": "drone",
         "incident_action": "exploded",
-        "incident_actor": "ukraine",
-        "incident_target": "unknown",
-        "classification_confidence": 0.82
+        "incident_actor": "unknown",
+        "incident_target": "transport",
+        "classification_confidence": 0.84
       }
     },
     {

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-14T01:22:50.227962+00:00",
+  "generated_utc": "2026-08-14T07:21:56.501001+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 2
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Slovakia": {
@@ -78,27 +78,6 @@
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "63148671d3af4fda24dc5f06"
-      },
-      {
-        "id": "76d19343d0ff735eaef3",
-        "date": "2026-08-13",
-        "time": "2026-08-13T14:43:04+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Turiști nemulțumiți că au fost evacuați de pe plaja din Costinești din cauza unei drone. „E frumos să nu ne lăsați să trecem la mare?”",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/turisti-nemultumiti-ca-au-fost-evacuati-de-pe-plaja-din-costinesti-din-cauza-unei-drone-e-frumos-sa-nu-ne-lasati-sa-trecem-la-mare-3905389",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "91463f17318f72188078fd12"
       }
     ],
     "Slovakia": [],

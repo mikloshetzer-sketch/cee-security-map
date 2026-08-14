@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-14T07:21:56.501001+00:00",
+  "generated_utc": "2026-08-14T12:58:08.951197+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 4,
       "category_counts": {
-        "drone": 1
+        "drone": 4
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 4
       }
     },
     "Slovakia": {
@@ -44,9 +44,13 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Estonia": {
       "incident_count": 0,
@@ -59,14 +63,77 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "d78d51551ede586da6d2",
-        "date": "2026-08-13",
-        "time": "2026-08-13T20:22:02+00:00",
+        "id": "096b865d9f7854e5446d",
+        "date": "2026-08-14",
+        "time": "2026-08-14T11:55:58+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Radu Miruță: După explozia dronei din Portul Constanţa, comunicarea cu oficialii ucraineni se face „aproape în timp real”",
+        "title": "O dronă s-a prăbușit în nordul județului Tulcea. MApN: Un elicopter cercetează zona. „Trebuie să fim atenți la Constanța”",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/radu-miruta-dupa-explozia-dronei-din-portul-constanta-comunicarea-cu-oficialii-ucraineni-se-face-aproape-in-timp-real-3905881",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/un-nou-ro-alert-in-tulcea-igsu-este-vizata-populatia-din-nordul-judetului-3906339",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "4bd7b2a2ec57c51b15ff25c2"
+      },
+      {
+        "id": "7f476e60104275e5fdd0",
+        "date": "2026-08-14",
+        "time": "2026-08-14T11:30:09+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "De ce nu au detectat radarele MApN drona care s-a prăbușit în Tulcea. Comandor (r) Mateiu: „Este o cursă contra cronometru”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/de-ce-nu-au-detectat-radarele-mapn-drona-care-s-a-prabusit-in-tulcea-comandor-r-mateiu-este-o-cursa-contra-cronometru-3906477",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "32537bd22b178e4d254b7ee8"
+      },
+      {
+        "id": "76960a4315d7c019ebba",
+        "date": "2026-08-14",
+        "time": "2026-08-14T10:56:53+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "A román katonai radarok nem látták, lezuhant és felrobbant egy drón a Duna-deltában",
+        "source": "Telex",
+        "url": "https://telex.hu/transtelex/2026/08/14/lezuhant-dron-robbanas-romania",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "d7127f1ce03812c6251e2b03"
+      },
+      {
+        "id": "c4c8c3398924f1ce59e1",
+        "date": "2026-08-14",
+        "time": "2026-08-14T10:46:52+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Prima reacție a lui Ilie Bolojan după ce o dronă s-a prăbușit în Tulcea: „Începem să vedem că este o constantă, nu doar în România”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/prima-reactie-a-lui-ilie-bolojan-dupa-ce-o-drona-s-a-prabusit-in-tulcea-incepem-sa-vedem-ca-este-o-constanta-nu-doar-in-romania-3906441",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -77,13 +144,35 @@
         "incident_subtype": "drone_strike",
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "63148671d3af4fda24dc5f06"
+        "fingerprint_hash": "253b18fe2e406793082dc518"
       }
     ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
-    "Latvia": [],
+    "Latvia": [
+      {
+        "id": "827cc7370dc8bc7fee04",
+        "date": "2026-08-14",
+        "time": "2026-08-14T09:32:56+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Drón hatolt be Lettország légterébe, vadászgépeket is riasztottak",
+        "source": "HVG",
+        "url": "https://hvg.hu/vilag/20260814_dronbehatolas-lettorszag-vadaszgepek-riasztas",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "f09ecabe8591af194b2a3435"
+      }
+    ],
     "Estonia": []
   }
 }

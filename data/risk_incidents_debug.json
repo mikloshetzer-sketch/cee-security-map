@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-14T18:53:51.962651+00:00",
+  "generated_utc": "2026-08-15T00:53:28.231885+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 6,
+    "local_event_count": 6,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 4,
+      "incident_count": 6,
       "category_counts": {
-        "drone": 4
+        "drone": 5,
+        "military": 1
       },
       "source_files": {
-        "local_events.geojson": 4
+        "local_events.geojson": 6
       }
     },
     "Slovakia": {
@@ -58,6 +59,48 @@
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [
+      {
+        "id": "40f6e9a20f1766fbb0a7",
+        "date": "2026-08-14",
+        "time": "2026-08-14T18:52:30+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Drone din Marea Neagră au ajuns și pe litoralul Bulgariei. Ce a spus ministrul Apărării de la Sofia",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/drone-din-marea-neagra-au-ajuns-si-pe-litoralul-bulgariei-ce-a-spus-ministrul-apararii-de-la-sofia-2324912",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "463072d10d21b778d33da8c7"
+      },
+      {
+        "id": "71a7065f409bcf697f64",
+        "date": "2026-08-14",
+        "time": "2026-08-14T16:40:00+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "O nouă dronă descoperită în judeţul Tulcea. Zona a fost securizată de militari",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/o-noua-drona-descoperita-in-judetul-tulcea-zona-a-fost-securizata-de-militari-2324826",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "e6ba052efd07caf3bee11cad"
+      },
       {
         "id": "85cf945c0b2a4c91aa83",
         "date": "2026-08-14",

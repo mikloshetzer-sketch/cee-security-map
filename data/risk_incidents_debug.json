@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-15T06:36:59.848677+00:00",
+  "generated_utc": "2026-08-15T12:30:24.903816+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,17 +15,21 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Romania": {
-      "incident_count": 4,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 4
+        "infrastructure_disruption": 1
       },
       "source_files": {
-        "local_events.geojson": 4
+        "local_events.geojson": 1
+      }
+    },
+    "Romania": {
+      "incident_count": 2,
+      "category_counts": {
+        "drone": 2
+      },
+      "source_files": {
+        "local_events.geojson": 2
       }
     },
     "Slovakia": {
@@ -60,17 +64,39 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "6b3451a9f6f9aebe7407",
+        "date": "2026-08-15",
+        "time": "2026-08-15T10:04:38+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Ungaria anunță că scufundă două barje în Dunăre pentru a menține în funcțiune centrala nucleară Paks",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/ue/ungaria-anunta-ca-scufunda-doua-barje-in-dunare-pentru-a-mentine-in-functiune-centrala-nucleara-paks-3907577",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "3886fbf2f1f5aed94c686ec9"
+      }
+    ],
     "Romania": [
       {
-        "id": "40f6e9a20f1766fbb0a7",
-        "date": "2026-08-14",
-        "time": "2026-08-14T18:52:30+00:00",
+        "id": "38072d786373c5805ddb",
+        "date": "2026-08-15",
+        "time": "2026-08-15T06:36:09+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Drone din Marea Neagră au ajuns și pe litoralul Bulgariei. Ce a spus ministrul Apărării de la Sofia",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/drone-din-marea-neagra-au-ajuns-si-pe-litoralul-bulgariei-ce-a-spus-ministrul-apararii-de-la-sofia-2324912",
+        "title": "O dronă posibil rusească a fost găsită pe malul Mării Negre, în apropiere de Primorsko. Ce spun autoritățile bulgare",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/o-drona-posibil-ruseasca-a-fost-gasita-pe-malul-marii-negre-in-apropiere-de-primorsko-ce-spun-autoritatile-bulgare-3907443",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -79,9 +105,9 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
+        "classification_confidence": 0.76,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "463072d10d21b778d33da8c7"
+        "fingerprint_hash": "f4d98ec48f87365a61a08b49"
       },
       {
         "id": "85cf945c0b2a4c91aa83",
@@ -103,48 +129,6 @@
         "classification_confidence": 0.98,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "e843652ba0562904de5fb568"
-      },
-      {
-        "id": "5ca3c023f1baf2bbf4b5",
-        "date": "2026-08-14",
-        "time": "2026-08-14T15:29:59+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Újabb drón zuhant román területre, a hadsereg radarjai nem vették észre",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20260814_romania-dron-hadsereg-radar-videok",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "eaa38fb8899c0545b27ed476"
-      },
-      {
-        "id": "76960a4315d7c019ebba",
-        "date": "2026-08-14",
-        "time": "2026-08-14T10:56:53+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "A román katonai radarok nem látták, lezuhant és felrobbant egy drón a Duna-deltában",
-        "source": "Telex",
-        "url": "https://telex.hu/transtelex/2026/08/14/lezuhant-dron-robbanas-romania",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "d7127f1ce03812c6251e2b03"
       }
     ],
     "Slovakia": [],

@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-15T12:30:17.544701+00:00",
+  "generated_utc": "2026-08-15T18:28:55.819094+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,73 +14,58 @@
         ]
       },
       "properties": {
-        "id": "85cf945c0b2a4c91aa83",
-        "title": "A román csendőrökkel kezdtek balhézni a turisták, miután kisodródott drónroncsok miatt lezárták a tengerpartot",
-        "summary": "Alig néhány óra leforgása alatt két fekete-tengeri strand kiürítését is elrendelték, ami kisebb káoszhoz vezetett.",
-        "source": "Telex",
-        "url": "https://telex.hu/transtelex/2026/08/14/roman-tengerpart-strand-drondarabok-csendorok-lezaras",
-        "published": "Fri, 14 Aug 2026 18:04:47 +0200",
+        "id": "37588134873f24ec4370",
+        "title": "Explicațiile unui contraamiral: Cât de pregătită e România să-și apere litoralul. Vulnerabilități și lecții după incidentele cu drone",
+        "summary": "Astăzi s-a sărbătorit Ziua Marinei, dar cât de protejată este de fapt, țara în această zonă, de pe mare? Întrebarea este mai mult decât legitimă după evenimentele din ultimele luni și săptămâni legate de dronele aeriene sau maritime. Invitat la Digi 24, Sorin Learschi, contraamiral de flotilă, a încercat să răspundă la această întrebare.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/explicatiile-unui-contraamiral-cat-de-pregatita-e-romania-sa-si-apere-litoralul-vulnerabilitati-si-lectii-dupa-incidentele-cu-drone-3907833",
+        "published": "Sat, 15 Aug 2026 19:30:27 +0300",
         "country": "Romania",
         "city": "Constanța",
         "family": "air",
         "subcategory": "drone",
-        "subtype": "drone_strike",
+        "subtype": "drone_intrusion",
         "object": "drone",
-        "action": "exploded",
-        "actor": "russia",
-        "target": "government",
+        "action": "entered",
+        "actor": "unknown",
+        "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "high",
-        "confidence": 0.98,
+        "severity": "medium",
+        "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
         "fingerprint": {
           "country": "Romania",
           "family": "air",
           "subcategory": "drone",
-          "subtype": "drone_strike",
+          "subtype": "drone_intrusion",
           "object": "drone",
-          "action": "exploded",
-          "actor": "russia",
-          "target": "government",
+          "action": "entered",
+          "actor": "unknown",
+          "target": "unknown",
           "place": "Constanța",
-          "event_date": "Fri, 14 Au",
-          "hash": "e843652ba0562904de5fb568"
+          "event_date": "Sat, 15 Au",
+          "hash": "75b1f6a42e7ba247aa5abb30"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
-          "article_role": [
-            "történt"
-          ],
+          "article_role": [],
           "objects": [
             "drone",
-            "drón"
+            "drona"
           ],
           "actions": [
-            "exploded",
-            "felrobbant",
-            "closed",
-            "lezárták"
+            "entered",
+            "a intrat"
           ],
-          "targets": [
-            "government",
-            "minisztérium"
-          ],
-          "actors": [
-            "russia",
-            "oroszország",
-            "orosz",
-            "ukraine",
-            "ukrán",
-            "unknown",
-            "ismeretlen"
-          ],
+          "targets": [],
+          "actors": [],
           "consequences": [],
           "extra_context": [
-            "feed_country=Hungary",
+            "feed_country=Romania",
             "geocode_quality=city"
           ]
         },
@@ -89,21 +74,19 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
           "country_match": 0.1,
           "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.DRONE.STRIKE",
+            "rule_id": "AIR.DRONE.INTRUSION",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
             "priority": 0,
-            "score": 2.32,
+            "score": 2.26,
             "matched": true,
             "missing": [],
             "matched_context": []
@@ -119,20 +102,6 @@
             "matched": false,
             "missing": [
               "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
             ],
             "matched_context": []
           },
@@ -165,202 +134,6 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:ship"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 4241,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Pénteken délután odalett a román tengerparton nyaralók csendes napozása és fürdőzése: alig néhány óra leforgása alatt két népszerű üdülőhelyen is hatósági szalagokkal zárták el a vizet a strandolók elől a partra sodródó dróndarabok miatt. Míg a hatóságok a biztonsági protokollt követve a robbanásveszélyt igyekeztek elhárítani, a pihenésükből kizárt turisták egy részénél elpattant a cérna, és a kordont felhúzó csendőrökkel kezdtek veszekedni. A tengerparti káosz alig pár órával követte azt a Duna-deltai incidenst, ahol egy orosz harci drón nemcsak észrevétlenül jutott be Románia légterébe, hanem becsapódásakor fel is robbant egy erdős részen. A legfrissebb riasztás a déli partvidéken, Saturn üdülőhelyen történt. A rendőrséget azért riasztották a strandra, mert a hullámverésben, közvetlenül a víz szélén egy drónra emlékeztető tárgyat vettek észre. A hatóságok a bejelentés után azonnal lezárták az érintett partszakaszt, a fürdőzőket pedig kiküldték a vízből. A helyszínre érkező katonai sz",
-        "place": "Constanța",
-        "time": "Fri, 14 Aug 2026 18:04:47 +0200",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Telex"
-        ],
-        "urls": [
-          "https://telex.hu/transtelex/2026/08/14/roman-tengerpart-strand-drondarabok-csendorok-lezaras"
-        ],
-        "merged_titles": [
-          "A román csendőrökkel kezdtek balhézni a turisták, miután kisodródott drónroncsok miatt lezárták a tengerpartot"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "exploded",
-        "incident_actor": "russia",
-        "incident_target": "government",
-        "classification_confidence": 0.98
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.5033,
-          47.1625
-        ]
-      },
-      "properties": {
-        "id": "92a83f90c3f468d76ecf",
-        "title": "Halálos áldozata is van már a horvátországi erdőtűznek",
-        "summary": "A rendőrség péntek délután egy holttestet talált a leégett terület átvizsgálása közben.",
-        "source": "Telex",
-        "url": "https://telex.hu/kulfold/2026/08/14/halalos-aldozat-horvatorszagi-erdotuz-omis",
-        "published": "Fri, 14 Aug 2026 16:00:35 +0200",
-        "country": "Hungary",
-        "city": null,
-        "family": "natural_hazard",
-        "subcategory": "wildfire",
-        "subtype": "wildfire",
-        "object": "cyber_system",
-        "action": "impact",
-        "actor": "unknown",
-        "target": "civilian",
-        "context": [
-          "erdőtűz"
-        ],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.84,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "NATURAL.WILDFIRE",
-        "fingerprint": {
-          "country": "Hungary",
-          "family": "natural_hazard",
-          "subcategory": "wildfire",
-          "subtype": "wildfire",
-          "object": "cyber_system",
-          "action": "impact",
-          "actor": "unknown",
-          "target": "civilian",
-          "place": "Hungary",
-          "event_date": "Fri, 14 Au",
-          "hash": "26adc313be76525e75594ac3"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "cyber_system",
-            "hálózat"
-          ],
-          "actions": [
-            "impact",
-            "talált"
-          ],
-          "targets": [
-            "civilian",
-            "lakóépület"
-          ],
-          "actors": [],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Hungary",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "NATURAL.WILDFIRE",
-            "family": "natural_hazard",
-            "subcategory": "wildfire",
-            "subtype": "wildfire",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.0,
-            "matched": true,
-            "missing": [],
-            "matched_context": [
-              "erdőtűz"
-            ]
-          },
-          {
             "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
             "subcategory": "drone",
@@ -370,21 +143,7 @@
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
+              "actions:any:attacked,exploded,impact"
             ],
             "matched_context": []
           },
@@ -403,122 +162,93 @@
             "matched_context": []
           },
           {
-            "rule_id": "CYBER.INTRUSION",
-            "family": "cyber",
-            "subcategory": "intrusion",
-            "subtype": "cyber_intrusion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:compromised"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:disrupted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
             "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
             "priority": 0,
             "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:drone",
+              "objects:all:missile",
               "actions:all:detected"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.INTRUSION",
+            "rule_id": "AIR.MISSILE.INTERCEPT",
             "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
             "severity": "high",
             "priority": 0,
             "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 1230,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Halálos áldozata is van annak a nagy kiterjedésű erdőtűznek, amely csütörtök este keletkezett a dél-horvátországi Omiš térségében, majd lakóházakra is átterjedt. A rendőrség péntek délután egy holttestet talált a leégett terület átvizsgálása közben. Andrej Plenković horvát kormányfő és Zoran Milanović államfő is a helyszínre látogatott, írta az MTI. Több tucat lakóépület megrongálódott vagy teljesen kiégett, emellett éttermek, gépkocsik, hajók, melléképületek, ültetvények és az elektromos hálózat egyes részei is károsodtak. A spliti kórházban negyven embert láttak el, közülük heten lélegeztetőgépre kerültek. Eddig legalább 58 magyar állampolgárt kellett kimenekíteni a súlyos horvátországi erdőtűz érintette területekről – közölte a Facebookon Orbán Anita külügyminiszter a legfrissebb információk alapján. Egy magyart könnyebb végtagsérüléssel vittek a spliti kórházba, más magyar sérültről nincs információ. Két család, összesen hét magyar állampolgár csak gyalogosan tudott elmenekülni, és",
-        "place": "Hungary",
-        "time": "Fri, 14 Aug 2026 16:00:35 +0200",
-        "category": "natural_hazard",
+        "article_text_chars": 2659,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Astăzi s-a sărbătorit Ziua Marinei, dar cât de protejată este, de fapt, țara în această zonă, de pe mare? Întrebarea este mai mult decât legitimă după evenimentele din ultimele luni și săptămâni legate de dronele aeriene sau maritime. Invitat la Digi 24, Sorin Learschi, contraamiral de flotilă, a încercat să răspundă la această întrebare. „Pentru a avea o marină eficientă, trebuie îndeplinite câteva condiții. Și aici mă refer la personal foarte bine pregătit – și asta înseamnă costuri, nave, drone și o susținere pe partea de instrucție care trebuie să fie orientată către misiunile posibile. Și aici avem, să spunem, multe de învățat încă, multe de adaptat. Nu suntem nici în afara subiectului, cum se spune, dar acum – părerea mea – este că încă plătim greșelile de acum ceva ani de zile, când armata, în general, a fost văduvită de un buget corespunzător. Comparați un buget de 2,5 cu unul de 0,86%. Iar acum trebuie să facem tot posibilul pentru a aduce forțele noastre la un nivel, să spune",
+        "place": "Constanța",
+        "time": "Sat, 15 Aug 2026 19:30:27 +0300",
+        "category": "air",
         "kind": "local_media",
-        "geocode_quality": "country_fallback",
+        "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Telex"
+          "Digi24"
         ],
         "urls": [
-          "https://telex.hu/kulfold/2026/08/14/halalos-aldozat-horvatorszagi-erdotuz-omis"
+          "https://www.digi24.ro/stiri/actualitate/explicatiile-unui-contraamiral-cat-de-pregatita-e-romania-sa-si-apere-litoralul-vulnerabilitati-si-lectii-dupa-incidentele-cu-drone-3907833"
         ],
         "merged_titles": [
-          "Halálos áldozata is van már a horvátországi erdőtűznek"
+          "Explicațiile unui contraamiral: Cât de pregătită e România să-și apere litoralul. Vulnerabilități și lecții după incidentele cu drone"
         ],
-        "incident_family": "natural_hazard",
-        "incident_subcategory": "wildfire",
-        "incident_subtype": "wildfire",
-        "incident_object": "cyber_system",
-        "incident_action": "impact",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "incident_object": "drone",
+        "incident_action": "entered",
         "incident_actor": "unknown",
-        "incident_target": "civilian",
+        "incident_target": "unknown",
         "classification_confidence": 0.84
       }
     },
@@ -743,7 +473,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1678,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Autorităţile ungare anunță că vor scufunda controlat două barje în Dunăre pentru a ridica nivelul apei în apropierea centralei nucleare Paks şi a evita oprirea uneia dintre cele două turbine care mai funcţionează, în contextul secetei istorice şi al nivelului extrem de scăzut al fluviului, transmite Reuters. Centrala Paks funcţionează în prezent la aproximativ 25% din capacitate, deoarece foloseşte apa Dunării pentru răcire. Premierul Peter Magyar a avertizat că, potrivit prognozelor actuale, nivelul fluviului ar urma să ajungă la un prag critic luni dimineaţă. În acest caz, una dintre cele două turbine aflate încă în funcţiune ar trebui oprită. „Dunărea este în scădere. Scufundarea controlată a barjelor va începe în curând”, a anunţat Magyar. Cele două barje, fiecare cu o lungime de aproximativ 80 de metri, vor fi scufundate în apropierea centralei pentru a ridica temporar nivelul apei şi a permite continuarea funcţionării turbinelor. Măsura este însă una provizorie. Guvernul ungar a ",
         "place": "Paks",
         "time": "Sat, 15 Aug 2026 13:04:38 +0300",
@@ -988,7 +718,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 4106,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "O dronă de recunoaștere a fost adusă la țărm în apropierea localității Primorsko, în timp ce un alt obiect asemănător unei drone a fost găsit pe plaja din apropiere, din zona Lozenets, scrie Novinite . Descoperirile au stârnit întrebări cu privire la originea aeronavei fără pilot, site-ul BIRD.BG susținând că drona găsită lângă Primorsko este de fabricație rusă. BIRD.BG a afirmat că imaginile filmate pe plajă au fost suficiente pentru ca echipa sa să identifice aeronava ca fiind o dronă de recunoaștere de tip Orlan-10. Publicația a pus sub semnul întrebării dacă autoritățile bulgare vor reacționa la această descoperire la fel de rapid cum au făcut-o în cazul dronei de fabricație ucraineană care a pătruns recent în spațiul aerian bulgar, în apropierea graniței cu România. „«Obiectul de recunoaștere» care a apărut lângă Primorsko, așa cum se raportează în prezent, este cel mai probabil o dronă rusă «Orlan-10»”, a scris BIRD.BG, precizând că tipul aeronavei era vizibil în imaginile pe car",
         "place": "Romania",
         "time": "Sat, 15 Aug 2026 09:36:09 +0300",
@@ -1014,6 +744,257 @@
         "incident_actor": "unknown",
         "incident_target": "unknown",
         "classification_confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.638,
+          44.173
+        ]
+      },
+      "properties": {
+        "id": "8c421fca22aaa43c8ac1",
+        "title": "Resturi de dronă au ajuns și pe plaja din Olimp. „Am învelit-o cu geaca de salvamar”",
+        "summary": "Un fragment dintr-o dronă a ajuns și pe plaja din Olimp, după două zile în care fragmente similare au fost descoperite pe plajele din stațiunile Saturn și Costinești. Fragmentul a fost descoperit de către un salvamar care a alertat autoritățile, scrie Ziua de Constanța. Salvamarul a observat fragmentul de dronă, sâmbătă, în jurul orei 15.30, &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/resturi-de-drona-au-ajuns-si-pe-plaja-din-olimp-am-invelit-o-cu-geaca-de-salvamar-2325317",
+        "published": "Sat, 15 Aug 2026 14:30:53 +0000",
+        "country": "Romania",
+        "city": "Constanța",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Constanța",
+          "event_date": "Sat, 15 Au",
+          "hash": "5df0f232aab2b54cddbf9aaa"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă",
+            "drona"
+          ],
+          "actions": [
+            "detected",
+            "detectat",
+            "observat"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2914,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Un fragment dintr-o dronă a ajuns și pe plaja din Olimp, după două zile în care fragmente similare au fost descoperite pe plajele din stațiunile Saturn și Costinești. Fragmentul a fost descoperit de către un salvamar care a alertat autoritățile, scrie Ziua de Constanța . Salvamarul a observat fragmentul de dronă, sâmbătă, în jurul orei 15.30, plutind la aproximativ 30 de metri de țărm. „Am lăsat-o după să eșueze, până mi-a luat-o valul până la mal”, a relatat salvamarul. Acesta a alertat imediat autoritățile și după aceea a luat măsuri de securizare astfel încât puținii turiști aflați pe plajă să nu se apropie de fragmentul de dronă. „Am asigurat perimetrul. Am învelit-o cu geaca de salvamar”, a spus bărbatul. După ce poliția și jandarmeria au ajuns la fața locului, fragmentul a fost examinat și, cum nu existau indicii că ar fi avut încărcătură explozivă, s-a decis ca plaja să nu fie evacuată. Fragmentul a fost preluat de jandarmi pentru verificări suplimentare. În ultimele zile, mai m",
+        "place": "Constanța",
+        "time": "Sat, 15 Aug 2026 14:30:53 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "urls": [
+          "https://hotnews.ro/resturi-de-drona-au-ajuns-si-pe-plaja-din-olimp-am-invelit-o-cu-geaca-de-salvamar-2325317"
+        ],
+        "merged_titles": [
+          "Resturi de dronă au ajuns și pe plaja din Olimp. „Am învelit-o cu geaca de salvamar”"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
       }
     },
     {

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-15T12:30:24.903816+00:00",
+  "generated_utc": "2026-08-15T18:29:03.191476+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -24,12 +24,12 @@
       }
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 3,
       "category_counts": {
-        "drone": 2
+        "drone": 3
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 3
       }
     },
     "Slovakia": {
@@ -89,6 +89,48 @@
     ],
     "Romania": [
       {
+        "id": "37588134873f24ec4370",
+        "date": "2026-08-15",
+        "time": "2026-08-15T16:30:27+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Explicațiile unui contraamiral: Cât de pregătită e România să-și apere litoralul. Vulnerabilități și lecții după incidentele cu drone",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/explicatiile-unui-contraamiral-cat-de-pregatita-e-romania-sa-si-apere-litoralul-vulnerabilitati-si-lectii-dupa-incidentele-cu-drone-3907833",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "75b1f6a42e7ba247aa5abb30"
+      },
+      {
+        "id": "8c421fca22aaa43c8ac1",
+        "date": "2026-08-15",
+        "time": "2026-08-15T14:30:53+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Resturi de dronă au ajuns și pe plaja din Olimp. „Am învelit-o cu geaca de salvamar”",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/resturi-de-drona-au-ajuns-si-pe-plaja-din-olimp-am-invelit-o-cu-geaca-de-salvamar-2325317",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "5df0f232aab2b54cddbf9aaa"
+      },
+      {
         "id": "38072d786373c5805ddb",
         "date": "2026-08-15",
         "time": "2026-08-15T06:36:09+00:00",
@@ -108,27 +150,6 @@
         "classification_confidence": 0.76,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "f4d98ec48f87365a61a08b49"
-      },
-      {
-        "id": "85cf945c0b2a4c91aa83",
-        "date": "2026-08-14",
-        "time": "2026-08-14T16:04:47+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "A román csendőrökkel kezdtek balhézni a turisták, miután kisodródott drónroncsok miatt lezárták a tengerpartot",
-        "source": "Telex",
-        "url": "https://telex.hu/transtelex/2026/08/14/roman-tengerpart-strand-drondarabok-csendorok-lezaras",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "e843652ba0562904de5fb568"
       }
     ],
     "Slovakia": [],

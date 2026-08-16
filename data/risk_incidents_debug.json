@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-15T18:29:03.191476+00:00",
+  "generated_utc": "2026-08-16T00:57:24.421363+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -24,12 +24,12 @@
       }
     },
     "Romania": {
-      "incident_count": 3,
+      "incident_count": 2,
       "category_counts": {
-        "drone": 3
+        "drone": 2
       },
       "source_files": {
-        "local_events.geojson": 3
+        "local_events.geojson": 2
       }
     },
     "Slovakia": {
@@ -48,13 +48,9 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Estonia": {
       "incident_count": 0,
@@ -129,55 +125,12 @@
         "classification_confidence": 0.84,
         "matched_rule_id": "AIR.DRONE.DETECTION",
         "fingerprint_hash": "5df0f232aab2b54cddbf9aaa"
-      },
-      {
-        "id": "38072d786373c5805ddb",
-        "date": "2026-08-15",
-        "time": "2026-08-15T06:36:09+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "O dronă posibil rusească a fost găsită pe malul Mării Negre, în apropiere de Primorsko. Ce spun autoritățile bulgare",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/o-drona-posibil-ruseasca-a-fost-gasita-pe-malul-marii-negre-in-apropiere-de-primorsko-ce-spun-autoritatile-bulgare-3907443",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "f4d98ec48f87365a61a08b49"
       }
     ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
-    "Latvia": [
-      {
-        "id": "ec1e26142cf23b978ca6",
-        "date": "2026-08-14",
-        "time": "2026-08-14T02:58:27+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Italská stíhačka sestřelila dron nad Lotyšskem",
-        "source": "CT24",
-        "url": "https://ct24.ceskatelevize.cz/clanek/svet/stihacky-nato-sestrelily-dron-nad-lotysskem-uvedla-riga-376583",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "f4f8e0d2d8b814c2f9f84dce"
-      }
-    ],
+    "Latvia": [],
     "Estonia": []
   }
 }

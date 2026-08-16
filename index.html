@@ -1375,6 +1375,16 @@
               <input type="checkbox" id="layerLocalEvents" checked>
               <label for="layerLocalEvents">helyi források / local events</label>
             </div>
+            <div class="layer-item" style="display:block;">
+              <div style="font-size:11px;font-weight:800;color:var(--muted);margin-bottom:8px;">Local events időablak</div>
+              <div class="time-filter-row" style="margin:0;">
+                <button class="time-filter-btn on" type="button" data-local-window="24h">24h</button>
+                <button class="time-filter-btn" type="button" data-local-window="7d">7 nap</button>
+                <button class="time-filter-btn" type="button" data-local-window="30d">30 nap</button>
+                <button class="time-filter-btn" type="button" data-local-window="all">összes</button>
+              </div>
+              <div class="small" id="localEventsMeta" style="margin-top:8px;">Aktuális + history, deduplikálva</div>
+            </div>
             <div class="layer-item">
               <input type="checkbox" id="layerEarly">
               <label for="layerEarly">early warning</label>
@@ -1452,6 +1462,7 @@
       infraProximity: null,
       infraProximityHistory: null,
       localEvents: null,
+      localEventsHistory: null,
       criticalInfrastructure: null,
       digitalInfrastructure: null,
       hazardousInfrastructure: null
@@ -1459,6 +1470,7 @@
 
     const FILTERS = { newsToday: false, alertsToday: false };
     let PROXIMITY_TIME_WINDOW = "24h";
+    let LOCAL_EVENTS_TIME_WINDOW = "24h";
 
     const CAT_STYLE = {
       protest: { radius: 6, fillOpacity: 0.55 },
@@ -2073,6 +2085,103 @@
       }
     }
 
+    function parseLocalEventTime(feature){
+      const p = feature?.properties || {};
+      const value = p.time || p.date || p.datetime || p.published_utc || p.first_seen || null;
+      if (!value) return null;
+      const d = new Date(value);
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    function localEventWindowLabel(windowKey){
+      if (windowKey === "24h") return "24 óra";
+      if (windowKey === "7d") return "7 nap";
+      if (windowKey === "30d") return "30 nap";
+      return "összes";
+    }
+
+    function localEventInTimeWindow(feature, windowKey){
+      if (windowKey === "all") return true;
+      const d = parseLocalEventTime(feature);
+      if (!d) return false;
+      const ageMs = Date.now() - d.getTime();
+      if (ageMs < 0) return true;
+      const ageHours = ageMs / (1000 * 60 * 60);
+      if (windowKey === "24h") return ageHours <= 24;
+      if (windowKey === "7d") return ageHours <= 24 * 7;
+      if (windowKey === "30d") return ageHours <= 24 * 30;
+      return true;
+    }
+
+    function localEventFingerprint(feature){
+      const p = feature?.properties || {};
+      const explicit = p.fingerprint || p.fingerprint_hash || p.cluster_id || p.event_id || null;
+      if (explicit) return `id:${String(explicit)}`;
+
+      const rule = String(p.matched_rule_id || p.incident_subtype || p.category || "unknown").toLowerCase();
+      const country = String(p.country || "").toLowerCase();
+      const place = String(p.place || p.city || "").toLowerCase();
+      const title = String(p.title || "").toLowerCase().replace(/\s+/g," ").trim();
+      const d = parseLocalEventTime(feature);
+      const day = d ? d.toISOString().slice(0,10) : String(p.date || "").slice(0,10);
+      return `fallback:${rule}|${country}|${place}|${day}|${title}`;
+    }
+
+    function buildLocalEventsPayload(windowKey){
+      const current = Array.isArray(DATASETS.localEvents?.features) ? DATASETS.localEvents.features : [];
+      const history = Array.isArray(DATASETS.localEventsHistory?.features) ? DATASETS.localEventsHistory.features : [];
+      const merged = new Map();
+
+      // History first; current records overwrite equivalent archived records.
+      for (const feature of history){
+        if (!feature || feature.type !== "Feature") continue;
+        merged.set(localEventFingerprint(feature), feature);
+      }
+      for (const feature of current){
+        if (!feature || feature.type !== "Feature") continue;
+        merged.set(localEventFingerprint(feature), feature);
+      }
+
+      let features = Array.from(merged.values()).filter(f => localEventInTimeWindow(f, windowKey));
+      if (FILTERS.newsToday){
+        features = features.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date));
+      }
+      features.sort((a,b) => {
+        const at = parseLocalEventTime(a)?.getTime() || 0;
+        const bt = parseLocalEventTime(b)?.getTime() || 0;
+        return bt - at;
+      });
+
+      return {
+        type: "FeatureCollection",
+        features,
+        meta: {
+          active_window: windowKey,
+          current_count: current.length,
+          history_count: history.length,
+          deduplicated_total: merged.size,
+          visible_count: features.length
+        }
+      };
+    }
+
+    function refreshLocalEventsView(){
+      if (!layers.localEvents) return;
+      const payload = buildLocalEventsPayload(LOCAL_EVENTS_TIME_WINDOW);
+      layers.localEvents.clearLayers();
+      layers.localEvents.addData(payload);
+
+      const meta = document.getElementById("localEventsMeta");
+      if (meta){
+        const m = payload.meta || {};
+        meta.textContent = `${localEventWindowLabel(LOCAL_EVENTS_TIME_WINDOW)} • ${m.visible_count || 0} esemény • history: ${m.history_count || 0}`;
+      }
+
+      document.querySelectorAll("[data-local-window]").forEach(btn => {
+        btn.classList.toggle("on", btn.getAttribute("data-local-window") === LOCAL_EVENTS_TIME_WINDOW);
+      });
+    }
+
     function applyFilters(){
       if (DATASETS.gdelt && layers.gdelt){
         const feats = DATASETS.gdelt.features || [];
@@ -2128,13 +2237,8 @@
         layers.rssTrusted.addData({ type:"FeatureCollection", features: keep });
       }
 
-      if (DATASETS.localEvents && layers.localEvents){
-        const feats = DATASETS.localEvents.features || [];
-        const keep = FILTERS.newsToday
-          ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date))
-          : feats;
-        layers.localEvents.clearLayers();
-        layers.localEvents.addData({ type:"FeatureCollection", features: keep });
+      if ((DATASETS.localEvents || DATASETS.localEventsHistory) && layers.localEvents){
+        refreshLocalEventsView();
       }
 
       document.getElementById("btnTodayNews").classList.toggle("on", FILTERS.newsToday);
@@ -2919,7 +3023,7 @@
 
       refreshProximityView();
 
-      const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss, localEvents] = await Promise.all([
+      const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss, localEvents, localEventsHistory] = await Promise.all([
         loadJson(`${DATA}/gdelt.geojson`).catch(()=>null),
         loadJson(`${DATA}/gdelt_linked.geojson`).catch(()=>null),
         loadJson(`${DATA}/gdelt_crossborder.geojson`).catch(()=>null),
@@ -2927,6 +3031,7 @@
         loadJson(`${DATA}/gdacs.geojson`).catch(()=>null),
         loadJson(`${DATA}/trusted_rss.json`).catch(()=>null),
         loadJson(`${DATA}/local_events.geojson`).catch(()=>null),
+        loadJson(`${DATA}/history/local_events_history.geojson`).catch(()=>null),
       ]);
 
       if (gdelt) DATASETS.gdelt = gdelt;
@@ -2934,11 +3039,14 @@
       if (gdeltDoc) DATASETS.gdeltDoc = gdeltDoc;
       if (usgs) DATASETS.usgs = usgs;
       if (gdacs) DATASETS.gdacs = gdacs;
-      if (localEvents) {
-        DATASETS.localEvents = localEvents;
-        layers.localEvents.clearLayers();
-        layers.localEvents.addData(localEvents);
+      if (localEvents) DATASETS.localEvents = localEvents;
+      if (localEventsHistory) {
+        DATASETS.localEventsHistory = localEventsHistory;
+        console.info(`Local events history loaded: ${localEventsHistory?.features?.length ?? 0} archived events`);
+      } else {
+        DATASETS.localEventsHistory = { type: "FeatureCollection", features: [] };
       }
+      refreshLocalEventsView();
 
       if (trustedRss) {
         DATASETS.trustedRss = trustedRss;
@@ -2998,6 +3106,13 @@
         btn.addEventListener("click", () => {
           PROXIMITY_TIME_WINDOW = btn.getAttribute("data-prox-window") || "24h";
           refreshProximityView();
+        });
+      });
+
+      document.querySelectorAll("[data-local-window]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          LOCAL_EVENTS_TIME_WINDOW = btn.getAttribute("data-local-window") || "24h";
+          refreshLocalEventsView();
         });
       });
 
@@ -3122,7 +3237,7 @@
           'energia infrastruktúra':'energy infrastructure','közlekedési infrastruktúra':'transport infrastructure',
           'katonai infrastruktúra':'military infrastructure','digitális infrastruktúra':'digital infrastructure',
           'víz / vegyipar / veszélyes ipar':'water / chemicals / hazardous industry',
-          'infrastruktúra-közeli incidensek':'incidents near infrastructure','helyi források / local events':'local sources / local events',
+          'infrastruktúra-közeli incidensek':'incidents near infrastructure','helyi források / local events':'local sources / local events','Local events időablak':'Local events time window','Aktuális + history, deduplikálva':'Current + history, deduplicated',
           'early warning':'early warning','trusted RSS stories':'trusted RSS stories','USGS rengések':'USGS earthquakes','GDACS riasztások':'GDACS alerts',
           '7 nap':'7 days','30 nap':'30 days','összes':'all','Kattints a sorra → zoom.':'Click a row to zoom.',
           'Risk':'Risk','Hotspots':'Hotspots','Stories':'Stories','Régiós risk:':'Regional risk:','Confidence:':'Confidence:',
@@ -3177,4 +3292,3 @@
 
 </body>
 </html>
-

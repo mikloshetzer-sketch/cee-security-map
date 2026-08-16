@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-16T06:36:24.950441+00:00",
+  "generated_utc": "2026-08-16T12:35:22.638258+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 3,
+      "incident_count": 4,
       "category_counts": {
-        "drone": 3
+        "drone": 4
       },
       "source_files": {
-        "local_events.geojson": 3
+        "local_events.geojson": 4
       }
     },
     "Slovakia": {
@@ -59,14 +59,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "37588134873f24ec4370",
+        "id": "b9edfdebf42bb99338c1",
         "date": "2026-08-16",
-        "time": "2026-08-16T05:16:02+00:00",
+        "time": "2026-08-16T10:54:44+00:00",
         "category": "drone",
         "severity": "medium",
-        "title": "Explicațiile unui contraamiral: Cât de pregătită e România să-și apere litoralul. Vulnerabilități și lecții după incidentele cu drone",
+        "title": "Primele imagini din timpul misiunii de doborâre a dronei care a violat spațiul aerian al României",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/explicatiile-unui-contraamiral-cat-de-pregatita-e-romania-sa-si-apere-litoralul-vulnerabilitati-si-lectii-dupa-incidentele-cu-drone-3907833",
+        "url": "https://www.digi24.ro/stiri/actualitate/primele-imagini-din-timpul-misiunii-de-doborare-a-dronei-care-a-violat-spatiul-aerian-al-romaniei-3908245",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -75,40 +75,40 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.84,
+        "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "3687442e3676f8d687698be1"
+        "fingerprint_hash": "75f01cb249663fc56eda3498"
       },
       {
-        "id": "454113c5f14527c3204a",
+        "id": "be7fcd38392f9a714757",
         "date": "2026-08-16",
-        "time": "2026-08-16T04:25:11+00:00",
-        "category": "drone",
-        "severity": "medium",
-        "title": "Ministrul Radu Miruță, detalii despre doborârea dronei în Galați: „O misiune reușită”",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/ministrul-radu-miruta-detalii-despre-doborarea-dronei-in-galati-o-misiune-reusita-2325583",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "5b7d8a4fd875ed0d6d2d33cd"
-      },
-      {
-        "id": "577f7ed22404e6801f8d",
-        "date": "2026-08-16",
-        "time": "2026-08-16T04:01:25+00:00",
+        "time": "2026-08-16T09:38:57+00:00",
         "category": "drone",
         "severity": "low",
-        "title": "Dronă doborâtă în județul Galați. Mărturiile localnicilor: „Mi-a fost frică să ies”. Ce au văzut ciobanii",
+        "title": "Alertă pe litoral: două obiecte suspecte, văzute în apa mării într-o singură zi. Autoritățile intervin",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/social/drona-doborata-in-galati-marturiile-localnicilor-mi-a-fost-frica-sa-ies-ce-au-vazut-ciobanii-3908029",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/alerta-pe-litoral-doua-obiecte-suspecte-vazute-in-apa-marii-intr-o-singura-zi-autoritatile-intervin-3908203",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "9512e413dc4ee64255fa9d95"
+      },
+      {
+        "id": "ac9d850bf3adb9138ad4",
+        "date": "2026-08-16",
+        "time": "2026-08-16T07:42:30+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Aliații NATO au doborât încă o dronă care a intrat în România. Primele fragmente ale aparatului distrus au fost recuperate",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/aliatii-nato-au-doborat-a-patra-drona-care-a-intrat-in-romania-anuntul-ministrului-apararii-3907967",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -119,7 +119,28 @@
         "incident_subtype": "drone_detection",
         "classification_confidence": 0.98,
         "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "6ebbf73cb668980ca3ece4ec"
+        "fingerprint_hash": "c5eb41e57db0d5457d63da8c"
+      },
+      {
+        "id": "c8bfcc728177626c943f",
+        "date": "2026-08-16",
+        "time": "2026-08-16T07:23:44+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Éles rakétát lőtt ki egy spanyol F–18-as a román határnál, miután Moldova felől berepült egy drón",
+        "source": "Telex",
+        "url": "https://telex.hu/transtelex/2026/08/16/moldova-romania-dron-spanyol-f-18-as-vadaszgep",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "61433c58b5f2f131bdd9d362"
       }
     ],
     "Slovakia": [],

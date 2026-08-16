@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_utc": "2026-08-16T00:57:24.152870+00:00",
+    "generated_utc": "2026-08-16T06:36:24.686138+00:00",
     "infrastructure_count": 103,
-    "event_count": 10,
-    "match_count": 0,
-    "raw_match_count": 0,
-    "top_infrastructure_count": 0,
+    "event_count": 13,
+    "match_count": 2,
+    "raw_match_count": 2,
+    "top_infrastructure_count": 1,
     "max_distance_km": 50,
     "target_countries": [
       "Czechia",
@@ -34,7 +34,230 @@
       "top_matches": "one best match per infrastructure asset"
     }
   },
-  "top_matches": [],
-  "matches": [],
-  "raw_matches": []
+  "top_matches": [
+    {
+      "id": "1859625460e6883e",
+      "level": "critical",
+      "score": 80.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "577f7ed22404e6801f8d",
+        "title": "Dronă doborâtă în județul Galați. Mărturiile localnicilor: „Mi-a fost frică să ies”. Ce au văzut ciobanii",
+        "category": "air",
+        "incident_type": "drone_airspace",
+        "source": "Digi24",
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "time": "Sun, 16 Aug 2026 04:01:25 +0000",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/drona-doborata-in-galati-marturiile-localnicilor-mi-a-fost-frica-sa-ies-ce-au-vazut-ciobanii-3908029",
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/social/drona-doborata-in-galati-marturiile-localnicilor-mi-a-fost-frica-sa-ies-ce-au-vazut-ciobanii-3908029"
+        ],
+        "lat": 45.435,
+        "lon": 28.008,
+        "location_quality": "city",
+        "place": "galați",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 3,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-galati-port",
+        "name": "Galați Danube Port",
+        "country": "Romania",
+        "city": "Galați",
+        "category": "transport",
+        "subtype": "river_port",
+        "criticality": 8.0,
+        "operator": "Port operators",
+        "lat": 45.435,
+        "lon": 28.008,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ],
+  "matches": [
+    {
+      "id": "1859625460e6883e",
+      "level": "critical",
+      "score": 80.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "577f7ed22404e6801f8d",
+        "title": "Dronă doborâtă în județul Galați. Mărturiile localnicilor: „Mi-a fost frică să ies”. Ce au văzut ciobanii",
+        "category": "air",
+        "incident_type": "drone_airspace",
+        "source": "Digi24",
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "time": "Sun, 16 Aug 2026 04:01:25 +0000",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/drona-doborata-in-galati-marturiile-localnicilor-mi-a-fost-frica-sa-ies-ce-au-vazut-ciobanii-3908029",
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/social/drona-doborata-in-galati-marturiile-localnicilor-mi-a-fost-frica-sa-ies-ce-au-vazut-ciobanii-3908029"
+        ],
+        "lat": 45.435,
+        "lon": 28.008,
+        "location_quality": "city",
+        "place": "galați",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 3,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-galati-port",
+        "name": "Galați Danube Port",
+        "country": "Romania",
+        "city": "Galați",
+        "category": "transport",
+        "subtype": "river_port",
+        "criticality": 8.0,
+        "operator": "Port operators",
+        "lat": 45.435,
+        "lon": 28.008,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "fafba9ddc54e054e",
+      "level": "critical",
+      "score": 80.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "454113c5f14527c3204a",
+        "title": "Ministrul Radu Miruță, detalii despre doborârea dronei în Galați: „O misiune reușită”",
+        "category": "air",
+        "incident_type": "drone_airspace",
+        "source": "HotNews",
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "time": "Sun, 16 Aug 2026 04:25:11 +0000",
+        "url": "https://hotnews.ro/ministrul-radu-miruta-detalii-despre-doborarea-dronei-in-galati-o-misiune-reusita-2325583",
+        "urls": [
+          "https://hotnews.ro/ministrul-radu-miruta-detalii-despre-doborarea-dronei-in-galati-o-misiune-reusita-2325583"
+        ],
+        "lat": 45.435,
+        "lon": 28.008,
+        "location_quality": "city",
+        "place": "galați",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 3,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-galati-port",
+        "name": "Galați Danube Port",
+        "country": "Romania",
+        "city": "Galați",
+        "category": "transport",
+        "subtype": "river_port",
+        "criticality": 8.0,
+        "operator": "Port operators",
+        "lat": 45.435,
+        "lon": 28.008,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ],
+  "raw_matches": [
+    {
+      "id": "1859625460e6883e",
+      "level": "critical",
+      "score": 80.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "577f7ed22404e6801f8d",
+        "title": "Dronă doborâtă în județul Galați. Mărturiile localnicilor: „Mi-a fost frică să ies”. Ce au văzut ciobanii",
+        "category": "air",
+        "incident_type": "drone_airspace",
+        "source": "Digi24",
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "time": "Sun, 16 Aug 2026 04:01:25 +0000",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/drona-doborata-in-galati-marturiile-localnicilor-mi-a-fost-frica-sa-ies-ce-au-vazut-ciobanii-3908029",
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/social/drona-doborata-in-galati-marturiile-localnicilor-mi-a-fost-frica-sa-ies-ce-au-vazut-ciobanii-3908029"
+        ],
+        "lat": 45.435,
+        "lon": 28.008,
+        "location_quality": "city",
+        "place": "galați",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 3,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-galati-port",
+        "name": "Galați Danube Port",
+        "country": "Romania",
+        "city": "Galați",
+        "category": "transport",
+        "subtype": "river_port",
+        "criticality": 8.0,
+        "operator": "Port operators",
+        "lat": 45.435,
+        "lon": 28.008,
+        "source_file": "critical_infrastructure.json"
+      }
+    },
+    {
+      "id": "fafba9ddc54e054e",
+      "level": "critical",
+      "score": 80.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "454113c5f14527c3204a",
+        "title": "Ministrul Radu Miruță, detalii despre doborârea dronei în Galați: „O misiune reușită”",
+        "category": "air",
+        "incident_type": "drone_airspace",
+        "source": "HotNews",
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "time": "Sun, 16 Aug 2026 04:25:11 +0000",
+        "url": "https://hotnews.ro/ministrul-radu-miruta-detalii-despre-doborarea-dronei-in-galati-o-misiune-reusita-2325583",
+        "urls": [
+          "https://hotnews.ro/ministrul-radu-miruta-detalii-despre-doborarea-dronei-in-galati-o-misiune-reusita-2325583"
+        ],
+        "lat": 45.435,
+        "lon": 28.008,
+        "location_quality": "city",
+        "place": "galați",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 3,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-galati-port",
+        "name": "Galați Danube Port",
+        "country": "Romania",
+        "city": "Galați",
+        "category": "transport",
+        "subtype": "river_port",
+        "criticality": 8.0,
+        "operator": "Port operators",
+        "lat": 45.435,
+        "lon": 28.008,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ]
 }

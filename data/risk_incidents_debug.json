@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-16T00:57:24.421363+00:00",
+  "generated_utc": "2026-08-16T06:36:24.950441+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,21 +15,17 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 1,
-      "category_counts": {
-        "infrastructure_disruption": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 3,
       "category_counts": {
-        "drone": 2
+        "drone": 3
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 3
       }
     },
     "Slovakia": {
@@ -60,34 +56,12 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
-      {
-        "id": "6b3451a9f6f9aebe7407",
-        "date": "2026-08-15",
-        "time": "2026-08-15T10:04:38+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Ungaria anunță că scufundă două barje în Dunăre pentru a menține în funcțiune centrala nucleară Paks",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ue/ungaria-anunta-ca-scufunda-doua-barje-in-dunare-pentru-a-mentine-in-functiune-centrala-nucleara-paks-3907577",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "3886fbf2f1f5aed94c686ec9"
-      }
-    ],
+    "Hungary": [],
     "Romania": [
       {
         "id": "37588134873f24ec4370",
-        "date": "2026-08-15",
-        "time": "2026-08-15T16:30:27+00:00",
+        "date": "2026-08-16",
+        "time": "2026-08-16T05:16:02+00:00",
         "category": "drone",
         "severity": "medium",
         "title": "Explicațiile unui contraamiral: Cât de pregătită e România să-și apere litoralul. Vulnerabilități și lecții după incidentele cu drone",
@@ -103,17 +77,38 @@
         "incident_subtype": "drone_intrusion",
         "classification_confidence": 0.84,
         "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "75b1f6a42e7ba247aa5abb30"
+        "fingerprint_hash": "3687442e3676f8d687698be1"
       },
       {
-        "id": "8c421fca22aaa43c8ac1",
-        "date": "2026-08-15",
-        "time": "2026-08-15T14:30:53+00:00",
+        "id": "454113c5f14527c3204a",
+        "date": "2026-08-16",
+        "time": "2026-08-16T04:25:11+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Ministrul Radu Miruță, detalii despre doborârea dronei în Galați: „O misiune reușită”",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/ministrul-radu-miruta-detalii-despre-doborarea-dronei-in-galati-o-misiune-reusita-2325583",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "5b7d8a4fd875ed0d6d2d33cd"
+      },
+      {
+        "id": "577f7ed22404e6801f8d",
+        "date": "2026-08-16",
+        "time": "2026-08-16T04:01:25+00:00",
         "category": "drone",
         "severity": "low",
-        "title": "Resturi de dronă au ajuns și pe plaja din Olimp. „Am învelit-o cu geaca de salvamar”",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/resturi-de-drona-au-ajuns-si-pe-plaja-din-olimp-am-invelit-o-cu-geaca-de-salvamar-2325317",
+        "title": "Dronă doborâtă în județul Galați. Mărturiile localnicilor: „Mi-a fost frică să ies”. Ce au văzut ciobanii",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/drona-doborata-in-galati-marturiile-localnicilor-mi-a-fost-frica-sa-ies-ce-au-vazut-ciobanii-3908029",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -122,9 +117,9 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_detection",
-        "classification_confidence": 0.84,
+        "classification_confidence": 0.98,
         "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "5df0f232aab2b54cddbf9aaa"
+        "fingerprint_hash": "6ebbf73cb668980ca3ece4ec"
       }
     ],
     "Slovakia": [],

@@ -2115,7 +2115,19 @@
 
     function localEventFingerprint(feature){
       const p = feature?.properties || {};
-      const explicit = p.fingerprint || p.fingerprint_hash || p.cluster_id || p.event_id || null;
+
+      // The backend can store fingerprint either as a string/hash or as an object.
+      // Never stringify the whole object, because every object becomes
+      // "[object Object]" and unrelated events collapse into one map entry.
+      const fp = p.fingerprint;
+      if (fp && typeof fp === "object") {
+        const hash = fp.hash || fp.fingerprint_hash || fp.id || null;
+        if (hash) return `id:${String(hash)}`;
+      } else if (fp) {
+        return `id:${String(fp)}`;
+      }
+
+      const explicit = p.fingerprint_hash || p.cluster_id || p.event_id || null;
       if (explicit) return `id:${String(explicit)}`;
 
       const rule = String(p.matched_rule_id || p.incident_subtype || p.category || "unknown").toLowerCase();

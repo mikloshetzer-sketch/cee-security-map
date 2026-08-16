@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-16T12:35:22.638258+00:00",
+  "generated_utc": "2026-08-16T18:30:49.484332+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 4,
+      "incident_count": 5,
       "category_counts": {
-        "drone": 4
+        "drone": 5
       },
       "source_files": {
-        "local_events.geojson": 4
+        "local_events.geojson": 5
       }
     },
     "Slovakia": {
@@ -59,6 +59,27 @@
     "Hungary": [],
     "Romania": [
       {
+        "id": "ac9d850bf3adb9138ad4",
+        "date": "2026-08-16",
+        "time": "2026-08-16T16:50:01+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Aliații NATO au doborât încă o dronă care a intrat în România. MApN anunță finalizarea cercetărilor pentru găsirea resturilor",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/aliatii-nato-au-doborat-a-patra-drona-care-a-intrat-in-romania-anuntul-ministrului-apararii-3907967",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "c5eb41e57db0d5457d63da8c"
+      },
+      {
         "id": "b9edfdebf42bb99338c1",
         "date": "2026-08-16",
         "time": "2026-08-16T10:54:44+00:00",
@@ -80,6 +101,27 @@
         "fingerprint_hash": "75f01cb249663fc56eda3498"
       },
       {
+        "id": "a31923c9d8bf07217610",
+        "date": "2026-08-16",
+        "time": "2026-08-16T09:59:35+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Mesajul șefului diplomației estoniene după ce o dronă a fost doborâtă în Galați: „Amenințarea la adresa NATO va persista”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/ue/mesajul-sefului-diplomatiei-estoniene-dupa-ce-o-drona-a-fost-doborata-in-galati-amenintarea-la-adresa-nato-va-persista-3908569",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "1f52b24452cabc9de4eefdc8"
+      },
+      {
         "id": "be7fcd38392f9a714757",
         "date": "2026-08-16",
         "time": "2026-08-16T09:38:57+00:00",
@@ -99,27 +141,6 @@
         "classification_confidence": 0.84,
         "matched_rule_id": "AIR.DRONE.DETECTION",
         "fingerprint_hash": "9512e413dc4ee64255fa9d95"
-      },
-      {
-        "id": "ac9d850bf3adb9138ad4",
-        "date": "2026-08-16",
-        "time": "2026-08-16T07:42:30+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Aliații NATO au doborât încă o dronă care a intrat în România. Primele fragmente ale aparatului distrus au fost recuperate",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/aliatii-nato-au-doborat-a-patra-drona-care-a-intrat-in-romania-anuntul-ministrului-apararii-3907967",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "c5eb41e57db0d5457d63da8c"
       },
       {
         "id": "c8bfcc728177626c943f",

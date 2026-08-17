@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-17T06:49:40.138942+00:00",
+  "generated_utc": "2026-08-17T12:40:32.678176+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 4,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 4
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 4
+        "local_events.geojson": 1
       }
     },
     "Slovakia": {
@@ -63,56 +63,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "ed4f471f8e439519e84c",
+        "id": "b28efc49749125eb3399",
         "date": "2026-08-17",
-        "time": "2026-08-17T06:45:41+00:00",
+        "time": "2026-08-17T07:17:55+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "„Mai bine sufli și-n iaurt!” / Ministrul Apărării justifică restricțiile de pe plaje, după ce valurile au adus la mal resturi de drone / ”Pe primul loc este protecția cetățenilor”",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/mai-bine-sufli-si-n-iaurt-ministrul-apararii-justifica-restrictiile-de-pe-plaje-dupa-ce-valurile-au-adus-la-mal-resturi-de-drone-pe-primul-loc-este-protectia-cetatenil.html",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "c7fa24126e57b43d786959e0"
-      },
-      {
-        "id": "3a7c8d566f5136616bec",
-        "date": "2026-08-16",
-        "time": "2026-08-16T20:09:47+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Tot mai multe fragmente de dronă recuperate din mare sau găsite pe plajă. În ce staţiuni de pe litoral au fost semnalate",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/tot-mai-multe-fragmente-de-drona-recuperate-din-mare-sau-gasite-pe-plaja-in-ce-statiuni-de-pe-litoral-au-fost-semnalate-2326098",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "ed7c64dd7e6de0de945e75d6"
-      },
-      {
-        "id": "a31923c9d8bf07217610",
-        "date": "2026-08-16",
-        "time": "2026-08-16T17:10:42+00:00",
-        "category": "drone",
-        "severity": "medium",
-        "title": "Mesajul șefului diplomației estoniene după ce o dronă a fost doborâtă în Galați: „Amenințarea la adresa NATO va persista”",
+        "title": "Cum se protejează România de dronele rusești. Miruță: Vom fi în situația în care să apărăm spațiul aerian românesc și pe cel al NATO",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ue/mesajul-sefului-diplomatiei-estoniene-dupa-ce-o-drona-a-fost-doborata-in-galati-amenintarea-la-adresa-nato-va-persista-3908569",
+        "url": "https://www.digi24.ro/stiri/actualitate/cum-se-protejeaza-romania-de-dronele-rusesti-miruta-vom-fi-in-situatia-in-care-sa-aparam-spatiul-aerian-romanesc-si-pe-cel-al-nato-3908953",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -120,31 +78,10 @@
         "article_role": "incident",
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "1f52b24452cabc9de4eefdc8"
-      },
-      {
-        "id": "ac9d850bf3adb9138ad4",
-        "date": "2026-08-16",
-        "time": "2026-08-16T16:50:01+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Aliații NATO au doborât încă o dronă care a intrat în România. MApN anunță finalizarea cercetărilor pentru găsirea resturilor",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/aliatii-nato-au-doborat-a-patra-drona-care-a-intrat-in-romania-anuntul-ministrului-apararii-3907967",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "c5eb41e57db0d5457d63da8c"
+        "incident_subtype": "drone_shootdown",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint_hash": "38f74d70f56376b4569c8ef2"
       }
     ],
     "Slovakia": [],

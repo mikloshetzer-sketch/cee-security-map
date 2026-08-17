@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-16T19:19:10.294498+00:00",
+  "generated_utc": "2026-08-17T00:56:06.029181+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -1271,6 +1271,1020 @@
         "incident_actor": "unknown",
         "incident_target": "unknown",
         "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.642,
+          44.335
+        ]
+      },
+      "properties": {
+        "id": "3a7c8d566f5136616bec",
+        "title": "Tot mai multe fragmente de dronă recuperate din mare sau gasite pe plajă. În ce staţiuni de pe litoral au fost semnalate",
+        "summary": "Fragmentul unei posibile drone, care nu avea încărcătură explozivă, a fost observat şi recuperat duminică seară din Marea Neagră, la aproximativ o milă marină de plaja Zoom Beach din Constanţa, a informat Ministerul Apărării. Alte fragmente de dronă au fost găsite duminică în zone din Eforie Sud şi Năvodari. „În cursul după-amiezii de duminică, 16 &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/tot-mai-multe-fragmente-de-drona-recuperate-din-mare-sau-gasite-pe-plaja-in-ce-statiuni-de-pe-litoral-au-fost-semnalate-2326098",
+        "published": "Sun, 16 Aug 2026 20:09:47 +0000",
+        "country": "Romania",
+        "city": "Năvodari",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Năvodari",
+          "event_date": "Sun, 16 Au",
+          "hash": "ed7c64dd7e6de0de945e75d6"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă"
+          ],
+          "actions": [
+            "detected",
+            "observat"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1918,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Fragmentul unei posibile drone, care nu avea încărcătură explozivă, a fost observat şi recuperat duminică seară din Marea Neagră, la aproximativ o milă marină de plaja Zoom Beach din Constanţa, a informat Ministerul Apărării. Alte fragmente de dronă au fost găsite duminică în zone din Eforie Sud şi Năvodari. „În cursul după-amiezii de duminică, 16 august, Garda de Coastă a informat Ministerul Apărării Naţionale cu privire la prezenţa unui obiect plutitor, posibil o dronă, în Marea Neagră, la aproximativ o milă marină de plaja Zoom Beach din Constanţa”, arată MApN într-un comunicat. O echipă EOD a Forţelor Navale Române a intervenit în zona indicată, la bordul unei şalupe rapide de intervenţie, a recuperat fragmentul de dronă şi a constatat că acesta nu prezintă încărcătură explozivă. Fragmentul de dronă urmează să fie predat Gărzii de Coastă. Turiştii au descoperit duminică după-amiază un fragment de dronă pe o plajă din Eforie Sud şi au anunţat autorităţile, relatează News.ro. De asem",
+        "place": "Năvodari",
+        "time": "Sun, 16 Aug 2026 20:09:47 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "urls": [
+          "https://hotnews.ro/tot-mai-multe-fragmente-de-drona-recuperate-din-mare-sau-gasite-pe-plaja-in-ce-statiuni-de-pe-litoral-au-fost-semnalate-2326098"
+        ],
+        "merged_titles": [
+          "Tot mai multe fragmente de dronă recuperate din mare sau gasite pe plajă. În ce staţiuni de pe litoral au fost semnalate"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.057,
+          44.322
+        ]
+      },
+      "properties": {
+        "id": "5fa9e459e9cb8d1bb956",
+        "title": "Ministrul Apărării: Intervenția pe Dunăre a permis prelungirea cu șapte zile a funcționării reactorului 2 de la Cernavodă",
+        "summary": "<p>Ministrul interimar al Transporturilor, Radu Miruță, afirmă că intervențiile realizate pentru creșterea nivelului Dunării au permis reactorului 2 de la centrala nucleară de la Cernavodă să continue să funcționeze încă șapte zile, scrie Mediafax. Potrivit ministrului, acțiunea a fost una punctuală și nu a rezolvat problema nivelului scăzut al fluviului, ci a oferit timp suplimentar [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/ministrul-apararii-interventia-pe-dunare-a-permis-prelungirea-cu-sapte-zile-a-functionarii-reactorului-2-de-la-cernavoda.html",
+        "published": "Sun, 16 Aug 2026 20:02:01 +0000",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "family": "energy",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
+        "object": "energy_asset",
+        "action": "disrupted",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "energy",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
+          "object": "energy_asset",
+          "action": "disrupted",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Cernavodă",
+          "event_date": "Sun, 16 Au",
+          "hash": "200615fb61986164edccb729"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "energy_asset",
+            "centrala"
+          ],
+          "actions": [
+            "entered",
+            "a intrat",
+            "disrupted",
+            "oprit"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:burned"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 3307,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. Ministrul interimar al Transporturilor, Radu Miruță, afirmă că intervențiile realizate pentru creșterea nivelului Dunării au permis reactorului 2 de la centrala nucleară de la Cernavodă să continue să funcționeze încă șapte zile, scrie Mediafax . Potrivit ministrului, acțiunea a fost una punctuală și nu a rezolvat problema nivelului scăzut al fluviului, ci a oferit timp suplimentar pentru funcționarea reactorului. „Cifrele arată un singur lucru. După soluția propusă de Apele Române și pusă în practică de AFDJ și de Apărare, reactorul 2 de la Cernavodă a funcționat încă șapte zile”, a declarat Radu Miruță, duminică, la B1 TV. Ministrul a subliniat importanța acestei perioade suplimentare, având în vedere producția reactorului. „S-a prelungit funcționarea unui reactor nuclear care injectează 680 de megawați-oră în bandă, încă o săptămână. Șapte z",
+        "place": "Cernavodă",
+        "time": "Sun, 16 Aug 2026 20:02:01 +0000",
+        "category": "energy",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "G4Media"
+        ],
+        "urls": [
+          "https://www.g4media.ro/ministrul-apararii-interventia-pe-dunare-a-permis-prelungirea-cu-sapte-zile-a-functionarii-reactorului-2-de-la-cernavoda.html"
+        ],
+        "merged_titles": [
+          "Ministrul Apărării: Intervenția pe Dunăre a permis prelungirea cu șapte zile a funcționării reactorului 2 de la Cernavodă"
+        ],
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "incident_object": "energy_asset",
+        "incident_action": "disrupted",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "6f1ebec00509e5def611",
+        "title": "Miruță: Peste 100 de drone au fost detectate lângă granița României în ultimele 96 de ore / Șapte atacuri au vizat porturile ucrainene de la Dunăre",
+        "summary": "<p>Ministrul Apărării, Radu Miruță, a declarat că sistemele radar ale Ministerului Apărării Naționale au detectat, în ultimele 96 de ore, peste 100 de drone cu utilizare unică în apropierea graniței României, în afara spațiului aerian național, relatează Mediafax. Potrivit acestuia, șapte roiuri de drone au atacat în acest interval porturile ucrainene de la Dunăre, aflate [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/miruta-peste-100-de-drone-au-fost-detectate-langa-granita-romaniei-in-ultimele-96-de-ore-sapte-atacuri-au-vizat-porturile-ucrainene-de-la-dunare.html",
+        "published": "Sun, 16 Aug 2026 19:20:03 +0000",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "attacked",
+        "actor": "nato",
+        "target": "military",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "attacked",
+          "actor": "nato",
+          "target": "military",
+          "place": "Romania",
+          "event_date": "Sun, 16 Au",
+          "hash": "e9ce954e9057632dc1df724d"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă",
+            "drona"
+          ],
+          "actions": [
+            "detected",
+            "detectat",
+            "observat",
+            "entered",
+            "a intrat",
+            "attacked",
+            "atacat"
+          ],
+          "targets": [
+            "military",
+            "radar"
+          ],
+          "actors": [
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 3371,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. Ministrul Apărării, Radu Miruță, a declarat că sistemele radar ale Ministerului Apărării Naționale au detectat, în ultimele 96 de ore, peste 100 de drone cu utilizare unică în apropierea graniței României, în afara spațiului aerian național, relatează Mediafax . Potrivit acestuia, șapte roiuri de drone au atacat în acest interval porturile ucrainene de la Dunăre, aflate la mică distanță de teritoriul românesc. Declarațiile au fost făcute duminică seara, la B1 TV, în contextul intensificării atacurilor din apropierea frontierelor României și al descoperirii unor fragmente de drone pe litoral și în zona Dunării. „Am observat o relație directă între creșterea numărului de atacuri la granițele României și apariția resturilor de drone aduse de valurile mării sau de apele Dunării”, a afirmat ministrul. Radu Miruță a precizat că, potrivit datelor rada",
+        "place": "Romania",
+        "time": "Sun, 16 Aug 2026 19:20:03 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "G4Media"
+        ],
+        "urls": [
+          "https://www.g4media.ro/miruta-peste-100-de-drone-au-fost-detectate-langa-granita-romaniei-in-ultimele-96-de-ore-sapte-atacuri-au-vizat-porturile-ucrainene-de-la-dunare.html"
+        ],
+        "merged_titles": [
+          "Miruță: Peste 100 de drone au fost detectate lângă granița României în ultimele 96 de ore / Șapte atacuri au vizat porturile ucrainene de la Dunăre"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "attacked",
+        "incident_actor": "nato",
+        "incident_target": "military",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6032,
+          56.8796
+        ]
+      },
+      "properties": {
+        "id": "d93aa9e9394a2ac4e269",
+        "title": "Latvian Defence Minister: Decision to shoot down drone made due to potential danger",
+        "summary": "<p>The decision to shoot down the drone was made to prevent it from posing a threat to people in Latvia, Defence Minister Raivis Melnis told LETA. “The decision to shoot down the drone was made taking into account the danger it posed. Drones entering Latvian territory can endanger our residents, therefore they must be destroyed,” [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/latvian-defence-minister-decision-to-shoot-down-drone-made-due-to-potential-danger-282855\">Latvian Defence Minister: Decision to shoot down drone made due to potential danger</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/latvian-defence-minister-decision-to-shoot-down-drone-made-due-to-potential-danger-282855",
+        "published": "Fri, 14 Aug 2026 11:24:57 +0000",
+        "country": "Latvia",
+        "city": null,
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "entered",
+        "actor": "russia",
+        "target": "government",
+        "context": [],
+        "consequences": [
+          "major_damage"
+        ],
+        "severity": "high",
+        "confidence": 0.98,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint": {
+          "country": "Latvia",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "entered",
+          "actor": "russia",
+          "target": "government",
+          "place": "Latvia",
+          "event_date": "Fri, 14 Au",
+          "hash": "c09281c4c0b8e3b041f2dbd3"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "unmanned aerial vehicle",
+            "military_aircraft",
+            "fighter",
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "detected",
+            "spotted",
+            "entered",
+            "shot_down",
+            "shot down",
+            "damaged",
+            "destroyed"
+          ],
+          "targets": [
+            "government",
+            "ministry",
+            "municipality"
+          ],
+          "actors": [
+            "russia",
+            "russian",
+            "ukraine",
+            "ukrainian"
+          ],
+          "consequences": [
+            "major_damage",
+            "destroyed"
+          ],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.42,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2123,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "The decision to shoot down the drone was made to prevent it from posing a threat to people in Latvia, Defence Minister Raivis Melnis told LETA. “The decision to shoot down the drone was made taking into account the danger it posed. Drones entering Latvian territory can endanger our residents, therefore they must be destroyed,” the minister stressed, adding that there was no way to guarantee that an unmanned aerial vehicle would simply crash somewhere in a swamp or forest. He also dismissed concerns voiced by some residents that several drones, rather than just one, had allegedly been spotted. Melnis explained that only one drone had been detected, while residents may have mistaken the noise generated by accelerating fighter jets for additional aircraft. early on Friday morning allied fighter jets shot down an unmanned aerial vehicle that had entered Latvian airspace near Lake Boževa, approximately five kilometres from the centre of Rugāji in Balvi Municipality, Sandra Kapteine, head of",
+        "place": "Latvia",
+        "time": "Fri, 14 Aug 2026 11:24:57 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "BNN"
+        ],
+        "urls": [
+          "https://bnn-news.com/latvian-defence-minister-decision-to-shoot-down-drone-made-due-to-potential-danger-282855"
+        ],
+        "merged_titles": [
+          "Latvian Defence Minister: Decision to shoot down drone made due to potential danger"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "entered",
+        "incident_actor": "russia",
+        "incident_target": "government",
+        "classification_confidence": 0.98
       }
     },
     {

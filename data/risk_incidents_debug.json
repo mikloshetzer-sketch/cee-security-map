@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-16T19:19:18.003275+00:00",
+  "generated_utc": "2026-08-17T00:56:11.747271+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 9,
+    "local_event_count": 9,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 5,
+      "incident_count": 8,
       "category_counts": {
-        "drone": 5
+        "drone": 7,
+        "infrastructure_disruption": 1
       },
       "source_files": {
-        "local_events.geojson": 5
+        "local_events.geojson": 8
       }
     },
     "Slovakia": {
@@ -44,9 +45,13 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "military": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Estonia": {
       "incident_count": 0,
@@ -58,6 +63,69 @@
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [
+      {
+        "id": "3a7c8d566f5136616bec",
+        "date": "2026-08-16",
+        "time": "2026-08-16T20:09:47+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Tot mai multe fragmente de dronă recuperate din mare sau gasite pe plajă. În ce staţiuni de pe litoral au fost semnalate",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/tot-mai-multe-fragmente-de-drona-recuperate-din-mare-sau-gasite-pe-plaja-in-ce-statiuni-de-pe-litoral-au-fost-semnalate-2326098",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "ed7c64dd7e6de0de945e75d6"
+      },
+      {
+        "id": "5fa9e459e9cb8d1bb956",
+        "date": "2026-08-16",
+        "time": "2026-08-16T20:02:01+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Ministrul Apărării: Intervenția pe Dunăre a permis prelungirea cu șapte zile a funcționării reactorului 2 de la Cernavodă",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/ministrul-apararii-interventia-pe-dunare-a-permis-prelungirea-cu-sapte-zile-a-functionarii-reactorului-2-de-la-cernavoda.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "200615fb61986164edccb729"
+      },
+      {
+        "id": "6f1ebec00509e5def611",
+        "date": "2026-08-16",
+        "time": "2026-08-16T19:20:03+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Miruță: Peste 100 de drone au fost detectate lângă granița României în ultimele 96 de ore / Șapte atacuri au vizat porturile ucrainene de la Dunăre",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/miruta-peste-100-de-drone-au-fost-detectate-langa-granita-romaniei-in-ultimele-96-de-ore-sapte-atacuri-au-vizat-porturile-ucrainene-de-la-dunare.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "e9ce954e9057632dc1df724d"
+      },
       {
         "id": "ac9d850bf3adb9138ad4",
         "date": "2026-08-16",
@@ -167,7 +235,29 @@
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
-    "Latvia": [],
+    "Latvia": [
+      {
+        "id": "d93aa9e9394a2ac4e269",
+        "date": "2026-08-14",
+        "time": "2026-08-14T11:24:57+00:00",
+        "category": "military",
+        "severity": "high",
+        "title": "Latvian Defence Minister: Decision to shoot down drone made due to potential danger",
+        "source": "BNN",
+        "url": "https://bnn-news.com/latvian-defence-minister-decision-to-shoot-down-drone-made-due-to-potential-danger-282855",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "c09281c4c0b8e3b041f2dbd3"
+      }
+    ],
     "Estonia": []
   }
 }

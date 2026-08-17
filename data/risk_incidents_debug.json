@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-17T12:40:32.678176+00:00",
+  "generated_utc": "2026-08-17T18:37:54.867141+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,9 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "military": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
       "incident_count": 1,
@@ -60,17 +64,39 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "41b5c1ebd6028b3ba601",
+        "date": "2026-08-17",
+        "time": "2026-08-17T17:32:00+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Légikatasztrófa a turistaparadicsomban: többen meghaltak",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/global/20260817/legikatasztrofa-a-turistaparadicsomban-tobben-meghaltak-856854",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "c7680265b49d0ac68089dddc"
+      }
+    ],
     "Romania": [
       {
-        "id": "b28efc49749125eb3399",
+        "id": "175618bdf1b6a4455097",
         "date": "2026-08-17",
-        "time": "2026-08-17T07:17:55+00:00",
+        "time": "2026-08-17T18:11:00+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Cum se protejează România de dronele rusești. Miruță: Vom fi în situația în care să apărăm spațiul aerian românesc și pe cel al NATO",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/cum-se-protejeaza-romania-de-dronele-rusesti-miruta-vom-fi-in-situatia-in-care-sa-aparam-spatiul-aerian-romanesc-si-pe-cel-al-nato-3908953",
+        "title": "Drón zuhant le Moldovában",
+        "source": "HVG",
+        "url": "https://hvg.hu/vilag/20260817_moldova-orosz-dron-zuhanas",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -78,10 +104,10 @@
         "article_role": "incident",
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "38f74d70f56376b4569c8ef2"
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "d7b0b9bebc01c3373411458e"
       }
     ],
     "Slovakia": [],

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-18T12:40:43.964894+00:00",
+  "generated_utc": "2026-08-18T18:35:27.933962+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 2,
+    "incident_count": 2,
+    "local_event_count": 1,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,12 +20,11 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 2
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 1,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -83,27 +82,6 @@
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
         "fingerprint_hash": "29d311c9eecccb44272d7ae6"
-      },
-      {
-        "id": "4de037313854f77c2b1b",
-        "date": "2026-08-18",
-        "time": "2026-08-18T04:52:03+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Maia Sandu: Rusia trimite intenţionat unele drone în Republica Moldova. „Am văzut şi în România, şi în Polonia”",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/moldova/maia-sandu-rusia-trimite-intentionat-unele-drone-in-republica-moldova-am-vazut-si-in-romania-si-in-polonia-3910341",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "60a97ab35410a24c3108f916"
       }
     ],
     "Slovakia": [],

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-18T00:54:37.072906+00:00",
+  "generated_utc": "2026-08-18T06:41:43.346764+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,21 +15,17 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 1,
-      "category_counts": {
-        "military": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "drone": 1
+        "drone": 2
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Slovakia": {
@@ -64,30 +60,29 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
+    "Hungary": [],
+    "Romania": [
       {
-        "id": "41b5c1ebd6028b3ba601",
-        "date": "2026-08-17",
-        "time": "2026-08-17T17:32:00+00:00",
-        "category": "military",
-        "severity": "medium",
-        "title": "Légikatasztrófa a turistaparadicsomban: többen meghaltak",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/global/20260817/legikatasztrofa-a-turistaparadicsomban-tobben-meghaltak-856854",
+        "id": "4de037313854f77c2b1b",
+        "date": "2026-08-18",
+        "time": "2026-08-18T04:52:03+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Maia Sandu: Rusia trimite intenţionat unele drone în Republica Moldova. „Am văzut şi în România, şi în Polonia”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/moldova/maia-sandu-rusia-trimite-intentionat-unele-drone-in-republica-moldova-am-vazut-si-in-romania-si-in-polonia-3910341",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
         "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "c7680265b49d0ac68089dddc"
-      }
-    ],
-    "Romania": [
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "60a97ab35410a24c3108f916"
+      },
       {
         "id": "175618bdf1b6a4455097",
         "date": "2026-08-17",

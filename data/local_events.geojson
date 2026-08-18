@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-18T00:54:30.462868+00:00",
+  "generated_utc": "2026-08-18T06:41:36.131337+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -16,7 +16,7 @@
       "properties": {
         "id": "175618bdf1b6a4455097",
         "title": "Drón zuhant le Moldovában",
-        "summary": "A pilóta nélküli repülőszerkezet az ország délkeleti csücskében, Stefan Voda településének térségében zuhant le, egy kisebb tüzet is okozva.",
+        "summary": "A pilóta nélküli repülő szerkezet az ország délkeleti csücskében, Stefan Voda település térségében zuhant le, egy kisebb tüzet is okozva.",
         "source": "HVG",
         "url": "https://hvg.hu/vilag/20260817_moldova-orosz-dron-zuhanas",
         "published": "Mon, 17 Aug 2026 18:11:00 Z",
@@ -265,68 +265,73 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.5033,
-          47.1625
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "id": "41b5c1ebd6028b3ba601",
-        "title": "Légikatasztrófa a turistaparadicsomban: többen meghaltak",
-        "summary": "<p>Lezuhant egy magánhelikopter a turisták körében népszerű, görögországi Szífnosz szigetén, három ember - a pilóta és két utasa - életét vesztette - közölte a helyi tűzoltóság hétfőn.</p>",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/global/20260817/legikatasztrofa-a-turistaparadicsomban-tobben-meghaltak-856854",
-        "published": "Mon, 17 Aug 2026 19:32:00 +0200",
-        "country": "Hungary",
+        "id": "4de037313854f77c2b1b",
+        "title": "Maia Sandu: Rusia trimite intenţionat unele drone în Republica Moldova. „Am văzut şi în România, şi în Polonia”",
+        "summary": "Preşedinta Republicii Moldova, Maia Sandu, a declarat luni, într-un interviu, că unele drone pătrund în spaţiul aerian al țării din întâmplare, dar altele sunt trimise intenţionat şi singurul demers eficient pentru a reacţiona nu este neapărat la nivel diplomatic, ci prin acordarea de mai mult sprijin Ucrainei în războiul de apărare împotriva Rusiei.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/moldova/maia-sandu-rusia-trimite-intentionat-unele-drone-in-republica-moldova-am-vazut-si-in-romania-si-in-polonia-3910341",
+        "published": "Tue, 18 Aug 2026 07:52:03 +0300",
+        "country": "Romania",
         "city": null,
         "family": "air",
-        "subcategory": "aircraft",
-        "subtype": "military_aircraft_incident",
-        "object": "military_aircraft",
-        "action": "impact",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "exploded",
         "actor": "russia",
         "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "medium",
+        "severity": "high",
         "confidence": 0.82,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
-          "country": "Hungary",
+          "country": "Romania",
           "family": "air",
-          "subcategory": "aircraft",
-          "subtype": "military_aircraft_incident",
-          "object": "military_aircraft",
-          "action": "impact",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "exploded",
           "actor": "russia",
           "target": "unknown",
-          "place": "Hungary",
-          "event_date": "Mon, 17 Au",
-          "hash": "c7680265b49d0ac68089dddc"
+          "place": "Romania",
+          "event_date": "Tue, 18 Au",
+          "hash": "60a97ab35410a24c3108f916"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
-          "article_role": [
-            "történt"
-          ],
+          "article_role": [],
           "objects": [
-            "military_aircraft",
-            "helikopter"
+            "drone",
+            "shahed",
+            "dronă",
+            "drona"
           ],
           "actions": [
-            "impact",
-            "lezuhant"
+            "entered",
+            "a intrat",
+            "exploded",
+            "a explodat"
           ],
           "targets": [],
           "actors": [
             "russia",
-            "orosz"
+            "rusia",
+            "rusiei",
+            "ukraine",
+            "ucraina"
           ],
           "consequences": [],
           "extra_context": [
-            "feed_country=Hungary",
+            "feed_country=Romania",
             "geocode_quality=country_fallback"
           ]
         },
@@ -341,11 +346,11 @@
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
             "priority": 0,
             "score": 2.32,
             "matched": true,
@@ -353,16 +358,56 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.STRIKE",
+            "rule_id": "AIR.DRONE.INTRUSION",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_strike",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone"
+              "actions:all:shot_down"
             ],
             "matched_context": []
           },
@@ -381,92 +426,16 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.DETECTION",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
             "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
             "severity": "medium",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
+              "objects:all:military_aircraft"
             ],
             "matched_context": []
           },
@@ -477,41 +446,68 @@
             "subtype": "explosive_attack",
             "severity": "high",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 2591,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "a forgószárnyas gép röviddel felszállás után szenvedett balesetet, amelynek oka egyelőre még nem ismert. A helyi sajtóban megjelent felvételeken a lezuhant helikopter füstölgő roncsait lehetett látni egy száraz domboldalon. A baleset egy kisebb tüzet is okozott a földön. A címlapkép illusztráció. Címlapkép forrása: Getty Images A felajánlásokkal és beszerzésekkel már elég lehet a rendelkezésre álló kő. Csupán két héttel az előző tűzeset után. Többnyire tünetmentes, de elvétve idegrendszeri problémákat okozhat. Az ítélet szerint rágalmazta az orosz hadsereget. Havonta ránézek egyszer azokra a papírokra, amikből előbb vagy utóbb venni szeretnék. Általában a hetes chartokat nézem, 4-5 gyertya születik egy hónap alatt, ennyit már érdemes újra kiért A K&H ifjúsági index 2026. második negyedéves mérése alapján rekordmagas a magyar fiatalok otthonteremtési szándéka . A 19-29 éves korosztály 30 százaléka tervezi, hogy a következő 3 é Az AI igazából már most is jobb elemzést készít az embernél,",
-        "place": "Hungary",
-        "time": "Mon, 17 Aug 2026 19:32:00 +0200",
+        "article_text_chars": 3716,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Preşedinta Republicii Moldova, Maia Sandu, a declarat luni, într-un interviu, că unele drone pătrund în spaţiul aerian al țării din întâmplare, dar altele sunt trimise intenţionat şi singurul demers eficient pentru a reacţiona nu este neapărat la nivel diplomatic, ci prin acordarea de mai mult sprijin Ucrainei în războiul de apărare împotriva Rusiei. Șefa statului a fost întrebată în emisiunea „La 360 de grade” de la Teleradio Moldova dacă dronele care survolează neautorizat spaţiul aerian al ţării sunt o întâmplare sau, prin acestea, Rusia testează capacitatea de reacţie a Republicii Moldova şi a ţărilor vecine. „Eu cred că unele ajung din întâmplare şi altele ajung pentru că sunt trimise, şi nu doar în spaţiul nostru aerian, dar şi în spaţiul aerian al altor state din regiune. Am văzut şi în România, şi în Polonia. Deci, judecând după traiectoria acelor drone, putem spune care sunt trimise intenţionat şi care sunt acolo din întâmplare. Şi într-un caz, şi în altul, aceste drone violea",
+        "place": "Romania",
+        "time": "Tue, 18 Aug 2026 07:52:03 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Portfolio"
+          "Digi24"
         ],
         "urls": [
-          "https://www.portfolio.hu/global/20260817/legikatasztrofa-a-turistaparadicsomban-tobben-meghaltak-856854"
+          "https://www.digi24.ro/stiri/externe/moldova/maia-sandu-rusia-trimite-intentionat-unele-drone-in-republica-moldova-am-vazut-si-in-romania-si-in-polonia-3910341"
         ],
         "merged_titles": [
-          "Légikatasztrófa a turistaparadicsomban: többen meghaltak"
+          "Maia Sandu: Rusia trimite intenţionat unele drone în Republica Moldova. „Am văzut şi în România, şi în Polonia”"
         ],
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "incident_object": "military_aircraft",
-        "incident_action": "impact",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "exploded",
         "incident_actor": "russia",
         "incident_target": "unknown",
         "classification_confidence": 0.82

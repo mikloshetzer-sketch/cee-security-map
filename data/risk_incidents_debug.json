@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-08-18T06:41:43.346764+00:00",
+  "generated_utc": "2026-08-18T12:40:43.964894+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
     "incident_count": 3,
-    "local_event_count": 3,
-    "crossborder_event_count": 0
+    "local_event_count": 2,
+    "crossborder_event_count": 1
   },
   "country_summary": {
     "Czech Republic": {
@@ -25,7 +25,8 @@
         "drone": 2
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1,
+        "gdelt_crossborder.geojson": 1
       }
     },
     "Slovakia": {
@@ -63,6 +64,27 @@
     "Hungary": [],
     "Romania": [
       {
+        "id": null,
+        "date": "2026-08-18",
+        "time": "2026-08-18T10:15:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "NATO spokesperson on the drone shot down in Romanian airspace : The drone appears to be Russian",
+        "source": "GDELT_DOC",
+        "url": "https://actmedia.eu/daily/nato-spokesperson-on-the-drone-shot-down-in-romanian-airspace-the-drone-appears-to-be-russian/121242",
+        "source_file": "gdelt_crossborder.geojson",
+        "classification_source": "security_classifier",
+        "actual_incident": true,
+        "risk_eligible": true,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint_hash": "29d311c9eecccb44272d7ae6"
+      },
+      {
         "id": "4de037313854f77c2b1b",
         "date": "2026-08-18",
         "time": "2026-08-18T04:52:03+00:00",
@@ -82,27 +104,6 @@
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "60a97ab35410a24c3108f916"
-      },
-      {
-        "id": "175618bdf1b6a4455097",
-        "date": "2026-08-17",
-        "time": "2026-08-17T18:11:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Drón zuhant le Moldovában",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20260817_moldova-orosz-dron-zuhanas",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "d7b0b9bebc01c3373411458e"
       }
     ],
     "Slovakia": [],

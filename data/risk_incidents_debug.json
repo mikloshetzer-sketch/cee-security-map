@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-19T12:40:58.409100+00:00",
+  "generated_utc": "2026-08-19T18:34:07.836804+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 2,
+    "incident_count": 2,
+    "local_event_count": 1,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -15,13 +15,9 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 1,
-      "category_counts": {
-        "military": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
       "incident_count": 1,
@@ -64,29 +60,7 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
-      {
-        "id": "52d22aeda631ff1b48b0",
-        "date": "2026-08-19",
-        "time": "2026-08-19T12:13:00+00:00",
-        "category": "military",
-        "severity": "medium",
-        "title": "Lezuhant egy turistákat szállító helikopter Kenyában",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/gazdasag/20260819/lezuhant-egy-turistakat-szallito-helikopter-kenyaban-857280",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "285e93d09b784547d99c6643"
-      }
-    ],
+    "Hungary": [],
     "Romania": [
       {
         "id": null,

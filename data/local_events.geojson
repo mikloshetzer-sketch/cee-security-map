@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-19T06:41:47.475225+00:00",
+  "generated_utc": "2026-08-19T12:40:51.813908+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,66 +9,69 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.653,
-          45.156
+          19.5033,
+          47.1625
         ]
       },
       "properties": {
-        "id": "e451c58eb49e8a3be206",
-        "title": "Experiența a doi neozeelandezi în Sulina, la graniță cu războiul din Ucraina: „Să fiu sincer, este un sentiment ciudat”",
-        "summary": "Cei doi ecologiști neozeelandezi care au povestit pentru Digi24.ro experiența de a pedala 3.000 de kilometri pe lângă Dunăre „de la izvor până la mare” au explicat cum percep ei ceea ce se întâmplă din perspectiva războiului de la granița țării. Ei au ajuns în Sulina în 14 august și au prins o perioadă în care drone au fost doborâte sau s-au prăbușit, au fost găsite pe litoralul românesc și, în paralel, a avut loc o paradă militară.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/experienta-a-doi-neozeelandezi-in-sulina-la-granita-cu-razboiul-din-ucraina-sa-fiu-sincer-este-un-sentiment-ciudat-3911273",
-        "published": "Wed, 19 Aug 2026 07:00:56 +0300",
-        "country": "Romania",
-        "city": "Sulina",
+        "id": "52d22aeda631ff1b48b0",
+        "title": "Lezuhant egy turistákat szállító helikopter Kenyában",
+        "summary": "<p>Lezuhant egy helikopter Kenyában, a Samburu megyebeli Ololokwe-hegynél; a fedélzeten tartózkodó mind a hat ember életét vesztette - közölte a <a href=\"https://www.bbc.com/news/articles/clylkv4z59vo?at_medium=RSS&amp;at_campaign=rss\" rel=\"noopener\" target=\"_blank\">BBC</a>.</p>",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/gazdasag/20260819/lezuhant-egy-turistakat-szallito-helikopter-kenyaban-857280",
+        "published": "Wed, 19 Aug 2026 14:13:00 +0200",
+        "country": "Hungary",
+        "city": null,
         "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
         "action": "impact",
-        "actor": "ukraine",
-        "target": "unknown",
+        "actor": "unknown",
+        "target": "government",
         "context": [],
         "consequences": [],
-        "severity": "high",
-        "confidence": 0.9,
+        "severity": "medium",
+        "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
         "fingerprint": {
-          "country": "Romania",
+          "country": "Hungary",
           "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
           "action": "impact",
-          "actor": "ukraine",
-          "target": "unknown",
-          "place": "Sulina",
+          "actor": "unknown",
+          "target": "government",
+          "place": "Hungary",
           "event_date": "Wed, 19 Au",
-          "hash": "7bd6d3e38aac4ad1eff58b96"
+          "hash": "285e93d09b784547d99c6643"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
-          "article_role": [],
+          "article_role": [
+            "történt"
+          ],
           "objects": [
-            "drone"
+            "military_aircraft",
+            "helikopter"
           ],
           "actions": [
             "impact",
-            "s-a prăbușit"
+            "lezuhant"
           ],
-          "targets": [],
-          "actors": [
-            "ukraine",
-            "ucraina"
+          "targets": [
+            "government",
+            "minisztérium"
           ],
+          "actors": [],
           "consequences": [],
           "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
           ]
         },
         "negative_terms": [],
@@ -76,18 +79,17 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "actor_match": 0.06,
+          "target_match": 0.08,
           "country_match": 0.1,
-          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.DRONE.STRIKE",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
             "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
             "priority": 0,
             "score": 2.32,
             "matched": true,
@@ -95,58 +97,16 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.DETECTION",
+            "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
+            "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:shot_down"
+              "objects:all:drone"
             ],
             "matched_context": []
           },
@@ -165,16 +125,76 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:military_aircraft"
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
             ],
             "matched_context": []
           },
@@ -207,52 +227,37 @@
               "actions:any:intercepted,shot_down"
             ],
             "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 2682,
+        "article_text_chars": 3220,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Cei doi ecologiști neozeelandezi care au povestit pentru Digi24.ro experiența de a pedala 3.000 de kilometri pe lângă Dunăre „de la izvor până la mare” au explicat cum percep ei ceea ce se întâmplă din perspectiva războiului de la granița țării. Ei au ajuns în Sulina în 14 august și au prins o perioadă în care drone au fost doborâte sau s-au prăbușit, au fost găsite pe litoralul românesc și, în paralel, a avut loc o paradă militară. Anna Wentsch și Callum Armstrong locuiesc în Noua Zeelandă și sunt ecologiști, reprezentând o organizație specializată în protejarea și conservarea mediului înconjurător - Conservation Amplified. Cei doi au decis la începutul verii să parcurgă peste 3.000 de kilometri pe bicicletă, urmărind în cea mai mare parte a traseului cursul Dunării. Timp de 8 săptămâni, au pedalat prin opt țări - Germania, Austria, Slovacia, Ungaria, Croația, Serbia, Bulgaria și România. Au intrat în România în zona Călărași, iar după ce au ajuns în Tulcea, au luat un feribot înspre ",
-        "place": "Sulina",
-        "time": "Wed, 19 Aug 2026 07:00:56 +0300",
+        "article_text_excerpt": "A Kenyai Polgári Légiközlekedési Hatóság (KCAA) közlése szerint a szerencsétlenség helyi idő szerint reggel 9 óra 13 perckor történt. A Eurocopter EC130 B4 típusú helikopter sétarepülést végzett a losabai vadrezervátumból az Ewaso Nyiro folyó irányába, amely több nemzeti park mellett is elhalad. A helyi sajtóértesülések szerint a gép turistákat szállított. A légi baleseteket vizsgáló hatóság megerősítette a halálos áldozatok számát, a személyazonosságukat azonban egyelőre nem sikerült hivatalosan megállapítani. A Kenyai Vöröskereszt tájékoztatása szerint a katasztrófa helyszíne nehezen megközelíthető, ezért a roncsok felderítésére drónokat vetettek be. Az interneten megosztott felvételeken az Ololokwe-hegyről magasba emelkedő füstoszlop látható. A Közlekedési Minisztérium és a balesetvizsgáló hatóság közös vizsgálatot indított a szerencsétlenség körülményeinek feltárására. A címlapkép illusztráció. Címlapkép forrása: Getty Images Ennek a cikknek az előkészítésében AI-asszisztens működö",
+        "place": "Hungary",
+        "time": "Wed, 19 Aug 2026 14:13:00 +0200",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Digi24"
+          "Portfolio"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/actualitate/experienta-a-doi-neozeelandezi-in-sulina-la-granita-cu-razboiul-din-ucraina-sa-fiu-sincer-este-un-sentiment-ciudat-3911273"
+          "https://www.portfolio.hu/gazdasag/20260819/lezuhant-egy-turistakat-szallito-helikopter-kenyaban-857280"
         ],
         "merged_titles": [
-          "Experiența a doi neozeelandezi în Sulina, la graniță cu războiul din Ucraina: „Să fiu sincer, este un sentiment ciudat”"
+          "Lezuhant egy turistákat szállító helikopter Kenyában"
         ],
         "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
         "incident_action": "impact",
-        "incident_actor": "ukraine",
-        "incident_target": "unknown",
-        "classification_confidence": 0.9
+        "incident_actor": "unknown",
+        "incident_target": "government",
+        "classification_confidence": 0.84
       }
     },
     {

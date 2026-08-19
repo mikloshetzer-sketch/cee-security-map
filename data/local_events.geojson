@@ -1,9 +1,260 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-19T00:55:28.683185+00:00",
+  "generated_utc": "2026-08-19T06:41:47.475225+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.653,
+          45.156
+        ]
+      },
+      "properties": {
+        "id": "e451c58eb49e8a3be206",
+        "title": "Experiența a doi neozeelandezi în Sulina, la graniță cu războiul din Ucraina: „Să fiu sincer, este un sentiment ciudat”",
+        "summary": "Cei doi ecologiști neozeelandezi care au povestit pentru Digi24.ro experiența de a pedala 3.000 de kilometri pe lângă Dunăre „de la izvor până la mare” au explicat cum percep ei ceea ce se întâmplă din perspectiva războiului de la granița țării. Ei au ajuns în Sulina în 14 august și au prins o perioadă în care drone au fost doborâte sau s-au prăbușit, au fost găsite pe litoralul românesc și, în paralel, a avut loc o paradă militară.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/experienta-a-doi-neozeelandezi-in-sulina-la-granita-cu-razboiul-din-ucraina-sa-fiu-sincer-este-un-sentiment-ciudat-3911273",
+        "published": "Wed, 19 Aug 2026 07:00:56 +0300",
+        "country": "Romania",
+        "city": "Sulina",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "ukraine",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "ukraine",
+          "target": "unknown",
+          "place": "Sulina",
+          "event_date": "Wed, 19 Au",
+          "hash": "7bd6d3e38aac4ad1eff58b96"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "impact",
+            "s-a prăbușit"
+          ],
+          "targets": [],
+          "actors": [
+            "ukraine",
+            "ucraina"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2682,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Cei doi ecologiști neozeelandezi care au povestit pentru Digi24.ro experiența de a pedala 3.000 de kilometri pe lângă Dunăre „de la izvor până la mare” au explicat cum percep ei ceea ce se întâmplă din perspectiva războiului de la granița țării. Ei au ajuns în Sulina în 14 august și au prins o perioadă în care drone au fost doborâte sau s-au prăbușit, au fost găsite pe litoralul românesc și, în paralel, a avut loc o paradă militară. Anna Wentsch și Callum Armstrong locuiesc în Noua Zeelandă și sunt ecologiști, reprezentând o organizație specializată în protejarea și conservarea mediului înconjurător - Conservation Amplified. Cei doi au decis la începutul verii să parcurgă peste 3.000 de kilometri pe bicicletă, urmărind în cea mai mare parte a traseului cursul Dunării. Timp de 8 săptămâni, au pedalat prin opt țări - Germania, Austria, Slovacia, Ungaria, Croația, Serbia, Bulgaria și România. Au intrat în România în zona Călărași, iar după ce au ajuns în Tulcea, au luat un feribot înspre ",
+        "place": "Sulina",
+        "time": "Wed, 19 Aug 2026 07:00:56 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/experienta-a-doi-neozeelandezi-in-sulina-la-granita-cu-razboiul-din-ucraina-sa-fiu-sincer-este-un-sentiment-ciudat-3911273"
+        ],
+        "merged_titles": [
+          "Experiența a doi neozeelandezi în Sulina, la graniță cu războiul din Ucraina: „Să fiu sincer, este un sentiment ciudat”"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "ukraine",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

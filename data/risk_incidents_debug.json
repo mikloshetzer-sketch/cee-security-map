@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-19T00:55:35.777412+00:00",
+  "generated_utc": "2026-08-19T06:41:54.670311+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 1,
+    "incident_count": 3,
+    "local_event_count": 2,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,11 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "drone": 1
+        "drone": 2
       },
       "source_files": {
+        "local_events.geojson": 1,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -62,6 +63,27 @@
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [
+      {
+        "id": "e451c58eb49e8a3be206",
+        "date": "2026-08-19",
+        "time": "2026-08-19T04:00:56+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Experiența a doi neozeelandezi în Sulina, la graniță cu războiul din Ucraina: „Să fiu sincer, este un sentiment ciudat”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/experienta-a-doi-neozeelandezi-in-sulina-la-granita-cu-razboiul-din-ucraina-sa-fiu-sincer-este-un-sentiment-ciudat-3911273",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "7bd6d3e38aac4ad1eff58b96"
+      },
       {
         "id": null,
         "date": "2026-08-18",

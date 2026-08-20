@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-19T18:34:07.836804+00:00",
+  "generated_utc": "2026-08-20T00:57:05.695847+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 1,
+    "incident_count": 4,
+    "local_event_count": 3,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -15,16 +15,21 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Romania": {
       "incident_count": 1,
       "category_counts": {
-        "drone": 1
+        "infrastructure_disruption": 1
       },
       "source_files": {
+        "local_events.geojson": 1
+      }
+    },
+    "Romania": {
+      "incident_count": 2,
+      "category_counts": {
+        "drone": 2
+      },
+      "source_files": {
+        "local_events.geojson": 1,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -60,8 +65,51 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "49dd7a452fe0acb45637",
+        "date": "2026-08-19",
+        "time": "2026-08-19T19:26:54+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Centrala nucleară de la Paks a evitat oprirea. Cum a reușit Ungaria să crească nivelul apei din Dunăre",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/centrala-nucleara-de-la-paks-a-evitat-oprirea-cum-a-reusit-ungaria-sa-creasca-nivelul-apei-din-dunare-2328615",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "da42aad00c17720c8debdb7f"
+      }
+    ],
     "Romania": [
+      {
+        "id": "186745e5f363afc834d1",
+        "date": "2026-08-19",
+        "time": "2026-08-19T20:55:29+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Este NATO pregătită pentru un atac iranian asupra Europei? „O apărare puternică și eficientă”",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/este-nato-pregatita-pentru-un-atac-iranian-asupra-europei-o-aparare-puternica-si-eficienta-2328658",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "46fc9a80dcfadb8965ab2d7b"
+      },
       {
         "id": null,
         "date": "2026-08-18",

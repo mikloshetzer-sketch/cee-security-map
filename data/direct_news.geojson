@@ -12,6 +12,125 @@
       },
       "properties": {
         "source": "DIRECT_FEED",
+        "feed_name": "The Guardian World",
+        "kind": "news_direct",
+        "type": "News",
+        "time": "2026-08-20T12:21:34Z",
+        "title": "EU’s von der Leyen warns of ‘escalating campaign of threats’ as Romania destroys naval drone – Europe live",
+        "description": "&lt;p&gt;Device was near country’s Neptun Deep gas platform in the Black Sea&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Romania’s military has destroyed a marine drone spotted just “a few hundred meters” from the Neptun Deep platform,&lt;/strong&gt; a major offshore gas project in the Black Sea.&lt;/p&gt;&lt;p&gt;The drone, spotted &lt;strong&gt;just “a few hundreds of meters” from the gas extraction works at the Neptun Deep platform &lt;/strong&gt;located some 80 miles east of the city of &lt;strong&gt;Constanța&lt;/strong&gt;, was destroyed by a Romanian F-16 fighter jet.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/world/live/2026/aug/20/ukraine-volodymyr-zelenskyy-russia-vladimir-putin-kyiv-europe-live-latest-updates\"&gt;Continue reading...&lt;/a&gt;",
+        "url": "https://www.theguardian.com/world/live/2026/aug/20/ukraine-volodymyr-zelenskyy-russia-vladimir-putin-kyiv-europe-live-latest-updates",
+        "country_hint": "Romania",
+        "relation_hits": [
+          "Ukraine",
+          "Russia",
+          "Black Sea",
+          "EU"
+        ],
+        "category": "air",
+        "impact_mult": 1.3600000000000003,
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "damaged",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "severity": "high",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "article_role": "incident",
+        "actual_incident": true,
+        "risk_eligible": true,
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "damaged",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "2026-08-20",
+          "hash": "ea1d1f7b34e665ecb7ab98de"
+        },
+        "classification_source": "security_classifier",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "rejection_reason": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.15,
+          52.1
+        ]
+      },
+      "properties": {
+        "source": "DIRECT_FEED",
+        "feed_name": "Politico Europe",
+        "kind": "news_direct",
+        "type": "News",
+        "time": "2026-08-20T08:00:13Z",
+        "title": "Russian overnight strikes kill at least 13 in Ukraine",
+        "description": "Russia unleashed a barrage of missiles and drones across Ukraine early Thursday, killing at least 13 people and wounding dozens more. Ukrainian President Volodymyr Zelenskyy said the hours-long attack struck Kyiv and the surrounding region as well as Odesa and Chernihiv, damaging apartment buildings, a children’s hospital and a school in the capital. Twelve people were killed in Kyiv and another in the surrounding region, he said, with around 40 injured. “Unfortunately, while Moscow is investing in ballistic missiles and escalation, such strikes do not always receive the response they should from the world,” Zelenskyy wrote on X. “As long as Ukraine does not have enough anti-ballistic defense, Russia will not consider peace seriously.” U.S.-made Patriot interceptors “cannot yet be replaced",
+        "url": "https://www.politico.eu/article/volodymyr-zelenskyy-vladimir-putin-russia-overnight-attack-ukraine-killing-13/?utm_source=RSS_Feed&#038;utm_medium=RSS&#038;utm_campaign=RSS_Syndication",
+        "country_hint": "Poland",
+        "relation_hits": [
+          "Ukraine",
+          "Ukrainian",
+          "Russia",
+          "Russian",
+          "NATO"
+        ],
+        "category": "air",
+        "impact_mult": 1.2400000000000002,
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "civilian",
+        "severity": "critical",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "article_role": "incident",
+        "actual_incident": true,
+        "risk_eligible": true,
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "russia",
+          "target": "civilian",
+          "place": "Poland",
+          "event_date": "2026-08-20",
+          "hash": "5053aa9a306931d091ca40fb"
+        },
+        "classification_source": "security_classifier",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "rejection_reason": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.8,
+          47.95
+        ]
+      },
+      "properties": {
+        "source": "DIRECT_FEED",
         "feed_name": "The Guardian Europe",
         "kind": "news_direct",
         "type": "News",

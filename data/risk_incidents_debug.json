@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-20T06:42:32.844854+00:00",
+  "generated_utc": "2026-08-20T12:42:55.400761+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 3,
+    "incident_count": 5,
+    "local_event_count": 4,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,13 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 3,
+      "incident_count": 4,
       "category_counts": {
-        "military": 1,
-        "drone": 2
+        "drone": 4
       },
       "source_files": {
-        "local_events.geojson": 2,
+        "local_events.geojson": 3,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -65,35 +64,35 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "8eae857bc3f8aeea3f90",
+        "id": "b9ba66d649ecd2f5f361",
         "date": "2026-08-20",
-        "time": "2026-08-20T04:16:53+00:00",
-        "category": "military",
+        "time": "2026-08-20T12:13:24+00:00",
+        "category": "drone",
         "severity": "medium",
-        "title": "Mesaj RO-Alert: Încă o dronă a intrat în spațiul aerian al României. S-a prăbușit într-o zonă nelocuită din județul Tulcea",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/mesaj-ro-alert-inca-o-drona-a-intrat-in-spatiul-aerian-al-romaniei-s-a-prabusit-intr-o-zona-nelocuita-din-judetul-tulcea-3913481",
+        "title": "NATO reacționează după ce o nouă dronă a pătruns ilegal în spațiul României",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/nato-reactioneaza-dupa-ce-o-noua-drona-a-patruns-ilegal-in-spatiul-romaniei-2329209",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "cc3bd520699de96683635d98"
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "c710744357b7070d2af97407"
       },
       {
-        "id": "186745e5f363afc834d1",
-        "date": "2026-08-19",
-        "time": "2026-08-19T20:55:29+00:00",
+        "id": "c227539015f25cca24b1",
+        "date": "2026-08-20",
+        "time": "2026-08-20T10:52:06+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Este NATO pregătită pentru un atac iranian asupra Europei? „O apărare puternică și eficientă”",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/este-nato-pregatita-pentru-un-atac-iranian-asupra-europei-o-aparare-puternica-si-eficienta-2328658",
+        "title": "Raport în Congresul SUA despre războiul hibrid al Rusiei în Europa. România, țintă pentru campaniile de război politic ale Moscovei",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/raport-in-congresul-sua-despre-razboiul-hibrid-al-rusiei-in-europa-romania-tinta-pentru-campaniile-de-razboi-politic-ale-moscovei-3914001",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -102,9 +101,30 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
+        "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "46fc9a80dcfadb8965ab2d7b"
+        "fingerprint_hash": "0a2e342c29ad4a8ac9cd79b8"
+      },
+      {
+        "id": "c8d60a26f2d77f66aa66",
+        "date": "2026-08-20",
+        "time": "2026-08-20T09:15:54+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "„Am auzit o bubuitură”. Noi imagini de la locul unde s-a prăbușit drona în Tulcea. MApN a identificat zona",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/am-auzit-o-bubuitura-noi-imagini-de-la-locul-unde-s-a-prabusit-drona-in-tulcea-mapn-a-identificat-zona-3913781",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "c7a045a7c8d117aee3f26637"
       },
       {
         "id": null,

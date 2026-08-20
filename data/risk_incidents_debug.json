@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-20T00:57:05.695847+00:00",
+  "generated_utc": "2026-08-20T06:42:32.844854+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,21 +15,18 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 1,
-      "category_counts": {
-        "infrastructure_disruption": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 3,
       "category_counts": {
+        "military": 1,
         "drone": 2
       },
       "source_files": {
-        "local_events.geojson": 1,
+        "local_events.geojson": 2,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -65,30 +62,29 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
+    "Hungary": [],
+    "Romania": [
       {
-        "id": "49dd7a452fe0acb45637",
-        "date": "2026-08-19",
-        "time": "2026-08-19T19:26:54+00:00",
-        "category": "infrastructure_disruption",
+        "id": "8eae857bc3f8aeea3f90",
+        "date": "2026-08-20",
+        "time": "2026-08-20T04:16:53+00:00",
+        "category": "military",
         "severity": "medium",
-        "title": "Centrala nucleară de la Paks a evitat oprirea. Cum a reușit Ungaria să crească nivelul apei din Dunăre",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/centrala-nucleara-de-la-paks-a-evitat-oprirea-cum-a-reusit-ungaria-sa-creasca-nivelul-apei-din-dunare-2328615",
+        "title": "Mesaj RO-Alert: Încă o dronă a intrat în spațiul aerian al României. S-a prăbușit într-o zonă nelocuită din județul Tulcea",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/mesaj-ro-alert-inca-o-drona-a-intrat-in-spatiul-aerian-al-romaniei-s-a-prabusit-intr-o-zona-nelocuita-din-judetul-tulcea-3913481",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "da42aad00c17720c8debdb7f"
-      }
-    ],
-    "Romania": [
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "cc3bd520699de96683635d98"
+      },
       {
         "id": "186745e5f363afc834d1",
         "date": "2026-08-19",

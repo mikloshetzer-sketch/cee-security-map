@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-21T06:47:02.790963+00:00",
+  "generated_utc": "2026-08-21T12:41:01.783632+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 6,
-    "local_event_count": 5,
+    "incident_count": 3,
+    "local_event_count": 2,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -24,13 +24,11 @@
       }
     },
     "Romania": {
-      "incident_count": 3,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 2,
-        "infrastructure_disruption": 1
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 2,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -54,13 +52,9 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 1,
-      "category_counts": {
-        "military": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Estonia": {
       "incident_count": 0,
@@ -94,48 +88,6 @@
       }
     ],
     "Romania": [
-      {
-        "id": "811a445fb7edcc3d609a",
-        "date": "2026-08-21",
-        "time": "2026-08-21T06:06:29+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "O invazie a meduzelor a oprit o centrală nucleară din Franța / Un istoric al ”sabotajelor” energetice provocate de natură / De la veverițe și ratoni, până la șobolani și ciori",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/o-invazie-a-meduzelor-a-oprit-o-centrala-nucleara-din-franta-un-istoric-al-sabotajelor-energetice-provocate-de-natura-de-la-veverite-si-ratoni-pana-la-sobolani-si-ciori.html",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "86209584713ef262a0674749"
-      },
-      {
-        "id": "10010e8adca2d19e0692",
-        "date": "2026-08-20",
-        "time": "2026-08-20T17:55:22+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Rusia testează apărarea României la Marea Neagră. Ce rol ar putea juca Turcia și cât de mari sunt amenințările pentru Neptun Deep",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/rusia-testeaza-apararea-romaniei-la-marea-neagra-ce-rol-ar-putea-juca-turcia-si-cat-de-mari-sunt-amenintarile-pentru-neptun-deep-3914827",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "83722df8baaec341c4b8b577"
-      },
       {
         "id": null,
         "date": "2026-08-18",
@@ -183,29 +135,7 @@
       }
     ],
     "Lithuania": [],
-    "Latvia": [
-      {
-        "id": "d93aa9e9394a2ac4e269",
-        "date": "2026-08-14",
-        "time": "2026-08-14T11:24:57+00:00",
-        "category": "military",
-        "severity": "high",
-        "title": "Latvian Defence Minister: Decision to shoot down drone made due to potential danger",
-        "source": "BNN",
-        "url": "https://bnn-news.com/latvian-defence-minister-decision-to-shoot-down-drone-made-due-to-potential-danger-282855",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "c09281c4c0b8e3b041f2dbd3"
-      }
-    ],
+    "Latvia": [],
     "Estonia": []
   }
 }

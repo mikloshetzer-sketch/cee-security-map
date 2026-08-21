@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-21T01:00:26.045203+00:00",
+  "generated_utc": "2026-08-21T06:46:55.452882+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,74 +9,63 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.04,
-          47.497
+          18.854,
+          46.572
         ]
       },
       "properties": {
-        "id": "6ccca2e7b71bf2c178b5",
-        "title": "Starvation led to sexual abuse at a children’s home—here are the Orbán government’s concealed child protection reports",
-        "summary": "The previous Hungarian government launched inspections at children’s homes after it came to light that then President Katalin Novák had pardoned the accomplice of a convicted pedophile (both men had worked at such an institution). The reports, however, remained confidential. Direkt36 has now obtained the documents, which detail serious shortcomings and appalling conditions.",
-        "source": "Telex",
-        "url": "https://telex.hu/direkt36/2026/08/20/starvation-led-to-sexual-abuse-at-a-children-s-home-here-are-the-orban-government-s-concealed-child-protection-reports",
-        "published": "Thu, 20 Aug 2026 09:30:00 +0200",
+        "id": "8478c8888d6d2743459c",
+        "title": "Centrala nucleară de la Kozlodui din Bulgaria îşi reduce pentru prima dată puterea din cauza nivelului scăzut al Dunării",
+        "summary": "Singura centrală nucleară din Bulgaria, cea de la Kozlodui, a anunţat că îşi va reduce capacitatea cu 12% începând de vineri, din cauza nivelului scăzut al apelor Dunării. Această măsură legată de reducerea puterii unui bloc energetic din cauza condiţiilor meteorologice şi hidrologice extreme se aplică pentru prima dată în istoria de 52 de ani de funcţionare a centralei nucleare bulgare, relatează Reuters şi BTA.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/centrala-nucleara-de-la-kozlodui-din-bulgaria-isi-reduce-pentru-prima-data-puterea-din-cauza-nivelului-scazut-al-dunarii-3915199",
+        "published": "Fri, 21 Aug 2026 08:31:15 +0300",
         "country": "Hungary",
-        "city": "Budapest",
-        "family": "maritime",
-        "subcategory": "ship_incident",
-        "subtype": "ship_attack",
-        "object": "ship",
-        "action": "damaged",
+        "city": "Paks",
+        "family": "energy",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
+        "object": "energy_asset",
+        "action": "disrupted",
         "actor": "unknown",
-        "target": "civilian",
+        "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "high",
-        "confidence": 0.92,
+        "severity": "medium",
+        "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "MARITIME.SHIP.ATTACK",
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
         "fingerprint": {
           "country": "Hungary",
-          "family": "maritime",
-          "subcategory": "ship_incident",
-          "subtype": "ship_attack",
-          "object": "ship",
-          "action": "damaged",
+          "family": "energy",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
+          "object": "energy_asset",
+          "action": "disrupted",
           "actor": "unknown",
-          "target": "civilian",
-          "place": "Budapest",
-          "event_date": "Thu, 20 Au",
-          "hash": "28c070be27fe1bf066d57116"
+          "target": "unknown",
+          "place": "Paks",
+          "event_date": "Fri, 21 Au",
+          "hash": "3caf90ab94e07fda77978dd3"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
-          "article_role": [
-            "reported"
-          ],
+          "article_role": [],
           "objects": [
-            "ship",
-            "vas",
-            "cyber_system",
-            "website"
+            "energy_asset",
+            "centrala"
           ],
           "actions": [
-            "damaged",
-            "leaked",
-            "released"
+            "disrupted",
+            "oprit"
           ],
-          "targets": [
-            "civilian",
-            "home",
-            "civil",
-            "government",
-            "ministry"
-          ],
+          "targets": [],
           "actors": [],
           "consequences": [],
           "extra_context": [
-            "feed_country=Hungary",
+            "feed_country=Romania",
             "geocode_quality=city"
           ]
         },
@@ -85,50 +74,21 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
           "country_match": 0.1,
           "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
             "matched_context": []
           },
           {
@@ -146,20 +106,6 @@
             "matched_context": []
           },
           {
-            "rule_id": "CYBER.INTRUSION",
-            "family": "cyber",
-            "subcategory": "intrusion",
-            "subtype": "cyber_intrusion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:compromised"
-            ],
-            "matched_context": []
-          },
-          {
             "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
             "family": "cyber",
             "subcategory": "operational_disruption",
@@ -169,7 +115,35 @@
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:disrupted"
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:burned"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
             ],
             "matched_context": []
           },
@@ -188,77 +162,95 @@
             "matched_context": []
           },
           {
-            "rule_id": "INDUSTRIAL.CHEMICAL.RELEASE",
-            "family": "industrial",
-            "subcategory": "chemical_release",
-            "subtype": "chemical_release",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CBRN.RADIOLOGICAL.RELEASE",
-            "family": "cbrn",
-            "subcategory": "radiological",
-            "subtype": "radiological_release",
-            "severity": "critical",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "PUBLIC.ORDER.VIOLENCE",
-            "family": "public_order",
-            "subcategory": "violent_protest",
-            "subtype": "violent_public_disorder",
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
             "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
+              "targets:all:transport",
               "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 11164,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "A series of inspections ordered by the government in 2024 revealed serious shortcomings and appalling conditions in Hungarian children’s homes, according to previously concealed inspection reports obtained by Direkt36 through a lawsuit. The reports on the inspections, which were conducted separately in each county, contain several serious findings. They reveal that many children were forced to live in unacceptable conditions—amid mold, in the dark, and surrounded by furniture that posed a risk of injury. In one county, it was revealed that after cases of abuse had come to light, the children were left to cope with their trauma on their own; elsewhere, the investigation highlighted the prevalence of sexual abuse among peers. Perhaps the most shocking case was reported in Bács-Kiskun County. According to the inspection’s findings, children at one of the institutions regularly went hungry because they were not given any food after 6:30 p.m. Because of this, some children were even willing",
-        "place": "Budapest",
-        "time": "Thu, 20 Aug 2026 09:30:00 +0200",
-        "category": "maritime",
+        "article_text_chars": 3296,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Singura centrală nucleară din Bulgaria, cea de la Kozlodui, a anunţat că îşi va reduce capacitatea cu 12% începând de vineri, din cauza nivelului scăzut al apelor Dunării. Această măsură legată de reducerea puterii unui bloc energetic din cauza condiţiilor meteorologice şi hidrologice extreme se aplică pentru prima dată în istoria de 52 de ani de funcţionare a centralei nucleare bulgare, relatează Reuters şi BTA. Centrala nucleară de la Kozlodui, care asigură 35% din necesarul de energie electrică al Bulgariei, exploatează două reactoare de fabricaţie sovietică de câte 1.000 MW - unităţile 5 şi 6. De vineri, se va reduce capacitatea unităţii 5 cu 120 MW pentru a asigura funcţionarea în condiţii de siguranţă a centralei. Decizia a fost luată din cauza \"scăderii critice şi fără precedent a nivelului apei din Dunăre\", a declarat compania care administrează centrala, adăugând că este prima dată în istoria sa operaţională de 52 de ani când capacitatea de producţie a trebuit să fie redusă di",
+        "place": "Paks",
+        "time": "Fri, 21 Aug 2026 08:31:15 +0300",
+        "category": "energy",
         "kind": "local_media",
         "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Telex"
+          "Digi24"
         ],
         "urls": [
-          "https://telex.hu/direkt36/2026/08/20/starvation-led-to-sexual-abuse-at-a-children-s-home-here-are-the-orban-government-s-concealed-child-protection-reports"
+          "https://www.digi24.ro/stiri/externe/centrala-nucleara-de-la-kozlodui-din-bulgaria-isi-reduce-pentru-prima-data-puterea-din-cauza-nivelului-scazut-al-dunarii-3915199"
         ],
         "merged_titles": [
-          "Starvation led to sexual abuse at a children’s home—here are the Orbán government’s concealed child protection reports"
+          "Centrala nucleară de la Kozlodui din Bulgaria îşi reduce pentru prima dată puterea din cauza nivelului scăzut al Dunării"
         ],
-        "incident_family": "maritime",
-        "incident_subcategory": "ship_incident",
-        "incident_subtype": "ship_attack",
-        "incident_object": "ship",
-        "incident_action": "damaged",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "incident_object": "energy_asset",
+        "incident_action": "disrupted",
         "incident_actor": "unknown",
-        "incident_target": "civilian",
-        "classification_confidence": 0.92
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
       }
     },
     {
@@ -519,269 +511,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9668,
-          45.9432
-        ]
-      },
-      "properties": {
-        "id": "0134d6500ddf6b6829ff",
-        "title": "România a informat aliații NATO despre incidentul cu drona de la Neptun Deep. Oana Țoiu: „Nu este o navă fără pilot ucraineană”",
-        "summary": "Ministrul interimar de Externe, Oana Ţoiu, anunţă că a informat aliaţii NATO cu privire la incidentele de astăzi legate de drone, iar România şi aliaţii vor continua să asigure protecţia teritoriului aliat şi a suveranităţii naţionale în aer, pe apă şi pe teritoriul nostru. MAE reiterează importanţa deosebită a protejării infrastructurii maritime în Marea Neagră şi menţionează că războiul ilegal de agresiune al Rusiei împotriva vecinului său suveran ameninţă securitatea generală a zonei Mării Negre, încălcând obligaţiile Rusiei în temeiul dreptului internaţional şi al convenţiilor internaţionale privind Marea Neagră.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/romania-a-informat-aliatii-nato-despre-incidentul-cu-drona-de-la-neptun-deep-oana-toiu-nu-este-o-nava-fara-pilot-ucraineana-3914763",
-        "published": "Thu, 20 Aug 2026 19:27:47 +0300",
-        "country": "Romania",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "attacked",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.82,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "attacked",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Romania",
-          "event_date": "Thu, 20 Au",
-          "hash": "9110cd89ca97a30936080a81"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "dronă",
-            "drona",
-            "ship",
-            "navă"
-          ],
-          "actions": [
-            "attacked",
-            "atacat"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "rusiei",
-            "ukraine",
-            "ucraina",
-            "nato"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TERRORISM.ATTACK",
-            "family": "terrorism",
-            "subcategory": "attack",
-            "subtype": "terrorist_attack",
-            "severity": "critical",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "PUBLIC.ORDER.VIOLENCE",
-            "family": "public_order",
-            "subcategory": "violent_protest",
-            "subtype": "violent_public_disorder",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 3876,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Ministrul interimar de Externe, Oana Ţoiu, anunţă că a informat aliaţii NATO cu privire la incidentele de astăzi legate de drone, iar România şi aliaţii vor continua să asigure protecţia teritoriului aliat şi a suveranităţii naţionale în aer, pe apă şi pe teritoriul nostru. MAE reiterează importanţa deosebită a protejării infrastructurii maritime în Marea Neagră şi menţionează că războiul ilegal de agresiune al Rusiei împotriva vecinului său suveran ameninţă securitatea generală a zonei Mării Negre, încălcând obligaţiile Rusiei în temeiul dreptului internaţional şi al convenţiilor internaţionale privind Marea Neagră. Șefa diplomației române scrie într-o postare pe X că două avioane F-16 ale Forţelor Aeriene Române au fost mobilizate de urgenţă, joi, către locul în care a fost detectată o dronă maritimă în Zona Economică Exclusivă a României, în apropierea platformei Neptun Alpha, parte a proiectului Neptun Deep. „Locaţia se află în zona economică exclusivă a României, la aproximativ 80",
-        "place": "Romania",
-        "time": "Thu, 20 Aug 2026 19:27:47 +0300",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/actualitate/romania-a-informat-aliatii-nato-despre-incidentul-cu-drona-de-la-neptun-deep-oana-toiu-nu-este-o-nava-fara-pilot-ucraineana-3914763"
-        ],
-        "merged_titles": [
-          "România a informat aliații NATO despre incidentul cu drona de la Neptun Deep. Oana Țoiu: „Nu este o navă fără pilot ucraineană”"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "attacked",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.82
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           28.057,
           44.322
         ]
       },
       "properties": {
-        "id": "f7bd30dc517653edb3b4",
-        "title": "Bulgaria reduce producţia centralei nucleare de la Kozlodui din cauza nivelului scăzut al Dunării",
-        "summary": "Bulgaria va reduce producția de energie electrică la centrala nucleară de la Kozlodui, din cauza unei scăderi „fără precedent și critice” a nivelului apelor Dunării, a anunțat joi Ministerul Energiei de la Sofia, potrivit AFP. Centrala nucleară de la Kozlodui, care asigură peste o treime din consumul de energie electrică al ţării și care depinde &#8230;",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/bulgaria-reduce-productia-centralei-nucleare-de-la-kozlodui-din-cauza-nivelului-scazut-al-dunarii-2329557",
-        "published": "Thu, 20 Aug 2026 18:48:30 +0000",
+        "id": "811a445fb7edcc3d609a",
+        "title": "O invazie a meduzelor a oprit o centrală nucleară din Franța / Un istoric al ”sabotajelor” energetice provocate de natură / De la veverițe și ratoni, până la șobolani și ciori",
+        "summary": "<p>În Franța, milioane de meduze au blocat pompele sistemelor de răcire ale centralei nucleare de la Gravelines, obligând tehnicienii să oprească reactoarele. Dar acestea nu sunt singurele animale care interferează cu infrastructurile energetice, scrie Corriere della Sera. Vara anului 2026 va rămâne în istorie ca una dintre cele mai dificile din istoria centralelor nucleare europene. [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/o-invazie-a-meduzelor-a-oprit-o-centrala-nucleara-din-franta-un-istoric-al-sabotajelor-energetice-provocate-de-natura-de-la-veverite-si-ratoni-pana-la-sobolani-si-ciori.html",
+        "published": "Fri, 21 Aug 2026 06:06:29 +0000",
         "country": "Romania",
         "city": "Cernavodă",
         "family": "energy",
@@ -808,8 +548,8 @@
           "actor": "unknown",
           "target": "unknown",
           "place": "Cernavodă",
-          "event_date": "Thu, 20 Au",
-          "hash": "8ebaf03d82784ee353c5ec82"
+          "event_date": "Fri, 21 Au",
+          "hash": "86209584713ef262a0674749"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -821,7 +561,9 @@
           ],
           "actions": [
             "disrupted",
-            "oprit"
+            "oprit",
+            "closed",
+            "închis"
           ],
           "targets": [],
           "actors": [],
@@ -860,10 +602,24 @@
             "subtype": "port_disruption",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 1.2,
             "matched": false,
             "missing": [
               "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
             ],
             "matched_context": []
           },
@@ -910,24 +666,25 @@
             "matched_context": []
           },
           {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
             "rule_id": "TRANSPORT.RAIL.DISRUPTION",
             "family": "transport",
             "subcategory": "rail",
             "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
             "severity": "medium",
             "priority": 0,
             "score": 1.1,
@@ -967,43 +724,28 @@
               "actions:all:entered"
             ],
             "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 1989,
+        "article_text_chars": 6228,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Bulgaria va reduce producția de energie electrică la centrala nucleară de la Kozlodui, din cauza unei scăderi „fără precedent și critice” a nivelului apelor Dunării, a anunțat joi Ministerul Energiei de la Sofia, potrivit AFP. Centrala nucleară de la Kozlodui, care asigură peste o treime din consumul de energie electrică al ţării și care depinde de apele Dunării pentru răcirea reactoarelor, va reduce cu aproximativ 120 de megawaţi capacitatea uneia dintre cele două unități aflate în funcțiune. Reducerea producției are ca scop „asigurarea funcționării în condiții de siguranță” a centralei, a precizat ministerul bulgar, adăugând că prognozele hidrologice în amonte de centrală „continuă să indice o tendinţă de scădere” a cotelor apelor fluviului. Potrivit ministerului, va fi pentru prima oară în cei 52 de ani de exploatare a centralei nucleare când condiţiile meteorologice şi hidrologice extreme impun o astfel de măsură. Și România și Ungaria și-au redus recent producția de energie nuclea",
+        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. În Franța, milioane de meduze au blocat pompele sistemelor de răcire ale centralei nucleare de la Gravelines, obligând tehnicienii să oprească reactoarele. Dar acestea nu sunt singurele animale care interferează cu infrastructurile energetice, scrie Corriere della Sera. Vara anului 2026 va rămâne în istorie ca una dintre cele mai dificile din istoria centralelor nucleare europene. S-a declanșat, de fapt, un cerc vicios: temperaturile extrem de ridicate din aceste luni au pus în pericol echilibrele delicate care garantează funcționarea acelor reactoare care ar trebui să asigure producția de energie electrică necesară pentru răcirea locuințelor, a birourilor și chiar a centralelor nucleare însele. Cauze diferite și cu totul inedite, dar întotdeauna legate de temperaturile ridicate, au impus însă oprirea a 8 reactoare franceze din centrala de la G",
         "place": "Cernavodă",
-        "time": "Thu, 20 Aug 2026 18:48:30 +0000",
+        "time": "Fri, 21 Aug 2026 06:06:29 +0000",
         "category": "energy",
         "kind": "local_media",
         "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "HotNews"
+          "G4Media"
         ],
         "urls": [
-          "https://hotnews.ro/bulgaria-reduce-productia-centralei-nucleare-de-la-kozlodui-din-cauza-nivelului-scazut-al-dunarii-2329557"
+          "https://www.g4media.ro/o-invazie-a-meduzelor-a-oprit-o-centrala-nucleara-din-franta-un-istoric-al-sabotajelor-energetice-provocate-de-natura-de-la-veverite-si-ratoni-pana-la-sobolani-si-ciori.html"
         ],
         "merged_titles": [
-          "Bulgaria reduce producţia centralei nucleare de la Kozlodui din cauza nivelului scăzut al Dunării"
+          "O invazie a meduzelor a oprit o centrală nucleară din Franța / Un istoric al ”sabotajelor” energetice provocate de natură / De la veverițe și ratoni, până la șobolani și ciori"
         ],
         "incident_family": "energy",
         "incident_subcategory": "power_grid",
@@ -1243,7 +985,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1884,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Dron, který 14. srpna sestřelila ve vzdušném prostoru Lotyšska italská stíhačka, byl ukrajinského původu, uvedly lotyšské ozbrojené síly. Dodaly, že z dráhy ho pravděpodobně vychýlilo Rusko. Šlo o jeden z řady incidentů, kdy se ruská válka proti Ukrajině přelévá do sousedních zemí. Italská stíhačka umístěná v Pobaltí sestřelila dron , který vletěl do vzdušného prostoru Lotyšska, členské země NATO a Evropské unie, během ukrajinských útoků na ruské přístavy, uvedla Severoatlantická aliance. Ukrajina během inkriminované noci podnikla nálet na ruský přístav Usť-Luga. Lotyšské ozbrojené síly nyní uvedly , že stroj byl ukrajinský a že vletěl do pobaltské země z Běloruska, s největší pravděpodobností v důsledku ruského rušení. Odmítly poskytnout jakékoli další podrobnosti o dronu. Útočné ukrajinské drony letící na cíle v Rusku se v minulých měsících několikrát odchýlily z trasy a vlétly do vzdušného prostoru pobaltských zemí, Polska či Finska. Podle Kyjeva za to nese vinu Rusko kvůli využíván",
         "place": "Poland",
         "time": "Thu, 20 Aug 2026 15:23:13 GMT",

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-21T01:00:33.180133+00:00",
+  "generated_utc": "2026-08-21T06:47:02.790963+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,18 +15,22 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Romania": {
-      "incident_count": 4,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 3,
         "infrastructure_disruption": 1
       },
       "source_files": {
-        "local_events.geojson": 3,
+        "local_events.geojson": 1
+      }
+    },
+    "Romania": {
+      "incident_count": 3,
+      "category_counts": {
+        "drone": 2,
+        "infrastructure_disruption": 1
+      },
+      "source_files": {
+        "local_events.geojson": 2,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -66,17 +70,16 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
-    "Romania": [
+    "Hungary": [
       {
-        "id": "f7bd30dc517653edb3b4",
-        "date": "2026-08-20",
-        "time": "2026-08-20T18:48:30+00:00",
+        "id": "8478c8888d6d2743459c",
+        "date": "2026-08-21",
+        "time": "2026-08-21T05:31:15+00:00",
         "category": "infrastructure_disruption",
         "severity": "medium",
-        "title": "Bulgaria reduce producţia centralei nucleare de la Kozlodui din cauza nivelului scăzut al Dunării",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/bulgaria-reduce-productia-centralei-nucleare-de-la-kozlodui-din-cauza-nivelului-scazut-al-dunarii-2329557",
+        "title": "Centrala nucleară de la Kozlodui din Bulgaria îşi reduce pentru prima dată puterea din cauza nivelului scăzut al Dunării",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/centrala-nucleara-de-la-kozlodui-din-bulgaria-isi-reduce-pentru-prima-data-puterea-din-cauza-nivelului-scazut-al-dunarii-3915199",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -87,7 +90,30 @@
         "incident_subtype": "energy_service_outage",
         "classification_confidence": 0.84,
         "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "8ebaf03d82784ee353c5ec82"
+        "fingerprint_hash": "3caf90ab94e07fda77978dd3"
+      }
+    ],
+    "Romania": [
+      {
+        "id": "811a445fb7edcc3d609a",
+        "date": "2026-08-21",
+        "time": "2026-08-21T06:06:29+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "O invazie a meduzelor a oprit o centrală nucleară din Franța / Un istoric al ”sabotajelor” energetice provocate de natură / De la veverițe și ratoni, până la șobolani și ciori",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/o-invazie-a-meduzelor-a-oprit-o-centrala-nucleara-din-franta-un-istoric-al-sabotajelor-energetice-provocate-de-natura-de-la-veverite-si-ratoni-pana-la-sobolani-si-ciori.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "86209584713ef262a0674749"
       },
       {
         "id": "10010e8adca2d19e0692",
@@ -109,27 +135,6 @@
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "83722df8baaec341c4b8b577"
-      },
-      {
-        "id": "0134d6500ddf6b6829ff",
-        "date": "2026-08-20",
-        "time": "2026-08-20T16:27:47+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "România a informat aliații NATO despre incidentul cu drona de la Neptun Deep. Oana Țoiu: „Nu este o navă fără pilot ucraineană”",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/romania-a-informat-aliatii-nato-despre-incidentul-cu-drona-de-la-neptun-deep-oana-toiu-nu-este-o-nava-fara-pilot-ucraineana-3914763",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "9110cd89ca97a30936080a81"
       },
       {
         "id": null,

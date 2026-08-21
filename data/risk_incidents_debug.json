@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-20T18:38:55.228419+00:00",
+  "generated_utc": "2026-08-21T01:00:33.180133+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 3,
+    "incident_count": 6,
+    "local_event_count": 5,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,12 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 3,
+      "incident_count": 4,
       "category_counts": {
-        "drone": 3
+        "drone": 3,
+        "infrastructure_disruption": 1
       },
       "source_files": {
-        "local_events.geojson": 2,
+        "local_events.geojson": 3,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -35,9 +36,13 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "cyber": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Lithuania": {
       "incident_count": 0,
@@ -64,6 +69,27 @@
     "Hungary": [],
     "Romania": [
       {
+        "id": "f7bd30dc517653edb3b4",
+        "date": "2026-08-20",
+        "time": "2026-08-20T18:48:30+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Bulgaria reduce producţia centralei nucleare de la Kozlodui din cauza nivelului scăzut al Dunării",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/bulgaria-reduce-productia-centralei-nucleare-de-la-kozlodui-din-cauza-nivelului-scazut-al-dunarii-2329557",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "8ebaf03d82784ee353c5ec82"
+      },
+      {
         "id": "10010e8adca2d19e0692",
         "date": "2026-08-20",
         "time": "2026-08-20T17:55:22+00:00",
@@ -87,7 +113,7 @@
       {
         "id": "0134d6500ddf6b6829ff",
         "date": "2026-08-20",
-        "time": "2026-08-20T12:48:11+00:00",
+        "time": "2026-08-20T16:27:47+00:00",
         "category": "drone",
         "severity": "high",
         "title": "România a informat aliații NATO despre incidentul cu drona de la Neptun Deep. Oana Țoiu: „Nu este o navă fără pilot ucraineană”",
@@ -128,7 +154,29 @@
       }
     ],
     "Slovakia": [],
-    "Poland": [],
+    "Poland": [
+      {
+        "id": "831f2e415e3ef2b689ce",
+        "date": "2026-08-20",
+        "time": "2026-08-20T15:23:13+00:00",
+        "category": "cyber",
+        "severity": "medium",
+        "title": "Lotyšsko: Dron sestřelený nad naším územím byl ukrajinský, zřejmě ho vychýlilo Rusko",
+        "source": "CT24",
+        "url": "https://ct24.ceskatelevize.cz/clanek/svet/lotyssko-dron-sestreleny-nad-nasim-uzemim-byl-ukrajinsky-zrejme-ho-vychylilo-rusko-376800",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "cyber",
+        "incident_subcategory": "gps_interference",
+        "incident_subtype": "gps_jamming_or_spoofing",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
+        "fingerprint_hash": "485d7a70277709b3a66808d2"
+      }
+    ],
     "Lithuania": [],
     "Latvia": [
       {

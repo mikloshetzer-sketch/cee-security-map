@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-21T18:37:33.249314+00:00",
+  "generated_utc": "2026-08-22T00:55:13.841798+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 6,
-    "local_event_count": 5,
+    "incident_count": 5,
+    "local_event_count": 4,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 5,
+      "incident_count": 4,
       "category_counts": {
-        "drone": 5
+        "drone": 4
       },
       "source_files": {
-        "local_events.geojson": 4,
+        "local_events.geojson": 3,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -64,6 +64,27 @@
     "Hungary": [],
     "Romania": [
       {
+        "id": "5a38b718f09c53664163",
+        "date": "2026-08-21",
+        "time": "2026-08-21T20:05:02+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Băsescu, atac la Miruță după incidentul de lângă Neptun Deep: Nu pricepe mare lucru, să nu se bage. Apărarea e o chestiune complicată",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/basescu-atac-la-miruta-dupa-incidentul-de-langa-neptun-deep-nu-pricepe-mare-lucru-sa-nu-se-bage-apararea-e-o-chestiune-complicata-3916067",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "2c53ef29ad2ffa2952578493"
+      },
+      {
         "id": "ba2cd9825a1aa72318fe",
         "date": "2026-08-21",
         "time": "2026-08-21T16:22:27+00:00",
@@ -83,48 +104,6 @@
         "classification_confidence": 0.98,
         "matched_rule_id": "AIR.DRONE.DETECTION",
         "fingerprint_hash": "138c906c5e0ced63c7f5dba8"
-      },
-      {
-        "id": "43cf726f8b56c9b2c7cd",
-        "date": "2026-08-21",
-        "time": "2026-08-21T15:29:33+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Fragment de dronă găsit lângă Portul Midia, anunță MApN. Intervenție a scafandrilor de luptă",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/posibil-fragment-de-drona-gasit-langa-portul-midia-anunta-mapn-interventie-a-scafandrilor-de-lupta-2330387",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "065e6b11881ef546ac0972ac"
-      },
-      {
-        "id": "5a38b718f09c53664163",
-        "date": "2026-08-21",
-        "time": "2026-08-21T15:07:16+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Băsescu, atac la Miruță după incidentul de lângă Neptun Deep: Nu pricepe mare lucru, să nu se bage. Apărarea e o chestiune complicată",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/politica/basescu-atac-la-miruta-dupa-incidentul-de-langa-neptun-deep-nu-pricepe-mare-lucru-sa-nu-se-bage-apararea-e-o-chestiune-complicata-3916067",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "2c53ef29ad2ffa2952578493"
       },
       {
         "id": "20cf5039dd2ed7f9680e",

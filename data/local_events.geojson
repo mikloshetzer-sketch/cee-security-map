@@ -1,9 +1,270 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-22T12:32:31.516370+00:00",
+  "generated_utc": "2026-08-22T18:30:45.718390+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5033,
+          47.1625
+        ]
+      },
+      "properties": {
+        "id": "44a559f35ea6e58a9534",
+        "title": "Hableány-tragédia: meghalt az a kapitány, akit azzal vádoltak, hogy nem segített a bajba jutottakon",
+        "summary": "A férfira felfüggesztett börtönbüntetést kért az ügyészség, így hazatérhetett Ukrajnába. A bíróság bekérte a halotti anyakönyvi kivonatát.",
+        "source": "HVG",
+        "url": "https://hvg.hu/itthon/20260822_hableany-tragedia-viking-idun-kapitany-meghalt-ugyeszseg-birosag",
+        "published": "Sat, 22 Aug 2026 17:55:56 Z",
+        "country": "Hungary",
+        "city": null,
+        "family": "maritime",
+        "subcategory": "port_security",
+        "subtype": "port_disruption",
+        "object": "ship",
+        "action": "disrupted",
+        "actor": "ukraine",
+        "target": "transport",
+        "context": [],
+        "consequences": [
+          "fatality"
+        ],
+        "severity": "critical",
+        "confidence": 0.98,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "maritime",
+          "subcategory": "port_security",
+          "subtype": "port_disruption",
+          "object": "ship",
+          "action": "disrupted",
+          "actor": "ukraine",
+          "target": "transport",
+          "place": "Hungary",
+          "event_date": "Sat, 22 Au",
+          "hash": "f8047ae85c271bb1f199752d"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "ship",
+            "hajó",
+            "critical_infrastructure",
+            "híd"
+          ],
+          "actions": [
+            "disrupted",
+            "felfüggesztették"
+          ],
+          "targets": [
+            "transport",
+            "híd"
+          ],
+          "actors": [
+            "ukraine",
+            "ukrán"
+          ],
+          "consequences": [
+            "fatality",
+            "meghalt"
+          ],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.2,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,damaged,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:closed",
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1923,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "A férfira felfüggesztett börtönbüntetést kért az ügyészség, így hazatérhetett Ukrajnába. A bíróság bekérte a halotti anyakönyvi kivonatát. Meghalt az az ukrán hajóskapitány, aki az ügyészség szerint a Hableány városnéző hajó elsüllyedése után nem segített a bajba jutott embereket kimenteni a vízből – értesült az RTL Híradója . A riportban felidézték: a Hableányt a Margit híd lábánál tarolta le a Viking Sigyn nevű szállodahajó 2019. május 29-én este. A balesetet heten élték túl, 27 ember meghalt, köztük a legénység két magyar tagja is. A környékbeli térfigyelő kamerák felvételeiből tudható, hogy a Sigyn mögött más hajók is haladtak, köztük a Viking társaság Idun nevű járműve. Az ügyészség szerint ennek kapitánya is hibázott: a vádirat szerint bár értesült a balesetről és arról, hogy mentésre van szükség, nem riadóztatta a személyzetet, nem engedtette le a mentőcsónakot, hanem tovább haladt észak felé. A férfi azzal védekezett, hogy nem látta a vízbe került embereket. Az ügyészség felfüg",
+        "place": "Hungary",
+        "time": "Sat, 22 Aug 2026 17:55:56 Z",
+        "category": "maritime",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HVG"
+        ],
+        "urls": [
+          "https://hvg.hu/itthon/20260822_hableany-tragedia-viking-idun-kapitany-meghalt-ugyeszseg-birosag"
+        ],
+        "merged_titles": [
+          "Hableány-tragédia: meghalt az a kapitány, akit azzal vádoltak, hogy nem segített a bajba jutottakon"
+        ],
+        "incident_family": "maritime",
+        "incident_subcategory": "port_security",
+        "incident_subtype": "port_disruption",
+        "incident_object": "ship",
+        "incident_action": "disrupted",
+        "incident_actor": "ukraine",
+        "incident_target": "transport",
+        "classification_confidence": 0.98
+      }
+    },
     {
       "type": "Feature",
       "geometry": {
@@ -522,258 +783,6 @@
         "incident_actor": "russia",
         "incident_target": "government",
         "classification_confidence": 0.98
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.0136,
-          58.5953
-        ]
-      },
-      "properties": {
-        "id": "e889c0af96c34cb9759d",
-        "title": "Estonian investors' Ukrainian shopping center hit in a drone attack",
-        "summary": "The shopping center in Kryvyi Rih that was hit by a Russian drone attack on Friday belongs to a company called Arricano Real Estate, which is owned by Estonian investors.",
-        "source": "ERR",
-        "url": "https://news.err.ee/1610116693/estonian-investors-ukrainian-shopping-center-hit-in-a-drone-attack",
-        "published": "Sat, 22 Aug 2026 09:23:00 +0300",
-        "country": "Estonia",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.82,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint": {
-          "country": "Estonia",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Estonia",
-          "event_date": "Sat, 22 Au",
-          "hash": "322bd62d92b0d76c435ff4bc"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone"
-          ],
-          "actions": [
-            "impact",
-            "hit"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "russian",
-            "ukraine",
-            "ukrainian"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Estonia",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Estonia",
-        "time": "Sat, 22 Aug 2026 09:23:00 +0300",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "ERR"
-        ],
-        "urls": [
-          "https://news.err.ee/1610116693/estonian-investors-ukrainian-shopping-center-hit-in-a-drone-attack"
-        ],
-        "merged_titles": [
-          "Estonian investors' Ukrainian shopping center hit in a drone attack"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.82
       }
     }
   ]

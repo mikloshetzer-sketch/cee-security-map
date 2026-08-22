@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-22T00:55:13.841798+00:00",
+  "generated_utc": "2026-08-22T06:39:49.304559+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 4,
+    "incident_count": 3,
+    "local_event_count": 2,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,12 +20,11 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 4,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 4
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 3,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -54,78 +53,19 @@
       "source_files": {}
     },
     "Estonia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     }
   },
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [
-      {
-        "id": "5a38b718f09c53664163",
-        "date": "2026-08-21",
-        "time": "2026-08-21T20:05:02+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Băsescu, atac la Miruță după incidentul de lângă Neptun Deep: Nu pricepe mare lucru, să nu se bage. Apărarea e o chestiune complicată",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/politica/basescu-atac-la-miruta-dupa-incidentul-de-langa-neptun-deep-nu-pricepe-mare-lucru-sa-nu-se-bage-apararea-e-o-chestiune-complicata-3916067",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "2c53ef29ad2ffa2952578493"
-      },
-      {
-        "id": "ba2cd9825a1aa72318fe",
-        "date": "2026-08-21",
-        "time": "2026-08-21T16:22:27+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "RO-Alert în Tulcea și Galați. Țintă aeriană aproape de graniță: au fost mobilizate două avioane F-18 și un elicopter",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/ro-alert-in-tulcea-si-galati-risc-de-cadere-a-unor-obiecte-din-aer-oamenii-sunt-sfatuiti-sa-se-adaposteasca-3916173",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "138c906c5e0ced63c7f5dba8"
-      },
-      {
-        "id": "20cf5039dd2ed7f9680e",
-        "date": "2026-08-21",
-        "time": "2026-08-21T14:49:01+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Drona maritimă de lângă Neptun Deep. Concluziile unui expert internațional care a analizat componentele aparatului, pas cu pas",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/drona-maritima-de-langa-neptun-deep-concluziile-unui-expert-international-care-a-analizat-componentele-aparatului-pas-cu-pas-3915955",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "f810314cee96e574243a75b1"
-      },
       {
         "id": null,
         "date": "2026-08-18",
@@ -174,6 +114,28 @@
     ],
     "Lithuania": [],
     "Latvia": [],
-    "Estonia": []
+    "Estonia": [
+      {
+        "id": "e889c0af96c34cb9759d",
+        "date": "2026-08-22",
+        "time": "2026-08-22T06:23:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Estonian investors' Ukrainian shopping center hit in a drone attack",
+        "source": "ERR",
+        "url": "https://news.err.ee/1610116693/estonian-investors-ukrainian-shopping-center-hit-in-a-drone-attack",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "322bd62d92b0d76c435ff4bc"
+      }
+    ]
   }
 }

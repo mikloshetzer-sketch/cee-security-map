@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-23T00:59:58.699396+00:00",
+  "generated_utc": "2026-08-23T06:38:06.628223+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 0,
+    "incident_count": 2,
+    "local_event_count": 1,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -49,9 +49,13 @@
       "source_files": {}
     },
     "Estonia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     }
   },
   "countries": {
@@ -84,6 +88,28 @@
     "Poland": [],
     "Lithuania": [],
     "Latvia": [],
-    "Estonia": []
+    "Estonia": [
+      {
+        "id": "e889c0af96c34cb9759d",
+        "date": "2026-08-22",
+        "time": "2026-08-22T06:23:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Estonian investors' Ukrainian shopping center hit in a drone attack",
+        "source": "ERR",
+        "url": "https://news.err.ee/1610116693/estonian-investors-ukrainian-shopping-center-hit-in-a-drone-attack",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "322bd62d92b0d76c435ff4bc"
+      }
+    ]
   }
 }

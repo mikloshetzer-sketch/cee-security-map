@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-22T18:30:51.734788+00:00",
+  "generated_utc": "2026-08-23T00:59:58.699396+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 1,
+    "incident_count": 1,
+    "local_event_count": 0,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -34,13 +34,9 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 1,
-      "category_counts": {
-        "cyber": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Lithuania": {
       "incident_count": 0,
@@ -85,29 +81,7 @@
       }
     ],
     "Slovakia": [],
-    "Poland": [
-      {
-        "id": "831f2e415e3ef2b689ce",
-        "date": "2026-08-20",
-        "time": "2026-08-20T15:23:13+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "title": "Lotyšsko: Dron sestřelený nad naším územím byl ukrajinský, zřejmě ho vychýlilo Rusko",
-        "source": "CT24",
-        "url": "https://ct24.ceskatelevize.cz/clanek/svet/lotyssko-dron-sestreleny-nad-nasim-uzemim-byl-ukrajinsky-zrejme-ho-vychylilo-rusko-376800",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "cyber",
-        "incident_subcategory": "gps_interference",
-        "incident_subtype": "gps_jamming_or_spoofing",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
-        "fingerprint_hash": "485d7a70277709b3a66808d2"
-      }
-    ],
+    "Poland": [],
     "Lithuania": [],
     "Latvia": [],
     "Estonia": []

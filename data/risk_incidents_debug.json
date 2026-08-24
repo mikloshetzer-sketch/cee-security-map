@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-24T06:53:03.220092+00:00",
+  "generated_utc": "2026-08-24T12:41:54.659228+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 2,
+    "incident_count": 7,
+    "local_event_count": 6,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -15,15 +15,18 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 4,
+      "category_counts": {
+        "military": 4
+      },
+      "source_files": {
+        "local_events.geojson": 4
+      }
     },
     "Romania": {
       "incident_count": 2,
       "category_counts": {
-        "military": 1,
-        "drone": 1
+        "drone": 2
       },
       "source_files": {
         "local_events.geojson": 1,
@@ -62,17 +65,58 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
-    "Romania": [
+    "Hungary": [
       {
-        "id": "cfc6c43b63016750666d",
-        "date": "2026-08-23",
-        "time": "2026-08-23T18:40:38+00:00",
+        "id": "269b1b1e2ed403b7bfd2",
+        "date": "2026-08-24",
+        "time": "2026-08-24T12:33:00+00:00",
         "category": "military",
         "severity": "medium",
-        "title": "VIDEO O a doua dronă găsită, la Gura Portiței, după cea depistată la Costinești. Momentul în care e neutralizată",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/corp-de-drona-de-tip-gerbera-depistat-in-apa-in-zona-costinesti-anuntul-mapn-2331349",
+        "title": "Tisza-kormány: lezuhant egy magyar Gripen, nagy bejelentést tett Orbán Anita, fontos ügyben tett feljelentést Ruff Bálint",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/gazdasag/20260824/tisza-kormany-lezuhant-egy-magyar-gripen-nagy-bejelentest-tett-orban-anita-fontos-ugyben-tett-feljelentest-ruff-balint-857744",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "8d0b34d4956fcf84c4f98f6b"
+      },
+      {
+        "id": "5cd5059a3c6af56772e4",
+        "date": "2026-08-24",
+        "time": "2026-08-24T12:28:00+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Rakéta is volt a Szolnoknál lezuhant Gripenen, nagyobb baj is történhetett volna",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/global/20260824/raketa-is-volt-a-szolnoknal-lezuhant-gripenen-nagyobb-baj-is-tortenhetett-volna-857894",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "6f53d8a1ea1b3415c55b5006"
+      },
+      {
+        "id": "0c2ea1d054dcc200af71",
+        "date": "2026-08-24",
+        "time": "2026-08-24T12:00:43+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Gyakorlatozás közben romlott el a Gripen, a gépen fegyverek is voltak",
+        "source": "Telex",
+        "url": "https://telex.hu/belfold/2026/08/24/ruszin-szendi-romulusz-helyzetjelentes-szolnok-lezuhant-gripen",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -83,7 +127,51 @@
         "incident_subtype": "military_aircraft_incident",
         "classification_confidence": 0.76,
         "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "1ba01bdc3765670a6202a156"
+        "fingerprint_hash": "830e2ffcba1d3a35a44c070e"
+      },
+      {
+        "id": "213e733169020c7bc8f2",
+        "date": "2026-08-24",
+        "time": "2026-08-24T08:48:05+00:00",
+        "category": "military",
+        "severity": "high",
+        "title": "Lezuhant egy Gripen Szolnok közelében",
+        "source": "HVG",
+        "url": "https://hvg.hu/itthon/20260824_lezuhan-gripen-szolnok-kozeleben",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "4073a20c2d7bc3ad672fc666"
+      }
+    ],
+    "Romania": [
+      {
+        "id": "2a9c414721325bee65af",
+        "date": "2026-08-24",
+        "time": "2026-08-24T11:59:59+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "O dronă a fost găsită în Vrancea, aproape de granița cu județul Galați: cel mai probabil este aparatul de zbor căutat de MApN (hartă)",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/semnale-radar-neidentificate-in-zona-cahul-si-targu-bujor-doua-avioane-f-16-si-un-elicopter-ridicate-de-la-sol-mesaj-ro-alert-emis-3918099",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "772f1ab1f06c64f5b2401cc9"
       },
       {
         "id": null,

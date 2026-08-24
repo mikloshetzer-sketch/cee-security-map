@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-23T18:30:33.256903+00:00",
+  "generated_utc": "2026-08-24T00:55:22.824135+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 1,
+    "incident_count": 4,
+    "local_event_count": 3,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,11 +20,14 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 3,
       "category_counts": {
+        "military": 1,
+        "infrastructure_disruption": 1,
         "drone": 1
       },
       "source_files": {
+        "local_events.geojson": 2,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -62,6 +65,48 @@
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [
+      {
+        "id": "55059a309d5f9d0f61c8",
+        "date": "2026-08-23",
+        "time": "2026-08-23T18:52:10+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Bogdan Ivan: Grupul de la Turceni va fi repornit luni. Situația de la Cernavodă, gestionată cu foarte mare amatorism",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/bogdan-ivan-grupul-de-la-turceni-va-fi-repornit-luni-situatia-de-la-cernavoda-gestionata-cu-foarte-mare-amatorism.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "2a07ab0a200a6803def5eaf1"
+      },
+      {
+        "id": "cfc6c43b63016750666d",
+        "date": "2026-08-23",
+        "time": "2026-08-23T18:40:38+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "VIDEO O a doua dronă găsită, la Gura Portiței, după cea depistată la Costinești. Momentul în care e neutralizată",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/corp-de-drona-de-tip-gerbera-depistat-in-apa-in-zona-costinesti-anuntul-mapn-2331349",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "1ba01bdc3765670a6202a156"
+      },
       {
         "id": null,
         "date": "2026-08-18",

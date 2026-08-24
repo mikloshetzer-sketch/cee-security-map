@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-23T18:30:26.656764+00:00",
+  "generated_utc": "2026-08-24T00:55:17.215358+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,76 +9,71 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.5033,
-          47.1625
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "id": "44a559f35ea6e58a9534",
-        "title": "Hableány-tragédia: meghalt a kapitány, akit azzal vádoltak, hogy nem segített a bajba jutottakon",
-        "summary": "A férfira felfüggesztett börtönbüntetést kért az ügyészség, így hazatérhetett Ukrajnába. A bíróság bekérte a halotti anyakönyvi kivonatát.",
-        "source": "HVG",
-        "url": "https://hvg.hu/itthon/20260822_hableany-tragedia-viking-idun-kapitany-meghalt-ugyeszseg-birosag",
-        "published": "Sat, 22 Aug 2026 17:55:56 Z",
-        "country": "Hungary",
+        "id": "cfc6c43b63016750666d",
+        "title": "VIDEO O a doua dronă găsită, la Gura Portiței, după cea depistată la Costinești. Momentul în care e neutralizată",
+        "summary": "Un fragment de dronă model Gerbera a fost găsit duminică în raionul Gura Portiței, conform anunțului făcut de Ministerul Apărării Naționale. Anterior, MApN anunțase o situație similară în zona Costinești. „Duminică, 23 august, o echipă de scafandri de luptă EOD din cadrul Forțelor Navale Române s-a deplasat, la bordul unei nave a Gărzii de Coastă, &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/corp-de-drona-de-tip-gerbera-depistat-in-apa-in-zona-costinesti-anuntul-mapn-2331349",
+        "published": "Sun, 23 Aug 2026 18:40:38 +0000",
+        "country": "Romania",
         "city": null,
-        "family": "maritime",
-        "subcategory": "port_security",
-        "subtype": "port_disruption",
-        "object": "ship",
-        "action": "disrupted",
-        "actor": "ukraine",
-        "target": "transport",
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "damaged",
+        "actor": "unknown",
+        "target": "unknown",
         "context": [],
-        "consequences": [
-          "fatality"
-        ],
-        "severity": "critical",
-        "confidence": 0.98,
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.76,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
         "fingerprint": {
-          "country": "Hungary",
-          "family": "maritime",
-          "subcategory": "port_security",
-          "subtype": "port_disruption",
-          "object": "ship",
-          "action": "disrupted",
-          "actor": "ukraine",
-          "target": "transport",
-          "place": "Hungary",
-          "event_date": "Sat, 22 Au",
-          "hash": "f8047ae85c271bb1f199752d"
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "damaged",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Sun, 23 Au",
+          "hash": "1ba01bdc3765670a6202a156"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
+            "drone",
+            "shahed",
+            "dronă",
+            "drona",
+            "military_aircraft",
+            "elicopter",
             "ship",
-            "hajó",
-            "critical_infrastructure",
-            "híd"
+            "navă"
           ],
           "actions": [
-            "disrupted",
-            "felfüggesztették"
+            "detected",
+            "observat",
+            "damaged",
+            "distrus"
           ],
-          "targets": [
-            "transport",
-            "híd"
-          ],
-          "actors": [
-            "ukraine",
-            "ukrán"
-          ],
-          "consequences": [
-            "fatality",
-            "meghalt"
-          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
           "extra_context": [
-            "feed_country=Hungary",
+            "feed_country=Romania",
             "geocode_quality=country_fallback"
           ]
         },
@@ -87,63 +82,20 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
           "country_match": 0.1,
-          "consequence_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
             "severity": "medium",
             "priority": 0,
             "score": 2.32,
             "matched": true,
             "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.2,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
             "matched_context": []
           },
           {
@@ -153,10 +105,251 @@
             "subtype": "ship_attack",
             "severity": "high",
             "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:any:attacked,damaged,exploded"
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2678,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Un fragment de dronă model Gerbera a fost găsit duminică în raionul Gura Portiței, conform anunțului făcut de Ministerul Apărării Naționale. Anterior, MApN anunțase o situație similară în zona Costinești. „Duminică, 23 august, o echipă de scafandri de luptă EOD din cadrul Forțelor Navale Române s-a deplasat, la bordul unei nave a Gărzii de Coastă, în raionul Gura Portiței, pentru verificarea unui obiect plutitor suspect”, a declarat instituția într-un comunicat transmis în această seară . Spre deosebire de corpul de dronă găsit la Costinești, fragmentul depistat la Gura Portiței avea încărcătură explozivă. „În urma verificărilor efectuate, echipa EOD a confirmat prezența unui fragment de dronă aeriană, model Gerbera, care prezenta încărcătură explozivă. Obiectul a fost neutralizat la fața locului, în condiții de siguranță”, a conchis MApN. MApN anunțase anterior că un corp de dronă de tip Gerbera a fost preluat de Garda de Coastă după ce a fost observat plutind în Marea Neagră, duminic",
+        "place": "Romania",
+        "time": "Sun, 23 Aug 2026 18:40:38 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "urls": [
+          "https://hotnews.ro/corp-de-drona-de-tip-gerbera-depistat-in-apa-in-zona-costinesti-anuntul-mapn-2331349"
+        ],
+        "merged_titles": [
+          "VIDEO O a doua dronă găsită, la Gura Portiței, după cea depistată la Costinești. Momentul în care e neutralizată"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "damaged",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.057,
+          44.322
+        ]
+      },
+      "properties": {
+        "id": "55059a309d5f9d0f61c8",
+        "title": "Bogdan Ivan: Grupul de la Turceni va fi repornit luni. Situația de la Cernavodă, gestionată cu foarte mare amatorism",
+        "summary": "<p>Bogdan Ivan, fost ministru al Energiei, a declarat, duminică seară, că grupul Termocentralei Turceni, care a fost oprit din cauza unor defecțiuni tehnice, urmează să fie repornit luni și să livreze aproximativ 220 MW în Sistemul Energetic Național. Vorbind și despre Centrala nucleară de la Cernavodă, Ivan susține că situația de acolo a fost gestionată [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/bogdan-ivan-grupul-de-la-turceni-va-fi-repornit-luni-situatia-de-la-cernavoda-gestionata-cu-foarte-mare-amatorism.html",
+        "published": "Sun, 23 Aug 2026 18:52:10 +0000",
+        "country": "Romania",
+        "city": "Cernavodă",
+        "family": "energy",
+        "subcategory": "power_grid",
+        "subtype": "energy_service_outage",
+        "object": "energy_asset",
+        "action": "disrupted",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "energy",
+          "subcategory": "power_grid",
+          "subtype": "energy_service_outage",
+          "object": "energy_asset",
+          "action": "disrupted",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Cernavodă",
+          "event_date": "Sun, 23 Au",
+          "hash": "2a07ab0a200a6803def5eaf1"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "energy_asset",
+            "centrala"
+          ],
+          "actions": [
+            "disrupted",
+            "oprit"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
             ],
             "matched_context": []
           },
@@ -175,30 +368,58 @@
             "matched_context": []
           },
           {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "rule_id": "ENERGY.ASSET.FIRE",
             "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:energy_asset"
+              "actions:all:burned"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
             "family": "transport",
-            "subcategory": "aviation",
-            "subtype": "airport_closure",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
             "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:closed",
+              "targets:all:transport",
               "context:any"
             ],
             "matched_context": []
@@ -232,37 +453,52 @@
               "actions:all:entered"
             ],
             "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 1923,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "A férfira felfüggesztett börtönbüntetést kért az ügyészség, így hazatérhetett Ukrajnába. A bíróság bekérte a halotti anyakönyvi kivonatát. Meghalt az az ukrán hajóskapitány, aki az ügyészség szerint a Hableány városnéző hajó elsüllyedése után nem segített a bajba jutott embereket kimenteni a vízből – értesült az RTL Híradója . A riportban felidézték: a Hableányt a Margit híd lábánál tarolta le a Viking Sigyn nevű szállodahajó 2019. május 29-én este. A balesetet heten élték túl, 27 ember meghalt, köztük a legénység két magyar tagja is. A környékbeli térfigyelő kamerák felvételeiből tudható, hogy a Sigyn mögött más hajók is haladtak, köztük a Viking társaság Idun nevű járműve. Az ügyészség szerint ennek kapitánya is hibázott: a vádirat szerint bár értesült a balesetről és arról, hogy mentésre van szükség, nem riadóztatta a személyzetet, nem engedtette le a mentőcsónakot, hanem tovább haladt észak felé. A férfi azzal védekezett, hogy nem látta a vízbe került embereket. Az ügyészség felfüg",
-        "place": "Hungary",
-        "time": "Sat, 22 Aug 2026 17:55:56 Z",
-        "category": "maritime",
+        "article_text_chars": 3737,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. Bogdan Ivan, fost ministru al Energiei, a declarat, duminică seară, că grupul Termocentralei Turceni, care a fost oprit din cauza unor defecțiuni tehnice, urmează să fie repornit luni și să livreze aproximativ 220 MW în Sistemul Energetic Național. Vorbind și despre Centrala nucleară de la Cernavodă, Ivan susține că situația de acolo a fost gestionată „cu foarte mare amatorism”, transmite MEDIAFAX. Bogdan Ivan, fost ministru al Energiei, a anunțat, duminică seara, în cadrul unei intervenții la Antena 3 CNN, că grupul 5 de la Turceni, care a fost oprit din cauza unor defecțiuni tehnice, urmează să fie repornit luni. El a afirmat că acesta a fost separat în cursul zilei de duminică și că repornirea este programată pentru luni după-amiază. „Va fi repornit mâine (luni – n.r.). Chiar astăzi am discutat cu foștii mei colegi din Complexul Energetic Ol",
+        "place": "Cernavodă",
+        "time": "Sun, 23 Aug 2026 18:52:10 +0000",
+        "category": "energy",
         "kind": "local_media",
-        "geocode_quality": "country_fallback",
+        "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "HVG"
+          "G4Media"
         ],
         "urls": [
-          "https://hvg.hu/itthon/20260822_hableany-tragedia-viking-idun-kapitany-meghalt-ugyeszseg-birosag"
+          "https://www.g4media.ro/bogdan-ivan-grupul-de-la-turceni-va-fi-repornit-luni-situatia-de-la-cernavoda-gestionata-cu-foarte-mare-amatorism.html"
         ],
         "merged_titles": [
-          "Hableány-tragédia: meghalt a kapitány, akit azzal vádoltak, hogy nem segített a bajba jutottakon"
+          "Bogdan Ivan: Grupul de la Turceni va fi repornit luni. Situația de la Cernavodă, gestionată cu foarte mare amatorism"
         ],
-        "incident_family": "maritime",
-        "incident_subcategory": "port_security",
-        "incident_subtype": "port_disruption",
-        "incident_object": "ship",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "incident_object": "energy_asset",
         "incident_action": "disrupted",
-        "incident_actor": "ukraine",
-        "incident_target": "transport",
-        "classification_confidence": 0.98
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
       }
     },
     {

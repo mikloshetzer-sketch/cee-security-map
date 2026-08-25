@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-25T00:56:54.207260+00:00",
+  "generated_utc": "2026-08-25T06:44:31.024856+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,271 +9,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.5033,
-          47.1625
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "id": "0c2ea1d054dcc200af71",
-        "title": "Gyakorlatozás közben romlott el a Gripen, a gépen fegyverek is voltak",
-        "summary": "A vadászgép már a földön manőverezett, amikor a pilótának katapultálnia kellett.",
-        "source": "Telex",
-        "url": "https://telex.hu/belfold/2026/08/24/ruszin-szendi-romulusz-helyzetjelentes-szolnok-lezuhant-gripen",
-        "published": "Mon, 24 Aug 2026 14:00:43 +0200",
-        "country": "Hungary",
-        "city": null,
-        "family": "air",
-        "subcategory": "aircraft",
-        "subtype": "military_aircraft_incident",
-        "object": "military_aircraft",
-        "action": "impact",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.76,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint": {
-          "country": "Hungary",
-          "family": "air",
-          "subcategory": "aircraft",
-          "subtype": "military_aircraft_incident",
-          "object": "military_aircraft",
-          "action": "impact",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Hungary",
-          "event_date": "Mon, 24 Au",
-          "hash": "830e2ffcba1d3a35a44c070e"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [
-            "történt"
-          ],
-          "objects": [
-            "military_aircraft",
-            "vadászgép"
-          ],
-          "actions": [
-            "impact",
-            "lezuhant",
-            "burned",
-            "kigyulladt"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Hungary",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:drone"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.FIRE",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_fire",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:energy_asset"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "INDUSTRIAL.FIRE",
-            "family": "industrial",
-            "subcategory": "fire",
-            "subtype": "industrial_fire",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "PUBLIC.ORDER.VIOLENCE",
-            "family": "public_order",
-            "subcategory": "violent_protest",
-            "subtype": "violent_public_disorder",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1884,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Ruszin-Szendi Romulusz honvédelmi miniszter hétfő délután Szolnokról jelentkezett be , miután lezuhant a Magyar Honvédség egyik Gripen vadászgépe . A miniszter közölte, hogy a pilóta jól van, és már átszállították a budapesti Honvéd Kórházba. Ruszin-Szendi megkérte a mellette álló vezérezredest, hogy számoljon be az ügy fejleményeiről. A gép veszélyjelzést adott le, a kísérő megpróbálta a gépet bekísérni a repülőtérre, a műszerezettsége eltűnt a fedélzetről. Ez a megoldás a leszállásig működött, de akkor a gép olyan manőverbe kezdett a földön, ami után a pilóta úgy döntött, hogy katapultálnia kell. A Gripen a katapultálás után balra kisodródott, megállt, majd kigyulladt. A vezérezredes szerint a pilótának sikerült elkerülnie, hogy ezt a manővert ne lakott területen kelljen végrehajtania. Azt mondta, az utolsó pillanatig próbálta irányítani az elektronikával már nem rendelkező gépet. Megjegyezte, hogy a tűzoltók 5 perc alatt a helyszínen voltak, és megkezdték az oltást, így pedig elkerü",
-        "place": "Hungary",
-        "time": "Mon, 24 Aug 2026 14:00:43 +0200",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Telex"
-        ],
-        "urls": [
-          "https://telex.hu/belfold/2026/08/24/ruszin-szendi-romulusz-helyzetjelentes-szolnok-lezuhant-gripen"
-        ],
-        "merged_titles": [
-          "Gyakorlatozás közben romlott el a Gripen, a gépen fegyverek is voltak"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "incident_object": "military_aircraft",
-        "incident_action": "impact",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.76
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.008,
-          45.435
-        ]
-      },
-      "properties": {
-        "id": "2a9c414721325bee65af",
-        "title": "O dronă a fost găsită în Vrancea, aproape de granița cu județul Galați. MApN: Drona nu avea încărcătură explozivă",
-        "summary": "Sistemul de supraveghere radar al MApN a detectat luni semnale intermitente, în spaţiul aerian al Republicii Moldova, zona Cahul. Unul din semnale a apărut ulterior în zona Târgu Bujor, judeţul Galaţi, fiind emis mesj RO-Alert.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/semnale-radar-neidentificate-in-zona-cahul-si-targu-bujor-doua-avioane-f-16-si-un-elicopter-ridicate-de-la-sol-mesaj-ro-alert-emis-3918099",
-        "published": "Mon, 24 Aug 2026 17:39:47 +0300",
+        "id": "9e0a071b45354c46bc13",
+        "title": "Alertă la Insula Şerpilor. Două avioane F-18 au plecat în misiune – O dronă a fost detectată la aproximativ 4 kilometri est de Vâlcove (Anunțul MApN)",
+        "summary": "Ministerul Apărării Naţionale a informat că luni seara, la ora 22:37, sistemul de supraveghere radar a detectat două ţinte aeriene la 25 de kilometri nord-vest de Insula Şerpilor, ce evoluau către frontiera României.",
+        "source": "Economica.net",
+        "url": "https://www.economica.net/alerta-la-insula-serpilor-doua-avioane-f-18-au-plecat-in-misiune-anuntul-mapn_970750.html",
+        "published": "Tue, 25 Aug 2026 04:29:21 +0000",
         "country": "Romania",
-        "city": "Galați",
+        "city": null,
         "family": "air",
         "subcategory": "drone",
         "subtype": "drone_detection",
@@ -284,7 +32,7 @@
         "context": [],
         "consequences": [],
         "severity": "low",
-        "confidence": 0.92,
+        "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
         "matched_rule_id": "AIR.DRONE.DETECTION",
@@ -297,9 +45,9 @@
           "action": "detected",
           "actor": "unknown",
           "target": "military",
-          "place": "Galați",
-          "event_date": "Mon, 24 Au",
-          "hash": "772f1ab1f06c64f5b2401cc9"
+          "place": "Romania",
+          "event_date": "Tue, 25 Au",
+          "hash": "7cb11aeabde7835276318116"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -307,10 +55,7 @@
           "article_role": [],
           "objects": [
             "drone",
-            "dronă",
-            "drona",
-            "military_aircraft",
-            "elicopter"
+            "dronă"
           ],
           "actions": [
             "detected",
@@ -324,7 +69,7 @@
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
-            "geocode_quality=city"
+            "geocode_quality=country_fallback"
           ]
         },
         "negative_terms": [],
@@ -334,7 +79,6 @@
           "action_match": 0.2,
           "target_match": 0.08,
           "country_match": 0.1,
-          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
@@ -421,20 +165,6 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:damaged,entered,impact"
-            ],
-            "matched_context": []
-          },
-          {
             "rule_id": "AIR.MISSILE.INTERCEPT",
             "family": "air",
             "subcategory": "missile",
@@ -465,6 +195,21 @@
             "matched_context": []
           },
           {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "GROUND.EXPLOSIVE.ATTACK",
             "family": "ground",
             "subcategory": "explosive_attack",
@@ -481,25 +226,25 @@
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1457,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Sistemul de supraveghere radar al MApN a detectat luni semnale intermitente, în spaţiul aerian al Republicii Moldova, zona Cahul. Unul din semnale a apărut ulterior în zona Târgu Bujor, judeţul Galaţi, fiind emis mesaj RO-Alert. ACTUALIZARE 09:25 Mai mulți localnici au filmat drona deasupra județului Galați. Potrivit corespondentei Digi24 Dana Costache, după mesajul Ro-Alert emis de autorități la ora 06:12, sute de oameni au comentat pe rețelele de socializare online că au auzit zgomot de motoare și că au văzut o dronă care trecea pe deasupra caselor lor, dar și avioanele și elicopterul ridicate de MApN. La ora 07:00, drona era încă în aer și a trecut pe lângă Tecuci. Cinci apeluri la 112 au fost efectuate din zona Matca. „În dimineaţa zilei de luni, 24 august, în jurul orei 6.00, sistemul de supraveghere radar al MApN a detectat semnale intermitente, în spaţiul aerian al Republicii Moldova, zona Cahul. Unul din semnale a apărut ulterior în zona Târgu Bujor, judeţul Galaţi”, informează",
-        "place": "Galați",
-        "time": "Mon, 24 Aug 2026 17:39:47 +0300",
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Romania",
+        "time": "Tue, 25 Aug 2026 04:29:21 +0000",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Digi24"
+          "Economica.net"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/actualitate/evenimente/semnale-radar-neidentificate-in-zona-cahul-si-targu-bujor-doua-avioane-f-16-si-un-elicopter-ridicate-de-la-sol-mesaj-ro-alert-emis-3918099"
+          "https://www.economica.net/alerta-la-insula-serpilor-doua-avioane-f-18-au-plecat-in-misiune-anuntul-mapn_970750.html"
         ],
         "merged_titles": [
-          "O dronă a fost găsită în Vrancea, aproape de granița cu județul Galați. MApN: Drona nu avea încărcătură explozivă"
+          "Alertă la Insula Şerpilor. Două avioane F-18 au plecat în misiune – O dronă a fost detectată la aproximativ 4 kilometri est de Vâlcove (Anunțul MApN)"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
@@ -508,7 +253,7 @@
         "incident_action": "detected",
         "incident_actor": "unknown",
         "incident_target": "military",
-        "classification_confidence": 0.92
+        "classification_confidence": 0.84
       }
     },
     {

@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-25T06:44:31.024856+00:00",
+  "generated_utc": "2026-08-25T12:45:58.330143+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,30 +9,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9668,
-          45.9432
+          28.638,
+          44.173
         ]
       },
       "properties": {
-        "id": "9e0a071b45354c46bc13",
-        "title": "Alertă la Insula Şerpilor. Două avioane F-18 au plecat în misiune – O dronă a fost detectată la aproximativ 4 kilometri est de Vâlcove (Anunțul MApN)",
-        "summary": "Ministerul Apărării Naţionale a informat că luni seara, la ora 22:37, sistemul de supraveghere radar a detectat două ţinte aeriene la 25 de kilometri nord-vest de Insula Şerpilor, ce evoluau către frontiera României.",
-        "source": "Economica.net",
-        "url": "https://www.economica.net/alerta-la-insula-serpilor-doua-avioane-f-18-au-plecat-in-misiune-anuntul-mapn_970750.html",
-        "published": "Tue, 25 Aug 2026 04:29:21 +0000",
+        "id": "16c48437cf6847211dff",
+        "title": "Ședință secretă a Comisiei de Apărare în Parlament, după creșterea considerabilă a numărului de incidente cu drone în România",
+        "summary": "Discuții au loc marți în Parlament, după zecile de drone sau fragmente de drone care au fost găsite în ultimele săptămâni în România. În această dimineață a fost alertă în nordul județului Tulcea, unde locuitorii au primit mesaje de avertizare. Două avioane F-18 au fost ridicate de la Baza Aeriană Mihai Kogălniceanu pentru a supraveghea zona.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/sedinta-secreta-a-comisiei-de-aparare-in-parlament-dupa-cresterea-considerabila-a-numarului-de-incidente-cu-drone-in-romania-3921053",
+        "published": "Tue, 25 Aug 2026 15:37:44 +0300",
         "country": "Romania",
-        "city": null,
+        "city": "Constanța",
         "family": "air",
         "subcategory": "drone",
         "subtype": "drone_detection",
         "object": "drone",
         "action": "detected",
-        "actor": "unknown",
-        "target": "military",
+        "actor": "ukraine",
+        "target": "government",
         "context": [],
         "consequences": [],
         "severity": "low",
-        "confidence": 0.84,
+        "confidence": 0.98,
         "article_role": "incident",
         "actual_incident": true,
         "matched_rule_id": "AIR.DRONE.DETECTION",
@@ -43,33 +43,35 @@
           "subtype": "drone_detection",
           "object": "drone",
           "action": "detected",
-          "actor": "unknown",
-          "target": "military",
-          "place": "Romania",
+          "actor": "ukraine",
+          "target": "government",
+          "place": "Constanța",
           "event_date": "Tue, 25 Au",
-          "hash": "7cb11aeabde7835276318116"
+          "hash": "bc8963959aa9cd111c3923c2"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone",
-            "dronă"
+            "drone"
           ],
           "actions": [
             "detected",
             "detectat"
           ],
           "targets": [
-            "military",
-            "radar"
+            "government",
+            "parlament"
           ],
-          "actors": [],
+          "actors": [
+            "ukraine",
+            "ucraina"
+          ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
-            "geocode_quality=country_fallback"
+            "geocode_quality=city"
           ]
         },
         "negative_terms": [],
@@ -78,7 +80,9 @@
           "object_match": 0.2,
           "action_match": 0.2,
           "target_match": 0.08,
+          "actor_match": 0.06,
           "country_match": 0.1,
+          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
@@ -165,6 +169,20 @@
             "matched_context": []
           },
           {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.MISSILE.INTERCEPT",
             "family": "air",
             "subcategory": "missile",
@@ -208,52 +226,37 @@
               "actions:any:damaged,entered,impact"
             ],
             "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Romania",
-        "time": "Tue, 25 Aug 2026 04:29:21 +0000",
+        "full_article_enriched": true,
+        "article_text_chars": 1332,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Discuții au loc marți în Parlament, după zecile de drone sau fragmente de drone care au fost găsite în ultimele săptămâni în România. În această dimineață a fost alertă în nordul județului Tulcea , unde locuitorii au primit mesaje de avertizare. Două avioane F-18 au fost ridicate de la Baza Aeriană Mihai Kogălniceanu pentru a supraveghea zona. Parlamentarii Comisiei de Apărare au pus întrebări, timp de două de ore, iar reprezentanții MApN, MAI și SRI nu au răspuns clar despre incidentele cu drone care au intrat în România. Singura informație importantă a fost oferită de șeful Forțelor Navale Române, care a spus că în Portul militar Constanța sunt puse în funcțiune și introduse mai multe sisteme de detectare a dronelor maritime, subacvatice sau aeriene. În ultimele săptămâni, numărul amenințărilor cu drone a crescut considerabil. Ședința Comisiei de Apărare este secretă. Un mesaj RO-Alert a fost emis marţi dimineaţă pentru nordul judeţului Tulcea. Locuitorii au fost avertizaţi în legătu",
+        "place": "Constanța",
+        "time": "Tue, 25 Aug 2026 15:37:44 +0300",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "country_fallback",
+        "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Economica.net"
+          "Digi24"
         ],
         "urls": [
-          "https://www.economica.net/alerta-la-insula-serpilor-doua-avioane-f-18-au-plecat-in-misiune-anuntul-mapn_970750.html"
+          "https://www.digi24.ro/stiri/actualitate/politica/sedinta-secreta-a-comisiei-de-aparare-in-parlament-dupa-cresterea-considerabila-a-numarului-de-incidente-cu-drone-in-romania-3921053"
         ],
         "merged_titles": [
-          "Alertă la Insula Şerpilor. Două avioane F-18 au plecat în misiune – O dronă a fost detectată la aproximativ 4 kilometri est de Vâlcove (Anunțul MApN)"
+          "Ședință secretă a Comisiei de Apărare în Parlament, după creșterea considerabilă a numărului de incidente cu drone în România"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_detection",
         "incident_object": "drone",
         "incident_action": "detected",
-        "incident_actor": "unknown",
-        "incident_target": "military",
-        "classification_confidence": 0.84
+        "incident_actor": "ukraine",
+        "incident_target": "government",
+        "classification_confidence": 0.98
       }
     },
     {
@@ -261,67 +264,62 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.0136,
-          58.5953
+          24.6032,
+          56.8796
         ]
       },
       "properties": {
-        "id": "e889c0af96c34cb9759d",
-        "title": "Estonian investors' Ukrainian shopping center hit in a drone attack",
-        "summary": "The shopping center in Kryvyi Rih that was hit by a Russian drone attack on Friday belongs to a company called Arricano Real Estate, which is owned by Estonian investors.",
-        "source": "ERR",
-        "url": "https://news.err.ee/1610116693/estonian-investors-ukrainian-shopping-center-hit-in-a-drone-attack",
-        "published": "Sat, 22 Aug 2026 09:23:00 +0300",
-        "country": "Estonia",
+        "id": "ede4621475ec27465753",
+        "title": "Storm disrupted one in five ATMs in Latvia – residents urged to keep cash on hand",
+        "summary": "<p>During last weekend’s storm, 183 of Latvia’s 869 ATMs, or roughly one in five, experienced disruptions, including 17 of the country’s 94 critical ATMs, according to the Bank of Latvia. The Bank of Latvia said the situation provided a real-world test of the financial sector’s preparedness to operate when electricity, communications and other infrastructure services [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/storm-disrupted-one-in-five-atms-in-latvia-residents-urged-to-keep-cash-on-hand-283152\">Storm disrupted one in five ATMs in Latvia – residents urged to keep cash on hand</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/storm-disrupted-one-in-five-atms-in-latvia-residents-urged-to-keep-cash-on-hand-283152",
+        "published": "Tue, 25 Aug 2026 10:08:55 +0000",
+        "country": "Latvia",
         "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
-        "actor": "russia",
+        "family": "cyber",
+        "subcategory": "operational_disruption",
+        "subtype": "cyber_operational_disruption",
+        "object": "cyber_system",
+        "action": "disrupted",
+        "actor": "unknown",
         "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "high",
-        "confidence": 0.82,
+        "severity": "medium",
+        "confidence": 0.76,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
         "fingerprint": {
-          "country": "Estonia",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
-          "actor": "russia",
+          "country": "Latvia",
+          "family": "cyber",
+          "subcategory": "operational_disruption",
+          "subtype": "cyber_operational_disruption",
+          "object": "cyber_system",
+          "action": "disrupted",
+          "actor": "unknown",
           "target": "unknown",
-          "place": "Estonia",
-          "event_date": "Sat, 22 Au",
-          "hash": "322bd62d92b0d76c435ff4bc"
+          "place": "Latvia",
+          "event_date": "Tue, 25 Au",
+          "hash": "dcd18d8bc5a3078b1167013d"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone"
+            "cyber_system",
+            "network"
           ],
           "actions": [
-            "impact",
-            "hit"
+            "disrupted"
           ],
           "targets": [],
-          "actors": [
-            "russia",
-            "russian",
-            "ukraine",
-            "ukrainian"
-          ],
+          "actors": [],
           "consequences": [],
           "extra_context": [
-            "feed_country=Estonia",
+            "feed_country=Latvia",
             "geocode_quality=country_fallback"
           ]
         },
@@ -330,21 +328,91 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "actor_match": 0.06,
           "country_match": 0.1,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
             "priority": 0,
-            "score": 2.32,
+            "score": 2.26,
             "matched": true,
             "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
             "matched_context": []
           },
           {
@@ -354,9 +422,10 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:detected"
             ],
             "matched_context": []
@@ -368,9 +437,10 @@
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:entered"
             ],
             "matched_context": []
@@ -382,9 +452,10 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:intercepted"
             ],
             "matched_context": []
@@ -396,83 +467,11 @@
             "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
             ],
             "matched_context": []
           }
@@ -482,30 +481,30 @@
         "article_text_chars": 0,
         "article_fetch_source": "fetch_limit",
         "article_text_excerpt": "",
-        "place": "Estonia",
-        "time": "Sat, 22 Aug 2026 09:23:00 +0300",
-        "category": "air",
+        "place": "Latvia",
+        "time": "Tue, 25 Aug 2026 10:08:55 +0000",
+        "category": "cyber",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "ERR"
+          "BNN"
         ],
         "urls": [
-          "https://news.err.ee/1610116693/estonian-investors-ukrainian-shopping-center-hit-in-a-drone-attack"
+          "https://bnn-news.com/storm-disrupted-one-in-five-atms-in-latvia-residents-urged-to-keep-cash-on-hand-283152"
         ],
         "merged_titles": [
-          "Estonian investors' Ukrainian shopping center hit in a drone attack"
+          "Storm disrupted one in five ATMs in Latvia – residents urged to keep cash on hand"
         ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
-        "incident_actor": "russia",
+        "incident_family": "cyber",
+        "incident_subcategory": "operational_disruption",
+        "incident_subtype": "cyber_operational_disruption",
+        "incident_object": "cyber_system",
+        "incident_action": "disrupted",
+        "incident_actor": "unknown",
         "incident_target": "unknown",
-        "classification_confidence": 0.82
+        "classification_confidence": 0.76
       }
     }
   ]

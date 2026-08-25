@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-08-25T06:44:38.143482+00:00",
+  "generated_utc": "2026-08-25T12:46:05.655434+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
+    "incident_count": 2,
     "local_event_count": 2,
-    "crossborder_event_count": 1
+    "crossborder_event_count": 0
   },
   "country_summary": {
     "Czech Republic": {
@@ -20,13 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 2
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 1,
-        "gdelt_crossborder.geojson": 1
+        "local_events.geojson": 1
       }
     },
     "Slovakia": {
@@ -45,18 +44,18 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Estonia": {
       "incident_count": 1,
       "category_counts": {
-        "drone": 1
+        "cyber": 1
       },
       "source_files": {
         "local_events.geojson": 1
       }
+    },
+    "Estonia": {
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     }
   },
   "countries": {
@@ -64,14 +63,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "9e0a071b45354c46bc13",
+        "id": "16c48437cf6847211dff",
         "date": "2026-08-25",
-        "time": "2026-08-25T04:29:21+00:00",
+        "time": "2026-08-25T12:37:44+00:00",
         "category": "drone",
         "severity": "low",
-        "title": "Alertă la Insula Şerpilor. Două avioane F-18 au plecat în misiune – O dronă a fost detectată la aproximativ 4 kilometri est de Vâlcove (Anunțul MApN)",
-        "source": "Economica.net",
-        "url": "https://www.economica.net/alerta-la-insula-serpilor-doua-avioane-f-18-au-plecat-in-misiune-anuntul-mapn_970750.html",
+        "title": "Ședință secretă a Comisiei de Apărare în Parlament, după creșterea considerabilă a numărului de incidente cu drone în România",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/sedinta-secreta-a-comisiei-de-aparare-in-parlament-dupa-cresterea-considerabila-a-numarului-de-incidente-cu-drone-in-romania-3921053",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -80,58 +79,37 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_detection",
-        "classification_confidence": 0.84,
+        "classification_confidence": 0.98,
         "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "7cb11aeabde7835276318116"
-      },
-      {
-        "id": null,
-        "date": "2026-08-18",
-        "time": "2026-08-18T10:15:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "NATO spokesperson on the drone shot down in Romanian airspace : The drone appears to be Russian",
-        "source": "GDELT_DOC",
-        "url": "https://actmedia.eu/daily/nato-spokesperson-on-the-drone-shot-down-in-romanian-airspace-the-drone-appears-to-be-russian/121242",
-        "source_file": "gdelt_crossborder.geojson",
-        "classification_source": "security_classifier",
-        "actual_incident": true,
-        "risk_eligible": true,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "29d311c9eecccb44272d7ae6"
+        "fingerprint_hash": "bc8963959aa9cd111c3923c2"
       }
     ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
-    "Latvia": [],
-    "Estonia": [
+    "Latvia": [
       {
-        "id": "e889c0af96c34cb9759d",
-        "date": "2026-08-22",
-        "time": "2026-08-22T06:23:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Estonian investors' Ukrainian shopping center hit in a drone attack",
-        "source": "ERR",
-        "url": "https://news.err.ee/1610116693/estonian-investors-ukrainian-shopping-center-hit-in-a-drone-attack",
+        "id": "ede4621475ec27465753",
+        "date": "2026-08-25",
+        "time": "2026-08-25T10:08:55+00:00",
+        "category": "cyber",
+        "severity": "medium",
+        "title": "Storm disrupted one in five ATMs in Latvia – residents urged to keep cash on hand",
+        "source": "BNN",
+        "url": "https://bnn-news.com/storm-disrupted-one-in-five-atms-in-latvia-residents-urged-to-keep-cash-on-hand-283152",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "322bd62d92b0d76c435ff4bc"
+        "incident_family": "cyber",
+        "incident_subcategory": "operational_disruption",
+        "incident_subtype": "cyber_operational_disruption",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+        "fingerprint_hash": "dcd18d8bc5a3078b1167013d"
       }
-    ]
+    ],
+    "Estonia": []
   }
 }

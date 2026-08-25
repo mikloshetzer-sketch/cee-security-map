@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-25T12:46:05.655434+00:00",
+  "generated_utc": "2026-08-25T18:44:23.555576+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -44,12 +44,13 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
+        "military": 1,
         "cyber": 1
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Estonia": {
@@ -88,6 +89,27 @@
     "Poland": [],
     "Lithuania": [],
     "Latvia": [
+      {
+        "id": "065c01274310e010cbe8",
+        "date": "2026-08-25",
+        "time": "2026-08-25T13:43:58+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Mysterious flight from Riga: US Air Force transport plane lands in Moscow",
+        "source": "BNN",
+        "url": "https://bnn-news.com/mysterious-flight-from-riga-us-air-force-transport-plane-lands-in-moscow-283170",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "011c165de08fe4438eb0de75"
+      },
       {
         "id": "ede4621475ec27465753",
         "date": "2026-08-25",

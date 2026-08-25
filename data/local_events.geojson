@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-25T12:45:58.330143+00:00",
+  "generated_utc": "2026-08-25T18:44:15.921655+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -231,7 +231,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1332,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Discuții au loc marți în Parlament, după zecile de drone sau fragmente de drone care au fost găsite în ultimele săptămâni în România. În această dimineață a fost alertă în nordul județului Tulcea , unde locuitorii au primit mesaje de avertizare. Două avioane F-18 au fost ridicate de la Baza Aeriană Mihai Kogălniceanu pentru a supraveghea zona. Parlamentarii Comisiei de Apărare au pus întrebări, timp de două de ore, iar reprezentanții MApN, MAI și SRI nu au răspuns clar despre incidentele cu drone care au intrat în România. Singura informație importantă a fost oferită de șeful Forțelor Navale Române, care a spus că în Portul militar Constanța sunt puse în funcțiune și introduse mai multe sisteme de detectare a dronelor maritime, subacvatice sau aeriene. În ultimele săptămâni, numărul amenințărilor cu drone a crescut considerabil. Ședința Comisiei de Apărare este secretă. Un mesaj RO-Alert a fost emis marţi dimineaţă pentru nordul judeţului Tulcea. Locuitorii au fost avertizaţi în legătu",
         "place": "Constanța",
         "time": "Tue, 25 Aug 2026 15:37:44 +0300",
@@ -257,6 +257,263 @@
         "incident_actor": "ukraine",
         "incident_target": "government",
         "classification_confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.105,
+          56.949
+        ]
+      },
+      "properties": {
+        "id": "065c01274310e010cbe8",
+        "title": "Mysterious flight from Riga: US Air Force transport plane lands in Moscow",
+        "summary": "<p>A US Air Force Boeing C-17 Globemaster III transport aircraft, flight number RCH4555, which departed from Riga, landed at Moscow’s Vnukovo Airport on Tuesday, according to information available on flight-tracking website Flightradar24. The aircraft departed Riga at around 8:50 a.m. and arrived in Moscow at approximately 10 a.m. Two days earlier, on the 23rd of [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/mysterious-flight-from-riga-us-air-force-transport-plane-lands-in-moscow-283170\">Mysterious flight from Riga: US Air Force transport plane lands in Moscow</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/mysterious-flight-from-riga-us-air-force-transport-plane-lands-in-moscow-283170",
+        "published": "Tue, 25 Aug 2026 13:43:58 +0000",
+        "country": "Latvia",
+        "city": "Riga",
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "impact",
+        "actor": "unknown",
+        "target": "transport",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.92,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint": {
+          "country": "Latvia",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "impact",
+          "actor": "unknown",
+          "target": "transport",
+          "place": "Riga",
+          "event_date": "Tue, 25 Au",
+          "hash": "011c165de08fe4438eb0de75"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "military_aircraft",
+            "transport aircraft",
+            "critical_infrastructure",
+            "airport",
+            "cyber_system",
+            "network",
+            "website"
+          ],
+          "actions": [
+            "impact",
+            "landed"
+          ],
+          "targets": [
+            "transport",
+            "airport"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.95,
+            "matched": false,
+            "missing": [
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "airport"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:closed,damaged,disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:closed,damaged,disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted",
+              "context:any"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Riga",
+        "time": "Tue, 25 Aug 2026 13:43:58 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "BNN"
+        ],
+        "urls": [
+          "https://bnn-news.com/mysterious-flight-from-riga-us-air-force-transport-plane-lands-in-moscow-283170"
+        ],
+        "merged_titles": [
+          "Mysterious flight from Riga: US Air Force transport plane lands in Moscow"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "impact",
+        "incident_actor": "unknown",
+        "incident_target": "transport",
+        "classification_confidence": 0.92
       }
     },
     {

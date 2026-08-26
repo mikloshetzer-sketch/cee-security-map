@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-25T18:44:23.555576+00:00",
+  "generated_utc": "2026-08-26T00:59:51.313605+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -62,29 +58,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "16c48437cf6847211dff",
-        "date": "2026-08-25",
-        "time": "2026-08-25T12:37:44+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Ședință secretă a Comisiei de Apărare în Parlament, după creșterea considerabilă a numărului de incidente cu drone în România",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/politica/sedinta-secreta-a-comisiei-de-aparare-in-parlament-dupa-cresterea-considerabila-a-numarului-de-incidente-cu-drone-in-romania-3921053",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "bc8963959aa9cd111c3923c2"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

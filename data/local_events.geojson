@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-29T16:39:23.619108+00:00",
+  "generated_utc": "2026-08-29T20:31:39.133640+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -264,6 +264,511 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          19.5033,
+          47.1625
+        ]
+      },
+      "properties": {
+        "id": "e5f64b03c75665d8fdfc",
+        "title": "Lázadás tört ki: megtámadták a repülőteret és az elnöki palotát egy afrikai ország fővárosában",
+        "summary": "<p>Több órán át tartó támadást indítottak lázadó katonák Niger fővárosában, Niameyben szombat hajnalban a repülőtér, az elnöki palota és a 101-es katonai légibázis ellen. Az állami televízió és rádió adása megszakadt, a kormány nyugalomra szólította fel a lakosságot - írja a Reuters.</p>",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/global/20260829/lazadas-tort-ki-megtamadtak-a-repuloteret-es-az-elnoki-palotat-egy-afrikai-orszag-fovarosaban-859150",
+        "published": "Sat, 29 Aug 2026 19:22:00 +0200",
+        "country": "Hungary",
+        "city": null,
+        "family": "maritime",
+        "subcategory": "port_security",
+        "subtype": "port_disruption",
+        "object": "critical_infrastructure",
+        "action": "disrupted",
+        "actor": "russia",
+        "target": "transport",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "maritime",
+          "subcategory": "port_security",
+          "subtype": "port_disruption",
+          "object": "critical_infrastructure",
+          "action": "disrupted",
+          "actor": "russia",
+          "target": "transport",
+          "place": "Hungary",
+          "event_date": "Sat, 29 Au",
+          "hash": "948b1259b0ff5ed7bcb9210a"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "critical_infrastructure",
+            "repülőtér"
+          ],
+          "actions": [
+            "disrupted",
+            "megszakadt"
+          ],
+          "targets": [
+            "transport",
+            "repülőtér"
+          ],
+          "actors": [
+            "russia",
+            "oroszország",
+            "orosz"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.2,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.95,
+            "matched": false,
+            "missing": [
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "repülőtér"
+            ]
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 4217,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "A támadás az eddigi legsúlyosabb fenyegetést jelenti Abdourahamane Tiani tábornok hatalma ellen, aki a 2023-as puccsal ragadta magához az irányítást Mohamed Bazoum elnök megbuktatásával. Tiani a hatalom átvételekor a biztonsági helyzet javítását ígérte a Száhel-övezetben fekvő országban, ám a dzsihádista támadások azóta sem szűntek meg, idén az al-Káida és az Iszlám Állam helyi szárnya is hajtott már végre akciót a niameyi repülőtér ellen. Nigeri biztonsági források és a bonni Nemzetközi Konfliktusok Központjának kutatója szerint a lázadó katonák a délnyugati Ouallam , Téra és Dosso körzetéből érkeztek. Ezek a csapatok az Iszlám Állam regionális szárnyával vívott harcokban súlyos veszteségeket szenvedtek az elmúlt időszakban. A kormányhoz közeli politikus, Bana Wagana Ibrahim a Facebookon azt közölte, hogy a biztonsági erők visszaverték a katonai légibázis elleni akciót, és az újabb gyáva támadás után a helyzet ismét ellenőrzés alatt áll. A Reuters helyszíni tudósítói azonban a bejegyz",
+        "place": "Hungary",
+        "time": "Sat, 29 Aug 2026 19:22:00 +0200",
+        "category": "maritime",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "urls": [
+          "https://www.portfolio.hu/global/20260829/lazadas-tort-ki-megtamadtak-a-repuloteret-es-az-elnoki-palotat-egy-afrikai-orszag-fovarosaban-859150"
+        ],
+        "merged_titles": [
+          "Lázadás tört ki: megtámadták a repülőteret és az elnöki palotát egy afrikai ország fővárosában"
+        ],
+        "incident_family": "maritime",
+        "incident_subcategory": "port_security",
+        "incident_subtype": "port_disruption",
+        "incident_object": "critical_infrastructure",
+        "incident_action": "disrupted",
+        "incident_actor": "russia",
+        "incident_target": "transport",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.638,
+          44.173
+        ]
+      },
+      "properties": {
+        "id": "58fd420b477e59ad6bc6",
+        "title": "Un fragment de dronă a ajuns la mal în Constanța. Autoritățile au intervenit în zona plajei Modern",
+        "summary": "Un nou fragment de dronă a fost descoperit, sâmbătă seara, în apropierea plajei Modern din Constanța. Obiectul, adus de valuri și rămas blocat între stabilopozi, a fost observat de persoane aflate în zonă, care au alertat autoritățile. Din primele informații, fragmentul nu ar avea încărcătură explozivă.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/un-fragment-de-drona-a-ajuns-la-mal-in-constanta-autoritatile-au-intervenit-in-zona-plajei-modern-3927095",
+        "published": "Sat, 29 Aug 2026 23:15:12 +0300",
+        "country": "Romania",
+        "city": "Constanța",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Constanța",
+          "event_date": "Sat, 29 Au",
+          "hash": "6815e0eff62205d1d28e3354"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă"
+          ],
+          "actions": [
+            "detected",
+            "observat"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1482,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Un nou fragment de dronă a fost descoperit, sâmbătă seara, în apropierea plajei Modern din Constanța. Obiectul, adus de valuri și rămas blocat între stabilopozi, a fost observat de persoane aflate în zonă, care au alertat autoritățile. Din primele informații, fragmentul nu ar avea încărcătură explozivă. Persoanele care se plimbau în apropierea plajei au observat fragmentul și au alertat autoritățile. Echipajele s-au deplasat în zona respectivă pentru verificări, anunță ziuaconstanta.ro , care a publicat și imagini cu fragmentul respectiv. Din primele informații, fragmentul nu ar avea încărcătură explozivă. Acesta ar putea fi ridicat de reprezentanții Gărzii de Coastă, anunță news.ro. Descoperirea de la Constanța vine după ce, tot sâmbătă, alte două fragmente suspecte de dronă au fost găsite pe litoral. Unul dintre acestea a fost adus de valuri pe plaja Gloria din Eforie Sud. Salvamarii au îndepărtat turiștii din zonă și au alertat autoritățile prin 112. Cel de-al doilea fragment a fost",
+        "place": "Constanța",
+        "time": "Sat, 29 Aug 2026 23:15:12 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/un-fragment-de-drona-a-ajuns-la-mal-in-constanta-autoritatile-au-intervenit-in-zona-plajei-modern-3927095"
+        ],
+        "merged_titles": [
+          "Un fragment de dronă a ajuns la mal în Constanța. Autoritățile au intervenit în zona plajei Modern"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           18.854,
           46.572
         ]
@@ -477,7 +982,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1502,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Un bărbat de 24 de ani a furat sâmbătă dimineaţă un avion uşor Cessna 172 de pe aerodromul din Kalocsa, în sudul Ungariei, şi a decolat fără autorizaţie, îndreptându-se spre Paks, de partea cealaltă a Dunării . Radarele armatei ungare l-au detectat, iar două de avioane de luptă Gripen aflate în serviciul de alertă a fost ridicată de la sol, relatează presa maghiară. Potrivit HGV.hu, citat de news.ro, avionul Cessna a ajuns în zona centralei nucleare de la Paks şi a început să facă manevre în aer. În jurul centralei există o zonă în care zborul aeronavelor civile este interzis pe o rază de 3 km şi până la altitudinea de 6.000 m. În cele din urmă, avionul a făcut o aterizare forţată lângă Gerjen, într-un lan de floarea-soarelui. Trenul de aterizare s-a rupt, iar aparatul a rămas înclinat pe o aripă. Nu au existat răniţi. Avioanele Gripen au localizat aparatul şi au rămas deasupra locului până la sosirea elicopterului medical şi a echipelor de intervenţie, scrie kecskemet365.hu. Între tim",
         "place": "Paks",
         "time": "Sat, 29 Aug 2026 17:34:19 +0300",

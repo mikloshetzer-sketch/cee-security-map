@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-29T16:39:30.409788+00:00",
+  "generated_utc": "2026-08-29T20:31:46.562461+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -25,9 +25,13 @@
       }
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -106,7 +110,29 @@
         "fingerprint_hash": "7ea69d58eb118a0204c4b85f"
       }
     ],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "58fd420b477e59ad6bc6",
+        "date": "2026-08-29",
+        "time": "2026-08-29T20:15:12+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Un fragment de dronă a ajuns la mal în Constanța. Autoritățile au intervenit în zona plajei Modern",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/un-fragment-de-drona-a-ajuns-la-mal-in-constanta-autoritatile-au-intervenit-in-zona-plajei-modern-3927095",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "6815e0eff62205d1d28e3354"
+      }
+    ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

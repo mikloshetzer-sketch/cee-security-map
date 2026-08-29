@@ -533,7 +533,7 @@ body {
       <div class="kpi">
         <div class="label">Régiós állapot</div>
         <div class="value">NORMAL</div>
-        <div class="note">score: 0.17</div>
+        <div class="note">score: 0.53</div>
       </div>
 
       <div class="kpi">
@@ -544,7 +544,7 @@ body {
 
       <div class="kpi">
         <div class="label">Fő kockázati ország</div>
-        <div class="value" style="font-size:28px;">Latvia</div>
+        <div class="value" style="font-size:28px;">Hungary</div>
         <div class="note">országkockázati sorrend alapján</div>
       </div>
 
@@ -558,7 +558,7 @@ body {
     <section class="section">
       <h2>Rövid napi értékelés</h2>
       <div class="summary-box">
-        <ul><li>Legerősebb góc: Pest, Hungary 🆕 (rácspont 47.75, 19.25; score 0.49; 7 napos változás: n/a).</li><li>Trend: nincs elég bázisadat az összehasonlításhoz.</li><li>Forráskép: GDELT 0, GDELT linked 2495, GDELT DOC 0, direkt feed 1, USGS 1, GDACS 2.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 200 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li></ul>
+        <ul><li>Helyi források alapján az elmúlt 24 órában 2 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Hungary: 2.</li><li>Legerősebb góc: Pest, Hungary 🆕 (rácspont 47.75, 19.25; score 0.39; 7 napos változás: n/a).</li><li>Trend: nincs elég bázisadat az összehasonlításhoz.</li><li>Forráskép: GDELT 0, GDELT linked 2485, GDELT DOC 0, direkt feed 1, USGS 1, GDACS 2.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 200 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li></ul>
       </div>
     </section>
 
@@ -580,10 +580,10 @@ body {
         <div class="region-card green">
           <div class="region-head">V4 térség</div>
           <div class="region-body">
-            <div class="big-number">0.0</div>
+            <div class="big-number">2.81</div>
             <div class="small-label">összesített risk score</div>
-            <div class="region-line"><b>Fő fókusz:</b> Czech Republic</div>
-            <div class="mini-bar"><span style="width:0.0%"></span></div>
+            <div class="region-line"><b>Fő fókusz:</b> Hungary</div>
+            <div class="mini-bar"><span style="width:33.72%"></span></div>
           </div>
         </div>
         
@@ -616,6 +616,14 @@ body {
       <h2>Top risk országok</h2>
       <div class="country-grid">
         
+        <div class="country-card elevated">
+          <div class="country-name">Hungary</div>
+          <div class="country-score">2.81</div>
+          <div class="country-level">elevated</div>
+          <div class="country-drivers">friss aktivitási trend, biztonsági incidensnyomás, katonai és drónaktivitás</div>
+        </div>
+        
+
         <div class="country-card normal">
           <div class="country-name">Latvia</div>
           <div class="country-score">1.4</div>
@@ -626,14 +634,6 @@ body {
 
         <div class="country-card normal">
           <div class="country-name">Czech Republic</div>
-          <div class="country-score">0.0</div>
-          <div class="country-level">normal</div>
-          <div class="country-drivers">automatikus OSINT jelzés</div>
-        </div>
-        
-
-        <div class="country-card normal">
-          <div class="country-name">Hungary</div>
           <div class="country-score">0.0</div>
           <div class="country-level">normal</div>
           <div class="country-drivers">automatikus OSINT jelzés</div>
@@ -694,6 +694,22 @@ body {
       <div class="card-grid">
         
         <div class="event-card">
+          <div class="event-kicker">Hungary • energy • medium</div>
+          <h3>Leállt a tiszalöki erőmű áramtermelése az alacsony vízállás miatt</h3>
+          <p>Vizet eresztenek át a duzzasztó zsilipjén a folyó alsó szakaszaiba, ahol így a Tisza-tó is többlethez jut. Az év során a Tisza vízgyűjtő területe a szokásos vízmennyiség negyedét hozta.</p>
+          <a href="https://telex.hu/belfold/2026/08/29/tiszalok-eromu-mvm" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Hungary • air • low</div>
+          <h3>Alertă în Ungaria după ce un avion furat a ajuns în zona centralei nucleare de la Paks. Două Gripen, ridicate de la sol</h3>
+          <p>Un bărbat de 24 de ani a furat sâmbătă dimineaţă un avion uşor Cessna 172 de pe aerodromul din Kalocsa, în sudul Ungariei, şi a decolat fără autorizaţie, îndreptându-se spre Paks, de partea cealaltă a Dunării. Radarele armatei ungare l-au detectat, iar două de avioane de luptă Gripen aflate în serviciul de alertă a fost ridicată de la sol, relatează presa maghiară.</p>
+          <a href="https://www.digi24.ro/stiri/externe/ue/alerta-in-ungaria-dupa-ce-un-avion-furat-a-ajuns-in-zona-centralei-nucleare-de-la-paks-doua-gripen-ridicate-de-la-sol-3926767" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
           <div class="event-kicker">Latvia • air • medium</div>
           <h3>Mysterious flight from Riga: US Air Force transport plane lands in Moscow</h3>
           <p>&lt;p&gt;A US Air Force Boeing C-17 Globemaster III transport aircraft, flight number RCH4555, which departed from Riga, landed at Moscow’s Vnukovo Airport on Tuesday, according to information available on flight-tracking website Flightradar24. The aircraft departed Riga at around 8:50 a.m. and arrived in Moscow at approximately 10 a.m. Two days earlier, on the 23rd of [&amp;#8230;]&lt;/p&gt;
@@ -716,7 +732,7 @@ body {
     <section class="section">
       <h2>Heti trendjelzések</h2>
       <div class="summary-box">
-        <ul><li>A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Latvia: 2.6.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében alapvetően stabil, de több ponton érzékeny képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, határbiztonsági és rendészeti nyomás, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor a feszültségek több ponton továbbra is fennmaradtak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, azonban a strukturális feszültségek tartósan fennmaradtak. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan az energia- és belpolitikai sérülékenységek összekapcsolódása lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
+        <ul><li>A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Hungary: 3.9, Latvia: 2.6.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében alapvetően stabil, de több ponton érzékeny képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, katonai és elrettentési dimenziók erősödése, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor a feszültségek több ponton továbbra is fennmaradtak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, azonban a strukturális feszültségek tartósan fennmaradtak. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan az energia- és belpolitikai sérülékenységek összekapcsolódása lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
       </div>
     </section>
 
@@ -734,7 +750,7 @@ body {
         <div class="vd-main">
           <div class="vd-label">Régiós állapot</div>
           <div class="vd-big">NORMAL</div>
-          <div class="vd-sub">Regional score: 0.17</div>
+          <div class="vd-sub">Regional score: 0.53</div>
         </div>
 
         <div class="vd-card red">
@@ -748,12 +764,12 @@ body {
         </div>
 
         <div class="vd-card blue">
-          <div class="vd-number">2</div>
+          <div class="vd-number">4</div>
           <div class="vd-text">kiemelt lokális esemény</div>
         </div>
 
         <div class="vd-card green">
-          <div class="vd-number">Latvia</div>
+          <div class="vd-number">Hungary</div>
           <div class="vd-text">fő kockázati ország</div>
         </div>
 
@@ -780,10 +796,10 @@ body {
         <div class="region-card green">
           <div class="region-head">V4 térség</div>
           <div class="region-body">
-            <div class="big-number">0.0</div>
+            <div class="big-number">2.81</div>
             <div class="small-label">összesített risk score</div>
-            <div class="region-line"><b>Fő fókusz:</b> Czech Republic</div>
-            <div class="mini-bar"><span style="width:0.0%"></span></div>
+            <div class="region-line"><b>Fő fókusz:</b> Hungary</div>
+            <div class="mini-bar"><span style="width:33.72%"></span></div>
           </div>
         </div>
         

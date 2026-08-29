@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-29T01:34:10.748145+00:00",
+  "generated_utc": "2026-08-29T12:19:40.677442+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,9 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "infrastructure_disruption": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
       "incident_count": 0,
@@ -57,7 +61,29 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "79fbf2a278d8757ad384",
+        "date": "2026-08-29",
+        "time": "2026-08-29T07:29:49+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Leállt a tiszalöki erőmű áramtermelése az alacsony vízállás miatt",
+        "source": "Telex",
+        "url": "https://telex.hu/belfold/2026/08/29/tiszalok-eromu-mvm",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "7ea69d58eb118a0204c4b85f"
+      }
+    ],
     "Romania": [],
     "Slovakia": [],
     "Poland": [],

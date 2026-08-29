@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-29T12:19:33.327021+00:00",
+  "generated_utc": "2026-08-29T16:39:23.619108+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -16,7 +16,7 @@
       "properties": {
         "id": "79fbf2a278d8757ad384",
         "title": "Leállt a tiszalöki erőmű áramtermelése az alacsony vízállás miatt",
-        "summary": "<p>A Tisza rendkívül alacsony vízállása miatt teljesen leállt a villamosenergia-termelés a Tiszalöki Vízerőműben. A létesítmény jelenleg kizárólag az elsődleges feladatát, a vízszabályozást látja el, hogy a felhalmozott víztartalékok megnyitásával enyhítse a leapadt Tisza-tó és az alsóbb folyószakaszok kritikus vízhiányát - írta a <a href=\"https://telex.hu/belfold/2026/08/29/tiszalok-eromu-mvm\" rel=\"noopener\" target=\"_blank\">Telex</a>.</p>",
+        "summary": "Vizet eresztenek át a duzzasztó zsilipjén a folyó alsó szakaszaiba, ahol így a Tisza-tó is többlethez jut. Az év során a Tisza vízgyűjtő területe a szokásos vízmennyiség negyedét hozta.",
         "source": "Telex",
         "url": "https://telex.hu/belfold/2026/08/29/tiszalok-eromu-mvm",
         "published": "Sat, 29 Aug 2026 09:29:49 +0200",
@@ -228,7 +228,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 2170,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "A Tiszalöki Vízerőmű áramtermelésének leállásáról számolt be a térség tiszás parlamenti képviselője. „A Tisza rendkívül alacsony vízállása miatt leállították a Tiszalöki Vízerőművet. Fontos hangsúlyozni, hogy az erőmű elsődleges feladata a vízhozam szabályozás, az energiatermelés csak másodlagos funkciója. Tiszalök és a térség energiaellátása továbbra is biztosított, miközben a Paksi Atomerőmű teljes kapacitással termel” – írta Facebook-bejegyzésében Szakács Péter Lajos. Az erőmű áramtermelési kapacitása üzemszerű körülmények között 12,9 megawatt – ez 0,65 százaléka a Paksi Atomerőmű teljes kapacitásának –, de a folyó alacsony vízállása miatt ezt már a legutóbbi időszakban egyébként sem érte el. Az objektum elsődleges feladata nem is az áramtermelés, hanem a víz szabályozása, amit most a duzzasztó egyetlen működésben tartott zsilipjével látnak el. Mivel az év során a szokásos vízmennyiség negyedét hozta a Tisza vízgyűjtő területe, a folyón lejjebb lévő – a Kiskörei Erőmű megépítésével ",
         "place": "Hungary",
         "time": "Sat, 29 Aug 2026 09:29:49 +0200",
@@ -236,16 +236,14 @@
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
-        "source_count": 3,
+        "source_count": 2,
         "sources": [
           "Telex",
-          "HVG",
-          "Portfolio"
+          "HVG"
         ],
         "urls": [
           "https://telex.hu/belfold/2026/08/29/tiszalok-eromu-mvm",
-          "https://hvg.hu/gazdasag/20260829_tiszaloki-vizieromu-aszaly-aramtermeles-leallas",
-          "https://www.portfolio.hu/gazdasag/20260829/leallt-a-tiszaloki-eromu-aramtermelese-az-alacsony-vizallas-miatt-859114"
+          "https://hvg.hu/gazdasag/20260829_tiszaloki-vizieromu-aszaly-aramtermeles-leallas"
         ],
         "merged_titles": [
           "Leállt a tiszalöki erőmű áramtermelése az alacsony vízállás miatt",
@@ -258,6 +256,252 @@
         "incident_action": "disrupted",
         "incident_actor": "unknown",
         "incident_target": "energy",
+        "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.854,
+          46.572
+        ]
+      },
+      "properties": {
+        "id": "4c57b760fef0eb600b95",
+        "title": "Alertă în Ungaria după ce un avion furat a ajuns în zona centralei nucleare de la Paks. Două Gripen, ridicate de la sol",
+        "summary": "Un bărbat de 24 de ani a furat sâmbătă dimineaţă un avion uşor Cessna 172 de pe aerodromul din Kalocsa, în sudul Ungariei, şi a decolat fără autorizaţie, îndreptându-se spre Paks, de partea cealaltă a Dunării. Radarele armatei ungare l-au detectat, iar două de avioane de luptă Gripen aflate în serviciul de alertă a fost ridicată de la sol, relatează presa maghiară.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/ue/alerta-in-ungaria-dupa-ce-un-avion-furat-a-ajuns-in-zona-centralei-nucleare-de-la-paks-doua-gripen-ridicate-de-la-sol-3926767",
+        "published": "Sat, 29 Aug 2026 17:34:19 +0300",
+        "country": "Hungary",
+        "city": "Paks",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Paks",
+          "event_date": "Sat, 29 Au",
+          "hash": "6c589537edbbed2b5757be47"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "detected",
+            "detectat",
+            "disrupted",
+            "oprit"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1502,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Un bărbat de 24 de ani a furat sâmbătă dimineaţă un avion uşor Cessna 172 de pe aerodromul din Kalocsa, în sudul Ungariei, şi a decolat fără autorizaţie, îndreptându-se spre Paks, de partea cealaltă a Dunării . Radarele armatei ungare l-au detectat, iar două de avioane de luptă Gripen aflate în serviciul de alertă a fost ridicată de la sol, relatează presa maghiară. Potrivit HGV.hu, citat de news.ro, avionul Cessna a ajuns în zona centralei nucleare de la Paks şi a început să facă manevre în aer. În jurul centralei există o zonă în care zborul aeronavelor civile este interzis pe o rază de 3 km şi până la altitudinea de 6.000 m. În cele din urmă, avionul a făcut o aterizare forţată lângă Gerjen, într-un lan de floarea-soarelui. Trenul de aterizare s-a rupt, iar aparatul a rămas înclinat pe o aripă. Nu au existat răniţi. Avioanele Gripen au localizat aparatul şi au rămas deasupra locului până la sosirea elicopterului medical şi a echipelor de intervenţie, scrie kecskemet365.hu. Între tim",
+        "place": "Paks",
+        "time": "Sat, 29 Aug 2026 17:34:19 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/ue/alerta-in-ungaria-dupa-ce-un-avion-furat-a-ajuns-in-zona-centralei-nucleare-de-la-paks-doua-gripen-ridicate-de-la-sol-3926767"
+        ],
+        "merged_titles": [
+          "Alertă în Ungaria după ce un avion furat a ajuns în zona centralei nucleare de la Paks. Două Gripen, ridicate de la sol"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
         "classification_confidence": 0.84
       }
     },

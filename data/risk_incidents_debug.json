@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-29T12:19:40.677442+00:00",
+  "generated_utc": "2026-08-29T16:39:30.409788+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,12 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "infrastructure_disruption": 1
+        "infrastructure_disruption": 1,
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Romania": {
@@ -62,6 +63,27 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [
+      {
+        "id": "4c57b760fef0eb600b95",
+        "date": "2026-08-29",
+        "time": "2026-08-29T14:34:19+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Alertă în Ungaria după ce un avion furat a ajuns în zona centralei nucleare de la Paks. Două Gripen, ridicate de la sol",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/ue/alerta-in-ungaria-dupa-ce-un-avion-furat-a-ajuns-in-zona-centralei-nucleare-de-la-paks-doua-gripen-ridicate-de-la-sol-3926767",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "6c589537edbbed2b5757be47"
+      },
       {
         "id": "79fbf2a278d8757ad384",
         "date": "2026-08-29",

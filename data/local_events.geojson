@@ -1,9 +1,259 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-31T12:31:53.431290+00:00",
+  "generated_utc": "2026-08-31T22:32:38.289989+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.1451,
+          51.9194
+        ]
+      },
+      "properties": {
+        "id": "e449fad7b6de4d83c608",
+        "title": "Poland investigates potential “foreign intelligence” involvement in fire at drone plant",
+        "summary": "The fire broke out at a facility belonging to WB Electronics, Europe's largest drone maker.",
+        "source": "NotesFromPoland",
+        "url": "https://notesfrompoland.com/2026/08/31/poland-investigates-potential-foreign-intelligence-involvement-in-fire-at-drone-plant/",
+        "published": "Mon, 31 Aug 2026 16:43:37 +0000",
+        "country": "Poland",
+        "city": null,
+        "family": "industrial",
+        "subcategory": "fire",
+        "subtype": "industrial_fire",
+        "object": "drone",
+        "action": "burned",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [
+          "plant"
+        ],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "INDUSTRIAL.FIRE",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "industrial",
+          "subcategory": "fire",
+          "subtype": "industrial_fire",
+          "object": "drone",
+          "action": "burned",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Poland",
+          "event_date": "Mon, 31 Au",
+          "hash": "5413ba088497111421f9ddf4"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "burned",
+            "fire broke out"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Poland",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "INDUSTRIAL.FIRE",
+            "family": "industrial",
+            "subcategory": "fire",
+            "subtype": "industrial_fire",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.19,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "plant"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INDUSTRIAL.EXPLOSION",
+            "family": "industrial",
+            "subcategory": "explosion",
+            "subtype": "industrial_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
+            ],
+            "matched_context": [
+              "plant"
+            ]
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Poland",
+        "time": "Mon, 31 Aug 2026 16:43:37 +0000",
+        "category": "industrial",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "NotesFromPoland"
+        ],
+        "urls": [
+          "https://notesfrompoland.com/2026/08/31/poland-investigates-potential-foreign-intelligence-involvement-in-fire-at-drone-plant/"
+        ],
+        "merged_titles": [
+          "Poland investigates potential “foreign intelligence” involvement in fire at drone plant"
+        ],
+        "incident_family": "industrial",
+        "incident_subcategory": "fire",
+        "incident_subtype": "industrial_fire",
+        "incident_object": "drone",
+        "incident_action": "burned",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

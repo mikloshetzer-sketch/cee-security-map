@@ -1,4 +1,65 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.15,
+          52.1
+        ]
+      },
+      "properties": {
+        "source": "DIRECT_FEED",
+        "feed_name": "Politico Europe",
+        "kind": "news_direct",
+        "type": "News",
+        "time": "2026-08-31T18:31:57Z",
+        "title": "Poland suspects foreign involvement in drone-plant arson attack",
+        "description": "Poland suspects a fire at a factory operated by a drone component maker was an arson attack involving foreign intelligence services, according to a statement issued by the prosecutors . WB Electronics, whose factory caught fire shortly in the early hours of Monday, is one of Poland’s largest private defense companies. It produces reconnaissance drones and loitering munitions, including FlyEye and Warmate, used by Ukraine against Russian forces. Polish prosecutors issued a press release Monday afternoon saying they were investigating the “terrorist crime” involving the “deliberate setting of a fire” at a WB Electronics plant in Skarżysko-Kamienna, in south-eastern Poland. A fire broke out shortly after midnight at the plant and was extinguished within about two hours, thanks to rapid action",
+        "url": "https://www.politico.eu/article/poland-suspects-foreign-involvement-in-drone-plant-arson-attack/?utm_source=RSS_Feed&#038;utm_medium=RSS&#038;utm_campaign=RSS_Syndication",
+        "country_hint": "Poland",
+        "relation_hits": [
+          "Ukraine",
+          "Ukrainian",
+          "Russia",
+          "Russian",
+          "EU"
+        ],
+        "category": "air",
+        "impact_mult": 1.2400000000000002,
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "attacked",
+        "incident_actor": "russia",
+        "incident_target": "transport",
+        "severity": "high",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "article_role": "incident",
+        "actual_incident": true,
+        "risk_eligible": true,
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "attacked",
+          "actor": "russia",
+          "target": "transport",
+          "place": "Poland",
+          "event_date": "2026-08-31",
+          "hash": "b0a1d7c8542bf25c6544f011"
+        },
+        "classification_source": "security_classifier",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "rejection_reason": null
+      }
+    }
+  ]
 }

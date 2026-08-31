@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-30T20:37:25.116155+00:00",
+  "generated_utc": "2026-08-31T02:46:42.262255+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,45 +9,45 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9668,
-          45.9432
+          26.102,
+          44.426
         ]
       },
       "properties": {
-        "id": "3820e20d656ae4cbc745",
-        "title": "RO-Alert în nord-estul județului Tulcea: dronă detectată aproape de frontieră. Aparatul nu a pătruns în spațiul național",
-        "summary": "Un nou mesaj RO-Alert a fost transmis duminică dimineață pentru nordul județului Tulcea. Locuitorii din zona vizată au fost avertizați cu privire la posibilitatea căderii unor obiecte din spațiul aerian.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/social/ro-alert-in-nord-estul-judetului-tulcea-o-drona-detectata-in-apropierea-frontierei-cu-romania-3927267",
-        "published": "Sun, 30 Aug 2026 13:30:01 +0300",
+        "id": "6fd94223674a81d42ac1",
+        "title": "Maramureș: Doi adolescenți care au căzut de pe o trotinetă electrică, transportați la spital",
+        "summary": "",
+        "source": "Agerpres",
+        "url": "https://agerpres.ro/social/2026/08/30/maramures-doi-adolescenti-care-au-cazut-de-pe-o-trotineta-electrica-transportati-la-spital--1589109",
+        "published": null,
         "country": "Romania",
-        "city": null,
+        "city": "București",
         "family": "air",
-        "subcategory": "aircraft",
-        "subtype": "military_aircraft_incident",
-        "object": "military_aircraft",
-        "action": "entered",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
         "actor": "ukraine",
         "target": "military",
         "context": [],
         "consequences": [],
-        "severity": "medium",
-        "confidence": 0.9,
+        "severity": "high",
+        "confidence": 0.98,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
           "country": "Romania",
           "family": "air",
-          "subcategory": "aircraft",
-          "subtype": "military_aircraft_incident",
-          "object": "military_aircraft",
-          "action": "entered",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
           "actor": "ukraine",
           "target": "military",
-          "place": "Romania",
-          "event_date": "Sun, 30 Au",
-          "hash": "9bbb9c2e6c297e0d48102f68"
+          "place": "București",
+          "event_date": "unknown-date",
+          "hash": "f92adff74e9af0981642bdca"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -55,15 +55,16 @@
           "article_role": [],
           "objects": [
             "drone",
-            "dronă",
-            "military_aircraft",
-            "elicopter"
+            "cyber_system",
+            "website"
           ],
           "actions": [
             "detected",
             "detectat",
-            "entered",
-            "pătruns"
+            "impact",
+            "căzut",
+            "burned",
+            "a luat foc"
           ],
           "targets": [
             "military",
@@ -76,7 +77,7 @@
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
-            "geocode_quality=country_fallback"
+            "geocode_quality=city"
           ]
         },
         "negative_terms": [],
@@ -87,15 +88,16 @@
           "target_match": 0.08,
           "actor_match": 0.06,
           "country_match": 0.1,
+          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
             "priority": 0,
             "score": 2.32,
             "matched": true,
@@ -121,9 +123,520 @@
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 6275,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Agerpres – Agenția Națională de Presă: Știri de actualitate cu informații de încredere pentru o societate bine informată. Doi adolescenți care se deplasau în municipiul Baia Mare pe o trotinetă electrică s-au accidentat, fiind transportați la spital, a informat, duminică, purtătorul de cuvânt al Inspectoratului de Poliție Județean Maramureș, Mihalea Ardelean. 'Din verificările efectuate a reieșit că un tânăr de 16 ani, care se deplasa cu o trotinetă electrică împreună cu o tânără de 15 ani, la un moment dat ar fi pierdut controlul asupra ghidonului, căzând pe partea carosabilă. Ambii tineri au suferit leziuni corporale. Aceștia au fost transportați la spital pentru acordarea de îngrijiri medicale. Tânărul a fost testat cu aparatul etilotest, rezultatul fiind negativ', a precizat Mihalea Ardelean. Conform sursei citate, polițiștii au întocmit un dosar penal pentru vătămare corporală din culpă, cercetările fiind continuate pentru stabilirea cu exactitate a împrejurărilor în care s-a prod",
+        "place": "București",
+        "time": null,
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Agerpres"
+        ],
+        "urls": [
+          "https://agerpres.ro/social/2026/08/30/maramures-doi-adolescenti-care-au-cazut-de-pe-o-trotineta-electrica-transportati-la-spital--1589109"
+        ],
+        "merged_titles": [
+          "Maramureș: Doi adolescenți care au căzut de pe o trotinetă electrică, transportați la spital"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "ukraine",
+        "incident_target": "military",
+        "classification_confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6032,
+          56.8796
+        ]
+      },
+      "properties": {
+        "id": "e4b3c6cdcfb5733c38c4",
+        "title": "Scale of Nepal disaster continues to grow: 552 dead, more than 1,400 missing",
+        "summary": "<p>At least 547 people have been killed in flash floods triggered by a glacier collapse in Nepal, police said on Friday. Chinese authorities previously confirmed that at least five more people had been killed in neighbouring Tibet, which is controlled by Beijing. This brings the overall death toll from Wednesday’s disaster in the Nepal-Tibet border [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/scale-of-nepal-disaster-continues-to-grow-552-dead-more-than-1400-missing-283359\">Scale of Nepal disaster continues to grow: 552 dead, more than 1,400 missing</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/scale-of-nepal-disaster-continues-to-grow-552-dead-more-than-1400-missing-283359",
+        "published": "Fri, 28 Aug 2026 12:57:52 +0000",
+        "country": "Latvia",
+        "city": null,
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "damaged",
+        "actor": "unknown",
+        "target": "government",
+        "context": [],
+        "consequences": [
+          "fatality",
+          "injury",
+          "evacuation"
+        ],
+        "severity": "critical",
+        "confidence": 0.92,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint": {
+          "country": "Latvia",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "damaged",
+          "actor": "unknown",
+          "target": "government",
+          "place": "Latvia",
+          "event_date": "Fri, 28 Au",
+          "hash": "655f72a72c833887745a5878"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [
+            "reported"
+          ],
+          "objects": [
+            "military_aircraft",
+            "helicopter",
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "damaged",
+            "evacuated"
+          ],
+          "targets": [
+            "government",
+            "ministry"
+          ],
+          "actors": [],
+          "consequences": [
+            "fatality",
+            "killed",
+            "dead",
+            "injury",
+            "injured",
+            "evacuation",
+            "evacuated"
+          ],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": [
+              "border"
+            ]
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": [
+              "border"
+            ]
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1508,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "At least 547 people have been killed in flash floods triggered by a glacier collapse in Nepal, police said on Friday. Chinese authorities previously confirmed that at least five more people had been killed in neighbouring Tibet, which is controlled by Beijing. This brings the overall death toll from Wednesday’s disaster in the Nepal-Tibet border region to 552. In addition, Indian authorities have recovered seven bodies from a river flowing from Nepal. The victims are also believed to have died in the devastating floods. More than 1,400 people, including hundreds of foreign tourists, are still reported missing. Several dozen Latvian nationals are also among those reported missing. Nepalese police said that 3,253 people have been evacuated by helicopter from the disaster zone, many of them injured. More than 150 injured people have been taken to hospitals in Kathmandu, as well as in the districts of Rasuwa, Nuwakot and Dhading. A police spokesperson told the DPA news agency that authorit",
+        "place": "Latvia",
+        "time": "Fri, 28 Aug 2026 12:57:52 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "BNN"
+        ],
+        "urls": [
+          "https://bnn-news.com/scale-of-nepal-disaster-continues-to-grow-552-dead-more-than-1400-missing-283359"
+        ],
+        "merged_titles": [
+          "Scale of Nepal disaster continues to grow: 552 dead, more than 1,400 missing"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "damaged",
+        "incident_actor": "unknown",
+        "incident_target": "government",
+        "classification_confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6032,
+          56.8796
+        ]
+      },
+      "properties": {
+        "id": "9b2956a9b88cdcf60410",
+        "title": "SAB: Russia’s perception of Latvia increasingly resembles its pre-war view of Ukraine",
+        "summary": "<p>Russia currently poses no direct military threat to Latvia, although a number of signs point to potential longer-term plans, Latvia’s Constitution Protection Bureau (SAB) said. According to SAB’s assessment, Vladimir Putin’s regime continues to operate under a distorted perception of threats, reinforced by the Kremlin elite’s growing isolation and the absence of critical internal views. [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/sab-russias-perception-of-latvia-increasingly-resembles-its-pre-war-view-of-ukraine-283339\">SAB: Russia’s perception of Latvia increasingly resembles its pre-war view of Ukraine</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/sab-russias-perception-of-latvia-increasingly-resembles-its-pre-war-view-of-ukraine-283339",
+        "published": "Fri, 28 Aug 2026 11:27:57 +0000",
+        "country": "Latvia",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Latvia",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Latvia",
+          "event_date": "Fri, 28 Au",
+          "hash": "48366d83a7a2bad320efd402"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [
+            "reported"
+          ],
+          "objects": [
+            "drone",
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "detected",
+            "observed"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "russian",
+            "ukraine",
+            "ukrainian",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
             "score": 2.26,
             "matched": true,
             "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
             "matched_context": []
           },
           {
@@ -183,79 +696,95 @@
             "matched_context": []
           },
           {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "BORDER.ILLEGAL.CROSSING",
             "family": "border_security",
             "subcategory": "illegal_crossing",
             "subtype": "illegal_border_crossing",
             "severity": "low",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.85,
             "matched": false,
             "missing": [
-              "context:any"
+              "actions:all:entered"
             ],
-            "matched_context": []
+            "matched_context": [
+              "border"
+            ]
           },
           {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
             "severity": "high",
             "priority": 0,
-            "score": 0.0,
+            "score": 0.85,
             "matched": false,
             "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
+              "actions:any:attacked,exploded"
             ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
+            "matched_context": [
+              "border"
+            ]
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 2453,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Un mesaj RO-Alert a fost transmis duminică, 30 august, pentru nord-estul județului Tulcea, după ce sistemele radar ale Ministerului Apărării Naționale au detectat o țintă aeriană în apropierea frontierei cu România. ACTUALIZARE 13:28 Alerta aeriană a încetat la 11:18. Nu au fost raportate pătrunderi în spațiul aerian național, potrivit MApN. Știrea inițială. Potrivit MApN, ținta a fost detectată la ora 10:36, la aproximativ 20 de kilometri est de Vâlcove, în Ucraina, în proximitatea frontierei române. Două aeronave F-16 din Baza 86 Aeriană Borcea au monitorizat situația începând cu ora 10:36. În urma notificării Centrului Național Militar de Comandă, Inspectoratul General pentru Situații de Urgență a transmis, la ora 10:50, un mesaj RO-Alert valabil pentru nord-estul județului Tulcea. Până în prezent, autoritățile nu au anunțat că ținta aeriană ar fi pătruns în spațiul aerian românesc. Setarile tale privind cookie-urile nu permit afisarea continutul din aceasta sectiune. Poti actualiza",
-        "place": "Romania",
-        "time": "Sun, 30 Aug 2026 13:30:01 +0300",
+        "article_text_chars": 4198,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Russia currently poses no direct military threat to Latvia, although a number of signs point to potential longer-term plans, Latvia’s Constitution Protection Bureau (SAB) said. According to SAB’s assessment, Vladimir Putin’s regime continues to operate under a distorted perception of threats, reinforced by the Kremlin elite’s growing isolation and the absence of critical internal views. Russia’s attitude towards Western countries, including Latvia, is becoming increasingly hostile and aggressive. SAB, in cooperation with other EU and NATO intelligence and security services, continues to monitor the situation and developments in the region. SAB’s observations indicate that Russia’s perception of Latvia is becoming increasingly similar to the way it viewed Ukraine before launching the war. This could lead to more aggressive Russian activities over the longer term, significantly increasing security risks for Europe. Russia currently poses no direct military threat to Latvia, although a nu",
+        "place": "Latvia",
+        "time": "Fri, 28 Aug 2026 11:27:57 +0000",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Digi24"
+          "BNN"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/actualitate/social/ro-alert-in-nord-estul-judetului-tulcea-o-drona-detectata-in-apropierea-frontierei-cu-romania-3927267"
+          "https://bnn-news.com/sab-russias-perception-of-latvia-increasingly-resembles-its-pre-war-view-of-ukraine-283339"
         ],
         "merged_titles": [
-          "RO-Alert în nord-estul județului Tulcea: dronă detectată aproape de frontieră. Aparatul nu a pătruns în spațiul național"
+          "SAB: Russia’s perception of Latvia increasingly resembles its pre-war view of Ukraine"
         ],
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "incident_object": "military_aircraft",
-        "incident_action": "entered",
-        "incident_actor": "ukraine",
-        "incident_target": "military",
-        "classification_confidence": 0.9
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
       }
     },
     {

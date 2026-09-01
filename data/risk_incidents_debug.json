@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-01T02:59:29.738725+00:00",
+  "generated_utc": "2026-09-01T11:05:21.203416+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -44,14 +44,13 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 4,
+      "incident_count": 3,
       "category_counts": {
         "military": 2,
-        "drone": 1,
-        "cyber": 1
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 4
+        "local_events.geojson": 3
       }
     },
     "Estonia": {
@@ -65,14 +64,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "52f73cb5d6cb9a0f551b",
-        "date": "2026-08-31",
-        "time": "2026-08-31T19:21:04+00:00",
+        "id": "8e87d00663db7f4ec14b",
+        "date": "2026-09-01",
+        "time": "2026-09-01T07:48:30+00:00",
         "category": "drone",
-        "severity": "medium",
-        "title": "Polonia suspectează că în spatele incendiului de la fabrica de drone s-a aflat un serviciu secret străin. Anunțul procurorilor",
+        "severity": "high",
+        "title": "Reacția lui Volodimir Zelenski după ce rușii au atacat cu drone frontiera Ucrainei cu România",
         "source": "HotNews",
-        "url": "https://hotnews.ro/polonia-suspecteaza-ca-in-spatele-incendiului-de-la-fabrica-de-drone-s-a-aflat-un-serviciu-secret-strain-anuntul-procurorilor-2337913",
+        "url": "https://hotnews.ro/reactia-lui-volodimir-zelenski-dupa-ce-rusii-au-atacat-cu-drone-frontiera-ucrainei-cu-romania-2338261",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -80,10 +79,10 @@
         "article_role": "incident",
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_interception",
+        "incident_subtype": "drone_strike",
         "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.INTERCEPT",
-        "fingerprint_hash": "5731ea18f0d67f428c6e075b"
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "dcc94255d8a5aa760586c641"
       }
     ],
     "Slovakia": [],
@@ -152,27 +151,6 @@
         "classification_confidence": 0.92,
         "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
         "fingerprint_hash": "011c165de08fe4438eb0de75"
-      },
-      {
-        "id": "ede4621475ec27465753",
-        "date": "2026-08-25",
-        "time": "2026-08-25T10:08:55+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "title": "Storm disrupted one in five ATMs in Latvia – residents urged to keep cash on hand",
-        "source": "BNN",
-        "url": "https://bnn-news.com/storm-disrupted-one-in-five-atms-in-latvia-residents-urged-to-keep-cash-on-hand-283152",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "cyber",
-        "incident_subcategory": "operational_disruption",
-        "incident_subtype": "cyber_operational_disruption",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-        "fingerprint_hash": "dcd18d8bc5a3078b1167013d"
       }
     ],
     "Estonia": []

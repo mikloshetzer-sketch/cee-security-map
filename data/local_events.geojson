@@ -1,9 +1,265 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-01T02:59:23.512647+00:00",
+  "generated_utc": "2026-09-01T11:05:14.243036+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.04,
+          47.497
+        ]
+      },
+      "properties": {
+        "id": "998ad9df083b61f71d95",
+        "title": "Váltóhiba miatt lehalt a vasút a győri vonalon, Balatonszentgyörgy és Nagykanizsa között a felsővezetékkel van baj",
+        "summary": "Nem indult zökkenőmentesen az ősz a közlekedésben.",
+        "source": "Telex",
+        "url": "https://telex.hu/belfold/2026/09/01/kisebb-dugo-van-az-m1-esen-a-biatorbagyi-csomopont-kozeleben-egy-baleset-miatt",
+        "published": "Tue, 01 Sep 2026 07:10:24 +0200",
+        "country": "Hungary",
+        "city": "Budapest",
+        "family": "maritime",
+        "subcategory": "port_security",
+        "subtype": "port_disruption",
+        "object": "critical_infrastructure",
+        "action": "closed",
+        "actor": "unknown",
+        "target": "transport",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.92,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "maritime",
+          "subcategory": "port_security",
+          "subtype": "port_disruption",
+          "object": "critical_infrastructure",
+          "action": "closed",
+          "actor": "unknown",
+          "target": "transport",
+          "place": "Budapest",
+          "event_date": "Tue, 01 Se",
+          "hash": "1acbd52939a9e6208554b209"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [
+            "történt"
+          ],
+          "objects": [
+            "critical_infrastructure",
+            "vasút"
+          ],
+          "actions": [
+            "closed",
+            "lezárták"
+          ],
+          "targets": [
+            "transport",
+            "vasút"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.2,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.95,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": [
+              "vasút"
+            ]
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 951,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Egy kamion és egy személyautó ütközött az M1-es autópálya Budapest felé vezető oldalán, az M0-s csomópontja előtt. A 17-es kilométernél a külső sávot lezárták, a torlódás már meghaladta a 3 kilométert, írja az Útinform . A 61-es főúton, egy kamion pályaelhagyásos balesetet szenvedett. A 9-es kilométernél az M6-os autópálya közelében félpályás lezárásra kell készülni. Kedd reggel két baleset is történt az M0-s autóút M3-as autópálya felé vezető oldalán Nagytéténynél, ezért több kilométeres torlódás alakult ki – közölte a katasztrófavédelem . Azt írták, hogy az egyik balesetben egy kamion és egy autó ütközött össze, a másiknál pedig két személykocsi ütközött. Nem csak az utakon vannak fennakadások. A Mávinform tájékoztatása szerint Bicskén váltóhiba nehezíti a közlekedést, emiatt a győri vonalon Herceghalom és Bicske között nem közlekedhetnek a vonatok. Balatonszentgyörgy és Nagykanizsa között felsővezetéki hiba miatt nem járnak a vonatok.",
+        "place": "Budapest",
+        "time": "Tue, 01 Sep 2026 07:10:24 +0200",
+        "category": "maritime",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Telex"
+        ],
+        "urls": [
+          "https://telex.hu/belfold/2026/09/01/kisebb-dugo-van-az-m1-esen-a-biatorbagyi-csomopont-kozeleben-egy-baleset-miatt"
+        ],
+        "merged_titles": [
+          "Váltóhiba miatt lehalt a vasút a győri vonalon, Balatonszentgyörgy és Nagykanizsa között a felsővezetékkel van baj"
+        ],
+        "incident_family": "maritime",
+        "incident_subcategory": "port_security",
+        "incident_subtype": "port_disruption",
+        "incident_object": "critical_infrastructure",
+        "incident_action": "closed",
+        "incident_actor": "unknown",
+        "incident_target": "transport",
+        "classification_confidence": 0.92
+      }
+    },
     {
       "type": "Feature",
       "geometry": {
@@ -14,40 +270,40 @@
         ]
       },
       "properties": {
-        "id": "52f73cb5d6cb9a0f551b",
-        "title": "Polonia suspectează că în spatele incendiului de la fabrica de drone s-a aflat un serviciu secret străin. Anunțul procurorilor",
-        "summary": "Procurorii polonezi au anunțat luni că inițiază o anchetă pentru o posibilă „infracțiune cu caracter terorist”, după incendiul de noaptea trecută de la o fabrică de drone din Skarzysko-Kamienna, potrivit AFP. Fabrica este a WB Electronics, un grup privat specializat în sisteme electronice de apărare. Potrivit un comunicat al parchetului, ancheta a fost deschisă pentru &#8230;",
+        "id": "8e87d00663db7f4ec14b",
+        "title": "Reacția lui Volodimir Zelenski după ce rușii au atacat cu drone frontiera Ucrainei cu România",
+        "summary": "Rusia își continuă campania împotriva infrastructurii logistice ucrainene, iar în atacul masiv din noaptea de luni spre marți, cu „un număr semnificativ” de rachete și drone cu motor cu reacție, a provocat intenționat pagube la un punct de trecere a frontierei dintre Ucraina și România, a declarat președintele ucrainean Volodimir Zelenski, relatează agenția EFE, citată &#8230;",
         "source": "HotNews",
-        "url": "https://hotnews.ro/polonia-suspecteaza-ca-in-spatele-incendiului-de-la-fabrica-de-drone-s-a-aflat-un-serviciu-secret-strain-anuntul-procurorilor-2337913",
-        "published": "Mon, 31 Aug 2026 19:21:04 +0000",
+        "url": "https://hotnews.ro/reactia-lui-volodimir-zelenski-dupa-ce-rusii-au-atacat-cu-drone-frontiera-ucrainei-cu-romania-2338261",
+        "published": "Tue, 01 Sep 2026 08:49:04 +0000",
         "country": "Romania",
         "city": null,
         "family": "air",
         "subcategory": "drone",
-        "subtype": "drone_interception",
+        "subtype": "drone_strike",
         "object": "drone",
-        "action": "intercepted",
+        "action": "attacked",
         "actor": "russia",
         "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "medium",
+        "severity": "high",
         "confidence": 0.82,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.INTERCEPT",
+        "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
           "country": "Romania",
           "family": "air",
           "subcategory": "drone",
-          "subtype": "drone_interception",
+          "subtype": "drone_strike",
           "object": "drone",
-          "action": "intercepted",
+          "action": "attacked",
           "actor": "russia",
           "target": "unknown",
           "place": "Romania",
-          "event_date": "Mon, 31 Au",
-          "hash": "5731ea18f0d67f428c6e075b"
+          "event_date": "Tue, 01 Se",
+          "hash": "dcc94255d8a5aa760586c641"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -57,16 +313,15 @@
             "drone"
           ],
           "actions": [
-            "intercepted",
-            "interceptat"
+            "attacked",
+            "atacat"
           ],
           "targets": [],
           "actors": [
             "russia",
             "rusia",
             "ukraine",
-            "ucraina",
-            "nato"
+            "ucraina"
           ],
           "consequences": [],
           "extra_context": [
@@ -85,13 +340,13 @@
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.DRONE.INTERCEPT",
+            "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
+            "subtype": "drone_strike",
+            "severity": "high",
             "priority": 0,
-            "score": 2.26,
+            "score": 2.32,
             "matched": true,
             "missing": [],
             "matched_context": []
@@ -125,6 +380,20 @@
             "matched_context": []
           },
           {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.DRONE.SHOOTDOWN",
             "family": "air",
             "subcategory": "drone",
@@ -139,102 +408,83 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:any:attacked,exploded,impact"
+              "objects:all:explosive_device"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile"
+              "objects:all:ship"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "INTELLIGENCE.ESPIONAGE",
-            "family": "intelligence",
-            "subcategory": "espionage",
-            "subtype": "espionage_case",
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
             "severity": "high",
             "priority": 0,
-            "score": 0.85,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:arrested"
-            ],
-            "matched_context": [
-              "spionaj"
-            ]
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
+              "context:any"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
+            "rule_id": "TERRORISM.ATTACK",
+            "family": "terrorism",
+            "subcategory": "attack",
+            "subtype": "terrorist_attack",
+            "severity": "critical",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
+              "context:any"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
             "severity": "medium",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:military_aircraft",
-              "actions:any:damaged,entered,impact"
+              "context:any"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1794,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Procurorii polonezi au anunțat luni că inițiază o anchetă pentru o posibilă „infracțiune cu caracter terorist”, după incendiul de noaptea trecută de la o fabrică de drone din Skarzysko-Kamienna, potrivit AFP. Fabrica este a WB Electronics, un grup privat specializat în sisteme electronice de apărare. Potrivit un comunicat al parchetului, ancheta a fost deschisă pentru „participare la activități ale unui serviciu de informații străin împotriva Republicii Polonia și pentru o infracțiune cu caracter terorist, constând în provocarea deliberată (…) a unui incendiu pe terenul uzinei WB Electronics, cu ajutorul unei încărcături care conținea materiale inflamabile”, notează Agerpres . Procurorii nu au menționat numele țării pe care o suspectează că a comandat incendiul la fabrica de la Skarzysko-Kamienna, la 140 km sud de Varșovia. Mai multe țări NATO au acuzat Rusia că s-a aflat în spatele unor operațiuni recente de sabotaj sau spionaj, acuzații pe care Moscova le neagă. Țări ca România și Po",
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
         "place": "Romania",
-        "time": "Mon, 31 Aug 2026 19:21:04 +0000",
+        "time": "Tue, 01 Sep 2026 07:48:30 +0000",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
@@ -244,16 +494,18 @@
           "HotNews"
         ],
         "urls": [
-          "https://hotnews.ro/polonia-suspecteaza-ca-in-spatele-incendiului-de-la-fabrica-de-drone-s-a-aflat-un-serviciu-secret-strain-anuntul-procurorilor-2337913"
+          "https://hotnews.ro/reactia-lui-volodimir-zelenski-dupa-ce-rusii-au-atacat-cu-drone-frontiera-ucrainei-cu-romania-2338261",
+          "https://hotnews.ro/ne-a-trezit-o-bubuitura-foarte-puternica-momentul-in-care-rusii-au-atac-frontiera-romaniei-cu-ucraina-filmat-din-isaccea-2338208"
         ],
         "merged_titles": [
-          "Polonia suspectează că în spatele incendiului de la fabrica de drone s-a aflat un serviciu secret străin. Anunțul procurorilor"
+          "Reacția lui Volodimir Zelenski după ce rușii au atacat cu drone frontiera Ucrainei cu România",
+          "Momentul în care rușii au atacat un punct de trecere de la frontiera Ucrainei cu România. „Ne-a trezit o bubuitură foarte puternică”"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_interception",
+        "incident_subtype": "drone_strike",
         "incident_object": "drone",
-        "incident_action": "intercepted",
+        "incident_action": "attacked",
         "incident_actor": "russia",
         "incident_target": "unknown",
         "classification_confidence": 0.82
@@ -1291,254 +1543,6 @@
         "incident_actor": "unknown",
         "incident_target": "transport",
         "classification_confidence": 0.92
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.6032,
-          56.8796
-        ]
-      },
-      "properties": {
-        "id": "ede4621475ec27465753",
-        "title": "Storm disrupted one in five ATMs in Latvia – residents urged to keep cash on hand",
-        "summary": "<p>During last weekend’s storm, 183 of Latvia’s 869 ATMs, or roughly one in five, experienced disruptions, including 17 of the country’s 94 critical ATMs, according to the Bank of Latvia. The Bank of Latvia said the situation provided a real-world test of the financial sector’s preparedness to operate when electricity, communications and other infrastructure services [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/storm-disrupted-one-in-five-atms-in-latvia-residents-urged-to-keep-cash-on-hand-283152\">Storm disrupted one in five ATMs in Latvia – residents urged to keep cash on hand</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
-        "source": "BNN",
-        "url": "https://bnn-news.com/storm-disrupted-one-in-five-atms-in-latvia-residents-urged-to-keep-cash-on-hand-283152",
-        "published": "Tue, 25 Aug 2026 10:08:55 +0000",
-        "country": "Latvia",
-        "city": null,
-        "family": "cyber",
-        "subcategory": "operational_disruption",
-        "subtype": "cyber_operational_disruption",
-        "object": "cyber_system",
-        "action": "disrupted",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.76,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-        "fingerprint": {
-          "country": "Latvia",
-          "family": "cyber",
-          "subcategory": "operational_disruption",
-          "subtype": "cyber_operational_disruption",
-          "object": "cyber_system",
-          "action": "disrupted",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Latvia",
-          "event_date": "Tue, 25 Au",
-          "hash": "dcd18d8bc5a3078b1167013d"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "cyber_system",
-            "network"
-          ],
-          "actions": [
-            "disrupted"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Latvia",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.INTRUSION",
-            "family": "cyber",
-            "subcategory": "intrusion",
-            "subtype": "cyber_intrusion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:compromised"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:energy_asset"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Latvia",
-        "time": "Tue, 25 Aug 2026 10:08:55 +0000",
-        "category": "cyber",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "BNN"
-        ],
-        "urls": [
-          "https://bnn-news.com/storm-disrupted-one-in-five-atms-in-latvia-residents-urged-to-keep-cash-on-hand-283152"
-        ],
-        "merged_titles": [
-          "Storm disrupted one in five ATMs in Latvia – residents urged to keep cash on hand"
-        ],
-        "incident_family": "cyber",
-        "incident_subcategory": "operational_disruption",
-        "incident_subtype": "cyber_operational_disruption",
-        "incident_object": "cyber_system",
-        "incident_action": "disrupted",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.76
       }
     }
   ]

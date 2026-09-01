@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-01T11:05:14.243036+00:00",
+  "generated_utc": "2026-09-01T16:05:36.086129+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,45 +9,47 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.04,
-          47.497
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "id": "998ad9df083b61f71d95",
-        "title": "Váltóhiba miatt lehalt a vasút a győri vonalon, Balatonszentgyörgy és Nagykanizsa között a felsővezetékkel van baj",
-        "summary": "Nem indult zökkenőmentesen az ősz a közlekedésben.",
+        "id": "77516df191af7fbab964",
+        "title": "A román–moldovai határnál zümmögő szerkezetet talált egy birkapásztor, robbanótöltetű drón volt",
+        "summary": "A sérült gép egy mezőn feküdt, 30 kilométerre a moldovai határtól. Helyi források szerint ukrán gyártmányú lehetett, hivatalos azonosítása még tart.",
         "source": "Telex",
-        "url": "https://telex.hu/belfold/2026/09/01/kisebb-dugo-van-az-m1-esen-a-biatorbagyi-csomopont-kozeleben-egy-baleset-miatt",
-        "published": "Tue, 01 Sep 2026 07:10:24 +0200",
-        "country": "Hungary",
-        "city": "Budapest",
-        "family": "maritime",
-        "subcategory": "port_security",
-        "subtype": "port_disruption",
-        "object": "critical_infrastructure",
-        "action": "closed",
-        "actor": "unknown",
-        "target": "transport",
+        "url": "https://telex.hu/transtelex/2026/09/01/romania-vaslui-dron-robbanotoltet-megsemmisites",
+        "published": "Tue, 01 Sep 2026 15:23:28 +0200",
+        "country": "Romania",
+        "city": null,
+        "family": "ground",
+        "subcategory": "sabotage",
+        "subtype": "sabotage",
+        "object": "drone",
+        "action": "sabotaged",
+        "actor": "russia",
+        "target": "government",
         "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.92,
+        "consequences": [
+          "injury"
+        ],
+        "severity": "high",
+        "confidence": 0.98,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
+        "matched_rule_id": "GROUND.SABOTAGE",
         "fingerprint": {
-          "country": "Hungary",
-          "family": "maritime",
-          "subcategory": "port_security",
-          "subtype": "port_disruption",
-          "object": "critical_infrastructure",
-          "action": "closed",
-          "actor": "unknown",
-          "target": "transport",
-          "place": "Budapest",
+          "country": "Romania",
+          "family": "ground",
+          "subcategory": "sabotage",
+          "subtype": "sabotage",
+          "object": "drone",
+          "action": "sabotaged",
+          "actor": "russia",
+          "target": "government",
+          "place": "Romania",
           "event_date": "Tue, 01 Se",
-          "hash": "1acbd52939a9e6208554b209"
+          "hash": "16e360a501f6cd99dfb06f82"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -56,22 +58,47 @@
             "történt"
           ],
           "objects": [
-            "critical_infrastructure",
-            "vasút"
+            "drone",
+            "drón",
+            "military_aircraft",
+            "vadászgép"
           ],
           "actions": [
+            "detected",
+            "észleltek",
+            "impact",
+            "talált",
+            "burned",
+            "tűz ütött ki",
+            "disrupted",
+            "leállt",
             "closed",
-            "lezárták"
+            "bezárták",
+            "sabotaged",
+            "megrongálták"
           ],
           "targets": [
-            "transport",
-            "vasút"
+            "government",
+            "minisztérium"
           ],
-          "actors": [],
-          "consequences": [],
+          "actors": [
+            "russia",
+            "oroszország",
+            "orosz",
+            "ukraine",
+            "ukrajna",
+            "ukrán",
+            "nato",
+            "unknown",
+            "ismeretlen"
+          ],
+          "consequences": [
+            "injury",
+            "sérült"
+          ],
           "extra_context": [
             "feed_country=Hungary",
-            "geocode_quality=city"
+            "geocode_quality=country_fallback"
           ]
         },
         "negative_terms": [],
@@ -80,65 +107,12 @@
           "object_match": 0.2,
           "action_match": 0.2,
           "target_match": 0.08,
+          "actor_match": 0.06,
           "country_match": 0.1,
-          "city_match": 0.08,
+          "consequence_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
-            "family": "transport",
-            "subcategory": "aviation",
-            "subtype": "airport_closure",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.2,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.95,
-            "matched": false,
-            "missing": [
-              "actions:all:disrupted"
-            ],
-            "matched_context": [
-              "vasút"
-            ]
-          },
           {
             "rule_id": "GROUND.SABOTAGE",
             "family": "ground",
@@ -146,11 +120,33 @@
             "subtype": "sabotage",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
+            "score": 2.35,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
             "matched_context": []
           },
           {
@@ -160,11 +156,36 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 0.0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
             "matched": false,
             "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
             ],
             "matched_context": []
           },
@@ -175,10 +196,9 @@
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:entered"
             ],
             "matched_context": []
@@ -190,10 +210,9 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:intercepted"
             ],
             "matched_context": []
@@ -205,59 +224,57 @@
             "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:shot_down"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.STRIKE",
+            "rule_id": "AIR.MISSILE.DETECTION",
             "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
-              "actions:any:attacked,exploded,impact"
+              "objects:all:missile"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 951,
+        "article_text_chars": 3721,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Egy kamion és egy személyautó ütközött az M1-es autópálya Budapest felé vezető oldalán, az M0-s csomópontja előtt. A 17-es kilométernél a külső sávot lezárták, a torlódás már meghaladta a 3 kilométert, írja az Útinform . A 61-es főúton, egy kamion pályaelhagyásos balesetet szenvedett. A 9-es kilométernél az M6-os autópálya közelében félpályás lezárásra kell készülni. Kedd reggel két baleset is történt az M0-s autóút M3-as autópálya felé vezető oldalán Nagytéténynél, ezért több kilométeres torlódás alakult ki – közölte a katasztrófavédelem . Azt írták, hogy az egyik balesetben egy kamion és egy autó ütközött össze, a másiknál pedig két személykocsi ütközött. Nem csak az utakon vannak fennakadások. A Mávinform tájékoztatása szerint Bicskén váltóhiba nehezíti a közlekedést, emiatt a győri vonalon Herceghalom és Bicske között nem közlekedhetnek a vonatok. Balatonszentgyörgy és Nagykanizsa között felsővezetéki hiba miatt nem járnak a vonatok.",
-        "place": "Budapest",
-        "time": "Tue, 01 Sep 2026 07:10:24 +0200",
-        "category": "maritime",
+        "article_text_excerpt": "Ellenőrzött robbantással semmisítették meg azt a sérült drónt, amelyet kedden Románia keleti részén, a Moldovai Köztársaság határától mintegy 30 kilométerre találtak. A helyi Vaslui TV forrásai szerint a gép robbanótöltetet szállított. A drón eredetének hivatalos vizsgálata még tart. A gépre egy juhait legeltető pásztor bukkant rá a Vaslui megyei Viișoara település melletti mezőn. A beszámolók szerint oda is ment a drónhoz, és amikor az zümmögni kezdett, két vezetéket húzott ki belőle, robbanás azonban ekkor nem következett be. A férfi ezt követően hívta a 112-es segélyhívót. A helyi tévé szerint a drón ukrán gyártmányú lehetett, de a hatósági azonosítás még nem zárult le. Egyelőre azt sem tudni, honnan érkezett, mikor zuhant le, és mennyi ideig feküdt a mezőn. A rendőrséget kedd délelőtt negyed tizenegykor értesítették. Rendőrök és csendőrök zárták le a környéket, később pedig az eredetinél kétszer nagyobb területet ürítettek ki. A rendőrautókat is távolabb vitték, és egy munkagépet v",
+        "place": "Romania",
+        "time": "Tue, 01 Sep 2026 15:23:28 +0200",
+        "category": "ground",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
           "Telex"
         ],
         "urls": [
-          "https://telex.hu/belfold/2026/09/01/kisebb-dugo-van-az-m1-esen-a-biatorbagyi-csomopont-kozeleben-egy-baleset-miatt"
+          "https://telex.hu/transtelex/2026/09/01/romania-vaslui-dron-robbanotoltet-megsemmisites"
         ],
         "merged_titles": [
-          "Váltóhiba miatt lehalt a vasút a győri vonalon, Balatonszentgyörgy és Nagykanizsa között a felsővezetékkel van baj"
+          "A román–moldovai határnál zümmögő szerkezetet talált egy birkapásztor, robbanótöltetű drón volt"
         ],
-        "incident_family": "maritime",
-        "incident_subcategory": "port_security",
-        "incident_subtype": "port_disruption",
-        "incident_object": "critical_infrastructure",
-        "incident_action": "closed",
-        "incident_actor": "unknown",
-        "incident_target": "transport",
-        "classification_confidence": 0.92
+        "incident_family": "ground",
+        "incident_subcategory": "sabotage",
+        "incident_subtype": "sabotage",
+        "incident_object": "drone",
+        "incident_action": "sabotaged",
+        "incident_actor": "russia",
+        "incident_target": "government",
+        "classification_confidence": 0.98
       }
     },
     {
@@ -265,19 +282,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9668,
-          45.9432
+          28.008,
+          45.435
         ]
       },
       "properties": {
-        "id": "8e87d00663db7f4ec14b",
-        "title": "Reacția lui Volodimir Zelenski după ce rușii au atacat cu drone frontiera Ucrainei cu România",
-        "summary": "Rusia își continuă campania împotriva infrastructurii logistice ucrainene, iar în atacul masiv din noaptea de luni spre marți, cu „un număr semnificativ” de rachete și drone cu motor cu reacție, a provocat intenționat pagube la un punct de trecere a frontierei dintre Ucraina și România, a declarat președintele ucrainean Volodimir Zelenski, relatează agenția EFE, citată &#8230;",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/reactia-lui-volodimir-zelenski-dupa-ce-rusii-au-atacat-cu-drone-frontiera-ucrainei-cu-romania-2338261",
-        "published": "Tue, 01 Sep 2026 08:49:04 +0000",
+        "id": "be43b6aa38ec1cb7e329",
+        "title": "Momentul atacului asupra punctului de frontieră Orlivka-Isaccea, filmat de copiii ucraineni dintr-un autocar în tranzit prin România",
+        "summary": "Mai mulți copii ucraineni care se întorceau dintr-o tabără în Turcia, spre casă, în Ucraina, în noaptea de luni spre marți, au surprins momentul în care punctul de frontieră Orlivka-Isaccea era atacat de ruși. Copiii se aflau în tranzit prin România, precizează Nazar Tretiak, vicepreședintele Asociației Tinerilor Ucraineni din România (ATUR), care a transmis filmarea redacției Digi24.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/momentul-atacului-asupra-punctului-de-frontiera-orlivka-isaccea-filmat-de-copiii-ucraineni-dintr-un-autocar-in-tranzit-prin-romania-3930451",
+        "published": "Tue, 01 Sep 2026 16:48:24 +0300",
         "country": "Romania",
-        "city": null,
+        "city": "Galați",
         "family": "air",
         "subcategory": "drone",
         "subtype": "drone_strike",
@@ -288,7 +305,7 @@
         "context": [],
         "consequences": [],
         "severity": "high",
-        "confidence": 0.82,
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
         "matched_rule_id": "AIR.DRONE.STRIKE",
@@ -301,9 +318,9 @@
           "action": "attacked",
           "actor": "russia",
           "target": "unknown",
-          "place": "Romania",
+          "place": "Galați",
           "event_date": "Tue, 01 Se",
-          "hash": "dcc94255d8a5aa760586c641"
+          "hash": "e9012c07c000043f876b8cdb"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -313,6 +330,10 @@
             "drone"
           ],
           "actions": [
+            "detected",
+            "observat",
+            "damaged",
+            "distrus",
             "attacked",
             "atacat"
           ],
@@ -320,13 +341,14 @@
           "actors": [
             "russia",
             "rusia",
+            "rusiei",
             "ukraine",
             "ucraina"
           ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
-            "geocode_quality=country_fallback"
+            "geocode_quality=city"
           ]
         },
         "negative_terms": [],
@@ -336,6 +358,7 @@
           "action_match": 0.2,
           "actor_match": 0.06,
           "country_match": 0.1,
+          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
@@ -358,10 +381,36 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 1.1,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
             "matched": false,
             "missing": [
-              "actions:all:detected"
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "context:any"
             ],
             "matched_context": []
           },
@@ -404,6 +453,34 @@
             "matched": false,
             "missing": [
               "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
             ],
             "matched_context": []
           },
@@ -420,86 +497,28 @@
               "objects:all:explosive_device"
             ],
             "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:ship"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TERRORISM.ATTACK",
-            "family": "terrorism",
-            "subcategory": "attack",
-            "subtype": "terrorist_attack",
-            "severity": "critical",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "PUBLIC.ORDER.VIOLENCE",
-            "family": "public_order",
-            "subcategory": "violent_protest",
-            "subtype": "violent_public_disorder",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Romania",
-        "time": "Tue, 01 Sep 2026 07:48:30 +0000",
+        "full_article_enriched": true,
+        "article_text_chars": 2588,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Mai mulți copii ucraineni care se întorceau dintr-o tabără în Turcia, spre casă, în Ucraina, în noaptea de luni spre marți, au surprins momentul în care punctul de frontieră Orlivka-Isaccea era atacat de ruși . Copiii se aflau în tranzit prin România, precizează Nazar Tretiak, vicepreședintele Asociației Tinerilor Ucraineni din România (ATUR), care a transmis filmarea redacției Digi24. Copiii ar fi trebuit să treacă frontiera româno-ucraineană prin Isaccea-Orlivka luni, în jurul orei 19:00, dar au pierdut feribotul. Din acest motiv, în momentul atacului se aflau încă în România. Au așteptat încheierea alertei aeriene din regiunea Odesa, pentru a putea continua drumul, însă ulterior punctul de trecere de la Orlivka a fost distrus de atacurile Rusiei. Astfel, copiii au fost nevoiți să ocolească prin Republica Moldova, pe ruta Galați-Giurgiulești-Ucraina. Au trecut mai întâi granița dintre România și Republica Moldova, iar apoi granița dintre Republica Moldova și Ucraina, pe care au trave",
+        "place": "Galați",
+        "time": "Tue, 01 Sep 2026 16:48:24 +0300",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "country_fallback",
+        "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "HotNews"
+          "Digi24"
         ],
         "urls": [
-          "https://hotnews.ro/reactia-lui-volodimir-zelenski-dupa-ce-rusii-au-atacat-cu-drone-frontiera-ucrainei-cu-romania-2338261",
-          "https://hotnews.ro/ne-a-trezit-o-bubuitura-foarte-puternica-momentul-in-care-rusii-au-atac-frontiera-romaniei-cu-ucraina-filmat-din-isaccea-2338208"
+          "https://www.digi24.ro/stiri/externe/momentul-atacului-asupra-punctului-de-frontiera-orlivka-isaccea-filmat-de-copiii-ucraineni-dintr-un-autocar-in-tranzit-prin-romania-3930451"
         ],
         "merged_titles": [
-          "Reacția lui Volodimir Zelenski după ce rușii au atacat cu drone frontiera Ucrainei cu România",
-          "Momentul în care rușii au atacat un punct de trecere de la frontiera Ucrainei cu România. „Ne-a trezit o bubuitură foarte puternică”"
+          "Momentul atacului asupra punctului de frontieră Orlivka-Isaccea, filmat de copiii ucraineni dintr-un autocar în tranzit prin România"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
@@ -508,7 +527,257 @@
         "incident_action": "attacked",
         "incident_actor": "russia",
         "incident_target": "unknown",
-        "classification_confidence": 0.82
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "6a9125342e6a76961920",
+        "title": "Predoiu: România are nevoie de un concept de apărare împotriva dronelor, înainte de modificarea legislației",
+        "summary": "Ministrul interimar al Afacerilor Interne Cătălin Predoiu a susținut că România are nevoie de o abordare unitară în privința amenințărilor reprezentate de drone și de o legislație adaptată noilor riscuri. Liberalul a afirmat că, înainte de modificarea legilor, trebuie elaborat un concept de apărare, cu implicarea tuturor instituțiilor, inclusiv a CSAT.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/predoiu-romania-are-nevoie-de-un-concept-de-aparare-impotriva-dronelor-inainte-de-modificarea-legislatiei-3930351",
+        "published": "Tue, 01 Sep 2026 14:53:04 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_intrusion",
+        "object": "drone",
+        "action": "entered",
+        "actor": "unknown",
+        "target": "government",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_intrusion",
+          "object": "drone",
+          "action": "entered",
+          "actor": "unknown",
+          "target": "government",
+          "place": "Romania",
+          "event_date": "Tue, 01 Se",
+          "hash": "94e70249157c5ddde8f88fe6"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă"
+          ],
+          "actions": [
+            "entered",
+            "pătruns"
+          ],
+          "targets": [
+            "government",
+            "parlament"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 3595,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Ministrul interimar al Afacerilor Interne Cătălin Predoiu a susținut că România are nevoie de o abordare unitară în privința amenințărilor reprezentate de drone și de o legislație adaptată noilor riscuri. Liberalul a afirmat că, înainte de modificarea legilor, trebuie elaborat un concept de apărare, cu implicarea tuturor instituțiilor, inclusiv a CSAT. Predoiu a declarat că dezbaterea recentă din Comisia de apărare a Senatului privind pericolul reprezentat de drone trebuie să fie doar începutul demersului de adaptare a legislației. „Recenta dezbatere din comisia de apărare a Senatului cu privire la pericolul reprezentat de drone raportat la legislația în vigoare trebuie să fie doar un prim pas în demersul Parlamentului pentru adaptarea legislației la amenințările militare reprezentate de dronele militare eșuate pe mare, la malul mării sau în interiorul teritoriului național”, a transmis ministrul interimar de Interne, într-un mesaj video. Setarile tale privind cookie-urile nu permit af",
+        "place": "Romania",
+        "time": "Tue, 01 Sep 2026 14:53:04 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/social/predoiu-romania-are-nevoie-de-un-concept-de-aparare-impotriva-dronelor-inainte-de-modificarea-legislatiei-3930351"
+        ],
+        "merged_titles": [
+          "Predoiu: România are nevoie de un concept de apărare împotriva dronelor, înainte de modificarea legislației"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "incident_object": "drone",
+        "incident_action": "entered",
+        "incident_actor": "unknown",
+        "incident_target": "government",
+        "classification_confidence": 0.84
       }
     },
     {
@@ -1543,6 +1812,255 @@
         "incident_actor": "unknown",
         "incident_target": "transport",
         "classification_confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.0136,
+          58.5953
+        ]
+      },
+      "properties": {
+        "id": "44ef8a8183e572b2c7bc",
+        "title": "Local residents say drone that crossed into Estonia flew as far as Põlva",
+        "summary": "According to local residents, the drone that crossed Estonia's southeastern border overnight reached the city of Põlva. Estonian Defense Forces has not commented on how far the drone traveled into Estonian territory.",
+        "source": "ERR",
+        "url": "https://news.err.ee/1610125294/local-residents-say-drone-that-crossed-into-estonia-flew-as-far-as-polva",
+        "published": "Tue, 01 Sep 2026 14:54:00 +0300",
+        "country": "Estonia",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_intrusion",
+        "object": "drone",
+        "action": "entered",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [
+          "border"
+        ],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint": {
+          "country": "Estonia",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_intrusion",
+          "object": "drone",
+          "action": "entered",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Estonia",
+          "event_date": "Tue, 01 Se",
+          "hash": "d614c4b2fa76a5952e800b80"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "entered",
+            "crossed into"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Estonia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.07,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "border"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": [
+              "border"
+            ]
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Estonia",
+        "time": "Tue, 01 Sep 2026 14:54:00 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "ERR"
+        ],
+        "urls": [
+          "https://news.err.ee/1610125294/local-residents-say-drone-that-crossed-into-estonia-flew-as-far-as-polva"
+        ],
+        "merged_titles": [
+          "Local residents say drone that crossed into Estonia flew as far as Põlva"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "incident_object": "drone",
+        "incident_action": "entered",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
       }
     }
   ]

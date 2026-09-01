@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-01T11:05:21.203416+00:00",
+  "generated_utc": "2026-09-01T16:05:42.751334+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "drone": 1
+        "drone": 2
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Slovakia": {
@@ -44,19 +44,23 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 3,
+      "incident_count": 2,
       "category_counts": {
-        "military": 2,
+        "military": 1,
         "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 3
+        "local_events.geojson": 2
       }
     },
     "Estonia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     }
   },
   "countries": {
@@ -64,14 +68,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "8e87d00663db7f4ec14b",
+        "id": "be43b6aa38ec1cb7e329",
         "date": "2026-09-01",
-        "time": "2026-09-01T07:48:30+00:00",
+        "time": "2026-09-01T13:48:24+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Reacția lui Volodimir Zelenski după ce rușii au atacat cu drone frontiera Ucrainei cu România",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/reactia-lui-volodimir-zelenski-dupa-ce-rusii-au-atacat-cu-drone-frontiera-ucrainei-cu-romania-2338261",
+        "title": "Momentul atacului asupra punctului de frontieră Orlivka-Isaccea, filmat de copiii ucraineni dintr-un autocar în tranzit prin România",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/momentul-atacului-asupra-punctului-de-frontiera-orlivka-isaccea-filmat-de-copiii-ucraineni-dintr-un-autocar-in-tranzit-prin-romania-3930451",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -80,9 +84,30 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
+        "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "dcc94255d8a5aa760586c641"
+        "fingerprint_hash": "e9012c07c000043f876b8cdb"
+      },
+      {
+        "id": "6a9125342e6a76961920",
+        "date": "2026-09-01",
+        "time": "2026-09-01T11:53:04+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Predoiu: România are nevoie de un concept de apărare împotriva dronelor, înainte de modificarea legislației",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/predoiu-romania-are-nevoie-de-un-concept-de-aparare-impotriva-dronelor-inainte-de-modificarea-legislatiei-3930351",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "94e70249157c5ddde8f88fe6"
       }
     ],
     "Slovakia": [],
@@ -130,29 +155,30 @@
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.DETECTION",
         "fingerprint_hash": "48366d83a7a2bad320efd402"
-      },
+      }
+    ],
+    "Estonia": [
       {
-        "id": "065c01274310e010cbe8",
-        "date": "2026-08-25",
-        "time": "2026-08-25T13:43:58+00:00",
-        "category": "military",
+        "id": "44ef8a8183e572b2c7bc",
+        "date": "2026-09-01",
+        "time": "2026-09-01T11:54:00+00:00",
+        "category": "drone",
         "severity": "medium",
-        "title": "Mysterious flight from Riga: US Air Force transport plane lands in Moscow",
-        "source": "BNN",
-        "url": "https://bnn-news.com/mysterious-flight-from-riga-us-air-force-transport-plane-lands-in-moscow-283170",
+        "title": "Local residents say drone that crossed into Estonia flew as far as Põlva",
+        "source": "ERR",
+        "url": "https://news.err.ee/1610125294/local-residents-say-drone-that-crossed-into-estonia-flew-as-far-as-polva",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "011c165de08fe4438eb0de75"
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "d614c4b2fa76a5952e800b80"
       }
-    ],
-    "Estonia": []
+    ]
   }
 }

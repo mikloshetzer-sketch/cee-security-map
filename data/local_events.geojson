@@ -1,9 +1,264 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-08-31T22:32:38.289989+00:00",
+  "generated_utc": "2026-09-01T02:59:23.512647+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "52f73cb5d6cb9a0f551b",
+        "title": "Polonia suspectează că în spatele incendiului de la fabrica de drone s-a aflat un serviciu secret străin. Anunțul procurorilor",
+        "summary": "Procurorii polonezi au anunțat luni că inițiază o anchetă pentru o posibilă „infracțiune cu caracter terorist”, după incendiul de noaptea trecută de la o fabrică de drone din Skarzysko-Kamienna, potrivit AFP. Fabrica este a WB Electronics, un grup privat specializat în sisteme electronice de apărare. Potrivit un comunicat al parchetului, ancheta a fost deschisă pentru &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/polonia-suspecteaza-ca-in-spatele-incendiului-de-la-fabrica-de-drone-s-a-aflat-un-serviciu-secret-strain-anuntul-procurorilor-2337913",
+        "published": "Mon, 31 Aug 2026 19:21:04 +0000",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_interception",
+        "object": "drone",
+        "action": "intercepted",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.INTERCEPT",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_interception",
+          "object": "drone",
+          "action": "intercepted",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Mon, 31 Au",
+          "hash": "5731ea18f0d67f428c6e075b"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "intercepted",
+            "interceptat"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INTELLIGENCE.ESPIONAGE",
+            "family": "intelligence",
+            "subcategory": "espionage",
+            "subtype": "espionage_case",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:all:arrested"
+            ],
+            "matched_context": [
+              "spionaj"
+            ]
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1794,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Procurorii polonezi au anunțat luni că inițiază o anchetă pentru o posibilă „infracțiune cu caracter terorist”, după incendiul de noaptea trecută de la o fabrică de drone din Skarzysko-Kamienna, potrivit AFP. Fabrica este a WB Electronics, un grup privat specializat în sisteme electronice de apărare. Potrivit un comunicat al parchetului, ancheta a fost deschisă pentru „participare la activități ale unui serviciu de informații străin împotriva Republicii Polonia și pentru o infracțiune cu caracter terorist, constând în provocarea deliberată (…) a unui incendiu pe terenul uzinei WB Electronics, cu ajutorul unei încărcături care conținea materiale inflamabile”, notează Agerpres . Procurorii nu au menționat numele țării pe care o suspectează că a comandat incendiul la fabrica de la Skarzysko-Kamienna, la 140 km sud de Varșovia. Mai multe țări NATO au acuzat Rusia că s-a aflat în spatele unor operațiuni recente de sabotaj sau spionaj, acuzații pe care Moscova le neagă. Țări ca România și Po",
+        "place": "Romania",
+        "time": "Mon, 31 Aug 2026 19:21:04 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "urls": [
+          "https://hotnews.ro/polonia-suspecteaza-ca-in-spatele-incendiului-de-la-fabrica-de-drone-s-a-aflat-un-serviciu-secret-strain-anuntul-procurorilor-2337913"
+        ],
+        "merged_titles": [
+          "Polonia suspectează că în spatele incendiului de la fabrica de drone s-a aflat un serviciu secret străin. Anunțul procurorilor"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_interception",
+        "incident_object": "drone",
+        "incident_action": "intercepted",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

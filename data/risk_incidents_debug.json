@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-31T22:32:42.983611+00:00",
+  "generated_utc": "2026-09-01T02:59:29.738725+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -59,7 +63,29 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "52f73cb5d6cb9a0f551b",
+        "date": "2026-08-31",
+        "time": "2026-08-31T19:21:04+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Polonia suspectează că în spatele incendiului de la fabrica de drone s-a aflat un serviciu secret străin. Anunțul procurorilor",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/polonia-suspecteaza-ca-in-spatele-incendiului-de-la-fabrica-de-drone-s-a-aflat-un-serviciu-secret-strain-anuntul-procurorilor-2337913",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_interception",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.INTERCEPT",
+        "fingerprint_hash": "5731ea18f0d67f428c6e075b"
+      }
+    ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

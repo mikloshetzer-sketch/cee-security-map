@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-01T16:05:42.751334+00:00",
+  "generated_utc": "2026-09-01T20:39:09.179881+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 2
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Slovakia": {
@@ -87,27 +87,6 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "e9012c07c000043f876b8cdb"
-      },
-      {
-        "id": "6a9125342e6a76961920",
-        "date": "2026-09-01",
-        "time": "2026-09-01T11:53:04+00:00",
-        "category": "drone",
-        "severity": "medium",
-        "title": "Predoiu: România are nevoie de un concept de apărare împotriva dronelor, înainte de modificarea legislației",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/social/predoiu-romania-are-nevoie-de-un-concept-de-aparare-impotriva-dronelor-inainte-de-modificarea-legislatiei-3930351",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "94e70249157c5ddde8f88fe6"
       }
     ],
     "Slovakia": [],

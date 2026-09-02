@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-02T02:23:12.639031+00:00",
+  "generated_utc": "2026-09-02T10:32:15.464873+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -66,29 +62,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "be43b6aa38ec1cb7e329",
-        "date": "2026-09-01",
-        "time": "2026-09-01T13:48:24+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Momentul atacului asupra punctului de frontieră Orlivka-Isaccea, filmat de copiii ucraineni dintr-un autocar în tranzit prin România",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/momentul-atacului-asupra-punctului-de-frontiera-orlivka-isaccea-filmat-de-copiii-ucraineni-dintr-un-autocar-in-tranzit-prin-romania-3930451",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "e9012c07c000043f876b8cdb"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

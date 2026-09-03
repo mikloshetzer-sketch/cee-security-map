@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-03T10:49:45.659913+00:00",
+  "generated_utc": "2026-09-03T15:49:39.582312+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,9 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
       "incident_count": 0,
@@ -50,18 +54,36 @@
       }
     },
     "Estonia": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     }
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "157c969a472e037d07d3",
+        "date": "2026-09-03",
+        "time": "2026-09-03T11:59:17+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Robbanószerkezet a szerb–magyar határnál: a németek vizsgálják, hogy orosz szolgálatok állnak-e a háttérben",
+        "source": "HVG",
+        "url": "https://hvg.hu/itthon/20260903_nemet-nyomozok-orosz-szolgalatok-szerb-magyar-hatar-robbanoszerkezet",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "5b1bcbeff4315da461075ea8"
+      }
+    ],
     "Romania": [],
     "Slovakia": [],
     "Poland": [],
@@ -110,28 +132,6 @@
         "fingerprint_hash": "48366d83a7a2bad320efd402"
       }
     ],
-    "Estonia": [
-      {
-        "id": "44ef8a8183e572b2c7bc",
-        "date": "2026-09-01",
-        "time": "2026-09-01T11:54:00+00:00",
-        "category": "drone",
-        "severity": "medium",
-        "title": "Local residents say drone that crossed into Estonia flew as far as Põlva",
-        "source": "ERR",
-        "url": "https://news.err.ee/1610125294/local-residents-say-drone-that-crossed-into-estonia-flew-as-far-as-polva",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "d614c4b2fa76a5952e800b80"
-      }
-    ]
+    "Estonia": []
   }
 }

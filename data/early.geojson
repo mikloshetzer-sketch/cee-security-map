@@ -1,4 +1,34 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.25,
+          52.25
+        ]
+      },
+      "properties": {
+        "type": "early_warning",
+        "escalation": 100.0,
+        "cell_deg": 0.5,
+        "neighbor_active": 0,
+        "recent": 1.836,
+        "baseline": 1.674,
+        "ratio": 0.736,
+        "src_mix": 1,
+        "zone": null,
+        "zone_mult": 1.0,
+        "src_recent": {
+          "GDELT": 0,
+          "GDELT_DOC": 0,
+          "DIRECT_FEED": 1,
+          "USGS": 0,
+          "GDACS": 0
+        }
+      }
+    }
+  ]
 }

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-04T10:28:20.824956+00:00",
+  "generated_utc": "2026-09-04T15:45:51.673578+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -40,14 +40,9 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 2,
-      "category_counts": {
-        "military": 1,
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 2
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Estonia": {
       "incident_count": 0,
@@ -62,50 +57,7 @@
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
-    "Latvia": [
-      {
-        "id": "e4b3c6cdcfb5733c38c4",
-        "date": "2026-08-28",
-        "time": "2026-08-28T12:57:52+00:00",
-        "category": "military",
-        "severity": "critical",
-        "title": "Scale of Nepal disaster continues to grow: 552 dead, more than 1,400 missing",
-        "source": "BNN",
-        "url": "https://bnn-news.com/scale-of-nepal-disaster-continues-to-grow-552-dead-more-than-1400-missing-283359",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "655f72a72c833887745a5878"
-      },
-      {
-        "id": "9b2956a9b88cdcf60410",
-        "date": "2026-08-28",
-        "time": "2026-08-28T11:27:57+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "SAB: Russia’s perception of Latvia increasingly resembles its pre-war view of Ukraine",
-        "source": "BNN",
-        "url": "https://bnn-news.com/sab-russias-perception-of-latvia-increasingly-resembles-its-pre-war-view-of-ukraine-283339",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "48366d83a7a2bad320efd402"
-      }
-    ],
+    "Latvia": [],
     "Estonia": []
   }
 }

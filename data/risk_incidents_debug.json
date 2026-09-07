@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-07T02:14:14.864809+00:00",
+  "generated_utc": "2026-09-07T11:20:30.106225+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,29 +53,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "09e6695a6c49e5881d17",
-        "date": "2026-09-06",
-        "time": "2026-09-06T08:43:58+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Atacuri reciproce între Rusia și Ucraina. Un punct de trecere a frontierei de la granița cu România, lovit de dronele Moscovei",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ue/atacuri-reciproce-intre-rusia-si-ucraina-un-punct-de-trecere-a-frontierei-de-la-granita-cu-romania-lovit-de-dronele-moscovei-3936711",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "f580dde109b9f564ab7810be"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

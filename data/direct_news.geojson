@@ -12,6 +12,66 @@
       },
       "properties": {
         "source": "DIRECT_FEED",
+        "feed_name": "Politico Europe",
+        "kind": "news_direct",
+        "type": "News",
+        "time": "2026-09-07T16:53:07Z",
+        "title": "Russia shuts German consulate as drone dispute escalates",
+        "description": "The German consulate in St. Petersburg must close by Sept. 18, in response to Berlin&#8217;s recent &#8220;unfriendly actions,&#8221; Russia&#8217;s foreign ministry announced Monday. While the embassy and consular services in Moscow remain open, the consulate in the northwest of the country must cease all operations and all staff must leave Russia by the specified date. &#8220;It was the German authorities that once again provoked a new round of escalation in bilateral relations. All responsibility for the consequences lies entirely with the Government of Germany,&#8221; the statement reads, referring to Berlin&#8217;s announcement last week that Russia was behind a drone attack on German territory. The attempted attack involved three drones carrying explosive material spotted at or near ",
+        "url": "https://www.politico.eu/article/russia-germany-consulate-st-petersburg-drone-dispute/?utm_source=RSS_Feed&#038;utm_medium=RSS&#038;utm_campaign=RSS_Syndication",
+        "country_hint": "Poland",
+        "relation_hits": [
+          "Ukrainian",
+          "Russia",
+          "Russian",
+          "Germany",
+          "EU"
+        ],
+        "category": "air",
+        "impact_mult": 1.2400000000000002,
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "russia",
+        "incident_target": "transport",
+        "severity": "low",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "article_role": "incident",
+        "actual_incident": true,
+        "risk_eligible": true,
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "russia",
+          "target": "transport",
+          "place": "Poland",
+          "event_date": "2026-09-07",
+          "hash": "27c7ef00a55d6aa94507e8f8"
+        },
+        "classification_source": "security_classifier",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "rejection_reason": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.15,
+          52.1
+        ]
+      },
+      "properties": {
+        "source": "DIRECT_FEED",
         "feed_name": "The Guardian Europe",
         "kind": "news_direct",
         "type": "News",

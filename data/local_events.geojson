@@ -1,9 +1,264 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-08T02:26:08.936158+00:00",
+  "generated_utc": "2026-09-08T10:34:09.253082+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6032,
+          56.8796
+        ]
+      },
+      "properties": {
+        "id": "62bbe3cd28ce04d708c1",
+        "title": "Terrorist group threatens Latvian companies, demands halt to arms supplies to Ukraine",
+        "summary": "<p>The pro-Russian terrorist group Global Citizens Against War 1984 (GCAW1984), which has previously claimed responsibility for acts of sabotage in Europe, has sent threatening letters to Latvia, Poland and Portugal, demanding that companies producing and supplying weapons to Ukraine cease their operations. According to a press release circulated by the group, it has targeted Latvian [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/terrorist-group-threatens-latvian-companies-demands-halt-to-arms-supplies-to-ukraine-283532\">Terrorist group threatens Latvian companies, demands halt to arms supplies to Ukraine</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/terrorist-group-threatens-latvian-companies-demands-halt-to-arms-supplies-to-ukraine-283532",
+        "published": "Tue, 08 Sep 2026 07:45:18 +0000",
+        "country": "Latvia",
+        "city": null,
+        "family": "terrorism",
+        "subcategory": "attack",
+        "subtype": "terrorist_attack",
+        "object": "cyber_system",
+        "action": "attacked",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [
+          "terrorist"
+        ],
+        "consequences": [],
+        "severity": "critical",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "TERRORISM.ATTACK",
+        "fingerprint": {
+          "country": "Latvia",
+          "family": "terrorism",
+          "subcategory": "attack",
+          "subtype": "terrorist_attack",
+          "object": "cyber_system",
+          "action": "attacked",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Latvia",
+          "event_date": "Tue, 08 Se",
+          "hash": "c718416af9d6d3bc145498e7"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "attacked",
+            "targeted"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "russian",
+            "ukraine"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "TERRORISM.ATTACK",
+            "family": "terrorism",
+            "subcategory": "attack",
+            "subtype": "terrorist_attack",
+            "severity": "critical",
+            "priority": 0,
+            "score": 2.1,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "terrorist"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Latvia",
+        "time": "Tue, 08 Sep 2026 07:45:18 +0000",
+        "category": "terrorism",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "BNN"
+        ],
+        "urls": [
+          "https://bnn-news.com/terrorist-group-threatens-latvian-companies-demands-halt-to-arms-supplies-to-ukraine-283532"
+        ],
+        "merged_titles": [
+          "Terrorist group threatens Latvian companies, demands halt to arms supplies to Ukraine"
+        ],
+        "incident_family": "terrorism",
+        "incident_subcategory": "attack",
+        "incident_subtype": "terrorist_attack",
+        "incident_object": "cyber_system",
+        "incident_action": "attacked",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

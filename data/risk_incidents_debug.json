@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-08T15:58:45.645989+00:00",
+  "generated_utc": "2026-09-08T20:44:56.415022+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -107,14 +107,14 @@
     ],
     "Romania": [
       {
-        "id": "3f562006a0c93c822520",
+        "id": "da9bab7c58964db5bd94",
         "date": "2026-09-08",
-        "time": "2026-09-08T14:02:49+00:00",
+        "time": "2026-09-08T16:06:46+00:00",
         "category": "drone",
-        "severity": "low",
-        "title": "Alertă de dronă în cinci județe din nord-estul țării. Înainte de a ajunge în România, a survolat Republica Moldova / Avioane de luptă, ridicate să monitorizeze situația",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/alerta-de-drone-in-vaslui-si-iasi-mesaj-pentru-populatie-2344361",
+        "severity": "high",
+        "title": "Alertă de dronă în cinci județe din estul României. Chișinăul anunță că aparatul s-a prăbușit în Republica Moldova",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/alerta-pentru-drona-in-trei-judete-din-moldova-aeroportul-din-iasi-a-suspendat-temporar-toate-zborurile-3939831",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -122,10 +122,10 @@
         "article_role": "incident",
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "b44a4f4018aba946051fcb75"
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "e7c8a78ab5d6ec7f0350be0b"
       }
     ],
     "Slovakia": [],

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-09T02:30:43.364633+00:00",
+  "generated_utc": "2026-09-09T10:40:45.743749+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,23 +15,14 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 2,
-      "category_counts": {
-        "drone": 1,
-        "cyber": 1
-      },
-      "source_files": {
-        "local_events.geojson": 2
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -61,73 +52,8 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
-      {
-        "id": "2d7468de5d8b76765bb5",
-        "date": "2026-09-08",
-        "time": "2026-09-08T14:01:37+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "title": "Leállt az e-cégjegyzék",
-        "source": "HVG",
-        "url": "https://hvg.hu/tudomany/20260908_e-cegjegyzek-cegportal-leallas-hiba",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "cyber",
-        "incident_subcategory": "operational_disruption",
-        "incident_subtype": "cyber_operational_disruption",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-        "fingerprint_hash": "5f642c1d9fc9e732fcc394d3"
-      },
-      {
-        "id": "db1f8e29d51f5f960f55",
-        "date": "2026-09-08",
-        "time": "2026-09-08T11:08:54+00:00",
-        "category": "drone",
-        "severity": "medium",
-        "title": "Hungary to expel ten Russian diplomats, FM Anita Orbán announces",
-        "source": "Telex",
-        "url": "https://telex.hu/english/2026/09/08/hungary-expels-ten-russian-diplomats-fm-anita-orban-announces",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_interception",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.INTERCEPT",
-        "fingerprint_hash": "21255d1fdb7567d5f512d012"
-      }
-    ],
-    "Romania": [
-      {
-        "id": "da9bab7c58964db5bd94",
-        "date": "2026-09-08",
-        "time": "2026-09-08T21:27:52+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Alertă de dronă în cinci județe din estul României. Chișinăul anunță că aparatul s-a prăbușit în Republica Moldova",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/alerta-pentru-drona-in-trei-judete-din-moldova-aeroportul-din-iasi-a-suspendat-temporar-toate-zborurile-3939831",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "87a76d651a3a7ff43b9d6950"
-      }
-    ],
+    "Hungary": [],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

@@ -1,9 +1,258 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-09T10:40:38.059313+00:00",
+  "generated_utc": "2026-09-09T15:48:35.034583+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.473,
+          49.8175
+        ]
+      },
+      "properties": {
+        "id": "4a890ff9e4b499c54d49",
+        "title": "Czech Prime Minister’s former companies still in EU focus",
+        "summary": "<p>The European Commission announced on the 8th of September that the European Union has suspended the payment of some subsidies to the Czech Agrofert group, which was previously owned by Czech Prime Minister Andrej Babiš but is now under the management of a trust fund, Reuters reports. Babiš set up the trust fund in December [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/czech-prime-ministers-former-companies-still-in-eu-focus-283609\">Czech Prime Minister&#8217;s former companies still in EU focus</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/czech-prime-ministers-former-companies-still-in-eu-focus-283609",
+        "published": "Wed, 09 Sep 2026 13:25:09 +0000",
+        "country": "Czechia",
+        "city": null,
+        "family": "cyber",
+        "subcategory": "operational_disruption",
+        "subtype": "cyber_operational_disruption",
+        "object": "cyber_system",
+        "action": "disrupted",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+        "fingerprint": {
+          "country": "Czechia",
+          "family": "cyber",
+          "subcategory": "operational_disruption",
+          "subtype": "cyber_operational_disruption",
+          "object": "cyber_system",
+          "action": "disrupted",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Czechia",
+          "event_date": "Wed, 09 Se",
+          "hash": "fb8a5fbf0e98ada9c0fb11ca"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "disrupted",
+            "suspended"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Czechia",
+        "time": "Wed, 09 Sep 2026 13:25:09 +0000",
+        "category": "cyber",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "BNN"
+        ],
+        "urls": [
+          "https://bnn-news.com/czech-prime-ministers-former-companies-still-in-eu-focus-283609"
+        ],
+        "merged_titles": [
+          "Czech Prime Minister’s former companies still in EU focus"
+        ],
+        "incident_family": "cyber",
+        "incident_subcategory": "operational_disruption",
+        "incident_subtype": "cyber_operational_disruption",
+        "incident_object": "cyber_system",
+        "incident_action": "disrupted",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

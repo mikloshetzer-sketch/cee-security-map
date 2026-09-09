@@ -1,18 +1,22 @@
 {
-  "generated_utc": "2026-09-09T10:40:45.743749+00:00",
+  "generated_utc": "2026-09-09T15:48:42.981279+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 0,
-    "local_event_count": 0,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
     "Czech Republic": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "cyber": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Hungary": {
       "incident_count": 0,
@@ -51,7 +55,29 @@
     }
   },
   "countries": {
-    "Czech Republic": [],
+    "Czech Republic": [
+      {
+        "id": "4a890ff9e4b499c54d49",
+        "date": "2026-09-09",
+        "time": "2026-09-09T13:25:09+00:00",
+        "category": "cyber",
+        "severity": "medium",
+        "title": "Czech Prime Minister’s former companies still in EU focus",
+        "source": "BNN",
+        "url": "https://bnn-news.com/czech-prime-ministers-former-companies-still-in-eu-focus-283609",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "cyber",
+        "incident_subcategory": "operational_disruption",
+        "incident_subtype": "cyber_operational_disruption",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+        "fingerprint_hash": "fb8a5fbf0e98ada9c0fb11ca"
+      }
+    ],
     "Hungary": [],
     "Romania": [],
     "Slovakia": [],

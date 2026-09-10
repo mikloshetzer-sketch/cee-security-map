@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-10T15:45:55.784214+00:00",
+  "generated_utc": "2026-09-10T20:32:07.889939+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,40 +14,40 @@
         ]
       },
       "properties": {
-        "id": "ebfde4545fbb033086fa",
-        "title": "Alertă de dronă în nordul judeţului Tulcea. MApN: Au fost ridicate de la sol două avioane F-18 şi un elicopter IAR 330",
-        "summary": "Un mesaj RO-Alert a fost transmis, joi după-amiază, pentru locuitorii din nordul judeţului Tulcea. Oamenii au fost avertizaţi de posibilitatea căderii unor obiecte din spaţiul aerian.",
+        "id": "0b92b83117b3af31257c",
+        "title": "Comisarul european Hadja Lahbib laudă România:„Un stat membru care întruchipează solidaritatea europeană”",
+        "summary": "Comisarul european Hadja Lahbib a lăudat joi România pentru contribuția sa la protecția civilă europeană și a subliniat că țara noastră a oferit ajutor altor state de 49 de ori în ultimii zece ani. Țara noastră a trimis în acest an pompieri în Franța și Grecia și a pus la dispoziția Europei un elicopter rescEU.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/alerta-de-drona-in-nordul-judetului-tulcea-oamenii-au-primit-mesaj-ro-alert-3942649",
-        "published": "Thu, 10 Sep 2026 17:07:04 +0300",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/comisarul-european-hadja-lahbib-lauda-romaniaun-stat-membru-care-intruchipeaza-solidaritatea-europeana-3943079",
+        "published": "Thu, 10 Sep 2026 20:59:26 +0300",
         "country": "Romania",
         "city": null,
         "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_detection",
-        "object": "drone",
-        "action": "detected",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "entered",
         "actor": "ukraine",
-        "target": "military",
+        "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "low",
-        "confidence": 0.9,
+        "severity": "medium",
+        "confidence": 0.82,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
         "fingerprint": {
           "country": "Romania",
           "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_detection",
-          "object": "drone",
-          "action": "detected",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "entered",
           "actor": "ukraine",
-          "target": "military",
+          "target": "unknown",
           "place": "Romania",
           "event_date": "Thu, 10 Se",
-          "hash": "29e9e5171e92f2491a6cceaa"
+          "hash": "5574df2712df25560ca62e7b"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -55,18 +55,14 @@
           "article_role": [],
           "objects": [
             "drone",
-            "dronă",
             "military_aircraft",
             "elicopter"
           ],
           "actions": [
-            "detected",
-            "detectat"
+            "entered",
+            "a intrat"
           ],
-          "targets": [
-            "military",
-            "radar"
-          ],
+          "targets": [],
           "actors": [
             "ukraine",
             "ucraina"
@@ -82,20 +78,19 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
           "actor_match": 0.06,
           "country_match": 0.1,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.DRONE.DETECTION",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
             "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
             "priority": 0,
-            "score": 2.26,
+            "score": 2.32,
             "matched": true,
             "missing": [],
             "matched_context": []
@@ -107,10 +102,22 @@
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:entered"
+              "actions:all:detected"
             ],
             "matched_context": []
           },
@@ -157,30 +164,31 @@
             "matched_context": []
           },
           {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.MISSILE.DETECTION",
             "family": "air",
             "subcategory": "missile",
             "subtype": "missile_detection",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:damaged,entered,impact"
+              "objects:all:missile",
+              "actions:all:detected"
             ],
             "matched_context": []
           },
@@ -213,30 +221,15 @@
               "actions:any:exploded,impact"
             ],
             "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 1565,
+        "article_text_chars": 4858,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Un mesaj RO-Alert a fost transmis, joi după-amiază, pentru locuitorii din nordul judeţului Tulcea. Oamenii au fost avertizaţi de posibilitatea căderii unor obiecte din spaţiul aerian. ACUALIZARE 17.00 Reprezentanţii Ministerului Apărării Naţionale au anunţat că, joi, în jurul orei 15.00, sistemul de supraveghere radar al MApN a detectat un grup de ţinte aeriene care evoluau în proximitatea frontierei României cu Ucraina, în apropiere de Insula Şerpilor. ”Două aeronave F-18 ale Forţelor Aeriene şi Spaţiale Spaniole, aflate în serviciul de Poliţie Aeriană Întărită la Baza 57 Aeriană Mihail Kogălniceanu, şi un elicopter IAR 330 Puma SOCAT, al Forţelor Aeriene Române, au decolat pentru monitorizarea situaţiei”, au afirmat reprezentanţii MApN. De asemenea, Centrul Naţional Militar de Comandă (N) a notificat Inspectoratul General pentru Situaţii de Urgenţă cu privire la instituirea măsurilor de alertare a populaţiei din nordul judeţului Tulcea, fiind transmis un mesaj RO-Alert, în jurul orei",
+        "article_text_excerpt": "Comisarul european Hadja Lahbib a lăudat joi România pentru contribuția sa la protecția civilă europeană și a subliniat că țara noastră a oferit ajutor altor state de 49 de ori în ultimii zece ani. Țara noastră a trimis în acest an pompieri în Franța și Grecia și a pus la dispoziția Europei un elicopter rescEU. „Dacă există un stat membru în Uniunea noastră care întruchipează solidaritatea europeană, acesta este România. Sunt aici astăzi pentru a spune mulțumesc”, a declarat Hadja Lahbib, potrivit comunicatului de presă al Comisiei Europene. Ea a subliniat că România nu doar beneficiază de mecanismul european de protecție civilă, ci contribuie activ la funcționarea acestuia. „Un singur număr spune totul: în ultimii zece ani, România a cerut ajutor Europei prin Mecanismul nostru de Protecție Civilă de zece ori. În aceiași zece ani, România a răspuns solicitărilor altora de 49 de ori. De 49 de ori, România a făcut un pas înainte pentru a oferi asistență țărilor aflate în nevoie”, a spus ",
         "place": "Romania",
-        "time": "Thu, 10 Sep 2026 17:07:04 +0300",
+        "time": "Thu, 10 Sep 2026 20:59:26 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
@@ -246,19 +239,19 @@
           "Digi24"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/actualitate/alerta-de-drona-in-nordul-judetului-tulcea-oamenii-au-primit-mesaj-ro-alert-3942649"
+          "https://www.digi24.ro/stiri/actualitate/social/comisarul-european-hadja-lahbib-lauda-romaniaun-stat-membru-care-intruchipeaza-solidaritatea-europeana-3943079"
         ],
         "merged_titles": [
-          "Alertă de dronă în nordul judeţului Tulcea. MApN: Au fost ridicate de la sol două avioane F-18 şi un elicopter IAR 330"
+          "Comisarul european Hadja Lahbib laudă România:„Un stat membru care întruchipează solidaritatea europeană”"
         ],
         "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "incident_object": "drone",
-        "incident_action": "detected",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "entered",
         "incident_actor": "ukraine",
-        "incident_target": "military",
-        "classification_confidence": 0.9
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
       }
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-10T15:46:03.651556+00:00",
+  "generated_utc": "2026-09-10T20:32:16.286941+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -26,7 +26,7 @@
     "Romania": {
       "incident_count": 1,
       "category_counts": {
-        "drone": 1
+        "military": 1
       },
       "source_files": {
         "local_events.geojson": 1
@@ -85,25 +85,25 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "ebfde4545fbb033086fa",
+        "id": "0b92b83117b3af31257c",
         "date": "2026-09-10",
-        "time": "2026-09-10T14:07:04+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Alertă de dronă în nordul judeţului Tulcea. MApN: Au fost ridicate de la sol două avioane F-18 şi un elicopter IAR 330",
+        "time": "2026-09-10T17:59:26+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Comisarul european Hadja Lahbib laudă România:„Un stat membru care întruchipează solidaritatea europeană”",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/alerta-de-drona-in-nordul-judetului-tulcea-oamenii-au-primit-mesaj-ro-alert-3942649",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/comisarul-european-hadja-lahbib-lauda-romaniaun-stat-membru-care-intruchipeaza-solidaritatea-europeana-3943079",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "29e9e5171e92f2491a6cceaa"
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "5574df2712df25560ca62e7b"
       }
     ],
     "Slovakia": [],

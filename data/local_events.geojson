@@ -1,9 +1,266 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-10T10:33:30.867368+00:00",
+  "generated_utc": "2026-09-10T15:45:55.784214+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "ebfde4545fbb033086fa",
+        "title": "Alertă de dronă în nordul judeţului Tulcea. MApN: Au fost ridicate de la sol două avioane F-18 şi un elicopter IAR 330",
+        "summary": "Un mesaj RO-Alert a fost transmis, joi după-amiază, pentru locuitorii din nordul judeţului Tulcea. Oamenii au fost avertizaţi de posibilitatea căderii unor obiecte din spaţiul aerian.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/alerta-de-drona-in-nordul-judetului-tulcea-oamenii-au-primit-mesaj-ro-alert-3942649",
+        "published": "Thu, 10 Sep 2026 17:07:04 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "ukraine",
+        "target": "military",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "ukraine",
+          "target": "military",
+          "place": "Romania",
+          "event_date": "Thu, 10 Se",
+          "hash": "29e9e5171e92f2491a6cceaa"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă",
+            "military_aircraft",
+            "elicopter"
+          ],
+          "actions": [
+            "detected",
+            "detectat"
+          ],
+          "targets": [
+            "military",
+            "radar"
+          ],
+          "actors": [
+            "ukraine",
+            "ucraina"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1565,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Un mesaj RO-Alert a fost transmis, joi după-amiază, pentru locuitorii din nordul judeţului Tulcea. Oamenii au fost avertizaţi de posibilitatea căderii unor obiecte din spaţiul aerian. ACUALIZARE 17.00 Reprezentanţii Ministerului Apărării Naţionale au anunţat că, joi, în jurul orei 15.00, sistemul de supraveghere radar al MApN a detectat un grup de ţinte aeriene care evoluau în proximitatea frontierei României cu Ucraina, în apropiere de Insula Şerpilor. ”Două aeronave F-18 ale Forţelor Aeriene şi Spaţiale Spaniole, aflate în serviciul de Poliţie Aeriană Întărită la Baza 57 Aeriană Mihail Kogălniceanu, şi un elicopter IAR 330 Puma SOCAT, al Forţelor Aeriene Române, au decolat pentru monitorizarea situaţiei”, au afirmat reprezentanţii MApN. De asemenea, Centrul Naţional Militar de Comandă (N) a notificat Inspectoratul General pentru Situaţii de Urgenţă cu privire la instituirea măsurilor de alertare a populaţiei din nordul judeţului Tulcea, fiind transmis un mesaj RO-Alert, în jurul orei",
+        "place": "Romania",
+        "time": "Thu, 10 Sep 2026 17:07:04 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/alerta-de-drona-in-nordul-judetului-tulcea-oamenii-au-primit-mesaj-ro-alert-3942649"
+        ],
+        "merged_titles": [
+          "Alertă de dronă în nordul judeţului Tulcea. MApN: Au fost ridicate de la sol două avioane F-18 şi un elicopter IAR 330"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "ukraine",
+        "incident_target": "military",
+        "classification_confidence": 0.9
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

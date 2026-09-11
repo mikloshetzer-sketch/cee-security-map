@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-11T02:23:06.386812+00:00",
+  "generated_utc": "2026-09-11T10:31:14.110596+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,25 +14,25 @@
         ]
       },
       "properties": {
-        "id": "0b92b83117b3af31257c",
-        "title": "Comisarul european Hadja Lahbib laudă România:„Un stat membru care întruchipează solidaritatea europeană”",
-        "summary": "Comisarul european Hadja Lahbib a lăudat joi România pentru contribuția sa la protecția civilă europeană și a subliniat că țara noastră a oferit ajutor altor state de 49 de ori în ultimii zece ani. Țara noastră a trimis în acest an pompieri în Franța și Grecia și a pus la dispoziția Europei un elicopter rescEU.",
+        "id": "f2537b04630fe031f0c0",
+        "title": "Raed Arafat, inculpat în dosarul de contrabandă cu un elicopter SMURD: Nu îmi depun demisia",
+        "summary": "Raed Arafat a ajuns vineri, în jurul orei prânzului, la Parchetul Militar. A fost chemat în dosarul de contrabandă cu un elicopter SMURD. El a fost înștiințat că este inculpat în dosar.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/social/comisarul-european-hadja-lahbib-lauda-romaniaun-stat-membru-care-intruchipeaza-solidaritatea-europeana-3943079",
-        "published": "Thu, 10 Sep 2026 20:59:26 +0300",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/raed-arafat-a-ajuns-la-parchetul-militar-el-este-vizat-in-dosarul-de-contrabanda-cu-un-elicopter-smurd-3943903",
+        "published": "Fri, 11 Sep 2026 13:26:10 +0300",
         "country": "Romania",
         "city": null,
         "family": "air",
         "subcategory": "aircraft",
         "subtype": "military_aircraft_incident",
         "object": "military_aircraft",
-        "action": "entered",
-        "actor": "ukraine",
+        "action": "impact",
+        "actor": "unknown",
         "target": "unknown",
         "context": [],
         "consequences": [],
         "severity": "medium",
-        "confidence": 0.82,
+        "confidence": 0.76,
         "article_role": "incident",
         "actual_incident": true,
         "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
@@ -42,31 +42,29 @@
           "subcategory": "aircraft",
           "subtype": "military_aircraft_incident",
           "object": "military_aircraft",
-          "action": "entered",
-          "actor": "ukraine",
+          "action": "impact",
+          "actor": "unknown",
           "target": "unknown",
           "place": "Romania",
-          "event_date": "Thu, 10 Se",
-          "hash": "5574df2712df25560ca62e7b"
+          "event_date": "Fri, 11 Se",
+          "hash": "eccc1d22cf5d1a4253c05544"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone",
             "military_aircraft",
-            "elicopter"
+            "elicopter",
+            "explosive_device",
+            "mine"
           ],
           "actions": [
-            "entered",
-            "a intrat"
+            "impact",
+            "s-a prăbușit"
           ],
           "targets": [],
-          "actors": [
-            "ukraine",
-            "ucraina"
-          ],
+          "actors": [],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -78,7 +76,6 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "actor_match": 0.06,
           "country_match": 0.1,
           "supporting_evidence": 0.06
         },
@@ -96,15 +93,45 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.INTRUSION",
+            "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
+            "subtype": "drone_strike",
+            "severity": "high",
             "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded"
+            ],
             "matched_context": []
           },
           {
@@ -114,10 +141,26 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
             ],
             "matched_context": []
           },
@@ -128,9 +171,10 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:intercepted"
             ],
             "matched_context": []
@@ -142,38 +186,11 @@
             "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.ILLEGAL.CROSSING",
-            "family": "border_security",
-            "subcategory": "illegal_crossing",
-            "subtype": "illegal_border_crossing",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
             ],
             "matched_context": []
           },
@@ -206,30 +223,15 @@
               "actions:any:intercepted,shot_down"
             ],
             "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 4858,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Comisarul european Hadja Lahbib a lăudat joi România pentru contribuția sa la protecția civilă europeană și a subliniat că țara noastră a oferit ajutor altor state de 49 de ori în ultimii zece ani. Țara noastră a trimis în acest an pompieri în Franța și Grecia și a pus la dispoziția Europei un elicopter rescEU. „Dacă există un stat membru în Uniunea noastră care întruchipează solidaritatea europeană, acesta este România. Sunt aici astăzi pentru a spune mulțumesc”, a declarat Hadja Lahbib, potrivit comunicatului de presă al Comisiei Europene. Ea a subliniat că România nu doar beneficiază de mecanismul european de protecție civilă, ci contribuie activ la funcționarea acestuia. „Un singur număr spune totul: în ultimii zece ani, România a cerut ajutor Europei prin Mecanismul nostru de Protecție Civilă de zece ori. În aceiași zece ani, România a răspuns solicitărilor altora de 49 de ori. De 49 de ori, România a făcut un pas înainte pentru a oferi asistență țărilor aflate în nevoie”, a spus ",
+        "article_text_chars": 2998,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Raed Arafat a ajuns vineri, în jurul orei prânzului, la Parchetul Militar. A fost chemat în dosarul de contrabandă cu un elicopter SMURD. El a fost înștiințat că este inculpat în dosar. Șeful DSU, Raed Arafat, s-a prezentat vineri la Parchetul Militar pentru dosarul de contrabandă cu un elicopter SMURD, în care ar urma să fie pus sub acuzare. „Am fost înștiințat că am calitatea de inculpat în dosarul de contrabandă”, a declarat Raed Arafat la ieșirea din sediul Parchetului Militar. Șeful DSU a respins acuzațiile. „Dânşii au tot dreptul să spună: Doctorul Arafat trebuie să plece. N-am să fac acest lucru, pentru că această demisie ar însemna exact ce consider că a pornit împotriva mea, a ajuns la concluzia care o doresc aceste persoane, aşa că nu îmi depun demisia, am multă treabă de făcut şi credeţi-mă, ambele dosare au un impact major, nu numai pe mine, au impact major pe persoanele implicate, pe persoanele din jurul lor”, a spus Raed Arafat, la ieşirea de la audieri. Şeful DSU a arăta",
         "place": "Romania",
-        "time": "Thu, 10 Sep 2026 20:59:26 +0300",
+        "time": "Fri, 11 Sep 2026 13:26:10 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
@@ -239,17 +241,270 @@
           "Digi24"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/actualitate/social/comisarul-european-hadja-lahbib-lauda-romaniaun-stat-membru-care-intruchipeaza-solidaritatea-europeana-3943079"
+          "https://www.digi24.ro/stiri/actualitate/evenimente/raed-arafat-a-ajuns-la-parchetul-militar-el-este-vizat-in-dosarul-de-contrabanda-cu-un-elicopter-smurd-3943903"
         ],
         "merged_titles": [
-          "Comisarul european Hadja Lahbib laudă România:„Un stat membru care întruchipează solidaritatea europeană”"
+          "Raed Arafat, inculpat în dosarul de contrabandă cu un elicopter SMURD: Nu îmi depun demisia"
         ],
         "incident_family": "air",
         "incident_subcategory": "aircraft",
         "incident_subtype": "military_aircraft_incident",
         "incident_object": "military_aircraft",
-        "incident_action": "entered",
-        "incident_actor": "ukraine",
+        "incident_action": "impact",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.1451,
+          51.9194
+        ]
+      },
+      "properties": {
+        "id": "90d9e268da815bece339",
+        "title": "Polish Prime Minister warns of potential Russian attacks",
+        "summary": "<p>Polish Prime Minister Donald Tusk has announced that an immediate threat at the Ukraine-Poland border was averted and warned that incidents linked to Russia are to be expected in the near future, reports Politico. Tusk’s remarks came just a day after a Russian drone struck a border crossing between Ukraine and Moldova, killing two people [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/polish-prime-minister-warns-of-potential-russian-attacks-283664\">Polish Prime Minister warns of potential Russian attacks</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
+        "source": "BNN",
+        "url": "https://bnn-news.com/polish-prime-minister-warns-of-potential-russian-attacks-283664",
+        "published": "Fri, 11 Sep 2026 07:00:42 +0000",
+        "country": "Poland",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [
+          "border"
+        ],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Poland",
+          "event_date": "Fri, 11 Se",
+          "hash": "b6723dfc03cd3906b2862c6d"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "impact",
+            "struck",
+            "attacked"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "russian",
+            "ukraine"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.42,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.1,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "border"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Poland",
+        "time": "Fri, 11 Sep 2026 07:00:42 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "BNN"
+        ],
+        "urls": [
+          "https://bnn-news.com/polish-prime-minister-warns-of-potential-russian-attacks-283664"
+        ],
+        "merged_titles": [
+          "Polish Prime Minister warns of potential Russian attacks"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "russia",
         "incident_target": "unknown",
         "classification_confidence": 0.82
       }

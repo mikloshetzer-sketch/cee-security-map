@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-11T02:23:14.168232+00:00",
+  "generated_utc": "2026-09-11T10:31:20.582606+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -38,9 +38,13 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Lithuania": {
       "incident_count": 0,
@@ -85,14 +89,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "0b92b83117b3af31257c",
-        "date": "2026-09-10",
-        "time": "2026-09-10T17:59:26+00:00",
+        "id": "f2537b04630fe031f0c0",
+        "date": "2026-09-11",
+        "time": "2026-09-11T10:26:10+00:00",
         "category": "military",
         "severity": "medium",
-        "title": "Comisarul european Hadja Lahbib laudă România:„Un stat membru care întruchipează solidaritatea europeană”",
+        "title": "Raed Arafat, inculpat în dosarul de contrabandă cu un elicopter SMURD: Nu îmi depun demisia",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/social/comisarul-european-hadja-lahbib-lauda-romaniaun-stat-membru-care-intruchipeaza-solidaritatea-europeana-3943079",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/raed-arafat-a-ajuns-la-parchetul-militar-el-este-vizat-in-dosarul-de-contrabanda-cu-un-elicopter-smurd-3943903",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -101,13 +105,35 @@
         "incident_family": "air",
         "incident_subcategory": "aircraft",
         "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.82,
+        "classification_confidence": 0.76,
         "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "5574df2712df25560ca62e7b"
+        "fingerprint_hash": "eccc1d22cf5d1a4253c05544"
       }
     ],
     "Slovakia": [],
-    "Poland": [],
+    "Poland": [
+      {
+        "id": "90d9e268da815bece339",
+        "date": "2026-09-11",
+        "time": "2026-09-11T07:00:42+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Polish Prime Minister warns of potential Russian attacks",
+        "source": "BNN",
+        "url": "https://bnn-news.com/polish-prime-minister-warns-of-potential-russian-attacks-283664",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "b6723dfc03cd3906b2862c6d"
+      }
+    ],
     "Lithuania": [],
     "Latvia": [],
     "Estonia": []

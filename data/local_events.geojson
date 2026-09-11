@@ -1,9 +1,264 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-11T15:45:33.271745+00:00",
+  "generated_utc": "2026-09-11T20:28:29.736047+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.638,
+          44.173
+        ]
+      },
+      "properties": {
+        "id": "0ffdba57126361ea7d24",
+        "title": "Fragmente de drone, unele cu explozibil, găsite în Constanța și Tulcea, dar și în Marea Neagră. Intervenții ale specialiștilor",
+        "summary": "Mai multe fragmente de drone aeriene, unele dintre ele având încărcături explozive, au fost găsite vineri, în decurs de câteva ore, în mai multe localități din județele Constanța și Tulcea, precum și în Marea Neagră. Fragmentele au fost evaluate și neutralizate de specialiști, a anunțat Ministerul Apărării Naționale.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/fragmente-de-drone-unele-cu-explozibil-gasite-in-constanta-si-tulcea-dar-si-in-marea-neagra-interventii-ale-specialistilor-3944583",
+        "published": "Fri, 11 Sep 2026 19:55:10 +0300",
+        "country": "Romania",
+        "city": "Constanța",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "ukraine",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "ukraine",
+          "target": "unknown",
+          "place": "Constanța",
+          "event_date": "Fri, 11 Se",
+          "hash": "a6d56fb2f3f27b718f9ebaa8"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă",
+            "military_aircraft",
+            "elicopter",
+            "ship",
+            "navă"
+          ],
+          "actions": [
+            "detected",
+            "observat"
+          ],
+          "targets": [],
+          "actors": [
+            "ukraine",
+            "ucraina"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,damaged,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2303,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Mai multe fragmente de drone aeriene, unele dintre ele având încărcături explozive, au fost găsite vineri, în decurs de câteva ore, în mai multe localități din județele Constanța și Tulcea, precum și în Marea Neagră. Fragmentele au fost evaluate și neutralizate de specialiști, a anunțat Ministerul Apărării Naționale. „În cursul zilei de 11 septembrie 2026, Ministerul Apărării Naționale, în cooperare cu instituțiile din sistemul de apărare, ordine publică și securitate națională, a monitorizat și intervenit pentru gestionarea mai multor incidente care au implicat fragmente de drone aeriene și obiecte suspecte în zona litoralului românesc și a frontierei cu Ucraina”, au transmis reprezentanții Ministerului Apărării Naționale, potrivit News.ro. Prima intervenție a avut loc vineri, în jurul orei 13.30, în localitatea Câșla Vădanei din județul Tulcea, între Sulina și Sfântu Gheorghe. O echipă EOD din cadrul MApN a evaluat două fragmente de dronă aeriană găsite pe plajă. În urma verificărilo",
+        "place": "Constanța",
+        "time": "Fri, 11 Sep 2026 19:55:10 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/social/fragmente-de-drone-unele-cu-explozibil-gasite-in-constanta-si-tulcea-dar-si-in-marea-neagra-interventii-ale-specialistilor-3944583"
+        ],
+        "merged_titles": [
+          "Fragmente de drone, unele cu explozibil, găsite în Constanța și Tulcea, dar și în Marea Neagră. Intervenții ale specialiștilor"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "ukraine",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

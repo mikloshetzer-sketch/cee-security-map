@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-11T15:45:41.429981+00:00",
+  "generated_utc": "2026-09-11T20:28:38.042020+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -24,9 +24,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -83,7 +87,29 @@
       }
     ],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "0ffdba57126361ea7d24",
+        "date": "2026-09-11",
+        "time": "2026-09-11T16:55:10+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Fragmente de drone, unele cu explozibil, găsite în Constanța și Tulcea, dar și în Marea Neagră. Intervenții ale specialiștilor",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/social/fragmente-de-drone-unele-cu-explozibil-gasite-in-constanta-si-tulcea-dar-si-in-marea-neagra-interventii-ale-specialistilor-3944583",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "a6d56fb2f3f27b718f9ebaa8"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-12T14:56:36.715692+00:00",
+  "generated_utc": "2026-09-12T20:11:38.755546+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -19,14 +19,22 @@
       }
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -82,8 +90,52 @@
         "fingerprint_hash": "fb8a5fbf0e98ada9c0fb11ca"
       }
     ],
-    "Hungary": [],
-    "Romania": [],
+    "Hungary": [
+      {
+        "id": "249bfba55d56b3009f50",
+        "date": "2026-09-12",
+        "time": "2026-09-12T16:31:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Krátert hagyott maga után a becsapódás: drón miatt kellett riasztani a lakosságot Magyarország szomszédságában",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/global/20260912/kratert-hagyott-maga-utan-a-becsapodas-dron-miatt-kellett-riasztani-a-lakossagot-magyarorszag-szomszedsagaban-862262",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "143a21e23ad3b4e0d53c56ca"
+      }
+    ],
+    "Romania": [
+      {
+        "id": "9e7ac7a02af29fb677a8",
+        "date": "2026-09-12",
+        "time": "2026-09-12T16:46:20+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Lezuhant egy drón Románia északkeleti részén",
+        "source": "HVG",
+        "url": "https://hvg.hu/vilag/20260912_lezuhant-egy-dron-romania-eszakkeleti-reszen",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "3da53e0ca5b0ee517caa822f"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {

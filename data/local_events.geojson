@@ -1,9 +1,524 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-12T14:56:28.453011+00:00",
+  "generated_utc": "2026-09-12T20:11:30.718041+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "9e7ac7a02af29fb677a8",
+        "title": "Lezuhant egy drón Románia északkeleti részén",
+        "summary": "A becsapódás helyén egy 1 méter átmérőjű és 30 centiméter mély kráter keletkezett.",
+        "source": "HVG",
+        "url": "https://hvg.hu/vilag/20260912_lezuhant-egy-dron-romania-eszakkeleti-reszen",
+        "published": "Sat, 12 Sep 2026 16:46:20 Z",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "ukraine",
+        "target": "government",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "ukraine",
+          "target": "government",
+          "place": "Romania",
+          "event_date": "Sat, 12 Se",
+          "hash": "3da53e0ca5b0ee517caa822f"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "drón"
+          ],
+          "actions": [
+            "entered",
+            "átrepült",
+            "impact",
+            "crashed",
+            "lezuhant"
+          ],
+          "targets": [
+            "government",
+            "minisztérium"
+          ],
+          "actors": [
+            "ukraine",
+            "ukrainian",
+            "ukrajna"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "airspace"
+            ]
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1287,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "A becsapódás helyén egy 1 méter átmérőjű és 30 centiméter mély kráter keletkezett. Lezuhant egy drón szombaton Románia északkeleti részén, a Suceava megyei Botosenita Mare település térségében, sérültek nincsenek, közölte a román védelmi minisztérium az MTI híre szerint. A szaktárca közleménye szerint a pilóta nélküli szerkezet egy kukoricásban ért földet. A közösségi médiában a Bukonina TV felvétele terjed: 🇷🇴 #Romania : A drone that had crossed Ukrainian and Moldovan airspace crashed moments ago in a cornfield in Suceava County after passing through Botoșani County. Romanian authorities issued a RO-Alert for the cities nearby, except for the one which the drone actually crashed… pic.twitter.com/LQfhY8pRaQ A becsapódás helyén egy 1 méter átmérőjű és 30 centiméter mély kráter keletkezett. Ukrajna és Moldova légi műveleti központja szombaton értesítette a román felet, hogy egy drón átrepült a két ország légterén, és Románia északkeleti térsége felé tart. A román hatóságok helyi idő szer",
+        "place": "Romania",
+        "time": "Sat, 12 Sep 2026 16:46:20 Z",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HVG"
+        ],
+        "urls": [
+          "https://hvg.hu/vilag/20260912_lezuhant-egy-dron-romania-eszakkeleti-reszen"
+        ],
+        "merged_titles": [
+          "Lezuhant egy drón Románia északkeleti részén"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "ukraine",
+        "incident_target": "government",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5033,
+          47.1625
+        ]
+      },
+      "properties": {
+        "id": "249bfba55d56b3009f50",
+        "title": "Krátert hagyott maga után a becsapódás: drón miatt kellett riasztani a lakosságot Magyarország szomszédságában",
+        "summary": "<p>Lezuhant egy drón szombaton Románia északkeleti részén, a Suceava megyei Botosenita Mare település térségében, sérültek nincsenek - közölte a román védelmi minisztérium.</p>",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/global/20260912/kratert-hagyott-maga-utan-a-becsapodas-dron-miatt-kellett-riasztani-a-lakossagot-magyarorszag-szomszedsagaban-862262",
+        "published": "Sat, 12 Sep 2026 18:31:00 +0200",
+        "country": "Hungary",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "russia",
+        "target": "government",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "russia",
+          "target": "government",
+          "place": "Hungary",
+          "event_date": "Sat, 12 Se",
+          "hash": "143a21e23ad3b4e0d53c56ca"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "drón"
+          ],
+          "actions": [
+            "entered",
+            "átrepült",
+            "impact",
+            "lezuhant"
+          ],
+          "targets": [
+            "government",
+            "minisztérium"
+          ],
+          "actors": [
+            "russia",
+            "orosz",
+            "ukraine",
+            "ukrajna",
+            "ukrán",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INDUSTRIAL.CHEMICAL.RELEASE",
+            "family": "industrial",
+            "subcategory": "chemical_release",
+            "subtype": "chemical_release",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:all:leaked"
+            ],
+            "matched_context": [
+              "gáz"
+            ]
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2920,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "A szaktárca közleménye szerint a pilóta nélküli szerkezet egy kukoricásban ért földet. A becsapódás helyén egy 1 méter átmérőjű és 30 centiméter mély kráter keletkezett. Ukrajna és Moldova légi műveleti központja szombaton értesítette a román felet, hogy egy drón átrepült a két ország légterén, és Románia északkeleti térsége felé tart A román hatóságok helyi idő szerint 16 óra 20 perckor telefonos riasztást adtak ki, miután bejelentés érkezett, hogy a Suceavával szomszédos Botosani megyében is láttak egy drónt. A címlapkép illusztráció. Címlapkép forrása: Getty Images Ritka, hogy ekkora az egyetértés a techcégek vezéreinél. Tárgyalnának ők, csak hát megint olyan feltétellel, amibe biztos nem mennek bele az ukránok. Most tesztelnek először ilyen eszközöket. A mozgalom miatt teljesen új ellátsi láncokat kell keresnie a kereskedőknek. Lassan az lesz a meglepő, ha nem potyognak a drónok NATO-tagállamokban. Egy kereskedő, egy gyártó és egy mérnöki cég története jól szemlélteti, a kisebb cég",
+        "place": "Hungary",
+        "time": "Sat, 12 Sep 2026 18:31:00 +0200",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "urls": [
+          "https://www.portfolio.hu/global/20260912/kratert-hagyott-maga-utan-a-becsapodas-dron-miatt-kellett-riasztani-a-lakossagot-magyarorszag-szomszedsagaban-862262"
+        ],
+        "merged_titles": [
+          "Krátert hagyott maga után a becsapódás: drón miatt kellett riasztani a lakosságot Magyarország szomszédságában"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "government",
+        "classification_confidence": 0.9
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

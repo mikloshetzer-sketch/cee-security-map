@@ -1,21 +1,21 @@
 {
-  "generated_utc": "2026-09-12T20:11:38.755546+00:00",
+  "generated_utc": "2026-09-13T02:27:54.047703+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
     "Czech Republic": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "cyber": 1
+        "cyber": 2
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Hungary": {
@@ -68,6 +68,27 @@
   },
   "countries": {
     "Czech Republic": [
+      {
+        "id": "dc83362ba240a4cabe72",
+        "date": "2026-09-12",
+        "time": "2026-09-12T16:57:33+00:00",
+        "category": "cyber",
+        "severity": "medium",
+        "title": "Česko je nyní pro Rusko nepřítel číslo 4",
+        "source": "Novinky",
+        "url": "https://www.novinky.cz/clanek/zahranicni-evropa-babisova-vlada-je-pro-rusko-nepritelem-cislo-4-40597368",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "cyber",
+        "incident_subcategory": "gps_interference",
+        "incident_subtype": "gps_jamming_or_spoofing",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
+        "fingerprint_hash": "e9ea9dbe5bfb14e27340534b"
+      },
       {
         "id": "4a890ff9e4b499c54d49",
         "date": "2026-09-09",

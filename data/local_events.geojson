@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-12T20:11:30.718041+00:00",
+  "generated_utc": "2026-09-13T02:27:45.761394+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -233,7 +233,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1287,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "A becsapódás helyén egy 1 méter átmérőjű és 30 centiméter mély kráter keletkezett. Lezuhant egy drón szombaton Románia északkeleti részén, a Suceava megyei Botosenita Mare település térségében, sérültek nincsenek, közölte a román védelmi minisztérium az MTI híre szerint. A szaktárca közleménye szerint a pilóta nélküli szerkezet egy kukoricásban ért földet. A közösségi médiában a Bukonina TV felvétele terjed: 🇷🇴 #Romania : A drone that had crossed Ukrainian and Moldovan airspace crashed moments ago in a cornfield in Suceava County after passing through Botoșani County. Romanian authorities issued a RO-Alert for the cities nearby, except for the one which the drone actually crashed… pic.twitter.com/LQfhY8pRaQ A becsapódás helyén egy 1 méter átmérőjű és 30 centiméter mély kráter keletkezett. Ukrajna és Moldova légi műveleti központja szombaton értesítette a román felet, hogy egy drón átrepült a két ország légterén, és Románia északkeleti térsége felé tart. A román hatóságok helyi idő szer",
         "place": "Romania",
         "time": "Sat, 12 Sep 2026 16:46:20 Z",
@@ -491,7 +491,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 2920,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "A szaktárca közleménye szerint a pilóta nélküli szerkezet egy kukoricásban ért földet. A becsapódás helyén egy 1 méter átmérőjű és 30 centiméter mély kráter keletkezett. Ukrajna és Moldova légi műveleti központja szombaton értesítette a román felet, hogy egy drón átrepült a két ország légterén, és Románia északkeleti térsége felé tart A román hatóságok helyi idő szerint 16 óra 20 perckor telefonos riasztást adtak ki, miután bejelentés érkezett, hogy a Suceavával szomszédos Botosani megyében is láttak egy drónt. A címlapkép illusztráció. Címlapkép forrása: Getty Images Ritka, hogy ekkora az egyetértés a techcégek vezéreinél. Tárgyalnának ők, csak hát megint olyan feltétellel, amibe biztos nem mennek bele az ukránok. Most tesztelnek először ilyen eszközöket. A mozgalom miatt teljesen új ellátsi láncokat kell keresnie a kereskedőknek. Lassan az lesz a meglepő, ha nem potyognak a drónok NATO-tagállamokban. Egy kereskedő, egy gyártó és egy mérnöki cég története jól szemlélteti, a kisebb cég",
         "place": "Hungary",
         "time": "Sat, 12 Sep 2026 18:31:00 +0200",
@@ -516,6 +516,264 @@
         "incident_action": "impact",
         "incident_actor": "russia",
         "incident_target": "government",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.438,
+          50.075
+        ]
+      },
+      "properties": {
+        "id": "dc83362ba240a4cabe72",
+        "title": "Česko je nyní pro Rusko nepřítel číslo 4",
+        "summary": "Kabinet premiéra Andreje Babiše (ANO) se umístil na čtvrtém místě ruského seznamu nepřátelských vlád, který každý měsíc skládají kremelské noviny Vzgljad. Na tomto seznamu, jenž vychází pravidelně již od loňského roku, se Praha umístila v horní desítce prozatím pokaždé.",
+        "source": "Novinky",
+        "url": "https://www.novinky.cz/clanek/zahranicni-evropa-babisova-vlada-je-pro-rusko-nepritelem-cislo-4-40597368",
+        "published": "Sat, 12 Sep 2026 18:57:33 +0200",
+        "country": "Czechia",
+        "city": "Praha",
+        "family": "cyber",
+        "subcategory": "gps_interference",
+        "subtype": "gps_jamming_or_spoofing",
+        "object": "ship",
+        "action": "jammed",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
+        "fingerprint": {
+          "country": "Czechia",
+          "family": "cyber",
+          "subcategory": "gps_interference",
+          "subtype": "gps_jamming_or_spoofing",
+          "object": "ship",
+          "action": "jammed",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Praha",
+          "event_date": "Sat, 12 Se",
+          "hash": "e9ea9dbe5bfb14e27340534b"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "ship",
+            "loď"
+          ],
+          "actions": [
+            "jammed",
+            "rušení"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusko"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Czechia",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "CYBER.GPS.INTERFERENCE",
+            "family": "cyber",
+            "subcategory": "gps_interference",
+            "subtype": "gps_jamming_or_spoofing",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.13,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,damaged,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,burned,damaged"
+            ],
+            "matched_context": [
+              "protest"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2828,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Chcete-li článek poslouchat, přihlaste se Kabinet premiéra Andreje Babiše (ANO) se umístil na čtvrtém místě ruského seznamu nepřátelských vlád, který každý měsíc skládají kremelské noviny Vzgljad. Na tomto seznamu, jenž vychází pravidelně již od loňského roku, se Praha umístila v horní desítce prozatím pokaždé. Před českým velvyslanectvím v Moskvě v květnu protestovali mladí Rusové proti rušení či stěhování pomníků vojáků Rudé armády. Na prvním místě se nyní umístila Itálie, která si ze sta možných bodů odnesla 80. Za měsíc srpen byla totiž „jedinou evropskou zemí, jež zadržela loď patřící ruské stínové flotile“, odůvodnily její umístění noviny Vzgljad . Druhé místo si rozdělilo Německo společně s Litvou a Finskem (75 bodů ze 100), třetí jsou USA, Lotyšsko a Francie (70 bodů ze 100) a bramborovou medaili získaly shodně Česká republika, Rumunsko, Polsko, Velká Británie a Kanada s 65 body. Téměř všechny země, které se umístily v první desítce, se v tomto seznamu objevují vždycky. Výjimko",
+        "place": "Praha",
+        "time": "Sat, 12 Sep 2026 18:57:33 +0200",
+        "category": "cyber",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Novinky"
+        ],
+        "urls": [
+          "https://www.novinky.cz/clanek/zahranicni-evropa-babisova-vlada-je-pro-rusko-nepritelem-cislo-4-40597368"
+        ],
+        "merged_titles": [
+          "Česko je nyní pro Rusko nepřítel číslo 4"
+        ],
+        "incident_family": "cyber",
+        "incident_subcategory": "gps_interference",
+        "incident_subtype": "gps_jamming_or_spoofing",
+        "incident_object": "ship",
+        "incident_action": "jammed",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
         "classification_confidence": 0.9
       }
     },

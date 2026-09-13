@@ -1,31 +1,27 @@
 {
-  "generated_utc": "2026-09-13T02:27:54.047703+00:00",
+  "generated_utc": "2026-09-13T11:04:34.451876+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 6,
+    "local_event_count": 6,
     "crossborder_event_count": 0
   },
   "country_summary": {
     "Czech Republic": {
-      "incident_count": 2,
-      "category_counts": {
-        "cyber": 2
-      },
-      "source_files": {
-        "local_events.geojson": 2
-      }
-    },
-    "Hungary": {
       "incident_count": 1,
       "category_counts": {
-        "drone": 1
+        "cyber": 1
       },
       "source_files": {
         "local_events.geojson": 1
       }
+    },
+    "Hungary": {
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
       "incident_count": 1,
@@ -42,12 +38,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 1,
+      "incident_count": 4,
       "category_counts": {
-        "drone": 1
+        "drone": 4
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 4
       }
     },
     "Lithuania": {
@@ -68,27 +64,6 @@
   },
   "countries": {
     "Czech Republic": [
-      {
-        "id": "dc83362ba240a4cabe72",
-        "date": "2026-09-12",
-        "time": "2026-09-12T16:57:33+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "title": "Česko je nyní pro Rusko nepřítel číslo 4",
-        "source": "Novinky",
-        "url": "https://www.novinky.cz/clanek/zahranicni-evropa-babisova-vlada-je-pro-rusko-nepritelem-cislo-4-40597368",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "cyber",
-        "incident_subcategory": "gps_interference",
-        "incident_subtype": "gps_jamming_or_spoofing",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
-        "fingerprint_hash": "e9ea9dbe5bfb14e27340534b"
-      },
       {
         "id": "4a890ff9e4b499c54d49",
         "date": "2026-09-09",
@@ -111,29 +86,7 @@
         "fingerprint_hash": "fb8a5fbf0e98ada9c0fb11ca"
       }
     ],
-    "Hungary": [
-      {
-        "id": "249bfba55d56b3009f50",
-        "date": "2026-09-12",
-        "time": "2026-09-12T16:31:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Krátert hagyott maga után a becsapódás: drón miatt kellett riasztani a lakosságot Magyarország szomszédságában",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/global/20260912/kratert-hagyott-maga-utan-a-becsapodas-dron-miatt-kellett-riasztani-a-lakossagot-magyarorszag-szomszedsagaban-862262",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "143a21e23ad3b4e0d53c56ca"
-      }
-    ],
+    "Hungary": [],
     "Romania": [
       {
         "id": "9e7ac7a02af29fb677a8",
@@ -159,6 +112,69 @@
     ],
     "Slovakia": [],
     "Poland": [
+      {
+        "id": "cb882acb8cfef3130545",
+        "date": "2026-09-13",
+        "time": "2026-09-13T10:31:02+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Drone hits Kyiv-Warsaw train close to Polish border during Russian attacks on Ukraine",
+        "source": "NotesFromPoland",
+        "url": "https://notesfrompoland.com/2026/09/13/russian-drone-hits-kyiv-warsaw-train-close-to-polish-border/",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "f83bb1d6ef9f6c2547b755d2"
+      },
+      {
+        "id": "f973e7288017a93c995d",
+        "date": "2026-09-13",
+        "time": "2026-09-13T09:06:43+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Rosyjski dron uderzył w lokomotywę pociągu Kijów-Warszawa przed polską granicą",
+        "source": "TVN24",
+        "url": "https://tvn24.pl/swiat/rosyjski-dron-uderzyl-w-lokomotywe-pociagu-kijow-warszawa-przed-polska-granica-st9234636?source=rss",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "ba8061759a6848ef1bb565c7"
+      },
+      {
+        "id": "42d71d4aab006acec9ea",
+        "date": "2026-09-13",
+        "time": "2026-09-13T02:55:09+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Rosja atakowała Ukrainę. Polska poderwała samoloty, w kilku powiatach zawyły syreny",
+        "source": "TVN24",
+        "url": "https://tvn24.pl/polska/rosja-atakowala-ukraine-polska-poderwala-samoloty-w-kilku-powiatach-zawyly-syreny-st9234429?source=rss",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "9fa4f334ecb589258b216dc9"
+      },
       {
         "id": "90d9e268da815bece339",
         "date": "2026-09-11",

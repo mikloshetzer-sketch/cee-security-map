@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-13T15:35:27.085690+00:00",
+  "generated_utc": "2026-09-13T20:15:32.058842+00:00",
   "country_scores": {
     "Czech Republic": {
       "normalized": 0.647,
@@ -58,20 +58,25 @@
       }
     },
     "Romania": {
-      "normalized": 0.0,
-      "overall": "normal",
-      "confidence": "low",
-      "confidence_value": 0.2,
+      "normalized": 3.194,
+      "overall": "elevated",
+      "confidence": "medium",
+      "confidence_value": 0.46,
       "dimensions": {
-        "incident_pressure": 0.0,
-        "military_drone": 0.0,
+        "incident_pressure": 3.443,
+        "military_drone": 3.846,
         "cyber": 0.0,
-        "infrastructure": 0.0,
+        "infrastructure": 2.615,
         "crossborder": 0.0,
-        "trend": 0.0
+        "trend": 10.0
       },
-      "drivers": [],
-      "local_event_count": 0,
+      "drivers": [
+        "biztonsági incidensnyomás",
+        "friss aktivitási trend",
+        "katonai és drónaktivitás",
+        "kritikus infrastruktúra-kitettség"
+      ],
+      "local_event_count": 2,
       "infra_proximity_count": 0,
       "high_critical_infra_count": 0,
       "model": "cee_country_risk_v2",
@@ -112,13 +117,13 @@
       }
     },
     "Poland": {
-      "normalized": 3.601,
+      "normalized": 3.495,
       "overall": "elevated",
       "confidence": "medium",
       "confidence_value": 0.465,
       "dimensions": {
-        "incident_pressure": 4.521,
-        "military_drone": 6.226,
+        "incident_pressure": 4.305,
+        "military_drone": 6.019,
         "cyber": 0.0,
         "infrastructure": 0.0,
         "crossborder": 0.0,
@@ -232,8 +237,8 @@
     {
       "country": "Poland",
       "overall": "elevated",
-      "overall_score": 3.601,
-      "normalized": 3.601,
+      "overall_score": 3.495,
+      "normalized": 3.495,
       "confidence": "medium",
       "confidence_value": 0.465,
       "drivers": [
@@ -242,10 +247,32 @@
         "friss aktivitási trend"
       ],
       "dimensions": {
-        "incident_pressure": 4.521,
-        "military_drone": 6.226,
+        "incident_pressure": 4.305,
+        "military_drone": 6.019,
         "cyber": 0.0,
         "infrastructure": 0.0,
+        "crossborder": 0.0,
+        "trend": 10.0
+      }
+    },
+    {
+      "country": "Romania",
+      "overall": "elevated",
+      "overall_score": 3.194,
+      "normalized": 3.194,
+      "confidence": "medium",
+      "confidence_value": 0.46,
+      "drivers": [
+        "biztonsági incidensnyomás",
+        "friss aktivitási trend",
+        "katonai és drónaktivitás",
+        "kritikus infrastruktúra-kitettség"
+      ],
+      "dimensions": {
+        "incident_pressure": 3.443,
+        "military_drone": 3.846,
+        "cyber": 0.0,
+        "infrastructure": 2.615,
         "crossborder": 0.0,
         "trend": 10.0
       }
@@ -292,23 +319,6 @@
     },
     {
       "country": "Hungary",
-      "overall": "normal",
-      "overall_score": 0.0,
-      "normalized": 0.0,
-      "confidence": "low",
-      "confidence_value": 0.2,
-      "drivers": [],
-      "dimensions": {
-        "incident_pressure": 0.0,
-        "military_drone": 0.0,
-        "cyber": 0.0,
-        "infrastructure": 0.0,
-        "crossborder": 0.0,
-        "trend": 0.0
-      }
-    },
-    {
-      "country": "Romania",
       "overall": "normal",
       "overall_score": 0.0,
       "normalized": 0.0,
@@ -378,18 +388,18 @@
   ],
   "region": {
     "overall": "normal",
-    "overall_score": 0.847,
+    "overall_score": 1.233,
     "confidence": "low",
-    "confidence_value": 0.272,
+    "confidence_value": 0.304,
     "dimension_scores": {
-      "incident_pressure": 1.001,
-      "military_drone": 1.271,
+      "incident_pressure": 1.404,
+      "military_drone": 1.726,
       "cyber": 0.28,
-      "infrastructure": 0.0,
+      "infrastructure": 0.327,
       "crossborder": 0.0,
-      "trend": 2.5
+      "trend": 3.75
     },
-    "evidence_count": 5
+    "evidence_count": 7
   },
   "model": {
     "name": "cee_country_risk_v2",

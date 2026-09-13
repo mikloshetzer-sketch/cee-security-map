@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-13T15:35:27.086503+00:00",
+  "generated_utc": "2026-09-13T20:15:32.059345+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 7,
+    "local_event_count": 7,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -24,9 +24,14 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 2,
+      "category_counts": {
+        "infrastructure_disruption": 1,
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 2
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -87,7 +92,50 @@
       }
     ],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "09e96c88c0c8b6c8f111",
+        "date": "2026-09-13",
+        "time": "2026-09-13T18:27:09+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Bogdan Ivan: „În România, nu se justifică creşterea de preţ la benzină”. Ce spune despre centrala de la Cernavodă",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/bogdan-ivan-in-romania-nu-se-justifica-cresterea-de-pret-la-benzina-ce-spune-despre-centrala-de-la-cernavoda-3946135",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "476d5c2ed84e4840c98c8528"
+      },
+      {
+        "id": "28ab663caf2283f9c0d9",
+        "date": "2026-09-13",
+        "time": "2026-09-13T18:21:47+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Nicu Ştefănuţă: „Tot Flancul Estic este sub atac. În România, numai norocul a făcut să nu avem victime până acum”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/ue/nicu-stefanuta-tot-flancul-estic-este-sub-atac-in-romania-numai-norocul-a-facut-sa-nu-avem-victime-pana-acum-3946131",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "21fd751c7f75b2cf4c63ffb1"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {
@@ -158,7 +206,7 @@
       {
         "id": "952bbbee7c6c23bc7650",
         "date": "2026-09-13",
-        "time": "2026-09-13T15:11:31+00:00",
+        "time": "2026-09-13T20:02:23+00:00",
         "category": "drone",
         "severity": "medium",
         "title": "Închiderea temporară a celui mai mare aeroport din Lituania a fost determinată de păsări, nu de un roi de drone",

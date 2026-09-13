@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-13T11:04:34.451876+00:00",
+  "generated_utc": "2026-09-13T15:35:27.086503+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 6,
-    "local_event_count": 6,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -24,13 +24,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -38,18 +34,22 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 4,
+      "incident_count": 3,
       "category_counts": {
-        "drone": 4
+        "drone": 3
       },
       "source_files": {
-        "local_events.geojson": 4
+        "local_events.geojson": 3
       }
     },
     "Lithuania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Latvia": {
       "incident_count": 0,
@@ -87,16 +87,18 @@
       }
     ],
     "Hungary": [],
-    "Romania": [
+    "Romania": [],
+    "Slovakia": [],
+    "Poland": [
       {
-        "id": "9e7ac7a02af29fb677a8",
-        "date": "2026-09-12",
-        "time": "2026-09-12T16:46:20+00:00",
+        "id": "eaef71e2899b07ee84c5",
+        "date": "2026-09-13",
+        "time": "2026-09-13T11:32:27+00:00",
         "category": "drone",
-        "severity": "high",
-        "title": "Lezuhant egy drón Románia északkeleti részén",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20260912_lezuhant-egy-dron-romania-eszakkeleti-reszen",
+        "severity": "critical",
+        "title": "A lengyel határ közelében csapódott teherautóba egy drón Ukrajnában, egy közeli vonat mozdonyát is találat érte",
+        "source": "Telex",
+        "url": "https://telex.hu/kulfold/2026/09/13/ukrajna-lengyelorszag-hatar-tamadas",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -104,14 +106,11 @@
         "article_role": "incident",
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "3da53e0ca5b0ee517caa822f"
-      }
-    ],
-    "Slovakia": [],
-    "Poland": [
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "9bd9559911af80210e845704"
+      },
       {
         "id": "cb882acb8cfef3130545",
         "date": "2026-09-13",
@@ -132,48 +131,6 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "f83bb1d6ef9f6c2547b755d2"
-      },
-      {
-        "id": "f973e7288017a93c995d",
-        "date": "2026-09-13",
-        "time": "2026-09-13T09:06:43+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Rosyjski dron uderzył w lokomotywę pociągu Kijów-Warszawa przed polską granicą",
-        "source": "TVN24",
-        "url": "https://tvn24.pl/swiat/rosyjski-dron-uderzyl-w-lokomotywe-pociagu-kijow-warszawa-przed-polska-granica-st9234636?source=rss",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "ba8061759a6848ef1bb565c7"
-      },
-      {
-        "id": "42d71d4aab006acec9ea",
-        "date": "2026-09-13",
-        "time": "2026-09-13T02:55:09+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Rosja atakowała Ukrainę. Polska poderwała samoloty, w kilku powiatach zawyły syreny",
-        "source": "TVN24",
-        "url": "https://tvn24.pl/polska/rosja-atakowala-ukraine-polska-poderwala-samoloty-w-kilku-powiatach-zawyly-syreny-st9234429?source=rss",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "9fa4f334ecb589258b216dc9"
       },
       {
         "id": "90d9e268da815bece339",
@@ -197,7 +154,29 @@
         "fingerprint_hash": "b6723dfc03cd3906b2862c6d"
       }
     ],
-    "Lithuania": [],
+    "Lithuania": [
+      {
+        "id": "952bbbee7c6c23bc7650",
+        "date": "2026-09-13",
+        "time": "2026-09-13T15:11:31+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Închiderea temporară a celui mai mare aeroport din Lituania a fost determinată de păsări, nu de un roi de drone",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/lituania-a-inchis-aeroportul-din-vilnius-iar-nato-a-mobilizat-avioane-de-vanatoare-ca-raspuns-la-prezenta-posibila-a-unei-drone-3945855",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "b3e890b93569254a7177e24f"
+      }
+    ],
     "Latvia": [],
     "Estonia": []
   }

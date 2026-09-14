@@ -1,9 +1,266 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-13T20:15:27.159567+00:00",
+  "generated_utc": "2026-09-14T02:42:31.179781+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.1451,
+          51.9194
+        ]
+      },
+      "properties": {
+        "id": "5cc26d101052f237b153",
+        "title": "Már akkor tudhatták a német hatóságok, hogy az oroszoknak dolgozik a lipcsei dróntámadás gyanúsítottja, amikor belépett az országba",
+        "summary": "Egy tisztviselő szerint azért nem kezdték el megfigyelni, mert a hatóságok erőforrásai korlátozottak, és nem számítottak arra, hogy egy közelgő támadást készít elő.",
+        "source": "Telex",
+        "url": "https://telex.hu/kulfold/2026/09/13/lipcse-drontamadas-nemet-hatosagok-orosz-belarusz-allampolgar-gru",
+        "published": "Sun, 13 Sep 2026 23:02:23 +0200",
+        "country": "Poland",
+        "city": null,
+        "family": "maritime",
+        "subcategory": "port_security",
+        "subtype": "port_disruption",
+        "object": "drone",
+        "action": "damaged",
+        "actor": "russia",
+        "target": "transport",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "maritime",
+          "subcategory": "port_security",
+          "subtype": "port_disruption",
+          "object": "drone",
+          "action": "damaged",
+          "actor": "russia",
+          "target": "transport",
+          "place": "Poland",
+          "event_date": "Sun, 13 Se",
+          "hash": "101ad3f02a006500f4b081ad"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [
+            "történt"
+          ],
+          "objects": [
+            "drone",
+            "drón",
+            "critical_infrastructure",
+            "repülőtér"
+          ],
+          "actions": [
+            "entered",
+            "belépett",
+            "damaged",
+            "megsemmisítette"
+          ],
+          "targets": [
+            "transport",
+            "repülőtér"
+          ],
+          "actors": [
+            "russia",
+            "oroszország",
+            "orosz"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.95,
+            "matched": false,
+            "missing": [
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "repülőtér"
+            ]
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 4287,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "A német hatóságok nagy valószínűséggel azonosítottak egy belarusz és egy orosz állampolgárt, akik szerintük az augusztusi, lipcsei repülőtéren történt dróntámadás mögött állnak – írta meg a Politico társlapjára, a Weltre hivatkozva. A hatóságok szerint a két személy kapcsolatban állt az orosz katonai hírszerzéssel. A lipcsei repülőtéren még augusztus elején történt támadáskísérlet: közepes méretű drón repült be a repülőtér területére, amin robbanószert is találtak . Az eszköz éppen az ukránok Antonov teherszállító gépe mellé zuhant le, miután a gép szárnyának csapódott, de nem robbant fel. Az erről készült képek, videók bejárták a világsajtót . A lipcsei reptér egyébként stratégiai jelentőségű, mert rengeteg fegyverszállítmányt innen visznek Ukrajnába. A drón ott ért földet, ahol a legnagyobbat robbanhat egy megtankolt repülő, így már akkor biztos volt, hogy bárki állt is a háttérben, kemény üzenetet akart küldeni . A németek szerint Oroszország megbízásából kísérelhették meg a meghiús",
+        "place": "Poland",
+        "time": "Sun, 13 Sep 2026 23:02:23 +0200",
+        "category": "maritime",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Telex"
+        ],
+        "urls": [
+          "https://telex.hu/kulfold/2026/09/13/lipcse-drontamadas-nemet-hatosagok-orosz-belarusz-allampolgar-gru"
+        ],
+        "merged_titles": [
+          "Már akkor tudhatták a német hatóságok, hogy az oroszoknak dolgozik a lipcsei dróntámadás gyanúsítottja, amikor belépett az országba"
+        ],
+        "incident_family": "maritime",
+        "incident_subcategory": "port_security",
+        "incident_subtype": "port_disruption",
+        "incident_object": "drone",
+        "incident_action": "damaged",
+        "incident_actor": "russia",
+        "incident_target": "transport",
+        "classification_confidence": 0.9
+      }
+    },
     {
       "type": "Feature",
       "geometry": {
@@ -515,7 +772,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 4249,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "A Külügyminisztérium tájékoztatása szerint biztonságban van az a 40 fős magyar csoport, amelyet a horvátországi Brac szigeten pusztító tűz miatt evakuáltak. A tárca sajtóosztálya az MTI érdeklődésére azt írta, a konzuli szolgálat felé telefonos megkeresés érkezett egy 40 fős magyar csoporttól, akiket szombaton éjfél körül Milnából evakuálták. Beszámolójuk szerint a csoport tagjai biztonságban vannak, biztosított a megfelelő ellátásuk, és nem kértek konzuli segítséget a hazatéréshez. A térségben egy konzuli védelemre regisztrált családdal a magyar konzulok felvették a kapcsolatot, de kiderült, hogy nem a tűzzel közvetlenül érintett térségben szálltak meg, így esetükben evakuálásra nem került sor. Közölték, a minisztériumnak magyar állampolgárságú sérültekről nincs tudomása, magyar állampolgár részéről konzuljainkhoz új hívás délelőtt kilenc óra óta nem érkezett. A magyar konzulok a helyi hatóságoktól azt az információt kapták, hogy a befogadó központban tartózkodók visszatérhetnek Milná",
         "place": "Hungary",
         "time": "Sun, 13 Sep 2026 18:03:00 +0200",
@@ -766,7 +1023,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 2801,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Fostul ministru al Energiei Bogdan Ivan a vorbit, duminică seară, din nou, despre preţul carburanţilor şi acuză Guvernul interimar că nu a luat măsuri pentru a proteja populaţia. De asemenea, el susţine că nu se justifică creşterea de preţ la benzină, în condiţiile în care România produce dublu faţă de cantitatea de benzină pe care o consumă. Fostul ministru al Energiei Bogdan Ivan a declarat, duminică seară, la România TV, că Guvernul ar fi putut să prelungească starea de criză pe piaţa carburanţilor pentru a reduce impactul asupra populaţiei. „De patru luni de zile de când am plecat, nu au făcut absolut nimic (…) E o adevărată dramă să vezi cum lucruri care au fost făcute, au funcţionat, sunt ignorate total de actualul Guvern (…) Nu mai sunt acolo ca să decid, iar oricâte semnale de alarmă aş trage - am cerut controle ale ANPC-ului, controle ale Consiliului Concurenţei pentru a vedea dacă aceste preţuri sunt corecte sau nu, dacă ele pot să aibă o zonă de înţelegere sau nu faţă de pre",
         "place": "Cernavodă",
         "time": "Sun, 13 Sep 2026 21:27:09 +0300",
@@ -1017,7 +1274,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 2397,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Vicepreşedintele Parlamentului European Nicu Ştefănuţă a afirmat, duminică seară, că tot Flancul Estic este sub atac, vara aceasta, mai mult decât oricând, iar în România numai norocul a făcut să nu avem victime până acum. „Susţin la PE ca tot mai multă tehnologie şi grupuri de luptă europene să fie prezente fizic pe frontul de est”, a precizat europarlamentatul adăugând că numai un efort comun european şi NATO îl va face pe Putin să se gândească de două ori. „O dronă rusească a lovit azi din plin un tren şi un tir la 800 de metri de graniţa poloneză. Era trenul în care fusese Radek Sikorski, ministrul de externe polonez, cu o zi înainte. Cu câteva minute înainte, trecuseră Boris Johnson, fost prim ministru britanic, Carl Bildt, prim ministru suedez şi un consilier al lui Merz, premier german. În Bulgaria, o a doua fabrică de muniţie a explodat misterios, probabil ca urmare a unei acţiuni de subminare”, a scris, duminică seară, pe Facebook, Nicu Ştefănuţă. Potrivit acestuia, tot Flancu",
         "place": "Romania",
         "time": "Sun, 13 Sep 2026 21:21:47 +0300",

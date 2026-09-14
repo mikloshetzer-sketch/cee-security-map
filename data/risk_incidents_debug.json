@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-14T02:42:38.834689+00:00",
+  "generated_utc": "2026-09-14T11:33:24.842703+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 7,
-    "local_event_count": 7,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -24,14 +24,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
-      "category_counts": {
-        "infrastructure_disruption": 1,
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 2
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -39,22 +34,18 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 3,
+      "incident_count": 2,
       "category_counts": {
-        "drone": 3
+        "drone": 2
       },
       "source_files": {
-        "local_events.geojson": 3
+        "local_events.geojson": 2
       }
     },
     "Lithuania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Latvia": {
       "incident_count": 0,
@@ -62,9 +53,13 @@
       "source_files": {}
     },
     "Estonia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     }
   },
   "countries": {
@@ -92,73 +87,9 @@
       }
     ],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "09e96c88c0c8b6c8f111",
-        "date": "2026-09-13",
-        "time": "2026-09-13T18:27:09+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Bogdan Ivan: „În România, nu se justifică creşterea de preţ la benzină”. Ce spune despre centrala de la Cernavodă",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/bogdan-ivan-in-romania-nu-se-justifica-cresterea-de-pret-la-benzina-ce-spune-despre-centrala-de-la-cernavoda-3946135",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "476d5c2ed84e4840c98c8528"
-      },
-      {
-        "id": "28ab663caf2283f9c0d9",
-        "date": "2026-09-13",
-        "time": "2026-09-13T18:21:47+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Nicu Ştefănuţă: „Tot Flancul Estic este sub atac. În România, numai norocul a făcut să nu avem victime până acum”",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ue/nicu-stefanuta-tot-flancul-estic-este-sub-atac-in-romania-numai-norocul-a-facut-sa-nu-avem-victime-pana-acum-3946131",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "21fd751c7f75b2cf4c63ffb1"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [
-      {
-        "id": "eaef71e2899b07ee84c5",
-        "date": "2026-09-13",
-        "time": "2026-09-13T11:32:27+00:00",
-        "category": "drone",
-        "severity": "critical",
-        "title": "A lengyel határ közelében csapódott teherautóba egy drón Ukrajnában, egy közeli vonat mozdonyát is találat érte",
-        "source": "Telex",
-        "url": "https://telex.hu/kulfold/2026/09/13/ukrajna-lengyelorszag-hatar-tamadas",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "9bd9559911af80210e845704"
-      },
       {
         "id": "cb882acb8cfef3130545",
         "date": "2026-09-13",
@@ -202,16 +133,18 @@
         "fingerprint_hash": "b6723dfc03cd3906b2862c6d"
       }
     ],
-    "Lithuania": [
+    "Lithuania": [],
+    "Latvia": [],
+    "Estonia": [
       {
-        "id": "952bbbee7c6c23bc7650",
-        "date": "2026-09-13",
-        "time": "2026-09-13T20:02:23+00:00",
+        "id": "1c9fcdbf353a2b9b66b6",
+        "date": "2026-09-14",
+        "time": "2026-09-14T05:58:00+00:00",
         "category": "drone",
-        "severity": "medium",
-        "title": "Închiderea temporară a celui mai mare aeroport din Lituania a fost determinată de păsări, nu de un roi de drone",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/lituania-a-inchis-aeroportul-din-vilnius-iar-nato-a-mobilizat-avioane-de-vanatoare-ca-raspuns-la-prezenta-posibila-a-unei-drone-3945855",
+        "severity": "high",
+        "title": "Train carrying Estonian leaders crossed Ukraine border just before Russian drone strike",
+        "source": "ERR",
+        "url": "https://news.err.ee/1610137438/train-carrying-estonian-leaders-crossed-ukraine-border-just-before-russian-drone-strike",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -219,13 +152,11 @@
         "article_role": "incident",
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
+        "incident_subtype": "drone_strike",
         "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "b3e890b93569254a7177e24f"
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "770ebd09e7e0f63635091163"
       }
-    ],
-    "Latvia": [],
-    "Estonia": []
+    ]
   }
 }

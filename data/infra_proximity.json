@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_utc": "2026-09-15T02:48:47.126967+00:00",
+    "generated_utc": "2026-09-15T16:11:31.531075+00:00",
     "infrastructure_count": 103,
-    "event_count": 10,
-    "match_count": 0,
-    "raw_match_count": 0,
-    "top_infrastructure_count": 0,
+    "event_count": 12,
+    "match_count": 1,
+    "raw_match_count": 1,
+    "top_infrastructure_count": 1,
     "max_distance_km": 50,
     "target_countries": [
       "Czechia",
@@ -34,7 +34,169 @@
       "top_matches": "one best match per infrastructure asset"
     }
   },
-  "top_matches": [],
-  "matches": [],
-  "raw_matches": []
+  "top_matches": [
+    {
+      "id": "eb255d95e42e6cac",
+      "level": "high",
+      "score": 66.79,
+      "distance_km": 12.89,
+      "event": {
+        "id": "af5d2763a2d31cb0",
+        "title": "Security Politics – Vilnius, Vilniaus Apskritis, Lithuania",
+        "category": "security_politics",
+        "incident_type": "drone_airspace",
+        "source": "GDELT",
+        "source_count": 1,
+        "sources": [
+          "GDELT"
+        ],
+        "time": "2026-09-15T00:00:00Z",
+        "url": "https://www.lrt.lt/en/news-in-english/19/3053032/nato-jets-shoot-down-drone-that-entered-lithuanian-airspace",
+        "urls": [
+          "https://www.lrt.lt/en/news-in-english/19/3053032/nato-jets-shoot-down-drone-that-entered-lithuanian-airspace",
+          "https://www.delfi.lt/en/politics/drone-shot-down-over-lithuania-120304679",
+          "https://www.theguardian.com/world/2026/sep/15/nato-jets-shoot-down-drone-violating-lithuania-airspace-kaunas",
+          "https://www.novinite.com/articles/240603/NATO+Jets+Shoot+Down+Drone+Over+Lithuania",
+          "https://www.stripes.com/theaters/europe/2026-09-15/lithuania-drone-shot-down-nato-22858757.html",
+          "https://www.newsday.com/news/nation/russia-ukraine-war-lithuania-drone-downed-nato-q99846",
+          "https://news.az/news/why-did-nato-fighter-jets-shoot-down-a-drone-over-lithuania",
+          "https://www.wmuk.org/npr-news/2026-09-15/nato-jets-shoot-down-a-drone-in-lithuanian-airspace",
+          "https://www.lrytas.lt/english/politics/2026/09/15/news/kaunas-provided-more-information-on-the-downed-drone-it-was-necessary-to-neutralise-it--43996263/",
+          "https://en.tempo.co/read/2119637/nato-jets-shoot-down-drone-over-lithuania"
+        ],
+        "lat": 54.898,
+        "lon": 23.904,
+        "location_quality": "city",
+        "place": "kaunas",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "lt-military-rukla",
+        "name": "Rukla Military Base",
+        "country": "Lithuania",
+        "city": "Rukla",
+        "category": "military",
+        "subtype": "land_forces_base",
+        "criticality": 9.0,
+        "operator": "Lithuanian Armed Forces / NATO eFP",
+        "lat": 55.0,
+        "lon": 24.0,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ],
+  "matches": [
+    {
+      "id": "eb255d95e42e6cac",
+      "level": "high",
+      "score": 66.79,
+      "distance_km": 12.89,
+      "event": {
+        "id": "af5d2763a2d31cb0",
+        "title": "Security Politics – Vilnius, Vilniaus Apskritis, Lithuania",
+        "category": "security_politics",
+        "incident_type": "drone_airspace",
+        "source": "GDELT",
+        "source_count": 1,
+        "sources": [
+          "GDELT"
+        ],
+        "time": "2026-09-15T00:00:00Z",
+        "url": "https://www.lrt.lt/en/news-in-english/19/3053032/nato-jets-shoot-down-drone-that-entered-lithuanian-airspace",
+        "urls": [
+          "https://www.lrt.lt/en/news-in-english/19/3053032/nato-jets-shoot-down-drone-that-entered-lithuanian-airspace",
+          "https://www.delfi.lt/en/politics/drone-shot-down-over-lithuania-120304679",
+          "https://www.theguardian.com/world/2026/sep/15/nato-jets-shoot-down-drone-violating-lithuania-airspace-kaunas",
+          "https://www.novinite.com/articles/240603/NATO+Jets+Shoot+Down+Drone+Over+Lithuania",
+          "https://www.stripes.com/theaters/europe/2026-09-15/lithuania-drone-shot-down-nato-22858757.html",
+          "https://www.newsday.com/news/nation/russia-ukraine-war-lithuania-drone-downed-nato-q99846",
+          "https://news.az/news/why-did-nato-fighter-jets-shoot-down-a-drone-over-lithuania",
+          "https://www.wmuk.org/npr-news/2026-09-15/nato-jets-shoot-down-a-drone-in-lithuanian-airspace",
+          "https://www.lrytas.lt/english/politics/2026/09/15/news/kaunas-provided-more-information-on-the-downed-drone-it-was-necessary-to-neutralise-it--43996263/",
+          "https://en.tempo.co/read/2119637/nato-jets-shoot-down-drone-over-lithuania"
+        ],
+        "lat": 54.898,
+        "lon": 23.904,
+        "location_quality": "city",
+        "place": "kaunas",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "lt-military-rukla",
+        "name": "Rukla Military Base",
+        "country": "Lithuania",
+        "city": "Rukla",
+        "category": "military",
+        "subtype": "land_forces_base",
+        "criticality": 9.0,
+        "operator": "Lithuanian Armed Forces / NATO eFP",
+        "lat": 55.0,
+        "lon": 24.0,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ],
+  "raw_matches": [
+    {
+      "id": "eb255d95e42e6cac",
+      "level": "high",
+      "score": 66.79,
+      "distance_km": 12.89,
+      "event": {
+        "id": "af5d2763a2d31cb0",
+        "title": "Security Politics – Vilnius, Vilniaus Apskritis, Lithuania",
+        "category": "security_politics",
+        "incident_type": "drone_airspace",
+        "source": "GDELT",
+        "source_count": 1,
+        "sources": [
+          "GDELT"
+        ],
+        "time": "2026-09-15T00:00:00Z",
+        "url": "https://www.lrt.lt/en/news-in-english/19/3053032/nato-jets-shoot-down-drone-that-entered-lithuanian-airspace",
+        "urls": [
+          "https://www.lrt.lt/en/news-in-english/19/3053032/nato-jets-shoot-down-drone-that-entered-lithuanian-airspace",
+          "https://www.delfi.lt/en/politics/drone-shot-down-over-lithuania-120304679",
+          "https://www.theguardian.com/world/2026/sep/15/nato-jets-shoot-down-drone-violating-lithuania-airspace-kaunas",
+          "https://www.novinite.com/articles/240603/NATO+Jets+Shoot+Down+Drone+Over+Lithuania",
+          "https://www.stripes.com/theaters/europe/2026-09-15/lithuania-drone-shot-down-nato-22858757.html",
+          "https://www.newsday.com/news/nation/russia-ukraine-war-lithuania-drone-downed-nato-q99846",
+          "https://news.az/news/why-did-nato-fighter-jets-shoot-down-a-drone-over-lithuania",
+          "https://www.wmuk.org/npr-news/2026-09-15/nato-jets-shoot-down-a-drone-in-lithuanian-airspace",
+          "https://www.lrytas.lt/english/politics/2026/09/15/news/kaunas-provided-more-information-on-the-downed-drone-it-was-necessary-to-neutralise-it--43996263/",
+          "https://en.tempo.co/read/2119637/nato-jets-shoot-down-drone-over-lithuania"
+        ],
+        "lat": 54.898,
+        "lon": 23.904,
+        "location_quality": "city",
+        "place": "kaunas",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "lt-military-rukla",
+        "name": "Rukla Military Base",
+        "country": "Lithuania",
+        "city": "Rukla",
+        "category": "military",
+        "subtype": "land_forces_base",
+        "criticality": 9.0,
+        "operator": "Lithuanian Armed Forces / NATO eFP",
+        "lat": 55.0,
+        "lon": 24.0,
+        "source_file": "critical_infrastructure.json"
+      }
+    }
+  ]
 }

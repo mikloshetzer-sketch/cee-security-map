@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-15T02:48:47.241216+00:00",
+  "generated_utc": "2026-09-15T16:11:31.649418+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 6,
+    "local_event_count": 6,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -43,9 +43,14 @@
       }
     },
     "Lithuania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 2,
+      "category_counts": {
+        "drone": 1,
+        "military": 1
+      },
+      "source_files": {
+        "local_events.geojson": 2
+      }
     },
     "Latvia": {
       "incident_count": 0,
@@ -133,7 +138,50 @@
         "fingerprint_hash": "b6723dfc03cd3906b2862c6d"
       }
     ],
-    "Lithuania": [],
+    "Lithuania": [
+      {
+        "id": "e5086ef53fddc60e20b6",
+        "date": "2026-09-15",
+        "time": "2026-09-15T06:25:07+00:00",
+        "category": "military",
+        "severity": "high",
+        "title": "NATO fighter jets shoot down drone over Lithuania",
+        "source": "BNN",
+        "url": "https://bnn-news.com/nato-fighter-jets-shoot-down-drone-over-lithuania-283753",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "77272f5ab9dce6a753943a17"
+      },
+      {
+        "id": "00c225e661e2bf8432a2",
+        "date": "2026-09-15",
+        "time": "2026-09-15T03:40:34+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Dron nad Litwą zestrzelony przez myśliwce NATO. Miał ładunki wybuchowe",
+        "source": "TVN24",
+        "url": "https://tvn24.pl/swiat/litwa-dron-zestrzelony-przez-mysliwce-nato-nowe-informacje-st9237046?source=rss",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "f6c76319acecf9a6a643f685"
+      }
+    ],
     "Latvia": [],
     "Estonia": [
       {

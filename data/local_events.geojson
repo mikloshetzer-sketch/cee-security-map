@@ -1,9 +1,266 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-15T20:56:36.958243+00:00",
+  "generated_utc": "2026-09-16T02:42:33.758704+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.904,
+          54.898
+        ]
+      },
+      "properties": {
+        "id": "9bd0f18fb2713b00046f",
+        "title": "Stíhačky NATO sestřelily nad Litvou dron",
+        "summary": "Stíhačky Severoatlantické aliance během noci na úterý sestřelily v litevském vzdušném prostoru dron, uvedl prezident země Gitanas Nauséda a spojencům poděkoval za rychlou reakci. Prezident neupřesnil, odkud dron přiletěl ani komu patřil. Litevská média uvádějí, že pravděpodobně přiletěl z Běloruska a směřoval na západ. Podle italského ministra obrany Guida Crosetta se však s největší pravděpodobností jednalo o ruský dron. Litevský ministr obrany Robertas Kaunas oznámil, že dron nesl výbušné zařízení.",
+        "source": "CT24",
+        "url": "https://ct24.ceskatelevize.cz/clanek/svet/stihacky-nato-sestrelily-nad-litvou-dron-potvrdil-prezident-nauseda-377614",
+        "published": "Mon, 14 Sep 2026 23:34:17 GMT",
+        "country": "Lithuania",
+        "city": "Kaunas",
+        "family": "cyber",
+        "subcategory": "operational_disruption",
+        "subtype": "cyber_operational_disruption",
+        "object": "cyber_system",
+        "action": "disrupted",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+        "fingerprint": {
+          "country": "Lithuania",
+          "family": "cyber",
+          "subcategory": "operational_disruption",
+          "subtype": "cyber_operational_disruption",
+          "object": "cyber_system",
+          "action": "disrupted",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Kaunas",
+          "event_date": "Mon, 14 Se",
+          "hash": "e4df9a845b973de3fb87067b"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dron",
+            "explosive_device",
+            "výbušné zařízení",
+            "cyber_system",
+            "server"
+          ],
+          "actions": [
+            "disrupted",
+            "přerušen",
+            "jammed",
+            "rušení"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusko",
+            "ruský",
+            "ukraine",
+            "ukrajina",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Czechia",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.GPS.INTERFERENCE",
+            "family": "cyber",
+            "subcategory": "gps_interference",
+            "subtype": "gps_jamming_or_spoofing",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.13,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2969,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Stíhačky Severoatlantické aliance během noci na úterý sestřelily v litevském vzdušném prostoru dron, uvedl prezident země Gitanas Nauséda a spojencům poděkoval za rychlou reakci. Prezident neupřesnil, odkud dron přiletěl ani komu patřil. Litevská média uvádějí, že pravděpodobně přiletěl z Běloruska a směřoval na západ. Podle italského ministra obrany Guida Crosetta se však s největší pravděpodobností jednalo o ruský dron. Litevský ministr obrany Robertas Kaunas oznámil, že dron nesl výbušné zařízení. Kvůli narušení vzdušného prostoru země se mírně zpozdilo několik civilních letů, dodala místní média. Kvůli útokům ruských dronů na Ukrajinu preventivně vzlétly stíhačky v Polsku a Rumunsku. „Dron, který právě vletěl do litevského vzdušného prostoru, byl zničen stíhačkami NATO. Děkuji spojencům za jejich rychlou reakci. Vzhledem k tomu, že Rusko zesiluje svou agresi proti Ukrajině, je taková pohotovost klíčová pro náš region. Společně s našimi spojenci v NATO bude Litva bránit svůj vzdušný",
+        "place": "Kaunas",
+        "time": "Mon, 14 Sep 2026 23:34:17 GMT",
+        "category": "cyber",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "CT24"
+        ],
+        "urls": [
+          "https://ct24.ceskatelevize.cz/clanek/svet/stihacky-nato-sestrelily-nad-litvou-dron-potvrdil-prezident-nauseda-377614"
+        ],
+        "merged_titles": [
+          "Stíhačky NATO sestřelily nad Litvou dron"
+        ],
+        "incident_family": "cyber",
+        "incident_subcategory": "operational_disruption",
+        "incident_subtype": "cyber_operational_disruption",
+        "incident_object": "cyber_system",
+        "incident_action": "disrupted",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

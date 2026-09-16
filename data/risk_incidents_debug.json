@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-15T20:56:46.267638+00:00",
+  "generated_utc": "2026-09-16T02:42:42.398573+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 5,
-    "local_event_count": 5,
+    "incident_count": 6,
+    "local_event_count": 6,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -43,12 +43,13 @@
       }
     },
     "Lithuania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
+        "cyber": 1,
         "military": 1
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Latvia": {
@@ -158,6 +159,27 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
         "fingerprint_hash": "77272f5ab9dce6a753943a17"
+      },
+      {
+        "id": "9bd0f18fb2713b00046f",
+        "date": "2026-09-14",
+        "time": "2026-09-14T23:34:17+00:00",
+        "category": "cyber",
+        "severity": "medium",
+        "title": "Stíhačky NATO sestřelily nad Litvou dron",
+        "source": "CT24",
+        "url": "https://ct24.ceskatelevize.cz/clanek/svet/stihacky-nato-sestrelily-nad-litvou-dron-potvrdil-prezident-nauseda-377614",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "cyber",
+        "incident_subcategory": "operational_disruption",
+        "incident_subtype": "cyber_operational_disruption",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+        "fingerprint_hash": "e4df9a845b973de3fb87067b"
       }
     ],
     "Latvia": [],

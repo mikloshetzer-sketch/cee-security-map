@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-16T16:03:21.489468+00:00",
+  "generated_utc": "2026-09-16T20:56:18.733159+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 6,
-    "local_event_count": 6,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -30,22 +30,21 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 4,
-      "category_counts": {
-        "drone": 4
-      },
-      "source_files": {
-        "local_events.geojson": 4
-      }
-    },
-    "Lithuania": {
       "incident_count": 2,
       "category_counts": {
-        "drone": 1,
-        "military": 1
+        "drone": 2
       },
       "source_files": {
         "local_events.geojson": 2
+      }
+    },
+    "Lithuania": {
+      "incident_count": 1,
+      "category_counts": {
+        "military": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
       }
     },
     "Latvia": {
@@ -65,48 +64,6 @@
     "Romania": [],
     "Slovakia": [],
     "Poland": [
-      {
-        "id": "84212cf56fc89e54f78f",
-        "date": "2026-09-16",
-        "time": "2026-09-16T12:51:53+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Noi date despre drona rusească găsită pe o plajă din Polonia: era pregătită să detoneze",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/noi-date-despre-drona-ruseasca-gasita-pe-o-plaja-din-polonia-era-pregatita-sa-detoneze-3950363",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "26d3dcc651847251a6147f02"
-      },
-      {
-        "id": "e2aafdd11c07fcad6ba6",
-        "date": "2026-09-16",
-        "time": "2026-09-16T11:53:32+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Robbanótöltet volt a lengyel partoknál talált katonai drónon",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20260916_lengyelorszag-oroszorszag-katonai-dron-robbanotoltet",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "2100013140dd1e646c09ca97"
-      },
       {
         "id": "cb882acb8cfef3130545",
         "date": "2026-09-13",
@@ -151,27 +108,6 @@
       }
     ],
     "Lithuania": [
-      {
-        "id": "41098a9846ca0dd25590",
-        "date": "2026-09-16",
-        "time": "2026-09-16T12:25:02+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Orosz gyártmányú a Litvánia légterében lekapcsolt drón",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20260916_litvan-dron-orosz-gyartmany",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "8a86f984447e06aec4761fbe"
-      },
       {
         "id": "e5086ef53fddc60e20b6",
         "date": "2026-09-15",

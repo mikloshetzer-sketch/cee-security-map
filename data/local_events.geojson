@@ -1,9 +1,526 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-16T02:42:33.758704+00:00",
+  "generated_utc": "2026-09-16T10:47:27.686383+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5033,
+          47.1625
+        ]
+      },
+      "properties": {
+        "id": "17005c8f581738b0867e",
+        "title": "Tudósítás közben zuhant le egy amerikai tévétársaság helikoptere Los Angelesben",
+        "summary": "Legalább három ember meghalt, egyet pedig kórházba szállítottak.",
+        "source": "HVG",
+        "url": "https://hvg.hu/vilag/20260916_los-angeles-helikopter-baleset-lezhant-nbc-tudosito",
+        "published": "Wed, 16 Sep 2026 06:39:20 Z",
+        "country": "Hungary",
+        "city": null,
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "impact",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [
+          "fatality"
+        ],
+        "severity": "critical",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "impact",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Hungary",
+          "event_date": "Wed, 16 Se",
+          "hash": "3dadf6dba3e0ae3096a3f5a9"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [
+            "történt",
+            "megerősítették"
+          ],
+          "objects": [
+            "military_aircraft",
+            "helikopter"
+          ],
+          "actions": [
+            "impact",
+            "lezuhant",
+            "burned",
+            "kigyulladt",
+            "tűz ütött ki"
+          ],
+          "targets": [],
+          "actors": [
+            "unknown",
+            "ismeretlen"
+          ],
+          "consequences": [
+            "fatality",
+            "meghalt"
+          ],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INDUSTRIAL.FIRE",
+            "family": "industrial",
+            "subcategory": "fire",
+            "subtype": "industrial_fire",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1404,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Legalább három ember meghalt, egyet pedig kórházba szállítottak. Legalább három ember meghalt egy negyediket pedig kórházba szállítottak, miután lezuhant az NBC tévétársaság helikoptere Los Angeles-ben, írja a SkyNews . Az NBC Los Angeles munkatársai élő adásban azonosították a lezuhant gépet, mint a csatorna 4-es számú helikopterét. Az alábbi videón a helikopter belső felvétele látható a zuhanás előtt: https://x.com/BNONews/status/2100045119739039821 „Tudtuk, hogy egy tudósítói helikopter volt, és azt is tudtuk, hogy elvesztettük a kapcsolatot a terepen lévő kollegákkal, de most hivatalosan is megerősítették, hogy a 4-es számú helikopterük zuhant le, kicsivel hét óra előtt” – fogalmazott az NBC egyik híradósa a csatorna adásában. https://www.youtube.com/shorts/7GrA2ONOX_w A baleset helyi idő szerint este hét óra előtt történt (magyar idő szerint csütörtök hajnali négy órakor). A helikopter egyelőre ismeretlen okból zuhant le és egy parkolóházba csapódott, amelyet követően tűz ütött ki",
+        "place": "Hungary",
+        "time": "Wed, 16 Sep 2026 06:39:20 Z",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HVG"
+        ],
+        "urls": [
+          "https://hvg.hu/vilag/20260916_los-angeles-helikopter-baleset-lezhant-nbc-tudosito"
+        ],
+        "merged_titles": [
+          "Tudósítás közben zuhant le egy amerikai tévétársaság helikoptere Los Angelesben"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "impact",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.904,
+          54.898
+        ]
+      },
+      "properties": {
+        "id": "c821defda9c1f7dd430e",
+        "title": "Robbanóanyag volt a drónon, amit a NATO vadászgépei Litvánia felett lőttek le",
+        "summary": "Továbbra is vizsgálják az incidens pontos körülményeit.",
+        "source": "HVG",
+        "url": "https://hvg.hu/vilag/20260916_litvania-dron-robbanoanyag-nato-vadaszgepek-robertas-kaunas-vedelmi-miniszter",
+        "published": "Wed, 16 Sep 2026 04:41:08 Z",
+        "country": "Lithuania",
+        "city": "Kaunas",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "nato",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Lithuania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "nato",
+          "target": "unknown",
+          "place": "Kaunas",
+          "event_date": "Wed, 16 Se",
+          "hash": "c67029b2b691f47218762fa9"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "drón",
+            "dron"
+          ],
+          "actions": [
+            "detected",
+            "észlelt"
+          ],
+          "targets": [],
+          "actors": [
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 944,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Továbbra is vizsgálják az incidens pontos körülményeit. Robbanóanyaggal volt felszerelve az a drón, amelyet a NATO vadászgépei hétfő éjjel lelőttek Litvánia felett – közölte Robertas Kaunas litván védelmi miniszter kedden a Facebook-oldalán. Hozzátette, az incidens vizsgálata és a drón további elemzése még folyamatban van. A Litvánia felett észlelt drónt olasz Eurofighter vadászrepülőgépek lőtték le az ország középső részén, Pratkunai falu közelében. Az eset nyomán károkról, sérültekről nem érkezett jelentés. A litván nemzeti rádió, az LRT a Nemzeti Válságkezelő Központ (NKVC) adataira hivatkozva kedden azt közölte, hogy a drón a szomszédos Fehéroroszországból érkezett, és nyugat felé tartott. https://hvg.hu/vilag/20260915_litvania-dron-hatarsertes-nato-nauseda Nyitóképünkün Robertas Kaunas litván védelmi miniszter az Európai Unió védelmi minsztereinek informális találkozóján Dublinban 2026. szeptember 1-én. Fotó: AFP / Paul Faith",
+        "place": "Kaunas",
+        "time": "Wed, 16 Sep 2026 04:41:08 Z",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HVG"
+        ],
+        "urls": [
+          "https://hvg.hu/vilag/20260916_litvania-dron-robbanoanyag-nato-vadaszgepek-robertas-kaunas-vedelmi-miniszter"
+        ],
+        "merged_titles": [
+          "Robbanóanyag volt a drónon, amit a NATO vadászgépei Litvánia felett lőttek le"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "nato",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
     {
       "type": "Feature",
       "geometry": {
@@ -233,7 +750,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 2969,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Stíhačky Severoatlantické aliance během noci na úterý sestřelily v litevském vzdušném prostoru dron, uvedl prezident země Gitanas Nauséda a spojencům poděkoval za rychlou reakci. Prezident neupřesnil, odkud dron přiletěl ani komu patřil. Litevská média uvádějí, že pravděpodobně přiletěl z Běloruska a směřoval na západ. Podle italského ministra obrany Guida Crosetta se však s největší pravděpodobností jednalo o ruský dron. Litevský ministr obrany Robertas Kaunas oznámil, že dron nesl výbušné zařízení. Kvůli narušení vzdušného prostoru země se mírně zpozdilo několik civilních letů, dodala místní média. Kvůli útokům ruských dronů na Ukrajinu preventivně vzlétly stíhačky v Polsku a Rumunsku. „Dron, který právě vletěl do litevského vzdušného prostoru, byl zničen stíhačkami NATO. Děkuji spojencům za jejich rychlou reakci. Vzhledem k tomu, že Rusko zesiluje svou agresi proti Ukrajině, je taková pohotovost klíčová pro náš region. Společně s našimi spojenci v NATO bude Litva bránit svůj vzdušný",
         "place": "Kaunas",
         "time": "Mon, 14 Sep 2026 23:34:17 GMT",
@@ -1270,520 +1787,6 @@
         "incident_actor": "unknown",
         "incident_target": "unknown",
         "classification_confidence": 0.76
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.6032,
-          56.8796
-        ]
-      },
-      "properties": {
-        "id": "62bbe3cd28ce04d708c1",
-        "title": "Terrorist group threatens Latvian companies, demands halt to arms supplies to Ukraine",
-        "summary": "<p>The pro-Russian terrorist group Global Citizens Against War 1984 (GCAW1984), which has previously claimed responsibility for acts of sabotage in Europe, has sent threatening letters to Latvia, Poland and Portugal, demanding that companies producing and supplying weapons to Ukraine cease their operations. According to a press release circulated by the group, it has targeted Latvian [&#8230;]</p>\n<p>The post <a href=\"https://bnn-news.com/terrorist-group-threatens-latvian-companies-demands-halt-to-arms-supplies-to-ukraine-283532\">Terrorist group threatens Latvian companies, demands halt to arms supplies to Ukraine</a> appeared first on <a href=\"https://bnn-news.com\">Baltic News Network</a>.</p>",
-        "source": "BNN",
-        "url": "https://bnn-news.com/terrorist-group-threatens-latvian-companies-demands-halt-to-arms-supplies-to-ukraine-283532",
-        "published": "Tue, 08 Sep 2026 07:45:18 +0000",
-        "country": "Latvia",
-        "city": null,
-        "family": "terrorism",
-        "subcategory": "attack",
-        "subtype": "terrorist_attack",
-        "object": "cyber_system",
-        "action": "attacked",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [
-          "terrorist"
-        ],
-        "consequences": [],
-        "severity": "critical",
-        "confidence": 0.82,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "TERRORISM.ATTACK",
-        "fingerprint": {
-          "country": "Latvia",
-          "family": "terrorism",
-          "subcategory": "attack",
-          "subtype": "terrorist_attack",
-          "object": "cyber_system",
-          "action": "attacked",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Latvia",
-          "event_date": "Tue, 08 Se",
-          "hash": "c718416af9d6d3bc145498e7"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "cyber_system",
-            "network"
-          ],
-          "actions": [
-            "attacked",
-            "targeted"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "russian",
-            "ukraine"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Latvia",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "TERRORISM.ATTACK",
-            "family": "terrorism",
-            "subcategory": "attack",
-            "subtype": "terrorist_attack",
-            "severity": "critical",
-            "priority": 0,
-            "score": 2.1,
-            "matched": true,
-            "missing": [],
-            "matched_context": [
-              "terrorist"
-            ]
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:drone"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:ship"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.INTRUSION",
-            "family": "cyber",
-            "subcategory": "intrusion",
-            "subtype": "cyber_intrusion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:compromised"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:disrupted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "PUBLIC.ORDER.VIOLENCE",
-            "family": "public_order",
-            "subcategory": "violent_protest",
-            "subtype": "violent_public_disorder",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Latvia",
-        "time": "Tue, 08 Sep 2026 07:45:18 +0000",
-        "category": "terrorism",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "BNN"
-        ],
-        "urls": [
-          "https://bnn-news.com/terrorist-group-threatens-latvian-companies-demands-halt-to-arms-supplies-to-ukraine-283532"
-        ],
-        "merged_titles": [
-          "Terrorist group threatens Latvian companies, demands halt to arms supplies to Ukraine"
-        ],
-        "incident_family": "terrorism",
-        "incident_subcategory": "attack",
-        "incident_subtype": "terrorist_attack",
-        "incident_object": "cyber_system",
-        "incident_action": "attacked",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.82
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.0136,
-          58.5953
-        ]
-      },
-      "properties": {
-        "id": "1c9fcdbf353a2b9b66b6",
-        "title": "Train carrying Estonian leaders crossed Ukraine border just before Russian drone strike",
-        "summary": "Estonian politicians and leaders were traveling by train through western Ukraine shortly before a Russian drone struck a station near the Polish border, Delfi reported.",
-        "source": "ERR",
-        "url": "https://news.err.ee/1610137438/train-carrying-estonian-leaders-crossed-ukraine-border-just-before-russian-drone-strike",
-        "published": "Mon, 14 Sep 2026 08:58:00 +0300",
-        "country": "Estonia",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
-        "actor": "russia",
-        "target": "transport",
-        "context": [
-          "border"
-        ],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.9,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint": {
-          "country": "Estonia",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
-          "actor": "russia",
-          "target": "transport",
-          "place": "Estonia",
-          "event_date": "Mon, 14 Se",
-          "hash": "770ebd09e7e0f63635091163"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [
-            "reported"
-          ],
-          "objects": [
-            "drone"
-          ],
-          "actions": [
-            "impact",
-            "struck",
-            "attacked"
-          ],
-          "targets": [
-            "transport",
-            "station"
-          ],
-          "actors": [
-            "russia",
-            "russian",
-            "ukraine"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Estonia",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.42,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.1,
-            "matched": true,
-            "missing": [],
-            "matched_context": [
-              "border"
-            ]
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.95,
-            "matched": false,
-            "missing": [
-              "actions:all:disrupted"
-            ],
-            "matched_context": [
-              "train"
-            ]
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Estonia",
-        "time": "Mon, 14 Sep 2026 08:58:00 +0300",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "ERR"
-        ],
-        "urls": [
-          "https://news.err.ee/1610137438/train-carrying-estonian-leaders-crossed-ukraine-border-just-before-russian-drone-strike"
-        ],
-        "merged_titles": [
-          "Train carrying Estonian leaders crossed Ukraine border just before Russian drone strike"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
-        "incident_actor": "russia",
-        "incident_target": "transport",
-        "classification_confidence": 0.9
       }
     }
   ]

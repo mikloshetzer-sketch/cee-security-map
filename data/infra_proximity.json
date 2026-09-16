@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_utc": "2026-09-16T10:47:35.821530+00:00",
+    "generated_utc": "2026-09-16T16:03:21.395681+00:00",
     "infrastructure_count": 103,
     "event_count": 9,
     "match_count": 1,
@@ -38,13 +38,13 @@
   "matches": [],
   "raw_matches": [
     {
-      "id": "29ac49cc751cfe9e",
-      "level": "high",
-      "score": 66.79,
-      "distance_km": 12.89,
+      "id": "8af4c03bddd73c3b",
+      "level": "critical",
+      "score": 88.68,
+      "distance_km": 0.73,
       "event": {
         "id": "fdbe143e59833c3e",
-        "title": "Violence – Kaisiadorys, Lithuania (general), Lithuania",
+        "title": "Security Politics – Alytus, Alytaus Apskritis, Lithuania",
         "category": "violence",
         "incident_type": "drone_airspace",
         "source": "GDELT",
@@ -58,6 +58,8 @@
         "urls": [
           "https://www.yahoo.com/news/world/articles/lithuania-says-drone-shot-down-004843312.html",
           "https://news.antiwar.com/2026/09/15/nato-fighter-jets-shoot-down-drone-in-lithuanian-airspace/",
+          "https://www.lrytas.lt/english/politics/2026/09/16/news/kaunas-is-the-ongoing-investigation-into-the-downed-drone-let-s-not-speculate-and-pose-a-threat-44017074/",
+          "https://www.lrt.lt/en/news-in-english/19/3054232/nauseda-drone-shot-down-over-lithuania-was-russian-gerbera-headed-for-ukraine",
           "https://www.delfi.lt/en/politics/drone-shot-down-over-lithuania-120304679",
           "https://www.arabnews.com/world/drone-shot-down-by-nato-over-lithuania-president-3001736",
           "https://www.newindianexpress.com/world/2026/Sep/15/nato-fighter-jets-shoot-down-drone-in-lithuania",
@@ -73,27 +75,27 @@
           "https://aa.com.tr/en/world/nato-says-jets-shoot-down-drone-over-lithuanian-airspace/4058063",
           "https://breakingdefense.com/2026/09/italian-fighter-jets-shoot-down-unidentified-drone-over-lithuania/"
         ],
-        "lat": 54.898,
-        "lon": 23.904,
-        "location_quality": "city",
-        "place": "kaunas",
-        "geolocation_method": "article_city",
+        "lat": 54.4,
+        "lon": 24.05,
+        "location_quality": "specific_place",
+        "place": null,
+        "geolocation_method": "source_coordinate",
         "geolocation_source_count": 1,
         "geolocation_evidence_count": 1,
         "geolocation_negation_filter": true,
         "source_file": "gdelt_linked.geojson"
       },
       "infrastructure": {
-        "id": "lt-military-rukla",
-        "name": "Rukla Military Base",
+        "id": "lt-energy-litpol-link",
+        "name": "LitPol Link Alytus Node",
         "country": "Lithuania",
-        "city": "Rukla",
-        "category": "military",
-        "subtype": "land_forces_base",
+        "city": "Alytus",
+        "category": "energy",
+        "subtype": "electricity_interconnector",
         "criticality": 9.0,
-        "operator": "Lithuanian Armed Forces / NATO eFP",
-        "lat": 55.0,
-        "lon": 24.0,
+        "operator": "Litgrid / PSE",
+        "lat": 54.396,
+        "lon": 24.041,
         "source_file": "critical_infrastructure.json"
       }
     }

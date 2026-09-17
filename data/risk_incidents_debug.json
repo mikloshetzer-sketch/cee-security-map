@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-16T20:56:18.733159+00:00",
+  "generated_utc": "2026-09-17T02:49:04.665780+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,9 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
       "incident_count": 0,
@@ -60,7 +64,29 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "7b7262bf9da007721804",
+        "date": "2026-09-16",
+        "time": "2026-09-16T08:04:31+00:00",
+        "category": "drone",
+        "severity": "critical",
+        "title": "Rusové zabili pět lidí v autobusu, uvedl Hanža. Zesilují útoky na železnici",
+        "source": "CT24",
+        "url": "https://ct24.ceskatelevize.cz/clanek/svet/rusky-dronovy-utok-na-autobus-zabil-pet-lidi-uvedl-ukrajinsky-cinitel-377667",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "1348e1923dbae27d3dce1fb7"
+      }
+    ],
     "Romania": [],
     "Slovakia": [],
     "Poland": [

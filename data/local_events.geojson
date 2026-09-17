@@ -1,9 +1,271 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-16T20:56:09.579627+00:00",
+  "generated_utc": "2026-09-17T02:48:56.027248+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5033,
+          47.1625
+        ]
+      },
+      "properties": {
+        "id": "7b7262bf9da007721804",
+        "title": "Rusové zabili pět lidí v autobusu, uvedl Hanža. Zesilují útoky na železnici",
+        "summary": "Pět lidí zabil a sedm zranil ruský dronový útok na autobus v Nikopolském okrese, oznámil ráno šéf správy ukrajinské Dněpropetrovské oblasti Oleksandr Hanža. Jednu oběť po ruském útoku hlásí v Oděse. Další člověk zahynul a devět lidí utrpělo zranění při ruském bombardování města Sumy, uvedli záchranáři. V kyjevské čtvrti Svjatošynskyj pak v důsledku dronového útoku vzplanuly skladové prostory, informovala tamní vojenská správa. Ruské úřady zase uvedly, že ukrajinský dronový útok zabil ženu v Brjanské oblasti.",
+        "source": "CT24",
+        "url": "https://ct24.ceskatelevize.cz/clanek/svet/rusky-dronovy-utok-na-autobus-zabil-pet-lidi-uvedl-ukrajinsky-cinitel-377667",
+        "published": "Wed, 16 Sep 2026 08:04:31 GMT",
+        "country": "Hungary",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "attacked",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [
+          "fatality"
+        ],
+        "severity": "critical",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "attacked",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Hungary",
+          "event_date": "Wed, 16 Se",
+          "hash": "1348e1923dbae27d3dce1fb7"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dron",
+            "cyber_system",
+            "server"
+          ],
+          "actions": [
+            "damaged",
+            "zničil",
+            "poškodil",
+            "attacked",
+            "zaútočil"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusko",
+            "ruský",
+            "ukraine",
+            "ukrajina"
+          ],
+          "consequences": [
+            "fatality",
+            "zemřel"
+          ],
+          "extra_context": [
+            "feed_country=Czechia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 6000,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Pět lidí zabil a sedm zranil ruský dronový útok na autobus v Nikopolském okrese, oznámil ráno šéf správy ukrajinské Dněpropetrovské oblasti Oleksandr Hanža. Jednu oběť po ruském útoku hlásí v Oděse. Další člověk zahynul a devět lidí utrpělo zranění při ruském bombardování města Sumy, uvedli záchranáři. V kyjevské čtvrti Svjatošynskyj pak v důsledku dronového útoku vzplanuly skladové prostory, informovala tamní vojenská správa. Ruské úřady zase uvedly, že ukrajinský dronový útok zabil ženu v Brjanské oblasti. „Pět lidí zemřelo na místě. Sedm zraněných je v současné době v lékařské péči,“ uvedl Hanža, jenž později zveřejnil fotografii , která podle něj následky útoku zachycuje. Je na ní vidět poničený a zakrvácený minibus a zřejmě také jedna z obětí, která je na snímku rozostřená. Nikopolský okres se nachází v blízkosti frontové linie. Nejméně jednoho mrtvého si vyžádal také ruský útok na Oděsu na jihu Ukrajiny, oznámil ve středu náčelník městské vojenské správy Serhij Lysak. Ve městě Kr",
+        "place": "Hungary",
+        "time": "Wed, 16 Sep 2026 08:04:31 GMT",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "CT24"
+        ],
+        "urls": [
+          "https://ct24.ceskatelevize.cz/clanek/svet/rusky-dronovy-utok-na-autobus-zabil-pet-lidi-uvedl-ukrajinsky-cinitel-377667"
+        ],
+        "merged_titles": [
+          "Rusové zabili pět lidí v autobusu, uvedl Hanža. Zesilují útoky na železnici"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "attacked",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-18T15:43:58.833406+00:00",
+  "generated_utc": "2026-09-18T20:26:54.082935+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -61,29 +57,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "a9dafebc0a702fa2dd77",
-        "date": "2026-09-18",
-        "time": "2026-09-18T09:58:21+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Republica Moldova la 35 de ani: între visul european, presiunea Rusiei și dilema unirii cu România",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/moldova-la-35-de-ani-intre-visul-european-presiunea-rusiei-si-dilema-unirii-cu-romania-3953753",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "beffbcdc2e4fae6ea5056621"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [

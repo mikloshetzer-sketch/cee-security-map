@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-18T02:29:22.599350+00:00",
+  "generated_utc": "2026-09-18T10:30:08.609346+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -24,9 +24,13 @@
       }
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -34,12 +38,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 2
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Lithuania": {
@@ -87,7 +91,29 @@
         "fingerprint_hash": "1348e1923dbae27d3dce1fb7"
       }
     ],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "a9dafebc0a702fa2dd77",
+        "date": "2026-09-18",
+        "time": "2026-09-18T09:58:21+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Republica Moldova la 35 de ani: între visul european, presiunea Rusiei și dilema unirii cu România",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/moldova-la-35-de-ani-intre-visul-european-presiunea-rusiei-si-dilema-unirii-cu-romania-3953753",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "beffbcdc2e4fae6ea5056621"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {
@@ -110,27 +136,6 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "f83bb1d6ef9f6c2547b755d2"
-      },
-      {
-        "id": "90d9e268da815bece339",
-        "date": "2026-09-11",
-        "time": "2026-09-11T07:00:42+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Polish Prime Minister warns of potential Russian attacks",
-        "source": "BNN",
-        "url": "https://bnn-news.com/polish-prime-minister-warns-of-potential-russian-attacks-283664",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "b6723dfc03cd3906b2862c6d"
       }
     ],
     "Lithuania": [

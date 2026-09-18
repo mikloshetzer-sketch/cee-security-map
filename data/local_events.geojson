@@ -1,9 +1,264 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-18T02:29:15.107453+00:00",
+  "generated_utc": "2026-09-18T10:29:59.782184+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "a9dafebc0a702fa2dd77",
+        "title": "Republica Moldova la 35 de ani: între visul european, presiunea Rusiei și dilema unirii cu România",
+        "summary": "Republica Moldova împlinește 35 de ani de independență și, pentru prima dată, are un calendar scris pe hârtie: 2028, încheierea negocierilor cu Uniunea Europeană, 2030, aderarea. În aceeași ecuație intră însă un război la câteva sute de kilometri de aici, o propagandă care nu s-a oprit niciodată și o întrebare care revine de fiecare dată când drumul european pare mai greu: unirea cu România. Este ea un plan B? Am stat de vorbă, la Chișinău, cu oamenii care dau răspunsurile.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/moldova-la-35-de-ani-intre-visul-european-presiunea-rusiei-si-dilema-unirii-cu-romania-3953753",
+        "published": "Fri, 18 Sep 2026 12:58:21 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Fri, 18 Se",
+          "hash": "beffbcdc2e4fae6ea5056621"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă",
+            "energy_asset",
+            "centrala"
+          ],
+          "actions": [
+            "impact",
+            "a lovit",
+            "disrupted",
+            "oprit",
+            "closed",
+            "închis"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "rusiei",
+            "ukraine",
+            "ucraina"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 16000,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Republica Moldova împlinește 35 de ani de independență și, pentru prima dată, are un calendar scris pe hârtie: 2028, încheierea negocierilor cu Uniunea Europeană, 2030, aderarea. În aceeași ecuație intră însă un război la câteva sute de kilometri de aici, o propagandă care nu s-a oprit niciodată și o întrebare care revine de fiecare dată când drumul european pare mai greu: unirea cu România. Este ea un plan B? Am stat de vorbă, la Chișinău, cu oamenii care dau răspunsurile. Cristina Cileacu: Suntem la Chișinău. Din nou, Pașaport diplomatic de la Chișinău de data asta. Bine te-am găsit, Daniel Vodă, fostul purtător de cuvânt timp de cinci ani al Guvernului Republicii Moldova și Ministerului de Externe de aici. Vreau să te întreb. Moldova vrea să intre în Uniunea Europeană. E gata? Daniel Vodă : O întrebare de nota 10. Probabil mai avem teme de acasă pe care trebuia să le facem, pentru că procesul de aderare la Uniunea Europeană este un proces meritocratic. Despre asta vorbesc autorități",
+        "place": "Romania",
+        "time": "Fri, 18 Sep 2026 12:58:21 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/moldova-la-35-de-ani-intre-visul-european-presiunea-rusiei-si-dilema-unirii-cu-romania-3953753"
+        ],
+        "merged_titles": [
+          "Republica Moldova la 35 de ani: între visul european, presiunea Rusiei și dilema unirii cu România"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

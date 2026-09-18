@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-18T10:30:08.609346+00:00",
+  "generated_utc": "2026-09-18T15:43:58.833406+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,13 +15,9 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
       "incident_count": 1,
@@ -38,13 +34,9 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Lithuania": {
       "incident_count": 1,
@@ -68,29 +60,7 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
-      {
-        "id": "7b7262bf9da007721804",
-        "date": "2026-09-16",
-        "time": "2026-09-16T08:04:31+00:00",
-        "category": "drone",
-        "severity": "critical",
-        "title": "Rusové zabili pět lidí v autobusu, uvedl Hanža. Zesilují útoky na železnici",
-        "source": "CT24",
-        "url": "https://ct24.ceskatelevize.cz/clanek/svet/rusky-dronovy-utok-na-autobus-zabil-pet-lidi-uvedl-ukrajinsky-cinitel-377667",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "1348e1923dbae27d3dce1fb7"
-      }
-    ],
+    "Hungary": [],
     "Romania": [
       {
         "id": "a9dafebc0a702fa2dd77",
@@ -115,29 +85,7 @@
       }
     ],
     "Slovakia": [],
-    "Poland": [
-      {
-        "id": "cb882acb8cfef3130545",
-        "date": "2026-09-13",
-        "time": "2026-09-13T10:31:02+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Drone hits Kyiv-Warsaw train close to Polish border during Russian attacks on Ukraine",
-        "source": "NotesFromPoland",
-        "url": "https://notesfrompoland.com/2026/09/13/russian-drone-hits-kyiv-warsaw-train-close-to-polish-border/",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "f83bb1d6ef9f6c2547b755d2"
-      }
-    ],
+    "Poland": [],
     "Lithuania": [
       {
         "id": "e5086ef53fddc60e20b6",

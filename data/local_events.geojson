@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-18T20:26:45.701850+00:00",
+  "generated_utc": "2026-09-19T02:33:28.873277+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -231,7 +231,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 3502,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "az Iszlám Forradalmi Gárda közleményére hivatkozva számolt be a Trend nevű tartályhajó elleni támadásról, amelyet Teherán illegális áthaladási kísérletnek minősített. A Forradalmi Gárda haditengerészete egyúttal arra figyelmeztetett, hogy a megsemmisítést kockáztatja minden olyan tengeri jármű, amely engedély nélkül kísérel meg átkelni a szoroson. Irán a február 28-án indult amerikai–izraeli háború óta tartja ellenőrzése alatt a világ egyik legfontosabb tengeri kereskedelmi útvonalát. Az Egyesült Királyság Tengeri Kereskedelmi Műveleti Központja (UKMTO) az éjszaka folyamán biztonsági incidensről számolt be az ománi Kaszab városától 16 tengeri mérföldre északkeletre, a szoros túloldalán. A szervezet tájékoztatása alapján a legénység biztonságban van, és környezeti kár sem keletkezett. Egyelőre nem tisztázott, hogy az UKMTO jelentése ugyanarra az eseményre vonatkozik-e, amelyet Irán magára vállalt. Az Associated Press hírügynökség független forrásból nem tudta megerősíteni az iráni állít",
         "place": "Hungary",
         "time": "Fri, 18 Sep 2026 20:01:00 +0200",
@@ -257,6 +257,275 @@
         "incident_actor": "unknown",
         "incident_target": "unknown",
         "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.1451,
+          51.9194
+        ]
+      },
+      "properties": {
+        "id": "975bafce26e4dcec6153",
+        "title": "Rusové útočili v Záporoží, Charkovské i Žytomyrské oblasti. Zemřelo několik lidí",
+        "summary": "Dva mrtvé a dva zraněné si vyžádal noční ruský úder na industriální objekt v Žytomyrské oblasti, uvedl šéf tamní vojenské správy Vitalij Bunečko. Zásah příměstského vlaku v Charkovské oblasti zabil jednoho člověka, dalších sedm zranil, napsala Ukrajinska pravda. Rusové útočili i v Záporoží, Dnipru, v Sumské, Kyjevské, Oděské a Doněcké oblasti, kde zranili téměř dvacet lidí. Kvůli dronům na západě Ukrajiny letěly do Polska české gripeny, zasahovat nakonec nemusely.",
+        "source": "CT24",
+        "url": "https://ct24.ceskatelevize.cz/clanek/svet/rusko-utocilo-na-zaporozi-i-sumskou-oblast-pri-vybuchu-miny-zemrel-clovek-377735",
+        "published": "Fri, 18 Sep 2026 06:59:13 GMT",
+        "country": "Poland",
+        "city": null,
+        "family": "maritime",
+        "subcategory": "ship_incident",
+        "subtype": "ship_attack",
+        "object": "ship",
+        "action": "damaged",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [
+          "fatality",
+          "injury"
+        ],
+        "severity": "critical",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "MARITIME.SHIP.ATTACK",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "maritime",
+          "subcategory": "ship_incident",
+          "subtype": "ship_attack",
+          "object": "ship",
+          "action": "damaged",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Poland",
+          "event_date": "Fri, 18 Se",
+          "hash": "25ba26f21e546370b16de830"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dron",
+            "ship",
+            "tanker",
+            "plavidlo",
+            "cyber_system",
+            "server"
+          ],
+          "actions": [
+            "burned",
+            "vypukl požár",
+            "damaged",
+            "zničil",
+            "poškodil"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusko",
+            "ruský",
+            "ukraine",
+            "ukrajina",
+            "nato"
+          ],
+          "consequences": [
+            "fatality",
+            "zemřel",
+            "injury",
+            "zraněn"
+          ],
+          "extra_context": [
+            "feed_country=Czechia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 5652,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Dva mrtvé a dva zraněné si vyžádal noční ruský úder na industriální objekt v Žytomyrské oblasti, uvedl šéf tamní vojenské správy Vitalij Bunečko. Zásah příměstského vlaku v Charkovské oblasti zabil jednoho člověka, dalších sedm zranil, napsala Ukrajinska pravda. Rusové útočili i v Záporoží, Dnipru, v Sumské, Kyjevské, Oděské a Doněcké oblasti, kde zranili téměř dvacet lidí. Kvůli dronům na západě Ukrajiny letěly do Polska české gripeny, zasahovat nakonec nemusely. Útok zasáhl skladové a výrobní budovy v Korosteňském okrese. Podle záchranářů v zasaženém průmyslovém parku vypukl požár, který se již podařilo uhasit, ačkoli hašení komplikovaly opakované letecké poplachy. Na sociální síti Facebook nejprve železniční společnost Ukrzaliznycja informovala o dvou zraněných cestujících, kteří se během evakuace nedostali do bezpečné vzdálenosti od vlaku. Ukrajinska pravda následně s odvoláním na telegramový příspěvek náčelníka vojenské správy Charkovské oblasti Oleha Syněhubova informovala o útok",
+        "place": "Poland",
+        "time": "Fri, 18 Sep 2026 06:59:13 GMT",
+        "category": "maritime",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "CT24"
+        ],
+        "urls": [
+          "https://ct24.ceskatelevize.cz/clanek/svet/rusko-utocilo-na-zaporozi-i-sumskou-oblast-pri-vybuchu-miny-zemrel-clovek-377735"
+        ],
+        "merged_titles": [
+          "Rusové útočili v Záporoží, Charkovské i Žytomyrské oblasti. Zemřelo několik lidí"
+        ],
+        "incident_family": "maritime",
+        "incident_subcategory": "ship_incident",
+        "incident_subtype": "ship_attack",
+        "incident_object": "ship",
+        "incident_action": "damaged",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
       }
     },
     {

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-21T17:42:19.888140+00:00",
+  "generated_utc": "2026-09-21T21:41:28.853918+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "cyber": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,7 +61,29 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "b3d96b0a406a930678fb",
+        "date": "2026-09-21",
+        "time": "2026-09-21T17:32:02+00:00",
+        "category": "cyber",
+        "severity": "medium",
+        "title": "Ce crede Sorin Grindeanu că se va întâmpla cu Călin Georgescu, după reținerea în noul dosar. „Pe mine mă miră următorul lucru”",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/ce-crede-sorin-grindeanu-ca-se-va-intampla-cu-calin-georgescu-dupa-retinerea-in-noul-dosar-pe-mine-ma-mira-urmatorul-lucru-2354883",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "cyber",
+        "incident_subcategory": "gps_interference",
+        "incident_subtype": "gps_jamming_or_spoofing",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
+        "fingerprint_hash": "8c48d6aff0625f70310c8029"
+      }
+    ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [

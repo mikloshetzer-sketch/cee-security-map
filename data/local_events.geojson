@@ -1,9 +1,266 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-21T17:42:10.739307+00:00",
+  "generated_utc": "2026-09-21T21:41:19.481455+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.102,
+          44.426
+        ]
+      },
+      "properties": {
+        "id": "b3d96b0a406a930678fb",
+        "title": "Ce crede Sorin Grindeanu că se va întâmpla cu Călin Georgescu, după reținerea în noul dosar. „Pe mine mă miră următorul lucru”",
+        "summary": "Liderul PSD, Sorin Grindeanu, a reacționat luni seară după ce Călin Georgescu a fost reținut de DIICOT pentru 24 de ore, afirmând că noul dosar care îl vizează pe fostul candidat la prezidențiale riscă să îi încheie acestuia cariera politică. „Dacă lucrurile se dovedesc a fi așa cum spun procurorii DIICOT și cum am văzut &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/ce-crede-sorin-grindeanu-ca-se-va-intampla-cu-calin-georgescu-dupa-retinerea-in-noul-dosar-pe-mine-ma-mira-urmatorul-lucru-2354883",
+        "published": "Mon, 21 Sep 2026 17:32:02 +0000",
+        "country": "Romania",
+        "city": "București",
+        "family": "cyber",
+        "subcategory": "gps_interference",
+        "subtype": "gps_jamming_or_spoofing",
+        "object": "explosive_device",
+        "action": "jammed",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "cyber",
+          "subcategory": "gps_interference",
+          "subtype": "gps_jamming_or_spoofing",
+          "object": "explosive_device",
+          "action": "jammed",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "București",
+          "event_date": "Mon, 21 Se",
+          "hash": "8c48d6aff0625f70310c8029"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "explosive_device",
+            "mine",
+            "cyber_system",
+            "rețea"
+          ],
+          "actions": [
+            "jammed",
+            "bruiaj"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "CYBER.GPS.INTERFERENCE",
+            "family": "cyber",
+            "subcategory": "gps_interference",
+            "subtype": "gps_jamming_or_spoofing",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.13,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 4018,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Liderul PSD, Sorin Grindeanu, a reacționat luni seară după ce Călin Georgescu a fost reținut de DIICOT pentru 24 de ore, afirmând că noul dosar care îl vizează pe fostul candidat la prezidențiale riscă să îi încheie acestuia cariera politică. „Dacă lucrurile se dovedesc a fi așa cum spun procurorii DIICOT și cum am văzut în presă evident, da. Dar mă feresc să dau eu verdicte. Nu am dat verdicte nici când l-au luat pe Ciprian Ciucu și l-au acuzat, n-am dat verdicte nici când s-a aprins lumina în cămară și au găsit-o pe doamna Trăilă (…). Dar dacă se va se dovedi a fi vinovat, Călin Georgescu, evident, este scos din politică”, a declarat președintele social-democraților, într-un interviu acordat postului Antena 3 CNN. Întrebat din ce crede el că trăiește Călin Georgescu, Sorin Grindeanu a spus că statul român trebuie să-i adreseze această întrebare fostului prezidențiabil. „La această întrebare cred că trebuia să se răspundă după ce din neant, la sfârșitul lunii noiembrie 2024, Călin Geo",
+        "place": "București",
+        "time": "Mon, 21 Sep 2026 17:32:02 +0000",
+        "category": "cyber",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "urls": [
+          "https://hotnews.ro/ce-crede-sorin-grindeanu-ca-se-va-intampla-cu-calin-georgescu-dupa-retinerea-in-noul-dosar-pe-mine-ma-mira-urmatorul-lucru-2354883"
+        ],
+        "merged_titles": [
+          "Ce crede Sorin Grindeanu că se va întâmpla cu Călin Georgescu, după reținerea în noul dosar. „Pe mine mă miră următorul lucru”"
+        ],
+        "incident_family": "cyber",
+        "incident_subcategory": "gps_interference",
+        "incident_subtype": "gps_jamming_or_spoofing",
+        "incident_object": "explosive_device",
+        "incident_action": "jammed",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

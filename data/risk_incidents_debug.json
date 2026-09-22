@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-22T02:43:33.324270+00:00",
+  "generated_utc": "2026-09-22T10:48:39.485544+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "cyber": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -34,18 +30,18 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Lithuania": {
       "incident_count": 1,
       "category_counts": {
-        "military": 1
+        "infrastructure_disruption": 1
       },
       "source_files": {
         "local_events.geojson": 1
       }
+    },
+    "Lithuania": {
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Latvia": {
       "incident_count": 0,
@@ -61,54 +57,32 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "b3d96b0a406a930678fb",
-        "date": "2026-09-21",
-        "time": "2026-09-21T17:32:02+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "title": "Ce crede Sorin Grindeanu că se va întâmpla cu Călin Georgescu, după reținerea în noul dosar. „Pe mine mă miră următorul lucru”",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/ce-crede-sorin-grindeanu-ca-se-va-intampla-cu-calin-georgescu-dupa-retinerea-in-noul-dosar-pe-mine-ma-mira-urmatorul-lucru-2354883",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "cyber",
-        "incident_subcategory": "gps_interference",
-        "incident_subtype": "gps_jamming_or_spoofing",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
-        "fingerprint_hash": "8c48d6aff0625f70310c8029"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
-    "Poland": [],
-    "Lithuania": [
+    "Poland": [
       {
-        "id": "e5086ef53fddc60e20b6",
-        "date": "2026-09-15",
-        "time": "2026-09-15T06:25:07+00:00",
-        "category": "military",
+        "id": "3099f6cb4fed35cad13a",
+        "date": "2026-09-22",
+        "time": "2026-09-22T08:15:17+00:00",
+        "category": "infrastructure_disruption",
         "severity": "high",
-        "title": "NATO fighter jets shoot down drone over Lithuania",
-        "source": "BNN",
-        "url": "https://bnn-news.com/nato-fighter-jets-shoot-down-drone-over-lithuania-283753",
+        "title": "Befejezte a Mol a tavaly ősszel kigyulladt desztillációs tornya javítását",
+        "source": "HVG",
+        "url": "https://hvg.hu/kkv/20260922_mol-dunai-finomito-av-3-desztillacios-torony-javitas-befejeztek",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "77272f5ab9dce6a753943a17"
+        "incident_family": "energy",
+        "incident_subcategory": "oil_gas",
+        "incident_subtype": "energy_asset_fire",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "ENERGY.ASSET.FIRE",
+        "fingerprint_hash": "10fd626f64ddbb05a71e3cd6"
       }
     ],
+    "Lithuania": [],
     "Latvia": [],
     "Estonia": []
   }

@@ -6,6 +6,66 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          14.43,
+          50.08
+        ]
+      },
+      "properties": {
+        "source": "DIRECT_FEED",
+        "feed_name": "The Guardian World",
+        "kind": "news_direct",
+        "type": "News",
+        "time": "2026-09-22T10:18:20Z",
+        "title": "EU deadlocked on changes to Russia sanctions ahead of key Ukraine, Greenland talks - Europe live",
+        "description": "&lt;p&gt;Without an agreement sanctions on nearly 3,000 entities accused of supporting the war on Ukraine will lapse at the end of the day&lt;/p&gt;&lt;p&gt;Meanwhile, &lt;strong&gt;European leaders attending the UN general assembly in New York will also have the growing concerns about Russia’s aggressive posture in eastern Europe at the back of their mind.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;As the Guardian’s &lt;strong&gt;Shaun Walker &lt;/strong&gt;reported over the weekend, &lt;strong&gt;European intelligence officials have raised the possibility of an imminent Russian test of Nato,&lt;/strong&gt; with one saying a potential attack could come in a matter of “months, not years”.&lt;/p&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;“Michal Koudelka,&lt;/strong&gt; the head of the Czech Republic’s BIS ",
+        "url": "https://www.theguardian.com/world/live/2026/sep/22/eu-trump-russia-putin-sanctions-ukraine-greenland-denmark-zelenskyy-latest-news-updates",
+        "country_hint": "Czech Republic",
+        "relation_hits": [
+          "Ukraine",
+          "Russia",
+          "Russian",
+          "EU",
+          "NATO"
+        ],
+        "category": "air",
+        "impact_mult": 1.3600000000000003,
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "incident_object": "drone",
+        "incident_action": "entered",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "severity": "medium",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "article_role": "incident",
+        "actual_incident": true,
+        "risk_eligible": true,
+        "fingerprint": {
+          "country": "Czech Republic",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_intrusion",
+          "object": "drone",
+          "action": "entered",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Czech Republic",
+          "event_date": "2026-09-22",
+          "hash": "a3580e7ac74f6470637c9cae"
+        },
+        "classification_source": "security_classifier",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "rejection_reason": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           19.04,
           47.5
         ]
@@ -453,122 +513,6 @@
           "Russian",
           "Lithuania",
           "EU",
-          "NATO"
-        ],
-        "category": "air",
-        "impact_mult": 1.12,
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "incident_object": "drone",
-        "incident_action": "shot_down",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "severity": "high",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "article_role": "incident",
-        "actual_incident": true,
-        "risk_eligible": true,
-        "fingerprint": {
-          "country": "Poland",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_shootdown",
-          "object": "drone",
-          "action": "shot_down",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Poland",
-          "event_date": "2026-09-15",
-          "hash": "c42963da0314751dc9898953"
-        },
-        "classification_source": "security_classifier",
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "rejection_reason": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.9,
-          54.3
-        ]
-      },
-      "properties": {
-        "source": "DIRECT_FEED",
-        "feed_name": "DW Top Stories",
-        "kind": "news_direct",
-        "type": "News",
-        "time": "2026-09-15T10:16:00Z",
-        "title": "NATO jets shoot down drone over Lithuania",
-        "description": "The drone, which is believed to have entered Lithuanian airspace from Belarus, was shot down by an Italian fighter jet in between the cities of Vilnius and Kaunas. There have been no reports of casualties or damage.",
-        "url": "https://www.dw.com/en/nato-jets-shoot-down-drone-over-lithuania/a-79267975?maca=en-rss-en-all-1573-xml-mrss",
-        "country_hint": "Lithuania",
-        "relation_hits": [
-          "Belarus",
-          "NATO"
-        ],
-        "category": "air",
-        "impact_mult": 1.12,
-        "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "incident_object": "military_aircraft",
-        "incident_action": "entered",
-        "incident_actor": "belarus",
-        "incident_target": "unknown",
-        "severity": "medium",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "article_role": "incident",
-        "actual_incident": true,
-        "risk_eligible": true,
-        "fingerprint": {
-          "country": "Lithuania",
-          "family": "air",
-          "subcategory": "aircraft",
-          "subtype": "military_aircraft_incident",
-          "object": "military_aircraft",
-          "action": "entered",
-          "actor": "belarus",
-          "target": "unknown",
-          "place": "Lithuania",
-          "event_date": "2026-09-15",
-          "hash": "4eca7ea295e2afa1b2f0feea"
-        },
-        "classification_source": "security_classifier",
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "rejection_reason": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.15,
-          52.1
-        ]
-      },
-      "properties": {
-        "source": "DIRECT_FEED",
-        "feed_name": "The Guardian Europe",
-        "kind": "news_direct",
-        "type": "News",
-        "time": "2026-09-15T05:45:49Z",
-        "title": "Tuesday briefing: How to understand Wales, Scotland and Northern Ireland’s joint call for change",
-        "description": "&lt;p&gt;In today’s newsletter: Plaid Cymru, the SNP and Sinn Féin have signed an agreement for greater powers, as pressure grows on Westminster over the UK’s future&lt;/p&gt;&lt;p&gt;Good morning. Back in May, the shape of British politics shifted dramatically. I’ll forgive you if you were too preoccupied refreshing Andrew Sparrow’s live blog for the latest speculation about Keir Starmer to notice, but since 7 May, centre-left nationalist parties that ultimately aspire to leave the UK have been in government for the first time simultaneously in Scotland, Wales and Northern Ireland.&lt;/p&gt;&lt;p&gt;This week sees the initial codification of that shift. In Cardiff yesterday, Plaid Cymru leader Rhun ap Iorwerth, Scottish National party leader John Swinney and Sinn Féin vice-president Miche",
-        "url": "https://www.theguardian.com/world/2026/sep/15/tuesday-briefing-how-to-understand-wales-scotland-and-northern-irelands-joint-call-for-change",
-        "country_hint": "Poland",
-        "relation_hits": [
-          "Russia",
-          "Russian",
-          "Lithuania",
           "NATO"
         ],
         "category": "air",

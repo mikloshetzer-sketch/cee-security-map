@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-22T16:16:19.804466+00:00",
+  "generated_utc": "2026-09-22T20:54:52.332612+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 0,
-    "local_event_count": 0,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,9 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "transport": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
       "incident_count": 0,
@@ -52,7 +56,29 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "73e4bf4cae2f44d190e2",
+        "date": "2026-09-22",
+        "time": "2026-09-22T17:19:00+00:00",
+        "category": "transport",
+        "severity": "medium",
+        "title": "Biztonsági figyelmeztetés miatt nem engedték felszállni a Wizz Air bilbaói járatát",
+        "source": "Telex",
+        "url": "https://telex.hu/belfold/2026/09/22/wizz-air-legitarsasag-budapest-bilbao-jarat-visszafordult",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "transport",
+        "incident_subcategory": "aviation",
+        "incident_subtype": "airport_closure",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "TRANSPORT.AVIATION.CLOSURE",
+        "fingerprint_hash": "ea28ec898065fce4eb17a2ba"
+      }
+    ],
     "Romania": [],
     "Slovakia": [],
     "Poland": [],

@@ -1,9 +1,274 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-22T16:16:10.816704+00:00",
+  "generated_utc": "2026-09-22T20:54:43.294157+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.04,
+          47.497
+        ]
+      },
+      "properties": {
+        "id": "73e4bf4cae2f44d190e2",
+        "title": "Biztonsági figyelmeztetés miatt nem engedték felszállni a Wizz Air bilbaói járatát",
+        "summary": "<p>Biztonsági figyelmeztetés miatt megszakította a felszállás előtti gurulást a Wizz Air Budapestről Bilbaóba tartó járata kedd délután. Az utasokat leszállították a repülőgépről, a hatóságok pedig megkezdték az eset vizsgálatát; a Liszt Ferenc Nemzetközi Repülőtér forgalma továbbra is zavartalan - jelentette az <a href=\"https://www.facebook.com/AIRportal.hu/posts/pfbid0HanG225N6FbZyu99MWYW6kcHWPVrqY3vBMZ8mtUT4aeNgtsakcVPGuK6wfbJC5Mwl\" rel=\"noopener\" target=\"_blank\">AirPortal.hu</a>.</p>",
+        "source": "Telex",
+        "url": "https://telex.hu/belfold/2026/09/22/wizz-air-legitarsasag-budapest-bilbao-jarat-visszafordult",
+        "published": "Tue, 22 Sep 2026 19:19:09 +0200",
+        "country": "Hungary",
+        "city": "Budapest",
+        "family": "transport",
+        "subcategory": "aviation",
+        "subtype": "airport_closure",
+        "object": "critical_infrastructure",
+        "action": "closed",
+        "actor": "unknown",
+        "target": "transport",
+        "context": [
+          "airport",
+          "repülőtér"
+        ],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.92,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "TRANSPORT.AVIATION.CLOSURE",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "transport",
+          "subcategory": "aviation",
+          "subtype": "airport_closure",
+          "object": "critical_infrastructure",
+          "action": "closed",
+          "actor": "unknown",
+          "target": "transport",
+          "place": "Budapest",
+          "event_date": "Tue, 22 Se",
+          "hash": "ea28ec898065fce4eb17a2ba"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "critical_infrastructure",
+            "airport",
+            "repülőtér"
+          ],
+          "actions": [
+            "closed",
+            "lezárták"
+          ],
+          "targets": [
+            "transport",
+            "airport",
+            "repülőtér"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 3.28,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "airport",
+              "repülőtér"
+            ]
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted",
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1333,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Nem szállhatott fel a Wizz Air Budapestről Bilbaóba induló W6 2413-as számú járata a Liszt Ferenc Nemzetközi Repülőtérről kedden hatóságoktól kapott biztonsági figyelmeztetés miatt – írta meg a Facebook-oldalán az AIRportal . Egy Facebookra felkerült videón látható , hogy számos kékvillogós jármű veszi körbe a repülőt. A Wizz Airbus A321neóját 16:30-kor tolták ki az állóhelyről, majd az egyik futópálya várakozóöblébe gurult, nem engedték felszállni. Ezzel párhuzamosan a 2-es futópályát lezárták, a reptér forgalma a másik pályán zajlott. A Wizz Air közölte a portállal, hogy járatának a hatóságoktól kapott biztonsági figyelmeztetés miatt meg kellett szakítania útját a futópálya felé. Közölték, a repülőtéri hatóságoktól és társszervektől kapott biztonsági információk alapján a járat személyzete a hatóságokkal együttműködve visszafordult. A Budapest Airport azt válaszolta a kérdésekre, hogy a légiforgalmi irányítás és az illetékes hatóságok jelenleg vizsgálnak egy olyan eseményről szóló je",
+        "place": "Budapest",
+        "time": "Tue, 22 Sep 2026 19:19:00 +0200",
+        "category": "transport",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 3,
+        "sources": [
+          "Telex",
+          "HVG",
+          "Portfolio"
+        ],
+        "urls": [
+          "https://telex.hu/belfold/2026/09/22/wizz-air-legitarsasag-budapest-bilbao-jarat-visszafordult",
+          "https://hvg.hu/itthon/20260922_biztonsagi-figyelmeztetes-wizz-air-jarat-ferihegy-budapest-airport-repuloter",
+          "https://www.portfolio.hu/gazdasag/20260922/rendkivuli-riasztas-a-magyar-repuloteren-az-utolso-pillanatban-allitottak-meg-a-felszallni-keszulo-gepet-864552"
+        ],
+        "merged_titles": [
+          "Biztonsági figyelmeztetés miatt nem engedték felszállni a Wizz Air bilbaói járatát",
+          "Közveszéllyel fenyegető gyerek miatt nem szállt fel a Wizz Air járata Ferihegyen",
+          "Rendkívüli riasztás a magyar repülőtéren: az utolsó pillanatban állították meg a felszállni készülő gépet"
+        ],
+        "incident_family": "transport",
+        "incident_subcategory": "aviation",
+        "incident_subtype": "airport_closure",
+        "incident_object": "critical_infrastructure",
+        "incident_action": "closed",
+        "incident_actor": "unknown",
+        "incident_target": "transport",
+        "classification_confidence": 0.92
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

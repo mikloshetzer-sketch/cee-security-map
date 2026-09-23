@@ -1,7 +1,263 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-23T16:03:59.980033+00:00",
+  "generated_utc": "2026-09-23T21:04:13.572016+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.1451,
+          51.9194
+        ]
+      },
+      "properties": {
+        "id": "c67e54580fc85c81a85b",
+        "title": "Cezary Tomczyk: Wojsko Polskie trzyma rękę na pulsie, ale też na spuście",
+        "summary": "<img alt=\"Cezary Tomczyk: Wojsko Polskie trzyma rękę na pulsie, ale też na spuście\" src=\"https://tvn24.pl/najnowsze/cdn-zdjecie-polski-mysliwiec-f-16-zdjecie-ilustracyjne-ph9248371/alternates/LANDSCAPE_1280\" />\n    Zmieniamy procedury w Wojsku Polskim, aby niepotrzebna była identyfikacja wizualna celu do zestrzelenia - przekazał w \"Tak jest\" w TVN24 wiceminister obrony narodowej Cezary Tomczyk. Zapewnił też, że rosyjski śmigłowiec, który w środę naruszył polską przestrzeń powietrzną, był cały czas pod kontrolą polskiego wojska.",
+        "source": "TVN24",
+        "url": "https://tvn24.pl/polska/cezary-tomczyk-wojsko-polskie-zmieni-procedury-zestrzelenie-nie-bedzie-wymagalo-identyfikacji-wizualnej-st9251973?source=rss",
+        "published": "Wed, 23 Sep 2026 16:54:23 GMT",
+        "country": "Poland",
+        "city": null,
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "entered",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "entered",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Poland",
+          "event_date": "Wed, 23 Se",
+          "hash": "e41b0e3df180789a467e3a9b"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "military_aircraft",
+            "śmigłowiec"
+          ],
+          "actions": [
+            "entered",
+            "naruszył"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rosyjski"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Poland",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Poland",
+        "time": "Wed, 23 Sep 2026 16:54:23 GMT",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "TVN24"
+        ],
+        "urls": [
+          "https://tvn24.pl/polska/cezary-tomczyk-wojsko-polskie-zmieni-procedury-zestrzelenie-nie-bedzie-wymagalo-identyfikacji-wizualnej-st9251973?source=rss"
+        ],
+        "merged_titles": [
+          "Cezary Tomczyk: Wojsko Polskie trzyma rękę na pulsie, ale też na spuście"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "entered",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    }
+  ]
 }

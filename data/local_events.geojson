@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-24T02:31:26.540977+00:00",
+  "generated_utc": "2026-09-24T10:59:47.172463+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,71 +9,76 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.107,
-          48.148
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "id": "dfeb7d9ec50a3c514b24",
-        "title": "Ruský vrtuľník narušil vzdušný priestor Poľska, lístky na vlak budú lacnejšie a spor o vyšetrenia sa skončil dohodou (denný výber)",
-        "summary": "<br />\n                        Časť pacientov čakajú refundácie.",
-        "source": "Aktuality",
-        "url": "https://www.aktuality.sk/clanok/QdmRidO/rusky-vrtulnik-narusil-vzdusny-priestor-polska-listky-na-vlak-budu-lacnejsie-a-spor-o-vysetrenia-sa-skoncil-dohodou-denny-vyber/",
-        "published": "Wed, 23 Sep 2026 19:11:50 +0000",
-        "country": "Slovakia",
-        "city": "Bratislava",
+        "id": "e5d6effc2665902dcb1d",
+        "title": "Román légtérbe repült egy drón Suceava megyében, F–16-osok szálltak fel",
+        "summary": "A hadsereg román és spanyol vadászgépeket is a magasba küldött a határ menti fenyegetés miatt, és a lakosságot is riasztották.",
+        "source": "Telex",
+        "url": "https://telex.hu/transtelex/2026/09/24/roman-legterbe-repult-egy-dron-suceava-megyeben-f-16-osok-szalltak-fel",
+        "published": "Thu, 24 Sep 2026 10:12:49 +0200",
+        "country": "Romania",
+        "city": null,
         "family": "air",
-        "subcategory": "aircraft",
-        "subtype": "military_aircraft_incident",
-        "object": "military_aircraft",
-        "action": "entered",
-        "actor": "russia",
-        "target": "unknown",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "ukraine",
+        "target": "government",
         "context": [],
         "consequences": [],
-        "severity": "medium",
+        "severity": "high",
         "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
-          "country": "Slovakia",
+          "country": "Romania",
           "family": "air",
-          "subcategory": "aircraft",
-          "subtype": "military_aircraft_incident",
-          "object": "military_aircraft",
-          "action": "entered",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Bratislava",
-          "event_date": "Wed, 23 Se",
-          "hash": "f135b9794148a63ca36f58c6"
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "ukraine",
+          "target": "government",
+          "place": "Romania",
+          "event_date": "Thu, 24 Se",
+          "hash": "09b92538a79594bd516dac1e"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
+            "drone",
+            "drón",
             "military_aircraft",
-            "vrtuľník"
+            "helikopter"
           ],
           "actions": [
-            "entered",
-            "prenikol",
-            "jammed",
-            "rušenie"
+            "detected",
+            "észleltek",
+            "impact",
+            "lezuhant",
+            "closed",
+            "lezárták"
           ],
-          "targets": [],
+          "targets": [
+            "government",
+            "minisztérium"
+          ],
           "actors": [
-            "russia",
-            "rusko",
-            "ruský",
-            "nato"
+            "ukraine",
+            "ukrán"
           ],
           "consequences": [],
           "extra_context": [
-            "feed_country=Slovakia",
-            "geocode_quality=city"
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
           ]
         },
         "negative_terms": [],
@@ -81,12 +86,24 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
+          "target_match": 0.08,
           "actor_match": 0.06,
           "country_match": 0.1,
-          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
           {
             "rule_id": "AIR.AIRCRAFT.INCIDENT",
             "family": "air",
@@ -100,13 +117,13 @@
             "matched_context": []
           },
           {
-            "rule_id": "CYBER.GPS.INTERFERENCE",
-            "family": "cyber",
-            "subcategory": "gps_interference",
-            "subtype": "gps_jamming_or_spoofing",
-            "severity": "medium",
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
             "priority": 0,
-            "score": 1.13,
+            "score": 2.26,
             "matched": true,
             "missing": [],
             "matched_context": []
@@ -121,36 +138,7 @@
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.ILLEGAL.CROSSING",
-            "family": "border_security",
-            "subcategory": "illegal_crossing",
-            "subtype": "illegal_border_crossing",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
+              "actions:all:entered"
             ],
             "matched_context": []
           },
@@ -161,10 +149,9 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:intercepted"
             ],
             "matched_context": []
@@ -176,26 +163,10 @@
             "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:any:attacked,exploded,impact"
             ],
             "matched_context": []
           },
@@ -206,58 +177,84 @@
             "subtype": "missile_detection",
             "severity": "medium",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
+              "objects:all:missile"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "rule_id": "AIR.MISSILE.IMPACT",
             "family": "air",
             "subcategory": "missile",
-            "subtype": "missile_interception",
+            "subtype": "missile_impact",
             "severity": "high",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 6789,
+        "article_text_chars": 1626,
         "article_fetch_source": "network",
-        "article_text_excerpt": "HeadingBlockRuský vojenský vrtuľník narušil vzdušný priestor PoľskaRuský vojenský vrtuľník Mi-8 v stredu na krátky čas narušil vzdušný priestor Poľska pri meste Braniewo neďaleko hranice s Kaliningradskou oblasťou. Do poľského územia prenikol asi 300 metrov a zotrval tam 42 sekúnd.Incident zaznamenali radarové systémy poľských ozbrojených síl, ktoré následne vyslali stíhacie lietadlá. Pozemné jednotky aj prostriedky protivzdušnej obrany zostali v stave pohotovosti.Poľské operačné velenie uviedlo, že charakter incidentu naznačuje, že Rusko opäť testuje pripravenosť protivzdušnej obrany. Poľsko zároveň zdôraznilo, že jeho obranné systémy situáciu nepretržite monitorujú a sú pripravené chrániť vzdušný priestor krajiny.Viac informácií nájdete tu:aktualityaktualityarticle_boxjhAAS3dHeadingBlockLístky na vlak budú dočasne lacnejšie, poznáme detaily vládneho opatreniaVláda schválila opatrenie, podľa ktorého sa od 1. októbra 2026 dočasne zníži cena vlakových lístkov. Ministerstvo dopravy očaká",
-        "place": "Bratislava",
-        "time": "Wed, 23 Sep 2026 19:11:50 +0000",
+        "article_text_excerpt": "Csütörtök kora reggel a román légteret sértette , majd mintegy négy percnyi repülés után Suceava megyében, Solca közelében lezuhant egy kis méretű drón – közölte a védelmi minisztérium. A tárca tájékoztatása szerint a becsapódás nyomán személyi sérülés vagy anyagi kár nem keletkezett, és tűz sem ütött ki a helyszínen. A hadsereg radarjai először az ukrán oldalon figyelték meg a közeledő légi célpontot, amely Botoșani megye északi részén lépte át a határt. A katonai parancsnokság azonnal értesítette a katasztrófavédelmet, a lakosságot pedig fél hét magasságában RO-ALERT riasztással figyelmeztették a veszélyre mind Botoșani, mind Suceava megyében. A telefonokra kiküldött üzenet a pincékbe vagy óvóhelyekre való levonulást, illetve az ablakoktól távoli belső helyiségek felkeresését javasolta az ott élőknek. A légtérsértés miatt a Borcea melletti 86-os légibázisról a román légierő két F–16-os vadászgépét vezényelték a térség monitorozására, a becsapódást követően pedig, 7:21-kor a bákói 95-",
+        "place": "Romania",
+        "time": "Thu, 24 Sep 2026 10:12:49 +0200",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Aktuality"
+          "Telex"
         ],
         "urls": [
-          "https://www.aktuality.sk/clanok/QdmRidO/rusky-vrtulnik-narusil-vzdusny-priestor-polska-listky-na-vlak-budu-lacnejsie-a-spor-o-vysetrenia-sa-skoncil-dohodou-denny-vyber/"
+          "https://telex.hu/transtelex/2026/09/24/roman-legterbe-repult-egy-dron-suceava-megyeben-f-16-osok-szalltak-fel"
         ],
         "merged_titles": [
-          "Ruský vrtuľník narušil vzdušný priestor Poľska, lístky na vlak budú lacnejšie a spor o vyšetrenia sa skončil dohodou (denný výber)"
+          "Román légtérbe repült egy drón Suceava megyében, F–16-osok szálltak fel"
         ],
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "incident_object": "military_aircraft",
-        "incident_action": "entered",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "ukraine",
+        "incident_target": "government",
         "classification_confidence": 0.9
       }
     }

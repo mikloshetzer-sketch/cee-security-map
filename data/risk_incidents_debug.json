@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-24T02:31:31.498693+00:00",
+  "generated_utc": "2026-09-24T10:59:54.001888+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -20,18 +20,18 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Slovakia": {
       "incident_count": 1,
       "category_counts": {
-        "military": 1
+        "drone": 1
       },
       "source_files": {
         "local_events.geojson": 1
       }
+    },
+    "Slovakia": {
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Poland": {
       "incident_count": 0,
@@ -57,30 +57,30 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
-    "Slovakia": [
+    "Romania": [
       {
-        "id": "dfeb7d9ec50a3c514b24",
-        "date": "2026-09-23",
-        "time": "2026-09-23T19:11:50+00:00",
-        "category": "military",
-        "severity": "medium",
-        "title": "Ruský vrtuľník narušil vzdušný priestor Poľska, lístky na vlak budú lacnejšie a spor o vyšetrenia sa skončil dohodou (denný výber)",
-        "source": "Aktuality",
-        "url": "https://www.aktuality.sk/clanok/QdmRidO/rusky-vrtulnik-narusil-vzdusny-priestor-polska-listky-na-vlak-budu-lacnejsie-a-spor-o-vysetrenia-sa-skoncil-dohodou-denny-vyber/",
+        "id": "e5d6effc2665902dcb1d",
+        "date": "2026-09-24",
+        "time": "2026-09-24T08:12:49+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Román légtérbe repült egy drón Suceava megyében, F–16-osok szálltak fel",
+        "source": "Telex",
+        "url": "https://telex.hu/transtelex/2026/09/24/roman-legterbe-repult-egy-dron-suceava-megyeben-f-16-osok-szalltak-fel",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
         "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "f135b9794148a63ca36f58c6"
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "09b92538a79594bd516dac1e"
       }
     ],
+    "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
     "Latvia": [],

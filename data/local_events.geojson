@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-24T16:23:41.880394+00:00",
+  "generated_utc": "2026-09-24T21:12:32.903610+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,40 +14,40 @@
         ]
       },
       "properties": {
-        "id": "e5d6effc2665902dcb1d",
-        "title": "Román légtérbe repült egy drón Suceava megyében, F–16-osok szálltak fel",
-        "summary": "A hadsereg román és spanyol vadászgépeket is a magasba küldött a határ menti fenyegetés miatt, és a lakosságot is riasztották.",
-        "source": "Telex",
-        "url": "https://telex.hu/transtelex/2026/09/24/roman-legterbe-repult-egy-dron-suceava-megyeben-f-16-osok-szalltak-fel",
-        "published": "Thu, 24 Sep 2026 10:12:49 +0200",
+        "id": "d170583cc1c7413619f2",
+        "title": "Radu Miruţă: României îi vor fi livrate anul viitor „capabilităţi anti-dronă, radare de joasă altitudine” prin programul SAFE",
+        "summary": "România va începe să primească, de la jumătatea anului viitor, capabilităţile de luptă antidronă şi radarele de joasă altitudine contractate cu finanţare prin programul SAFE, contractele încheiate stabilind termene de livrare a acestor capabilităţi de până la doi ani şi jumătate, a afirmat ministrul interimar al Apărării Naţionale, Radu Miruţă. El a arătat că pentru ca drona care a intrat în spaţiul aerian al României joi să fie doborâtă ar fi trebuit îndeplinite cumulativ mai multe condiţii, lucru care nu s-a întâmplat.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/radu-miruta-romaniei-ii-vor-fi-livrate-anul-viitor-capabilitati-anti-drona-radare-de-joasa-altitudine-prin-programul-safe-3963499",
+        "published": "Thu, 24 Sep 2026 22:26:42 +0300",
         "country": "Romania",
         "city": null,
         "family": "air",
         "subcategory": "drone",
-        "subtype": "drone_strike",
+        "subtype": "drone_intrusion",
         "object": "drone",
-        "action": "impact",
+        "action": "entered",
         "actor": "ukraine",
-        "target": "government",
+        "target": "military",
         "context": [],
         "consequences": [],
-        "severity": "high",
+        "severity": "medium",
         "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
         "fingerprint": {
           "country": "Romania",
           "family": "air",
           "subcategory": "drone",
-          "subtype": "drone_strike",
+          "subtype": "drone_intrusion",
           "object": "drone",
-          "action": "impact",
+          "action": "entered",
           "actor": "ukraine",
-          "target": "government",
+          "target": "military",
           "place": "Romania",
           "event_date": "Thu, 24 Se",
-          "hash": "09b92538a79594bd516dac1e"
+          "hash": "04ea90b1bfc633dee21e64f9"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -55,29 +55,24 @@
           "article_role": [],
           "objects": [
             "drone",
-            "drón",
-            "military_aircraft",
-            "helikopter"
+            "dronă",
+            "drona"
           ],
           "actions": [
-            "detected",
-            "észleltek",
-            "impact",
-            "lezuhant",
-            "closed",
-            "lezárták"
+            "entered",
+            "a intrat"
           ],
           "targets": [
-            "government",
-            "minisztérium"
+            "military",
+            "radar"
           ],
           "actors": [
             "ukraine",
-            "ukrán"
+            "ucraina"
           ],
           "consequences": [],
           "extra_context": [
-            "feed_country=Hungary",
+            "feed_country=Romania",
             "geocode_quality=country_fallback"
           ]
         },
@@ -93,25 +88,13 @@
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.DRONE.STRIKE",
+            "rule_id": "AIR.DRONE.INTRUSION",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
+            "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 2.32,
+            "score": 2.26,
             "matched": true,
             "missing": [],
             "matched_context": []
@@ -123,22 +106,10 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:entered"
+              "actions:all:detected"
             ],
             "matched_context": []
           },
@@ -171,16 +142,74 @@
             "matched_context": []
           },
           {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.MISSILE.DETECTION",
             "family": "air",
             "subcategory": "missile",
             "subtype": "missile_detection",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:missile"
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
             ],
             "matched_context": []
           },
@@ -191,70 +220,43 @@
             "subtype": "missile_impact",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
+              "objects:all:missile",
+              "actions:any:exploded,impact"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 1626,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Csütörtök kora reggel a román légteret sértette , majd mintegy négy percnyi repülés után Suceava megyében, Solca közelében lezuhant egy kis méretű drón – közölte a védelmi minisztérium. A tárca tájékoztatása szerint a becsapódás nyomán személyi sérülés vagy anyagi kár nem keletkezett, és tűz sem ütött ki a helyszínen. A hadsereg radarjai először az ukrán oldalon figyelték meg a közeledő légi célpontot, amely Botoșani megye északi részén lépte át a határt. A katonai parancsnokság azonnal értesítette a katasztrófavédelmet, a lakosságot pedig fél hét magasságában RO-ALERT riasztással figyelmeztették a veszélyre mind Botoșani, mind Suceava megyében. A telefonokra kiküldött üzenet a pincékbe vagy óvóhelyekre való levonulást, illetve az ablakoktól távoli belső helyiségek felkeresését javasolta az ott élőknek. A légtérsértés miatt a Borcea melletti 86-os légibázisról a román légierő két F–16-os vadászgépét vezényelték a térség monitorozására, a becsapódást követően pedig, 7:21-kor a bákói 95-",
+        "article_text_chars": 2098,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "România va începe să primească, de la jumătatea anului viitor, capabilităţile de luptă antidronă şi radarele de joasă altitudine contractate cu finanţare prin programul SAFE, contractele încheiate stabilind termene de livrare a acestor capabilităţi de până la doi ani şi jumătate, a afirmat ministrul interimar al Apărării Naţionale, Radu Miruţă. El a arătat că pentru ca drona care a intrat în spaţiul aerian al României joi să fie doborâtă ar fi trebuit îndeplinite cumulativ mai multe condiţii, lucru care nu s-a întâmplat. „Drona a fost monitorizată pe aparatele radar ale Ministerului Apărării înainte să intre în spaţiul aerian românesc, a evoluat dinspre Ucraina, a intrat timp de patru minute în spaţiul aerian românesc. Pentru ca ea să fie doborâtă trebuie să se îndeplinească simultan mai multe condiţii, condiţii care în cele patru minute nu au fost îndeplinite pentru a putea fi doborâtă în siguranţă”, a declarat Radu Miruţă, joi seară, într-o intervenţie la B1 TV, potrivit News.ro. Min",
         "place": "Romania",
-        "time": "Thu, 24 Sep 2026 10:12:49 +0200",
+        "time": "Thu, 24 Sep 2026 22:26:42 +0300",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Telex"
+          "Digi24"
         ],
         "urls": [
-          "https://telex.hu/transtelex/2026/09/24/roman-legterbe-repult-egy-dron-suceava-megyeben-f-16-osok-szalltak-fel"
+          "https://www.digi24.ro/stiri/actualitate/politica/radu-miruta-romaniei-ii-vor-fi-livrate-anul-viitor-capabilitati-anti-drona-radare-de-joasa-altitudine-prin-programul-safe-3963499"
         ],
         "merged_titles": [
-          "Román légtérbe repült egy drón Suceava megyében, F–16-osok szálltak fel"
+          "Radu Miruţă: României îi vor fi livrate anul viitor „capabilităţi anti-dronă, radare de joasă altitudine” prin programul SAFE"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
+        "incident_subtype": "drone_intrusion",
         "incident_object": "drone",
-        "incident_action": "impact",
+        "incident_action": "entered",
         "incident_actor": "ukraine",
-        "incident_target": "government",
+        "incident_target": "military",
         "classification_confidence": 0.9
       }
     }

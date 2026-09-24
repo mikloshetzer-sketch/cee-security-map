@@ -1305,6 +1305,7 @@
        <div class="map-tools">
           <button class="tool-btn" id="quickToggleRisk">Risk</button>
           <button class="tool-btn" id="quickToggleHot">Hotspots</button>
+          <button class="tool-btn on" id="quickToggleIncidents">Incidents</button>
           <button class="tool-btn" id="quickToggleStories">Stories</button>
 
           <a
@@ -1374,6 +1375,10 @@
             <div class="layer-item">
               <input type="checkbox" id="layerLocalEvents" checked>
               <label for="layerLocalEvents">helyi források / local events</label>
+            </div>
+            <div class="layer-item">
+              <input type="checkbox" id="layerSecurityIncidents" checked>
+              <label for="layerSecurityIncidents">biztonsági események / security incidents</label>
             </div>
             <div class="layer-item" style="display:block;">
               <div style="font-size:11px;font-weight:800;color:var(--muted);margin-bottom:8px;">Local events időablak</div>
@@ -1465,7 +1470,8 @@
       localEventsHistory: null,
       criticalInfrastructure: null,
       digitalInfrastructure: null,
-      hazardousInfrastructure: null
+      hazardousInfrastructure: null,
+      securityIncidents: null
     };
 
     const FILTERS = { newsToday: false, alertsToday: false };
@@ -1493,6 +1499,8 @@
         border: "határ/migráció",
         police: "rendőrség/jog",
         military: "katonai",
+        air: "légi incidens",
+        maritime: "tengeri incidens",
         drone: "drón/UAV",
         cyber: "kiber/dezinformáció",
         energy: "energia/ellátás",
@@ -1511,6 +1519,8 @@
              (cat === "border") ? "#3f8aa0" :
              (cat === "protest") ? "#c26262" :
              (cat === "military") ? "#638a70" :
+             (cat === "air") ? "#4f70c8" :
+             (cat === "maritime") ? "#2d7f8f" :
              (cat === "drone") ? "#5575d8" :
              (cat === "police") ? "#6d7f90" :
              (cat === "security_politics") ? "#6b89df" :
@@ -2253,6 +2263,14 @@
         refreshLocalEventsView();
       }
 
+      if (DATASETS.securityIncidents && layers.securityIncidents){
+        const payload = buildSecurityIncidentsPayload(DATASETS.securityIncidents);
+        const feats = payload.features || [];
+        const keep = FILTERS.newsToday ? feats.filter(f => isTodayBudapest((f.properties||{}).time || (f.properties||{}).date)) : feats;
+        layers.securityIncidents.clearLayers();
+        layers.securityIncidents.addData({ type:"FeatureCollection", features: keep });
+      }
+
       document.getElementById("btnTodayNews").classList.toggle("on", FILTERS.newsToday);
       document.getElementById("btnTodayAlerts").classList.toggle("on", FILTERS.alertsToday);
       document.getElementById("btnReset7d").classList.toggle("on", (!FILTERS.newsToday && !FILTERS.alertsToday));
@@ -2868,6 +2886,67 @@
       `;
     }
 
+    function incidentSeverityColor(severity){
+      const x = String(severity || "watch").toLowerCase();
+      if (x === "critical") return "#9f3030";
+      if (x === "high") return "#c4513b";
+      if (x === "medium") return "#d28a2e";
+      if (x === "low") return "#4f819b";
+      return "#6d7f90";
+    }
+
+    function incidentPointToLayer(feature, latlng){
+      const p = feature.properties || {};
+      const severity = String(p.severity || "watch").toLowerCase();
+      const confidence = Number(p.classification_confidence ?? 0);
+      const countryLevel = !p.geocode_quality || /country|centroid|approx/i.test(String(p.geocode_quality));
+      const radius = severity === "critical" ? 11 : severity === "high" ? 10 : severity === "medium" ? 9 : 8;
+      return L.circleMarker(latlng, {
+        radius: radius + (confidence >= 0.9 ? 1 : 0),
+        weight: severity === "critical" || severity === "high" ? 3 : 2,
+        color: "#ffffff", opacity: 0.98, fillColor: incidentSeverityColor(severity), fillOpacity: 0.9,
+        dashArray: countryLevel ? "4 3" : null
+      });
+    }
+
+    function makeSecurityIncidentPopup(props){
+      const confidence = Number(props.classification_confidence);
+      const confidenceText = Number.isFinite(confidence) ? `${Math.round(confidence * 100)}%` : "—";
+      const place = props?.fingerprint?.place || props.place || props.country_hint || "—";
+      const geoQuality = props.geocode_quality || "ország-szintű / becsült pont";
+      const url = props.url ? `<div style="margin-top:8px;">🔗 <a href="${esc(props.url)}" target="_blank" rel="noopener">Eredeti forrás megnyitása</a></div>` : "";
+      const desc = props.description ? `<div class="small" style="margin-top:8px;">${esc(String(props.description).replace(/<[^>]*>/g, " ")).slice(0, 420)}</div>` : "";
+      return `
+        <div style="margin-bottom:7px;"><b>${esc(props.title || "Biztonsági esemény")}</b></div>
+        <div><b>Forrás:</b> ${esc(props.feed_name || props.source || "—")}</div>
+        <div><b>Idő:</b> ${esc(props.time || "—")}</div>
+        <div><b>Ország / hely:</b> ${esc(place)}</div>
+        <div><b>Eseménycsalád:</b> ${esc(props.incident_family || props.category || "—")}</div>
+        <div><b>Altípus:</b> ${esc(props.incident_subtype || props.incident_subcategory || "—")}</div>
+        <div><b>Aktor:</b> ${esc(props.incident_actor || "—")}</div>
+        <div><b>Cél:</b> ${esc(props.incident_target || "—")}</div>
+        <div><b>Súlyosság:</b> ${esc(props.severity || "—")}</div>
+        <div><b>Classifier confidence:</b> ${confidenceText}</div>
+        <div><b>Helypontosság:</b> ${esc(geoQuality)}</div>
+        ${desc}${url}
+      `;
+    }
+
+    function buildSecurityIncidentsPayload(data){
+      const input = Array.isArray(data?.features) ? data.features : [];
+      const dedup = new Map();
+      for (const f of input){
+        const p = f?.properties || {};
+        if (p.actual_incident !== true || p.risk_eligible !== true) continue;
+        const confidence = Number(p.classification_confidence ?? 0);
+        if (Number.isFinite(confidence) && confidence < 0.75) continue;
+        if (!f?.geometry || f.geometry.type !== "Point" || !Array.isArray(f.geometry.coordinates)) continue;
+        const key = p?.fingerprint?.hash || `${p.time || ""}|${p.title || ""}|${p.country_hint || ""}`;
+        if (!dedup.has(key)) dedup.set(key, f);
+      }
+      return { type:"FeatureCollection", features:[...dedup.values()] };
+    }
+
     const layers = {
       borders: null,
       countryRisk: null,
@@ -2881,6 +2960,7 @@
       usgs: L.geoJSON(null, { pointToLayer: genericRecencyPointToLayer("USGS"), onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       gdacs: L.geoJSON(null, { pointToLayer: genericRecencyPointToLayer("GDACS"), onEachFeature: (f,l)=>l.bindPopup(makePopup(f.properties||{})) }),
       localEvents: L.geoJSON(null, { pointToLayer: localEventPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makeLocalEventPopup(f.properties||{})) }),
+      securityIncidents: L.geoJSON(null, { pointToLayer: incidentPointToLayer, onEachFeature: (f,l)=>l.bindPopup(makeSecurityIncidentPopup(f.properties||{})) }),
       rssTrusted: L.geoJSON(null, {
         pointToLayer: (feature, latlng) => L.circleMarker(latlng, storyMarkerStyle(feature.properties || {})),
         onEachFeature: (f, l) => l.bindPopup(makeStoryPopup(f.properties || {}))
@@ -2917,6 +2997,12 @@
         ].map(([k,label,color]) =>
           `<div class="row"><span class="dot" style="background:${color}"></span><span>${esc(label)}</span></div>`
         ).join("")}
+        <div style="font-weight:800;margin:10px 0 4px;color:#22313d;">Biztonsági események</div>
+        <div class="row"><span class="dot" style="background:#9f3030"></span><span>Critical</span></div>
+        <div class="row"><span class="dot" style="background:#c4513b"></span><span>High</span></div>
+        <div class="row"><span class="dot" style="background:#d28a2e"></span><span>Medium</span></div>
+        <div class="row"><span class="dot" style="background:#4f819b"></span><span>Low / watch</span></div>
+        <div class="small" style="margin:5px 0 8px;">Szaggatott kör = becsült / ország-szintű helypont.</div>
         <div style="font-weight:800;margin:10px 0 4px;color:#22313d;">RSS trusted</div>
         <div class="row"><span class="dot" style="background:#4f819b"></span><span>Trusted story marker</span></div>
         <div style="font-weight:800;margin:10px 0 4px;color:#22313d;">Kritikus infrastruktúra</div>
@@ -3035,7 +3121,7 @@
 
       refreshProximityView();
 
-      const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss, localEvents, localEventsHistory] = await Promise.all([
+      const [gdelt, gdeltLinked, gdeltDoc, usgs, gdacs, trustedRss, localEvents, localEventsHistory, securityIncidents] = await Promise.all([
         loadJson(`${DATA}/gdelt.geojson`).catch(()=>null),
         loadJson(`${DATA}/gdelt_linked.geojson`).catch(()=>null),
         loadJson(`${DATA}/gdelt_crossborder.geojson`).catch(()=>null),
@@ -3044,6 +3130,7 @@
         loadJson(`${DATA}/trusted_rss.json`).catch(()=>null),
         loadJson(`${DATA}/local_events.geojson`).catch(()=>null),
         loadJson(`${DATA}/history/local_events_history.geojson`).catch(()=>null),
+        loadJson(`${DATA}/direct_news.geojson`).catch(()=>null),
       ]);
 
       if (gdelt) DATASETS.gdelt = gdelt;
@@ -3052,6 +3139,13 @@
       if (usgs) DATASETS.usgs = usgs;
       if (gdacs) DATASETS.gdacs = gdacs;
       if (localEvents) DATASETS.localEvents = localEvents;
+      if (securityIncidents) {
+        DATASETS.securityIncidents = securityIncidents;
+        const payload = buildSecurityIncidentsPayload(securityIncidents);
+        layers.securityIncidents.clearLayers();
+        layers.securityIncidents.addData(payload);
+        console.info(`Security incidents loaded: ${payload.features.length} eligible events`);
+      }
       if (localEventsHistory) {
         DATASETS.localEventsHistory = localEventsHistory;
         console.info(`Local events history loaded: ${localEventsHistory?.features?.length ?? 0} archived events`);
@@ -3090,6 +3184,7 @@
       }
       if (document.getElementById("layerInfraProximity")?.checked && layers.infraProximity && !map.hasLayer(layers.infraProximity)) layers.infraProximity.addTo(map);
       if (document.getElementById("layerLocalEvents")?.checked && layers.localEvents && !map.hasLayer(layers.localEvents)) layers.localEvents.addTo(map);
+      if (document.getElementById("layerSecurityIncidents")?.checked && layers.securityIncidents && !map.hasLayer(layers.securityIncidents)) layers.securityIncidents.addTo(map);
       layers.gdelt.addTo(map);
 
       document.getElementById('layerBorders').addEventListener('change', (e) => {
@@ -3135,6 +3230,11 @@
       document.getElementById('layerLocalEvents')?.addEventListener('change', (e) => {
         if (!layers.localEvents) return;
         e.target.checked ? map.addLayer(layers.localEvents) : map.removeLayer(layers.localEvents);
+      });
+      document.getElementById('layerSecurityIncidents').addEventListener('change', (e) => {
+        if (!layers.securityIncidents) return;
+        e.target.checked ? map.addLayer(layers.securityIncidents) : map.removeLayer(layers.securityIncidents);
+        document.getElementById('quickToggleIncidents')?.classList.toggle('on', e.target.checked);
       });
       document.getElementById('layerEarly').addEventListener('change', (e) => {
         if (!layers.early) return;
@@ -3186,6 +3286,12 @@
 
       document.getElementById("quickToggleHot").addEventListener("click", () => {
         const cb = document.getElementById("layerHot");
+        cb.checked = !cb.checked;
+        cb.dispatchEvent(new Event("change"));
+      });
+
+      document.getElementById("quickToggleIncidents").addEventListener("click", () => {
+        const cb = document.getElementById("layerSecurityIncidents");
         cb.checked = !cb.checked;
         cb.dispatchEvent(new Event("change"));
       });
@@ -3304,3 +3410,4 @@
 
 </body>
 </html>
+

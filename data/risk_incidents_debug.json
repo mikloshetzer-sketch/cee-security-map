@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-25T02:52:43.970887+00:00",
+  "generated_utc": "2026-09-25T11:09:24.657429+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,29 +53,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "d170583cc1c7413619f2",
-        "date": "2026-09-24",
-        "time": "2026-09-24T19:26:42+00:00",
-        "category": "drone",
-        "severity": "medium",
-        "title": "Radu Miruţă: României îi vor fi livrate anul viitor „capabilităţi anti-dronă, radare de joasă altitudine” prin programul SAFE",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/politica/radu-miruta-romaniei-ii-vor-fi-livrate-anul-viitor-capabilitati-anti-drona-radare-de-joasa-altitudine-prin-programul-safe-3963499",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "04ea90b1bfc633dee21e64f9"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

@@ -1,7 +1,775 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-27T02:53:48.140660+00:00",
+  "generated_utc": "2026-09-27T11:20:05.358508+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.854,
+          46.572
+        ]
+      },
+      "properties": {
+        "id": "bab69504f6cc6b54a6d6",
+        "title": "És akkor az egyik Matolcsyt kihallgatják, miközben a másik bevásárol",
+        "summary": "Házkutatások történtek az MNB-alapítványok ügyében, de az akkori jegybankelnök Matolcsy Györgyöt az Erste-ügyben hallgatták ki. Fia, Matolcsy Ádám meg Dubajból intézkedett, köre újra beszállt az MBH Bankba. Leállt az alapkamat-csökkentés, elindult az inflációscél-csökkentés, befejezte a javítást a Mol, az egyik akkugyár előrelépett, a másik meg bezár. Most már tényleg munkaszüneti nap lehet december 24-e, de sajnos betoppantak a pöttyös lámpahordó-kabócák. Ez a HVG heti gazdasági összefoglalója.",
+        "source": "HVG",
+        "url": "https://hvg.hu/gazdasag/20260927_es-akkor-az-egyik-matolcsyt-kihallgatjak-mikozben-a-masik-bevasarol",
+        "published": "Sun, 27 Sep 2026 05:00:00 Z",
+        "country": "Hungary",
+        "city": "Paks",
+        "family": "transport",
+        "subcategory": "rail",
+        "subtype": "rail_disruption",
+        "object": "energy_asset",
+        "action": "disrupted",
+        "actor": "russia",
+        "target": "energy",
+        "context": [
+          "vonat",
+          "gyár"
+        ],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.98,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "TRANSPORT.RAIL.DISRUPTION",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "transport",
+          "subcategory": "rail",
+          "subtype": "rail_disruption",
+          "object": "energy_asset",
+          "action": "disrupted",
+          "actor": "russia",
+          "target": "energy",
+          "place": "Paks",
+          "event_date": "Sun, 27 Se",
+          "hash": "a32cec13a6bb01a373fb1301"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [
+            "történt"
+          ],
+          "objects": [
+            "energy_asset",
+            "finomító",
+            "critical_infrastructure",
+            "repülőtér"
+          ],
+          "actions": [
+            "burned",
+            "kigyulladt",
+            "disrupted",
+            "leállt"
+          ],
+          "targets": [
+            "energy",
+            "finomító",
+            "transport",
+            "repülőtér",
+            "government",
+            "parlament"
+          ],
+          "actors": [
+            "russia",
+            "orosz"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 3.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "vonat"
+            ]
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INDUSTRIAL.FIRE",
+            "family": "industrial",
+            "subcategory": "fire",
+            "subtype": "industrial_fire",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.19,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "gyár"
+            ]
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.95,
+            "matched": false,
+            "missing": [
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "repülőtér"
+            ]
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.3,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_explosion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 14341,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Házkutatások történtek az MNB-alapítványok ügyében, de az akkori jegybankelnök Matolcsy Györgyöt az Erste-ügyben hallgatták ki. Fia, Matolcsy Ádám meg Dubajból intézkedett, köre újra beszállt az MBH Bankba. Leállt az alapkamat-csökkentés, elindult az inflációscél-csökkentés, befejezte a javítást a Mol, az egyik akkugyár előrelépett, a másik meg bezár. Most már tényleg munkaszüneti nap lehet december 24-e, de sajnos betoppantak a pöttyös lámpahordó-kabócák. Ez a HVG heti gazdasági összefoglalója. Kedden lépett az ügyészség az MNB-s „bankrablás” ügyében, házkutatásokat tartottak a Matolcsy-körben. Vagy, ahogy a Központi Nyomozó Főügyészség a HVG kérdéseire válaszolva fogalmazott: „a nap folyamán a jegybankot érintő különösen jelentős vagyoni hátrányt okozó hűtlen kezelés bűntette miatt folyamatban lévő ügyben jogi személyeket érintően eljárási cselekményeket, köztük kutatást és lefoglalást végeztek,” ám gyanúsítotti kihallgatás nem történt. Történt viszont gyanúsítotti kihallgatás egy má",
+        "place": "Paks",
+        "time": "Sun, 27 Sep 2026 05:00:00 Z",
+        "category": "transport",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HVG"
+        ],
+        "urls": [
+          "https://hvg.hu/gazdasag/20260927_es-akkor-az-egyik-matolcsyt-kihallgatjak-mikozben-a-masik-bevasarol"
+        ],
+        "merged_titles": [
+          "És akkor az egyik Matolcsyt kihallgatják, miközben a másik bevásárol"
+        ],
+        "incident_family": "transport",
+        "incident_subcategory": "rail",
+        "incident_subtype": "rail_disruption",
+        "incident_object": "energy_asset",
+        "incident_action": "disrupted",
+        "incident_actor": "russia",
+        "incident_target": "energy",
+        "classification_confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "b60508f7794028f73f2e",
+        "title": "Comandantul suprem al NATO solicită aliaților intensificarea schimbului de informații privind atacurile hibride",
+        "summary": "Generalul american Alexus Grynkewich, comandantul Suprem Aliat al NATO pentru Europa, dorește mai multe informații cu privire la amenințările hibride în creștere. El a solicitat aliaților să împărtășească mai multe informații despre atacurile hibride rusești, în contextul în care alianța se confruntă cu amenințări tot mai intense în întreaga Europă, relatează Politico.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/comandantul-suprem-al-nato-solicita-aliatilor-intensificarea-schimbului-de-informatii-privind-atacurile-hibride-3966203",
+        "published": "Sun, 27 Sep 2026 08:46:25 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "entered",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "entered",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Sun, 27 Se",
+          "hash": "96997968d3d3fe5164acdd8a"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "military_aircraft",
+            "elicopter"
+          ],
+          "actions": [
+            "entered",
+            "pătruns"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "rusiei",
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 4821,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Generalul american Alexus Grynkewich, comandantul Suprem Aliat al NATO pentru Europa, dorește mai multe informații cu privire la amenințările hibride în creștere. El a solicitat aliaților să împărtășească mai multe informații despre atacurile hibride rusești, în contextul în care alianța se confruntă cu amenințări tot mai intense în întreaga Europă, relatează Politico . Generalul american a solicitat în ultimele săptămâni aliaților să furnizeze detalii privind incidentele hibride și răspunsurile la acestea, pentru a oferi alianței o imagine mai clară asupra amenințărilor, au declarat doi diplomați NATO și o persoană familiarizată cu această chestiune, cărora li s-a acordat anonimatul. Această inițiativă reflectă o provocare pentru NATO: aliații individuali dețin adesea informații diferite cu privire la operațiunile rusești suspectate, ceea ce poate încetini procesul de atribuire a responsabilității și îngreunează eforturile alianței de a identifica campaniile hibride transnaționale. Pr",
+        "place": "Romania",
+        "time": "Sun, 27 Sep 2026 08:46:25 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/comandantul-suprem-al-nato-solicita-aliatilor-intensificarea-schimbului-de-informatii-privind-atacurile-hibride-3966203"
+        ],
+        "merged_titles": [
+          "Comandantul suprem al NATO solicită aliaților intensificarea schimbului de informații privind atacurile hibride"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "entered",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "18e02e3dd5c4f263f8c7",
+        "title": "MApN: O dronă a intrat în spațiul aerian național. Avioane de vânătoare și un elicopter militar au fost ridicate în aer",
+        "summary": "O dronă a intrat în spațiul aerian al României sâmbătă noapte, potrivit Ministerului Apărării Naționale (MApN), care precizează că au fost ridicate în aer două avioane F-18 spaniole și un elicopter IAR-330 SOCAT. Semnalul radar al țintei a fost pierdut în zona Pardina.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/mapn-o-drona-a-intrat-in-spatiul-aerian-national-avioane-de-vanatoare-si-un-elicopter-militar-au-fost-ridicate-in-aer-3966197",
+        "published": "Sun, 27 Sep 2026 08:07:21 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "entered",
+        "actor": "unknown",
+        "target": "military",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "entered",
+          "actor": "unknown",
+          "target": "military",
+          "place": "Romania",
+          "event_date": "Sun, 27 Se",
+          "hash": "9a31f7fef537722421d3ff5a"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă",
+            "military_aircraft",
+            "elicopter"
+          ],
+          "actions": [
+            "detected",
+            "detectat",
+            "entered",
+            "pătruns",
+            "a intrat"
+          ],
+          "targets": [
+            "military",
+            "radar"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1289,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "O dronă a intrat în spațiul aerian al României sâmbătă noapte, potrivit Ministerului Apărării Naționale (MApN), care precizează că au fost ridicate în aer două avioane F-18 spaniole și un elicopter IAR-330 SOCAT. Semnalul radar al țintei a fost pierdut în zona Pardina. Sistemul de supraveghere radar al Ministerului Apărării Naționale a detectat în noaptea de 26 septembrie o țintă aeriană ce evolua în zona localității Chilia Veche, în proximitatea frontierei fluviale, a informat MApN duminică dimineață. „Centrul Național Militar de Comandă a notificat Inspectoratul General pentru Situații de Urgență cu privire la instituirea măsurilor de alertare a populației din nordul județului Tulcea, iar la ora 23.32 a fost transmis un mesaj RO-Alert. Două aeronave F-18 ale Forțelor Aeriene și Spațiale Spaniole, aflate în serviciul de luptă Poliție Aeriană Întărită și un elicopter IAR-330 SOCAT al Forțelor Aeriene Române, au decolat pentru monitorizarea situației”, a mai precizat sursa citată. Potri",
+        "place": "Romania",
+        "time": "Sun, 27 Sep 2026 08:07:21 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/mapn-o-drona-a-intrat-in-spatiul-aerian-national-avioane-de-vanatoare-si-un-elicopter-militar-au-fost-ridicate-in-aer-3966197"
+        ],
+        "merged_titles": [
+          "MApN: O dronă a intrat în spațiul aerian național. Avioane de vânătoare și un elicopter militar au fost ridicate în aer"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "entered",
+        "incident_actor": "unknown",
+        "incident_target": "military",
+        "classification_confidence": 0.84
+      }
+    }
+  ]
 }

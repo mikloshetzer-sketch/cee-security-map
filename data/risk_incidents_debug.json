@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-27T02:53:56.629137+00:00",
+  "generated_utc": "2026-09-27T11:20:14.711531+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 0,
-    "local_event_count": 0,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,14 +15,22 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "transport": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 2,
+      "category_counts": {
+        "military": 2
+      },
+      "source_files": {
+        "local_events.geojson": 2
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -52,8 +60,73 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
-    "Romania": [],
+    "Hungary": [
+      {
+        "id": "bab69504f6cc6b54a6d6",
+        "date": "2026-09-27",
+        "time": "2026-09-27T05:00:00+00:00",
+        "category": "transport",
+        "severity": "medium",
+        "title": "És akkor az egyik Matolcsyt kihallgatják, miközben a másik bevásárol",
+        "source": "HVG",
+        "url": "https://hvg.hu/gazdasag/20260927_es-akkor-az-egyik-matolcsyt-kihallgatjak-mikozben-a-masik-bevasarol",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "transport",
+        "incident_subcategory": "rail",
+        "incident_subtype": "rail_disruption",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "TRANSPORT.RAIL.DISRUPTION",
+        "fingerprint_hash": "a32cec13a6bb01a373fb1301"
+      }
+    ],
+    "Romania": [
+      {
+        "id": "b60508f7794028f73f2e",
+        "date": "2026-09-27",
+        "time": "2026-09-27T05:46:25+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Comandantul suprem al NATO solicită aliaților intensificarea schimbului de informații privind atacurile hibride",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/comandantul-suprem-al-nato-solicita-aliatilor-intensificarea-schimbului-de-informatii-privind-atacurile-hibride-3966203",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "96997968d3d3fe5164acdd8a"
+      },
+      {
+        "id": "18e02e3dd5c4f263f8c7",
+        "date": "2026-09-27",
+        "time": "2026-09-27T05:07:21+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "MApN: O dronă a intrat în spațiul aerian național. Avioane de vânătoare și un elicopter militar au fost ridicate în aer",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/mapn-o-drona-a-intrat-in-spatiul-aerian-national-avioane-de-vanatoare-si-un-elicopter-militar-au-fost-ridicate-in-aer-3966197",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "9a31f7fef537722421d3ff5a"
+      }
+    ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

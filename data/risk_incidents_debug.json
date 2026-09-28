@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-28T12:40:37.994765+00:00",
+  "generated_utc": "2026-09-28T23:00:38.243669+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,9 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "infrastructure_disruption": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
       "incident_count": 0,
@@ -56,7 +60,29 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "4d88ff0cd9d5a11f4785",
+        "date": "2026-09-28",
+        "time": "2026-09-28T17:04:00+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Újraindult Szaúd-Arábia legfontosabb olajvezetéke",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/uzlet/20260928/ujraindult-szaud-arabia-legfontosabb-olajvezeteke-865804",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "7509746cde49736e90c256ee"
+      }
+    ],
     "Romania": [],
     "Slovakia": [],
     "Poland": [],

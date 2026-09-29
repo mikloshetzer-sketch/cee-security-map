@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-29T12:05:15.410993+00:00",
+  "generated_utc": "2026-09-29T17:32:06.571239+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,30 +9,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9668,
-          45.9432
+          27.957,
+          45.269
         ]
       },
       "properties": {
-        "id": "8951b56f5c1ad27859a3",
-        "title": "Újabb drón zuhant le Romániában, ezt már a radarok sem vették észre",
-        "summary": "Keddre virradó éjszaka egy lakos tett bejelentést a 112-es segélyhívón a lezuhant tárgyról és az azt követően keletkezett tűzről, amely később kialudt.",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20260929_dron-romania-legtersertes-haboru",
-        "published": "Tue, 29 Sep 2026 10:17:29 Z",
+        "id": "f408f93448451f345703",
+        "title": "Drona care a căzut în Brăila avea încărcătură explozivă",
+        "summary": "Drona care s-a prăbușit pe un teren agricol din Insula Mare a Brăilei, în dreptul localității Gropeni, avea încărcătură explozivă, care s-a detonat în momentul impactului cu solul, a anunțat marți seară Ministerul Apărării Naționale (MApN) într-un comunicat de presă. La fața locului a fost găsit și un crater, iar fragmentele dronei au fost ridicate &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/drona-care-a-cazut-in-braila-avea-incarcatura-exploziva-2361721",
+        "published": "Tue, 29 Sep 2026 16:13:28 +0000",
         "country": "Romania",
-        "city": null,
+        "city": "Brăila",
         "family": "air",
         "subcategory": "drone",
         "subtype": "drone_strike",
         "object": "drone",
         "action": "impact",
-        "actor": "russia",
-        "target": "government",
+        "actor": "unknown",
+        "target": "unknown",
         "context": [],
         "consequences": [],
         "severity": "high",
-        "confidence": 0.9,
+        "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
         "matched_rule_id": "AIR.DRONE.STRIKE",
@@ -43,46 +43,31 @@
           "subtype": "drone_strike",
           "object": "drone",
           "action": "impact",
-          "actor": "russia",
-          "target": "government",
-          "place": "Romania",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Brăila",
           "event_date": "Tue, 29 Se",
-          "hash": "50aa9753296bfcce9614283c"
+          "hash": "ee1b7bbd940e76352c6e2c44"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
-          "article_role": [
-            "történt"
-          ],
+          "article_role": [],
           "objects": [
             "drone",
-            "drón",
-            "dron"
+            "drona"
           ],
           "actions": [
-            "detected",
-            "észleltek",
-            "entered",
-            "belépett",
             "impact",
-            "lezuhant"
+            "căzut",
+            "s-a prăbușit"
           ],
-          "targets": [
-            "government",
-            "minisztérium"
-          ],
-          "actors": [
-            "russia",
-            "orosz",
-            "ukraine",
-            "ukrajna",
-            "ukrán"
-          ],
+          "targets": [],
+          "actors": [],
           "consequences": [],
           "extra_context": [
-            "feed_country=Hungary",
-            "geocode_quality=country_fallback"
+            "feed_country=Romania",
+            "geocode_quality=city"
           ]
         },
         "negative_terms": [],
@@ -90,9 +75,8 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
           "country_match": 0.1,
+          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
@@ -115,9 +99,11 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
             "matched_context": []
           },
           {
@@ -127,22 +113,10 @@
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.2,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:military_aircraft"
+              "actions:all:entered"
             ],
             "matched_context": []
           },
@@ -175,20 +149,6 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
             "rule_id": "AIR.MISSILE.IMPACT",
             "family": "air",
             "subcategory": "missile",
@@ -203,63 +163,94 @@
             "matched_context": []
           },
           {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:sabotaged"
+              "objects:all:military_aircraft"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "BORDER.ILLEGAL.CROSSING",
-            "family": "border_security",
-            "subcategory": "illegal_crossing",
-            "subtype": "illegal_border_crossing",
-            "severity": "low",
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "context:any"
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1724,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Keddre virradó éjszaka egy lakos tett bejelentést a 112-es segélyhívón a lezuhant tárgyról és az azt követően keletkezett tűzről, amely később kialudt. A román légtérbe észrevétlenül behatoló, az ukrán határtól 30 kilométernyire lezuhant drón roncsait találták meg egy szántóföldön – közölte kedden a román védelmi minisztérium. Keddre virradó éjszaka egy lakos tett bejelentést a 112-es segélyhívón a lezuhant tárgyról és az azt követően keletkezett tűzről, amely később kialudt. Személyi sérülés nem történt, és anyagi kár sem keletkezett. A tárca közölte, hogy a radarok nem észleltek jogosulatlan behatolást Románia légterébe. Az éjszaka folyamán volt ugyan egy légiriadó a Tulcea megyei Isaccea térségében, ami miatt a helyszínre küldték a spanyol légierő két, Romániában légtérvédelmi szolgálatot teljesítő F-18-as vadászgépét, de a riasztást kiváltó, az ukrán–román folyami határt megközelítő drón nem lépett be a román légtérbe. Az utóbbi hetekben az orosz–ukrán háború következményeként egyr",
-        "place": "Romania",
-        "time": "Tue, 29 Sep 2026 10:17:29 Z",
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Brăila",
+        "time": "Tue, 29 Sep 2026 16:13:28 +0000",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "country_fallback",
+        "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "HVG"
+          "HotNews"
         ],
         "urls": [
-          "https://hvg.hu/vilag/20260929_dron-romania-legtersertes-haboru"
+          "https://hotnews.ro/drona-care-a-cazut-in-braila-avea-incarcatura-exploziva-2361721"
         ],
         "merged_titles": [
-          "Újabb drón zuhant le Romániában, ezt már a radarok sem vették észre"
+          "Drona care a căzut în Brăila avea încărcătură explozivă"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
         "incident_object": "drone",
         "incident_action": "impact",
-        "incident_actor": "russia",
-        "incident_target": "government",
-        "classification_confidence": 0.9
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
       }
     },
     {

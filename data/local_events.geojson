@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-09-30T03:23:03.403982+00:00",
+  "generated_utc": "2026-09-30T11:53:33.933744+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,72 +9,67 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.957,
-          45.269
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "id": "117ed876e0a178012733",
-        "title": "Fragmente de dronă, căzute pe un câmp din Insula Mare a Brăilei. Un localnic a sunat la 112. Precizările MApN",
-        "summary": "Fragmente de dronă au căzut, în cursul nopţii de luni spre marţi, pe un teren arabil din Insula Mare a Brăilei. Autorităţile au fost anunţate la 112 de un cetăţean. Radarele Ministerului Apărării Naţionale nu au detectat nicio pătrundere neautorizată în spaţiul aerian în cursul nopţii trecute.",
+        "id": "1958b3395f4033a38156",
+        "title": "Diana Șoșoacă a făcut circ în Parlament înaintea votului pentru Siegfried Mureșan. Atac suburban la Ursula von der Leyen",
+        "summary": "Diana Șoșoacă, europarlamentară și președinta partidului SOS România, a mers miercuri în Parlamentul României, înaintea ședinței de vot pentru guvernul propus de Siegfried Mureșan, unde a făcut scandal pe holuri. Ea l-a acuzat pe Siegfried că este „trădător”, a atacat-o pe ;efa Comisiei Europene, Ursula von der Leyen, și a anunțat că SOS RO nu va vota Guvernul Mureșan.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/fragmente-de-drona-cazute-pe-un-camp-din-insula-mare-a-brailei-un-localnic-a-sunat-la-112-precizarile-mapn-3968915",
-        "published": "Tue, 29 Sep 2026 18:12:21 +0300",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/diana-sosoaca-a-facut-circ-in-parlament-inaintea-votului-pentru-siegfried-muresan-atac-suburban-la-ursula-von-der-leyen-3970991",
+        "published": "Wed, 30 Sep 2026 14:36:20 +0300",
         "country": "Romania",
-        "city": "Brăila",
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
+        "city": null,
+        "family": "ground",
+        "subcategory": "explosive_attack",
+        "subtype": "explosive_attack",
+        "object": "explosive_device",
+        "action": "attacked",
         "actor": "unknown",
-        "target": "military",
+        "target": "government",
         "context": [],
         "consequences": [],
         "severity": "high",
-        "confidence": 0.92,
+        "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "GROUND.EXPLOSIVE.ATTACK",
         "fingerprint": {
           "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
+          "family": "ground",
+          "subcategory": "explosive_attack",
+          "subtype": "explosive_attack",
+          "object": "explosive_device",
+          "action": "attacked",
           "actor": "unknown",
-          "target": "military",
-          "place": "Brăila",
-          "event_date": "Tue, 29 Se",
-          "hash": "b9ed595b8b714e365d0589f8"
+          "target": "government",
+          "place": "Romania",
+          "event_date": "Wed, 30 Se",
+          "hash": "55bcb237852114a044fa8547"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone",
-            "dronă",
-            "drona",
-            "military_aircraft",
-            "elicopter"
+            "explosive_device",
+            "mine"
           ],
           "actions": [
-            "detected",
-            "detectat",
-            "impact",
-            "căzut"
+            "attacked",
+            "atacat"
           ],
           "targets": [
-            "military",
-            "radar"
+            "government",
+            "parlament"
           ],
           "actors": [],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
-            "geocode_quality=city"
+            "geocode_quality=country_fallback"
           ]
         },
         "negative_terms": [],
@@ -84,10 +79,21 @@
           "action_match": 0.2,
           "target_match": 0.08,
           "country_match": 0.1,
-          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
           {
             "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
@@ -95,21 +101,81 @@
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TERRORISM.ATTACK",
+            "family": "terrorism",
+            "subcategory": "attack",
+            "subtype": "terrorist_attack",
+            "severity": "critical",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
             "severity": "medium",
             "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
             "matched_context": []
           },
           {
@@ -119,9 +185,12 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
             "matched_context": []
           },
           {
@@ -131,9 +200,10 @@
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:entered"
             ],
             "matched_context": []
@@ -145,115 +215,44 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 2083,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Fragmente de dronă au căzut, în cursul nopţii de luni spre marţi, pe un teren arabil din Insula Mare a Brăilei. Autorităţile au fost anunţate la 112 de un cetăţean. Radarele Ministerului Apărării Naţionale nu au detectat nicio pătrundere neautorizată în spaţiul aerian în cursul nopţii trecute. ACTUALIZARE 18:08 - MApN transmite că misiunea de cercetare în zona localității Gropeni, județul Brăila, s-a încheiat. Militarii prezenți la fața locului au identificat un crater și fragmente de dronă. Din evaluările tehnice realizate la fața locului, s-a constatat că drona a avut încărcătură explozivă, care s-a detonat automat în momentul impactului cu solul. Incendiul produs în urma incidentului a afectat o suprafață limitată de teren agricol. Fragmentele de dronă au fost ridicate de echipa specializată a Serviciului Român de Informații pentru evaluări suplimentare. De asemenea, un elicopter IAR-330 SOCAT, care a executat cercetarea aeriană în zonă, a aterizat la bază. „În dimineaţa zilei de ma",
-        "place": "Brăila",
-        "time": "Tue, 29 Sep 2026 18:12:21 +0300",
-        "category": "air",
+        "article_text_chars": 1915,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Diana Șoșoacă, europarlamentară și președinta partidului SOS România, a mers miercuri în Parlamentul României, înaintea ședinței de vot pentru guvernul propus de Siegfried Mureșan, unde a făcut scandal pe holuri. Ea l-a acuzat pe Siegfried că este „trădător”, a atacat-o pe ;efa Comisiei Europene, Ursula von der Leyen, și a anunțat că SOS RO nu va vota Guvernul Mureșan. Diana Șoșoacă a condus grupul parlamentarilor SOS RO pe holurile Parlamentului, spunând că guvernul propus de Siegfried Mureșan este continuatorul celui condus de Ilie Bolojan. Setarile tale privind cookie-urile nu permit afisarea continutul din aceasta sectiune. Poti actualiza setarile modulelor coookie direct din browser sau de aici – e nevoie sa accepti cookie-urile social media Ea a avut un mesaj plin de jigniri și pentru Ursula von der Leyen, președinta Comisiei Europene: „Fă, Ursulo, nenorocito! Nu o să-ți votez acest guvern. O să vedeți ce-o să vă facem. Pentru că să m-ameninți pe mine că mă bagi la pușcărie și-mi",
+        "place": "Romania",
+        "time": "Wed, 30 Sep 2026 14:36:20 +0300",
+        "category": "ground",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
           "Digi24"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/fragmente-de-drona-cazute-pe-un-camp-din-insula-mare-a-brailei-un-localnic-a-sunat-la-112-precizarile-mapn-3968915"
+          "https://www.digi24.ro/stiri/actualitate/politica/diana-sosoaca-a-facut-circ-in-parlament-inaintea-votului-pentru-siegfried-muresan-atac-suburban-la-ursula-von-der-leyen-3970991"
         ],
         "merged_titles": [
-          "Fragmente de dronă, căzute pe un câmp din Insula Mare a Brăilei. Un localnic a sunat la 112. Precizările MApN"
+          "Diana Șoșoacă a făcut circ în Parlament înaintea votului pentru Siegfried Mureșan. Atac suburban la Ursula von der Leyen"
         ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
+        "incident_family": "ground",
+        "incident_subcategory": "explosive_attack",
+        "incident_subtype": "explosive_attack",
+        "incident_object": "explosive_device",
+        "incident_action": "attacked",
         "incident_actor": "unknown",
-        "incident_target": "military",
-        "classification_confidence": 0.92
+        "incident_target": "government",
+        "classification_confidence": 0.84
       }
     },
     {

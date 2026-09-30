@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-30T03:23:09.444886+00:00",
+  "generated_utc": "2026-09-30T11:53:42.195759+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -61,29 +57,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "117ed876e0a178012733",
-        "date": "2026-09-29",
-        "time": "2026-09-29T15:12:21+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Fragmente de dronă, căzute pe un câmp din Insula Mare a Brăilei. Un localnic a sunat la 112. Precizările MApN",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/fragmente-de-drona-cazute-pe-un-camp-din-insula-mare-a-brailei-un-localnic-a-sunat-la-112-precizarile-mapn-3968915",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "b9ed595b8b714e365d0589f8"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

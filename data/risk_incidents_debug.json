@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-09-30T17:32:11.662209+00:00",
+  "generated_utc": "2026-09-30T21:55:57.474592+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -45,13 +45,9 @@
       "source_files": {}
     },
     "Estonia": {
-      "incident_count": 1,
-      "category_counts": {
-        "cyber": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     }
   },
   "countries": {
@@ -62,28 +58,6 @@
     "Poland": [],
     "Lithuania": [],
     "Latvia": [],
-    "Estonia": [
-      {
-        "id": "039ad67f5027c3d97561",
-        "date": "2026-09-28",
-        "time": "2026-09-28T10:32:43+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "title": "Legislative changes in Estonia to allow domestic mobile roaming during crises",
-        "source": "BNN",
-        "url": "https://bnn-news.com/legislative-changes-in-estonia-to-allow-domestic-mobile-roaming-during-crises-284208",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "cyber",
-        "incident_subcategory": "operational_disruption",
-        "incident_subtype": "cyber_operational_disruption",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-        "fingerprint_hash": "79feb8731727d29d00f9414a"
-      }
-    ]
+    "Estonia": []
   }
 }

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-02T11:51:18.639313+00:00",
+  "generated_utc": "2026-10-02T17:17:12.986721+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,29 +53,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "05e76a1906ef5d178d25",
-        "date": "2026-10-02",
-        "time": "2026-10-02T05:22:32+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Alertă în Tulcea: Un obiect, posibil o dronă, ar fi căzut în apropierea graniței. Precizările MApN",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/alerta-in-tulcea-un-obiect-posibil-o-drona-ar-fi-cazut-in-apropierea-granitei-precizarile-mapn-3974183",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "c4445d72842bf17b13ca73d6"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

@@ -6,6 +6,64 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          26.8,
+          47.95
+        ]
+      },
+      "properties": {
+        "source": "DIRECT_FEED",
+        "feed_name": "DW Top Stories",
+        "kind": "news_direct",
+        "type": "News",
+        "time": "2026-10-05T15:49:00Z",
+        "title": "Ukraine says Russian drones behind Turkish ship sinking",
+        "description": "Romanian authorities did not say what caused the fire, but local media reported that the ship was carrying grain and was hit by a drone.",
+        "url": "https://www.dw.com/en/ukraine-says-russian-drones-behind-turkish-ship-sinking/a-79552387?maca=en-rss-en-all-1573-xml-mrss",
+        "country_hint": "Romania",
+        "relation_hits": [
+          "Ukraine",
+          "Russia",
+          "Russian"
+        ],
+        "category": "air",
+        "impact_mult": 1.12,
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "severity": "high",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "article_role": "incident",
+        "actual_incident": true,
+        "risk_eligible": true,
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "2026-10-05",
+          "hash": "7ece8a7617c2131c1569f7d3"
+        },
+        "classification_source": "security_classifier",
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "rejection_reason": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           27.7,
           56.3
         ]

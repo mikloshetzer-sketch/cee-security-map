@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-06T04:13:24.649319+00:00",
+  "generated_utc": "2026-10-06T12:42:14.176093+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,13 +15,9 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 1,
-      "category_counts": {
-        "kinetic_attack": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
       "incident_count": 0,
@@ -56,29 +52,7 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
-      {
-        "id": "b6296cc9bb8d2b4ee569",
-        "date": "2026-10-05",
-        "time": "2026-10-05T18:38:00+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Találat ért egy hajót a Hormuzi-szorosban, órák óta küzdenek a pusztító lángokkal",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/global/20261005/talalat-ert-egy-hajot-a-hormuzi-szorosban-orak-ota-kuzdenek-a-pusztito-langokkal-867536",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
-        "fingerprint_hash": "c0f7b70783a8cb0b87892e2b"
-      }
-    ],
+    "Hungary": [],
     "Romania": [],
     "Slovakia": [],
     "Poland": [],

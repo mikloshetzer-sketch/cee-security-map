@@ -1,7 +1,260 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-09T04:00:48.370377+00:00",
+  "generated_utc": "2026-10-09T12:32:03.142918+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "24c5e461da6d943d8b0b",
+        "title": "Războiul care nu se vede: De ce propaganda și divizarea internă pot fi mai periculoase decât un atac militar clasic",
+        "summary": "Este Europa pregătită să răspundă dacă un stat membru NATO ar fi atacat? Poate investiția în armament să devină o sursă de locuri de muncă și tehnologie? Cum câștigi un război care se poartă în mintea oamenilor? Ne răspunde la întrebări Marie-Agnes Starck Zimmerman, preşedintele Comisiei pentru Securitate și Apărare din Parlamentul European.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/razboiul-care-nu-se-vede-de-ce-propaganda-si-divizarea-interna-pot-fi-mai-periculoase-decat-un-atac-militar-clasic-3985157",
+        "published": "Fri, 09 Oct 2026 12:53:10 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "attacked",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "attacked",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Fri, 09 Oc",
+          "hash": "3a35c3462459acc9bf35ba9c"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "explosive_device",
+            "mine"
+          ],
+          "actions": [
+            "closed",
+            "închis",
+            "attacked",
+            "atacat"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 16000,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Este Europa pregătită să răspundă dacă un stat membru NATO ar fi atacat? Poate investiția în armament să devină o sursă de locuri de muncă și tehnologie? Cum câștigi un război care se poartă în mintea oamenilor? Ne răspunde la întrebări Marie-Agnes Strack-Zimmerman, preşedintele Comisiei pentru Securitate și Apărare din Parlamentul European. Cristina Cileacu: Marie-Agnes Starck-Zimmermann, președintele Comisiei pentru Securitate și Apărare din Parlamentul European, bine ați venit la Pașaport diplomatic. Marie-Agnes Starck-Zimmermann: Vă mulțumesc pentru invitație. Cristina Cileacu: Doamnă Starck-Zimmerman, Europa este atacată zilnic. Avem drone, avem sabotaje, dar mai presus de toate avem multă propagandă care este îndreptată împotriva democrațiilor noastre. Unii cetățeni europeni spun că este prea târziu ca să mai luptăm. Mulți spun, din fericire, că este bine să luptăm. Cum descrieți securitatea Europei în acest moment? Marie-Agnes Strack-Zimmermann: Aș spune că, dacă o comparați cu ",
+        "place": "Romania",
+        "time": "Fri, 09 Oct 2026 12:53:10 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/externe/razboiul-care-nu-se-vede-de-ce-propaganda-si-divizarea-interna-pot-fi-mai-periculoase-decat-un-atac-militar-clasic-3985157"
+        ],
+        "merged_titles": [
+          "Războiul care nu se vede: De ce propaganda și divizarea internă pot fi mai periculoase decât un atac militar clasic"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "attacked",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    }
+  ]
 }

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-09T12:32:09.988447+00:00",
+  "generated_utc": "2026-10-09T22:17:28.109839+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,29 +53,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "24c5e461da6d943d8b0b",
-        "date": "2026-10-09",
-        "time": "2026-10-09T09:53:10+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Războiul care nu se vede: De ce propaganda și divizarea internă pot fi mai periculoase decât un atac militar clasic",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/razboiul-care-nu-se-vede-de-ce-propaganda-si-divizarea-interna-pot-fi-mai-periculoase-decat-un-atac-militar-clasic-3985157",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "3a35c3462459acc9bf35ba9c"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

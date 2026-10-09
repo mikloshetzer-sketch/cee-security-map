@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-09T12:32:03.142918+00:00",
+  "generated_utc": "2026-10-09T22:17:22.299980+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,64 +14,58 @@
         ]
       },
       "properties": {
-        "id": "24c5e461da6d943d8b0b",
-        "title": "Războiul care nu se vede: De ce propaganda și divizarea internă pot fi mai periculoase decât un atac militar clasic",
-        "summary": "Este Europa pregătită să răspundă dacă un stat membru NATO ar fi atacat? Poate investiția în armament să devină o sursă de locuri de muncă și tehnologie? Cum câștigi un război care se poartă în mintea oamenilor? Ne răspunde la întrebări Marie-Agnes Starck Zimmerman, preşedintele Comisiei pentru Securitate și Apărare din Parlamentul European.",
+        "id": "c4e8943073cc7f4acec6",
+        "title": "Traficul de mărfuri pe Dunăre, blocat la kilometrul 280. AAOPFR acuză autorităţile că nu au luat măsuri pentru deblocare",
+        "summary": "Traficul fluvial de mărfuri este în continuare blocat în ambele sensuri, la kilometrul 280 al Dunării, unde sunt imobilizate 30 de împingătoare şi nave autopropulsate, precum şi peste 100 de barje, în condiţiile în care autorităţile nu au luat măsuri concrete pentru reluarea navigaţiei, au transmis vineri reprezentanţii Asociaţiei Armatorilor şi Operatorilor Portuari-Fluviali din România (AAOPFR) şi cei ai Organizaţiei Patronale Constanţa Port Business Association (CPBA), transmite Agerpres.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/razboiul-care-nu-se-vede-de-ce-propaganda-si-divizarea-interna-pot-fi-mai-periculoase-decat-un-atac-militar-clasic-3985157",
-        "published": "Fri, 09 Oct 2026 12:53:10 +0300",
+        "url": "https://www.digi24.ro/stiri/traficul-de-marfuri-pe-dunare-blocat-la-kilometrul-280-aaopfr-acuza-autoritatile-ca-nu-au-luat-masuri-pentru-deblocare-3986171",
+        "published": "Fri, 09 Oct 2026 22:26:10 +0300",
         "country": "Romania",
         "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "attacked",
-        "actor": "russia",
-        "target": "unknown",
+        "family": "maritime",
+        "subcategory": "port_security",
+        "subtype": "port_disruption",
+        "object": "critical_infrastructure",
+        "action": "disrupted",
+        "actor": "unknown",
+        "target": "transport",
         "context": [],
         "consequences": [],
-        "severity": "high",
-        "confidence": 0.82,
+        "severity": "medium",
+        "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
         "fingerprint": {
           "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "attacked",
-          "actor": "russia",
-          "target": "unknown",
+          "family": "maritime",
+          "subcategory": "port_security",
+          "subtype": "port_disruption",
+          "object": "critical_infrastructure",
+          "action": "disrupted",
+          "actor": "unknown",
+          "target": "transport",
           "place": "Romania",
           "event_date": "Fri, 09 Oc",
-          "hash": "3a35c3462459acc9bf35ba9c"
+          "hash": "ca5cb289c00c8f753555df9e"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone",
-            "explosive_device",
-            "mine"
+            "critical_infrastructure",
+            "port"
           ],
           "actions": [
-            "closed",
-            "închis",
-            "attacked",
-            "atacat"
+            "disrupted",
+            "întrerupt"
           ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "rusia",
-            "ukraine",
-            "ucraina",
-            "nato"
+          "targets": [
+            "transport",
+            "port"
           ],
+          "actors": [],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -83,16 +77,28 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "actor_match": 0.06,
+          "target_match": 0.08,
           "country_match": 0.1,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
             "severity": "high",
             "priority": 0,
             "score": 2.32,
@@ -101,15 +107,74 @@
             "matched_context": []
           },
           {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.2,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
             "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
             "severity": "high",
             "priority": 0,
-            "score": 2.29,
-            "matched": true,
-            "missing": [],
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:closed",
+              "context:any"
+            ],
             "matched_context": []
           },
           {
@@ -119,9 +184,10 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:detected"
             ],
             "matched_context": []
@@ -133,9 +199,10 @@
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:entered"
             ],
             "matched_context": []
@@ -147,113 +214,47 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
+              "objects:all:drone",
               "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:ship"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 16000,
+        "article_text_chars": 3553,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Este Europa pregătită să răspundă dacă un stat membru NATO ar fi atacat? Poate investiția în armament să devină o sursă de locuri de muncă și tehnologie? Cum câștigi un război care se poartă în mintea oamenilor? Ne răspunde la întrebări Marie-Agnes Strack-Zimmerman, preşedintele Comisiei pentru Securitate și Apărare din Parlamentul European. Cristina Cileacu: Marie-Agnes Starck-Zimmermann, președintele Comisiei pentru Securitate și Apărare din Parlamentul European, bine ați venit la Pașaport diplomatic. Marie-Agnes Starck-Zimmermann: Vă mulțumesc pentru invitație. Cristina Cileacu: Doamnă Starck-Zimmerman, Europa este atacată zilnic. Avem drone, avem sabotaje, dar mai presus de toate avem multă propagandă care este îndreptată împotriva democrațiilor noastre. Unii cetățeni europeni spun că este prea târziu ca să mai luptăm. Mulți spun, din fericire, că este bine să luptăm. Cum descrieți securitatea Europei în acest moment? Marie-Agnes Strack-Zimmermann: Aș spune că, dacă o comparați cu ",
+        "article_text_excerpt": "Traficul fluvial de mărfuri este în continuare blocat în ambele sensuri, la kilometrul 280 al Dunării, unde sunt imobilizate 30 de împingătoare şi nave autopropulsate, precum şi peste 100 de barje, în condiţiile în care autorităţile nu au luat măsuri concrete pentru reluarea navigaţiei, au transmis vineri reprezentanţii Asociaţiei Armatorilor şi Operatorilor Portuari-Fluviali din România (AAOPFR) şi cei ai Organizaţiei Patronale Constanţa Port Business Association (CPBA). \"În ciuda numeroaselor sesizări şi adrese transmise către autorităţile competente, până în prezent nu au fost adoptate măsuri concrete pentru deblocarea situaţiei de la kilometrul 280 al Dunării, unde traficul fluvial de mărfuri continuă să fie întrerupt în ambele sensuri, atât către Portul Constanţa, cât şi dinspre acesta către porturile dunărene. Mai mult, la faţa locului nu se observă activităţi sau mobilizări de echipamente şi resurse care să indice pregătirea ori începerea lucrărilor de dragaj necesare restabilir",
         "place": "Romania",
-        "time": "Fri, 09 Oct 2026 12:53:10 +0300",
-        "category": "air",
+        "time": "Fri, 09 Oct 2026 19:07:47 +0000",
+        "category": "maritime",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
-        "source_count": 1,
+        "source_count": 2,
         "sources": [
-          "Digi24"
+          "Digi24",
+          "Economica.net"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/externe/razboiul-care-nu-se-vede-de-ce-propaganda-si-divizarea-interna-pot-fi-mai-periculoase-decat-un-atac-militar-clasic-3985157"
+          "https://www.digi24.ro/stiri/traficul-de-marfuri-pe-dunare-blocat-la-kilometrul-280-aaopfr-acuza-autoritatile-ca-nu-au-luat-masuri-pentru-deblocare-3986171",
+          "https://www.economica.net/aaopfr-traficul-fluvial-de-marfuri-este-blocat-in-ambele-sensuri-la-kilometrul-280-al-dunarii-autoritatile-nu-au-luat-masuri-concrete-pentru-reluarea-navigatiei-30-de-nave-si-barje-sunt-imobilizate_984395.html"
         ],
         "merged_titles": [
-          "Războiul care nu se vede: De ce propaganda și divizarea internă pot fi mai periculoase decât un atac militar clasic"
+          "Traficul de mărfuri pe Dunăre, blocat la kilometrul 280. AAOPFR acuză autorităţile că nu au luat măsuri pentru deblocare",
+          "AAOPFR: Traficul fluvial de mărfuri este blocat în ambele sensuri la kilometrul 280 al Dunării. Autoritățile nu au luat măsuri concrete pentru reluarea navigației. 30 de nave și barje sunt imobilizate"
         ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "attacked",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.82
+        "incident_family": "maritime",
+        "incident_subcategory": "port_security",
+        "incident_subtype": "port_disruption",
+        "incident_object": "critical_infrastructure",
+        "incident_action": "disrupted",
+        "incident_actor": "unknown",
+        "incident_target": "transport",
+        "classification_confidence": 0.84
       }
     }
   ]

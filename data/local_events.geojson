@@ -1,7 +1,259 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-10T16:53:21.658668+00:00",
+  "generated_utc": "2026-10-10T21:10:55.113660+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5033,
+          47.1625
+        ]
+      },
+      "properties": {
+        "id": "388d0ad39bde7483e164",
+        "title": "Hivatalos: felfüggesztették a rijádi reptér működését",
+        "summary": "<p>Szaúd-Arábia ideiglenesen felfüggesztette a rijádi repülőtér működését egy újabb húszi támadást követően. Egyetlen héten belül ez már a harmadik alkalom, hogy a jemeni konfliktus éleződése megbénítja az ország légiforgalmát - írta a <a href=\"https://www.bloomberg.com/news/articles/2026-10-10/saudi-arabia-suspends-operations-at-riyadh-airport-after-attack\" rel=\"noopener\" target=\"_blank\">Bloomberg</a>.</p>",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/global/20261010/hivatalos-felfuggesztettek-a-rijadi-repter-mukodeset-868898",
+        "published": "Sat, 10 Oct 2026 19:13:00 +0200",
+        "country": "Hungary",
+        "city": null,
+        "family": "maritime",
+        "subcategory": "port_security",
+        "subtype": "port_disruption",
+        "object": "critical_infrastructure",
+        "action": "disrupted",
+        "actor": "unknown",
+        "target": "transport",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "maritime",
+          "subcategory": "port_security",
+          "subtype": "port_disruption",
+          "object": "critical_infrastructure",
+          "action": "disrupted",
+          "actor": "unknown",
+          "target": "transport",
+          "place": "Hungary",
+          "event_date": "Sat, 10 Oc",
+          "hash": "c3a5fc1259cf516c20eb5ac3"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "critical_infrastructure",
+            "repülőtér"
+          ],
+          "actions": [
+            "disrupted",
+            "felfüggesztették"
+          ],
+          "targets": [
+            "transport",
+            "repülőtér"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.2,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.95,
+            "matched": false,
+            "missing": [
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "repülőtér"
+            ]
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:cyber_system"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 3983,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "A szaúdi polgári légiközlekedési hatóság közlése szerint a támadásban többen megsérültek, a repülőtér üzemelése pedig a károk felmérésének idejére szünetel. A Flightradar24 légiforgalmi adatszolgáltató adatai alapján szombaton mintegy 260 járatot töröltek, további 219 pedig késve közlekedett. A rijádi Hálid király nemzetközi repülőtér arra kérte az utasokat, hogy indulás előtt közvetlenül a légitársaságoknál tájékozódjanak járataik állapotáról. Az Egyesült Államok arra figyelmeztette állampolgárait, hogy kerüljék a szaúdi főváros repülőterét. Az Egyesült Királyság \"súlyosnak\" minősítette az incidenst, több légitársaság – köztük a kuvaiti nemzeti légitársaság – pedig törölte rijádi járatait. A héten végrehajtott korábbi támadásokban összesen hat ember vesztette életét. Csütörtökön három szaúdi állampolgár halt meg a rijádi repülőtéren, és a Saudia légitársaság egyik repülőgépe is megrongálódott. A hét elején egy ember a fővárosi, kettő pedig az abhai repülőtéren vesztette életét. Valame",
+        "place": "Hungary",
+        "time": "Sat, 10 Oct 2026 19:13:00 +0200",
+        "category": "maritime",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "urls": [
+          "https://www.portfolio.hu/global/20261010/hivatalos-felfuggesztettek-a-rijadi-repter-mukodeset-868898"
+        ],
+        "merged_titles": [
+          "Hivatalos: felfüggesztették a rijádi reptér működését"
+        ],
+        "incident_family": "maritime",
+        "incident_subcategory": "port_security",
+        "incident_subtype": "port_disruption",
+        "incident_object": "critical_infrastructure",
+        "incident_action": "disrupted",
+        "incident_actor": "unknown",
+        "incident_target": "transport",
+        "classification_confidence": 0.84
+      }
+    }
+  ]
 }

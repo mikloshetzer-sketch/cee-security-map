@@ -1,9 +1,263 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-10T03:43:35.520200+00:00",
+  "generated_utc": "2026-10-10T11:49:17.606855+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5033,
+          47.1625
+        ]
+      },
+      "properties": {
+        "id": "24cbf389a9fe3ec27d75",
+        "title": "Nagyszabású hibrid támadásra készülnek az EU vezetői, megtelnek a pánikszobák",
+        "summary": "<p>Az Európai Unió egy olyan súlyos hibrid támadásra készül, amely akár több halálos áldozatot is követelhet, miközben az elmúlt hónapok szabotázsakciói és dróntámadásai miatt egyre nagyobb az aggodalom Brüsszelben. A tagállamok azonban megosztottak abban, milyen szerepet vállaljon az EU egy ilyen válság kezelésében, mivel többen a NATO-val párhuzamos biztonsági struktúrák kialakításától és az érzékeny információk kiszivárgásától tartanak. Viszont a szakértők és a diplomaták szerint Brüsszel aggályai teljesen megalapozottak és valós a fenyegetés.</p>",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/unios-forrasok/20261010/nagyszabasu-hibrid-tamadasra-keszulnek-az-eu-vezetoi-megtelnek-a-panikszobak-868836",
+        "published": "Sat, 10 Oct 2026 09:16:00 +0200",
+        "country": "Hungary",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Hungary",
+          "event_date": "Sat, 10 Oc",
+          "hash": "620d993aedd7b3200c7f760a"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [
+            "történt"
+          ],
+          "objects": [
+            "drone",
+            "drón"
+          ],
+          "actions": [
+            "impact",
+            "talált"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "orosz",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 4776,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Az Európai Unió tagállamai egyre komolyabban készülnek egy olyan nagyszabású hibrid támadás lehetőségére, amely több halálos áldozatot is követelhet – írja a Politico öt uniós diplomatára és tisztviselőre hivatkozva. A 27 tagállam nagykövetei az elmúlt hetekben zárt, telefonok és munkatársak nélküli egyeztetéseken tárgyalták a lehetséges forgatókönyveket . A felkészülés ugyanakkor komoly vitákat váltott ki arról, milyen szerepet vállalhat az EU a biztonságpolitikában, és hol kezdődnek a NATO hatáskörei. Az aggodalmakat különösen az augusztusban, a lipcsei repülőtéren talált, robbanóanyaggal felszerelt drón erősítette fel. Az európai hatóságok emellett rendszeresen számolnak be kibertámadásokról, szabotázsakciókról és légtérsértésekről, amelyeket részben Oroszországhoz kötnek . Az elmúlt időszak incidensei között szerepel egy lengyelországi Starlink-állomáson történt gyanús tűzeset, valamint kereskedelmi szállítmányokba rejtett gyújtószerkezetek terve is. Több uniós tisztviselő szerint ",
+        "place": "Hungary",
+        "time": "Sat, 10 Oct 2026 09:16:00 +0200",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "urls": [
+          "https://www.portfolio.hu/unios-forrasok/20261010/nagyszabasu-hibrid-tamadasra-keszulnek-az-eu-vezetoi-megtelnek-a-panikszobak-868836"
+        ],
+        "merged_titles": [
+          "Nagyszabású hibrid támadásra készülnek az EU vezetői, megtelnek a pánikszobák"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
     {
       "type": "Feature",
       "geometry": {
@@ -16,7 +270,7 @@
       "properties": {
         "id": "c4e8943073cc7f4acec6",
         "title": "Traficul de mărfuri pe Dunăre, blocat la kilometrul 280. AAOPFR acuză autorităţile că nu au luat măsuri pentru deblocare",
-        "summary": "Traficul fluvial de mărfuri este în continuare blocat în ambele sensuri, la kilometrul 280 al Dunării, unde sunt imobilizate 30 de împingătoare şi nave autopropulsate, precum şi peste 100 de barje, în condiţiile în care autorităţile nu au luat măsuri concrete pentru reluarea navigaţiei, au transmis vineri reprezentanţii Asociaţiei Armatorilor şi Operatorilor Portuari-Fluviali din România (AAOPFR) şi cei ai Organizaţiei Patronale Constanţa Port Business Association (CPBA), transmite Agerpres.",
+        "summary": "Traficul fluvial de mărfuri este în continuare blocat în ambele sensuri, la kilometrul 280 al Dunării, unde sunt imobilizate 30 de împingătoare şi nave autopropulsate, precum şi peste 100 de barje, în condiţiile în care autorităţile nu au luat măsuri concrete pentru reluarea navigaţiei, au transmis vineri reprezentanţii Asociaţiei Armatorilor şi Operatorilor Portuari-Fluviali din România (AAOPFR) şi cei ai Organizaţiei Patronale Constanţa Port Business Association (CPBA).",
         "source": "Digi24",
         "url": "https://www.digi24.ro/stiri/traficul-de-marfuri-pe-dunare-blocat-la-kilometrul-280-aaopfr-acuza-autoritatile-ca-nu-au-luat-masuri-pentru-deblocare-3986171",
         "published": "Fri, 09 Oct 2026 22:26:10 +0300",
@@ -229,23 +483,20 @@
         "article_fetch_source": "cache",
         "article_text_excerpt": "Traficul fluvial de mărfuri este în continuare blocat în ambele sensuri, la kilometrul 280 al Dunării, unde sunt imobilizate 30 de împingătoare şi nave autopropulsate, precum şi peste 100 de barje, în condiţiile în care autorităţile nu au luat măsuri concrete pentru reluarea navigaţiei, au transmis vineri reprezentanţii Asociaţiei Armatorilor şi Operatorilor Portuari-Fluviali din România (AAOPFR) şi cei ai Organizaţiei Patronale Constanţa Port Business Association (CPBA). \"În ciuda numeroaselor sesizări şi adrese transmise către autorităţile competente, până în prezent nu au fost adoptate măsuri concrete pentru deblocarea situaţiei de la kilometrul 280 al Dunării, unde traficul fluvial de mărfuri continuă să fie întrerupt în ambele sensuri, atât către Portul Constanţa, cât şi dinspre acesta către porturile dunărene. Mai mult, la faţa locului nu se observă activităţi sau mobilizări de echipamente şi resurse care să indice pregătirea ori începerea lucrărilor de dragaj necesare restabilir",
         "place": "Romania",
-        "time": "Fri, 09 Oct 2026 19:07:47 +0000",
+        "time": "Fri, 09 Oct 2026 22:26:10 +0300",
         "category": "maritime",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
-        "source_count": 2,
+        "source_count": 1,
         "sources": [
-          "Digi24",
-          "Economica.net"
+          "Digi24"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/traficul-de-marfuri-pe-dunare-blocat-la-kilometrul-280-aaopfr-acuza-autoritatile-ca-nu-au-luat-masuri-pentru-deblocare-3986171",
-          "https://www.economica.net/aaopfr-traficul-fluvial-de-marfuri-este-blocat-in-ambele-sensuri-la-kilometrul-280-al-dunarii-autoritatile-nu-au-luat-masuri-concrete-pentru-reluarea-navigatiei-30-de-nave-si-barje-sunt-imobilizate_984395.html"
+          "https://www.digi24.ro/stiri/traficul-de-marfuri-pe-dunare-blocat-la-kilometrul-280-aaopfr-acuza-autoritatile-ca-nu-au-luat-masuri-pentru-deblocare-3986171"
         ],
         "merged_titles": [
-          "Traficul de mărfuri pe Dunăre, blocat la kilometrul 280. AAOPFR acuză autorităţile că nu au luat măsuri pentru deblocare",
-          "AAOPFR: Traficul fluvial de mărfuri este blocat în ambele sensuri la kilometrul 280 al Dunării. Autoritățile nu au luat măsuri concrete pentru reluarea navigației. 30 de nave și barje sunt imobilizate"
+          "Traficul de mărfuri pe Dunăre, blocat la kilometrul 280. AAOPFR acuză autorităţile că nu au luat măsuri pentru deblocare"
         ],
         "incident_family": "maritime",
         "incident_subcategory": "port_security",

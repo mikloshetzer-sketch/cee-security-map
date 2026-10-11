@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-11T12:06:02.469047+00:00",
+  "generated_utc": "2026-10-11T17:19:27.050531+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,69 +9,64 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9668,
-          45.9432
+          26.102,
+          44.426
         ]
       },
       "properties": {
-        "id": "deb6c5c68582263798fe",
-        "title": "„Important e să nu plece capul”. Reportaj din școala unde învățătorul demontează un mit",
-        "summary": "„Un copil adus la tăcere nu mai este copil”, spune George Puiu, învățător la o școală din Comănești. Are 45 de ani și a intrat de cinci ani în învățământ, după ce a lucrat în cu totul alte domenii. După cinci ani în sistem, spune că unul dintre lucrurile care l-au surprins cel mai mult &#8230;",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/important-e-sa-nu-plece-capul-reportaj-din-scoala-unde-invatatorul-demonteaza-un-mit-2362510",
-        "published": "Sun, 11 Oct 2026 10:49:33 +0000",
+        "id": "5bec7d12747967ae6231",
+        "title": "Accident grav pe munte: un adolescent de 14 ani a căzut pe un traseu de mountain-bike. A fost nevoie de intervenția elicopterului SMURD",
+        "summary": "Un adolescent de 14 ani a căzut pe un traseu de mountain-bike din Azuga și a suferit o fractură de femur. Salvamontiștii au intervenit pentru a-i acorda primul ajutor, însă, având în vedere gravitatea accidentului, a fost solicitat un elicopter SMURD, care l-a preluat pe băiat și l-a transportat la un spital din București.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/accident-grav-pe-munte-un-adolescent-de-14-ani-a-cazut-pe-un-traseu-de-mountain-bike-a-fost-nevoie-de-interventia-elicopterului-smurd-3987107",
+        "published": "Sun, 11 Oct 2026 16:50:58 +0300",
         "country": "Romania",
-        "city": null,
+        "city": "București",
         "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
         "action": "impact",
         "actor": "unknown",
-        "target": "civilian",
+        "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "high",
+        "severity": "medium",
         "confidence": 0.84,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
         "fingerprint": {
           "country": "Romania",
           "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
           "action": "impact",
           "actor": "unknown",
-          "target": "civilian",
-          "place": "Romania",
+          "target": "unknown",
+          "place": "București",
           "event_date": "Sun, 11 Oc",
-          "hash": "5154c683132731959a7d95ed"
+          "hash": "fcbc0d0997bb1b3f236c1185"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone",
-            "dronă"
+            "military_aircraft",
+            "elicopter"
           ],
           "actions": [
-            "entered",
-            "a intrat",
             "impact",
-            "a lovit"
+            "căzut"
           ],
-          "targets": [
-            "civilian",
-            "school"
-          ],
+          "targets": [],
           "actors": [],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
-            "geocode_quality=country_fallback"
+            "geocode_quality=city"
           ]
         },
         "negative_terms": [],
@@ -79,35 +74,11 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
           "country_match": 0.1,
+          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
           {
             "rule_id": "AIR.AIRCRAFT.INCIDENT",
             "family": "air",
@@ -115,52 +86,22 @@
             "subtype": "military_aircraft_incident",
             "severity": "medium",
             "priority": 0,
-            "score": 1.2,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.DETECTION",
+            "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
             "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
+            "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:all:shot_down"
+              "objects:all:drone"
             ],
             "matched_context": []
           },
@@ -179,16 +120,62 @@
             "matched_context": []
           },
           {
-            "rule_id": "BORDER.ILLEGAL.CROSSING",
-            "family": "border_security",
-            "subcategory": "illegal_crossing",
-            "subtype": "illegal_border_crossing",
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "context:any"
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
             ],
             "matched_context": []
           },
@@ -221,36 +208,51 @@
               "actions:any:intercepted,shot_down"
             ],
             "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 15307,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "„Un copil adus la tăcere nu mai este copil”, spune George Puiu, învățător la o școală din Comănești. Are 45 de ani și a intrat de cinci ani în învățământ, după ce a lucrat în cu totul alte domenii. După cinci ani în sistem, spune că unul dintre lucrurile care l-au surprins cel mai mult nu a fost legat de tehnologie, programe sau metode de predare. Este 10 dimineața, iar cei 22 de copii din clasa a II-a B de la Școala Gimnazială „Ciprian Porumbescu” din Comănești sunt la ora de Matematică. Pe ușa clasei lor, numită „Clasa exploratorilor”, stă scrisă o listă cu „ingredientele unui an școlar minunat”: curaj, zâmbete, prietenie, iubire, perseverență și răbdare. Înăuntru, de tavan sunt atârnate planete făcute din hârtie. Pe pereți, sunt hărți și desene, iar într-o parte a sălii este amenajat un colț de lectură. Copiii stau câte doi în bancă. În fața lor sunt două table alăturate: una electronică și una pe care se scrie cu markerul. Ora de matematică nu începe însă cu un copil chemat la tabl",
-        "place": "Romania",
-        "time": "Sun, 11 Oct 2026 10:49:33 +0000",
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "București",
+        "time": "Sun, 11 Oct 2026 16:50:58 +0300",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "country_fallback",
+        "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "HotNews"
+          "Digi24"
         ],
         "urls": [
-          "https://hotnews.ro/important-e-sa-nu-plece-capul-reportaj-din-scoala-unde-invatatorul-demonteaza-un-mit-2362510"
+          "https://www.digi24.ro/stiri/actualitate/evenimente/accident-grav-pe-munte-un-adolescent-de-14-ani-a-cazut-pe-un-traseu-de-mountain-bike-a-fost-nevoie-de-interventia-elicopterului-smurd-3987107"
         ],
         "merged_titles": [
-          "„Important e să nu plece capul”. Reportaj din școala unde învățătorul demontează un mit"
+          "Accident grav pe munte: un adolescent de 14 ani a căzut pe un traseu de mountain-bike. A fost nevoie de intervenția elicopterului SMURD"
         ],
         "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
         "incident_action": "impact",
         "incident_actor": "unknown",
-        "incident_target": "civilian",
+        "incident_target": "unknown",
         "classification_confidence": 0.84
       }
     },

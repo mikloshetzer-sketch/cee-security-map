@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-11T12:06:11.882684+00:00",
+  "generated_utc": "2026-10-11T17:19:36.464534+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -22,7 +22,7 @@
     "Romania": {
       "incident_count": 1,
       "category_counts": {
-        "drone": 1
+        "military": 1
       },
       "source_files": {
         "local_events.geojson": 1
@@ -59,25 +59,25 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "deb6c5c68582263798fe",
+        "id": "5bec7d12747967ae6231",
         "date": "2026-10-11",
-        "time": "2026-10-11T10:49:33+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "„Important e să nu plece capul”. Reportaj din școala unde învățătorul demontează un mit",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/important-e-sa-nu-plece-capul-reportaj-din-scoala-unde-invatatorul-demonteaza-un-mit-2362510",
+        "time": "2026-10-11T13:50:58+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Accident grav pe munte: un adolescent de 14 ani a căzut pe un traseu de mountain-bike. A fost nevoie de intervenția elicopterului SMURD",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/accident-grav-pe-munte-un-adolescent-de-14-ani-a-cazut-pe-un-traseu-de-mountain-bike-a-fost-nevoie-de-interventia-elicopterului-smurd-3987107",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
         "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "5154c683132731959a7d95ed"
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "fcbc0d0997bb1b3f236c1185"
       }
     ],
     "Slovakia": [],

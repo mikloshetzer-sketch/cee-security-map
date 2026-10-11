@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEE Infrastructure & Security Daily Brief</title>
+
+<style>
+:root {
+  --dark:#07111f;
+  --dark2:#101b2d;
+  --panel:#ffffff;
+  --soft:#f3f6fa;
+  --text:#172033;
+  --muted:#65758b;
+  --blue:#2f66e8;
+  --green:#18a957;
+  --orange:#f97316;
+  --red:#dc2626;
+  --line:#e4eaf2;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  background:#dde3ea;
+  color:var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height:1.55;
+}
+
+.page {
+  max-width:1320px;
+  margin:0 auto;
+  background:#f8fafc;
+  min-height:100vh;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(79,117,255,0.22), transparent 28%),
+    linear-gradient(135deg, #07111f 0%, #132039 100%);
+  color:white;
+  padding:48px;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:center;
+}
+
+.hero h1 {
+  margin:0;
+  font-size:42px;
+  line-height:1.05;
+  letter-spacing:-0.03em;
+}
+
+.hero p {
+  color:#cbd5e1;
+  font-size:18px;
+  margin:16px 0 0;
+}
+
+.date-box {
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:18px;
+  padding:24px 34px;
+  min-width:230px;
+  text-align:center;
+  background:rgba(255,255,255,0.04);
+}
+
+.date-box .label {
+  color:#94a3b8;
+  font-size:13px;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.date-box .date {
+  font-size:28px;
+  font-weight:900;
+  margin-top:8px;
+}
+
+.content {
+  padding:34px 46px 54px;
+}
+
+.actions {
+  display:flex;
+  justify-content:flex-end;
+  gap:12px;
+  margin-bottom:22px;
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:800;
+  background:#111827;
+  color:white;
+}
+
+.btn.blue {
+  background:#2563eb;
+}
+
+.kpi-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+  margin-bottom:26px;
+}
+
+.kpi {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 10px 26px rgba(15,23,42,0.06);
+}
+
+.kpi .label {
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  color:#334155;
+}
+
+.kpi .value {
+  font-size:36px;
+  font-weight:900;
+  color:#2563eb;
+  margin-top:8px;
+}
+
+.kpi .note {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.section {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:26px;
+  margin-top:26px;
+  box-shadow:0 10px 26px rgba(15,23,42,0.05);
+}
+
+.section h2 {
+  margin:0 0 18px;
+  font-size:26px;
+}
+
+.summary-box {
+  border-left:6px solid #2563eb;
+  background:#f8fbff;
+  padding:18px;
+  border-radius:14px;
+}
+
+.summary-box li {
+  margin-bottom:10px;
+}
+
+.country-grid,
+.region-grid,
+.card-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+}
+
+.country-card,
+.region-card,
+.event-card,
+.infra-card {
+  border-radius:18px;
+  overflow:hidden;
+  background:white;
+  border:1px solid var(--line);
+  box-shadow:0 8px 20px rgba(15,23,42,0.05);
+}
+
+.country-card {
+  padding:20px;
+  border-top:8px solid #2563eb;
+}
+
+.country-card.normal { border-top-color:var(--green); }
+.country-card.elevated { border-top-color:#d97706; }
+.country-card.tense { border-top-color:var(--orange); }
+.country-card.critical { border-top-color:var(--red); }
+
+.country-name {
+  font-size:18px;
+  font-weight:900;
+}
+
+.country-score {
+  font-size:34px;
+  font-weight:900;
+  color:#2563eb;
+  margin-top:8px;
+}
+
+.country-level {
+  display:inline-block;
+  margin-top:8px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#eef2ff;
+  color:#1d4ed8;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.country-drivers {
+  color:var(--muted);
+  font-size:13px;
+  margin-top:12px;
+}
+
+.region-head {
+  color:white;
+  padding:20px;
+  font-size:22px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.region-card.blue .region-head { background:var(--blue); }
+.region-card.green .region-head { background:var(--green); }
+.region-card.orange .region-head { background:var(--orange); }
+.region-card.red .region-head { background:var(--red); }
+
+.region-body {
+  padding:20px;
+  background:#f8fafc;
+}
+
+.big-number {
+  font-size:38px;
+  color:#2563eb;
+  font-weight:900;
+}
+
+.small-label,
+.region-line {
+  color:#475569;
+  font-size:14px;
+  margin-top:8px;
+}
+
+.mini-bar {
+  height:9px;
+  background:#e2e8f0;
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:18px;
+}
+
+.mini-bar span {
+  display:block;
+  height:100%;
+  background:#2563eb;
+  border-radius:999px;
+}
+
+.event-card,
+.infra-card {
+  padding:20px;
+}
+
+.event-kicker {
+  font-size:12px;
+  text-transform:uppercase;
+  color:#64748b;
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.event-card h3,
+.infra-card h3 {
+  margin:0 0 10px;
+  font-size:18px;
+}
+
+.event-card p,
+.infra-card p {
+  color:#475569;
+  font-size:14px;
+}
+
+.event-card a,
+.infra-card a {
+  color:#2563eb;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.level-pill {
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  margin:4px 0 12px;
+}
+
+.level-pill.critical { background:#fee2e2; color:#991b1b; }
+.level-pill.high { background:#ffedd5; color:#9a3412; }
+.level-pill.medium { background:#fef3c7; color:#92400e; }
+.level-pill.watch { background:#dcfce7; color:#166534; }
+
+.visual-dashboard {
+  margin-top:34px;
+  background:
+    radial-gradient(circle at top right, rgba(37,99,235,0.20), transparent 28%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color:white;
+  border-radius:26px;
+  padding:34px;
+  box-shadow:0 20px 50px rgba(15,23,42,0.25);
+}
+
+.vd-header {
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:flex-start;
+  margin-bottom:26px;
+}
+
+.vd-kicker {
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:0.12em;
+  color:#93c5fd;
+}
+
+.visual-dashboard h2 {
+  margin:6px 0 8px;
+  font-size:36px;
+  line-height:1.05;
+}
+
+.visual-dashboard p {
+  margin:0;
+  color:#cbd5e1;
+  max-width:760px;
+}
+
+.vd-date {
+  background:rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:14px 18px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.vd-grid {
+  display:grid;
+  grid-template-columns:1.4fr repeat(3, 1fr);
+  gap:16px;
+}
+
+.vd-main,
+.vd-card,
+.vd-wide {
+  background:rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:18px;
+  padding:20px;
+}
+
+.vd-main {
+  grid-row:span 2;
+}
+
+.vd-label {
+  color:#cbd5e1;
+  text-transform:uppercase;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:0.08em;
+}
+
+.vd-big {
+  font-size:52px;
+  font-weight:900;
+  margin-top:12px;
+}
+
+.vd-sub {
+  color:#cbd5e1;
+  font-size:14px;
+  margin-top:8px;
+}
+
+.vd-number {
+  font-size:34px;
+  font-weight:900;
+}
+
+.vd-text {
+  margin-top:8px;
+  color:#dbeafe;
+  font-size:14px;
+}
+
+.vd-card.red { border-top:5px solid #ef4444; }
+.vd-card.orange { border-top:5px solid #f97316; }
+.vd-card.blue { border-top:5px solid #3b82f6; }
+.vd-card.green { border-top:5px solid #22c55e; }
+
+.vd-wide {
+  grid-column:span 3;
+}
+
+.vd-sector {
+  font-size:34px;
+  font-weight:900;
+  margin-top:10px;
+}
+
+.vd-regions {
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}
+
+.visual-dashboard .region-card {
+  box-shadow:none;
+}
+
+.vd-footer {
+  margin-top:20px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,0.18);
+  display:flex;
+  justify-content:space-between;
+  color:#cbd5e1;
+  font-size:13px;
+}
+
+.footer {
+  margin-top:44px;
+  background:#101827;
+  color:#cbd5e1;
+  border-radius:18px;
+  padding:22px 28px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer b {
+  color:white;
+}
+
+@media(max-width:1000px) {
+  .hero {
+    flex-direction:column;
+    align-items:flex-start;
+    padding:34px 24px;
+  }
+
+  .content {
+    padding:24px;
+  }
+
+  .kpi-grid,
+  .country-grid,
+  .region-grid,
+  .card-grid,
+  .vd-grid,
+  .vd-regions {
+    grid-template-columns:1fr;
+  }
+
+  .vd-main,
+  .vd-wide {
+    grid-column:auto;
+    grid-row:auto;
+  }
+
+  .vd-header,
+  .footer,
+  .vd-footer {
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div>
+      <h1>CEE Infrastructure &<br>Security Daily Brief</h1>
+      <p>Regionális OSINT helyzetkép kritikus infrastruktúrára, lokális eseményekre és kockázati mintázatokra.</p>
+    </div>
+
+    <div class="date-box">
+      <div class="label">Dátum</div>
+      <div class="date">2026-10-11</div>
+      <div class="label">UTC alapú riport</div>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <div class="actions">
+      <a class="btn blue" href="../index.html">Vissza a dashboardra</a>
+      <a class="btn" href="cee-daily-report-latest.html">Legfrissebb riport</a>
+    </div>
+
+    <section class="kpi-grid">
+      <div class="kpi">
+        <div class="label">Régiós állapot</div>
+        <div class="value">NORMAL</div>
+        <div class="note">score: 0.32</div>
+      </div>
+
+      <div class="kpi">
+        <div class="label">Kritikus infra alert</div>
+        <div class="value">0</div>
+        <div class="note">magas: 0</div>
+      </div>
+
+      <div class="kpi">
+        <div class="label">Fő kockázati ország</div>
+        <div class="value" style="font-size:28px;">Romania</div>
+        <div class="note">országkockázati sorrend alapján</div>
+      </div>
+
+      <div class="kpi">
+        <div class="label">Fő szektor</div>
+        <div class="value" style="font-size:28px;">infrastruktúra</div>
+        <div class="note">infrastruktúra-közeli találatok alapján</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Rövid napi értékelés</h2>
+      <div class="summary-box">
+        <ul><li>Helyi források alapján az elmúlt 24 órában 1 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Romania: 1.</li><li>Legerősebb góc: Botoșani, Romania 🆕 (rácspont 47.75, 26.75; score 0.37; 7 napos változás: n/a).</li><li>Trend: nincs elég bázisadat az összehasonlításhoz.</li><li>Forráskép: GDELT 0, GDELT linked 3098, GDELT DOC 0, direkt feed 1, USGS 0, GDACS 0.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 200 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li></ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Fő régiós blokkok</h2>
+      <div class="region-grid">
+        
+        <div class="region-card blue">
+          <div class="region-head">Baltikum</div>
+          <div class="region-body">
+            <div class="big-number">0.0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> Lithuania</div>
+            <div class="mini-bar"><span style="width:0.0%"></span></div>
+          </div>
+        </div>
+        
+
+        <div class="region-card green">
+          <div class="region-head">V4 térség</div>
+          <div class="region-body">
+            <div class="big-number">0.0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> Czech Republic</div>
+            <div class="mini-bar"><span style="width:0.0%"></span></div>
+          </div>
+        </div>
+        
+
+        <div class="region-card orange">
+          <div class="region-head">Fekete-tengeri perem</div>
+          <div class="region-body">
+            <div class="big-number">2.52</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> Romania</div>
+            <div class="mini-bar"><span style="width:30.240000000000002%"></span></div>
+          </div>
+        </div>
+        
+
+        <div class="region-card red">
+          <div class="region-head">Egyéb CEE</div>
+          <div class="region-body">
+            <div class="big-number">0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> —</div>
+            <div class="mini-bar"><span style="width:0%"></span></div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Top risk országok</h2>
+      <div class="country-grid">
+        
+        <div class="country-card elevated">
+          <div class="country-name">Romania</div>
+          <div class="country-score">2.52</div>
+          <div class="country-level">elevated</div>
+          <div class="country-drivers">friss aktivitási trend, katonai és drónaktivitás, biztonsági incidensnyomás</div>
+        </div>
+        
+
+        <div class="country-card normal">
+          <div class="country-name">Czech Republic</div>
+          <div class="country-score">0.0</div>
+          <div class="country-level">normal</div>
+          <div class="country-drivers">automatikus OSINT jelzés</div>
+        </div>
+        
+
+        <div class="country-card normal">
+          <div class="country-name">Hungary</div>
+          <div class="country-score">0.0</div>
+          <div class="country-level">normal</div>
+          <div class="country-drivers">automatikus OSINT jelzés</div>
+        </div>
+        
+
+        <div class="country-card normal">
+          <div class="country-name">Slovakia</div>
+          <div class="country-score">0.0</div>
+          <div class="country-level">normal</div>
+          <div class="country-drivers">automatikus OSINT jelzés</div>
+        </div>
+        
+
+        <div class="country-card normal">
+          <div class="country-name">Poland</div>
+          <div class="country-score">0.0</div>
+          <div class="country-level">normal</div>
+          <div class="country-drivers">automatikus OSINT jelzés</div>
+        </div>
+        
+
+        <div class="country-card normal">
+          <div class="country-name">Lithuania</div>
+          <div class="country-score">0.0</div>
+          <div class="country-level">normal</div>
+          <div class="country-drivers">automatikus OSINT jelzés</div>
+        </div>
+        
+
+        <div class="country-card normal">
+          <div class="country-name">Latvia</div>
+          <div class="country-score">0.0</div>
+          <div class="country-level">normal</div>
+          <div class="country-drivers">automatikus OSINT jelzés</div>
+        </div>
+        
+
+        <div class="country-card normal">
+          <div class="country-name">Estonia</div>
+          <div class="country-score">0.0</div>
+          <div class="country-level">normal</div>
+          <div class="country-drivers">automatikus OSINT jelzés</div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Infrastruktúra-közeli incidensek</h2>
+      <div class="card-grid">
+        <p>Nincs infrastruktúra-közeli kiemelt találat.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Helyi forrásokból azonosított események</h2>
+      <div class="card-grid">
+        
+        <div class="event-card">
+          <div class="event-kicker">Romania • air • medium</div>
+          <h3>Accident grav pe munte: un adolescent de 14 ani a căzut pe un traseu de mountain-bike. A fost nevoie de intervenția elicopterului SMURD</h3>
+          <p>Un adolescent de 14 ani a căzut pe un traseu de mountain-bike din Azuga și a suferit o fractură de femur. Salvamontiștii au intervenit pentru a-i acorda primul ajutor, însă, având în vedere gravitatea accidentului, a fost solicitat un elicopter SMURD, care l-a preluat pe băiat și l-a transportat la un spital din București.</p>
+          <a href="https://www.digi24.ro/stiri/actualitate/evenimente/accident-grav-pe-munte-un-adolescent-de-14-ani-a-cazut-pe-un-traseu-de-mountain-bike-a-fost-nevoie-de-interventia-elicopterului-smurd-3987107" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Estonia • border_security • low</div>
+          <h3>Estonian Border Guard: Migration pressure to rise in coming weeks</h3>
+          <p>Belitšev explained that Russia has deliberately relaxed entry requirements and increased the number of flights from countries such as Ethiopia.</p>
+          <a href="https://bnn-news.com/world/estonian-border-guard-migration-pressure-to-rise-in-coming-weeks-55d2yek" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Heti trendjelzések</h2>
+      <div class="summary-box">
+        <ul><li>A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Romania: 3.2.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében alapvetően stabil, de több ponton érzékeny képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, társadalmi elégedetlenség és tiltakozási potenciál, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor a feszültségek több ponton továbbra is fennmaradtak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, azonban a strukturális feszültségek tartósan fennmaradtak. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan az energia- és belpolitikai sérülékenységek összekapcsolódása lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
+      </div>
+    </section>
+
+    <section class="visual-dashboard">
+      <div class="vd-header">
+        <div>
+          <div class="vd-kicker">BLOG VISUAL DASHBOARD</div>
+          <h2>CEE Security & Infrastructure Snapshot</h2>
+          <p>Napi régiós kockázati kép kritikus infrastruktúra, lokális események és OSINT-jelzések alapján.</p>
+        </div>
+        <div class="vd-date">2026-10-11</div>
+      </div>
+
+      <div class="vd-grid">
+        <div class="vd-main">
+          <div class="vd-label">Régiós állapot</div>
+          <div class="vd-big">NORMAL</div>
+          <div class="vd-sub">Regional score: 0.32</div>
+        </div>
+
+        <div class="vd-card red">
+          <div class="vd-number">0</div>
+          <div class="vd-text">kritikus infrastruktúra alert</div>
+        </div>
+
+        <div class="vd-card orange">
+          <div class="vd-number">0</div>
+          <div class="vd-text">magas szintű kapcsolat</div>
+        </div>
+
+        <div class="vd-card blue">
+          <div class="vd-number">2</div>
+          <div class="vd-text">kiemelt lokális esemény</div>
+        </div>
+
+        <div class="vd-card green">
+          <div class="vd-number">Romania</div>
+          <div class="vd-text">fő kockázati ország</div>
+        </div>
+
+        <div class="vd-wide">
+          <div class="vd-label">Fő szektor</div>
+          <div class="vd-sector">infrastruktúra</div>
+          <div class="vd-sub">Infrastruktúra-közeli találatok domináns kategóriája</div>
+        </div>
+      </div>
+
+      <div class="vd-regions">
+        
+        <div class="region-card blue">
+          <div class="region-head">Baltikum</div>
+          <div class="region-body">
+            <div class="big-number">0.0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> Lithuania</div>
+            <div class="mini-bar"><span style="width:0.0%"></span></div>
+          </div>
+        </div>
+        
+
+        <div class="region-card green">
+          <div class="region-head">V4 térség</div>
+          <div class="region-body">
+            <div class="big-number">0.0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> Czech Republic</div>
+            <div class="mini-bar"><span style="width:0.0%"></span></div>
+          </div>
+        </div>
+        
+
+        <div class="region-card orange">
+          <div class="region-head">Fekete-tengeri perem</div>
+          <div class="region-body">
+            <div class="big-number">2.52</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> Romania</div>
+            <div class="mini-bar"><span style="width:30.240000000000002%"></span></div>
+          </div>
+        </div>
+        
+
+        <div class="region-card red">
+          <div class="region-head">Egyéb CEE</div>
+          <div class="region-body">
+            <div class="big-number">0</div>
+            <div class="small-label">összesített risk score</div>
+            <div class="region-line"><b>Fő fókusz:</b> —</div>
+            <div class="mini-bar"><span style="width:0%"></span></div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="vd-footer">
+        <span>Törésvonalak • CEE Security Map</span>
+        <span>Automatikus OSINT-alapú helyzetkép</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <b>Módszertani megjegyzés</b><br>
+        Automatikus OSINT-alapú CEE infrastruktúra- és biztonsági jelentés. A források kézi ellenőrzése javasolt.
+      </div>
+      <div>
+        <b>Törésvonalak</b><br>
+        CEE Security Map
+      </div>
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>

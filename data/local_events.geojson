@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-10T21:10:55.113660+00:00",
+  "generated_utc": "2026-10-11T03:13:49.060480+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -227,7 +227,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 3983,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "A szaúdi polgári légiközlekedési hatóság közlése szerint a támadásban többen megsérültek, a repülőtér üzemelése pedig a károk felmérésének idejére szünetel. A Flightradar24 légiforgalmi adatszolgáltató adatai alapján szombaton mintegy 260 járatot töröltek, további 219 pedig késve közlekedett. A rijádi Hálid király nemzetközi repülőtér arra kérte az utasokat, hogy indulás előtt közvetlenül a légitársaságoknál tájékozódjanak járataik állapotáról. Az Egyesült Államok arra figyelmeztette állampolgárait, hogy kerüljék a szaúdi főváros repülőterét. Az Egyesült Királyság \"súlyosnak\" minősítette az incidenst, több légitársaság – köztük a kuvaiti nemzeti légitársaság – pedig törölte rijádi járatait. A héten végrehajtott korábbi támadásokban összesen hat ember vesztette életét. Csütörtökön három szaúdi állampolgár halt meg a rijádi repülőtéren, és a Saudia légitársaság egyik repülőgépe is megrongálódott. A hét elején egy ember a fővárosi, kettő pedig az abhai repülőtéren vesztette életét. Valame",
         "place": "Hungary",
         "time": "Sat, 10 Oct 2026 19:13:00 +0200",
@@ -253,6 +253,269 @@
         "incident_actor": "unknown",
         "incident_target": "transport",
         "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.0136,
+          58.5953
+        ]
+      },
+      "properties": {
+        "id": "257310841c3c4fb4c74b",
+        "title": "Estonian Border Guard: Migration pressure to rise in coming weeks",
+        "summary": "Belitšev explained that Russia has deliberately relaxed entry requirements and increased the number of flights from countries such as Ethiopia.",
+        "source": "BNN",
+        "url": "https://bnn-news.com/world/estonian-border-guard-migration-pressure-to-rise-in-coming-weeks-55d2yek",
+        "published": "Fri, 09 Oct 2026 10:36:35 GMT",
+        "country": "Estonia",
+        "city": null,
+        "family": "border_security",
+        "subcategory": "illegal_crossing",
+        "subtype": "illegal_border_crossing",
+        "object": "cyber_system",
+        "action": "entered",
+        "actor": "russia",
+        "target": "civilian",
+        "context": [
+          "border"
+        ],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "BORDER.ILLEGAL.CROSSING",
+        "fingerprint": {
+          "country": "Estonia",
+          "family": "border_security",
+          "subcategory": "illegal_crossing",
+          "subtype": "illegal_border_crossing",
+          "object": "cyber_system",
+          "action": "entered",
+          "actor": "russia",
+          "target": "civilian",
+          "place": "Estonia",
+          "event_date": "Fri, 09 Oc",
+          "hash": "b834ca2f9634091024c72e15"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "cyber_system",
+            "network"
+          ],
+          "actions": [
+            "entered",
+            "arrested",
+            "detained"
+          ],
+          "targets": [
+            "civilian",
+            "home"
+          ],
+          "actors": [
+            "russia",
+            "russian",
+            "belarus",
+            "belarusian"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.07,
+            "matched": true,
+            "missing": [],
+            "matched_context": [
+              "border"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:disrupted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TERRORISM.PLOT",
+            "family": "terrorism",
+            "subcategory": "plot",
+            "subtype": "terrorist_plot",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INTELLIGENCE.ESPIONAGE",
+            "family": "intelligence",
+            "subcategory": "espionage",
+            "subtype": "espionage_case",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": [
+              "border"
+            ]
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 3231,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Belitšev explained that Russia has deliberately relaxed entry requirements and increased the number of flights from countries such as Ethiopia. Egert Belitšev, head of the Estonian Police and Border Guard Board (PPA), has indicated that migration pressure could rise sharply in the coming weeks as migrants attempt to leave Belarus before winter sets in, reports ERR News. Belitšev explained that Russia has deliberately relaxed entry requirements and increased the number of flights from countries such as Ethiopia. Its ally, Belarus, then facilitates the migrants' movement toward Europe. The journey is organized right up to the European Union borders and can cost up to 10,000 euros per person. While Estonia does not share a border with Belarus, Latvia does. Almost all of the 200 migrants detained in Estonia since mid-summer entered the country via Latvia. Estonia has a population of 1.3 million, whereas Ethiopia is home to around 130 million people and hosts nearly a million refugees from ",
+        "place": "Estonia",
+        "time": "Fri, 09 Oct 2026 10:36:35 GMT",
+        "category": "border_security",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "BNN"
+        ],
+        "urls": [
+          "https://bnn-news.com/world/estonian-border-guard-migration-pressure-to-rise-in-coming-weeks-55d2yek"
+        ],
+        "merged_titles": [
+          "Estonian Border Guard: Migration pressure to rise in coming weeks"
+        ],
+        "incident_family": "border_security",
+        "incident_subcategory": "illegal_crossing",
+        "incident_subtype": "illegal_border_crossing",
+        "incident_object": "cyber_system",
+        "incident_action": "entered",
+        "incident_actor": "russia",
+        "incident_target": "civilian",
+        "classification_confidence": 0.9
       }
     }
   ]

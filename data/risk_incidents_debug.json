@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-13T05:48:15.050710+00:00",
+  "generated_utc": "2026-10-13T13:29:23.854376+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 0,
-    "local_event_count": 0,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "military": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -53,7 +57,29 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "a49b0b1187b71bfbfd33",
+        "date": "2026-10-13",
+        "time": "2026-10-13T10:58:34+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Armata Română primește un nou avion militar Hercules de la americani. Ce misiuni poate îndeplini",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/armata-romana-primeste-un-nou-avion-militar-hercules-de-la-americani-ce-misiuni-poate-indeplini-3989955",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "70de93282483ea27d01047f2"
+      }
+    ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

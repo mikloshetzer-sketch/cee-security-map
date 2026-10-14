@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-14T16:31:07.917616+00:00",
+  "generated_utc": "2026-10-14T21:23:37.705626+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 0,
-    "local_event_count": 0,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 3,
+      "category_counts": {
+        "drone": 3
+      },
+      "source_files": {
+        "local_events.geojson": 3
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -53,7 +57,71 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "a900667248277e692123",
+        "date": "2026-10-14",
+        "time": "2026-10-14T21:16:09+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Reacția lui Miruță după ce o navă a fost lovită în apropiere de Sulina: „Nu au ce căuta drone în spațiul aerian național”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/reactia-lui-miruta-dupa-ce-o-nava-a-fost-lovita-in-apropiere-de-sulina-nu-au-ce-cauta-drone-in-spatiul-aerian-national-3992919",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "3e1a7f4491f6cbfc940c6c3c"
+      },
+      {
+        "id": "01e3a8b073edeb8fa54d",
+        "date": "2026-10-14",
+        "time": "2026-10-14T19:25:51+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Navă comercială, lovită în apele teritoriale ale României. Incendiu la bord / „O premieră”",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/misiune-de-salvare-in-zona-sulina-o-nava-ar-fi-fost-tinta-unor-atacuri-si-a-solicitat-ajutor-2376313",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "88b02d39944de5167d906bf9"
+      },
+      {
+        "id": "bd2e6ff4ef743884a741",
+        "date": "2026-10-14",
+        "time": "2026-10-14T19:15:52+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "BREAKING | Navă comercială, lovită de o dronă în apele teritoriale românești / Miruță: Nava se îndreaptă acum spre portul Constanța și urmează o verificare tehnică pentru a stabili dacă incendiul a fost provocat de drona care a intrat pe teritoriul nostru",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/nava-de-cautare-si-salvare-sar-apollo-trimisa-intr-o-misiune-de-urgenta-in-marea-neagra.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "95537fd9f08c2364969a77d8"
+      }
+    ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

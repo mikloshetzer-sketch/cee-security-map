@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-14T21:23:28.172774+00:00",
+  "generated_utc": "2026-10-15T02:41:32.693437+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -230,7 +230,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 5226,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "După incidentul în care o navă ar fi fost lovită în apele teritoriale românești, în apropiere de Sulina, Radu Miruță a explicat că Marea Neagră este de două ori cât suprafața României. În direct la Digi24, ministrul interimar al Apărării a susținut că „așteptarea ca tot ce zboară, în orice punct în Marea Neagră, să fie detectat și interceptat este o așteptare nerealistă”. În plus, acesta a spus că nu există o „certitudine” că una dintre cele două drone care a pătruns, în cursul serii, în spațiul aerian național au lovit nava. Conform informațiilor ministrului, alerta cu privire la un incendiu la bordul navei sub pavilion Insulele Comoros a fost dată la ora 20.23. „La ora 20.23 am fost informați prin comunicațiile radio ale acestei nave că a izbucnit un incendiu. A fost trimisă o navă pentru a-i sprijini. În scurt timp au anunțat că incendiul a fost stins și că nu au nevoie de sprijin. Nava s-a întors pentru că ni s-a comunicat că nu mai există incendiu la bord și nu există nici oameni ",
         "place": "Sulina",
         "time": "Thu, 15 Oct 2026 00:16:09 +0300",
@@ -491,7 +491,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 6775,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "O navă comercială sub pavilion străin a fost lovită, miercuri seară, posibil de o dronă, în apropiere de Sulina, în apele teritoriale ale României. O ambarcaţiune a Agenţiei Române de Salvare pe Mare (ARSVOM) s-a deplasat în această seară într-o misiune de salvare în zona Sulina, după ce o navă comercială, care ar fi fost ținta unor atacuri, a solicitat ajutor. Garda de Coastă a precizat că este vorba despre o navă sub pavilionul Insulelor Comore, care a raportat un incident în apropiere de Sulina, la aproximativ 8-10 mile marine sud-est de digul orașului, în apele teritoriale ale României. UPDATE 23:55 – Ministrul Apărării, Radu Miruţă, a precizat că se fac verificări pentru a se stabilit dacă nava a fost lovită de o dronă. „La ora 20:23 am fost informaţi prin comunicaţiile radio ale acestei nave că a izbucnit un incendiu. A fost trimisă o navă înspre acolo pentru a o sprijini. În scurt timp au anunţat că incendiul a fost stins şi că nu au nevoie de sprijin şi că nici nu doresc să vin",
         "place": "Sulina",
         "time": "Wed, 14 Oct 2026 19:25:51 +0000",
@@ -539,30 +539,30 @@
         "city": "Constanța",
         "family": "air",
         "subcategory": "drone",
-        "subtype": "drone_intrusion",
+        "subtype": "drone_detection",
         "object": "drone",
-        "action": "entered",
-        "actor": "unknown",
-        "target": "unknown",
+        "action": "detected",
+        "actor": "russia",
+        "target": "military",
         "context": [],
         "consequences": [],
-        "severity": "medium",
-        "confidence": 0.84,
+        "severity": "low",
+        "confidence": 0.98,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "matched_rule_id": "AIR.DRONE.DETECTION",
         "fingerprint": {
           "country": "Romania",
           "family": "air",
           "subcategory": "drone",
-          "subtype": "drone_intrusion",
+          "subtype": "drone_detection",
           "object": "drone",
-          "action": "entered",
-          "actor": "unknown",
-          "target": "unknown",
+          "action": "detected",
+          "actor": "russia",
+          "target": "military",
           "place": "Constanța",
           "event_date": "Wed, 14 Oc",
-          "hash": "95537fd9f08c2364969a77d8"
+          "hash": "f44003e238de604663177307"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
@@ -576,11 +576,23 @@
             "navă"
           ],
           "actions": [
+            "detected",
+            "detectat",
             "entered",
+            "pătruns",
             "a intrat"
           ],
-          "targets": [],
-          "actors": [],
+          "targets": [
+            "military",
+            "radar"
+          ],
+          "actors": [
+            "russia",
+            "rusiei",
+            "ukraine",
+            "ucraina",
+            "nato"
+          ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -592,11 +604,25 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
           "country_match": 0.1,
           "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
           {
             "rule_id": "AIR.DRONE.INTRUSION",
             "family": "air",
@@ -607,20 +633,6 @@
             "score": 2.26,
             "matched": true,
             "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
             "matched_context": []
           },
           {
@@ -662,6 +674,20 @@
             "matched": false,
             "missing": [
               "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
             ],
             "matched_context": []
           },
@@ -708,21 +734,6 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
             "rule_id": "AIR.MISSILE.INTERCEPT",
             "family": "air",
             "subcategory": "missile",
@@ -739,10 +750,10 @@
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
+        "full_article_enriched": true,
+        "article_text_chars": 5499,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. O navă sub pavilionul Insulelor Comore a fost lovită de o dronă în apropiere de Sulina, la aproximativ 8-10 mile marine sud-est de digul orașului, în apele teritoriale ale României. În urma exploziei, vasul a fost cuprins de flăcări, potrivit surselor G4Media. Ministrul interimar al Apărării, Radu Miruță, a confirmat, miercuri seara, într-o intervenție la Digi24, că un incendiu a cuprins o navă comercială în apele teritoriale românești, existând ipoteza că aceasta să fi fost lovită de o dronă. „Am primit informația că incendiul a fost lichidat și că nu a mai fost nevoie de intervenția navei de salvare”, a transmis Miruță. Acesta a precizat că nu este încă o certitudine că nava a fost lovită de o dronă, în contextul în care s-a speculat că ar fi vorba de una dintre dronele care au intrat miercuri seara pe teritoriul României, Ministerul Apărării",
         "place": "Constanța",
         "time": "Wed, 14 Oct 2026 19:15:52 +0000",
         "category": "air",
@@ -761,12 +772,12 @@
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
+        "incident_subtype": "drone_detection",
         "incident_object": "drone",
-        "incident_action": "entered",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.84
+        "incident_action": "detected",
+        "incident_actor": "russia",
+        "incident_target": "military",
+        "classification_confidence": 0.98
       }
     },
     {

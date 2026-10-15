@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-15T16:16:33.827448+00:00",
+  "generated_utc": "2026-10-15T21:00:25.736287+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -44,9 +40,13 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "transport": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Estonia": {
       "incident_count": 0,
@@ -57,33 +57,33 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
+    "Romania": [],
+    "Slovakia": [],
+    "Poland": [],
+    "Lithuania": [],
+    "Latvia": [
       {
-        "id": "77ebd1d46870fcfa854c",
+        "id": "68c44d620ec15131b20d",
         "date": "2026-10-15",
-        "time": "2026-10-15T15:40:22+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Navă lovită de drone în Marea Neagră. Cinci marinari au fost transportați la spital, șapte sunt în continuare dispăruți",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/alerta-in-marea-neagra-inca-o-nava-aflata-in-apropiere-de-sulina-a-anuntat-un-incendiu-la-bord-3993019",
+        "time": "2026-10-15T17:36:31+00:00",
+        "category": "transport",
+        "severity": "medium",
+        "title": "Russian grain transit ban could cost Latvia 290 million euros annually and triple domestic rail freight costs",
+        "source": "BNN",
+        "url": "https://bnn-news.com/latvia/russian-grain-transit-ban-could-cost-latvia-290-million-euros-annually-and-triple-domestic-rail-freight-costs-wsrn38u",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "0d29b9f4dd4adf3a47e5db2e"
+        "incident_family": "transport",
+        "incident_subcategory": "rail",
+        "incident_subtype": "rail_disruption",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "TRANSPORT.RAIL.DISRUPTION",
+        "fingerprint_hash": "808150704b21d0fc228ddeb3"
       }
     ],
-    "Slovakia": [],
-    "Poland": [],
-    "Lithuania": [],
-    "Latvia": [],
     "Estonia": []
   }
 }

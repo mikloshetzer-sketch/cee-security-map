@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-16T10:34:23.666808+00:00",
+  "generated_utc": "2026-10-16T16:03:52.085268+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -22,7 +22,8 @@
     "Romania": {
       "incident_count": 2,
       "category_counts": {
-        "drone": 2
+        "infrastructure_disruption": 1,
+        "drone": 1
       },
       "source_files": {
         "local_events.geojson": 1,
@@ -64,25 +65,25 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "2683461fa0edb73722c6",
+        "id": "706c0d71b7dca8dfec0b",
         "date": "2026-10-16",
-        "time": "2026-10-16T09:04:50+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Într-un interviu pentru Bloomberg, Nicușor Dan spune care e cel mai mare atu al României în relația cu SUA",
+        "time": "2026-10-16T13:32:27+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Turcia și Marocul, principalii furnizori de carburanți ai Rusiei. România apare într-un raport privind petrolul rusesc",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/politica/intr-un-interviu-pentru-bloomberg-nicusor-dan-spune-care-e-cel-mai-mare-atu-al-romaniei-in-relatia-cu-sua-3995081",
+        "url": "https://www.digi24.ro/stiri/externe/rusia/turcia-si-marocul-principalii-furnizori-de-carburanti-ai-rusiei-romania-apare-intr-un-raport-privind-petrolul-rusesc-3995647",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
         "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "0520060375b5f4f3212fd4f2"
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "5af8197b5e6967da3b9c83ce"
       },
       {
         "id": null,

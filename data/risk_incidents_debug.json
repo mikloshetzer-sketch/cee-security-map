@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-16T02:36:19.908275+00:00",
+  "generated_utc": "2026-10-16T10:34:23.666808+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -22,8 +22,7 @@
     "Romania": {
       "incident_count": 2,
       "category_counts": {
-        "infrastructure_disruption": 1,
-        "drone": 1
+        "drone": 2
       },
       "source_files": {
         "local_events.geojson": 1,
@@ -65,6 +64,27 @@
     "Hungary": [],
     "Romania": [
       {
+        "id": "2683461fa0edb73722c6",
+        "date": "2026-10-16",
+        "time": "2026-10-16T09:04:50+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Într-un interviu pentru Bloomberg, Nicușor Dan spune care e cel mai mare atu al României în relația cu SUA",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/intr-un-interviu-pentru-bloomberg-nicusor-dan-spune-care-e-cel-mai-mare-atu-al-romaniei-in-relatia-cu-sua-3995081",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "0520060375b5f4f3212fd4f2"
+      },
+      {
         "id": null,
         "date": "2026-10-15",
         "time": "2026-10-15T21:30:00+00:00",
@@ -84,27 +104,6 @@
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "cb52ef5a65dc358c982ebe6e"
-      },
-      {
-        "id": "0fd792043a374df4a4fc",
-        "date": "2026-10-15",
-        "time": "2026-10-15T20:00:29+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Centrala nucleară de la Cernavodă va reporni cu ambele unități la 1 noiembrie, potrivit noului buget rectificat al Nuclearelectrica. Profitul pe 2026 al SNN scade cu 41% față de estimarea inițială",
-        "source": "Economica.net",
-        "url": "https://www.economica.net/centrala-nucleara-de-la-cernavoda-va-reporni-cu-ambele-unitati-la-1-noiembrie-potrivit-noului-buget-rectificat-al-nuclearelectrica-profitul-pe-2026-al-snn-scade-cu-41-fata-de-estimarea-initiala_986135.html",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "8614761230b1bb7bf69cf9d9"
       }
     ],
     "Slovakia": [],

@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-16T02:36:10.301181+00:00",
+  "generated_utc": "2026-10-16T10:34:16.258124+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -9,63 +9,67 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.057,
-          44.322
+          26.102,
+          44.426
         ]
       },
       "properties": {
-        "id": "0fd792043a374df4a4fc",
-        "title": "Centrala nucleară de la Cernavodă va reporni cu ambele unități la 1 noiembrie, potrivit noului buget rectificat al Nuclearelectrica. Profitul pe 2026 al SNN scade cu 41% față de estimarea inițială",
-        "summary": "Profitul Nucearlectrica (SNN) este estimat să scadă cu 41% in acest an față de bugetarea inițială ca urmare a opririi prelungite a centralei nucleare de la Cernavodă, a cărei repornire este estimată pentru data de 1 noiembrie, arată SNN în propunerea de rectificare bugetară care va fi supusă aprobării acționarilor.",
-        "source": "Economica.net",
-        "url": "https://www.economica.net/centrala-nucleara-de-la-cernavoda-va-reporni-cu-ambele-unitati-la-1-noiembrie-potrivit-noului-buget-rectificat-al-nuclearelectrica-profitul-pe-2026-al-snn-scade-cu-41-fata-de-estimarea-initiala_986135.html",
-        "published": "Thu, 15 Oct 2026 20:00:29 +0000",
+        "id": "2683461fa0edb73722c6",
+        "title": "Într-un interviu pentru Bloomberg, Nicușor Dan spune care e cel mai mare atu al României în relația cu SUA",
+        "summary": "Președintele Nicușor Dan a vorbit vineri, într-un interviu pentru Bloomberg, despre relația României cu Statele Unite, într-un context tensionat privind războaiele din Ucraina și Iran. Șeful statului a subliniat că „avem o foarte bună relație strategică” cu Washingtonul, având în vedere că țara noastră poate ajuta SUA „să proiecteze forță spre alte părți din lume”.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/intr-un-interviu-pentru-bloomberg-nicusor-dan-spune-care-e-cel-mai-mare-atu-al-romaniei-in-relatia-cu-sua-3995081",
+        "published": "Fri, 16 Oct 2026 12:04:50 +0300",
         "country": "Romania",
-        "city": "Cernavodă",
-        "family": "energy",
-        "subcategory": "power_grid",
-        "subtype": "energy_service_outage",
-        "object": "energy_asset",
-        "action": "disrupted",
-        "actor": "unknown",
-        "target": "civilian",
+        "city": "București",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "attacked",
+        "actor": "russia",
+        "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "medium",
-        "confidence": 0.92,
+        "severity": "high",
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
           "country": "Romania",
-          "family": "energy",
-          "subcategory": "power_grid",
-          "subtype": "energy_service_outage",
-          "object": "energy_asset",
-          "action": "disrupted",
-          "actor": "unknown",
-          "target": "civilian",
-          "place": "Cernavodă",
-          "event_date": "Thu, 15 Oc",
-          "hash": "8614761230b1bb7bf69cf9d9"
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "attacked",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "București",
+          "event_date": "Fri, 16 Oc",
+          "hash": "0520060375b5f4f3212fd4f2"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "energy_asset",
-            "centrala"
+            "drone",
+            "drona"
           ],
           "actions": [
-            "disrupted",
-            "oprit"
+            "attacked",
+            "atacat"
           ],
-          "targets": [
-            "civilian",
-            "home"
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "rusiei",
+            "ukraine",
+            "ucraina",
+            "nato"
           ],
-          "actors": [],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -77,107 +81,22 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
+          "actor_match": 0.06,
           "country_match": 0.1,
           "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
             "priority": 0,
-            "score": 2.26,
+            "score": 2.32,
             "matched": true,
             "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.FIRE",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_fire",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:burned"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:exploded"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "context:any"
-            ],
             "matched_context": []
           },
           {
@@ -187,10 +106,9 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:detected"
             ],
             "matched_context": []
@@ -202,10 +120,9 @@
             "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:entered"
             ],
             "matched_context": []
@@ -217,44 +134,127 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TERRORISM.ATTACK",
+            "family": "terrorism",
+            "subcategory": "attack",
+            "subtype": "terrorist_attack",
+            "severity": "critical",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 4280,
+        "article_text_chars": 4455,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Home - Companii - Centrala nucleară de la Cernavodă va reporni cu ambele unități la 1 noiembrie, potrivit noului buget rectificat al Nuclearelectrica. Profitul pe 2026 al SNN scade cu 41% față de estimarea inițială Nivelul rectificat al profitului brut este cu 41,5% mai mic decat profitul brut bugetat aprobat, astfel că noul profit net al companiei scade cu aproape un miliard de lei față de cel bugetat anterior, până la 1,4 miliarde de lei, arată compania. Nivelul rectificat al productivitatii muncii scade cu 17,3% față de valoarea bugetata aprobată. De asemenea, se propune reducerea programului de investitii de la 3,47 miliarde de lei la 3,36 miliarde. Compania estimează, în propunerea de rectificare publicată pe site la 15 octombrie, că ambele unități nucleare ale centralei de la Cernavodă vor fi repornite la 1 noiembrie. “Elaborarea prezentei propuneri bugetare urmează un principiu de prudență, având la baza două premise distincte: pentru estimarea veniturilor s-a considerat reporni",
-        "place": "Cernavodă",
-        "time": "Thu, 15 Oct 2026 20:00:29 +0000",
-        "category": "energy",
+        "article_text_excerpt": "Președintele Nicușor Dan a vorbit vineri, într-un interviu pentru Bloomberg , despre relația României cu Statele Unite, într-un context tensionat privind războaiele din Ucraina și Iran. Șeful statului a subliniat că „avem o foarte bună relație strategică” cu Washingtonul, având în vedere că țara noastră poate ajuta SUA „să proiecteze forță spre alte părți din lume”. Întrebat despre relația României cu SUA și ajutorul acordat de țara noastră în războiul împotriva Iranului, Nicușor Dan a răspuns: „Sunt foarte bune (n.r. relațiile cu SUA). Avem un parteneriat strategic de lungă durată, cu beneficii pentru ambele părți. Avem cea mai mare bază la Marea Neagră și având acea bază Statele Unite sunt interesate să proiecteze forță spre alte părți din lume, cum ar fi Orientul Mijlociu. Deci avem o foarte bună relație strategică.” Și șeful NATO, Mark Rutte, a lăudat efortul României de a sprijini SUA , într-un interviu pentru Fox News, pentru a evidenția sprijinul oferit de statele europene armat",
+        "place": "București",
+        "time": "Fri, 16 Oct 2026 12:04:50 +0300",
+        "category": "air",
         "kind": "local_media",
         "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Economica.net"
+          "Digi24"
         ],
         "urls": [
-          "https://www.economica.net/centrala-nucleara-de-la-cernavoda-va-reporni-cu-ambele-unitati-la-1-noiembrie-potrivit-noului-buget-rectificat-al-nuclearelectrica-profitul-pe-2026-al-snn-scade-cu-41-fata-de-estimarea-initiala_986135.html"
+          "https://www.digi24.ro/stiri/actualitate/politica/intr-un-interviu-pentru-bloomberg-nicusor-dan-spune-care-e-cel-mai-mare-atu-al-romaniei-in-relatia-cu-sua-3995081"
         ],
         "merged_titles": [
-          "Centrala nucleară de la Cernavodă va reporni cu ambele unități la 1 noiembrie, potrivit noului buget rectificat al Nuclearelectrica. Profitul pe 2026 al SNN scade cu 41% față de estimarea inițială"
+          "Într-un interviu pentru Bloomberg, Nicușor Dan spune care e cel mai mare atu al României în relația cu SUA"
         ],
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "incident_object": "energy_asset",
-        "incident_action": "disrupted",
-        "incident_actor": "unknown",
-        "incident_target": "civilian",
-        "classification_confidence": 0.92
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "attacked",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
       }
     },
     {

@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-10-15T21:00:25.736287+00:00",
+  "generated_utc": "2026-10-16T02:36:19.908275+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
-    "crossborder_event_count": 0
+    "incident_count": 3,
+    "local_event_count": 2,
+    "crossborder_event_count": 1
   },
   "country_summary": {
     "Czech Republic": {
@@ -20,9 +20,15 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 2,
+      "category_counts": {
+        "infrastructure_disruption": 1,
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1,
+        "gdelt_crossborder.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,7 +63,50 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": null,
+        "date": "2026-10-15",
+        "time": "2026-10-15T21:30:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "BREAKING : Russia Has Struck NATO Territory After Drone Hits Tanker Off Romania - Novinite . com",
+        "source": "GDELT_DOC",
+        "url": "https://www.novinite.com/view_news.php?id=241067",
+        "source_file": "gdelt_crossborder.geojson",
+        "classification_source": "security_classifier",
+        "actual_incident": true,
+        "risk_eligible": true,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "cb52ef5a65dc358c982ebe6e"
+      },
+      {
+        "id": "0fd792043a374df4a4fc",
+        "date": "2026-10-15",
+        "time": "2026-10-15T20:00:29+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Centrala nucleară de la Cernavodă va reporni cu ambele unități la 1 noiembrie, potrivit noului buget rectificat al Nuclearelectrica. Profitul pe 2026 al SNN scade cu 41% față de estimarea inițială",
+        "source": "Economica.net",
+        "url": "https://www.economica.net/centrala-nucleara-de-la-cernavoda-va-reporni-cu-ambele-unitati-la-1-noiembrie-potrivit-noului-buget-rectificat-al-nuclearelectrica-profitul-pe-2026-al-snn-scade-cu-41-fata-de-estimarea-initiala_986135.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "8614761230b1bb7bf69cf9d9"
+      }
+    ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

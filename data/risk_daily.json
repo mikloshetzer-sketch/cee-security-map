@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-15T21:00:25.735395+00:00",
+  "generated_utc": "2026-10-16T02:36:19.907223+00:00",
   "country_scores": {
     "Czech Republic": {
       "normalized": 0.0,
@@ -56,20 +56,25 @@
       }
     },
     "Romania": {
-      "normalized": 0.0,
-      "overall": "normal",
-      "confidence": "low",
-      "confidence_value": 0.2,
+      "normalized": 3.563,
+      "overall": "elevated",
+      "confidence": "medium",
+      "confidence_value": 0.51,
       "dimensions": {
-        "incident_pressure": 0.0,
-        "military_drone": 0.0,
+        "incident_pressure": 3.331,
+        "military_drone": 3.846,
         "cyber": 0.0,
-        "infrastructure": 0.0,
-        "crossborder": 0.0,
-        "trend": 0.0
+        "infrastructure": 2.376,
+        "crossborder": 4.386,
+        "trend": 10.0
       },
-      "drivers": [],
-      "local_event_count": 0,
+      "drivers": [
+        "friss aktivitási trend",
+        "biztonsági incidensnyomás",
+        "katonai és drónaktivitás",
+        "határon átnyúló nyomás"
+      ],
+      "local_event_count": 2,
       "infra_proximity_count": 0,
       "high_critical_infra_count": 0,
       "model": "cee_country_risk_v2",
@@ -164,15 +169,15 @@
       }
     },
     "Latvia": {
-      "normalized": 1.96,
+      "normalized": 1.868,
       "overall": "normal",
       "confidence": "low",
       "confidence_value": 0.355,
       "dimensions": {
-        "incident_pressure": 1.837,
+        "incident_pressure": 1.653,
         "military_drone": 0.0,
         "cyber": 0.0,
-        "infrastructure": 2.727,
+        "infrastructure": 2.481,
         "crossborder": 0.0,
         "trend": 10.0
       },
@@ -223,10 +228,32 @@
   },
   "countries": [
     {
+      "country": "Romania",
+      "overall": "elevated",
+      "overall_score": 3.563,
+      "normalized": 3.563,
+      "confidence": "medium",
+      "confidence_value": 0.51,
+      "drivers": [
+        "friss aktivitási trend",
+        "biztonsági incidensnyomás",
+        "katonai és drónaktivitás",
+        "határon átnyúló nyomás"
+      ],
+      "dimensions": {
+        "incident_pressure": 3.331,
+        "military_drone": 3.846,
+        "cyber": 0.0,
+        "infrastructure": 2.376,
+        "crossborder": 4.386,
+        "trend": 10.0
+      }
+    },
+    {
       "country": "Latvia",
       "overall": "normal",
-      "overall_score": 1.96,
-      "normalized": 1.96,
+      "overall_score": 1.868,
+      "normalized": 1.868,
       "confidence": "low",
       "confidence_value": 0.355,
       "drivers": [
@@ -234,10 +261,10 @@
         "kritikus infrastruktúra-kitettség"
       ],
       "dimensions": {
-        "incident_pressure": 1.837,
+        "incident_pressure": 1.653,
         "military_drone": 0.0,
         "cyber": 0.0,
-        "infrastructure": 2.727,
+        "infrastructure": 2.481,
         "crossborder": 0.0,
         "trend": 10.0
       }
@@ -261,23 +288,6 @@
     },
     {
       "country": "Hungary",
-      "overall": "normal",
-      "overall_score": 0.0,
-      "normalized": 0.0,
-      "confidence": "low",
-      "confidence_value": 0.2,
-      "drivers": [],
-      "dimensions": {
-        "incident_pressure": 0.0,
-        "military_drone": 0.0,
-        "cyber": 0.0,
-        "infrastructure": 0.0,
-        "crossborder": 0.0,
-        "trend": 0.0
-      }
-    },
-    {
-      "country": "Romania",
       "overall": "normal",
       "overall_score": 0.0,
       "normalized": 0.0,
@@ -364,18 +374,18 @@
   ],
   "region": {
     "overall": "normal",
-    "overall_score": 0.245,
+    "overall_score": 0.679,
     "confidence": "low",
-    "confidence_value": 0.219,
+    "confidence_value": 0.258,
     "dimension_scores": {
-      "incident_pressure": 0.23,
-      "military_drone": 0.0,
+      "incident_pressure": 0.623,
+      "military_drone": 0.481,
       "cyber": 0.0,
-      "infrastructure": 0.341,
-      "crossborder": 0.0,
-      "trend": 1.25
+      "infrastructure": 0.607,
+      "crossborder": 0.548,
+      "trend": 2.5
     },
-    "evidence_count": 1
+    "evidence_count": 3
   },
   "model": {
     "name": "cee_country_risk_v2",

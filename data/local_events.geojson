@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-17T14:54:48.570074+00:00",
+  "generated_utc": "2026-10-17T20:08:20.646415+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -14,19 +14,790 @@
         ]
       },
       "properties": {
-        "id": "f8c1ad137721e9c2e00a",
-        "title": "„So much bruiaj\". Cristela cere intervenția SUA pentru eliberarea lui Călin Georgescu. Interviu cu un influencer care ar fi spălat bani",
-        "summary": "Soția fostului candidat la prezidențiale, Călin Georgescu, a oferit un interviu în engleză unuia dintre cei mai controversați influenceri „MAGA” din Stalele Unite. Cristela Georgescu, devenită noua portavoce a așa numitului curent „suveranism” după ce soțul său a fost reținut pentru 30 de zile, a avut o discuție de peste 40 de minute cu Mario Nawfal. Cristela a perorat aceleași teze fără să aducă dovezi. De la „eurostalinism” până la „liveurile susținătorilor sunt bruiate”.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/politica/so-much-bruiaj-cristela-cere-interventia-sua-pentru-eliberarea-lui-calin-georgescu-interviu-cu-un-influencer-care-ar-fi-spalat-bani-3996433",
-        "published": "Sat, 17 Oct 2026 07:00:16 +0300",
+        "id": "d5415de6146148b28f91",
+        "title": "Ismeretlen drónokat lőttek le román F-16-os vadászgépek a Fekete-tengernél",
+        "summary": "Arról nem tettek közzé információt, hogy a Románia légterébe belépő drónok melyik országhoz tartoztak.",
+        "source": "Telex",
+        "url": "https://telex.hu/kulfold/2026/10/17/romania-dron-fekete-tenger-f-16",
+        "published": "Sat, 17 Oct 2026 21:10:36 +0200",
         "country": "Romania",
         "city": null,
-        "family": "cyber",
-        "subcategory": "gps_interference",
-        "subtype": "gps_jamming_or_spoofing",
-        "object": "explosive_device",
-        "action": "jammed",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_shootdown",
+        "object": "drone",
+        "action": "shot_down",
+        "actor": "russia",
+        "target": "government",
+        "context": [],
+        "consequences": [
+          "fatality"
+        ],
+        "severity": "critical",
+        "confidence": 0.98,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_shootdown",
+          "object": "drone",
+          "action": "shot_down",
+          "actor": "russia",
+          "target": "government",
+          "place": "Romania",
+          "event_date": "Sat, 17 Oc",
+          "hash": "d08ac14241732c269e832ee2"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "drón",
+            "ship",
+            "hajó"
+          ],
+          "actions": [
+            "shot_down",
+            "lelőtték"
+          ],
+          "targets": [
+            "government",
+            "minisztérium"
+          ],
+          "actors": [
+            "russia",
+            "oroszország",
+            "ukraine",
+            "ukrán",
+            "nato",
+            "unknown",
+            "ismeretlen"
+          ],
+          "consequences": [
+            "fatality",
+            "meghalt"
+          ],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,damaged,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": [
+              "határ"
+            ]
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": [
+              "határ"
+            ]
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1707,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Két drónt lőttek le szombaton román F–16-os vadászgépek a Fekete-tengernél az ország légterében, írja a Deutsche Welle a román védelmi minisztérium közlése alapján. Radu Miruță védelmi miniszter a Facebook-oldalán arról írt , a drónok behatoltak Románia területére, de arról nem tettek közzé információt, hogy azok melyik országhoz tartoztak. A drónokat az ukrán határ melletti Sulinától nagyjából 20 kilométerre délkeletre lőtték le. Az első drón Miruță közlése szerint 17:59-kor lépett be a román légtérbe, ezt két percen belül lelőtték. A másodikat 18:05-kor lőtték le, öt perccel azután, hogy megérkezett az ország légterébe. Oana Țoiu román külügyminiszter arról írt az X-en, hogy tájékoztatták a szövetségeseiket és az EU-t, az Észak-atlanti Tanács (a NATO döntéshozó testülete) pedig kedden tárgyalni fog az incidensről. Az utóbbi hónapokban a kereskedelmi hajókat érő incidensek egyre távolabb kerültek az ukrán partoktól, Románia és Bulgária kizárólagos gazdasági övezetében is súlyos incide",
+        "place": "Romania",
+        "time": "Sat, 17 Oct 2026 21:10:36 +0200",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Telex"
+        ],
+        "urls": [
+          "https://telex.hu/kulfold/2026/10/17/romania-dron-fekete-tenger-f-16"
+        ],
+        "merged_titles": [
+          "Ismeretlen drónokat lőttek le román F-16-os vadászgépek a Fekete-tengernél"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "incident_object": "drone",
+        "incident_action": "shot_down",
+        "incident_actor": "russia",
+        "incident_target": "government",
+        "classification_confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "bd876741a4157c62e7a5",
+        "title": "Reuniune a Consiliului NATO, programată la cererea României, după atacurile navelor la Marea Neagră și incursiunile dronelor rusești",
+        "summary": "Aliații NATO se reunesc marți, în ședință, pentru a discuta situația tensionată de la Marea Neagră. O reuniune a Consiliului Nord-Atlantic a fost programată la inițiativa României. Pericolul dronelor Rusiei nu planează doar asupra Alianței, ci și a Republicii Moldova.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/reuniune-a-consiliului-nato-programata-la-cererea-romaniei-dupa-atacurile-navelor-la-marea-neagra-si-incursiunile-dronelor-rusesti-3997039",
+        "published": "Sat, 17 Oct 2026 21:02:32 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.82,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Sat, 17 Oc",
+          "hash": "7603e2dca4166e779488148e"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă"
+          ],
+          "actions": [
+            "impact",
+            "căzut"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusiei",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INTELLIGENCE.ESPIONAGE",
+            "family": "intelligence",
+            "subcategory": "espionage",
+            "subtype": "espionage_case",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "actions:all:arrested"
+            ],
+            "matched_context": [
+              "spionaj"
+            ]
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1608,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Aliații NATO se reunesc marți, în ședință, pentru a discuta situația tensionată de la Marea Neagră. O reuniune a Consiliului Nord-Atlantic a fost programată la inițiativa României. Pericolul dronelor Rusiei nu planează doar asupra Alianței, ci și a Republicii Moldova. Poliția de la Chișinău a anunțat că o dronă a căzut în urmă cu puțin timp într-un raion din nordul țării, la prima vedere părând a fi un aparat de spionaj. În ceea ce privește întâlnirea de marți, Ministerul Afacerilor Externe a anunțat că România și-a informat aliații NATO, dar și alți parteneri în legătură cu incidentul de sâmbătă seară , iar marți va avea loc o reuniune a Consiliului Nord-Atlantic unde se va discuta despre apărarea și descurajarea amenințărilor în regiunea Mării Negre, relatează Alexandra Dinu, jurnalistă Digi24 . Știm că zilele trecute, șeful NATO, Mark Rutte, a avut o întâlnire cu premierul Bulgariei și cu președintele Nicușor Dan, iar discuțiile s-au axat chiar pe securitatea de la Marea Neagră. În ",
+        "place": "Romania",
+        "time": "Sat, 17 Oct 2026 21:02:32 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/reuniune-a-consiliului-nato-programata-la-cererea-romaniei-dupa-atacurile-navelor-la-marea-neagra-si-incursiunile-dronelor-rusesti-3997039"
+        ],
+        "merged_titles": [
+          "Reuniune a Consiliului NATO, programată la cererea României, după atacurile navelor la Marea Neagră și incursiunile dronelor rusești"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.653,
+          45.156
+        ]
+      },
+      "properties": {
+        "id": "3efae757f14cb1e78332",
+        "title": "Două drone aeriene, angajate şi doborâte de piloţii militari români deasupra Mării Negre. Declarația ministrului Apărării",
+        "summary": "Ministrul interimar al Apărării, Radu Miruţă, a anunţat, sâmbătă seară, că două drone aeriene au fost angajate şi doborâte de piloţii militari români deasupra Mării Negre",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/doua-drone-aeriene-angajate-si-doborate-de-pilotii-militari-romani-deasupra-marii-negre-declaratia-ministrului-apararii-3996935",
+        "published": "Sat, 17 Oct 2026 21:22:11 +0300",
+        "country": "Romania",
+        "city": "Sulina",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "unknown",
+        "target": "military",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.92,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "unknown",
+          "target": "military",
+          "place": "Sulina",
+          "event_date": "Sat, 17 Oc",
+          "hash": "2daddecc3db831f7448c8863"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "detected",
+            "detectat",
+            "entered",
+            "pătruns",
+            "shot_down",
+            "doborât"
+          ],
+          "targets": [
+            "military",
+            "radar"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2982,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Ministrul interimar al Apărării, Radu Miruţă, a anunţat, sâmbătă seară, că două drone aeriene au fost angajate şi doborâte de piloţii militari români deasupra Mării Negre . ACTUALIZARE 21:19 Ţintele neutralizate sâmbătă în spaţiul aerian naţional erau drone de atac din familia Geran, cu propulsie cu reacţie, a informat Ministerul Apărării Naţionale (MApN). „Sâmbătă, 17 octombrie, sistemul de supraveghere radar al Ministerului Apărării Naţionale a detectat un grup de ţinte aeriene care evoluau la aproximativ 120 de kilometri est de Insula Şerpilor, pe direcţia sud-vest. Două aeronave F-16 ale Forţelor Aeriene Române, de la Baza 86 Aeriană Borcea, aflate în serviciul de luptă Poliţie Aeriană, au decolat la ora 17:43 şi au doborât două ţinte aeriene deasupra apelor teritoriale ale României, în spaţiul aerian naţional”, se arată într-o informare postată pe site-ul ministerului. Conform sursei citate, ţintele neutralizate erau drone de atac din familia Geran, cu propulsie cu reacţie. „Prima",
+        "place": "Sulina",
+        "time": "Sat, 17 Oct 2026 21:22:11 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/doua-drone-aeriene-angajate-si-doborate-de-pilotii-militari-romani-deasupra-marii-negre-declaratia-ministrului-apararii-3996935"
+        ],
+        "merged_titles": [
+          "Două drone aeriene, angajate şi doborâte de piloţii militari români deasupra Mării Negre. Declarația ministrului Apărării"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "unknown",
+        "incident_target": "military",
+        "classification_confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "34918876c3cb1882f98d",
+        "title": "UPDATE Piloții români au doborât sâmbătă două drone de tip rusesc Geran deasupra Mării Negre, anunță Ministerul Apărării",
+        "summary": "<p>Piloții români de avioane F-16 au doborât sâmbătă două drone deasupra Mării Negre, anunță Ministerul Apărării. E vorba despre drone care au intrat în spațiul aerian al României, potrivit sursei citate. UPDATE: Ministerul Apărării a anunțat că dronele sunt de tip Geran, adică rusești Prima dronă a intrat în spațiul aerian național la 17:59 și [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/breaking-pilotii-romani-au-doborat-sambata-doua-drone-deasupra-marii-negre-anunta-ministerul-apararii.html",
+        "published": "Sat, 17 Oct 2026 17:39:00 +0000",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_intrusion",
+        "object": "drone",
+        "action": "entered",
         "actor": "unknown",
         "target": "unknown",
         "context": [],
@@ -35,31 +806,33 @@
         "confidence": 0.76,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
         "fingerprint": {
           "country": "Romania",
-          "family": "cyber",
-          "subcategory": "gps_interference",
-          "subtype": "gps_jamming_or_spoofing",
-          "object": "explosive_device",
-          "action": "jammed",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_intrusion",
+          "object": "drone",
+          "action": "entered",
           "actor": "unknown",
           "target": "unknown",
           "place": "Romania",
           "event_date": "Sat, 17 Oc",
-          "hash": "30bb38ad63ca47e910df8d8d"
+          "hash": "be213607dc84bc421099d5f6"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "explosive_device",
-            "mine"
+            "drone",
+            "dronă"
           ],
           "actions": [
-            "jammed",
-            "bruiaj"
+            "entered",
+            "a intrat",
+            "shot_down",
+            "doborât"
           ],
           "targets": [],
           "actors": [],
@@ -79,29 +852,27 @@
         },
         "candidate_rules": [
           {
-            "rule_id": "CYBER.GPS.INTERFERENCE",
-            "family": "cyber",
-            "subcategory": "gps_interference",
-            "subtype": "gps_jamming_or_spoofing",
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
             "severity": "medium",
             "priority": 0,
-            "score": 1.13,
+            "score": 2.26,
             "matched": true,
             "missing": [],
             "matched_context": []
           },
           {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded"
-            ],
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
             "matched_context": []
           },
           {
@@ -111,26 +882,10 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
             ],
             "matched_context": []
           },
@@ -141,10 +896,241 @@
             "subtype": "drone_interception",
             "severity": "medium",
             "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
             "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:drone",
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Romania",
+        "time": "Sat, 17 Oct 2026 17:39:00 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "G4Media"
+        ],
+        "urls": [
+          "https://www.g4media.ro/breaking-pilotii-romani-au-doborat-sambata-doua-drone-deasupra-marii-negre-anunta-ministerul-apararii.html"
+        ],
+        "merged_titles": [
+          "UPDATE Piloții români au doborât sâmbătă două drone de tip rusesc Geran deasupra Mării Negre, anunță Ministerul Apărării"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "incident_object": "drone",
+        "incident_action": "entered",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.653,
+          45.156
+        ]
+      },
+      "properties": {
+        "id": "544a8a9160175e86f328",
+        "title": "Încă două drone au fost doborâte de avioane F-16 românești în apropiere de Sulina, sâmbătă seara",
+        "summary": "Două drone de atac din familia Geran, cu propulsie cu reacție, au fost doborâte sâmbătă de aeronave F-16 ale Forțelor Aeriene Române, după ce au pătruns în spațiul aerian național, deasupra apelor teritoriale ale României, a anunțat Ministerul Apărării Naționale (MApN), citat de Mediafax",
+        "source": "Economica.net",
+        "url": "https://www.economica.net/inca-doua-drone-au-fost-doborate-de-avioane-f-16-romanesti-in-apropiere-de-sulina-sambata-seara_986743.html",
+        "published": "Sat, 17 Oct 2026 19:10:42 +0000",
+        "country": "Romania",
+        "city": "Sulina",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_intrusion",
+        "object": "drone",
+        "action": "entered",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_intrusion",
+          "object": "drone",
+          "action": "entered",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Sulina",
+          "event_date": "Sat, 17 Oc",
+          "hash": "89b97ffad4e85ee06a14d10b"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone"
+          ],
+          "actions": [
+            "entered",
+            "pătruns"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
               "actions:all:intercepted"
             ],
             "matched_context": []
@@ -156,10 +1142,9 @@
             "subtype": "drone_shootdown",
             "severity": "high",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:all:shot_down"
             ],
             "matched_context": []
@@ -171,11 +1156,38 @@
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone",
               "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
             ],
             "matched_context": []
           },
@@ -226,34 +1238,34 @@
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 5485,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Soția fostului candidat la prezidențiale, Călin Georgescu, a oferit un interviu în engleză unuia dintre cei mai controversați influenceri „MAGA” din Statele Unite. Cristela Georgescu, devenită noua portavoce a așa-numitului curent „suveranism”, după ce soțul său a fost reținut pentru 30 de zile, a avut o discuție de peste 40 de minute cu Mario Nawfal. Cristela a perorat aceleași teze fără să aducă dovezi. De la „eurostalinism” până la „liveurile susținătorilor sunt bruiate”. Digi24.ro a urmărit în întregime discuția dintre soția fostului candidat acuzat că ar fi înșelat un om de afaceri cu peste un milion de euro pentru a extrage principalele idei. Important de punctat, Mario Nawfal este influencerul cu care a avut o discuție și liderul AUR, George Simion . Simion i s-a plâns acestuia de condițiile în care a fost reținut fostul candidat. Ce-i drept, liderul AUR s-a bucurat de mai puțin de jumătate din timpul căruia i-a fost acordat doamnei Georgescu. Încă de la bun început, soția fostu",
-        "place": "Romania",
-        "time": "Sat, 17 Oct 2026 07:00:16 +0300",
-        "category": "cyber",
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Sulina",
+        "time": "Sat, 17 Oct 2026 19:10:42 +0000",
+        "category": "air",
         "kind": "local_media",
-        "geocode_quality": "country_fallback",
+        "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Digi24"
+          "Economica.net"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/actualitate/politica/so-much-bruiaj-cristela-cere-interventia-sua-pentru-eliberarea-lui-calin-georgescu-interviu-cu-un-influencer-care-ar-fi-spalat-bani-3996433"
+          "https://www.economica.net/inca-doua-drone-au-fost-doborate-de-avioane-f-16-romanesti-in-apropiere-de-sulina-sambata-seara_986743.html"
         ],
         "merged_titles": [
-          "„So much bruiaj\". Cristela cere intervenția SUA pentru eliberarea lui Călin Georgescu. Interviu cu un influencer care ar fi spălat bani"
+          "Încă două drone au fost doborâte de avioane F-16 românești în apropiere de Sulina, sâmbătă seara"
         ],
-        "incident_family": "cyber",
-        "incident_subcategory": "gps_interference",
-        "incident_subtype": "gps_jamming_or_spoofing",
-        "incident_object": "explosive_device",
-        "incident_action": "jammed",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "incident_object": "drone",
+        "incident_action": "entered",
         "incident_actor": "unknown",
         "incident_target": "unknown",
-        "classification_confidence": 0.76
+        "classification_confidence": 0.84
       }
     },
     {

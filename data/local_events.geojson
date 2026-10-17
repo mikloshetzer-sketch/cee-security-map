@@ -1,9 +1,261 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-17T10:05:19.154883+00:00",
+  "generated_utc": "2026-10-17T14:54:48.570074+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "f8c1ad137721e9c2e00a",
+        "title": "„So much bruiaj\". Cristela cere intervenția SUA pentru eliberarea lui Călin Georgescu. Interviu cu un influencer care ar fi spălat bani",
+        "summary": "Soția fostului candidat la prezidențiale, Călin Georgescu, a oferit un interviu în engleză unuia dintre cei mai controversați influenceri „MAGA” din Stalele Unite. Cristela Georgescu, devenită noua portavoce a așa numitului curent „suveranism” după ce soțul său a fost reținut pentru 30 de zile, a avut o discuție de peste 40 de minute cu Mario Nawfal. Cristela a perorat aceleași teze fără să aducă dovezi. De la „eurostalinism” până la „liveurile susținătorilor sunt bruiate”.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/so-much-bruiaj-cristela-cere-interventia-sua-pentru-eliberarea-lui-calin-georgescu-interviu-cu-un-influencer-care-ar-fi-spalat-bani-3996433",
+        "published": "Sat, 17 Oct 2026 07:00:16 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "cyber",
+        "subcategory": "gps_interference",
+        "subtype": "gps_jamming_or_spoofing",
+        "object": "explosive_device",
+        "action": "jammed",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "cyber",
+          "subcategory": "gps_interference",
+          "subtype": "gps_jamming_or_spoofing",
+          "object": "explosive_device",
+          "action": "jammed",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Sat, 17 Oc",
+          "hash": "30bb38ad63ca47e910df8d8d"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "explosive_device",
+            "mine"
+          ],
+          "actions": [
+            "jammed",
+            "bruiaj"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "CYBER.GPS.INTERFERENCE",
+            "family": "cyber",
+            "subcategory": "gps_interference",
+            "subtype": "gps_jamming_or_spoofing",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.13,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 5485,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Soția fostului candidat la prezidențiale, Călin Georgescu, a oferit un interviu în engleză unuia dintre cei mai controversați influenceri „MAGA” din Statele Unite. Cristela Georgescu, devenită noua portavoce a așa-numitului curent „suveranism”, după ce soțul său a fost reținut pentru 30 de zile, a avut o discuție de peste 40 de minute cu Mario Nawfal. Cristela a perorat aceleași teze fără să aducă dovezi. De la „eurostalinism” până la „liveurile susținătorilor sunt bruiate”. Digi24.ro a urmărit în întregime discuția dintre soția fostului candidat acuzat că ar fi înșelat un om de afaceri cu peste un milion de euro pentru a extrage principalele idei. Important de punctat, Mario Nawfal este influencerul cu care a avut o discuție și liderul AUR, George Simion . Simion i s-a plâns acestuia de condițiile în care a fost reținut fostul candidat. Ce-i drept, liderul AUR s-a bucurat de mai puțin de jumătate din timpul căruia i-a fost acordat doamnei Georgescu. Încă de la bun început, soția fostu",
+        "place": "Romania",
+        "time": "Sat, 17 Oct 2026 07:00:16 +0300",
+        "category": "cyber",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/politica/so-much-bruiaj-cristela-cere-interventia-sua-pentru-eliberarea-lui-calin-georgescu-interviu-cu-un-influencer-care-ar-fi-spalat-bani-3996433"
+        ],
+        "merged_titles": [
+          "„So much bruiaj\". Cristela cere intervenția SUA pentru eliberarea lui Călin Georgescu. Interviu cu un influencer care ar fi spălat bani"
+        ],
+        "incident_family": "cyber",
+        "incident_subcategory": "gps_interference",
+        "incident_subtype": "gps_jamming_or_spoofing",
+        "incident_object": "explosive_device",
+        "incident_action": "jammed",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

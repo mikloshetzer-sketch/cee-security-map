@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-17T10:05:28.991918+00:00",
+  "generated_utc": "2026-10-17T14:54:54.561608+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 1,
+    "incident_count": 3,
+    "local_event_count": 2,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,11 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
+        "cyber": 1,
         "drone": 1
       },
       "source_files": {
+        "local_events.geojson": 1,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -62,6 +64,27 @@
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [
+      {
+        "id": "f8c1ad137721e9c2e00a",
+        "date": "2026-10-17",
+        "time": "2026-10-17T04:00:16+00:00",
+        "category": "cyber",
+        "severity": "medium",
+        "title": "„So much bruiaj\". Cristela cere intervenția SUA pentru eliberarea lui Călin Georgescu. Interviu cu un influencer care ar fi spălat bani",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/politica/so-much-bruiaj-cristela-cere-interventia-sua-pentru-eliberarea-lui-calin-georgescu-interviu-cu-un-influencer-care-ar-fi-spalat-bani-3996433",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "cyber",
+        "incident_subcategory": "gps_interference",
+        "incident_subtype": "gps_jamming_or_spoofing",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "CYBER.GPS.INTERFERENCE",
+        "fingerprint_hash": "30bb38ad63ca47e910df8d8d"
+      },
       {
         "id": null,
         "date": "2026-10-15",

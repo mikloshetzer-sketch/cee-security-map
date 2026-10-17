@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-16T20:29:27.263607+00:00",
+  "generated_utc": "2026-10-17T02:27:56.379910+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 3,
+    "incident_count": 3,
+    "local_event_count": 2,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,13 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 3,
+      "incident_count": 2,
       "category_counts": {
-        "infrastructure_disruption": 1,
         "drone": 2
       },
       "source_files": {
-        "local_events.geojson": 2,
+        "local_events.geojson": 1,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -84,27 +83,6 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.DETECTION",
         "fingerprint_hash": "0d41ad893a8bdd28f65e7578"
-      },
-      {
-        "id": "706c0d71b7dca8dfec0b",
-        "date": "2026-10-16",
-        "time": "2026-10-16T13:32:27+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "medium",
-        "title": "Turcia și Marocul, principalii furnizori de carburanți ai Rusiei. România apare într-un raport privind petrolul rusesc",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/rusia/turcia-si-marocul-principalii-furnizori-de-carburanti-ai-rusiei-romania-apare-intr-un-raport-privind-petrolul-rusesc-3995647",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint_hash": "5af8197b5e6967da3b9c83ce"
       },
       {
         "id": null,

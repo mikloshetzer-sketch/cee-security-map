@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-17T20:08:31.244699+00:00",
+  "generated_utc": "2026-10-18T02:30:05.653016+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 7,
-    "local_event_count": 6,
+    "incident_count": 6,
+    "local_event_count": 5,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,12 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 6,
+      "incident_count": 5,
       "category_counts": {
-        "drone": 6
+        "drone": 4,
+        "kinetic_attack": 1
       },
       "source_files": {
-        "local_events.geojson": 5,
+        "local_events.geojson": 4,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -64,27 +65,6 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "544a8a9160175e86f328",
-        "date": "2026-10-17",
-        "time": "2026-10-17T19:10:42+00:00",
-        "category": "drone",
-        "severity": "medium",
-        "title": "Încă două drone au fost doborâte de avioane F-16 românești în apropiere de Sulina, sâmbătă seara",
-        "source": "Economica.net",
-        "url": "https://www.economica.net/inca-doua-drone-au-fost-doborate-de-avioane-f-16-romanesti-in-apropiere-de-sulina-sambata-seara_986743.html",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "89b97ffad4e85ee06a14d10b"
-      },
-      {
         "id": "d5415de6146148b28f91",
         "date": "2026-10-17",
         "time": "2026-10-17T19:10:36+00:00",
@@ -104,27 +84,6 @@
         "classification_confidence": 0.98,
         "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
         "fingerprint_hash": "d08ac14241732c269e832ee2"
-      },
-      {
-        "id": "3efae757f14cb1e78332",
-        "date": "2026-10-17",
-        "time": "2026-10-17T18:22:11+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Două drone aeriene, angajate şi doborâte de piloţii militari români deasupra Mării Negre. Declarația ministrului Apărării",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/doua-drone-aeriene-angajate-si-doborate-de-pilotii-militari-romani-deasupra-marii-negre-declaratia-ministrului-apararii-3996935",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "2daddecc3db831f7448c8863"
       },
       {
         "id": "bd876741a4157c62e7a5",
@@ -151,8 +110,8 @@
         "id": "34918876c3cb1882f98d",
         "date": "2026-10-17",
         "time": "2026-10-17T17:39:00+00:00",
-        "category": "drone",
-        "severity": "medium",
+        "category": "kinetic_attack",
+        "severity": "high",
         "title": "UPDATE Piloții români au doborât sâmbătă două drone de tip rusesc Geran deasupra Mării Negre, anunță Ministerul Apărării",
         "source": "G4Media",
         "url": "https://www.g4media.ro/breaking-pilotii-romani-au-doborat-sambata-doua-drone-deasupra-marii-negre-anunta-ministerul-apararii.html",
@@ -162,11 +121,32 @@
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "air",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_interception",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.MISSILE.INTERCEPT",
+        "fingerprint_hash": "a2e10012130ca2ff265685f1"
+      },
+      {
+        "id": "3efae757f14cb1e78332",
+        "date": "2026-10-17",
+        "time": "2026-10-17T15:44:30+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Două drone aeriene, angajate şi doborâte de piloţii militari români deasupra Mării Negre. Declarația ministrului Apărării",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/doua-drone-aeriene-angajate-si-doborate-de-pilotii-militari-romani-deasupra-marii-negre-declaratia-ministrului-apararii-3996935",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "be213607dc84bc421099d5f6"
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "7be92fef83d2d99806f38703"
       },
       {
         "id": null,

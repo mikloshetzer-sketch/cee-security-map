@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-17T20:08:20.646415+00:00",
+  "generated_utc": "2026-10-18T02:29:57.015155+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -245,7 +245,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1707,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Két drónt lőttek le szombaton román F–16-os vadászgépek a Fekete-tengernél az ország légterében, írja a Deutsche Welle a román védelmi minisztérium közlése alapján. Radu Miruță védelmi miniszter a Facebook-oldalán arról írt , a drónok behatoltak Románia területére, de arról nem tettek közzé információt, hogy azok melyik országhoz tartoztak. A drónokat az ukrán határ melletti Sulinától nagyjából 20 kilométerre délkeletre lőtték le. Az első drón Miruță közlése szerint 17:59-kor lépett be a román légtérbe, ezt két percen belül lelőtték. A másodikat 18:05-kor lőtték le, öt perccel azután, hogy megérkezett az ország légterébe. Oana Țoiu román külügyminiszter arról írt az X-en, hogy tájékoztatták a szövetségeseiket és az EU-t, az Észak-atlanti Tanács (a NATO döntéshozó testülete) pedig kedden tárgyalni fog az incidensről. Az utóbbi hónapokban a kereskedelmi hajókat érő incidensek egyre távolabb kerültek az ukrán partoktól, Románia és Bulgária kizárólagos gazdasági övezetében is súlyos incide",
         "place": "Romania",
         "time": "Sat, 17 Oct 2026 21:10:36 +0200",
@@ -498,7 +498,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1608,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Aliații NATO se reunesc marți, în ședință, pentru a discuta situația tensionată de la Marea Neagră. O reuniune a Consiliului Nord-Atlantic a fost programată la inițiativa României. Pericolul dronelor Rusiei nu planează doar asupra Alianței, ci și a Republicii Moldova. Poliția de la Chișinău a anunțat că o dronă a căzut în urmă cu puțin timp într-un raion din nordul țării, la prima vedere părând a fi un aparat de spionaj. În ceea ce privește întâlnirea de marți, Ministerul Afacerilor Externe a anunțat că România și-a informat aliații NATO, dar și alți parteneri în legătură cu incidentul de sâmbătă seară , iar marți va avea loc o reuniune a Consiliului Nord-Atlantic unde se va discuta despre apărarea și descurajarea amenințărilor în regiunea Mării Negre, relatează Alexandra Dinu, jurnalistă Digi24 . Știm că zilele trecute, șeful NATO, Mark Rutte, a avut o întâlnire cu premierul Bulgariei și cu președintele Nicușor Dan, iar discuțiile s-au axat chiar pe securitatea de la Marea Neagră. În ",
         "place": "Romania",
         "time": "Sat, 17 Oct 2026 21:02:32 +0300",
@@ -538,7 +538,7 @@
       "properties": {
         "id": "3efae757f14cb1e78332",
         "title": "Două drone aeriene, angajate şi doborâte de piloţii militari români deasupra Mării Negre. Declarația ministrului Apărării",
-        "summary": "Ministrul interimar al Apărării, Radu Miruţă, a anunţat, sâmbătă seară, că două drone aeriene au fost angajate şi doborâte de piloţii militari români deasupra Mării Negre",
+        "summary": "Ministrul interimar al Apărării, Radu Miruță, a declarat sâmbătă seară că cele două drone au fost doborâte în jurul orei 18. Țintele aeriene au fost neutralizate de piloți militari români deasupra Mării Negre, a spus Miruță, într-un mesaj pe Facebook. „Prima dronă a intrat în spațiul aerian național la 17:59 și a fost doborâtă în &#8230;",
         "source": "Digi24",
         "url": "https://www.digi24.ro/stiri/doua-drone-aeriene-angajate-si-doborate-de-pilotii-militari-romani-deasupra-marii-negre-declaratia-ministrului-apararii-3996935",
         "published": "Sat, 17 Oct 2026 21:22:11 +0300",
@@ -549,7 +549,7 @@
         "subtype": "drone_detection",
         "object": "drone",
         "action": "detected",
-        "actor": "unknown",
+        "actor": "nato",
         "target": "military",
         "context": [],
         "consequences": [],
@@ -565,32 +565,40 @@
           "subtype": "drone_detection",
           "object": "drone",
           "action": "detected",
-          "actor": "unknown",
+          "actor": "nato",
           "target": "military",
           "place": "Sulina",
           "event_date": "Sat, 17 Oc",
-          "hash": "2daddecc3db831f7448c8863"
+          "hash": "7be92fef83d2d99806f38703"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone"
+            "drone",
+            "dronă",
+            "ship",
+            "navă"
           ],
           "actions": [
             "detected",
             "detectat",
             "entered",
             "pătruns",
+            "a intrat",
             "shot_down",
-            "doborât"
+            "doborât",
+            "burned",
+            "a luat foc"
           ],
           "targets": [
             "military",
             "radar"
           ],
-          "actors": [],
+          "actors": [
+            "nato"
+          ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -603,6 +611,7 @@
           "object_match": 0.2,
           "action_match": 0.2,
           "target_match": 0.08,
+          "actor_match": 0.06,
           "country_match": 0.1,
           "city_match": 0.08,
           "supporting_evidence": 0.06
@@ -715,31 +724,30 @@
             "matched_context": []
           },
           {
-            "rule_id": "BORDER.ILLEGAL.CROSSING",
-            "family": "border_security",
-            "subcategory": "illegal_crossing",
-            "subtype": "illegal_border_crossing",
-            "severity": "low",
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "context:any"
+              "actions:any:attacked,damaged,exploded"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
             "severity": "high",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
+              "objects:all:energy_asset"
             ],
             "matched_context": []
           }
@@ -747,278 +755,38 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 2982,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Ministrul interimar al Apărării, Radu Miruţă, a anunţat, sâmbătă seară, că două drone aeriene au fost angajate şi doborâte de piloţii militari români deasupra Mării Negre . ACTUALIZARE 21:19 Ţintele neutralizate sâmbătă în spaţiul aerian naţional erau drone de atac din familia Geran, cu propulsie cu reacţie, a informat Ministerul Apărării Naţionale (MApN). „Sâmbătă, 17 octombrie, sistemul de supraveghere radar al Ministerului Apărării Naţionale a detectat un grup de ţinte aeriene care evoluau la aproximativ 120 de kilometri est de Insula Şerpilor, pe direcţia sud-vest. Două aeronave F-16 ale Forţelor Aeriene Române, de la Baza 86 Aeriană Borcea, aflate în serviciul de luptă Poliţie Aeriană, au decolat la ora 17:43 şi au doborât două ţinte aeriene deasupra apelor teritoriale ale României, în spaţiul aerian naţional”, se arată într-o informare postată pe site-ul ministerului. Conform sursei citate, ţintele neutralizate erau drone de atac din familia Geran, cu propulsie cu reacţie. „Prima",
         "place": "Sulina",
-        "time": "Sat, 17 Oct 2026 21:22:11 +0300",
+        "time": "Sat, 17 Oct 2026 15:44:30 +0000",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "city",
         "force_included": false,
-        "source_count": 1,
+        "source_count": 3,
         "sources": [
-          "Digi24"
+          "Digi24",
+          "HotNews",
+          "Economica.net"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/doua-drone-aeriene-angajate-si-doborate-de-pilotii-militari-romani-deasupra-marii-negre-declaratia-ministrului-apararii-3996935"
+          "https://www.digi24.ro/stiri/doua-drone-aeriene-angajate-si-doborate-de-pilotii-militari-romani-deasupra-marii-negre-declaratia-ministrului-apararii-3996935",
+          "https://hotnews.ro/drone-doborate-de-avioane-f-16-ministrul-apararii-detalii-despre-misiunea-pilotilor-romani-2378813",
+          "https://www.economica.net/inca-doua-drone-au-fost-doborate-de-avioane-f-16-romanesti-in-apropiere-de-sulina-sambata-seara_986743.html"
         ],
         "merged_titles": [
-          "Două drone aeriene, angajate şi doborâte de piloţii militari români deasupra Mării Negre. Declarația ministrului Apărării"
+          "Două drone aeriene, angajate şi doborâte de piloţii militari români deasupra Mării Negre. Declarația ministrului Apărării",
+          "Drone doborâte de avioane F-16. Ministrul Apărării, detalii despre misiunea piloților români",
+          "Încă două drone au fost doborâte de avioane F-16 românești în apropiere de Sulina, sâmbătă seara"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_detection",
         "incident_object": "drone",
         "incident_action": "detected",
-        "incident_actor": "unknown",
+        "incident_actor": "nato",
         "incident_target": "military",
-        "classification_confidence": 0.92
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9668,
-          45.9432
-        ]
-      },
-      "properties": {
-        "id": "34918876c3cb1882f98d",
-        "title": "UPDATE Piloții români au doborât sâmbătă două drone de tip rusesc Geran deasupra Mării Negre, anunță Ministerul Apărării",
-        "summary": "<p>Piloții români de avioane F-16 au doborât sâmbătă două drone deasupra Mării Negre, anunță Ministerul Apărării. E vorba despre drone care au intrat în spațiul aerian al României, potrivit sursei citate. UPDATE: Ministerul Apărării a anunțat că dronele sunt de tip Geran, adică rusești Prima dronă a intrat în spațiul aerian național la 17:59 și [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/breaking-pilotii-romani-au-doborat-sambata-doua-drone-deasupra-marii-negre-anunta-ministerul-apararii.html",
-        "published": "Sat, 17 Oct 2026 17:39:00 +0000",
-        "country": "Romania",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_intrusion",
-        "object": "drone",
-        "action": "entered",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.76,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_intrusion",
-          "object": "drone",
-          "action": "entered",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Romania",
-          "event_date": "Sat, 17 Oc",
-          "hash": "be213607dc84bc421099d5f6"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "dronă"
-          ],
-          "actions": [
-            "entered",
-            "a intrat",
-            "shot_down",
-            "doborât"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.ILLEGAL.CROSSING",
-            "family": "border_security",
-            "subcategory": "illegal_crossing",
-            "subtype": "illegal_border_crossing",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Romania",
-        "time": "Sat, 17 Oct 2026 17:39:00 +0000",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "G4Media"
-        ],
-        "urls": [
-          "https://www.g4media.ro/breaking-pilotii-romani-au-doborat-sambata-doua-drone-deasupra-marii-negre-anunta-ministerul-apararii.html"
-        ],
-        "merged_titles": [
-          "UPDATE Piloții români au doborât sâmbătă două drone de tip rusesc Geran deasupra Mării Negre, anunță Ministerul Apărării"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "incident_object": "drone",
-        "incident_action": "entered",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.76
+        "classification_confidence": 0.98
       }
     },
     {
@@ -1031,54 +799,65 @@
         ]
       },
       "properties": {
-        "id": "544a8a9160175e86f328",
-        "title": "Încă două drone au fost doborâte de avioane F-16 românești în apropiere de Sulina, sâmbătă seara",
-        "summary": "Două drone de atac din familia Geran, cu propulsie cu reacție, au fost doborâte sâmbătă de aeronave F-16 ale Forțelor Aeriene Române, după ce au pătruns în spațiul aerian național, deasupra apelor teritoriale ale României, a anunțat Ministerul Apărării Naționale (MApN), citat de Mediafax",
-        "source": "Economica.net",
-        "url": "https://www.economica.net/inca-doua-drone-au-fost-doborate-de-avioane-f-16-romanesti-in-apropiere-de-sulina-sambata-seara_986743.html",
-        "published": "Sat, 17 Oct 2026 19:10:42 +0000",
+        "id": "34918876c3cb1882f98d",
+        "title": "UPDATE Piloții români au doborât sâmbătă două drone de tip rusesc Geran deasupra Mării Negre, anunță Ministerul Apărării",
+        "summary": "<p>Piloții români de avioane F-16 au doborât sâmbătă două drone deasupra Mării Negre, anunță Ministerul Apărării. E vorba despre drone care au intrat în spațiul aerian al României, potrivit sursei citate. UPDATE: Ministerul Apărării a anunțat că dronele sunt de tip Geran, adică rusești Prima dronă a intrat în spațiul aerian național la 17:59 și [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/breaking-pilotii-romani-au-doborat-sambata-doua-drone-deasupra-marii-negre-anunta-ministerul-apararii.html",
+        "published": "Sat, 17 Oct 2026 17:39:00 +0000",
         "country": "Romania",
         "city": "Sulina",
         "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_intrusion",
-        "object": "drone",
-        "action": "entered",
-        "actor": "unknown",
+        "subcategory": "missile",
+        "subtype": "missile_interception",
+        "object": "missile",
+        "action": "shot_down",
+        "actor": "russia",
         "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "medium",
-        "confidence": 0.84,
+        "severity": "high",
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "matched_rule_id": "AIR.MISSILE.INTERCEPT",
         "fingerprint": {
           "country": "Romania",
           "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_intrusion",
-          "object": "drone",
-          "action": "entered",
-          "actor": "unknown",
+          "subcategory": "missile",
+          "subtype": "missile_interception",
+          "object": "missile",
+          "action": "shot_down",
+          "actor": "russia",
           "target": "unknown",
           "place": "Sulina",
           "event_date": "Sat, 17 Oc",
-          "hash": "89b97ffad4e85ee06a14d10b"
+          "hash": "a2e10012130ca2ff265685f1"
         },
         "classifier_version": "1.0.1",
         "taxonomy_version": "1.0.0",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone"
+            "drone",
+            "dronă",
+            "drona",
+            "missile",
+            "racheta"
           ],
           "actions": [
             "entered",
-            "pătruns"
+            "a intrat",
+            "shot_down",
+            "doborât"
           ],
           "targets": [],
-          "actors": [],
+          "actors": [
+            "russia",
+            "rusia",
+            "ukraine",
+            "ucraina"
+          ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -1090,17 +869,42 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
+          "actor_match": 0.06,
           "country_match": 0.1,
           "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
           {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
             "rule_id": "AIR.DRONE.INTRUSION",
             "family": "air",
             "subcategory": "drone",
             "subtype": "drone_intrusion",
             "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
             "priority": 0,
             "score": 2.26,
             "matched": true,
@@ -1136,20 +940,6 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
             "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
             "subcategory": "drone",
@@ -1160,6 +950,34 @@
             "matched": false,
             "missing": [
               "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:exploded,impact"
             ],
             "matched_context": []
           },
@@ -1190,82 +1008,37 @@
               "context:any"
             ],
             "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
+        "full_article_enriched": true,
+        "article_text_chars": 1874,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. Piloții români de avioane F-16 au doborât sâmbătă două drone deasupra Mării Negre, anunță Ministerul Apărării. E vorba despre drone care au intrat în spațiul aerian al României, potrivit sursei citate. Prima dronă a intrat în spațiul aerian național la 17:59 și a fost doborâtă în 2 minute la 25km SE de Sulina, a transmis ulterior ministrul interimar Radu Miruță. Cea de-a doua dronă, în aceeași zonă, a fost angajată și doborâtă la 18:05, la 5 minute dupa ce a intrat în spațiul aerian național, la 20km E de Sulina, a mai spus Miruță. Marea Neagră a devenit în ultima lună un alt front al războiului dus de Rusia împotriva Ucrainei. Doar săptămâna trecută, două nave comerciale au fost lovite de drone – cel mai probabil rusești – în apele teritoriale ale României. Atacuri similare au avut loc și în apele teritoriale bulgărești. Piloții noștri au dobo",
         "place": "Sulina",
-        "time": "Sat, 17 Oct 2026 19:10:42 +0000",
+        "time": "Sat, 17 Oct 2026 17:39:00 +0000",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "Economica.net"
+          "G4Media"
         ],
         "urls": [
-          "https://www.economica.net/inca-doua-drone-au-fost-doborate-de-avioane-f-16-romanesti-in-apropiere-de-sulina-sambata-seara_986743.html"
+          "https://www.g4media.ro/breaking-pilotii-romani-au-doborat-sambata-doua-drone-deasupra-marii-negre-anunta-ministerul-apararii.html"
         ],
         "merged_titles": [
-          "Încă două drone au fost doborâte de avioane F-16 românești în apropiere de Sulina, sâmbătă seara"
+          "UPDATE Piloții români au doborât sâmbătă două drone de tip rusesc Geran deasupra Mării Negre, anunță Ministerul Apărării"
         ],
         "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "incident_object": "drone",
-        "incident_action": "entered",
-        "incident_actor": "unknown",
+        "incident_subcategory": "missile",
+        "incident_subtype": "missile_interception",
+        "incident_object": "missile",
+        "incident_action": "shot_down",
+        "incident_actor": "russia",
         "incident_target": "unknown",
-        "classification_confidence": 0.84
+        "classification_confidence": 0.9
       }
     },
     {

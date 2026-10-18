@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-18T10:19:40.229722+00:00",
+  "generated_utc": "2026-10-18T15:22:28.600849+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 8,
-    "local_event_count": 7,
+    "incident_count": 4,
+    "local_event_count": 3,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 5,
+      "incident_count": 2,
       "category_counts": {
-        "drone": 5
+        "drone": 2
       },
       "source_files": {
-        "local_events.geojson": 4,
+        "local_events.geojson": 1,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -35,18 +35,14 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Lithuania": {
       "incident_count": 1,
       "category_counts": {
-        "drone": 1
+        "transport": 1
       },
       "source_files": {
         "local_events.geojson": 1
@@ -93,69 +89,6 @@
         "fingerprint_hash": "45c563054c9dd472697e8ba3"
       },
       {
-        "id": "e0d9ecca451a4e639652",
-        "date": "2026-10-18",
-        "time": "2026-10-18T08:07:27+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Imagini spectaculoase din avioanele F16 care au doborât ieri seară dronele deasupra României",
-        "source": "Economica.net",
-        "url": "https://www.economica.net/imagini-spectaculoase-din-avioanele-f16-care-au-doborat-ieri-seara-dronele-deasupra-romaniei_986792.html",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "1a04eadd62040ee372929d35"
-      },
-      {
-        "id": "85a5291cf8f1e81548a0",
-        "date": "2026-10-18",
-        "time": "2026-10-18T08:01:35+00:00",
-        "category": "drone",
-        "severity": "medium",
-        "title": "Drone doborâte în spațiul aerian românesc. Imagini din avion cu momentul doborârii deasupra Mării Negre",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/imagini-cu-momentul-doborarii-dronelor-deasupra-marii-negre-2379062",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "70f25bc6441aa44cad40e35a"
-      },
-      {
-        "id": "bd876741a4157c62e7a5",
-        "date": "2026-10-17",
-        "time": "2026-10-17T18:02:32+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Reuniune a Consiliului NATO, programată la cererea României, după atacurile navelor la Marea Neagră și incursiunile dronelor rusești",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/reuniune-a-consiliului-nato-programata-la-cererea-romaniei-dupa-atacurile-navelor-la-marea-neagra-si-incursiunile-dronelor-rusesti-3997039",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "7603e2dca4166e779488148e"
-      },
-      {
         "id": null,
         "date": "2026-10-15",
         "time": "2026-10-15T21:30:00+00:00",
@@ -178,50 +111,28 @@
       }
     ],
     "Slovakia": [],
-    "Poland": [
-      {
-        "id": "cfd7b0d56fc819e5eb6e",
-        "date": "2026-10-18",
-        "time": "2026-10-18T07:09:00+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Lehetséges légtérsértést vizsgálnak Lengyelországban, drón is okozhatta a jelzést",
-        "source": "Portfolio",
-        "url": "https://www.portfolio.hu/global/20261018/lehetseges-legtersertest-vizsgalnak-lengyelorszagban-dron-is-okozhatta-a-jelzest-870420",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "fc4c62d580b2644e57c458cb"
-      }
-    ],
+    "Poland": [],
     "Lithuania": [
       {
-        "id": "5cd7c258249b7a01b26b",
+        "id": "723a5838a901d8bd17c4",
         "date": "2026-10-18",
-        "time": "2026-10-18T08:04:30+00:00",
-        "category": "drone",
+        "time": "2026-10-18T11:07:36+00:00",
+        "category": "transport",
         "severity": "medium",
-        "title": "Cod roșu aerian în Lituania după detectarea unui obiect zburător: Aeroport închis și populație trimisă în adăposturi / Alte două țări sunt și ele în alertă",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/cod-rosu-aerian-in-lituania-dupa-detectarea-unui-obiect-zburator-aeroport-inchis-si-populatie-trimisa-in-adaposturi-alte-doua-tari-sunt-si-ele-in-alerta-2379059",
+        "title": "„Resturi de dronă” găsite în Lituania după o încălcare a spațiului său aerian",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/resturi-de-drona-gasite-in-lituania-dupa-o-incalcare-a-spatiului-sau-aerian-3997461",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_intrusion",
+        "incident_family": "transport",
+        "incident_subcategory": "aviation",
+        "incident_subtype": "airport_closure",
         "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.INTRUSION",
-        "fingerprint_hash": "1cae7f97f2be6f2d9aac42b5"
+        "matched_rule_id": "TRANSPORT.AVIATION.CLOSURE",
+        "fingerprint_hash": "ca67615f3318a51994189a2f"
       }
     ],
     "Latvia": [

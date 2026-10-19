@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-18T20:08:51.233711+00:00",
+  "generated_utc": "2026-10-19T02:47:15.035191+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 3,
+    "incident_count": 7,
+    "local_event_count": 6,
     "crossborder_event_count": 1
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 4,
       "category_counts": {
-        "drone": 2
+        "drone": 4
       },
       "source_files": {
-        "local_events.geojson": 1,
+        "local_events.geojson": 3,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -40,12 +40,13 @@
       "source_files": {}
     },
     "Lithuania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "transport": 1
+        "transport": 1,
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Latvia": {
@@ -68,6 +69,27 @@
     "Hungary": [],
     "Romania": [
       {
+        "id": "695f89aeea3516bc1995",
+        "date": "2026-10-18",
+        "time": "2026-10-18T17:52:41+00:00",
+        "category": "drone",
+        "severity": "medium",
+        "title": "Trei premiere pentru armata română, anunțate de ministrul Apărării în cazul dronelor doborâte. Ce fel de aparate erau",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/trei-premiere-pentru-armata-romana-anuntate-de-ministrul-apararii-in-cazul-dronelor-doborate-ce-fel-de-aparate-erau-2379343",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint_hash": "7220df153b738ae60bf33f09"
+      },
+      {
         "id": "07999c255d408b8403c0",
         "date": "2026-10-18",
         "time": "2026-10-18T15:50:58+00:00",
@@ -87,6 +109,27 @@
         "classification_confidence": 0.84,
         "matched_rule_id": "AIR.DRONE.INTRUSION",
         "fingerprint_hash": "ff918aebc04af507da2a61d8"
+      },
+      {
+        "id": "6fdffbd6a06654836de9",
+        "date": "2026-10-18",
+        "time": "2026-10-18T12:14:06+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Radu Miruță: Cele două drone doborâte ar fi de proveniență rusească, de tip Geran-4 cu turbopropulsor, care zburau cu 450 km pe oră / Este pentru prima oară când doborâm astfel de drone",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/radu-miruta-cele-doua-drone-doborate-ar-fi-de-provenienta-ruseasca-de-tip-geran-4-cu-turbopropulsor-care-zburau-cu-450-km-pe-ora-este-pentru-prima-oara-cand-doboram-astfel-de-drone.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint_hash": "1a04eadd62040ee372929d35"
       },
       {
         "id": null,
@@ -113,6 +156,27 @@
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [
+      {
+        "id": "c05cd930f0016a760860",
+        "date": "2026-10-18",
+        "time": "2026-10-18T14:15:09+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Neznámy dron explodoval nad Litvou, zasahovali stíhačky NATO",
+        "source": "Aktuality",
+        "url": "https://www.aktuality.sk/clanok/AuiAhcv/dron-vletel-do-litvy-z-polska-a-zrutil-sa-poskodil-civilne-auto/",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "a2a20042a813b10bdec6fe58"
+      },
       {
         "id": "723a5838a901d8bd17c4",
         "date": "2026-10-18",

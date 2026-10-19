@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-18T20:08:40.900483+00:00",
+  "generated_utc": "2026-10-19T02:47:06.874154+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
@@ -224,7 +224,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 3461,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Ministrul interimar al Apărării, Radu Miruţă, a afirmat că, au existat trei premiere în cazul celor două drone doborâte, sâmbătă seara, deasupra Mării Negre, aeronava F-16 a Forţelor Aeriene Române. El a explicat că este pentru prima dată, când sunt doborâte două drone la un interval de patru minute şi la scurt timp după ce au pătruns în spaţiul aerian naţional. Miruţă a mai precizat că pentru prima dată piloţii români au avut de-a face cu drone Geran 4 de provenienţă rusească, care zboară cu 450 de km/h. „Pot să vă spun premiera pentru cele două drone care au fost doborâte aseară în spaţiul aerian românesc. Ministerul Apărării a înregistrat trei premiere absolute. Una, că au fost doborâte două drone consecutive la interval de patru minute şi jumătate, una la 18.01, una la 18.05. Au plecat două avioane de vânătoare care au nişte limitări de încărcătură şi de intervenţie. Faptul că două drone din două intrate consecutiv în acelaşi echipaj au fost doborâte este o premieră”, a declarat Ra",
         "place": "Sulina",
         "time": "Sun, 18 Oct 2026 18:50:58 +0300",
@@ -507,6 +507,763 @@
         "incident_action": "closed",
         "incident_actor": "russia",
         "incident_target": "civilian",
+        "classification_confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.833,
+          44.366
+        ]
+      },
+      "properties": {
+        "id": "695f89aeea3516bc1995",
+        "title": "Trei premiere pentru armata română, anunțate de ministrul Apărării în cazul dronelor doborâte. Ce fel de aparate erau",
+        "summary": "Ministrul interimar al Apărării Naționale, Radu Miruță, a declarat duminica aceasta, că au fost înregistrate trei premiere în cazul celor două dronele care au fost doborâte de piloții militari români, sâmbătă seară, în spațiul aerian al țării noastre. „Pot să vă spun premiera pentru cele două drone care au fost doborâte aseara, în spațiul aerian &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/trei-premiere-pentru-armata-romana-anuntate-de-ministrul-apararii-in-cazul-dronelor-doborate-ce-fel-de-aparate-erau-2379343",
+        "published": "Sun, 18 Oct 2026 17:52:41 +0000",
+        "country": "Romania",
+        "city": "Fetești",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_intrusion",
+        "object": "drone",
+        "action": "entered",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.INTRUSION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_intrusion",
+          "object": "drone",
+          "action": "entered",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Fetești",
+          "event_date": "Sun, 18 Oc",
+          "hash": "7220df153b738ae60bf33f09"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă"
+          ],
+          "actions": [
+            "entered",
+            "pătruns",
+            "a intrat"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 3264,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Ministrul interimar al Apărării Naționale, Radu Miruță, a declarat duminica aceasta, că au fost înregistrate trei premiere în cazul celor două dronele care au fost doborâte de piloții militari români, sâmbătă seară, în spațiul aerian al țării noastre. „Pot să vă spun premiera pentru cele două drone care au fost doborâte aseara, în spațiul aerian românesc. Ministerul Apărării Naționale a înregistrat trei premiere absolute în ceea ce privește activitatea de la minister. Una, că au fost doborâte două drone consecutive, la interval de patru minute și jumătate, una la 18:01, una la 18:05. Au plecat două avioane de vânătoare, care au niște limitări de încărcătură și de intervenție… Faptul că două drone din două intrate consecutiv, în același echipaj au fost doborâte, este o premieră. O a doua premieră este faptul că aceste drone au fost doborâte la câteva clipe după ce au intrat în spațiul aerian românesc; prima dronă a intrat la 17:59 și a fost angajată și doborâtă la 18:01; nu aveau timp a",
+        "place": "Fetești",
+        "time": "Sun, 18 Oct 2026 17:52:41 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "urls": [
+          "https://hotnews.ro/trei-premiere-pentru-armata-romana-anuntate-de-ministrul-apararii-in-cazul-dronelor-doborate-ce-fel-de-aparate-erau-2379343"
+        ],
+        "merged_titles": [
+          "Trei premiere pentru armata română, anunțate de ministrul Apărării în cazul dronelor doborâte. Ce fel de aparate erau"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_intrusion",
+        "incident_object": "drone",
+        "incident_action": "entered",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "6fdffbd6a06654836de9",
+        "title": "Radu Miruță: Cele două drone doborâte ar fi de proveniență rusească, de tip Geran-4 cu turbopropulsor, care zburau cu 450 km pe oră / Este pentru prima oară când doborâm astfel de drone",
+        "summary": "<p>Cele două drone doborâte în spațiul aerian al României ar fi de proveniență rusească, de tip Geran-4, potrivit ministrului interimar al Apărării, Radu Miruță. Aparatele de zbor ar fi fost echipate cu motoare turbopropulsoare și ar fi atins viteze de aproximativ 450 km/h, transmite Mediafax. Miruță a explicat, duminică, într-o conferință de presă, că viteza [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/radu-miruta-cele-doua-drone-doborate-ar-fi-de-provenienta-ruseasca-de-tip-geran-4-cu-turbopropulsor-care-zburau-cu-450-km-pe-ora-este-pentru-prima-oara-cand-doboram-astfel-de-drone.html",
+        "published": "Sun, 18 Oct 2026 12:14:06 +0000",
+        "country": "Romania",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_shootdown",
+        "object": "drone",
+        "action": "shot_down",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.76,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_shootdown",
+          "object": "drone",
+          "action": "shot_down",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Sun, 18 Oc",
+          "hash": "1a04eadd62040ee372929d35"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă"
+          ],
+          "actions": [
+            "shot_down",
+            "doborât"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2899,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. Cele două drone doborâte în spațiul aerian al României ar fi de proveniență rusească, de tip Geran-4, potrivit ministrului interimar al Apărării, Radu Miruță. Aparatele de zbor ar fi fost echipate cu motoare turbopropulsoare și ar fi atins viteze de aproximativ 450 km/h, transmite Mediafax . Miruță a explicat, duminică, într-o conferință de presă, că viteza și caracteristicile celor două drone indică faptul că ar putea fi vorba despre un model rusesc care nu a mai fost doborât până acum de Armata Română. „Dacă până acum erau drone pe care le știam foarte bine și care zburau cu 150-170 km pe oră, ați văzut probabil în spațiul public, de două-trei săptămâni, discuții despre drone cu motor turbopropulsor, acele drone care au o rază de 800-900 km și care zboară aproape cu viteza unui avion de vânătoare”, a explicat ministrul. Acesta a precizat că d",
+        "place": "Romania",
+        "time": "Sun, 18 Oct 2026 12:14:06 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "G4Media"
+        ],
+        "urls": [
+          "https://www.g4media.ro/radu-miruta-cele-doua-drone-doborate-ar-fi-de-provenienta-ruseasca-de-tip-geran-4-cu-turbopropulsor-care-zburau-cu-450-km-pe-ora-este-pentru-prima-oara-cand-doboram-astfel-de-drone.html"
+        ],
+        "merged_titles": [
+          "Radu Miruță: Cele două drone doborâte ar fi de proveniență rusească, de tip Geran-4 cu turbopropulsor, care zburau cu 450 km pe oră / Este pentru prima oară când doborâm astfel de drone"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "incident_object": "drone",
+        "incident_action": "shot_down",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.904,
+          54.898
+        ]
+      },
+      "properties": {
+        "id": "c05cd930f0016a760860",
+        "title": "Neznámy dron explodoval nad Litvou, zasahovali stíhačky NATO",
+        "summary": "<br />\n                        Dron, ktorý pravdepodobne priletel z Poľska, sa zrútil na severe Litvy a poškodil auto. Nikto sa nezranil.",
+        "source": "Aktuality",
+        "url": "https://www.aktuality.sk/clanok/AuiAhcv/dron-vletel-do-litvy-z-polska-a-zrutil-sa-poskodil-civilne-auto/",
+        "published": "Sun, 18 Oct 2026 14:15:09 +0000",
+        "country": "Lithuania",
+        "city": "Kaunas",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "exploded",
+        "actor": "ukraine",
+        "target": "unknown",
+        "context": [],
+        "consequences": [
+          "injury"
+        ],
+        "severity": "high",
+        "confidence": 0.98,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Lithuania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "exploded",
+          "actor": "ukraine",
+          "target": "unknown",
+          "place": "Kaunas",
+          "event_date": "Sun, 18 Oc",
+          "hash": "a2a20042a813b10bdec6fe58"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dron"
+          ],
+          "actions": [
+            "exploded",
+            "explodoval",
+            "damaged",
+            "poškodil",
+            "jammed",
+            "rušenie"
+          ],
+          "targets": [],
+          "actors": [
+            "ukraine",
+            "ukrajina",
+            "nato",
+            "unknown",
+            "neznámy"
+          ],
+          "consequences": [
+            "injury",
+            "zranený"
+          ],
+          "extra_context": [
+            "feed_country=Slovakia",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.GPS.INTERFERENCE",
+            "family": "cyber",
+            "subcategory": "gps_interference",
+            "subtype": "gps_jamming_or_spoofing",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.13,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2227,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Dron, ktorý v nedeľu vletel do vzdušného priestoru Litvy pravdepodobne zo susedného Poľska, sa zrútil na severe tejto pobaltskej krajiny, uviedol v nedeľu litovský minister obrany Robertas Kaunas. Upozornila na to agentúra DPA, píše TASR.Trosky dronu poškodili jedno civilné vozidlo. Riaditeľ Národného centra pre krízový manažment Vilmantas Vitkauskas potvrdil, že nikto nebol zranený.HeadingBlockVarovanie obyvateľov„Ruská agresívna vojna proti Ukrajine zasahuje aj do východného krídla NATO a EÚ,“ uviedol predtým prezident Gitanas Nauséda na sieti X. Potvrdil zároveň, že nad severnou časťou krajiny explodoval podozrivý dron, ktorý predstavoval nebezpečenstvo pre civilné obyvateľstvo.Litovské úrady v nedeľu ráno varovali obyvateľov niekoľkých častí krajiny pred neznámym lietajúcim objektom. Podobné varovania dočasne vydalo v niektorých regiónoch na spoločnej hranici krajín aj Lotyšsko.HeadingBlockStíhačky NATO zasiahliV rámci incidentu boli do oblasti povolané stíhačky NATO. Podľa predsta",
+        "place": "Kaunas",
+        "time": "Sun, 18 Oct 2026 14:15:09 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Aktuality"
+        ],
+        "urls": [
+          "https://www.aktuality.sk/clanok/AuiAhcv/dron-vletel-do-litvy-z-polska-a-zrutil-sa-poskodil-civilne-auto/"
+        ],
+        "merged_titles": [
+          "Neznámy dron explodoval nad Litvou, zasahovali stíhačky NATO"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "exploded",
+        "incident_actor": "ukraine",
+        "incident_target": "unknown",
         "classification_confidence": 0.98
       }
     },

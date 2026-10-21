@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-21T02:49:54.104929+00:00",
+  "generated_utc": "2026-10-21T11:08:40.892183+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -20,11 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "drone": 1
+        "drone": 2
       },
       "source_files": {
+        "local_events.geojson": 1,
         "gdelt_crossborder.geojson": 1
       }
     },
@@ -44,13 +45,9 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 1,
-      "category_counts": {
-        "transport": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Estonia": {
       "incident_count": 0,
@@ -62,6 +59,27 @@
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [
+      {
+        "id": "1ecf2c1ecccaa7046453",
+        "date": "2026-10-21",
+        "time": "2026-10-21T10:32:25+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Resturi de dronă în județul Buzău: specialiștii MApN și SRI fac verificări. Prefect: Cercetările se vor extinde pe o suprafață mai mare",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/drona-prabusita-in-judetul-buzau-un-localnic-a-sunat-la-112-iar-specialisti-mapn-si-sri-fac-verificari-4002091",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "c6408b059eff6e66fcfde9a6"
+      },
       {
         "id": null,
         "date": "2026-10-15",
@@ -87,29 +105,7 @@
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
-    "Latvia": [
-      {
-        "id": "68c44d620ec15131b20d",
-        "date": "2026-10-15",
-        "time": "2026-10-15T17:36:31+00:00",
-        "category": "transport",
-        "severity": "medium",
-        "title": "Russian grain transit ban could cost Latvia 290 million euros annually and triple domestic rail freight costs",
-        "source": "BNN",
-        "url": "https://bnn-news.com/latvia/russian-grain-transit-ban-could-cost-latvia-290-million-euros-annually-and-triple-domestic-rail-freight-costs-wsrn38u",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "transport",
-        "incident_subcategory": "rail",
-        "incident_subtype": "rail_disruption",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "TRANSPORT.RAIL.DISRUPTION",
-        "fingerprint_hash": "808150704b21d0fc228ddeb3"
-      }
-    ],
+    "Latvia": [],
     "Estonia": []
   }
 }

@@ -1,7 +1,261 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-22T11:06:57.461364+00:00",
+  "generated_utc": "2026-10-22T16:38:18.132070+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9668,
+          45.9432
+        ]
+      },
+      "properties": {
+        "id": "506b73f59dbc1542c6f5",
+        "title": "Elevul care a atacat cu o macetă doi colegi, la un liceu din Pitești, a fost reținut. Prima ipoteză a autorităților privind motivul",
+        "summary": "Un elev de 15 ani a atacat un coleg, joi dimineață, cu un obiect tăietor și a agresat un altul, într-un liceu din Pitești, incidentul având loc la câteva zile de la cel petrecut la o școală din Bistrița, unde un elev de 13 ani a atacat cu un cuțit o profesoară și un alt elev. ISU Argeș informează că unul dintre elevi are o plagă la brațul drept și a fost transportat la spital, iar celălalt elev are escoriații la mâna stângă și a refuzat să fie dus la spital. Prima ipoteză privind motivul atacului este că băiatul de 15 ani ar fi fost ținta unor glume nepotrivite din partea colegilor, în contextul unor neînțelegeri mai vechi.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/un-elev-de-15-ani-a-injunghiat-un-coleg-la-un-liceu-din-pitesti-baiatul-ranit-a-ajuns-la-spital-4003781",
+        "published": "Thu, 22 Oct 2026 16:56:37 +0300",
+        "country": "Romania",
+        "city": null,
+        "family": "ground",
+        "subcategory": "explosive_attack",
+        "subtype": "explosive_attack",
+        "object": "explosive_device",
+        "action": "attacked",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [
+          "injury"
+        ],
+        "severity": "high",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "GROUND.EXPLOSIVE.ATTACK",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "ground",
+          "subcategory": "explosive_attack",
+          "subtype": "explosive_attack",
+          "object": "explosive_device",
+          "action": "attacked",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Romania",
+          "event_date": "Thu, 22 Oc",
+          "hash": "3293d22a1272a6da047f2376"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "explosive_device",
+            "mine"
+          ],
+          "actions": [
+            "entered",
+            "pătruns",
+            "attacked",
+            "atacat"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [
+            "injury",
+            "rănit"
+          ],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.29,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:drone"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.ILLEGAL.CROSSING",
+            "family": "border_security",
+            "subcategory": "illegal_crossing",
+            "subtype": "illegal_border_crossing",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TERRORISM.ATTACK",
+            "family": "terrorism",
+            "subcategory": "attack",
+            "subtype": "terrorist_attack",
+            "severity": "critical",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 12980,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Un elev de 15 ani a atacat un coleg, joi dimineață, cu un obiect tăietor și a agresat un altul, într-un liceu din Pitești, incidentul având loc la câteva zile de la cel petrecut la o școală din Bistrița, unde un elev de 13 ani a atacat cu un cuțit o profesoară și un alt elev. ISU Argeș informează că unul dintre elevi are o plagă la brațul drept și a fost transportat la spital, iar celălalt elev are escoriații la mâna stângă și a refuzat să fie dus la spital. Prima ipoteză privind motivul atacului este că băiatul de 15 ani ar fi fost ținta unor glume nepotrivite din partea colegilor, în contextul unor neînțelegeri mai vechi. Poliţia judeţeană Argeş anunţă că l-a reţinut pe adolescentul de 15 ani. ACTUALIZARE 16.30 Autorul atacului cu maceta de la o școală din Pitești a fost reținut. Digi24 a obținut imagini în exclusivitate cu atacatorul, când este transportat de poliție. Elevul agresor a fost audiat mai bine de 6 ore de polițiștii din Argeș. „În urma cercetărilor efectuate, a fost înto",
+        "place": "Romania",
+        "time": "Thu, 22 Oct 2026 16:56:37 +0300",
+        "category": "ground",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/evenimente/un-elev-de-15-ani-a-injunghiat-un-coleg-la-un-liceu-din-pitesti-baiatul-ranit-a-ajuns-la-spital-4003781"
+        ],
+        "merged_titles": [
+          "Elevul care a atacat cu o macetă doi colegi, la un liceu din Pitești, a fost reținut. Prima ipoteză a autorităților privind motivul"
+        ],
+        "incident_family": "ground",
+        "incident_subcategory": "explosive_attack",
+        "incident_subtype": "explosive_attack",
+        "incident_object": "explosive_device",
+        "incident_action": "attacked",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
+      }
+    }
+  ]
 }

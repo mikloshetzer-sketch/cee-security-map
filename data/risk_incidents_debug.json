@@ -1,12 +1,12 @@
 {
-  "generated_utc": "2026-10-22T21:16:05.217215+00:00",
+  "generated_utc": "2026-10-23T02:51:43.148139+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
+    "incident_count": 0,
     "local_event_count": 0,
-    "crossborder_event_count": 1
+    "crossborder_event_count": 0
   },
   "country_summary": {
     "Czech Republic": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "gdelt_crossborder.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,29 +53,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": null,
-        "date": "2026-10-15",
-        "time": "2026-10-15T21:30:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "BREAKING : Russia Has Struck NATO Territory After Drone Hits Tanker Off Romania - Novinite . com",
-        "source": "GDELT_DOC",
-        "url": "https://www.novinite.com/view_news.php?id=241067",
-        "source_file": "gdelt_crossborder.geojson",
-        "classification_source": "security_classifier",
-        "actual_incident": true,
-        "risk_eligible": true,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "cb52ef5a65dc358c982ebe6e"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

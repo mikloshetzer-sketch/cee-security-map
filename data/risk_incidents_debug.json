@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-23T02:51:43.148139+00:00",
+  "generated_utc": "2026-10-23T10:56:51.905976+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 0,
-    "local_event_count": 0,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -45,19 +49,67 @@
       "source_files": {}
     },
     "Estonia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     }
   },
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "9b0230e1b9083be1e5bf",
+        "date": "2026-10-23",
+        "time": "2026-10-23T09:43:00+00:00",
+        "category": "drone",
+        "severity": "critical",
+        "title": "Drón talált el egy tankert: kigyulladt és süllyedni kezdett a hajó a Fekete-tengeren, halálos áldozat is van",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/global/20261023/dron-talalt-el-egy-tankert-kigyulladt-es-sullyedni-kezdett-a-hajo-a-fekete-tengeren-halalos-aldozat-is-van-871680",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "6ae8e85faa1a807bbf218e51"
+      }
+    ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
     "Latvia": [],
-    "Estonia": []
+    "Estonia": [
+      {
+        "id": "eaba24538e37fc809a3b",
+        "date": "2026-10-23",
+        "time": "2026-10-23T09:33:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Investigation finds no deliberate activity aimed against Estonia in Auvere drone incident",
+        "source": "ERR",
+        "url": "https://news.err.ee/1610174695/investigation-finds-no-deliberate-activity-aimed-against-estonia-in-auvere-drone-incident",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "f330139dfd9661803f5320da"
+      }
+    ]
   }
 }

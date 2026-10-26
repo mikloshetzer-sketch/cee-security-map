@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-25T20:24:52.657883+00:00",
+  "generated_utc": "2026-10-26T02:38:49.948893+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -44,18 +44,18 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Estonia": {
       "incident_count": 1,
       "category_counts": {
-        "drone": 1
+        "cyber": 1
       },
       "source_files": {
         "local_events.geojson": 1
       }
+    },
+    "Estonia": {
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     }
   },
   "countries": {
@@ -108,29 +108,29 @@
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
-    "Latvia": [],
-    "Estonia": [
+    "Latvia": [
       {
-        "id": "eaba24538e37fc809a3b",
+        "id": "15ea5c46b38b8484bb24",
         "date": "2026-10-23",
-        "time": "2026-10-23T09:33:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Investigation finds no deliberate activity aimed against Estonia in Auvere drone incident",
-        "source": "ERR",
-        "url": "https://news.err.ee/1610174695/investigation-finds-no-deliberate-activity-aimed-against-estonia-in-auvere-drone-incident",
+        "time": "2026-10-23T05:36:29+00:00",
+        "category": "cyber",
+        "severity": "medium",
+        "title": "Weekend plans could be disrupted by the weather – rain and gusty winds heading for Latvia",
+        "source": "BNN",
+        "url": "https://bnn-news.com/social/weekend-plans-could-be-disrupted-by-the-weather-rain-and-gusty-winds-heading-for-latvia-uzjp53f",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "f330139dfd9661803f5320da"
+        "incident_family": "cyber",
+        "incident_subcategory": "operational_disruption",
+        "incident_subtype": "cyber_operational_disruption",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+        "fingerprint_hash": "6032ca9bc39eac02d63ecca8"
       }
-    ]
+    ],
+    "Estonia": []
   }
 }

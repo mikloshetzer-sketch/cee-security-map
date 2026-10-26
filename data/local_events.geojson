@@ -1,763 +1,9 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-10-26T02:38:39.964602+00:00",
+  "generated_utc": "2026-10-26T12:06:49.741715+00:00",
   "classifier_version": "1.0.1",
   "taxonomy_version": "1.0.0",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9668,
-          45.9432
-        ]
-      },
-      "properties": {
-        "id": "68668851963ab876a005",
-        "title": "Ambasada SUA: Militarii americani şi români lucrează umăr la umăr pentru siguranţa flancului estic al NATO",
-        "summary": "Ambasada Statelor Unite ale Americii la Bucureşti afirmă, într-un mesaj transmis de Ziua Armatei Române, că militarii americani şi români lucrează umăr la umăr pentru siguranţa flancului estic al NATO şi subliniază faptul că „împreună suntem mai puternici”.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/ambasada-sua-militarii-americani-si-romani-lucreaza-umar-la-umar-pentru-siguranta-flancului-estic-al-nato-4008147",
-        "published": "Sun, 25 Oct 2026 17:15:09 +0200",
-        "country": "Romania",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_shootdown",
-        "object": "drone",
-        "action": "shot_down",
-        "actor": "nato",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.82,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_shootdown",
-          "object": "drone",
-          "action": "shot_down",
-          "actor": "nato",
-          "target": "unknown",
-          "place": "Romania",
-          "event_date": "Sun, 25 Oc",
-          "hash": "c2efc0d4eebacbe8db6c2c9a"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone"
-          ],
-          "actions": [
-            "shot_down",
-            "doborât"
-          ],
-          "targets": [],
-          "actors": [
-            "nato"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft",
-              "actions:any:damaged,entered,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 2151,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Ambasada Statelor Unite ale Americii la Bucureşti afirmă, într-un mesaj transmis de Ziua Armatei Române, că militarii americani şi români lucrează umăr la umăr pentru siguranţa flancului estic al NATO şi subliniază faptul că „împreună suntem mai puternici”. „Astăzi, salutăm Armata României şi parteneriatul de apărare construit pe încredere şi pe angajamentul comun faţă de NATO. Prin exerciţii comune şi instruire, militarii americani şi cei români lucrează umăr la umăr pentru siguranţa flancului estic al Alianţei. #StrongerTogether” - este mesajul postat pe pagina de Facebook a Ambasadei SUA, potrivit Agerpres. Ziua Armatei Române este marcată, anual, la data de 25 octombrie, fiind sărbătorită în Bucureşti şi în întreaga ţară prin organizarea de ceremonii militare şi religioase şi depunerea de coroane şi jerbe de flori. Instituită prin Decretul nr. 381 din 1 octombrie 1959, Ziua Armatei Române este sărbătorită, astăzi, prin ceremonii militare organizate în principalele garnizoane din ţa",
-        "place": "Romania",
-        "time": "Sun, 25 Oct 2026 17:15:09 +0200",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/ambasada-sua-militarii-americani-si-romani-lucreaza-umar-la-umar-pentru-siguranta-flancului-estic-al-nato-4008147"
-        ],
-        "merged_titles": [
-          "Ambasada SUA: Militarii americani şi români lucrează umăr la umăr pentru siguranţa flancului estic al NATO"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "incident_object": "drone",
-        "incident_action": "shot_down",
-        "incident_actor": "nato",
-        "incident_target": "unknown",
-        "classification_confidence": 0.82
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9668,
-          45.9432
-        ]
-      },
-      "properties": {
-        "id": "a76ffb448dc881d0fd83",
-        "title": "Nicușor Dan, de Ziua Armatei, la Baza 86 Aeriană: „Au doborât cu precizie două drone ostile”. Mesajul premierului Luca Niculescu",
-        "summary": "Președintele Nicușor Dan a fost de Ziua Armatei la Baza 86 Aeriană, unde a lăudat profesionalismul militarilor și a amintit de doborârea recentă a două drone ostile intrate în spațiul aerian al României. Premierul Luca Niculescu, prezent la ceremonia dedicată acestei zile, a evidențiat, la rândul său, nevoia modernizării Armatei și a respectului față de militari.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/social/nicusor-dan-de-ziua-armatei-la-baza-86-aeriana-au-doborat-cu-precizie-doua-drone-ostile-mesajul-premierului-luca-niculescu-4008085",
-        "published": "Sun, 25 Oct 2026 16:36:46 +0200",
-        "country": "Romania",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_shootdown",
-        "object": "drone",
-        "action": "shot_down",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.82,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_shootdown",
-          "object": "drone",
-          "action": "shot_down",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Romania",
-          "event_date": "Sun, 25 Oc",
-          "hash": "e355c14be84f5357fc5fcab9"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone"
-          ],
-          "actions": [
-            "shot_down",
-            "doborât"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "rusiei",
-            "nato"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft",
-              "actions:any:damaged,entered,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 3432,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Președintele Nicușor Dan a fost de Ziua Armatei la Baza 86 Aeriană, unde a lăudat profesionalismul militarilor și a amintit de doborârea recentă a două drone ostile intrate în spațiul aerian al României. Premierul Luca Niculescu, prezent la ceremonia dedicată acestei zile, a evidențiat, la rândul său, nevoia modernizării Armatei și a respectului față de militari. „Ei sunt, la propriu, în prima linie de apărare și au demonstrat-o fără ezitare în urmă cu doar câteva zile, când au doborât cu precizie două drone ostile intrate în spațiul nostru aerian”, a scris Nicușor Dan, duminică, într-o postare pe Facebook. Ceremonia organizată la Baza 86 Aeriană „Locotenent Gheorghe Mociorniţă” cu prilejul Zilei Armatei Române, în comuna Borcea, județul Călărași, 25 octombrie 2026. Foto: Nicușor Dan Facebook Deschide galeria foto Președintele a subliniat că Armata României rămâne una dintre instituțiile în care populația are cea mai mare încredere, fiind un reper de „seriozitate, disciplină și datoria",
-        "place": "Romania",
-        "time": "Sun, 25 Oct 2026 16:36:46 +0200",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/actualitate/social/nicusor-dan-de-ziua-armatei-la-baza-86-aeriana-au-doborat-cu-precizie-doua-drone-ostile-mesajul-premierului-luca-niculescu-4008085"
-        ],
-        "merged_titles": [
-          "Nicușor Dan, de Ziua Armatei, la Baza 86 Aeriană: „Au doborât cu precizie două drone ostile”. Mesajul premierului Luca Niculescu"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "incident_object": "drone",
-        "incident_action": "shot_down",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.82
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9668,
-          45.9432
-        ]
-      },
-      "properties": {
-        "id": "dbfb281ac8d3f0b1ede9",
-        "title": "Cazul de la Bistrița pune presiune pe Educație. Sorin Costreie anunță inițiative legislative și campanii în premieră",
-        "summary": "Ministrul Educației Sorin Costreie s-a arătat îngrijorat de faptul că vârsta violențelor în rândul tinerilor scade, după cazul băiatului de 13 ani care a atacat cu un briceag o profesoară și un coleg, într-o școală din Bistrița. Ministrul a vorbit în cadrul emisiunii „În fața ta” de la Digi24 și de o inițiativă și o campanie concentrată pe protejarea profesorilor și a elevilor, care să redea încrederea în personalul didactic.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/educatie/cazul-de-la-bistrita-pune-presiune-pe-educatie-sorin-costreie-anunta-initiative-legislative-si-campanii-in-premiera-4006957",
-        "published": "Sun, 25 Oct 2026 16:14:17 +0200",
-        "country": "Romania",
-        "city": null,
-        "family": "ground",
-        "subcategory": "explosive_attack",
-        "subtype": "explosive_attack",
-        "object": "explosive_device",
-        "action": "attacked",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [
-          "injury"
-        ],
-        "severity": "high",
-        "confidence": 0.84,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "GROUND.EXPLOSIVE.ATTACK",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "ground",
-          "subcategory": "explosive_attack",
-          "subtype": "explosive_attack",
-          "object": "explosive_device",
-          "action": "attacked",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Romania",
-          "event_date": "Sun, 25 Oc",
-          "hash": "3598fbd0fbd4e6a4b0bd2052"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "explosive_device",
-            "mine"
-          ],
-          "actions": [
-            "disrupted",
-            "oprit",
-            "attacked",
-            "atacat"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [
-            "injury",
-            "rănit"
-          ],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "consequence_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.29,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:drone"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:ship"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:energy_asset"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TERRORISM.ATTACK",
-            "family": "terrorism",
-            "subcategory": "attack",
-            "subtype": "terrorist_attack",
-            "severity": "critical",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "PUBLIC.ORDER.VIOLENCE",
-            "family": "public_order",
-            "subcategory": "violent_protest",
-            "subtype": "violent_public_disorder",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 4043,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Ministrul Educației Sorin Costreie s-a arătat îngrijorat de faptul că vârsta violențelor în rândul tinerilor scade, după cazul băiatului de 13 ani care a atacat cu un briceag o profesoară și un coleg, într-o școală din Bistrița. Ministrul a vorbit în cadrul emisiunii „În fața ta” de la Digi24 și de o inițiativă și o campanie concentrată pe protejarea profesorilor și a elevilor, care să redea încrederea în personalul didactic. Întrebat despre cazul de violență de la Bistrița, ministrul Educației spune că gestul a fost unul premeditat și a lăudat intervenția promptă a paznicului și a profesorului de sport. „Cazul este îngrozitor și pe mine m-a dat peste cap, să spun așa. Când am aflat, am sunat imediat și am vorbit cu directoarea școlii, cu inspectorul și cu primarul. Ținta nu era profesoara și nu era nici acel coleg care a fost rănit. Ținta era un alt copil din clasa a 6-a [...], un copil rom.” Citește și: Măsuri după atacurile din școlile de la Bistrița și Pitești: Sancțiuni mai aspre,",
-        "place": "Romania",
-        "time": "Sun, 25 Oct 2026 16:14:17 +0200",
-        "category": "ground",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/actualitate/educatie/cazul-de-la-bistrita-pune-presiune-pe-educatie-sorin-costreie-anunta-initiative-legislative-si-campanii-in-premiera-4006957"
-        ],
-        "merged_titles": [
-          "Cazul de la Bistrița pune presiune pe Educație. Sorin Costreie anunță inițiative legislative și campanii în premieră"
-        ],
-        "incident_family": "ground",
-        "incident_subcategory": "explosive_attack",
-        "incident_subtype": "explosive_attack",
-        "incident_object": "explosive_device",
-        "incident_action": "attacked",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.84
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -978,7 +224,7 @@
         "rejection_reason": null,
         "full_article_enriched": true,
         "article_text_chars": 1992,
-        "article_fetch_source": "network",
+        "article_fetch_source": "cache",
         "article_text_excerpt": "Weather in the weekend will be cloudy and in some parts of the country rain will prevail up to the begining of next week. Friday will be mostly cloudy, with a widespread band of precipitation moving across Latvia from the southwest during the night, bringing rain to the entire country, according to the Latvian Environment, Geology and Meteorology Centre. Light to moderate southeasterly and easterly winds will prevail, gradually shifting to southerly and southwesterly directions from midday, beginning in western Latvia. Overnight temperatures will fall to between +7°C and +11°C, although some eastern areas could see temperatures drop to +4°C to +6°C where skies clear. During the day, temperatures will rise to between +9°C and +13°C. Saturday will bring variable cloud cover. Light rain is possible in parts of eastern Latvia overnight, but daytime conditions will be mostly dry. Light to moderate southerly winds are expected. During the morning and late morning, fog will develop across man",
         "place": "Latvia",
         "time": "Fri, 23 Oct 2026 05:36:29 GMT",
@@ -1004,6 +250,257 @@
         "incident_actor": "unknown",
         "incident_target": "unknown",
         "classification_confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.0136,
+          58.5953
+        ]
+      },
+      "properties": {
+        "id": "eaba24538e37fc809a3b",
+        "title": "Investigation finds no deliberate activity aimed against Estonia in Auvere drone incident",
+        "summary": "The Prosecutor's Office has closed its investigation into a drone that struck a smokestack at the Auvere Power Plant because it was unable to establish the exact circumstances of the incident.",
+        "source": "ERR",
+        "url": "https://news.err.ee/1610174695/investigation-finds-no-deliberate-activity-aimed-against-estonia-in-auvere-drone-incident",
+        "published": "Fri, 23 Oct 2026 12:33:00 +0300",
+        "country": "Estonia",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
+        "action": "impact",
+        "actor": "unknown",
+        "target": "energy",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint": {
+          "country": "Estonia",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
+          "action": "impact",
+          "actor": "unknown",
+          "target": "energy",
+          "place": "Estonia",
+          "event_date": "Fri, 23 Oc",
+          "hash": "f330139dfd9661803f5320da"
+        },
+        "classifier_version": "1.0.1",
+        "taxonomy_version": "1.0.0",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "energy_asset",
+            "power plant"
+          ],
+          "actions": [
+            "impact",
+            "struck",
+            "closed",
+            "attacked"
+          ],
+          "targets": [
+            "energy",
+            "power plant"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Estonia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.42,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.SABOTAGE",
+            "family": "ground",
+            "subcategory": "sabotage",
+            "subtype": "sabotage",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:sabotaged"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:ship"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Estonia",
+        "time": "Fri, 23 Oct 2026 12:33:00 +0300",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "ERR"
+        ],
+        "urls": [
+          "https://news.err.ee/1610174695/investigation-finds-no-deliberate-activity-aimed-against-estonia-in-auvere-drone-incident"
+        ],
+        "merged_titles": [
+          "Investigation finds no deliberate activity aimed against Estonia in Auvere drone incident"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
+        "incident_action": "impact",
+        "incident_actor": "unknown",
+        "incident_target": "energy",
+        "classification_confidence": 0.84
       }
     }
   ]

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-26T02:38:49.948893+00:00",
+  "generated_utc": "2026-10-26T12:07:00.002416+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
-      "category_counts": {
-        "drone": 2
-      },
-      "source_files": {
-        "local_events.geojson": 2
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -53,58 +49,19 @@
       }
     },
     "Estonia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     }
   },
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "68668851963ab876a005",
-        "date": "2026-10-25",
-        "time": "2026-10-25T15:15:09+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Ambasada SUA: Militarii americani şi români lucrează umăr la umăr pentru siguranţa flancului estic al NATO",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/ambasada-sua-militarii-americani-si-romani-lucreaza-umar-la-umar-pentru-siguranta-flancului-estic-al-nato-4008147",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "c2efc0d4eebacbe8db6c2c9a"
-      },
-      {
-        "id": "a76ffb448dc881d0fd83",
-        "date": "2026-10-25",
-        "time": "2026-10-25T14:36:46+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Nicușor Dan, de Ziua Armatei, la Baza 86 Aeriană: „Au doborât cu precizie două drone ostile”. Mesajul premierului Luca Niculescu",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/social/nicusor-dan-de-ziua-armatei-la-baza-86-aeriana-au-doborat-cu-precizie-doua-drone-ostile-mesajul-premierului-luca-niculescu-4008085",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint_hash": "e355c14be84f5357fc5fcab9"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
@@ -131,6 +88,28 @@
         "fingerprint_hash": "6032ca9bc39eac02d63ecca8"
       }
     ],
-    "Estonia": []
+    "Estonia": [
+      {
+        "id": "eaba24538e37fc809a3b",
+        "date": "2026-10-23",
+        "time": "2026-10-23T09:33:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Investigation finds no deliberate activity aimed against Estonia in Auvere drone incident",
+        "source": "ERR",
+        "url": "https://news.err.ee/1610174695/investigation-finds-no-deliberate-activity-aimed-against-estonia-in-auvere-drone-incident",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "f330139dfd9661803f5320da"
+      }
+    ]
   }
 }

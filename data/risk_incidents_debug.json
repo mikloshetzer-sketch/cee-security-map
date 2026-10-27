@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-27T17:17:12.222864+00:00",
+  "generated_utc": "2026-10-27T21:51:56.794754+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "infrastructure_disruption": 1,
-        "drone": 1
+        "infrastructure_disruption": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Slovakia": {
@@ -64,14 +63,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "df0c2b40a15da3e8f5cc",
+        "id": "1a00aeb2c853c8d2b522",
         "date": "2026-10-27",
         "time": "2026-10-27T16:32:05+00:00",
         "category": "infrastructure_disruption",
         "severity": "medium",
-        "title": "Când va reporni Centrala de la Cernavodă: anunțul lui Dumitru Chisăliță, pe baza celor mai noi evaluări",
+        "title": "Problema răcirii reactoarelor de la Cernavodă. Ministrul Energiei: „Din 2003, de când a fost prima situație, nu s-a întâmplat nimic”",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/economie/energie/cand-va-reporni-centrala-de-la-cernavoda-anuntul-lui-dumitru-chisalita-pe-baza-celor-mai-noi-evaluari-4011117",
+        "url": "https://www.digi24.ro/stiri/economie/energie/problema-racirii-reactoarelor-de-la-cernavoda-ministrul-energiei-din-2003-de-cand-a-fost-prima-situatie-nu-s-a-intamplat-nimic-4011251",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -83,27 +82,6 @@
         "classification_confidence": 0.84,
         "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
         "fingerprint_hash": "1dd74deaca3d0602bcd406f7"
-      },
-      {
-        "id": "d0694aea2da7bc3fdefb",
-        "date": "2026-10-27",
-        "time": "2026-10-27T15:24:28+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Dominic Fritz: Țineți-vă bine: AUR „condamnă ferm orice acţiune de sabotaj coordonată din Federaţia Rusă împotriva obiectivelor strategice ale României”. Același AUR care, când o dronă rusească a lovit un bloc din Galați, aștepta „raportul de expertiză” ca să condamne agresorul",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/dominic-fritz-tineti-va-bine-aur-condamna-ferm-orice-actiune-de-sabotaj-coordonata-din-federatia-rusa-impotriva-obiectivelor-strategice-ale-romaniei-acelasi-aur-care-cand-o-drona.html",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "46ca6fc9de0fa619553fe01b"
       }
     ],
     "Slovakia": [],

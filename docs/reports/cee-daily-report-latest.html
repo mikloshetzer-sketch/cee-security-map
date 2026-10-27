@@ -517,7 +517,7 @@ body {
 
     <div class="date-box">
       <div class="label">Dátum</div>
-      <div class="date">2026-10-26</div>
+      <div class="date">2026-10-27</div>
       <div class="label">UTC alapú riport</div>
     </div>
   </header>
@@ -533,24 +533,24 @@ body {
       <div class="kpi">
         <div class="label">Régiós állapot</div>
         <div class="value">NORMAL</div>
-        <div class="note">score: 0.18</div>
+        <div class="note">score: 0.5</div>
       </div>
 
       <div class="kpi">
         <div class="label">Kritikus infra alert</div>
-        <div class="value">0</div>
+        <div class="value">1</div>
         <div class="note">magas: 0</div>
       </div>
 
       <div class="kpi">
         <div class="label">Fő kockázati ország</div>
-        <div class="value" style="font-size:28px;">Estonia</div>
+        <div class="value" style="font-size:28px;">Romania</div>
         <div class="note">országkockázati sorrend alapján</div>
       </div>
 
       <div class="kpi">
         <div class="label">Fő szektor</div>
-        <div class="value" style="font-size:28px;">infrastruktúra</div>
+        <div class="value" style="font-size:28px;">digital</div>
         <div class="note">infrastruktúra-közeli találatok alapján</div>
       </div>
     </section>
@@ -558,7 +558,7 @@ body {
     <section class="section">
       <h2>Rövid napi értékelés</h2>
       <div class="summary-box">
-        <ul><li>Legerősebb góc: Botoșani, Romania 🆕 (rácspont 47.75, 26.75; score 1.49; 7 napos változás: n/a).</li><li>Trend: nincs elég bázisadat az összehasonlításhoz.</li><li>Forráskép: GDELT 0, GDELT linked 3346, GDELT DOC 0, direkt feed 3, USGS 0, GDACS 0.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 175 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li></ul>
+        <ul><li>Helyi források alapján az elmúlt 24 órában 2 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Romania: 2.</li><li>Legerősebb góc: powiat augustowski, Polska 🆕 (rácspont 53.75, 23.25; score 1.72; 7 napos változás: n/a).</li><li>Trend: nincs elég bázisadat az összehasonlításhoz.</li><li>Forráskép: GDELT 0, GDELT linked 3199, GDELT DOC 0, direkt feed 4, USGS 0, GDACS 0.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 168 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li></ul>
       </div>
     </section>
 
@@ -569,10 +569,10 @@ body {
         <div class="region-card blue">
           <div class="region-head">Baltikum</div>
           <div class="region-body">
-            <div class="big-number">1.44</div>
+            <div class="big-number">0.65</div>
             <div class="small-label">összesített risk score</div>
-            <div class="region-line"><b>Fő fókusz:</b> Estonia</div>
-            <div class="mini-bar"><span style="width:17.28%"></span></div>
+            <div class="region-line"><b>Fő fókusz:</b> Latvia</div>
+            <div class="mini-bar"><span style="width:7.800000000000001%"></span></div>
           </div>
         </div>
         
@@ -591,10 +591,10 @@ body {
         <div class="region-card orange">
           <div class="region-head">Fekete-tengeri perem</div>
           <div class="region-body">
-            <div class="big-number">0.0</div>
+            <div class="big-number">3.36</div>
             <div class="small-label">összesített risk score</div>
             <div class="region-line"><b>Fő fókusz:</b> Romania</div>
-            <div class="mini-bar"><span style="width:0.0%"></span></div>
+            <div class="mini-bar"><span style="width:40.32%"></span></div>
           </div>
         </div>
         
@@ -616,11 +616,11 @@ body {
       <h2>Top risk országok</h2>
       <div class="country-grid">
         
-        <div class="country-card normal">
-          <div class="country-name">Estonia</div>
-          <div class="country-score">0.79</div>
-          <div class="country-level">normal</div>
-          <div class="country-drivers">katonai és drónaktivitás</div>
+        <div class="country-card elevated">
+          <div class="country-name">Romania</div>
+          <div class="country-score">3.36</div>
+          <div class="country-level">elevated</div>
+          <div class="country-drivers">biztonsági incidensnyomás, friss aktivitási trend, katonai és drónaktivitás, kritikus infrastruktúra-kitettség</div>
         </div>
         
 
@@ -642,14 +642,6 @@ body {
 
         <div class="country-card normal">
           <div class="country-name">Hungary</div>
-          <div class="country-score">0.0</div>
-          <div class="country-level">normal</div>
-          <div class="country-drivers">automatikus OSINT jelzés</div>
-        </div>
-        
-
-        <div class="country-card normal">
-          <div class="country-name">Romania</div>
           <div class="country-score">0.0</div>
           <div class="country-level">normal</div>
           <div class="country-drivers">automatikus OSINT jelzés</div>
@@ -679,13 +671,47 @@ body {
           <div class="country-drivers">automatikus OSINT jelzés</div>
         </div>
         
+
+        <div class="country-card normal">
+          <div class="country-name">Estonia</div>
+          <div class="country-score">0.0</div>
+          <div class="country-level">normal</div>
+          <div class="country-drivers">automatikus OSINT jelzés</div>
+        </div>
+        
       </div>
     </section>
 
     <section class="section">
       <h2>Infrastruktúra-közeli incidensek</h2>
       <div class="card-grid">
-        <p>Nincs infrastruktúra-közeli kiemelt találat.</p>
+        
+        <div class="infra-card critical">
+          <div class="event-kicker">Romania • digital • 0.0 km</div>
+          <h3>Bucharest Internet Exchange / Digital Hub</h3>
+          <p>Security Politics – Bucharest, Bucuresti, Romania</p>
+          <div class="level-pill critical">critical</div>
+          <a href="https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card medium">
+          <div class="event-kicker">Romania • transport • 16.2 km</div>
+          <h3>Bucharest Henri Coandă International Airport</h3>
+          <p>Security Politics – Bucharest, Bucuresti, Romania</p>
+          <div class="level-pill medium">medium</div>
+          <a href="https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="infra-card watch">
+          <div class="event-kicker">Romania • energy • 47.3 km</div>
+          <h3>Petrobrazi Refinery</h3>
+          <p>Security Politics – Bucharest, Bucuresti, Romania</p>
+          <div class="level-pill watch">watch</div>
+          <a href="https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
       </div>
     </section>
 
@@ -694,18 +720,27 @@ body {
       <div class="card-grid">
         
         <div class="event-card">
-          <div class="event-kicker">Latvia • cyber • medium</div>
-          <h3>Weekend plans could be disrupted by the weather – rain and gusty winds heading for Latvia</h3>
-          <p>Weather in the weekend will be cloudy and in some parts of the country rain will prevail up to the begining of next week.</p>
-          <a href="https://bnn-news.com/social/weekend-plans-could-be-disrupted-by-the-weather-rain-and-gusty-winds-heading-for-latvia-uzjp53f" target="_blank" rel="noopener">Forrás megnyitása</a>
+          <div class="event-kicker">Romania • energy • medium</div>
+          <h3>Când va reporni Centrala de la Cernavodă: anunțul lui Dumitru Chisăliță, pe baza celor mai noi evaluări</h3>
+          <p>Ministrul Energiei, Dumitru Chisăliță, a declarat, în cadrul emisiunii „În fața ta”, de la Digi24, care va fi difuzată sâmbătă, de la ora 14:00, că, pe baza prognozelor actuale, unul dintre reactoarele nucleare ale Centralei de la Cernavodă va putea fi repornit în jurul datei de 15 noiembrie. „Dacă trendurile, prognozele care sunt în momentul de față să mențin, ar trebui să avem un reactor care să pornească”, a spus Chisăliță.</p>
+          <a href="https://www.digi24.ro/stiri/economie/energie/cand-va-reporni-centrala-de-la-cernavoda-anuntul-lui-dumitru-chisalita-pe-baza-celor-mai-noi-evaluari-4011117" target="_blank" rel="noopener">Forrás megnyitása</a>
         </div>
         
 
         <div class="event-card">
-          <div class="event-kicker">Estonia • air • high</div>
-          <h3>Investigation finds no deliberate activity aimed against Estonia in Auvere drone incident</h3>
-          <p>The Prosecutor&#39;s Office has closed its investigation into a drone that struck a smokestack at the Auvere Power Plant because it was unable to establish the exact circumstances of the incident.</p>
-          <a href="https://news.err.ee/1610174695/investigation-finds-no-deliberate-activity-aimed-against-estonia-in-auvere-drone-incident" target="_blank" rel="noopener">Forrás megnyitása</a>
+          <div class="event-kicker">Romania • air • high</div>
+          <h3>Dominic Fritz: Țineți-vă bine: AUR „condamnă ferm orice acţiune de sabotaj coordonată din Federaţia Rusă împotriva obiectivelor strategice ale României”. Același AUR care, când o dronă rusească a lovit un bloc din Galați, aștepta „raportul de expertiză” ca să condamne agresorul</h3>
+          <p>&lt;p&gt;Președintele USR, Dominic Fritz, ironizează formațiunea extremistă pro-rusă AUR, care a condamnat acum sabotajul coordonat de Rusia la Carfil Brașov, filială Romarm, dar nu a făcut același lucru și când o dronă rusească a lovit un bloc din Galați. „Țineți-vă bine: AUR „condamnă ferm orice acţiune de sabotaj coordonată din Federaţia Rusă împotriva obiectivelor strategice [&amp;#8230;]&lt;/p&gt;
+&lt;p&gt;&amp;copy; &lt;a href=&quot;https://www.g4media.ro&quot;&gt;G4Media.ro&lt;/a&gt;.&lt;/p&gt;</p>
+          <a href="https://www.g4media.ro/dominic-fritz-tineti-va-bine-aur-condamna-ferm-orice-actiune-de-sabotaj-coordonata-din-federatia-rusa-impotriva-obiectivelor-strategice-ale-romaniei-acelasi-aur-care-cand-o-drona.html" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Latvia • cyber • medium</div>
+          <h3>Weekend plans could be disrupted by the weather – rain and gusty winds heading for Latvia</h3>
+          <p>Weather in the weekend will be cloudy and in some parts of the country rain will prevail up to the begining of next week.</p>
+          <a href="https://bnn-news.com/social/weekend-plans-could-be-disrupted-by-the-weather-rain-and-gusty-winds-heading-for-latvia-uzjp53f" target="_blank" rel="noopener">Forrás megnyitása</a>
         </div>
         
       </div>
@@ -714,7 +749,7 @@ body {
     <section class="section">
       <h2>Heti trendjelzések</h2>
       <div class="summary-box">
-        <ul><li>A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Estonia: 1.4, Latvia: 1.2.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében alapvetően stabil, de több ponton érzékeny képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, társadalmi elégedetlenség és tiltakozási potenciál, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor a feszültségek több ponton továbbra is fennmaradtak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, azonban a strukturális feszültségek tartósan fennmaradtak. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan a keleti peremterületek biztonságpolitikai terheltsége lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
+        <ul><li>A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Romania: 5.9, Latvia: 1.2.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében alapvetően stabil, de több ponton érzékeny képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, társadalmi elégedetlenség és tiltakozási potenciál, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor lokális incidensek és eszkalációs kockázatok több ponton megfigyelhetők voltak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, ugyanakkor több ponton emelkedő nyomás érzékelhető. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan a keleti peremterületek biztonságpolitikai terheltsége lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
       </div>
     </section>
 
@@ -725,18 +760,18 @@ body {
           <h2>CEE Security & Infrastructure Snapshot</h2>
           <p>Napi régiós kockázati kép kritikus infrastruktúra, lokális események és OSINT-jelzések alapján.</p>
         </div>
-        <div class="vd-date">2026-10-26</div>
+        <div class="vd-date">2026-10-27</div>
       </div>
 
       <div class="vd-grid">
         <div class="vd-main">
           <div class="vd-label">Régiós állapot</div>
           <div class="vd-big">NORMAL</div>
-          <div class="vd-sub">Regional score: 0.18</div>
+          <div class="vd-sub">Regional score: 0.5</div>
         </div>
 
         <div class="vd-card red">
-          <div class="vd-number">0</div>
+          <div class="vd-number">1</div>
           <div class="vd-text">kritikus infrastruktúra alert</div>
         </div>
 
@@ -746,18 +781,18 @@ body {
         </div>
 
         <div class="vd-card blue">
-          <div class="vd-number">2</div>
+          <div class="vd-number">3</div>
           <div class="vd-text">kiemelt lokális esemény</div>
         </div>
 
         <div class="vd-card green">
-          <div class="vd-number">Estonia</div>
+          <div class="vd-number">Romania</div>
           <div class="vd-text">fő kockázati ország</div>
         </div>
 
         <div class="vd-wide">
           <div class="vd-label">Fő szektor</div>
-          <div class="vd-sector">infrastruktúra</div>
+          <div class="vd-sector">digital</div>
           <div class="vd-sub">Infrastruktúra-közeli találatok domináns kategóriája</div>
         </div>
       </div>
@@ -767,10 +802,10 @@ body {
         <div class="region-card blue">
           <div class="region-head">Baltikum</div>
           <div class="region-body">
-            <div class="big-number">1.44</div>
+            <div class="big-number">0.65</div>
             <div class="small-label">összesített risk score</div>
-            <div class="region-line"><b>Fő fókusz:</b> Estonia</div>
-            <div class="mini-bar"><span style="width:17.28%"></span></div>
+            <div class="region-line"><b>Fő fókusz:</b> Latvia</div>
+            <div class="mini-bar"><span style="width:7.800000000000001%"></span></div>
           </div>
         </div>
         
@@ -789,10 +824,10 @@ body {
         <div class="region-card orange">
           <div class="region-head">Fekete-tengeri perem</div>
           <div class="region-body">
-            <div class="big-number">0.0</div>
+            <div class="big-number">3.36</div>
             <div class="small-label">összesített risk score</div>
             <div class="region-line"><b>Fő fókusz:</b> Romania</div>
-            <div class="mini-bar"><span style="width:0.0%"></span></div>
+            <div class="mini-bar"><span style="width:40.32%"></span></div>
           </div>
         </div>
         

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-27T03:14:11.755851+00:00",
+  "generated_utc": "2026-10-27T11:31:48.958137+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -49,13 +49,9 @@
       }
     },
     "Estonia": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     }
   },
   "countries": {
@@ -88,28 +84,6 @@
         "fingerprint_hash": "6032ca9bc39eac02d63ecca8"
       }
     ],
-    "Estonia": [
-      {
-        "id": "eaba24538e37fc809a3b",
-        "date": "2026-10-23",
-        "time": "2026-10-23T09:33:00+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Investigation finds no deliberate activity aimed against Estonia in Auvere drone incident",
-        "source": "ERR",
-        "url": "https://news.err.ee/1610174695/investigation-finds-no-deliberate-activity-aimed-against-estonia-in-auvere-drone-incident",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "f330139dfd9661803f5320da"
-      }
-    ]
+    "Estonia": []
   }
 }

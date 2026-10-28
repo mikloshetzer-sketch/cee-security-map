@@ -1,44 +1,22 @@
 {
-  "generated_utc": "2026-10-27T20:49:07.807529+00:00",
+  "generated_utc": "2026-10-28T21:12:43.635724+00:00",
   "headline": "CEE Infrastructure & Security Daily Brief",
   "region": {
     "overall": "normal",
-    "overall_score": 0.501,
+    "overall_score": 0.081,
     "confidence": "low",
-    "confidence_value": 0.252,
+    "confidence_value": 0.219,
     "dimension_scores": {
-      "incident_pressure": 0.592,
-      "military_drone": 0.536,
+      "incident_pressure": 0.129,
+      "military_drone": 0.0,
       "cyber": 0.28,
-      "infrastructure": 0.327,
+      "infrastructure": 0.0,
       "crossborder": 0.0,
-      "trend": 1.25
+      "trend": 0.0
     },
-    "evidence_count": 3
+    "evidence_count": 1
   },
   "top_countries": [
-    {
-      "country": "Romania",
-      "overall": "elevated",
-      "overall_score": 3.36,
-      "normalized": 3.36,
-      "confidence": "medium",
-      "confidence_value": 0.46,
-      "drivers": [
-        "biztonsági incidensnyomás",
-        "friss aktivitási trend",
-        "katonai és drónaktivitás",
-        "kritikus infrastruktúra-kitettség"
-      ],
-      "dimensions": {
-        "incident_pressure": 3.701,
-        "military_drone": 4.286,
-        "cyber": 0.0,
-        "infrastructure": 2.615,
-        "crossborder": 0.0,
-        "trend": 10.0
-      }
-    },
     {
       "country": "Latvia",
       "overall": "normal",
@@ -77,6 +55,23 @@
     },
     {
       "country": "Hungary",
+      "overall": "normal",
+      "overall_score": 0.0,
+      "normalized": 0.0,
+      "confidence": "low",
+      "confidence_value": 0.2,
+      "drivers": [],
+      "dimensions": {
+        "incident_pressure": 0.0,
+        "military_drone": 0.0,
+        "cyber": 0.0,
+        "infrastructure": 0.0,
+        "crossborder": 0.0,
+        "trend": 0.0
+      }
+    },
+    {
+      "country": "Romania",
       "overall": "normal",
       "overall_score": 0.0,
       "normalized": 0.0,
@@ -162,522 +157,20 @@
     }
   ],
   "summary_bullets": [
-    "Helyi források alapján az elmúlt 24 órában 2 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Romania: 2.",
-    "Legerősebb góc: powiat augustowski, Polska 🆕 (rácspont 53.75, 23.25; score 1.72; 7 napos változás: n/a).",
+    "Legerősebb góc: powiat augustowski, Polska 🆕 (rácspont 53.75, 23.25; score 1.35; 7 napos változás: n/a).",
     "Trend: nincs elég bázisadat az összehasonlításhoz.",
-    "Forráskép: GDELT 0, GDELT linked 3199, GDELT DOC 0, direkt feed 4, USGS 0, GDACS 0.",
-    "Trusted RSS forrásokból releváns sajtóanyag: 168 db.",
+    "Forráskép: GDELT 0, GDELT linked 3164, GDELT DOC 0, direkt feed 3, USGS 0, GDACS 0.",
+    "Trusted RSS forrásokból releváns sajtóanyag: 175 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "weekly_bullets": [
-    "A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Romania: 5.9, Latvia: 1.2.",
+    "A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Latvia: 1.2.",
     "A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében alapvetően stabil, de több ponton érzékeny képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, társadalmi elégedetlenség és tiltakozási potenciál, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor lokális incidensek és eszkalációs kockázatok több ponton megfigyelhetők voltak.",
     "A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, ugyanakkor több ponton emelkedő nyomás érzékelhető. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.",
     "Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan a keleti peremterületek biztonságpolitikai terheltsége lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.",
     "Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása."
   ],
   "top_local_events": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.057,
-          44.322
-        ]
-      },
-      "properties": {
-        "id": "df0c2b40a15da3e8f5cc",
-        "title": "Când va reporni Centrala de la Cernavodă: anunțul lui Dumitru Chisăliță, pe baza celor mai noi evaluări",
-        "summary": "Ministrul Energiei, Dumitru Chisăliță, a declarat, în cadrul emisiunii „În fața ta”, de la Digi24, care va fi difuzată sâmbătă, de la ora 14:00, că, pe baza prognozelor actuale, unul dintre reactoarele nucleare ale Centralei de la Cernavodă va putea fi repornit în jurul datei de 15 noiembrie. „Dacă trendurile, prognozele care sunt în momentul de față să mențin, ar trebui să avem un reactor care să pornească”, a spus Chisăliță.",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/economie/energie/cand-va-reporni-centrala-de-la-cernavoda-anuntul-lui-dumitru-chisalita-pe-baza-celor-mai-noi-evaluari-4011117",
-        "published": "Tue, 27 Oct 2026 18:32:05 +0200",
-        "country": "Romania",
-        "city": "Cernavodă",
-        "family": "energy",
-        "subcategory": "power_grid",
-        "subtype": "energy_service_outage",
-        "object": "energy_asset",
-        "action": "disrupted",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "medium",
-        "confidence": 0.84,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "energy",
-          "subcategory": "power_grid",
-          "subtype": "energy_service_outage",
-          "object": "energy_asset",
-          "action": "disrupted",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Cernavodă",
-          "event_date": "Tue, 27 Oc",
-          "hash": "1dd74deaca3d0602bcd406f7"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "energy_asset",
-            "centrala"
-          ],
-          "actions": [
-            "disrupted",
-            "oprit"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "ENERGY.SERVICE.OUTAGE",
-            "family": "energy",
-            "subcategory": "power_grid",
-            "subtype": "energy_service_outage",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.FIRE",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_fire",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:burned"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:exploded"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
-            "family": "critical_infrastructure",
-            "subcategory": "public_services",
-            "subtype": "critical_infrastructure_disruption",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:critical_infrastructure"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1869,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Ministrul Energiei, Dumitru Chisăliță, a declarat, în cadrul emisiunii „În fața ta”, de la Digi24, care va fi difuzată sâmbătă, de la ora 14:00, că, pe baza prognozelor actuale, unul dintre reactoarele nucleare ale Centralei de la Cernavodă va putea fi repornit în jurul datei de 15 noiembrie. „Dacă trendurile, prognozele care sunt în momentul de față să mențin, ar trebui să avem un reactor care să pornească”, a spus Chisăliță. Ministrul Energiei, invitat la ediția de sâmbătă, 31 octombrie, a emisiunii „În fața ta”, de la Digi24, a explicat că pe baza datelor disponibile în prezent, cu debitul Dunării în creștere, cel mai probabil unul dintre reactoarele de la Cernavodă va reîncepe să producă energie în circa două săptămâni. „Mi-aș dori să înceapă de astăzi să funcționeze, dar nu se poate acest lucru. Chiar dacă debitul Dunării este în creștere în momentul de față și a crescut semnificativ în ultimele săptămâni, ultimele 2 săptămâni, cel mai probabil putem să discutăm de două săptămâni ",
-        "place": "Cernavodă",
-        "time": "Tue, 27 Oct 2026 18:32:05 +0200",
-        "category": "energy",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/economie/energie/cand-va-reporni-centrala-de-la-cernavoda-anuntul-lui-dumitru-chisalita-pe-baza-celor-mai-noi-evaluari-4011117"
-        ],
-        "merged_titles": [
-          "Când va reporni Centrala de la Cernavodă: anunțul lui Dumitru Chisăliță, pe baza celor mai noi evaluări"
-        ],
-        "incident_family": "energy",
-        "incident_subcategory": "power_grid",
-        "incident_subtype": "energy_service_outage",
-        "incident_object": "energy_asset",
-        "incident_action": "disrupted",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.84
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.008,
-          45.435
-        ]
-      },
-      "properties": {
-        "id": "d0694aea2da7bc3fdefb",
-        "title": "Dominic Fritz: Țineți-vă bine: AUR „condamnă ferm orice acţiune de sabotaj coordonată din Federaţia Rusă împotriva obiectivelor strategice ale României”. Același AUR care, când o dronă rusească a lovit un bloc din Galați, aștepta „raportul de expertiză” ca să condamne agresorul",
-        "summary": "<p>Președintele USR, Dominic Fritz, ironizează formațiunea extremistă pro-rusă AUR, care a condamnat acum sabotajul coordonat de Rusia la Carfil Brașov, filială Romarm, dar nu a făcut același lucru și când o dronă rusească a lovit un bloc din Galați. „Țineți-vă bine: AUR „condamnă ferm orice acţiune de sabotaj coordonată din Federaţia Rusă împotriva obiectivelor strategice [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/dominic-fritz-tineti-va-bine-aur-condamna-ferm-orice-actiune-de-sabotaj-coordonata-din-federatia-rusa-impotriva-obiectivelor-strategice-ale-romaniei-acelasi-aur-care-cand-o-drona.html",
-        "published": "Tue, 27 Oct 2026 15:24:28 +0000",
-        "country": "Romania",
-        "city": "Galați",
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.9,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Galați",
-          "event_date": "Tue, 27 Oc",
-          "hash": "46ca6fc9de0fa619553fe01b"
-        },
-        "classifier_version": "1.0.1",
-        "taxonomy_version": "1.0.0",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "dronă"
-          ],
-          "actions": [
-            "impact",
-            "a lovit"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "rusia"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Galați",
-        "time": "Tue, 27 Oct 2026 15:24:28 +0000",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "G4Media"
-        ],
-        "urls": [
-          "https://www.g4media.ro/dominic-fritz-tineti-va-bine-aur-condamna-ferm-orice-actiune-de-sabotaj-coordonata-din-federatia-rusa-impotriva-obiectivelor-strategice-ale-romaniei-acelasi-aur-care-cand-o-drona.html"
-        ],
-        "merged_titles": [
-          "Dominic Fritz: Țineți-vă bine: AUR „condamnă ferm orice acţiune de sabotaj coordonată din Federaţia Rusă împotriva obiectivelor strategice ale României”. Același AUR care, când o dronă rusească a lovit un bloc din Galați, aștepta „raportul de expertiză” ca să condamne agresorul"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.9
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -927,299 +420,21 @@
       }
     }
   ],
-  "top_infrastructure_matches": [
-    {
-      "id": "f4daa8e0731ff27f",
-      "level": "critical",
-      "score": 80.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "4a169edaec41fa58",
-        "title": "Security Politics – Bucharest, Bucuresti, Romania",
-        "category": "police",
-        "incident_type": "sabotage",
-        "source": "GDELT",
-        "source_count": 1,
-        "sources": [
-          "GDELT"
-        ],
-        "time": "2026-10-27T00:00:00Z",
-        "url": "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-        "urls": [
-          "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-          "https://bnn-news.com/world/romanian-intelligence-uncovers-russian-coordinated-sabotage-network-suspects-sought-across-several-countries-d8kbc73",
-          "https://www.stiripesurse.ro/russian-ambassador-to-bucharest-summoned-to-ministry-of-foreign-affairs-regarding-act-of-sabotage-in-brasov_3931798"
-        ],
-        "lat": 44.426,
-        "lon": 26.102,
-        "location_quality": "city",
-        "place": "bucharest",
-        "geolocation_method": "article_city",
-        "geolocation_source_count": 1,
-        "geolocation_evidence_count": 1,
-        "geolocation_negation_filter": true,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-digital-bucharest-ixp",
-        "name": "Bucharest Internet Exchange / Digital Hub",
-        "country": "Romania",
-        "city": "Bucharest",
-        "category": "digital",
-        "subtype": "internet_exchange_digital_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 44.426,
-        "lon": 26.102,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "b8b6dc3e4537ada9",
-      "level": "medium",
-      "score": 54.11,
-      "distance_km": 16.18,
-      "event": {
-        "id": "4a169edaec41fa58",
-        "title": "Security Politics – Bucharest, Bucuresti, Romania",
-        "category": "police",
-        "incident_type": "sabotage",
-        "source": "GDELT",
-        "source_count": 1,
-        "sources": [
-          "GDELT"
-        ],
-        "time": "2026-10-27T00:00:00Z",
-        "url": "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-        "urls": [
-          "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-          "https://bnn-news.com/world/romanian-intelligence-uncovers-russian-coordinated-sabotage-network-suspects-sought-across-several-countries-d8kbc73",
-          "https://www.stiripesurse.ro/russian-ambassador-to-bucharest-summoned-to-ministry-of-foreign-affairs-regarding-act-of-sabotage-in-brasov_3931798"
-        ],
-        "lat": 44.426,
-        "lon": 26.102,
-        "location_quality": "city",
-        "place": "bucharest",
-        "geolocation_method": "article_city",
-        "geolocation_source_count": 1,
-        "geolocation_evidence_count": 1,
-        "geolocation_negation_filter": true,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-transport-henri-coanda-airport",
-        "name": "Bucharest Henri Coandă International Airport",
-        "country": "Romania",
-        "city": "Bucharest",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Bucharest Airports",
-        "lat": 44.571,
-        "lon": 26.085,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "353bb49a371a660a",
-      "level": "watch",
-      "score": 4.9,
-      "distance_km": 47.28,
-      "event": {
-        "id": "4a169edaec41fa58",
-        "title": "Security Politics – Bucharest, Bucuresti, Romania",
-        "category": "police",
-        "incident_type": "sabotage",
-        "source": "GDELT",
-        "source_count": 1,
-        "sources": [
-          "GDELT"
-        ],
-        "time": "2026-10-27T00:00:00Z",
-        "url": "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-        "urls": [
-          "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-          "https://bnn-news.com/world/romanian-intelligence-uncovers-russian-coordinated-sabotage-network-suspects-sought-across-several-countries-d8kbc73",
-          "https://www.stiripesurse.ro/russian-ambassador-to-bucharest-summoned-to-ministry-of-foreign-affairs-regarding-act-of-sabotage-in-brasov_3931798"
-        ],
-        "lat": 44.426,
-        "lon": 26.102,
-        "location_quality": "city",
-        "place": "bucharest",
-        "geolocation_method": "article_city",
-        "geolocation_source_count": 1,
-        "geolocation_evidence_count": 1,
-        "geolocation_negation_filter": true,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-energy-petrobrazi-refinery",
-        "name": "Petrobrazi Refinery",
-        "country": "Romania",
-        "city": "Brazi",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 9.0,
-        "operator": "OMV Petrom",
-        "lat": 44.848,
-        "lon": 26.029,
-        "source_file": "critical_infrastructure.json"
-      }
-    }
-  ],
-  "all_matches": [
-    {
-      "id": "f4daa8e0731ff27f",
-      "level": "critical",
-      "score": 80.0,
-      "distance_km": 0.0,
-      "event": {
-        "id": "4a169edaec41fa58",
-        "title": "Security Politics – Bucharest, Bucuresti, Romania",
-        "category": "police",
-        "incident_type": "sabotage",
-        "source": "GDELT",
-        "source_count": 1,
-        "sources": [
-          "GDELT"
-        ],
-        "time": "2026-10-27T00:00:00Z",
-        "url": "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-        "urls": [
-          "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-          "https://bnn-news.com/world/romanian-intelligence-uncovers-russian-coordinated-sabotage-network-suspects-sought-across-several-countries-d8kbc73",
-          "https://www.stiripesurse.ro/russian-ambassador-to-bucharest-summoned-to-ministry-of-foreign-affairs-regarding-act-of-sabotage-in-brasov_3931798"
-        ],
-        "lat": 44.426,
-        "lon": 26.102,
-        "location_quality": "city",
-        "place": "bucharest",
-        "geolocation_method": "article_city",
-        "geolocation_source_count": 1,
-        "geolocation_evidence_count": 1,
-        "geolocation_negation_filter": true,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-digital-bucharest-ixp",
-        "name": "Bucharest Internet Exchange / Digital Hub",
-        "country": "Romania",
-        "city": "Bucharest",
-        "category": "digital",
-        "subtype": "internet_exchange_digital_hub",
-        "criticality": 8.0,
-        "operator": "Multiple operators",
-        "lat": 44.426,
-        "lon": 26.102,
-        "source_file": "infra_digital.json"
-      }
-    },
-    {
-      "id": "b8b6dc3e4537ada9",
-      "level": "medium",
-      "score": 54.11,
-      "distance_km": 16.18,
-      "event": {
-        "id": "4a169edaec41fa58",
-        "title": "Security Politics – Bucharest, Bucuresti, Romania",
-        "category": "police",
-        "incident_type": "sabotage",
-        "source": "GDELT",
-        "source_count": 1,
-        "sources": [
-          "GDELT"
-        ],
-        "time": "2026-10-27T00:00:00Z",
-        "url": "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-        "urls": [
-          "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-          "https://bnn-news.com/world/romanian-intelligence-uncovers-russian-coordinated-sabotage-network-suspects-sought-across-several-countries-d8kbc73",
-          "https://www.stiripesurse.ro/russian-ambassador-to-bucharest-summoned-to-ministry-of-foreign-affairs-regarding-act-of-sabotage-in-brasov_3931798"
-        ],
-        "lat": 44.426,
-        "lon": 26.102,
-        "location_quality": "city",
-        "place": "bucharest",
-        "geolocation_method": "article_city",
-        "geolocation_source_count": 1,
-        "geolocation_evidence_count": 1,
-        "geolocation_negation_filter": true,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-transport-henri-coanda-airport",
-        "name": "Bucharest Henri Coandă International Airport",
-        "country": "Romania",
-        "city": "Bucharest",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Bucharest Airports",
-        "lat": 44.571,
-        "lon": 26.085,
-        "source_file": "critical_infrastructure.json"
-      }
-    },
-    {
-      "id": "353bb49a371a660a",
-      "level": "watch",
-      "score": 4.9,
-      "distance_km": 47.28,
-      "event": {
-        "id": "4a169edaec41fa58",
-        "title": "Security Politics – Bucharest, Bucuresti, Romania",
-        "category": "police",
-        "incident_type": "sabotage",
-        "source": "GDELT",
-        "source_count": 1,
-        "sources": [
-          "GDELT"
-        ],
-        "time": "2026-10-27T00:00:00Z",
-        "url": "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-        "urls": [
-          "https://japantoday.com/category/world/russian-sabotage-network-believed-to-have-caused-romanian-fire-prosecutors-say",
-          "https://bnn-news.com/world/romanian-intelligence-uncovers-russian-coordinated-sabotage-network-suspects-sought-across-several-countries-d8kbc73",
-          "https://www.stiripesurse.ro/russian-ambassador-to-bucharest-summoned-to-ministry-of-foreign-affairs-regarding-act-of-sabotage-in-brasov_3931798"
-        ],
-        "lat": 44.426,
-        "lon": 26.102,
-        "location_quality": "city",
-        "place": "bucharest",
-        "geolocation_method": "article_city",
-        "geolocation_source_count": 1,
-        "geolocation_evidence_count": 1,
-        "geolocation_negation_filter": true,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-energy-petrobrazi-refinery",
-        "name": "Petrobrazi Refinery",
-        "country": "Romania",
-        "city": "Brazi",
-        "category": "energy",
-        "subtype": "oil_refinery",
-        "criticality": 9.0,
-        "operator": "OMV Petrom",
-        "lat": 44.848,
-        "lon": 26.029,
-        "source_file": "critical_infrastructure.json"
-      }
-    }
-  ],
+  "top_infrastructure_matches": [],
+  "all_matches": [],
   "meta": {
-    "generated_utc": "2026-10-27T17:13:47Z",
+    "generated_utc": "2026-10-28T17:55:29Z",
     "counts": {
       "usgs": 0,
       "gdacs": 0,
       "gdelt": 0,
-      "gdelt_linked": 3199,
+      "gdelt_linked": 3164,
       "gdelt_cross": 0,
-      "direct_news": 4,
+      "direct_news": 3,
       "hotspot_cells": 3,
-      "rss_trusted": 168,
-      "local_events": 3,
-      "validated_security_events": 3,
+      "rss_trusted": 175,
+      "local_events": 1,
+      "validated_security_events": 1,
       "validated_crossborder_events": 0,
       "infra_proximity_matches": 0
     },
@@ -1288,10 +503,10 @@
     "article_enrichment": {
       "enabled": true,
       "cache": "article_text_cache.json",
-      "fetched_this_run": 33,
+      "fetched_this_run": 34,
       "pipeline_counts": {
         "gdelt_linked": 16,
-        "trusted_rss": 17
+        "trusted_rss": 18
       },
       "trusted_rss_limit": 24,
       "gdelt_linked_limit": 16
@@ -1320,9 +535,9 @@
     }
   },
   "region_counter": {
-    "Fekete-tengeri perem": 3.36,
     "Baltikum": 0.647,
-    "V4 térség": 0.0
+    "V4 térség": 0.0,
+    "Fekete-tengeri perem": 0.0
   },
-  "top_sector": "digital"
+  "top_sector": "infrastruktúra"
 }

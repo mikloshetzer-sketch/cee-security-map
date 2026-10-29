@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-29T03:50:28.030209+00:00",
+  "generated_utc": "2026-10-29T12:14:37.913617+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -40,13 +44,9 @@
       "source_files": {}
     },
     "Latvia": {
-      "incident_count": 1,
-      "category_counts": {
-        "cyber": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Estonia": {
       "incident_count": 0,
@@ -57,33 +57,33 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
-    "Slovakia": [],
-    "Poland": [],
-    "Lithuania": [],
-    "Latvia": [
+    "Romania": [
       {
-        "id": "15ea5c46b38b8484bb24",
-        "date": "2026-10-23",
-        "time": "2026-10-23T05:36:29+00:00",
-        "category": "cyber",
-        "severity": "medium",
-        "title": "Weekend plans could be disrupted by the weather – rain and gusty winds heading for Latvia",
-        "source": "BNN",
-        "url": "https://bnn-news.com/social/weekend-plans-could-be-disrupted-by-the-weather-rain-and-gusty-winds-heading-for-latvia-uzjp53f",
+        "id": "ef68ca99df8a6a432aba",
+        "date": "2026-10-29",
+        "time": "2026-10-29T10:59:32+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Nava lovită miercuri de drone în largul Bulgariei s-a scufundat. Avea ca destinație Constanța",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/nava-lovita-miercuri-de-drone-in-largul-bulgariei-s-a-scufundat-avea-ca-destinatie-constanta-4013669",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "cyber",
-        "incident_subcategory": "operational_disruption",
-        "incident_subtype": "cyber_operational_disruption",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-        "fingerprint_hash": "6032ca9bc39eac02d63ecca8"
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "a5127a6d3575ed2b3a73918b"
       }
     ],
+    "Slovakia": [],
+    "Poland": [],
+    "Lithuania": [],
+    "Latvia": [],
     "Estonia": []
   }
 }

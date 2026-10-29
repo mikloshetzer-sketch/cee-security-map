@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-29T12:14:37.913617+00:00",
+  "generated_utc": "2026-10-29T18:22:31.859316+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,17 +15,22 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
-    },
-    "Romania": {
       "incident_count": 1,
       "category_counts": {
-        "drone": 1
+        "military": 1
       },
       "source_files": {
         "local_events.geojson": 1
+      }
+    },
+    "Romania": {
+      "incident_count": 3,
+      "category_counts": {
+        "infrastructure_disruption": 1,
+        "drone": 2
+      },
+      "source_files": {
+        "local_events.geojson": 3
       }
     },
     "Slovakia": {
@@ -56,8 +61,72 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "e0febc8414fcd58ef091",
+        "date": "2026-10-29",
+        "time": "2026-10-29T17:58:11+00:00",
+        "category": "military",
+        "severity": "critical",
+        "title": "Lezuhant az EU katonai helikoptere, hárman meghaltak Boszniában",
+        "source": "24.hu",
+        "url": "https://24.hu/kulfold/2026/10/29/bosznia-katonai-helikopter-baleset-harom-halott/",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "11dd1f3a5b736bd1ac9259dc"
+      }
+    ],
     "Romania": [
+      {
+        "id": "65cec8234d7d660741a4",
+        "date": "2026-10-29",
+        "time": "2026-10-29T15:50:23+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Starea de alertă la Centrala de la Cernavodă a fost prelungită: reactoarele 1 și 2 rămân oprite și în noiembrie",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/economie/energie/starea-de-alerta-la-centrala-de-la-cernavoda-a-fost-prelungita-reactoarele-1-si-2-nu-repornesc-nici-in-noiembrie-4014105",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "energy",
+        "incident_subcategory": "power_grid",
+        "incident_subtype": "energy_service_outage",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "ENERGY.SERVICE.OUTAGE",
+        "fingerprint_hash": "212741f99482e59eb79c4097"
+      },
+      {
+        "id": "f6c4b9700a92d1822b0c",
+        "date": "2026-10-29",
+        "time": "2026-10-29T13:39:53+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Comisia Europeană, pregătită să colaboreze cu România pentru securitatea Mării Negre, după atacul cu drone din largul Bulgariei",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/comisia-europeana-pregatita-sa-colaboreze-cu-romania-pentru-securitatea-marii-negre-dupa-atacul-cu-drone-din-largul-bulgariei-4013939",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "4b6f5a609ae098c721205b2a"
+      },
       {
         "id": "ef68ca99df8a6a432aba",
         "date": "2026-10-29",

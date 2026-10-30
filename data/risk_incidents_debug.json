@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-29T18:22:31.859316+00:00",
+  "generated_utc": "2026-10-30T03:55:32.550138+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,19 +15,15 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 1,
-      "category_counts": {
-        "military": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Romania": {
       "incident_count": 3,
       "category_counts": {
-        "infrastructure_disruption": 1,
-        "drone": 2
+        "drone": 2,
+        "infrastructure_disruption": 1
       },
       "source_files": {
         "local_events.geojson": 3
@@ -61,30 +57,29 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
+    "Hungary": [],
+    "Romania": [
       {
-        "id": "e0febc8414fcd58ef091",
+        "id": "7ee3f6e2ea9bac13e064",
         "date": "2026-10-29",
-        "time": "2026-10-29T17:58:11+00:00",
-        "category": "military",
-        "severity": "critical",
-        "title": "Lezuhant az EU katonai helikoptere, hárman meghaltak Boszniában",
-        "source": "24.hu",
-        "url": "https://24.hu/kulfold/2026/10/29/bosznia-katonai-helikopter-baleset-harom-halott/",
+        "time": "2026-10-29T19:23:29+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Primele imagini cu una dintre dronele maritime care au lovit o navă în largul Bulgariei",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/ue/primele-imagini-cu-una-dintre-dronele-maritime-care-au-lovit-o-nava-in-largul-bulgariei-4014437",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
         "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "11dd1f3a5b736bd1ac9259dc"
-      }
-    ],
-    "Romania": [
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "0aad376ff220db22005b1d11"
+      },
       {
         "id": "65cec8234d7d660741a4",
         "date": "2026-10-29",
@@ -126,27 +121,6 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "4b6f5a609ae098c721205b2a"
-      },
-      {
-        "id": "ef68ca99df8a6a432aba",
-        "date": "2026-10-29",
-        "time": "2026-10-29T10:59:32+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Nava lovită miercuri de drone în largul Bulgariei s-a scufundat. Avea ca destinație Constanța",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/nava-lovita-miercuri-de-drone-in-largul-bulgariei-s-a-scufundat-avea-ca-destinatie-constanta-4013669",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "a5127a6d3575ed2b3a73918b"
       }
     ],
     "Slovakia": [],

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-10-31T11:40:55.861170+00:00",
+  "generated_utc": "2026-10-31T16:46:43.710612+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 3,
       "category_counts": {
-        "drone": 1
+        "drone": 2,
+        "military": 1
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 3
       }
     },
     "Slovakia": {
@@ -59,14 +60,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "e6667d1d04708963eb9c",
+        "id": "5d857169e1f2fa488cb2",
         "date": "2026-10-31",
-        "time": "2026-10-31T06:05:31+00:00",
+        "time": "2026-10-31T16:31:03+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Exercițiu de noapte în București. Cum e în orașul cu 2.000.000 de oameni dacă un bloc e lovit de un „mic avion”, ca să nu spunem dronă",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/exercitiu-de-noapte-in-bucuresti-cum-e-in-orasul-cu-2-000-000-de-oameni-daca-un-bloc-e-lovit-de-un-mic-avion-ca-sa-nu-spunem-drona-2391174",
+        "title": "Alertă de drone în cinci județe din estul țării. Au fost ridicate de la sol patru avioane F-16 și un elicopter",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/posibila-incursiune-de-drone-in-iasi-oamenii-au-primit-mesaj-ro-alert-4016545",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -75,9 +76,51 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
-        "classification_confidence": 0.92,
+        "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "8b754fd2fec40b6a47ecdf58"
+        "fingerprint_hash": "e151b6ff84f06ebabde441de"
+      },
+      {
+        "id": "e941c0bf1981b02b5fda",
+        "date": "2026-10-31",
+        "time": "2026-10-31T16:25:14+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "O dronă zboară prin România după ce a intrat în țară din Moldova, s-a dat alertă în 3 județe. Două avioane F-16 au decolat de la Câmpia Turzii",
+        "source": "Economica.net",
+        "url": "https://www.economica.net/o-drona-zboara-prin-romania-dupa-ce-a-intrat-in-tara-din-moldova-s-a-dat-alerta-in-3-judete-doua-avioane-f-16-au-decolat-de-la-campia-turzii_991105.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "646d8cd9bd9130b833cbc5fb"
+      },
+      {
+        "id": "249c0c52f121250f3e92",
+        "date": "2026-10-31",
+        "time": "2026-10-31T15:49:36+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Alerta din Iași și Neamț, extinsă în alte două județe. O țintă aeriană a intrat în spațiul național, anunță MApN",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/ro-alert-in-judetele-iasi-si-neamt-dupa-detectarea-unei-tinte-aeriene-in-apropiere-de-granita-avioane-de-vanatoare-ridicate-de-la-campia-turzii-2391541",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "ebd125970fe69e5676e23837"
       }
     ],
     "Slovakia": [],

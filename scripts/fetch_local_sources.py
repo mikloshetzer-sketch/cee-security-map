@@ -11,6 +11,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 from security_classifier import CLASSIFIER_VERSION, SecurityClassifier
+from article_cache import load_items, save_items
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -459,20 +460,11 @@ class _ParagraphExtractor(HTMLParser):
 
 
 def load_article_cache():
-    if not ARTICLE_CACHE_FILE.exists():
-        return {}
-    try:
-        data = json.loads(ARTICLE_CACHE_FILE.read_text(encoding="utf-8"))
-        return data if isinstance(data, dict) else {}
-    except Exception:
-        return {}
+    return load_items(DATA)
 
 
 def save_article_cache(cache):
-    ARTICLE_CACHE_FILE.write_text(
-        json.dumps(cache, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    save_items(DATA, cache)
 
 
 def taxonomy_candidate_terms():

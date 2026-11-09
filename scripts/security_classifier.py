@@ -32,7 +32,7 @@ from typing import Any, Iterable, Mapping, Sequence
 
 
 LOGGER = logging.getLogger("security_classifier")
-CLASSIFIER_VERSION = "1.0.1"
+CLASSIFIER_VERSION = "1.1.0"
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TAXONOMY_PATH = REPO_ROOT / "security_taxonomy.json"
@@ -236,8 +236,25 @@ class SecurityClassifier:
         normalized_summary = self.normalize_text(summary)
         text = f"{normalized_title} {normalized_summary}".strip()
 
-        role, role_matches = self.detect_article_role(text)
-        negative_terms = self.detect_negative_contexts(text)
+        # The headline describes the article's purpose more reliably than a
+        # long summary quoting older events or background information.
+        title_role, title_role_matches = self.detect_article_role(normalized_title)
+        # Headline-only contextual guards: historical closures and future
+        # reopenings are not current disruptions. These patterns are deliberately
+        # narrow so ordinary ongoing incidents are not suppressed.
+        if re.search(r"\b(?:historic|historical|formerly|previously|dawniej|egykori)\b", normalized_title) or re.search(r"\b(?:to reopen|will reopen|reopening after|se redeschide|ponownie otwart|újranyit|znovu otevř)\b", normalized_title):
+            title_role, title_role_matches = "historical", ["headline:historical_or_reopening"]
+        if title_role != "incident" or title_role_matches:
+            role, role_matches = title_role, title_role_matches
+        else:
+            role, role_matches = self.detect_article_role(text)
+
+        # A background reference in the body must not automatically veto a
+        # current incident explicitly reported in the headline. Conversely,
+        # historical/procurement/exercise headlines remain excluded.
+        title_negative_terms = self.detect_negative_contexts(normalized_title)
+        negative_terms = (title_negative_terms if title_role == "incident"
+                          else self.detect_negative_contexts(text))
 
         matched = {
             "objects": self.detect_lexicon_group("objects", text),
@@ -246,6 +263,11 @@ class SecurityClassifier:
             "actors": self.detect_lexicon_group("actors", text),
             "consequences": self.detect_lexicon_group("consequences", text),
         }
+
+        # A confirmed shooting is itself evidence of a firearm even when the
+        # headline does not separately say "gun" or "pistol".
+        if "shooting" in matched["actions"] and "firearm" not in matched["objects"]:
+            matched["objects"]["firearm"] = ["inferred:shooting"]
 
         candidates = self.apply_composition_rules(text=text, matched=matched)
         best_candidate = self.select_best_candidate(candidates)
@@ -394,8 +416,8 @@ class SecurityClassifier:
             published=article.get("published") or article.get("published_at"),
             country=article.get("country"),
             city=article.get("city"),
-            latitude=article.get("latitude") or article.get("lat"),
-            longitude=article.get("longitude") or article.get("lon"),
+            latitude=article.get("latitude") if article.get("latitude") is not None else article.get("lat"),
+            longitude=article.get("longitude") if article.get("longitude") is not None else article.get("lon"),
             source_is_official=bool(article.get("source_is_official", False)),
             source_count=int(article.get("source_count", 1) or 1),
         )
@@ -553,29 +575,20 @@ class SecurityClassifier:
     def detect_article_role(self, text: str) -> tuple[str, list[str]]:
         matches_by_role: dict[str, list[str]] = {}
         for role, compiled_terms in self._compiled_roles.items():
-            matches = [
-                term for term, pattern in compiled_terms if pattern.search(text)
-            ]
+            matches = [term for term, pattern in compiled_terms if pattern.search(text)]
             if matches:
                 matches_by_role[role] = _stable_unique(matches)
 
-        # Explicitly non-incident roles take precedence over generic incident
-        # language, because reaction and analysis articles often mention the
-        # original incident in the same title or summary.
+        # Article-purpose indicators have precedence over generic incident
+        # wording. Explicit incident wording beats a generic follow-up phrase
+        # only when no stronger non-incident role is present.
         priority = [
-            "procurement",
-            "exercise",
-            "historical",
-            "analysis",
-            "summary",
-            "reaction",
-            "followup",
-            "incident",
+            "procurement", "exercise", "historical", "analysis",
+            "summary", "reaction", "followup", "incident",
         ]
         for role in priority:
             if role in matches_by_role:
                 return role, matches_by_role[role]
-
         return "incident", []
 
     def detect_negative_contexts(self, text: str) -> list[str]:
@@ -772,8 +785,14 @@ class SecurityClassifier:
                 value += amount
                 components[name] = amount
 
-        add_component("object_match", bool(matched["objects"]))
-        add_component("action_match", bool(matched["actions"]))
+        rule = self._composition_rules_by_id.get(candidate.rule_id, {}) if candidate else {}
+        required = rule.get("requires", {}) if isinstance(rule, Mapping) else {}
+        # Rules intentionally based on action + context (terrorism, border,
+        # espionage) must not be penalized for lacking an object requirement.
+        object_required = any(k in required for k in ("objects", "objects_any"))
+        action_required = any(k in required for k in ("actions", "actions_any"))
+        add_component("object_match", bool(matched["objects"]) or (candidate is not None and not object_required and bool(candidate.matched_context)))
+        add_component("action_match", bool(matched["actions"]) or (candidate is not None and not action_required and bool(candidate.matched_context)))
         add_component("target_match", bool(matched["targets"]))
         add_component("actor_match", bool(matched["actors"]))
         add_component("country_match", bool(country))
@@ -803,8 +822,8 @@ class SecurityClassifier:
                 "exercise",
             },
         )
-        subtract_component("missing_action", not matched["actions"])
-        subtract_component("missing_object", not matched["objects"])
+        subtract_component("missing_action", action_required and not matched["actions"])
+        subtract_component("missing_object", object_required and not matched["objects"])
 
         caps = model.get("caps", {})
         minimum = float(caps.get("minimum", 0.0))
@@ -913,6 +932,7 @@ class SecurityClassifier:
             "procurement",
             "exercise",
             "historical",
+            "followup",
         }
 
         if article_role in non_incident_roles:
@@ -1121,3 +1141,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

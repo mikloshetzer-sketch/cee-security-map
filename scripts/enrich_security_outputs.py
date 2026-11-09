@@ -187,7 +187,7 @@ NOISE_TERMS = [
 
 
 def normalize_text(value):
-    return re.sub(r"\\s+", " ", str(value or "").lower()).strip()
+    return re.sub(r"\s+", " ", str(value or "").lower()).strip()
 
 
 def contains_term(text, term):
@@ -196,9 +196,9 @@ def contains_term(text, term):
     if not k:
         return False
 
-    if re.fullmatch(r"[\\wÀ-ž-]+", k, flags=re.UNICODE):
+    if re.fullmatch(r"[\wÀ-ž-]+", k, flags=re.UNICODE):
         return re.search(
-            rf"(?<!\\w){re.escape(k)}(?!\\w)",
+            rf"(?<!\w){re.escape(k)}(?!\w)",
             t,
             flags=re.UNICODE,
         ) is not None
@@ -263,11 +263,17 @@ def canonical_risk_category(props):
         return "cyber"
     if family in {"air", "military"}:
         return "military"
-    if family in {"infrastructure", "energy"}:
+    if family in {"infrastructure", "energy", "critical_infrastructure", "industrial", "maritime", "transport"}:
         if subcategory in {"fire", "explosion", "hazardous", "sabotage"}:
             return subcategory
         return "infrastructure_disruption"
-    if family in {"public_safety", "hazard"}:
+    if family in {"ground", "terrorism", "border_security", "public_order"}:
+        if subcategory in {"sabotage"}:
+            return "sabotage"
+        return "kinetic_attack"
+    if family == "cbrn":
+        return "hazardous"
+    if family in {"public_safety", "hazard", "natural_hazard"}:
         if subcategory in {"fire", "explosion", "hazardous"}:
             return subcategory
 
@@ -278,7 +284,7 @@ def canonical_risk_category(props):
         "sabotage", "infrastructure_disruption", "major_fire",
         "energy", "transport",
     }
-    return existing if existing in allowed_existing else None
+    return existing if existing in allowed_existing and not family else None
 
 
 def feature_passes_risk_gate(props, source_file):
@@ -407,7 +413,7 @@ def load_validated_security_events(days=7):
 
             props = normalized["properties"]
             dt = parse_time(props.get("time"))
-            if not dt or dt < cutoff:
+            if not dt or dt < cutoff or dt > now_utc() + timedelta(hours=2):
                 continue
 
             candidates.append(normalized)
@@ -436,7 +442,7 @@ def load_validated_security_events(days=7):
         ]
         title_sig = " ".join(title_tokens[:10])
 
-        key = fingerprint_hash or stable_event_key(
+        key = (str(props.get("url") or "").strip().lower() or fingerprint_hash) or stable_event_key(
             props.get("country"),
             props.get("incident_subtype") or props.get("category"),
             day,
@@ -458,7 +464,7 @@ def local_event_score(props):
 
     score = 0.4
 
-    if severity == "high":
+    if severity in {"high", "critical"}:
         score += 1.2
     elif severity == "medium":
         score += 0.8
@@ -538,30 +544,9 @@ def load_local_events(days=7):
 
 def proximity_event_passes_risk_gate(event):
     source_file = str(event.get("source_file") or event.get("_risk_source_file") or "")
-
-    # Context-only sources can never contribute through infrastructure proximity.
-    if source_file in {"gdelt.geojson", "gdelt_linked.geojson", "trusted_rss.json"}:
+    if not source_file:
         return False
-
-    if source_file == CROSSBORDER_RISK_FILE:
-        return bool(
-            event.get("classification_source") == "security_classifier"
-            and event.get("actual_incident") is True
-            and event.get("risk_eligible") is True
-            and str(event.get("article_role") or "").lower() == "incident"
-            and event.get("matched_rule_id")
-        )
-
-    if source_file in LOCAL_RISK_FILES or not source_file:
-        return bool(
-            event.get("classification_source") == "security_classifier"
-            and event.get("actual_incident") is True
-            and event.get("risk_eligible") is not False
-            and str(event.get("article_role") or "incident").lower() == "incident"
-            and event.get("matched_rule_id")
-        )
-
-    return False
+    return feature_passes_risk_gate(event, source_file)
 
 
 def load_proximity(days=7):
@@ -577,7 +562,7 @@ def load_proximity(days=7):
             infra = m.get("infrastructure") or {}
 
             dt = parse_time(event.get("time"))
-            if not dt or dt < cutoff:
+            if not dt or dt < cutoff or dt > now_utc() + timedelta(hours=2):
                 continue
 
             if not proximity_event_passes_risk_gate(event):
@@ -718,7 +703,7 @@ def enrich_summary(local_events, prox_matches):
                 f"{m.get('level', 'watch').upper()} infrastruktúra-jelzés: {infra.get('name')} ({infra.get('country')}) – {round(m.get('distance_km', 0), 1)} km-re ettől: {ev.get('title')}."
             )
 
-    summary["bullets"] = added + bullets
+    summary["bullets"] = added + [b for b in bullets if b not in added][:30]
     summary["local_infrastructure"] = {
         "last_24h_local_events": len(local_24h),
         "last_24h_proximity_matches": len(prox_24h),
@@ -1070,7 +1055,7 @@ def enrich_risk(local_events, prox_matches):
 
         row = {
             "normalized": normalized,
-            "overall": risk_level(normalized),
+            "overall": risk_level(normalized) if (scored["local_event_count"] + scored["infra_proximity_count"]) else "insufficient_data",
             "confidence": scored["confidence"],
             "confidence_value": scored["confidence_value"],
             "dimensions": scored["dimensions"],
@@ -1078,6 +1063,7 @@ def enrich_risk(local_events, prox_matches):
             "local_event_count": scored["local_event_count"],
             "infra_proximity_count": scored["infra_proximity_count"],
             "high_critical_infra_count": scored["high_critical_infra_count"],
+            "evidence_status": "observed" if (scored["local_event_count"] + scored["infra_proximity_count"]) else "no_validated_evidence",
             "model": "cee_country_risk_v2",
             "weights": RISK_WEIGHTS,
         }
@@ -1127,7 +1113,7 @@ def enrich_risk(local_events, prox_matches):
     risk["country_scores"] = country_scores
     risk["countries"] = countries
     risk["region"] = {
-        "overall": risk_level(region_score),
+        "overall": risk_level(region_score) if evidence_total else "insufficient_data",
         "overall_score": region_score,
         "confidence": (
             "high" if region_confidence_value >= 0.72
@@ -1137,6 +1123,7 @@ def enrich_risk(local_events, prox_matches):
         "confidence_value": region_confidence_value,
         "dimension_scores": dimension_scores,
         "evidence_count": evidence_total,
+        "evidence_status": "observed" if evidence_total else "no_validated_evidence",
     }
     risk["model"] = {
         "name": "cee_country_risk_v2",

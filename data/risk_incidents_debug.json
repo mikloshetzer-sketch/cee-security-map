@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-09T12:26:46.738229+00:00",
+  "generated_utc": "2026-11-09T15:02:30.995321+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 6,
-    "local_event_count": 6,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -30,12 +30,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 6,
+      "incident_count": 3,
       "category_counts": {
-        "kinetic_attack": 6
+        "kinetic_attack": 3
       },
       "source_files": {
-        "local_events.geojson": 6
+        "local_events.geojson": 3
       }
     },
     "Lithuania": {
@@ -61,14 +61,14 @@
     "Slovakia": [],
     "Poland": [
       {
-        "id": "e532cb0d5c817ddb58cc",
+        "id": "7afdb875854af46540d1",
         "date": "2026-11-09",
         "time": "2026-11-09T07:51:37+00:00",
         "category": "kinetic_attack",
         "severity": "critical",
-        "title": "Poland mourns the victims; attacker dies in hospital",
-        "source": "BNN",
-        "url": "https://bnn-news.com/world/poland-mourns-the-victims-attacker-dies-in-hospital-wph782z",
+        "title": "Polish government ministers suggest tighter gun controls after deadly terrorist shooting",
+        "source": "NotesFromPoland",
+        "url": "https://notesfrompoland.com/2026/11/09/polish-government-ministers-suggest-tighter-gun-controls-after-deadly-terrorist-shooting/",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -80,48 +80,6 @@
         "classification_confidence": 0.92,
         "matched_rule_id": "GROUND.ARMED.SHOOTING",
         "fingerprint_hash": "72aea93369690e1849244151"
-      },
-      {
-        "id": "41f10bb5ab075a1f1d16",
-        "date": "2026-11-09",
-        "time": "2026-11-09T06:37:39+00:00",
-        "category": "kinetic_attack",
-        "severity": "critical",
-        "title": "Belehalt sérüléseibe a krakkói lövöldözés elkövetője",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20261109_krakkoi-lovoldozes-elkoveto-meghalt",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint_hash": "22bf0a5d6e2853ee2fe705d8"
-      },
-      {
-        "id": "64eaa5748dcd76eb087b",
-        "date": "2026-11-09",
-        "time": "2026-11-09T06:33:33+00:00",
-        "category": "kinetic_attack",
-        "severity": "critical",
-        "title": "Meghalt a kórházban a krakkói lövöldözés elkövetője",
-        "source": "Telex",
-        "url": "https://telex.hu/kulfold/2026/11/09/meghalt-krakko-lovoldozo-korhaz",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint_hash": "427c18dbf0b175d4c1d26057"
       },
       {
         "id": "c664e1150b8ed3ce65d4",
@@ -164,27 +122,6 @@
         "classification_confidence": 0.92,
         "matched_rule_id": "GROUND.ARMED.SHOOTING",
         "fingerprint_hash": "5faa12f6614aa0739bab877a"
-      },
-      {
-        "id": "c42ca26f63eb754b090f",
-        "date": "2026-11-07",
-        "time": "2026-11-07T15:19:29+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Střelce z Krakova fascinovala ideologie krajní pravice, tvrdí ministr",
-        "source": "CT24",
-        "url": "https://ct24.ceskatelevize.cz/clanek/svet/po-strelbe-na-namesti-v-krakove-jsou-hlaseni-mrtvi-i-zraneni-379380",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint_hash": "d803de78eddfda5d93261a1e"
       }
     ],
     "Lithuania": [],

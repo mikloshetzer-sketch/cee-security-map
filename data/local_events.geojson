@@ -1,533 +1,9 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-09T12:26:35.978980+00:00",
+  "generated_utc": "2026-11-09T15:02:21.306208+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.9366,
-          50.0614
-        ]
-      },
-      "properties": {
-        "id": "64eaa5748dcd76eb087b",
-        "title": "Meghalt a kórházban a krakkói lövöldözés elkövetője",
-        "summary": "A 24 éves Michał Oksiński hétfőn kora reggel halt meg.",
-        "source": "Telex",
-        "url": "https://telex.hu/kulfold/2026/11/09/meghalt-krakko-lovoldozo-korhaz",
-        "published": "Mon, 09 Nov 2026 07:33:33 +0100",
-        "country": "Poland",
-        "city": "Kraków",
-        "family": "ground",
-        "subcategory": "armed_incident",
-        "subtype": "shooting",
-        "object": "firearm",
-        "action": "shooting",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [
-          "fatality"
-        ],
-        "severity": "critical",
-        "confidence": 0.92,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint": {
-          "country": "Poland",
-          "family": "ground",
-          "subcategory": "armed_incident",
-          "subtype": "shooting",
-          "object": "firearm",
-          "action": "shooting",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Kraków",
-          "event_date": "Mon, 09 No",
-          "hash": "427c18dbf0b175d4c1d26057"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "firearm",
-            "inferred:shooting"
-          ],
-          "actions": [
-            "shooting",
-            "lövöldözés",
-            "tüzet nyitott"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [
-            "fatality",
-            "meghalt"
-          ],
-          "extra_context": [
-            "feed_country=Hungary",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "consequence_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "GROUND.ARMED.SHOOTING",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "shooting",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.ARMED.ATTACK",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "armed_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:attacked"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1711,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Hétfőn kora reggel meghalt a kórházban a 24 éves Michał Oksiński, aki szombaton tüzet nyitott Krakkó főterén, számolt be hétfőn a lengyel rendőrség. Mint megírtuk , szombat délután egy katonai jellegű ruházatot viselő fegyveres autójából lövöldözni kezdett Krakkó belvárosában. Hat ember meghalt, a támadót is számba véve összesen 16-an sérültek meg. Az elkövető a családtagjait is megölhette : szülei és a húga holttestét 200 kilométerre Krakkótól, a lakásában találták meg. A férfit a lengyel sajtó a 24 éves Michał Oksińskiként azonosította, a fiatalember legálisan tarthatott fegyvert otthon. Marcin Kierwinski lengyel belügyminiszter korábbi közlése szerint minden jel arra utal, hogy a férfi a szélsőjobboldali ideológiák megszállottja volt. A támadót egy közvetlen tűzharcban ártalmatlanította két fiatal rendőr – bár Oksiński is túlélte a tűzharcot, mostanáig kritikus állapotban kezelték a kórházban. A krakkói ügyészség terrorcselekmény és sorozatgyilkosság ügyében indított nyomozást. Eryk",
-        "place": "Kraków",
-        "time": "Mon, 09 Nov 2026 07:33:33 +0100",
-        "category": "ground",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Telex"
-        ],
-        "urls": [
-          "https://telex.hu/kulfold/2026/11/09/meghalt-krakko-lovoldozo-korhaz"
-        ],
-        "merged_titles": [
-          "Meghalt a kórházban a krakkói lövöldözés elkövetője"
-        ],
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "incident_object": "firearm",
-        "incident_action": "shooting",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.92
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.012,
-          52.229
-        ]
-      },
-      "properties": {
-        "id": "41f10bb5ab075a1f1d16",
-        "title": "Belehalt sérüléseibe a krakkói lövöldözés elkövetője",
-        "summary": "A szombaton történt, hat halálos áldozatot követelő terrortámadás elkövetője a kórházban hunyt el.",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20261109_krakkoi-lovoldozes-elkoveto-meghalt",
-        "published": "Mon, 09 Nov 2026 06:37:39 Z",
-        "country": "Poland",
-        "city": "Warsaw",
-        "family": "ground",
-        "subcategory": "armed_incident",
-        "subtype": "shooting",
-        "object": "firearm",
-        "action": "shooting",
-        "actor": "unknown",
-        "target": "unknown",
-        "context": [],
-        "consequences": [
-          "fatality"
-        ],
-        "severity": "critical",
-        "confidence": 0.92,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint": {
-          "country": "Poland",
-          "family": "ground",
-          "subcategory": "armed_incident",
-          "subtype": "shooting",
-          "object": "firearm",
-          "action": "shooting",
-          "actor": "unknown",
-          "target": "unknown",
-          "place": "Warsaw",
-          "event_date": "Mon, 09 No",
-          "hash": "22bf0a5d6e2853ee2fe705d8"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [
-            "történt",
-            "megerősítették"
-          ],
-          "objects": [
-            "firearm",
-            "inferred:shooting"
-          ],
-          "actions": [
-            "arrested",
-            "őrizetbe vették",
-            "shooting",
-            "lövöldözés"
-          ],
-          "targets": [],
-          "actors": [],
-          "consequences": [
-            "fatality",
-            "halálos áldozat",
-            "meghalt"
-          ],
-          "extra_context": [
-            "feed_country=Hungary",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "consequence_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "GROUND.ARMED.SHOOTING",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "shooting",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TERRORISM.PLOT",
-            "family": "terrorism",
-            "subcategory": "plot",
-            "subtype": "terrorist_plot",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "INTELLIGENCE.ESPIONAGE",
-            "family": "intelligence",
-            "subcategory": "espionage",
-            "subtype": "espionage_case",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.ARMED.ATTACK",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "armed_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:attacked"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TERRORISM.ATTACK",
-            "family": "terrorism",
-            "subcategory": "attack",
-            "subtype": "terrorist_attack",
-            "severity": "critical",
-            "priority": 0,
-            "score": 0.85,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded"
-            ],
-            "matched_context": [
-              "terrortámadás"
-            ]
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 2096,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "A szombaton történt, hat halálos áldozatot követelő terrortámadás elkövetője a kórházban hunyt el. Meghalt a kórházban a szombati krakkói lövöldözés elkövetője, aki hat emberrel végzett a lengyel város központjában – közölte hétfőn kora reggel az X közösségi oldalon a lengyel rendőrség. A 24 éves merénylő állapota válságos volt, többszörös műtéten esett át, mielőtt a kórházban életét vesztette. Mint arról beszámoltunk, szombat délután egy lengyel elkövető az autójából válogatás nélkül kezdett lövöldözni a krakkói főtéren sétáló emberekre. A támadóval együtt 16-an sebesültek meg a lövöldözésben, a Külügyminisztérium közlése szerint magyar állampolgár nincs az áldozatok között. A támadót a rendőrök meglőtték, majd őrizetbe vették. A lövöldözést terrorcselekménynek minősítették , az elkövető egy szélsőjobboldali nézeteket valló férfi lehet. Később kiderült, hogy a lövöldöző házában három holttestet találtak , vélhetőleg az elkövető 53 éves apjával, 52 éves anyjával és 20 éves húgával is v",
-        "place": "Warsaw",
-        "time": "Mon, 09 Nov 2026 06:37:39 Z",
-        "category": "ground",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "HVG"
-        ],
-        "urls": [
-          "https://hvg.hu/vilag/20261109_krakkoi-lovoldozes-elkoveto-meghalt"
-        ],
-        "merged_titles": [
-          "Belehalt sérüléseibe a krakkói lövöldözés elkövetője"
-        ],
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "incident_object": "firearm",
-        "incident_action": "shooting",
-        "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.92
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -790,12 +266,12 @@
         ]
       },
       "properties": {
-        "id": "c42ca26f63eb754b090f",
-        "title": "Střelce z Krakova fascinovala ideologie krajní pravice, tvrdí ministr",
-        "summary": "Šest mrtvých, z&nbsp;toho čtyři ženy a&nbsp;dva muže, si v&nbsp;sobotu odpoledne vyžádala střelba na hlavním náměstí v&nbsp;Krakově na jihu Polska, oznámila polská policie. Patnáct lidí, včetně tří policistů, je raněných. Na místě řadu hodin zasahovaly záchranné složky, informovala zpravodajská televize TVN 24. Policisté předpokládaného pachatele postřelili a&nbsp;následně převezli do nemocnice. Podle ministra vnitra Marcina Kierwińského byl střelec fascinován ideologií krajní pravice. Mluvčí prezidenta oznámil, že hlava státu kvůli střelbě vyhlásí celostátní smutek. Později policie informovala o&nbsp;nálezu tří mrtvých lidí v&nbsp;domě útočníka.",
-        "source": "CT24",
-        "url": "https://ct24.ceskatelevize.cz/clanek/svet/po-strelbe-na-namesti-v-krakove-jsou-hlaseni-mrtvi-i-zraneni-379380",
-        "published": "Sat, 07 Nov 2026 15:19:29 GMT",
+        "id": "7afdb875854af46540d1",
+        "title": "Polish government ministers suggest tighter gun controls after deadly terrorist shooting",
+        "summary": "A shooting took place in Poland over the weekend, leaving six people dead, and the Polish Interior Minister links the incident to far-right views.",
+        "source": "NotesFromPoland",
+        "url": "https://notesfrompoland.com/2026/11/09/polish-government-ministers-suggest-tighter-gun-controls-after-deadly-terrorist-shooting/",
+        "published": "Mon, 09 Nov 2026 13:15:28 +0000",
         "country": "Poland",
         "city": null,
         "family": "ground",
@@ -804,10 +280,12 @@
         "object": "firearm",
         "action": "shooting",
         "actor": "unknown",
-        "target": "unknown",
+        "target": "civilian",
         "context": [],
-        "consequences": [],
-        "severity": "high",
+        "consequences": [
+          "fatality"
+        ],
+        "severity": "critical",
         "confidence": 0.76,
         "article_role": "incident",
         "actual_incident": true,
@@ -820,10 +298,10 @@
           "object": "firearm",
           "action": "shooting",
           "actor": "unknown",
-          "target": "unknown",
+          "target": "civilian",
           "place": "Poland",
-          "event_date": "Sat, 07 No",
-          "hash": "d803de78eddfda5d93261a1e"
+          "event_date": "Mon, 09 No",
+          "hash": "72aea93369690e1849244151"
         },
         "classifier_version": "1.1.0",
         "taxonomy_version": "1.0.1",
@@ -834,14 +312,19 @@
             "inferred:shooting"
           ],
           "actions": [
-            "shooting",
-            "střelba"
+            "shooting"
           ],
-          "targets": [],
+          "targets": [
+            "civilian",
+            "hospital"
+          ],
           "actors": [],
-          "consequences": [],
+          "consequences": [
+            "fatality",
+            "dead"
+          ],
           "extra_context": [
-            "feed_country=Czechia",
+            "feed_country=Latvia",
             "geocode_quality=country_fallback"
           ]
         },
@@ -850,7 +333,9 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
+          "target_match": 0.08,
           "country_match": 0.1,
+          "consequence_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
@@ -1007,20 +492,23 @@
         "article_fetch_source": "fetch_limit",
         "article_text_excerpt": "",
         "place": "Poland",
-        "time": "Sat, 07 Nov 2026 15:19:29 GMT",
+        "time": "Mon, 09 Nov 2026 07:51:37 GMT",
         "category": "ground",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
-        "source_count": 1,
+        "source_count": 2,
         "sources": [
-          "CT24"
+          "NotesFromPoland",
+          "BNN"
         ],
         "urls": [
-          "https://ct24.ceskatelevize.cz/clanek/svet/po-strelbe-na-namesti-v-krakove-jsou-hlaseni-mrtvi-i-zraneni-379380"
+          "https://notesfrompoland.com/2026/11/09/polish-government-ministers-suggest-tighter-gun-controls-after-deadly-terrorist-shooting/",
+          "https://bnn-news.com/world/poland-mourns-the-victims-attacker-dies-in-hospital-wph782z"
         ],
         "merged_titles": [
-          "Střelce z Krakova fascinovala ideologie krajní pravice, tvrdí ministr"
+          "Polish government ministers suggest tighter gun controls after deadly terrorist shooting",
+          "Poland mourns the victims; attacker dies in hospital"
         ],
         "incident_family": "ground",
         "incident_subcategory": "armed_incident",
@@ -1028,8 +516,8 @@
         "incident_object": "firearm",
         "incident_action": "shooting",
         "incident_actor": "unknown",
-        "incident_target": "unknown",
-        "classification_confidence": 0.76
+        "incident_target": "civilian",
+        "classification_confidence": 0.92
       }
     },
     {
@@ -1288,267 +776,6 @@
         "incident_action": "shooting",
         "incident_actor": "unknown",
         "incident_target": "unknown",
-        "classification_confidence": 0.92
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.1451,
-          51.9194
-        ]
-      },
-      "properties": {
-        "id": "e532cb0d5c817ddb58cc",
-        "title": "Poland mourns the victims; attacker dies in hospital",
-        "summary": "A shooting took place in Poland over the weekend, leaving six people dead, and the Polish Interior Minister links the incident to far-right views.",
-        "source": "BNN",
-        "url": "https://bnn-news.com/world/poland-mourns-the-victims-attacker-dies-in-hospital-wph782z",
-        "published": "Mon, 09 Nov 2026 07:51:37 GMT",
-        "country": "Poland",
-        "city": null,
-        "family": "ground",
-        "subcategory": "armed_incident",
-        "subtype": "shooting",
-        "object": "firearm",
-        "action": "shooting",
-        "actor": "unknown",
-        "target": "civilian",
-        "context": [],
-        "consequences": [
-          "fatality"
-        ],
-        "severity": "critical",
-        "confidence": 0.92,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint": {
-          "country": "Poland",
-          "family": "ground",
-          "subcategory": "armed_incident",
-          "subtype": "shooting",
-          "object": "firearm",
-          "action": "shooting",
-          "actor": "unknown",
-          "target": "civilian",
-          "place": "Poland",
-          "event_date": "Mon, 09 No",
-          "hash": "72aea93369690e1849244151"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "firearm",
-            "inferred:shooting"
-          ],
-          "actions": [
-            "shooting"
-          ],
-          "targets": [
-            "civilian",
-            "hospital"
-          ],
-          "actors": [],
-          "consequences": [
-            "fatality",
-            "dead"
-          ],
-          "extra_context": [
-            "feed_country=Latvia",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "country_match": 0.1,
-          "consequence_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "GROUND.ARMED.SHOOTING",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "shooting",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.ARMED.ATTACK",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "armed_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:attacked"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Poland",
-        "time": "Mon, 09 Nov 2026 07:51:37 GMT",
-        "category": "ground",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "BNN"
-        ],
-        "urls": [
-          "https://bnn-news.com/world/poland-mourns-the-victims-attacker-dies-in-hospital-wph782z"
-        ],
-        "merged_titles": [
-          "Poland mourns the victims; attacker dies in hospital"
-        ],
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "incident_object": "firearm",
-        "incident_action": "shooting",
-        "incident_actor": "unknown",
-        "incident_target": "civilian",
         "classification_confidence": 0.92
       }
     }

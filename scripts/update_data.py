@@ -25,6 +25,7 @@ import requests
 from dateutil import parser as dateparser
 
 from security_classifier import CLASSIFIER_VERSION, SecurityClassifier
+from article_cache import load_items, save_items
 
 # ============================================================
 # PATHS
@@ -869,24 +870,11 @@ def extract_article_text(html_text: str) -> str:
 
 
 def load_article_text_cache() -> Dict[str, Any]:
-    if not os.path.exists(ARTICLE_TEXT_CACHE_PATH):
-        return {"version": 1, "items": {}}
-    try:
-        with open(ARTICLE_TEXT_CACHE_PATH, "r", encoding="utf-8") as f:
-            payload = json.load(f) or {}
-        if not isinstance(payload, dict):
-            return {"version": 1, "items": {}}
-        payload.setdefault("version", 1)
-        payload.setdefault("items", {})
-        return payload
-    except Exception:
-        return {"version": 1, "items": {}}
+    return {"version": 2, "items": load_items(DATA_DIR)}
 
 
 def save_article_text_cache(payload: Dict[str, Any]) -> None:
-    payload["updated_utc"] = to_utc_z(datetime.now(timezone.utc))
-    with open(ARTICLE_TEXT_CACHE_PATH, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+    save_items(DATA_DIR, payload.get("items", {}))
 
 
 def taxonomy_candidate_terms() -> List[str]:

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "CEE Security Knowledge Base",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "schema_version": "1.0",
     "language": "multilingual",
     "description": "Machine-readable taxonomy and rule base for classifying security incidents in Central and Eastern Europe.",
@@ -336,6 +336,25 @@
         "sieć",
         "informačný systém",
         "informační systém"
+      ],
+      "firearm": [
+        "firearm",
+        "gun",
+        "pistol",
+        "rifle",
+        "automatic weapon",
+        "lőfegyver",
+        "pisztoly",
+        "gépfegyver",
+        "broń palna",
+        "pistolet",
+        "karabin",
+        "strelná zbraň",
+        "střelná zbraň",
+        "armă de foc",
+        "šaunamasis ginklas",
+        "šaujamierocis",
+        "tulirelv"
       ]
     },
     "actions": {
@@ -421,7 +440,17 @@
         "a explodat",
         "eksplodował",
         "vybuchol",
-        "explodoval"
+        "explodoval",
+        "explosion",
+        "blast",
+        "robbanás",
+        "wybuch",
+        "eksplozja",
+        "výbuch",
+        "explozie",
+        "sprogimas",
+        "sprādziens",
+        "plahvatus"
       ],
       "burned": [
         "burned",
@@ -432,7 +461,15 @@
         "a luat foc",
         "wybuchł pożar",
         "začal horieť",
-        "vypukl požár"
+        "vypukl požár",
+        "tűzeset",
+        "pożar",
+        "požiar",
+        "požár",
+        "incendiu",
+        "gaisras",
+        "ugunsgrēks",
+        "tulekahju"
       ],
       "damaged": [
         "damaged",
@@ -459,7 +496,18 @@
         "oprit",
         "wstrzymano",
         "prerušený",
-        "přerušen"
+        "přerušen",
+        "power outage",
+        "service outage",
+        "áramkimaradás",
+        "üzemzavar",
+        "przerwa w dostawie prądu",
+        "výpadok elektriny",
+        "výpadek proudu",
+        "pană de curent",
+        "elektros tiekimo sutrikimas",
+        "elektroapgādes pārtraukums",
+        "elektrikatkestus"
       ],
       "compromised": [
         "hacked",
@@ -472,7 +520,20 @@
         "atacat cibernetic",
         "przejęto",
         "napadnutý",
-        "napaden"
+        "napaden",
+        "ransomware attack",
+        "data breach",
+        "cyberattack",
+        "kibertámadás",
+        "zsarolóvírus",
+        "cyberatak",
+        "atak hakerski",
+        "kybernetický útok",
+        "kyberútok",
+        "atac cibernetic",
+        "kibernetinė ataka",
+        "kiberuzbrukums",
+        "küberrünnak"
       ],
       "jammed": [
         "jammed",
@@ -484,7 +545,18 @@
         "bruiaj",
         "zakłócono",
         "rušenie",
-        "rušení"
+        "rušení",
+        "gps jamming",
+        "gps spoofing",
+        "gps-zavarás",
+        "gps jelzavarás",
+        "zakłócenia gps",
+        "rušenie gps",
+        "rušení gps",
+        "bruiaj gps",
+        "gps trikdžiai",
+        "gps traucējumi",
+        "gps häired"
       ],
       "leaked": [
         "leaked",
@@ -549,7 +621,50 @@
         "sabotat",
         "sabotaż",
         "sabotovaný",
-        "sabotován"
+        "sabotován",
+        "sabotage attack",
+        "deliberately damaged",
+        "szándékosan megrongálták",
+        "szabotázsakció",
+        "akt sabotażu",
+        "dywersja",
+        "sabotáž",
+        "sabotaj",
+        "diversiune",
+        "diversija",
+        "diversioon"
+      ],
+      "shooting": [
+        "shooting",
+        "shots fired",
+        "opened fire",
+        "gunfire",
+        "shot at",
+        "fired shots",
+        "lövöldözés",
+        "lövöldöztek",
+        "lövést adtak le",
+        "tüzet nyitott",
+        "strzelanina",
+        "strzały",
+        "oddano strzały",
+        "otworzył ogień",
+        "postrzelony",
+        "streľba",
+        "strieľal",
+        "výstrely",
+        "střelba",
+        "výstřely",
+        "střílel",
+        "împușcături",
+        "focuri de armă",
+        "a tras focuri",
+        "šaudymas",
+        "šūviai",
+        "apšaude",
+        "šāvieni",
+        "tulistamine",
+        "tulistati"
       ]
     },
     "targets": {
@@ -740,7 +855,20 @@
         "authorities confirmed",
         "történt",
         "bekövetkezett",
-        "megerősítették"
+        "megerősítették",
+        "police confirmed",
+        "police reported",
+        "authorities said",
+        "rendőrség közölte",
+        "rendőrség megerősítette",
+        "policja poinformowała",
+        "policja potwierdziła",
+        "polícia potvrdila",
+        "policie potvrdila",
+        "poliția a confirmat",
+        "policija patvirtino",
+        "policija apstiprināja",
+        "politsei kinnitas"
       ],
       "default_actual_incident": true
     },
@@ -779,7 +907,18 @@
         "background",
         "elemzés",
         "szakértő szerint",
-        "háttér"
+        "háttér",
+        "opinion",
+        "commentary",
+        "editorial",
+        "vélemény",
+        "kommentár",
+        "opinia",
+        "komentarz",
+        "komentár",
+        "komentář",
+        "opinie",
+        "arvamus"
       ],
       "default_actual_incident": false
     },
@@ -804,7 +943,18 @@
         "beszerzés",
         "vásárlás",
         "szerződés",
-        "szállítás"
+        "szállítás",
+        "investment project",
+        "reconstruction project",
+        "planned renovation",
+        "beruházás",
+        "újjáépítési terv",
+        "fejlesztési projekt",
+        "inwestycja",
+        "projekt odbudowy",
+        "investícia",
+        "investice",
+        "investiție"
       ],
       "default_actual_incident": false
     },
@@ -828,7 +978,17 @@
         "historical",
         "évforduló",
         "éve történt",
-        "történelmi"
+        "történelmi",
+        "in the past",
+        "previously closed",
+        "years earlier",
+        "korábban bezárt",
+        "egykori",
+        "dawniej",
+        "przed laty",
+        "v minulosti",
+        "fostul",
+        "anterior"
       ],
       "default_actual_incident": false
     }
@@ -1422,6 +1582,36 @@
         "befolyásolási művelet"
       ],
       "severity": "medium"
+    },
+    {
+      "rule_id": "GROUND.ARMED.SHOOTING",
+      "family": "ground",
+      "subcategory": "armed_incident",
+      "subtype": "shooting",
+      "requires": {
+        "objects": [
+          "firearm"
+        ],
+        "actions": [
+          "shooting"
+        ]
+      },
+      "severity": "high"
+    },
+    {
+      "rule_id": "GROUND.ARMED.ATTACK",
+      "family": "ground",
+      "subcategory": "armed_incident",
+      "subtype": "armed_attack",
+      "requires": {
+        "objects": [
+          "firearm"
+        ],
+        "actions": [
+          "attacked"
+        ]
+      },
+      "severity": "high"
     }
   ],
   "negative_contexts": {
@@ -1684,3 +1874,4 @@
     "store_rejection_reason": true
   }
 }
+

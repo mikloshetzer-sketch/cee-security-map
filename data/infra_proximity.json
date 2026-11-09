@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_utc": "2026-11-01T12:37:27.765558+00:00",
+    "generated_utc": "2026-11-09T10:49:09.186687+00:00",
     "infrastructure_count": 103,
-    "event_count": 10,
-    "match_count": 3,
-    "raw_match_count": 3,
-    "top_infrastructure_count": 3,
+    "event_count": 18,
+    "match_count": 6,
+    "raw_match_count": 6,
+    "top_infrastructure_count": 5,
     "max_distance_km": 50,
     "target_countries": [
       "Czechia",
@@ -179,6 +179,138 @@
         "lat": 44.426,
         "lon": 26.102,
         "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "2951361d233aba50",
+      "level": "critical",
+      "score": 90.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "507467022176df1e",
+        "title": "Infrastructure – Budapest, Budapest, Hungary",
+        "category": "infrastructure",
+        "incident_type": "infrastructure_disruption",
+        "source": "GDELT",
+        "source_count": 1,
+        "sources": [
+          "GDELT"
+        ],
+        "time": "2026-11-03T00:00:00Z",
+        "url": "https://timesofindia.indiatimes.com/world/europe/warsaw-modlin-airport-closed-after-bomb-threat-alert-on-london-flight/articleshow/135491289.cms",
+        "urls": [
+          "https://timesofindia.indiatimes.com/world/europe/warsaw-modlin-airport-closed-after-bomb-threat-alert-on-london-flight/articleshow/135491289.cms"
+        ],
+        "lat": 52.229,
+        "lon": 21.012,
+        "location_quality": "city",
+        "place": "warsaw",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "pl-digital-warsaw-ixp",
+        "name": "Warsaw Internet Exchange / Digital Hub",
+        "country": "Poland",
+        "city": "Warsaw",
+        "category": "digital",
+        "subtype": "internet_exchange_digital_hub",
+        "criticality": 9.0,
+        "operator": "Multiple operators",
+        "lat": 52.229,
+        "lon": 21.012,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "751c82cd58084469",
+      "level": "critical",
+      "score": 89.68,
+      "distance_km": 0.18,
+      "event": {
+        "id": "507467022176df1e",
+        "title": "Infrastructure – Budapest, Budapest, Hungary",
+        "category": "infrastructure",
+        "incident_type": "infrastructure_disruption",
+        "source": "GDELT",
+        "source_count": 1,
+        "sources": [
+          "GDELT"
+        ],
+        "time": "2026-11-03T00:00:00Z",
+        "url": "https://timesofindia.indiatimes.com/world/europe/warsaw-modlin-airport-closed-after-bomb-threat-alert-on-london-flight/articleshow/135491289.cms",
+        "urls": [
+          "https://timesofindia.indiatimes.com/world/europe/warsaw-modlin-airport-closed-after-bomb-threat-alert-on-london-flight/articleshow/135491289.cms"
+        ],
+        "lat": 52.229,
+        "lon": 21.012,
+        "location_quality": "city",
+        "place": "warsaw",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "pl-digital-warsaw-dc-hub",
+        "name": "Warsaw Data Centre Hub",
+        "country": "Poland",
+        "city": "Warsaw",
+        "category": "digital",
+        "subtype": "data_center_hub",
+        "criticality": 9.0,
+        "operator": "Multiple operators",
+        "lat": 52.23,
+        "lon": 21.01,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "4f1bd10f70c9961c",
+      "level": "medium",
+      "score": 54.11,
+      "distance_km": 16.18,
+      "event": {
+        "id": "69c47ecccff12427",
+        "title": "Security Politics – Bucharest, Bucuresti, Romania",
+        "category": "security_politics",
+        "incident_type": "bomb_threat",
+        "source": "GDELT",
+        "source_count": 1,
+        "sources": [
+          "GDELT"
+        ],
+        "time": "2026-11-05T00:00:00Z",
+        "url": "https://www.mediafax.ro/english/bomb-threat-on-board-a-plane-flying-from-milan-to-bucharest-182-passengers-evacuated-23838127",
+        "urls": [
+          "https://www.mediafax.ro/english/bomb-threat-on-board-a-plane-flying-from-milan-to-bucharest-182-passengers-evacuated-23838127"
+        ],
+        "lat": 44.426,
+        "lon": 26.102,
+        "location_quality": "city",
+        "place": "bucharest",
+        "geolocation_method": "article_city",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "gdelt_linked.geojson"
+      },
+      "infrastructure": {
+        "id": "ro-transport-henri-coanda-airport",
+        "name": "Bucharest Henri Coandă International Airport",
+        "country": "Romania",
+        "city": "Bucharest",
+        "category": "transport",
+        "subtype": "international_airport",
+        "criticality": 8.0,
+        "operator": "Bucharest Airports",
+        "lat": 44.571,
+        "lon": 26.085,
+        "source_file": "critical_infrastructure.json"
       }
     }
   ]

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-01T12:37:27.844333+00:00",
+  "generated_utc": "2026-11-09T10:49:09.295602+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -57,29 +53,7 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "ac639cd05e6df5abb664",
-        "date": "2026-11-01",
-        "time": "2026-11-01T12:02:17+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Fragmentele unei drone rusești doborâte de apărarea antiaeriană ucraineană au provocat un incendiu la Cernăuți / O persoană a fost rănită",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/fragmentele-unei-drone-rusesti-doborate-de-apararea-antiaeriana-ucraineana-au-provocat-un-incendiu-la-cernauti-o-persoana-a-fost-ranita.html",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "84cbdad9b7c7eea1a6994336"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

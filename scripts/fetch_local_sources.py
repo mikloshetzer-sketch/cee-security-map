@@ -4,6 +4,7 @@ import html
 import feedparser
 import math
 import requests
+import unicodedata
 from difflib import SequenceMatcher
 from html.parser import HTMLParser
 from email.utils import parsedate_to_datetime
@@ -610,59 +611,91 @@ def contains_term(text, term):
 ARTICLE_CANDIDATE_TERMS = taxonomy_candidate_terms()
 
 
+# Common-language and inflected place names across the eight monitored countries.
+# Only unambiguous named locations are accepted; the feed's country is not
+# treated as proof of the event location.
+CITY_ALIASES = {
+    "Budapest": ["budapesten", "budapesti"],
+    "Bucharest": ["bucuresti", "bukarest", "bucharesti"],
+    "Constanța": ["constanta", "konstanca"],
+    "Bratislava": ["pozsony", "bratislave", "bratislavy"],
+    "Košice": ["kosice", "kassa", "kosiciach"],
+    "Prague": ["praha", "prag", "prága", "prague", "praze", "prahy"],
+    "Ostrava": ["ostrave", "ostravy"],
+    "Warsaw": ["warszawa", "warszawie", "warszawy", "varsó", "varsoban"],
+    "Gdańsk": ["gdansk", "gdansku"],
+    "Rzeszów": ["rzeszow", "rzeszowie"],
+    "Kraków": ["krakow", "krakowie", "krakowa", "krakkó", "krakkoban", "cracow", "cracovia", "cracovie"],
+    "Wrocław": ["wroclaw", "wroclawiu", "boroszló", "breslau"],
+    "Poznań": ["poznan", "poznaniu"],
+    "Łódź": ["lodz", "lodzi"],
+    "Lublin": ["lublinie", "lublina"],
+    "Vilnius": ["vilniuje", "vilna", "vilniusban"],
+    "Kaunas": ["kaune"],
+    "Klaipėda": ["klaipeda", "klaipedoje"],
+    "Riga": ["rigā", "rigas", "rigaban"],
+    "Ventspils": ["ventspili"],
+    "Tallinn": ["tallinnas", "tallinnban", "tallinnában"],
+    "Tartu": ["tartus"],
+    "Narva": ["narvas"],
+}
+
+EXTRA_CITY_COORDS = {
+    "Kraków": ([50.0614, 19.9366], "Poland"),
+    "Wrocław": ([51.1079, 17.0385], "Poland"),
+    "Poznań": ([52.4064, 16.9252], "Poland"),
+    "Łódź": ([51.7592, 19.4560], "Poland"),
+}
+
+
+def _fold_place(value):
+    # Unicode normalization handles accent variants, not arbitrary substrings.
+    value = unicodedata.normalize("NFKD", str(value or "").casefold())
+    value = "".join(c for c in value if not unicodedata.combining(c))
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def _place_match(text, alias):
+    return re.search(r"(?<!\w)" + re.escape(_fold_place(alias)) + r"(?!\w)",
+                     _fold_place(text), re.UNICODE)
+
+
 def detect_city(text, preferred_country=None):
+    """Find a named CEE city; prefer the earliest explicit mention.
+
+    The feed country is deliberately not used to override a different
+    location stated in the article. Multiple mentions in full article bodies
+    remain a limitation; headlines are evaluated separately by build_feature.
+    """
     matches = []
-
-    for city, coords in CITY_COORDS.items():
-        if contains_term(text, city):
-            city_country = CITY_COUNTRY.get(city)
-            priority = 0 if preferred_country and city_country == preferred_country else 1
-            matches.append((priority, -len(city), city, coords, city_country))
-
+    cities = [(city, coords, CITY_COUNTRY.get(city)) for city, coords in CITY_COORDS.items()]
+    cities += [(city, coords, country) for city, (coords, country) in EXTRA_CITY_COORDS.items()]
+    for city, coords, country in cities:
+        if country not in TARGET_COUNTRIES:
+            continue
+        for alias in (city, *CITY_ALIASES.get(city, [])):
+            match = _place_match(text, alias)
+            if match:
+                matches.append((match.start(), -len(_fold_place(alias)), city, coords, country))
     if not matches:
         return None, None, None
-
     matches.sort()
-    _, _, city, coords, city_country = matches[0]
-    return city, coords, city_country
+    _, _, city, coords, country = matches[0]
+    return city, coords, country
 
 
 def detect_event_country(text, source_country):
-    """
-    Strict whitelist geolocation for the eight monitored CEE countries.
+    """Recognize explicit CEE geography, never infer it from the RSS feed.
 
-    The RSS source country is metadata only. It is never used automatically
-    as the event location.
-
-    Accepted evidence:
-      1. a recognized city belonging to TARGET_COUNTRIES;
-      2. exactly one explicit monitored-country/demonym mention.
-
-    If the article cannot be tied reliably to one monitored country,
-    return None and exclude it.
+    A named city takes precedence. Country-only references must be unique.
     """
     city, _, city_country = detect_city(text)
-
     if city and city_country in TARGET_COUNTRIES:
         return city_country
-
-    country_hits = []
-
-    for country, terms in COUNTRY_TERMS.items():
-        if country not in TARGET_COUNTRIES:
-            continue
-
-        for term in terms:
-            if contains_term(text, term):
-                country_hits.append(country)
-                break
-
-    unique_hits = list(dict.fromkeys(country_hits))
-
-    if len(unique_hits) == 1:
-        return unique_hits[0]
-
-    return None
+    hits = [country for country, terms in COUNTRY_TERMS.items()
+            if country in TARGET_COUNTRIES and
+            any(_place_match(text, term) for term in terms)]
+    return hits[0] if len(hits) == 1 else None
 
 
 def classify_category(text):

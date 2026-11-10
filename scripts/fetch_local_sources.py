@@ -20,6 +20,7 @@ DATA = ROOT / "data"
 LOCAL_SOURCES_FILE = DATA / "local_sources.json"
 OUTPUT_FILE = DATA / "local_events.geojson"
 DEBUG_FILE = DATA / "local_events_debug.json"
+AI_CANDIDATES_FILE = DATA / "ai_candidates.json"
 ARTICLE_CACHE_FILE = DATA / "article_text_cache.json"
 
 MAX_ITEMS_PER_SOURCE = 50
@@ -1002,6 +1003,7 @@ def build_feature(entry, source_name, country):
 def fetch_feed(source_name, url, country):
     features = []
     debug_rows = []
+    ai_candidates = []
 
     try:
         parsed = feedparser.parse(url)
@@ -1011,6 +1013,30 @@ def fetch_feed(source_name, url, country):
 
             title = entry.get("title", "Untitled")
             link = entry.get("link")
+
+            # AI shadow-mode input: preserve all collected articles, including
+            # rejected ones. Keep public output to short excerpts, not full
+            # copyrighted article bodies. Full text remains in the existing
+            # article cache for a later runtime-only AI integration.
+            cached_article = _ARTICLE_CACHE.get(str(link or ""), {})
+            if not isinstance(cached_article, dict):
+                cached_article = {}
+            cached_text = str(cached_article.get("text") or "")
+            ai_candidates.append({
+                "source": source_name,
+                "feed_country": country,
+                "title": str(title or ""),
+                "summary": str(entry.get("summary") or "")[:1500],
+                "url": str(link or ""),
+                "published": entry.get("published") or entry.get("updated"),
+                "rule_status": "included" if feature else "excluded",
+                "rule_rejection_reason": None if feature else reason,
+                "rule_event_country": (
+                    feature.get("properties", {}).get("country") if feature else None
+                ),
+                "article_text_available": bool(cached_text),
+                "article_text_excerpt": cached_text[:1000],
+            })
 
             if feature:
                 features.append(feature)
@@ -1042,7 +1068,7 @@ def fetch_feed(source_name, url, country):
 
         print(f"ERROR {source_name}: {e}")
 
-    return features, debug_rows
+    return features, debug_rows, ai_candidates
 
 
 DEDUP_MAX_DISTANCE_KM = 140.0
@@ -1527,6 +1553,7 @@ def main():
     payload = load_sources()
     features = []
     debug = []
+    ai_candidates = []
 
     for country_block in payload.get("countries", []):
         country = country_block.get("country")
@@ -1545,9 +1572,10 @@ def main():
                 continue
 
             print(f"Fetching: {source_name} ({country})")
-            fetched, debug_rows = fetch_feed(source_name, rss_url, country)
+            fetched, debug_rows, candidate_rows = fetch_feed(source_name, rss_url, country)
             features.extend(fetched)
             debug.extend(debug_rows)
+            ai_candidates.extend(candidate_rows)
 
     features = deduplicate_features(features)
     features = ensure_classifier_fields(features)
@@ -1580,8 +1608,22 @@ def main():
         encoding="utf-8"
     )
 
+    ai_payload = {
+        "generated_utc": datetime.now(timezone.utc).isoformat(),
+        "mode": "shadow_only",
+        "note": "Not used for map publication or risk scoring.",
+        "candidate_count": len(ai_candidates),
+        "candidates": ai_candidates,
+    }
+    AI_CANDIDATES_FILE.write_text(
+        json.dumps(ai_payload, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+
     save_article_cache(_ARTICLE_CACHE)
 
+    print(f"Saved AI candidates: {AI_CANDIDATES_FILE}")
+    print(f"AI candidates: {len(ai_candidates)}")
     print(f"Saved: {OUTPUT_FILE}")
     print(f"Saved debug: {DEBUG_FILE}")
     print(f"Features: {len(features)}")

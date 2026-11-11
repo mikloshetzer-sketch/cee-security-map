@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-10T22:54:10.051844+00:00",
+  "generated_utc": "2026-11-11T04:08:52.586264+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
@@ -27,14 +27,14 @@
         "subtype": "violent_public_disorder",
         "object": "unknown",
         "action": "attacked",
-        "actor": "unknown",
+        "actor": "russia",
         "target": "government",
         "context": [
           "protest"
         ],
         "consequences": [],
         "severity": "high",
-        "confidence": 0.92,
+        "confidence": 0.98,
         "article_role": "incident",
         "actual_incident": true,
         "matched_rule_id": "PUBLIC.ORDER.VIOLENCE",
@@ -45,11 +45,11 @@
           "subtype": "violent_public_disorder",
           "object": "unknown",
           "action": "attacked",
-          "actor": "unknown",
+          "actor": "russia",
           "target": "government",
           "place": "Bucharest",
           "event_date": "Tue, 10 No",
-          "hash": "0cbfe9c6a99196aa59e45caf"
+          "hash": "d65c7684c135ce26f476dc87"
         },
         "classifier_version": "1.1.0",
         "taxonomy_version": "1.0.1",
@@ -64,7 +64,10 @@
             "government",
             "parlament"
           ],
-          "actors": [],
+          "actors": [
+            "russia",
+            "rusiei"
+          ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
@@ -77,6 +80,7 @@
           "object_match": 0.2,
           "action_match": 0.2,
           "target_match": 0.08,
+          "actor_match": 0.06,
           "country_match": 0.1,
           "city_match": 0.08,
           "supporting_evidence": 0.06
@@ -226,10 +230,10 @@
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
+        "full_article_enriched": true,
+        "article_text_chars": 2974,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. G4Media a primit, marți, trei explicații diferite de la AUR despre venirea AfD în București: Reprezentanții partidului neonazist din Germania au fost la protest, nu au fost invitați dar probabil vor veni sau participă, de fapt, la alt eveniment din Parlament, din ”festivalul libertății de exprimare”, așa cum a numit George Simion seria de 150 de evenimente, conform AUR, întinse pe mai multe zile. George Simion, Petrișor Peiu și Mihail Neamțu au avut variante diferite despre venirea și invitațiile adresate AfD, a cărei șefă Alice Weidel a atacat românii din Germania, pentru protestul despre care autoritățile susțin că se anunță a fi violent. Deputatul AUR Mihail Neamțu a declarat, duminică , pentru G4Media, că la protest au primit invitații și reprezentanții AfD, dar acestea au fost trimise înainte de ”declarațiile controversate ale doamnei Alic",
         "place": "Bucharest",
         "time": "Tue, 10 Nov 2026 15:14:42 +0000",
         "category": "public_order",
@@ -251,9 +255,9 @@
         "incident_subtype": "violent_public_disorder",
         "incident_object": "unknown",
         "incident_action": "attacked",
-        "incident_actor": "unknown",
+        "incident_actor": "russia",
         "incident_target": "government",
-        "classification_confidence": 0.92
+        "classification_confidence": 0.98
       }
     },
     {

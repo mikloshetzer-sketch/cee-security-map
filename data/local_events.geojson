@@ -1,265 +1,9 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-11T04:08:52.586264+00:00",
+  "generated_utc": "2026-11-11T13:31:48.471490+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          26.102,
-          44.426
-        ]
-      },
-      "properties": {
-        "id": "fae9b12a9e86a976dfbe",
-        "title": "Trei explicații diferite de la AUR despre venirea AfD în București / Ce spun Neamțu, Simion și Peiu, despre extremiștii a căror șefă Alice Weidel a atacat românii din Germania",
-        "summary": "<p>G4Media a primit, marți, trei explicații diferite de la AUR despre venirea AfD în București: Reprezentanții partidului neonazist din Germania au fost la protest, nu au fost invitați dar probabil vor veni sau participă, de fapt, la alt eveniment din Parlament, din ”festivalul libertății de exprimare”, așa cum a numit George Simion seria de 150 [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/trei-explicatii-diferite-de-la-aur-despre-venirea-afd-in-bucuresti-ce-spun-neamtu-simion-si-peiu-despre-extremistii-a-caror-sefa-alice-weidel-a-atacat-romanii-din-germania.html",
-        "published": "Tue, 10 Nov 2026 15:14:42 +0000",
-        "country": "Romania",
-        "city": "Bucharest",
-        "family": "public_order",
-        "subcategory": "violent_protest",
-        "subtype": "violent_public_disorder",
-        "object": "unknown",
-        "action": "attacked",
-        "actor": "russia",
-        "target": "government",
-        "context": [
-          "protest"
-        ],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.98,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "PUBLIC.ORDER.VIOLENCE",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "public_order",
-          "subcategory": "violent_protest",
-          "subtype": "violent_public_disorder",
-          "object": "unknown",
-          "action": "attacked",
-          "actor": "russia",
-          "target": "government",
-          "place": "Bucharest",
-          "event_date": "Tue, 10 No",
-          "hash": "d65c7684c135ce26f476dc87"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [],
-          "actions": [
-            "attacked",
-            "atacat"
-          ],
-          "targets": [
-            "government",
-            "parlament"
-          ],
-          "actors": [
-            "russia",
-            "rusiei"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "PUBLIC.ORDER.VIOLENCE",
-            "family": "public_order",
-            "subcategory": "violent_protest",
-            "subtype": "violent_public_disorder",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.19,
-            "matched": true,
-            "missing": [],
-            "matched_context": [
-              "protest"
-            ]
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:drone"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:sabotaged"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:ship"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "BORDER.VIOLENCE",
-            "family": "border_security",
-            "subcategory": "border_violence",
-            "subtype": "border_violence",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TERRORISM.ATTACK",
-            "family": "terrorism",
-            "subcategory": "attack",
-            "subtype": "terrorist_attack",
-            "severity": "critical",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.ARMED.ATTACK",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "armed_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:firearm"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 2974,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. G4Media a primit, marți, trei explicații diferite de la AUR despre venirea AfD în București: Reprezentanții partidului neonazist din Germania au fost la protest, nu au fost invitați dar probabil vor veni sau participă, de fapt, la alt eveniment din Parlament, din ”festivalul libertății de exprimare”, așa cum a numit George Simion seria de 150 de evenimente, conform AUR, întinse pe mai multe zile. George Simion, Petrișor Peiu și Mihail Neamțu au avut variante diferite despre venirea și invitațiile adresate AfD, a cărei șefă Alice Weidel a atacat românii din Germania, pentru protestul despre care autoritățile susțin că se anunță a fi violent. Deputatul AUR Mihail Neamțu a declarat, duminică , pentru G4Media, că la protest au primit invitații și reprezentanții AfD, dar acestea au fost trimise înainte de ”declarațiile controversate ale doamnei Alic",
-        "place": "Bucharest",
-        "time": "Tue, 10 Nov 2026 15:14:42 +0000",
-        "category": "public_order",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "G4Media"
-        ],
-        "urls": [
-          "https://www.g4media.ro/trei-explicatii-diferite-de-la-aur-despre-venirea-afd-in-bucuresti-ce-spun-neamtu-simion-si-peiu-despre-extremistii-a-caror-sefa-alice-weidel-a-atacat-romanii-din-germania.html"
-        ],
-        "merged_titles": [
-          "Trei explicații diferite de la AUR despre venirea AfD în București / Ce spun Neamțu, Simion și Peiu, despre extremiștii a căror șefă Alice Weidel a atacat românii din Germania"
-        ],
-        "incident_family": "public_order",
-        "incident_subcategory": "violent_protest",
-        "incident_subtype": "violent_public_disorder",
-        "incident_object": "unknown",
-        "incident_action": "attacked",
-        "incident_actor": "russia",
-        "incident_target": "government",
-        "classification_confidence": 0.98
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -781,6 +525,261 @@
         "incident_actor": "unknown",
         "incident_target": "unknown",
         "classification_confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6032,
+          56.8796
+        ]
+      },
+      "properties": {
+        "id": "70d6bff1b3b2ce0697ab",
+        "title": "\"Appropriate operational conditions were not met\" – Latvian Armed Forces explain why drone was not shot down",
+        "summary": "Latvia's military says civilian safety and unsuitable operational conditions prevented NATO fighter jets from shooting down a drone crossing Latvian airspace.",
+        "source": "BNN",
+        "url": "https://bnn-news.com/social/appropriate-operational-conditions-were-not-met-latvian-armed-forces-explain-why-drone-was-not-shot-down-gddgxcc",
+        "published": "Wed, 11 Nov 2026 11:23:34 GMT",
+        "country": "Latvia",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_shootdown",
+        "object": "drone",
+        "action": "shot_down",
+        "actor": "nato",
+        "target": "civilian",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
+        "fingerprint": {
+          "country": "Latvia",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_shootdown",
+          "object": "drone",
+          "action": "shot_down",
+          "actor": "nato",
+          "target": "civilian",
+          "place": "Latvia",
+          "event_date": "Wed, 11 No",
+          "hash": "fc46df39f371b2ec50bf3a3a"
+        },
+        "classifier_version": "1.1.0",
+        "taxonomy_version": "1.0.1",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "military_aircraft",
+            "fighter",
+            "firearm",
+            "inferred:shooting"
+          ],
+          "actions": [
+            "shot_down",
+            "shot down",
+            "shooting"
+          ],
+          "targets": [
+            "civilian"
+          ],
+          "actors": [
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Latvia",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.ARMED.SHOOTING",
+            "family": "ground",
+            "subcategory": "armed_incident",
+            "subtype": "shooting",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.ARMED.ATTACK",
+            "family": "ground",
+            "subcategory": "armed_incident",
+            "subtype": "armed_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:attacked"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "airspace"
+            ]
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
+        "place": "Latvia",
+        "time": "Wed, 11 Nov 2026 11:23:34 GMT",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "BNN"
+        ],
+        "urls": [
+          "https://bnn-news.com/social/appropriate-operational-conditions-were-not-met-latvian-armed-forces-explain-why-drone-was-not-shot-down-gddgxcc"
+        ],
+        "merged_titles": [
+          "\"Appropriate operational conditions were not met\" – Latvian Armed Forces explain why drone was not shot down"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_shootdown",
+        "incident_object": "drone",
+        "incident_action": "shot_down",
+        "incident_actor": "nato",
+        "incident_target": "civilian",
+        "classification_confidence": 0.9
       }
     }
   ]

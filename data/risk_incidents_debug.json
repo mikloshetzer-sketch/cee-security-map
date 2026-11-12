@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-12T05:15:25.030788+00:00",
+  "generated_utc": "2026-11-12T14:35:00.271604+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 4,
-    "local_event_count": 4,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -34,12 +30,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "kinetic_attack": 2
+        "kinetic_attack": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Lithuania": {
@@ -65,37 +61,15 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "89d9ae2174f1146efedd",
-        "date": "2026-11-11",
-        "time": "2026-11-11T19:59:40+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Alertă la granița României. Armata a ridicat două avioane de luptă F-16",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/alerta-la-granita-romaniei-armata-a-ridicat-doua-avioane-de-lupta-f-16-2401760",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "3cd7b7851ef41b214a83bf58"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [
       {
         "id": "7afdb875854af46540d1",
         "date": "2026-11-09",
-        "time": "2026-11-09T07:51:37+00:00",
+        "time": "2026-11-09T13:15:28+00:00",
         "category": "kinetic_attack",
-        "severity": "critical",
+        "severity": "high",
         "title": "Polish government ministers suggest tighter gun controls after deadly terrorist shooting",
         "source": "NotesFromPoland",
         "url": "https://notesfrompoland.com/2026/11/09/polish-government-ministers-suggest-tighter-gun-controls-after-deadly-terrorist-shooting/",
@@ -107,30 +81,9 @@
         "incident_family": "ground",
         "incident_subcategory": "armed_incident",
         "incident_subtype": "shooting",
-        "classification_confidence": 0.92,
+        "classification_confidence": 0.76,
         "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint_hash": "72aea93369690e1849244151"
-      },
-      {
-        "id": "7c6ce6db96309fc93e0e",
-        "date": "2026-11-07",
-        "time": "2026-11-07T15:40:50+00:00",
-        "category": "kinetic_attack",
-        "severity": "critical",
-        "title": "Six killed in terrorist shooting in Polish city of Kraków",
-        "source": "NotesFromPoland",
-        "url": "https://notesfrompoland.com/2026/11/07/fatalities-reported-in-shooting-on-historical-market-square-in-krakow/",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint_hash": "5faa12f6614aa0739bab877a"
+        "fingerprint_hash": "bcb8104338777ceecfd0d3e0"
       }
     ],
     "Lithuania": [],

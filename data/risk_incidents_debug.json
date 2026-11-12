@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-12T14:35:00.271604+00:00",
+  "generated_utc": "2026-11-12T23:16:36.753054+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -30,12 +30,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "kinetic_attack": 1
+        "kinetic_attack": 2
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Lithuania": {
@@ -64,6 +64,27 @@
     "Romania": [],
     "Slovakia": [],
     "Poland": [
+      {
+        "id": "6017da237dfe03c1fe0f",
+        "date": "2026-11-12",
+        "time": "2026-11-12T17:08:26+00:00",
+        "category": "kinetic_attack",
+        "severity": "high",
+        "title": "V Krakově se opět střílelo, útočníka zadržela policie",
+        "source": "Novinky",
+        "url": "https://www.novinky.cz/clanek/zahranicni-evropa-v-krakove-se-opet-strilelo-strelce-zadrzela-policie-nikdo-nebyl-zranen-40608378",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "ground",
+        "incident_subcategory": "armed_incident",
+        "incident_subtype": "shooting",
+        "classification_confidence": 0.76,
+        "matched_rule_id": "GROUND.ARMED.SHOOTING",
+        "fingerprint_hash": "fc5c61302f4686ea8e81bfac"
+      },
       {
         "id": "7afdb875854af46540d1",
         "date": "2026-11-09",

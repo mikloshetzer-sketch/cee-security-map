@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-12T00:09:24.930537+00:00",
+  "generated_utc": "2026-11-12T05:15:25.030788+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 4,
+    "local_event_count": 4,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,9 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -61,7 +65,29 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [],
+    "Romania": [
+      {
+        "id": "89d9ae2174f1146efedd",
+        "date": "2026-11-11",
+        "time": "2026-11-11T19:59:40+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Alertă la granița României. Armata a ridicat două avioane de luptă F-16",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/alerta-la-granita-romaniei-armata-a-ridicat-doua-avioane-de-lupta-f-16-2401760",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "3cd7b7851ef41b214a83bf58"
+      }
+    ],
     "Slovakia": [],
     "Poland": [
       {

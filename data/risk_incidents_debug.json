@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-13T13:55:37.722336+00:00",
+  "generated_utc": "2026-11-13T23:17:36.758651+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -30,13 +30,9 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 1,
-      "category_counts": {
-        "kinetic_attack": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Lithuania": {
       "incident_count": 0,
@@ -63,29 +59,7 @@
     "Hungary": [],
     "Romania": [],
     "Slovakia": [],
-    "Poland": [
-      {
-        "id": "7afdb875854af46540d1",
-        "date": "2026-11-09",
-        "time": "2026-11-09T13:15:28+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Polish government ministers suggest tighter gun controls after deadly terrorist shooting",
-        "source": "NotesFromPoland",
-        "url": "https://notesfrompoland.com/2026/11/09/polish-government-ministers-suggest-tighter-gun-controls-after-deadly-terrorist-shooting/",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint_hash": "bcb8104338777ceecfd0d3e0"
-      }
-    ],
+    "Poland": [],
     "Lithuania": [],
     "Latvia": [
       {

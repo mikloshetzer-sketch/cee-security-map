@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_utc": "2026-11-14T04:25:29.521286+00:00",
+    "generated_utc": "2026-11-14T12:58:14.758602+00:00",
     "infrastructure_count": 103,
-    "event_count": 16,
-    "match_count": 3,
-    "raw_match_count": 3,
-    "top_infrastructure_count": 3,
+    "event_count": 17,
+    "match_count": 5,
+    "raw_match_count": 5,
+    "top_infrastructure_count": 5,
     "max_distance_km": 50,
     "target_countries": [
       "Czechia",
@@ -34,9 +34,275 @@
       "top_matches": "one best match per infrastructure asset"
     }
   },
-  "top_matches": [],
-  "matches": [],
+  "top_matches": [
+    {
+      "id": "80e66a94de9070d3",
+      "level": "critical",
+      "score": 90.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "d7ecaffd824aeae1ef7e",
+        "title": "Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak",
+        "category": "cyber",
+        "incident_type": "cyber_incident",
+        "source": "Portfolio",
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "time": "Sat, 14 Nov 2026 10:20:00 +0100",
+        "url": "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452",
+        "urls": [
+          "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452"
+        ],
+        "lat": 47.497,
+        "lon": 19.04,
+        "location_quality": "city",
+        "place": "Budapest",
+        "geolocation_method": "source_coordinate",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-digital-bix",
+        "name": "Budapest Internet Exchange",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "digital",
+        "subtype": "internet_exchange",
+        "criticality": 9.0,
+        "operator": "BIX",
+        "lat": 47.497,
+        "lon": 19.04,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "0bc72288c9e279fd",
+      "level": "critical",
+      "score": 79.82,
+      "distance_km": 0.11,
+      "event": {
+        "id": "d7ecaffd824aeae1ef7e",
+        "title": "Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak",
+        "category": "cyber",
+        "incident_type": "cyber_incident",
+        "source": "Portfolio",
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "time": "Sat, 14 Nov 2026 10:20:00 +0100",
+        "url": "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452",
+        "urls": [
+          "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452"
+        ],
+        "lat": 47.497,
+        "lon": 19.04,
+        "location_quality": "city",
+        "place": "Budapest",
+        "geolocation_method": "source_coordinate",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-digital-budapest-dc-hub",
+        "name": "Budapest Data Centre Hub",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "digital",
+        "subtype": "data_center_hub",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 47.498,
+        "lon": 19.04,
+        "source_file": "infra_digital.json"
+      }
+    }
+  ],
+  "matches": [
+    {
+      "id": "80e66a94de9070d3",
+      "level": "critical",
+      "score": 90.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "d7ecaffd824aeae1ef7e",
+        "title": "Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak",
+        "category": "cyber",
+        "incident_type": "cyber_incident",
+        "source": "Portfolio",
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "time": "Sat, 14 Nov 2026 10:20:00 +0100",
+        "url": "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452",
+        "urls": [
+          "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452"
+        ],
+        "lat": 47.497,
+        "lon": 19.04,
+        "location_quality": "city",
+        "place": "Budapest",
+        "geolocation_method": "source_coordinate",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-digital-bix",
+        "name": "Budapest Internet Exchange",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "digital",
+        "subtype": "internet_exchange",
+        "criticality": 9.0,
+        "operator": "BIX",
+        "lat": 47.497,
+        "lon": 19.04,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "0bc72288c9e279fd",
+      "level": "critical",
+      "score": 79.82,
+      "distance_km": 0.11,
+      "event": {
+        "id": "d7ecaffd824aeae1ef7e",
+        "title": "Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak",
+        "category": "cyber",
+        "incident_type": "cyber_incident",
+        "source": "Portfolio",
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "time": "Sat, 14 Nov 2026 10:20:00 +0100",
+        "url": "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452",
+        "urls": [
+          "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452"
+        ],
+        "lat": 47.497,
+        "lon": 19.04,
+        "location_quality": "city",
+        "place": "Budapest",
+        "geolocation_method": "source_coordinate",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-digital-budapest-dc-hub",
+        "name": "Budapest Data Centre Hub",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "digital",
+        "subtype": "data_center_hub",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 47.498,
+        "lon": 19.04,
+        "source_file": "infra_digital.json"
+      }
+    }
+  ],
   "raw_matches": [
+    {
+      "id": "80e66a94de9070d3",
+      "level": "critical",
+      "score": 90.0,
+      "distance_km": 0.0,
+      "event": {
+        "id": "d7ecaffd824aeae1ef7e",
+        "title": "Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak",
+        "category": "cyber",
+        "incident_type": "cyber_incident",
+        "source": "Portfolio",
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "time": "Sat, 14 Nov 2026 10:20:00 +0100",
+        "url": "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452",
+        "urls": [
+          "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452"
+        ],
+        "lat": 47.497,
+        "lon": 19.04,
+        "location_quality": "city",
+        "place": "Budapest",
+        "geolocation_method": "source_coordinate",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-digital-bix",
+        "name": "Budapest Internet Exchange",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "digital",
+        "subtype": "internet_exchange",
+        "criticality": 9.0,
+        "operator": "BIX",
+        "lat": 47.497,
+        "lon": 19.04,
+        "source_file": "infra_digital.json"
+      }
+    },
+    {
+      "id": "0bc72288c9e279fd",
+      "level": "critical",
+      "score": 79.82,
+      "distance_km": 0.11,
+      "event": {
+        "id": "d7ecaffd824aeae1ef7e",
+        "title": "Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak",
+        "category": "cyber",
+        "incident_type": "cyber_incident",
+        "source": "Portfolio",
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "time": "Sat, 14 Nov 2026 10:20:00 +0100",
+        "url": "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452",
+        "urls": [
+          "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452"
+        ],
+        "lat": 47.497,
+        "lon": 19.04,
+        "location_quality": "city",
+        "place": "Budapest",
+        "geolocation_method": "source_coordinate",
+        "geolocation_source_count": 1,
+        "geolocation_evidence_count": 1,
+        "geolocation_negation_filter": true,
+        "source_file": "local_events.geojson"
+      },
+      "infrastructure": {
+        "id": "hu-digital-budapest-dc-hub",
+        "name": "Budapest Data Centre Hub",
+        "country": "Hungary",
+        "city": "Budapest",
+        "category": "digital",
+        "subtype": "data_center_hub",
+        "criticality": 8.0,
+        "operator": "Multiple operators",
+        "lat": 47.498,
+        "lon": 19.04,
+        "source_file": "infra_digital.json"
+      }
+    },
     {
       "id": "2951361d233aba50",
       "level": "critical",

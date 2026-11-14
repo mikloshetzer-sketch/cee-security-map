@@ -1,9 +1,519 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-14T04:25:22.187842+00:00",
+  "generated_utc": "2026-11-14T12:58:06.871950+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.04,
+          47.497
+        ]
+      },
+      "properties": {
+        "id": "d7ecaffd824aeae1ef7e",
+        "title": "Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak",
+        "summary": "<p>Teljesen helyreálltak a Microsoft szolgáltatásai a vállalat több alkalmazását – köztük az Outlookot, a Teamst és a Copilotot – megbénító, világméretű üzemzavar után. A több mint hetven országra kiterjedő leállás nemcsak a lakossági és vállalati felhasználókat érintette, hanem számos kormányzati és közszolgáltatási rendszert is működésképtelenné tett. A techóriás közlése szerint a hibát nem kibertámadás vagy a mesterséges intelligencia, hanem egy hálózati kapacitásbővítés során fellépő műszaki probléma okozta - jelentette a <a href=\"https://www.bbc.com/news/articles/c6rrg51rkz09o\" rel=\"noopener\" target=\"_blank\">BBC</a>.</p>",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452",
+        "published": "Sat, 14 Nov 2026 10:20:00 +0100",
+        "country": "Hungary",
+        "city": "Budapest",
+        "family": "cyber",
+        "subcategory": "intrusion",
+        "subtype": "cyber_intrusion",
+        "object": "cyber_system",
+        "action": "compromised",
+        "actor": "unknown",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "high",
+        "confidence": 0.84,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "CYBER.INTRUSION",
+        "fingerprint": {
+          "country": "Hungary",
+          "family": "cyber",
+          "subcategory": "intrusion",
+          "subtype": "cyber_intrusion",
+          "object": "cyber_system",
+          "action": "compromised",
+          "actor": "unknown",
+          "target": "unknown",
+          "place": "Budapest",
+          "event_date": "Sat, 14 No",
+          "hash": "61a793b961da531260b7b11d"
+        },
+        "classifier_version": "1.1.0",
+        "taxonomy_version": "1.0.1",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "cyber_system",
+            "hálózat"
+          ],
+          "actions": [
+            "disrupted",
+            "üzemzavar",
+            "compromised",
+            "kibertámadás"
+          ],
+          "targets": [],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
+            "family": "cyber",
+            "subcategory": "operational_disruption",
+            "subtype": "cyber_operational_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.SERVICE.OUTAGE",
+            "family": "energy",
+            "subcategory": "power_grid",
+            "subtype": "energy_service_outage",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CRITICAL.INFRASTRUCTURE.DISRUPTION",
+            "family": "critical_infrastructure",
+            "subcategory": "public_services",
+            "subtype": "critical_infrastructure_disruption",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:critical_infrastructure"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
+            "family": "transport",
+            "subcategory": "rail",
+            "subtype": "rail_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:drone",
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 4971,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "A felhasználók először csütörtökön jelezték, hogy nem férnek hozzá a Microsoft 365 szoftvercsomag elemeihez, illetve az Exchange Online postafiókokhoz. A világszerte több mint 430 millió ember által használt rendszerek csaknem egy teljes napig akadoztak, mire péntek délutánra fokozatosan helyreálltak, a teljes hibaelhárítás pedig szombat kora reggelre fejeződött be. A Microsoft elnézést kért az okozott kellemetlenségekért, és jelezte, hogy a rendszer stabilitásának megőrzése érdekében csak lépésről lépésre tudták újraindítani a szolgáltatásokat. A leállás világszerte komoly fennakadásokat okozott az államigazgatásban és a kritikus infrastruktúrában. Érintett volt többek között a japán és a szingapúri kormányzat, a Fülöp-szigeteki Legfelsőbb Bíróság, valamint az ausztrál hírszerzés is. Az amerikai képviselőházban egy teljes napnyi törvényhozói munka veszett kárba a levelezőrendszer kiesése miatt, míg a törökországi Antalyában zajló COP31 klímacsúcson a tanácsadók és a tisztviselők munká",
+        "place": "Budapest",
+        "time": "Sat, 14 Nov 2026 10:20:00 +0100",
+        "category": "cyber",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Portfolio"
+        ],
+        "urls": [
+          "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452"
+        ],
+        "merged_titles": [
+          "Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak"
+        ],
+        "incident_family": "cyber",
+        "incident_subcategory": "intrusion",
+        "incident_subtype": "cyber_intrusion",
+        "incident_object": "cyber_system",
+        "incident_action": "compromised",
+        "incident_actor": "unknown",
+        "incident_target": "unknown",
+        "classification_confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.638,
+          44.173
+        ]
+      },
+      "properties": {
+        "id": "f4eabedfcb56aad19375",
+        "title": "Navă lovită de o dronă în Marea Neagră, la 12 kilometri de Sfântu Gheorghe. Ministrul Apărării: „Nu sunt pierderi de vieți omenești”",
+        "summary": "O navă sub pavilion Palau a fost lovită de o dronă în noaptea de vineri spre sâmbătă, în apele teritoriale ale României, la aproximativ 12 kilometri nord de Sfântu Gheorghe, potrivit Ziua de Constanța. În urma impactului nu a izbucnit un incendiu și nu au fost raportate victime. Ministrul Apărării, Radu Oprea, a confirmat că autoritățile au fost informate despre incident, dar a precizat că nu poate da detalii despre proveniența dronei până la finalizarea verificărilor.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/nava-lovita-de-o-drona-in-marea-neagra-la-12-kilometri-de-sfantu-gheorghe-ministrul-apararii-nu-sunt-pierderi-de-vieti-omenesti-4036381",
+        "published": "Sat, 14 Nov 2026 13:37:09 +0200",
+        "country": "Romania",
+        "city": "Constanța",
+        "family": "maritime",
+        "subcategory": "ship_incident",
+        "subtype": "ship_attack",
+        "object": "ship",
+        "action": "damaged",
+        "actor": "ukraine",
+        "target": "unknown",
+        "context": [],
+        "consequences": [
+          "injury"
+        ],
+        "severity": "high",
+        "confidence": 0.98,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "MARITIME.SHIP.ATTACK",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "maritime",
+          "subcategory": "ship_incident",
+          "subtype": "ship_attack",
+          "object": "ship",
+          "action": "damaged",
+          "actor": "ukraine",
+          "target": "unknown",
+          "place": "Constanța",
+          "event_date": "Sat, 14 No",
+          "hash": "1c9e6aec846dcc8c3b2a88db"
+        },
+        "classifier_version": "1.1.0",
+        "taxonomy_version": "1.0.1",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă",
+            "drona",
+            "ship",
+            "navă"
+          ],
+          "actions": [
+            "burned",
+            "incendiu",
+            "damaged",
+            "distrus"
+          ],
+          "targets": [],
+          "actors": [
+            "ukraine",
+            "ucraina"
+          ],
+          "consequences": [
+            "injury",
+            "rănit"
+          ],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "ENERGY.ASSET.FIRE",
+            "family": "energy",
+            "subcategory": "oil_gas",
+            "subtype": "energy_asset_fire",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:energy_asset"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 2119,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "O navă sub pavilion Palau a fost lovită de o dronă în noaptea de vineri spre sâmbătă, în apele teritoriale ale României, la aproximativ 12 kilometri nord de Sfântu Gheorghe, potrivit Ziua de Constanța. În urma impactului nu a izbucnit un incendiu și nu au fost raportate victime. Ministrul Apărării, Radu Oprea, a confirmat că autoritățile au fost informate despre incident, dar a precizat că nu poate da detalii despre proveniența dronei până la finalizarea verificărilor. Nava Larissa 1 se îndrepta spre Sulina, cu destinaţia finală Ucraina, potrivit Ziua de Constanţa. Conform primelor informaţii, atacul a fost raportat la ora 21:40. Comandantul navei a transmis că niciun marinar nu a fost rănit, iar impactul nu a fost urmat de incendiu. Drona ar fi distrus doar macaraua cu care se manipulează marfa. Prezent sâmbătă în Portul Militar Constanța, ministrul Apărării, Ștefan-Radu Oprea, a confirmat incidentul și a precizat că ancheta este în desfășurare. „Suntem informați tot timpul, am fost i",
+        "place": "Constanța",
+        "time": "Sat, 14 Nov 2026 13:37:09 +0200",
+        "category": "maritime",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Digi24"
+        ],
+        "urls": [
+          "https://www.digi24.ro/stiri/actualitate/evenimente/nava-lovita-de-o-drona-in-marea-neagra-la-12-kilometri-de-sfantu-gheorghe-ministrul-apararii-nu-sunt-pierderi-de-vieti-omenesti-4036381"
+        ],
+        "merged_titles": [
+          "Navă lovită de o dronă în Marea Neagră, la 12 kilometri de Sfântu Gheorghe. Ministrul Apărării: „Nu sunt pierderi de vieți omenești”"
+        ],
+        "incident_family": "maritime",
+        "incident_subcategory": "ship_incident",
+        "incident_subtype": "ship_attack",
+        "incident_object": "ship",
+        "incident_action": "damaged",
+        "incident_actor": "ukraine",
+        "incident_target": "unknown",
+        "classification_confidence": 0.98
+      }
+    },
     {
       "type": "Feature",
       "geometry": {

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-14T04:25:29.598769+00:00",
+  "generated_utc": "2026-11-14T12:58:14.863736+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,14 +15,22 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "cyber": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "infrastructure_disruption": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Slovakia": {
       "incident_count": 0,
@@ -56,8 +64,52 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
-    "Romania": [],
+    "Hungary": [
+      {
+        "id": "d7ecaffd824aeae1ef7e",
+        "date": "2026-11-14",
+        "time": "2026-11-14T09:20:00+00:00",
+        "category": "cyber",
+        "severity": "high",
+        "title": "Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "cyber",
+        "incident_subcategory": "intrusion",
+        "incident_subtype": "cyber_intrusion",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "CYBER.INTRUSION",
+        "fingerprint_hash": "61a793b961da531260b7b11d"
+      }
+    ],
+    "Romania": [
+      {
+        "id": "f4eabedfcb56aad19375",
+        "date": "2026-11-14",
+        "time": "2026-11-14T11:37:09+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "high",
+        "title": "Navă lovită de o dronă în Marea Neagră, la 12 kilometri de Sfântu Gheorghe. Ministrul Apărării: „Nu sunt pierderi de vieți omenești”",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/nava-lovita-de-o-drona-in-marea-neagra-la-12-kilometri-de-sfantu-gheorghe-ministrul-apararii-nu-sunt-pierderi-de-vieti-omenesti-4036381",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "maritime",
+        "incident_subcategory": "ship_incident",
+        "incident_subtype": "ship_attack",
+        "classification_confidence": 0.98,
+        "matched_rule_id": "MARITIME.SHIP.ATTACK",
+        "fingerprint_hash": "1c9e6aec846dcc8c3b2a88db"
+      }
+    ],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

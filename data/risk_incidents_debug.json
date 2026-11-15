@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-14T22:03:07.842481+00:00",
+  "generated_utc": "2026-11-15T04:08:39.498664+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 3,
+    "local_event_count": 3,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,13 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "infrastructure_disruption": 1
+        "infrastructure_disruption": 1,
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Slovakia": {
@@ -62,6 +63,27 @@
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [
+      {
+        "id": "7be3b437c5ade68830b8",
+        "date": "2026-11-14",
+        "time": "2026-11-14T19:41:23+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "RO-Alert emis în Tulcea, după detectarea unei drone în zona Insulei Șerpilor",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/ro-alert-emis-in-tulcea-dupa-detectarea-unei-drone-in-zona-insulei-serpilor-2404665",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "bb687e5a1f7efa1c2fcb230e"
+      },
       {
         "id": "f4eabedfcb56aad19375",
         "date": "2026-11-14",

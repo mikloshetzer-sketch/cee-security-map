@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-14T22:02:59.730850+00:00",
+  "generated_utc": "2026-11-15T04:08:28.537745+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
@@ -262,6 +262,259 @@
         "incident_actor": "ukraine",
         "incident_target": "unknown",
         "classification_confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.833,
+          44.366
+        ]
+      },
+      "properties": {
+        "id": "7be3b437c5ade68830b8",
+        "title": "RO-Alert emis în Tulcea, după detectarea unei drone în zona Insulei Șerpilor",
+        "summary": "O dronă a fost detectată, sâmbătă seară, la est de Insula Şerpilor. Două aeronave F-16 ale Forţelor Aeriene Române au decolat pentru a monitoriza situaţia, iar autorităţile au emis un mesaj RO-Alert pentru estul judeţului Tulcea. Update 21:50: MApN a anunțat că alerta aeriană a încetat. „În cursul acestei seri, 14 noiembrie, sistemul de supraveghere &#8230;",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/ro-alert-emis-in-tulcea-dupa-detectarea-unei-drone-in-zona-insulei-serpilor-2404665",
+        "published": "Sat, 14 Nov 2026 19:41:23 +0000",
+        "country": "Romania",
+        "city": "Fetesti",
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "unknown",
+        "target": "military",
+        "context": [],
+        "consequences": [],
+        "severity": "low",
+        "confidence": 0.92,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Romania",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "unknown",
+          "target": "military",
+          "place": "Fetesti",
+          "event_date": "Sat, 14 No",
+          "hash": "bb687e5a1f7efa1c2fcb230e"
+        },
+        "classifier_version": "1.1.0",
+        "taxonomy_version": "1.0.1",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "dronă"
+          ],
+          "actions": [
+            "detected",
+            "detectat"
+          ],
+          "targets": [
+            "military",
+            "radar"
+          ],
+          "actors": [],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Romania",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "target_match": 0.08,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:missile"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
+            "family": "ground",
+            "subcategory": "explosive_attack",
+            "subtype": "explosive_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 1090,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "O dronă a fost detectată, sâmbătă seară, la est de Insula Şerpilor. Două aeronave F-16 ale Forţelor Aeriene Române au decolat pentru a monitoriza situaţia, iar autorităţile au emis un mesaj RO-Alert pentru estul judeţului Tulcea. Update 21:50: MApN a anunțat că alerta aeriană a încetat. „În cursul acestei seri, 14 noiembrie, sistemul de supraveghere radar al Ministerului Apărării Naţionale a detectat o ţintă aeriană la est de Insula Şerpilor. Două aeronave F-16 ale Forţelor Aeriene Române, aflate în serviciul de luptă Poliţie Aeriană, au decolat de la Baza 86 Aeriană Feteşti”, a transmis MApN, conform News.ro. Centrul Naţional Militar de Comandă a notificat Inspectoratul General pentru Situaţii de Urgenţă în vederea instituirii măsurilor de alertare a populaţiei din zona de est a judeţului Tulcea, iar la ora 20:51 a fost transmis un mesaj RO-Alert. HotNews.ro utilizează cookie-uri pentru a îmbunătăți experiența dvs . Accesați Modifică Setările pentru preferințe și consultați Politica d",
+        "place": "Fetesti",
+        "time": "Sat, 14 Nov 2026 19:41:23 +0000",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "HotNews"
+        ],
+        "urls": [
+          "https://hotnews.ro/ro-alert-emis-in-tulcea-dupa-detectarea-unei-drone-in-zona-insulei-serpilor-2404665"
+        ],
+        "merged_titles": [
+          "RO-Alert emis în Tulcea, după detectarea unei drone în zona Insulei Șerpilor"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "unknown",
+        "incident_target": "military",
+        "classification_confidence": 0.92
       }
     },
     {

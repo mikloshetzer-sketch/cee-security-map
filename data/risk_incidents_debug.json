@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-15T13:25:59.175515+00:00",
+  "generated_utc": "2026-11-15T22:30:26.333756+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "drone": 2
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Slovakia": {
@@ -63,14 +63,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "dc5429b8b11efc47f1f4",
+        "id": "ffc001fd1e900e415a9e",
         "date": "2026-11-15",
-        "time": "2026-11-15T10:50:21+00:00",
+        "time": "2026-11-15T14:18:11+00:00",
         "category": "drone",
         "severity": "low",
-        "title": "Trei nave comerciale, lovite de drone în apropierea gurilor Dunării. Ministrul Apărării cere sprijinul aliaților",
+        "title": "Mesaj RO-Alert în Tulcea: Populația, avertizată asupra posibilităţii pătrunderii de drone în spaţiul aerian naţional",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/val-de-atacuri-in-marea-neagra-doua-nave-au-fost-lovite-de-drone-in-apropierea-gurilor-dunarii-4037041",
+        "url": "https://www.digi24.ro/stiri/mesaj-ro-alert-in-tulcea-populatia-avertizata-asupra-posibilitatii-patrunderii-de-drone-in-spatiul-aerian-national-4037289",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -79,30 +79,9 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_detection",
-        "classification_confidence": 0.92,
+        "classification_confidence": 0.98,
         "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "393637bfce5d55ca9d53549e"
-      },
-      {
-        "id": "50bd9a38cd75031cbb82",
-        "date": "2026-11-15",
-        "time": "2026-11-15T08:32:15+00:00",
-        "category": "drone",
-        "severity": "critical",
-        "title": "Accidentele în lanț de pe autostrada Trakia fac a 13-a victimă. Autoritățile bulgare continuă investigațiile",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/accidentele-in-lant-de-pe-autostrada-trakia-fac-a-13-a-victima-autoritatile-bulgare-continua-investigatiile-4037101",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "48a7684d89ae1785c4702dd8"
+        "fingerprint_hash": "c915ed8b9b6262277f7940e1"
       }
     ],
     "Slovakia": [],

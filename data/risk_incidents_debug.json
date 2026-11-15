@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-15T04:08:39.498664+00:00",
+  "generated_utc": "2026-11-15T13:25:59.175515+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -22,8 +22,7 @@
     "Romania": {
       "incident_count": 2,
       "category_counts": {
-        "infrastructure_disruption": 1,
-        "drone": 1
+        "drone": 2
       },
       "source_files": {
         "local_events.geojson": 2
@@ -64,14 +63,14 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "7be3b437c5ade68830b8",
-        "date": "2026-11-14",
-        "time": "2026-11-14T19:41:23+00:00",
+        "id": "dc5429b8b11efc47f1f4",
+        "date": "2026-11-15",
+        "time": "2026-11-15T10:50:21+00:00",
         "category": "drone",
         "severity": "low",
-        "title": "RO-Alert emis în Tulcea, după detectarea unei drone în zona Insulei Șerpilor",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/ro-alert-emis-in-tulcea-dupa-detectarea-unei-drone-in-zona-insulei-serpilor-2404665",
+        "title": "Trei nave comerciale, lovite de drone în apropierea gurilor Dunării. Ministrul Apărării cere sprijinul aliaților",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/val-de-atacuri-in-marea-neagra-doua-nave-au-fost-lovite-de-drone-in-apropierea-gurilor-dunarii-4037041",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -82,28 +81,28 @@
         "incident_subtype": "drone_detection",
         "classification_confidence": 0.92,
         "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "bb687e5a1f7efa1c2fcb230e"
+        "fingerprint_hash": "393637bfce5d55ca9d53549e"
       },
       {
-        "id": "f4eabedfcb56aad19375",
-        "date": "2026-11-14",
-        "time": "2026-11-14T11:37:09+00:00",
-        "category": "infrastructure_disruption",
-        "severity": "high",
-        "title": "Navă lovită de o dronă în Marea Neagră, la 12 kilometri de Sfântu Gheorghe. Ministrul Apărării: „Nu sunt pierderi de vieți omenești”",
+        "id": "50bd9a38cd75031cbb82",
+        "date": "2026-11-15",
+        "time": "2026-11-15T08:32:15+00:00",
+        "category": "drone",
+        "severity": "critical",
+        "title": "Accidentele în lanț de pe autostrada Trakia fac a 13-a victimă. Autoritățile bulgare continuă investigațiile",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/actualitate/evenimente/nava-lovita-de-o-drona-in-marea-neagra-la-12-kilometri-de-sfantu-gheorghe-ministrul-apararii-nu-sunt-pierderi-de-vieti-omenesti-4036381",
+        "url": "https://www.digi24.ro/stiri/externe/accidentele-in-lant-de-pe-autostrada-trakia-fac-a-13-a-victima-autoritatile-bulgare-continua-investigatiile-4037101",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "maritime",
-        "incident_subcategory": "ship_incident",
-        "incident_subtype": "ship_attack",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "MARITIME.SHIP.ATTACK",
-        "fingerprint_hash": "1c9e6aec846dcc8c3b2a88db"
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.84,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "48a7684d89ae1785c4702dd8"
       }
     ],
     "Slovakia": [],

@@ -517,7 +517,7 @@ body {
 
     <div class="date-box">
       <div class="label">Dátum</div>
-      <div class="date">2026-11-14</div>
+      <div class="date">2026-11-15</div>
       <div class="label">UTC alapú riport</div>
     </div>
   </header>
@@ -533,24 +533,24 @@ body {
       <div class="kpi">
         <div class="label">Régiós állapot</div>
         <div class="value">NORMAL</div>
-        <div class="note">score: 0.68</div>
+        <div class="note">score: 0.49</div>
       </div>
 
       <div class="kpi">
         <div class="label">Kritikus infra alert</div>
-        <div class="value">2</div>
+        <div class="value">0</div>
         <div class="note">magas: 0</div>
       </div>
 
       <div class="kpi">
         <div class="label">Fő kockázati ország</div>
-        <div class="value" style="font-size:28px;">Hungary</div>
+        <div class="value" style="font-size:28px;">Romania</div>
         <div class="note">országkockázati sorrend alapján</div>
       </div>
 
       <div class="kpi">
         <div class="label">Fő szektor</div>
-        <div class="value" style="font-size:28px;">digital</div>
+        <div class="value" style="font-size:28px;">infrastruktúra</div>
         <div class="note">infrastruktúra-közeli találatok alapján</div>
       </div>
     </section>
@@ -558,7 +558,7 @@ body {
     <section class="section">
       <h2>Rövid napi értékelés</h2>
       <div class="summary-box">
-        <ul><li>Helyi források alapján az elmúlt 24 órában 2 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Hungary: 1, Romania: 1.</li><li>Legerősebb góc: Kutno County, Poland 🆕 (rácspont 52.25, 19.25; score 6.42; 7 napos változás: n/a).</li><li>Trend: nincs elég bázisadat az összehasonlításhoz.</li><li>Forráskép: GDELT 0, GDELT linked 3696, GDELT DOC 0, direkt feed 14, USGS 0, GDACS 0.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 178 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li></ul>
+        <ul><li>Helyi források alapján az elmúlt 24 órában 2 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Romania: 2.</li><li>Legerősebb góc: Kutno County, Poland 🆕 (rácspont 52.25, 19.25; score 4.61; 7 napos változás: n/a).</li><li>Trend: nincs elég bázisadat az összehasonlításhoz.</li><li>Forráskép: GDELT 0, GDELT linked 3706, GDELT DOC 0, direkt feed 12, USGS 0, GDACS 0.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 173 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li></ul>
       </div>
     </section>
 
@@ -580,10 +580,10 @@ body {
         <div class="region-card green">
           <div class="region-head">V4 térség</div>
           <div class="region-body">
-            <div class="big-number">2.54</div>
+            <div class="big-number">0.0</div>
             <div class="small-label">összesített risk score</div>
-            <div class="region-line"><b>Fő fókusz:</b> Hungary</div>
-            <div class="mini-bar"><span style="width:30.48%"></span></div>
+            <div class="region-line"><b>Fő fókusz:</b> Czech Republic</div>
+            <div class="mini-bar"><span style="width:0.0%"></span></div>
           </div>
         </div>
         
@@ -591,10 +591,10 @@ body {
         <div class="region-card orange">
           <div class="region-head">Fekete-tengeri perem</div>
           <div class="region-body">
-            <div class="big-number">2.08</div>
+            <div class="big-number">3.17</div>
             <div class="small-label">összesített risk score</div>
             <div class="region-line"><b>Fő fókusz:</b> Romania</div>
-            <div class="mini-bar"><span style="width:24.96%"></span></div>
+            <div class="mini-bar"><span style="width:38.04%"></span></div>
           </div>
         </div>
         
@@ -617,18 +617,10 @@ body {
       <div class="country-grid">
         
         <div class="country-card elevated">
-          <div class="country-name">Hungary</div>
-          <div class="country-score">2.54</div>
-          <div class="country-level">elevated</div>
-          <div class="country-drivers">friss aktivitási trend, biztonsági incidensnyomás, kiberincidensek</div>
-        </div>
-        
-
-        <div class="country-card elevated">
           <div class="country-name">Romania</div>
-          <div class="country-score">2.08</div>
+          <div class="country-score">3.17</div>
           <div class="country-level">elevated</div>
-          <div class="country-drivers">friss aktivitási trend, biztonsági incidensnyomás, kritikus infrastruktúra-kitettség</div>
+          <div class="country-drivers">biztonsági incidensnyomás, katonai és drónaktivitás, friss aktivitási trend</div>
         </div>
         
 
@@ -642,6 +634,14 @@ body {
 
         <div class="country-card normal">
           <div class="country-name">Czech Republic</div>
+          <div class="country-score">0.0</div>
+          <div class="country-level">insufficient_data</div>
+          <div class="country-drivers">automatikus OSINT jelzés</div>
+        </div>
+        
+
+        <div class="country-card normal">
+          <div class="country-name">Hungary</div>
           <div class="country-score">0.0</div>
           <div class="country-level">insufficient_data</div>
           <div class="country-drivers">automatikus OSINT jelzés</div>
@@ -685,24 +685,7 @@ body {
     <section class="section">
       <h2>Infrastruktúra-közeli incidensek</h2>
       <div class="card-grid">
-        
-        <div class="infra-card critical">
-          <div class="event-kicker">Hungary • digital • 0.0 km</div>
-          <h3>Budapest Internet Exchange</h3>
-          <p>Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak</p>
-          <div class="level-pill critical">critical</div>
-          <a href="https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452" target="_blank" rel="noopener">Forrás megnyitása</a>
-        </div>
-        
-
-        <div class="infra-card critical">
-          <div class="event-kicker">Hungary • digital • 0.1 km</div>
-          <h3>Budapest Data Centre Hub</h3>
-          <p>Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak</p>
-          <div class="level-pill critical">critical</div>
-          <a href="https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452" target="_blank" rel="noopener">Forrás megnyitása</a>
-        </div>
-        
+        <p>Nincs infrastruktúra-közeli kiemelt találat.</p>
       </div>
     </section>
 
@@ -711,18 +694,18 @@ body {
       <div class="card-grid">
         
         <div class="event-card">
-          <div class="event-kicker">Hungary • cyber • high</div>
-          <h3>Bejelentette a Microsoft: elhárult a probléma, vége a világméretű leállásnak</h3>
-          <p>&lt;p&gt;Teljesen helyreálltak a Microsoft szolgáltatásai a vállalat több alkalmazását – köztük az Outlookot, a Teamst és a Copilotot – megbénító, világméretű üzemzavar után. A több mint hetven országra kiterjedő leállás nemcsak a lakossági és vállalati felhasználókat érintette, hanem számos kormányzati és közszolgáltatási rendszert is működésképtelenné tett. A techóriás közlése szerint a hibát nem kibertámadás vagy a mesterséges intelligencia, hanem egy hálózati kapacitásbővítés során fellépő műszaki probléma okozta - jelentette a &lt;a href=&quot;https://www.bbc.com/news/articles/c6rrg51rkz09o&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;BBC&lt;/a&gt;.&lt;/p&gt;</p>
-          <a href="https://www.portfolio.hu/gazdasag/20261114/bejelentette-a-microsoft-elharult-a-problema-vege-a-vilagmeretu-leallasnak-876452" target="_blank" rel="noopener">Forrás megnyitása</a>
+          <div class="event-kicker">Romania • air • low</div>
+          <h3>Trei nave comerciale, lovite de drone în apropierea gurilor Dunării. Ministrul Apărării cere sprijinul aliaților</h3>
+          <p>Alertă în apropierea gurilor Dunării, unde trei nave comerciale au fost lovite de drone în noaptea de sâmbătă spre duminică, în mai puțin de o oră. În urma impacturilor, la bordul ambarcațiunilor au izbucnit incendii, însă echipajele au reușit să stingă focul, fără să fie raportate victime. Ministrul Apărării, Ștefan Radu Oprea, a anunțat că va prezenta situația de securitate din Marea Neagră la reuniunea miniștrilor Apărării din statele aliate, care va avea loc marți și miercuri, la Bruxelles.</p>
+          <a href="https://www.digi24.ro/stiri/val-de-atacuri-in-marea-neagra-doua-nave-au-fost-lovite-de-drone-in-apropierea-gurilor-dunarii-4037041" target="_blank" rel="noopener">Forrás megnyitása</a>
         </div>
         
 
         <div class="event-card">
-          <div class="event-kicker">Romania • maritime • high</div>
-          <h3>Navă lovită de o dronă în Marea Neagră, la 12 kilometri de Sfântu Gheorghe. Ministrul Apărării: „Nu sunt pierderi de vieți omenești”</h3>
-          <p>O navă sub pavilion Palau a fost lovită de o dronă în noaptea de vineri spre sâmbătă, în apele teritoriale ale României, la aproximativ 12 kilometri nord de Sfântu Gheorghe, potrivit Ziua de Constanța. În urma impactului nu a izbucnit un incendiu și nu au fost raportate victime. Ministrul Apărării, Radu Oprea, a confirmat că autoritățile au fost informate despre incident, dar a precizat că nu poate da detalii despre proveniența dronei până la finalizarea verificărilor.</p>
-          <a href="https://www.digi24.ro/stiri/actualitate/evenimente/nava-lovita-de-o-drona-in-marea-neagra-la-12-kilometri-de-sfantu-gheorghe-ministrul-apararii-nu-sunt-pierderi-de-vieti-omenesti-4036381" target="_blank" rel="noopener">Forrás megnyitása</a>
+          <div class="event-kicker">Romania • air • critical</div>
+          <h3>Accidentele în lanț de pe autostrada Trakia fac a 13-a victimă. Autoritățile bulgare continuă investigațiile</h3>
+          <p>Numărul victimelor celor două accidente majore în lanț de pe autostrada Trakia din Bulgaria a crescut la 13, după ce un bărbat de 42 de ani din Elhovo a decedat în urma rănilor suferite la Spitalul „Devă Maria” din Burgas, a relatat Nova TV, citată de Novinite.</p>
+          <a href="https://www.digi24.ro/stiri/externe/accidentele-in-lant-de-pe-autostrada-trakia-fac-a-13-a-victima-autoritatile-bulgare-continua-investigatiile-4037101" target="_blank" rel="noopener">Forrás megnyitása</a>
         </div>
         
 
@@ -747,7 +730,7 @@ body {
     <section class="section">
       <h2>Heti trendjelzések</h2>
       <div class="summary-box">
-        <ul><li>A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Hungary: 3.8, Romania: 2.6, Latvia: 1.4.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében mérsékelten romló képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, határbiztonsági és rendészeti nyomás, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor lokális incidensek és eszkalációs kockázatok több ponton megfigyelhetők voltak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, ugyanakkor több ponton emelkedő nyomás érzékelhető. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan a keleti peremterületek biztonságpolitikai terheltsége lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
+        <ul><li>A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Romania: 5.8, Latvia: 1.4.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében mérsékelten romló képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, határbiztonsági és rendészeti nyomás, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor lokális incidensek és eszkalációs kockázatok több ponton megfigyelhetők voltak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, ugyanakkor több ponton emelkedő nyomás érzékelhető. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan a keleti peremterületek biztonságpolitikai terheltsége lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
       </div>
     </section>
 
@@ -758,18 +741,18 @@ body {
           <h2>CEE Security & Infrastructure Snapshot</h2>
           <p>Napi régiós kockázati kép kritikus infrastruktúra, lokális események és OSINT-jelzések alapján.</p>
         </div>
-        <div class="vd-date">2026-11-14</div>
+        <div class="vd-date">2026-11-15</div>
       </div>
 
       <div class="vd-grid">
         <div class="vd-main">
           <div class="vd-label">Régiós állapot</div>
           <div class="vd-big">NORMAL</div>
-          <div class="vd-sub">Regional score: 0.68</div>
+          <div class="vd-sub">Regional score: 0.49</div>
         </div>
 
         <div class="vd-card red">
-          <div class="vd-number">2</div>
+          <div class="vd-number">0</div>
           <div class="vd-text">kritikus infrastruktúra alert</div>
         </div>
 
@@ -784,13 +767,13 @@ body {
         </div>
 
         <div class="vd-card green">
-          <div class="vd-number">Hungary</div>
+          <div class="vd-number">Romania</div>
           <div class="vd-text">fő kockázati ország</div>
         </div>
 
         <div class="vd-wide">
           <div class="vd-label">Fő szektor</div>
-          <div class="vd-sector">digital</div>
+          <div class="vd-sector">infrastruktúra</div>
           <div class="vd-sub">Infrastruktúra-közeli találatok domináns kategóriája</div>
         </div>
       </div>
@@ -811,10 +794,10 @@ body {
         <div class="region-card green">
           <div class="region-head">V4 térség</div>
           <div class="region-body">
-            <div class="big-number">2.54</div>
+            <div class="big-number">0.0</div>
             <div class="small-label">összesített risk score</div>
-            <div class="region-line"><b>Fő fókusz:</b> Hungary</div>
-            <div class="mini-bar"><span style="width:30.48%"></span></div>
+            <div class="region-line"><b>Fő fókusz:</b> Czech Republic</div>
+            <div class="mini-bar"><span style="width:0.0%"></span></div>
           </div>
         </div>
         
@@ -822,10 +805,10 @@ body {
         <div class="region-card orange">
           <div class="region-head">Fekete-tengeri perem</div>
           <div class="region-body">
-            <div class="big-number">2.08</div>
+            <div class="big-number">3.17</div>
             <div class="small-label">összesített risk score</div>
             <div class="region-line"><b>Fő fókusz:</b> Romania</div>
-            <div class="mini-bar"><span style="width:24.96%"></span></div>
+            <div class="mini-bar"><span style="width:38.04%"></span></div>
           </div>
         </div>
         

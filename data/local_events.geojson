@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-16T04:10:24.881962+00:00",
+  "generated_utc": "2026-11-16T14:34:32.467773+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
@@ -9,64 +9,61 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.833,
-          44.366
+          28.638,
+          44.173
         ]
       },
       "properties": {
-        "id": "ffc001fd1e900e415a9e",
-        "title": "Mesaj RO-Alert în Tulcea: Populația, avertizată asupra posibilităţii pătrunderii de drone în spaţiul aerian naţional",
-        "summary": "Nouă alertă aeriană în județul Tulcea, unde a fost transmis un mesaj RO-Alert. Populaţia a fost avertizată asupra posibilităţii pătrunderii de drone în spaţiul aerian naţional.",
+        "id": "7269f82690f1cc4c4889",
+        "title": "O ambarcaţiune ARSVOM intervine la o navă aflată în derivă. Cargo-ul tanzanian fusese atacat la mijlocul lunii septembrie",
+        "summary": "O ambarcaţiune a Agenţiei Române de Salvare a Vieţii Omeneşti pe Mare (ARSVOM) intervine, luni, la o navă aflată în derivă, în Marea Neagră, la şase mile marine de digul de nord din Zona Midia.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/mesaj-ro-alert-in-tulcea-populatia-avertizata-asupra-posibilitatii-patrunderii-de-drone-in-spatiul-aerian-national-4037289",
-        "published": "Sun, 15 Nov 2026 16:18:11 +0200",
+        "url": "https://www.digi24.ro/stiri/o-ambarcatiune-arsvom-intervine-la-o-nava-aflata-in-deriva-cargo-ul-tanzanian-fusese-atacat-la-mijlocul-lunii-septembrie-4038729",
+        "published": "Mon, 16 Nov 2026 15:57:01 +0200",
         "country": "Romania",
-        "city": "Fetesti",
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_detection",
-        "object": "drone",
-        "action": "detected",
+        "city": "Constanța",
+        "family": "maritime",
+        "subcategory": "ship_incident",
+        "subtype": "ship_attack",
+        "object": "ship",
+        "action": "attacked",
         "actor": "ukraine",
-        "target": "military",
+        "target": "unknown",
         "context": [],
         "consequences": [],
-        "severity": "low",
-        "confidence": 0.98,
+        "severity": "high",
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "matched_rule_id": "MARITIME.SHIP.ATTACK",
         "fingerprint": {
           "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_detection",
-          "object": "drone",
-          "action": "detected",
+          "family": "maritime",
+          "subcategory": "ship_incident",
+          "subtype": "ship_attack",
+          "object": "ship",
+          "action": "attacked",
           "actor": "ukraine",
-          "target": "military",
-          "place": "Fetesti",
-          "event_date": "Sun, 15 No",
-          "hash": "c915ed8b9b6262277f7940e1"
+          "target": "unknown",
+          "place": "Constanța",
+          "event_date": "Mon, 16 No",
+          "hash": "2d0fc2f122f674ac4ecc4570"
         },
         "classifier_version": "1.1.0",
         "taxonomy_version": "1.0.1",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone",
-            "dronă",
             "ship",
             "navă"
           ],
           "actions": [
-            "detected",
-            "detectat"
+            "exploded",
+            "explozie",
+            "attacked",
+            "atacat"
           ],
-          "targets": [
-            "military",
-            "radar"
-          ],
+          "targets": [],
           "actors": [
             "ukraine",
             "ucraina"
@@ -82,95 +79,12 @@
           "base": 0.2,
           "object_match": 0.2,
           "action_match": 0.2,
-          "target_match": 0.08,
           "actor_match": 0.06,
           "country_match": 0.1,
           "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
           {
             "rule_id": "MARITIME.SHIP.ATTACK",
             "family": "maritime",
@@ -178,177 +92,11 @@
             "subtype": "ship_attack",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,damaged,exploded"
-            ],
+            "score": 2.42,
+            "matched": true,
+            "missing": [],
             "matched_context": []
           },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft",
-              "actions:any:damaged,entered,impact"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1482,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Nouă alertă aeriană în județul Tulcea, unde a fost transmis un mesaj RO-Alert. Populaţia a fost avertizată asupra posibilităţii pătrunderii de drone în spaţiul aerian naţional. Autorităţile au transmis un nou meswaj RO-Alert în judeţul Tulcea, populaţia fiind avertizată asupra posibilităţii pătrunderii de drone în spaţiul aerian naţional. Alerta a fost emisă la ora 15:02, privind posibile incursiuni de drone. Ea vizează nordul și estul județului Tulcea. Asta după ce sistemul de supraveghere radar al Ministerului Apărării Naționale a detectat o țintă aeriană la aproximativ 20km nord-est de Vâlcove, Ucraina. Două aeronave F16 ale Forțelor Aeriene Române au decolat de la Baza 86 Aeriană Fetești. De asemenea, Centrul Militar de Comandă a notificat și Inspectoratul General pentru Situații de Urgență pentru a fi luate aceste măsuri de alertare a populației. Acest nou episod vine după ce ieri, trei nave au fost lovite în apele teritoriale ale României. Primul incident a fost raportat în jurul",
-        "place": "Fetesti",
-        "time": "Sun, 15 Nov 2026 16:18:11 +0200",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Digi24"
-        ],
-        "urls": [
-          "https://www.digi24.ro/stiri/mesaj-ro-alert-in-tulcea-populatia-avertizata-asupra-posibilitatii-patrunderii-de-drone-in-spatiul-aerian-national-4037289"
-        ],
-        "merged_titles": [
-          "Mesaj RO-Alert în Tulcea: Populația, avertizată asupra posibilităţii pătrunderii de drone în spaţiul aerian naţional"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "incident_object": "drone",
-        "incident_action": "detected",
-        "incident_actor": "ukraine",
-        "incident_target": "military",
-        "classification_confidence": 0.98
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.753,
-          59.437
-        ]
-      },
-      "properties": {
-        "id": "97f18e57a15e69349258",
-        "title": "Estonia anunță închiderea frontierei cu Rusia, după o operațiune atribuită spionajului militar rusesc. Opt persoane reținute",
-        "summary": "Ministrul de externe al Estoniei, Margus Tsahkna, a anunțat, duminică, că țara baltică își va închide toate punctele de trecere a frontierei cu Rusia de la 1 decembrie, potrivit Reuters. Decizia luată de autoritățile estone vine ca răspuns la o tentativă de atac incendiar atribuită serviciului rus de informații militare, GRU. Opt cetățeni letoni au &#8230;",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/estonia-anunta-inchiderea-frontierei-cu-rusia-dupa-o-operatiune-atribuita-spionajului-militar-rusesc-opt-persoane-retinute-2404984",
-        "published": "Sun, 15 Nov 2026 15:39:23 +0000",
-        "country": "Estonia",
-        "city": "Tallinn",
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "exploded",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.9,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint": {
-          "country": "Estonia",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "exploded",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Tallinn",
-          "event_date": "Sun, 15 No",
-          "hash": "e86091819d3572d05336cd52"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone"
-          ],
-          "actions": [
-            "exploded",
-            "explozie",
-            "burned",
-            "incendiu",
-            "disrupted",
-            "oprit",
-            "sabotaged",
-            "sabotaj"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "rusia",
-            "rusiei",
-            "ukraine",
-            "ucraina"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
           {
             "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
@@ -356,78 +104,10 @@
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
+            "score": 1.2,
             "matched": false,
             "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
+              "objects:all:drone"
             ],
             "matched_context": []
           },
@@ -438,7 +118,7 @@
             "subtype": "explosive_attack",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 1.2,
             "matched": false,
             "missing": [
               "objects:all:explosive_device"
@@ -446,226 +126,30 @@
             "matched_context": []
           },
           {
-            "rule_id": "GROUND.SABOTAGE",
-            "family": "ground",
-            "subcategory": "sabotage",
-            "subtype": "sabotage",
+            "rule_id": "BORDER.VIOLENCE",
+            "family": "border_security",
+            "subcategory": "border_violence",
+            "subtype": "border_violence",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 1.2,
             "matched": false,
             "missing": [
-              "targets:any:communications,energy,government,transport"
+              "context:any"
             ],
             "matched_context": []
           },
           {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
+            "rule_id": "TERRORISM.ATTACK",
+            "family": "terrorism",
+            "subcategory": "attack",
+            "subtype": "terrorist_attack",
+            "severity": "critical",
             "priority": 0,
-            "score": 1.1,
+            "score": 1.2,
             "matched": false,
             "missing": [
-              "objects:all:ship"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 2607,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Ministrul de externe al Estoniei, Margus Tsahkna, a anunțat, duminică, că țara baltică își va închide toate punctele de trecere a frontierei cu Rusia de la 1 decembrie, potrivit Reuters. Decizia luată de autoritățile estone vine ca răspuns la o tentativă de atac incendiar atribuită serviciului rus de informații militare, GRU. Opt cetățeni letoni au fost reținuți după ce au încercat să pătrundă prin efracție într-o clădire a producătorului eston de drone Threod Systems, la Viimsi, la marginea capitalei Tallinn, sâmbătă dimineață, cu obiectivul de a provoca un incendiu și o explozie, notează publicațiile Politico și ERR . „În urma unor dovezi clare că serviciul de informații militare al Rusiei, GRU, a ordonat un atac de sabotaj împotriva unei companii estone din industria de apărare, Estonia va închide toate punctele de trecere a frontierei estono-ruse începând cu 1 decembrie”, a declarat, duminică, ministrul Margus Tsahkna. „Rusia trebuie să înțeleagă că acțiunile ostile împotriva Eston",
-        "place": "Tallinn",
-        "time": "Sun, 15 Nov 2026 15:39:23 +0000",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "city",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "HotNews"
-        ],
-        "urls": [
-          "https://hotnews.ro/estonia-anunta-inchiderea-frontierei-cu-rusia-dupa-o-operatiune-atribuita-spionajului-militar-rusesc-opt-persoane-retinute-2404984"
-        ],
-        "merged_titles": [
-          "Estonia anunță închiderea frontierei cu Rusia, după o operațiune atribuită spionajului militar rusesc. Opt persoane reținute"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "exploded",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.9
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.0136,
-          58.5953
-        ]
-      },
-      "properties": {
-        "id": "e6563ec3173596fe0e30",
-        "title": "Estonia acuză Rusia de o tentativă de incendiere a unei companii din domeniul apărării / Premierul estonian anunță că se pregătește să închidă  frontiera cu Rusia",
-        "summary": "<p>Estonia a acuzat serviciul de informații militare al Rusiei că a ordonat o tentativă de incendiere a unui producător estonian de drone, ceea ce a determinat Tallinnul să amenințe cu închiderea frontierei cu Rusia, relatează Politico. Intruși au fost descoperiți la sediul Threod Systems din Viimsi, în afara capitalei estoniene, la scurt timp după ora [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/estonia-acuza-rusia-de-o-tentativa-de-incendiere-a-unei-companii-din-domeniul-apararii-premierul-estonian-anunta-ca-se-pregateste-sa-inchida-frontiera-cu-rusia.html",
-        "published": "Sun, 15 Nov 2026 15:00:24 +0000",
-        "country": "Estonia",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "exploded",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.82,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint": {
-          "country": "Estonia",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "exploded",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Estonia",
-          "event_date": "Sun, 15 No",
-          "hash": "c361f00bdedb7b85bc0de204"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone"
-          ],
-          "actions": [
-            "exploded",
-            "explozie",
-            "disrupted",
-            "oprit"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "rusia",
-            "rusiei",
-            "ukraine",
-            "ucraina"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
+              "context:any"
             ],
             "matched_context": []
           },
@@ -684,278 +168,10 @@
             "matched_context": []
           },
           {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:ship"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.PORT.DISRUPTION",
-            "family": "maritime",
-            "subcategory": "port_security",
-            "subtype": "port_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "targets:all:transport"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "CYBER.OPERATIONAL.DISRUPTION",
-            "family": "cyber",
-            "subcategory": "operational_disruption",
-            "subtype": "cyber_operational_disruption",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:cyber_system"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 2445,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. Estonia a acuzat serviciul de informații militare al Rusiei că a ordonat o tentativă de incendiere a unui producător estonian de drone, ceea ce a determinat Tallinnul să amenințe cu închiderea frontierei cu Rusia, relatează Politico. Intruși au fost descoperiți la sediul Threod Systems din Viimsi, în afara capitalei estoniene, la scurt timp după ora 3 dimineața, sâmbătă, încercând să pătrundă în clădire cu scopul de a o incendia și de a provoca o explozie, a declarat duminică procurorul general Astrid Asi. Într-o postare pe X, prim-ministrul estonian Kristen Michal a declarat: „Acest incident face parte din războiul hibrid mai amplu al Rusiei împotriva Europei, care are ca scop diminuarea sprijinului acordat Ucrainei și a presiunii exercitate asupra Rusiei. Nu ne vom lăsa intimidați.” El a adăugat că „Estonia se pregătește pentru eventualitatea",
-        "place": "Estonia",
-        "time": "Sun, 15 Nov 2026 15:00:24 +0000",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "G4Media"
-        ],
-        "urls": [
-          "https://www.g4media.ro/estonia-acuza-rusia-de-o-tentativa-de-incendiere-a-unei-companii-din-domeniul-apararii-premierul-estonian-anunta-ca-se-pregateste-sa-inchida-frontiera-cu-rusia.html"
-        ],
-        "merged_titles": [
-          "Estonia acuză Rusia de o tentativă de incendiere a unei companii din domeniul apărării / Premierul estonian anunță că se pregătește să închidă  frontiera cu Rusia"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "exploded",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.82
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.653,
-          45.156
-        ]
-      },
-      "properties": {
-        "id": "96bab539f52c22003daa",
-        "title": "După noile alerte privind atacuri cu drone, premierul Niculescu spune că România va lua măsurile necesare pentru a consolida securitatea în Marea Neagră",
-        "summary": "<p>Premierul Luca Niculescu transmite că autoritățile române continuă să ia toate măsurile necesare, împreună cu statele aliate, pentru a consolida securitatea în Marea Neagră, după noile atacuri cu drone, dintre care unul a implicat lovirea a trei nave comerciale în apropierea teritoriului românesc. „Încă o dată, securitatea maritimă în Marea Neagră a fost amenințată. Sâmbătă [&#8230;]</p>\n<p>&copy; <a href=\"https://www.g4media.ro\">G4Media.ro</a>.</p>",
-        "source": "G4Media",
-        "url": "https://www.g4media.ro/dupa-noi-alerte-in-privind-atacuri-cu-drone-premierul-niculescu-spune-ca-romania-va-lua-masurile-necesare-pentru-a-consolida-securitatea-in-marea-neagra.html",
-        "published": "Sun, 15 Nov 2026 13:34:10 +0000",
-        "country": "Romania",
-        "city": "Sulina",
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_detection",
-        "object": "drone",
-        "action": "detected",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [],
-        "consequences": [],
-        "severity": "low",
-        "confidence": 0.9,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint": {
-          "country": "Romania",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_detection",
-          "object": "drone",
-          "action": "detected",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Sulina",
-          "event_date": "Sun, 15 No",
-          "hash": "2a00eca7550b044298c8bd34"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "dronă",
-            "ship",
-            "navă"
-          ],
-          "actions": [
-            "detected",
-            "detectat",
-            "burned",
-            "incendiu"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "rusia",
-            "nato"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Romania",
-            "geocode_quality=city"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "city_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,damaged,exploded"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.FIRE",
+            "rule_id": "ENERGY.ASSET.EXPLOSION",
             "family": "energy",
             "subcategory": "oil_gas",
-            "subtype": "energy_asset_fire",
+            "subtype": "energy_asset_explosion",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
@@ -966,11 +182,11 @@
             "matched_context": []
           },
           {
-            "rule_id": "INDUSTRIAL.FIRE",
+            "rule_id": "INDUSTRIAL.EXPLOSION",
             "family": "industrial",
-            "subcategory": "fire",
-            "subtype": "industrial_fire",
-            "severity": "medium",
+            "subcategory": "explosion",
+            "subtype": "industrial_explosion",
+            "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
@@ -992,35 +208,49 @@
               "context:any"
             ],
             "matched_context": []
+          },
+          {
+            "rule_id": "GROUND.ARMED.ATTACK",
+            "family": "ground",
+            "subcategory": "armed_incident",
+            "subtype": "armed_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:firearm"
+            ],
+            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 2658,
+        "article_text_chars": 1449,
         "article_fetch_source": "network",
-        "article_text_excerpt": "Funcționăm ca organizație non-profit, iar banii rezultați din contribuțiile cititorilor sunt destinați integral finanțării proiectului G4Media. Premierul Luca Niculescu transmite că autoritățile române continuă să ia toate măsurile necesare, împreună cu statele aliate, pentru a consolida securitatea în Marea Neagră, după noile atacuri cu drone, dintre care unul a implicat lovirea a trei nave comerciale în apropierea teritoriului românesc. „Încă o dată, securitatea maritimă în Marea Neagră a fost amenințată. Sâmbătă seară, pe 14 noiembrie, trei nave comerciale au fost lovite de drone în apropierea Deltei Dunării, în largul orașului Sulina. Radarele Ministerului Apărării Naționale din România au detectat, de asemenea, ținte aeriene în zonă, determinând Forțele Aeriene Române să ridice de la sol aeronave de luptă, în două rânduri. Am rămas în contact permanent cu autoritățile competente, siguranța marinarilor fiind prioritatea noastră absolută. Atacurile reflectă deteriorarea situației de",
-        "place": "Sulina",
-        "time": "Sun, 15 Nov 2026 13:34:10 +0000",
-        "category": "air",
+        "article_text_excerpt": "O ambarcaţiune a Agenţiei Române de Salvare a Vieţii Omeneşti pe Mare (ARSVOM) intervine, luni, la o navă aflată în derivă, în Marea Neagră, la şase mile marine de digul de nord din Zona Midia. Reprezentanţii ARSVOM au anunţat că, luni, Căpitănia Zonală Constanţa a solicitat intervenţia Agenţiei Române de Salvare a Vieţii Omeneşti pe Mare pentru operaţiunea de salvare a navei Mariam M, sub pavilion Tanzania. „La ora 14:12, nava SAR Artemis pleacă din dana 78 a portului Constanţa către nava Mariam M, aflată în derivă la 6 Mm de digul de nord Midia”, au afirmat reprezentanţii ARSVOM. La ora transmiterii acestei ştiri, misiunea ARSVOM este în desfăşurare. Un atac tragic asupra navei de marfă tanzaniene MARIAM M în Marea Neagră a dus la moartea căpitanului și la rănirea mai multor membri ai echipajului, relata publicația Seanews la 17 septembrie. Conform publicației, nava de marfă generală MARIAM M (IMO 9167667), sub pavilion tanzanian, a fost atacată în Marea Neagră. Căpitanul navei și-a ",
+        "place": "Constanța",
+        "time": "Mon, 16 Nov 2026 15:57:01 +0200",
+        "category": "maritime",
         "kind": "local_media",
         "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "G4Media"
+          "Digi24"
         ],
         "urls": [
-          "https://www.g4media.ro/dupa-noi-alerte-in-privind-atacuri-cu-drone-premierul-niculescu-spune-ca-romania-va-lua-masurile-necesare-pentru-a-consolida-securitatea-in-marea-neagra.html"
+          "https://www.digi24.ro/stiri/o-ambarcatiune-arsvom-intervine-la-o-nava-aflata-in-deriva-cargo-ul-tanzanian-fusese-atacat-la-mijlocul-lunii-septembrie-4038729"
         ],
         "merged_titles": [
-          "După noile alerte privind atacuri cu drone, premierul Niculescu spune că România va lua măsurile necesare pentru a consolida securitatea în Marea Neagră"
+          "O ambarcaţiune ARSVOM intervine la o navă aflată în derivă. Cargo-ul tanzanian fusese atacat la mijlocul lunii septembrie"
         ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "incident_object": "drone",
-        "incident_action": "detected",
-        "incident_actor": "russia",
+        "incident_family": "maritime",
+        "incident_subcategory": "ship_incident",
+        "incident_subtype": "ship_attack",
+        "incident_object": "ship",
+        "incident_action": "attacked",
+        "incident_actor": "ukraine",
         "incident_target": "unknown",
         "classification_confidence": 0.9
       }
@@ -1281,261 +511,6 @@
         "incident_actor": "russia",
         "incident_target": "unknown",
         "classification_confidence": 0.82
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.6032,
-          56.8796
-        ]
-      },
-      "properties": {
-        "id": "70d6bff1b3b2ce0697ab",
-        "title": "\"Appropriate operational conditions were not met\" – Latvian Armed Forces explain why drone was not shot down",
-        "summary": "Latvia's military says civilian safety and unsuitable operational conditions prevented NATO fighter jets from shooting down a drone crossing Latvian airspace.",
-        "source": "BNN",
-        "url": "https://bnn-news.com/social/appropriate-operational-conditions-were-not-met-latvian-armed-forces-explain-why-drone-was-not-shot-down-gddgxcc",
-        "published": "Wed, 11 Nov 2026 11:23:34 GMT",
-        "country": "Latvia",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_shootdown",
-        "object": "drone",
-        "action": "shot_down",
-        "actor": "nato",
-        "target": "civilian",
-        "context": [],
-        "consequences": [],
-        "severity": "high",
-        "confidence": 0.9,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.SHOOTDOWN",
-        "fingerprint": {
-          "country": "Latvia",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_shootdown",
-          "object": "drone",
-          "action": "shot_down",
-          "actor": "nato",
-          "target": "civilian",
-          "place": "Latvia",
-          "event_date": "Wed, 11 No",
-          "hash": "fc46df39f371b2ec50bf3a3a"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "military_aircraft",
-            "fighter",
-            "firearm",
-            "inferred:shooting"
-          ],
-          "actions": [
-            "shot_down",
-            "shot down",
-            "shooting"
-          ],
-          "targets": [
-            "civilian"
-          ],
-          "actors": [
-            "nato"
-          ],
-          "consequences": [],
-          "extra_context": [
-            "feed_country=Latvia",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "target_match": 0.08,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.ARMED.SHOOTING",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "shooting",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:damaged,entered,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.ARMED.ATTACK",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "armed_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:attacked"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
-            "family": "transport",
-            "subcategory": "aviation",
-            "subtype": "airport_closure",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.85,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "actions:all:closed"
-            ],
-            "matched_context": [
-              "airspace"
-            ]
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Latvia",
-        "time": "Wed, 11 Nov 2026 11:23:34 GMT",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "BNN"
-        ],
-        "urls": [
-          "https://bnn-news.com/social/appropriate-operational-conditions-were-not-met-latvian-armed-forces-explain-why-drone-was-not-shot-down-gddgxcc"
-        ],
-        "merged_titles": [
-          "\"Appropriate operational conditions were not met\" – Latvian Armed Forces explain why drone was not shot down"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_shootdown",
-        "incident_object": "drone",
-        "incident_action": "shot_down",
-        "incident_actor": "nato",
-        "incident_target": "civilian",
-        "classification_confidence": 0.9
       }
     }
   ]

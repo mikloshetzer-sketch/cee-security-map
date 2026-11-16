@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-15T22:30:26.333756+00:00",
+  "generated_utc": "2026-11-16T04:10:30.846141+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 5,
+    "local_event_count": 5,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,12 +20,12 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
+      "incident_count": 2,
       "category_counts": {
-        "drone": 1
+        "drone": 2
       },
       "source_files": {
-        "local_events.geojson": 1
+        "local_events.geojson": 2
       }
     },
     "Slovakia": {
@@ -53,9 +53,13 @@
       }
     },
     "Estonia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 2,
+      "category_counts": {
+        "drone": 2
+      },
+      "source_files": {
+        "local_events.geojson": 2
+      }
     }
   },
   "countries": {
@@ -82,6 +86,27 @@
         "classification_confidence": 0.98,
         "matched_rule_id": "AIR.DRONE.DETECTION",
         "fingerprint_hash": "c915ed8b9b6262277f7940e1"
+      },
+      {
+        "id": "96bab539f52c22003daa",
+        "date": "2026-11-15",
+        "time": "2026-11-15T13:34:10+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "După noile alerte privind atacuri cu drone, premierul Niculescu spune că România va lua măsurile necesare pentru a consolida securitatea în Marea Neagră",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/dupa-noi-alerte-in-privind-atacuri-cu-drone-premierul-niculescu-spune-ca-romania-va-lua-masurile-necesare-pentru-a-consolida-securitatea-in-marea-neagra.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "2a00eca7550b044298c8bd34"
       }
     ],
     "Slovakia": [],
@@ -110,6 +135,49 @@
         "fingerprint_hash": "fc46df39f371b2ec50bf3a3a"
       }
     ],
-    "Estonia": []
+    "Estonia": [
+      {
+        "id": "97f18e57a15e69349258",
+        "date": "2026-11-15",
+        "time": "2026-11-15T15:39:23+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Estonia anunță închiderea frontierei cu Rusia, după o operațiune atribuită spionajului militar rusesc. Opt persoane reținute",
+        "source": "HotNews",
+        "url": "https://hotnews.ro/estonia-anunta-inchiderea-frontierei-cu-rusia-dupa-o-operatiune-atribuita-spionajului-militar-rusesc-opt-persoane-retinute-2404984",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "e86091819d3572d05336cd52"
+      },
+      {
+        "id": "e6563ec3173596fe0e30",
+        "date": "2026-11-15",
+        "time": "2026-11-15T15:00:24+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Estonia acuză Rusia de o tentativă de incendiere a unei companii din domeniul apărării / Premierul estonian anunță că se pregătește să închidă  frontiera cu Rusia",
+        "source": "G4Media",
+        "url": "https://www.g4media.ro/estonia-acuza-rusia-de-o-tentativa-de-incendiere-a-unei-companii-din-domeniul-apararii-premierul-estonian-anunta-ca-se-pregateste-sa-inchida-frontiera-cu-rusia.html",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "c361f00bdedb7b85bc0de204"
+      }
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-16T14:34:32.467773+00:00",
+  "generated_utc": "2026-11-17T01:34:34.725185+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
@@ -9,69 +9,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.638,
-          44.173
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "id": "7269f82690f1cc4c4889",
-        "title": "O ambarcaţiune ARSVOM intervine la o navă aflată în derivă. Cargo-ul tanzanian fusese atacat la mijlocul lunii septembrie",
-        "summary": "O ambarcaţiune a Agenţiei Române de Salvare a Vieţii Omeneşti pe Mare (ARSVOM) intervine, luni, la o navă aflată în derivă, în Marea Neagră, la şase mile marine de digul de nord din Zona Midia.",
+        "id": "f69c475040c194354509",
+        "title": "Un atac cu o dronă ar fi cauzat scufundarea unei nave cargo în largul coastelor Bulgariei, potrivit unor surse din domeniul securității",
+        "summary": "O navă de marfă care transporta grâu s-a scufundat luni în largul coastelor bulgare de la Marea Neagră, după ce a fost lovită de o dronă maritimă și abandonată de echipaj, au declarat surse din domeniul securității maritime, acesta fiind cel mai recent incident dintr-o serie de atacuri din regiune, scrie Reuters.",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/o-ambarcatiune-arsvom-intervine-la-o-nava-aflata-in-deriva-cargo-ul-tanzanian-fusese-atacat-la-mijlocul-lunii-septembrie-4038729",
-        "published": "Mon, 16 Nov 2026 15:57:01 +0200",
+        "url": "https://www.digi24.ro/stiri/externe/un-atac-cu-o-drona-ar-fi-cauzat-scufundarea-unei-nave-cargo-in-largul-coastelor-bulgariei-potrivit-unor-surse-din-domeniul-securitatii-4039199",
+        "published": "Mon, 16 Nov 2026 22:01:10 +0200",
         "country": "Romania",
-        "city": "Constanța",
-        "family": "maritime",
-        "subcategory": "ship_incident",
-        "subtype": "ship_attack",
-        "object": "ship",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
         "action": "attacked",
-        "actor": "ukraine",
+        "actor": "russia",
         "target": "unknown",
         "context": [],
         "consequences": [],
         "severity": "high",
-        "confidence": 0.9,
+        "confidence": 0.82,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "MARITIME.SHIP.ATTACK",
+        "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
           "country": "Romania",
-          "family": "maritime",
-          "subcategory": "ship_incident",
-          "subtype": "ship_attack",
-          "object": "ship",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
           "action": "attacked",
-          "actor": "ukraine",
+          "actor": "russia",
           "target": "unknown",
-          "place": "Constanța",
+          "place": "Romania",
           "event_date": "Mon, 16 No",
-          "hash": "2d0fc2f122f674ac4ecc4570"
+          "hash": "bbceaba938e7308fce38f607"
         },
         "classifier_version": "1.1.0",
         "taxonomy_version": "1.0.1",
         "matched_terms": {
           "article_role": [],
           "objects": [
+            "drone",
+            "dronă",
             "ship",
             "navă"
           ],
           "actions": [
-            "exploded",
-            "explozie",
             "attacked",
             "atacat"
           ],
           "targets": [],
           "actors": [
+            "russia",
+            "rusiei",
             "ukraine",
-            "ucraina"
+            "ucraina",
+            "nato"
           ],
           "consequences": [],
           "extra_context": [
             "feed_country=Romania",
-            "geocode_quality=city"
+            "geocode_quality=country_fallback"
           ]
         },
         "negative_terms": [],
@@ -81,22 +84,9 @@
           "action_match": 0.2,
           "actor_match": 0.06,
           "country_match": 0.1,
-          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.42,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
           {
             "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
@@ -104,10 +94,76 @@
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 1.2,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone"
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
             ],
             "matched_context": []
           },
@@ -118,7 +174,7 @@
             "subtype": "explosive_attack",
             "severity": "high",
             "priority": 0,
-            "score": 1.2,
+            "score": 1.1,
             "matched": false,
             "missing": [
               "objects:all:explosive_device"
@@ -132,7 +188,7 @@
             "subtype": "border_violence",
             "severity": "high",
             "priority": 0,
-            "score": 1.2,
+            "score": 1.1,
             "matched": false,
             "missing": [
               "context:any"
@@ -145,48 +201,6 @@
             "subcategory": "attack",
             "subtype": "terrorist_attack",
             "severity": "critical",
-            "priority": 0,
-            "score": 1.2,
-            "matched": false,
-            "missing": [
-              "context:any"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:missile"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:energy_asset"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "INDUSTRIAL.EXPLOSION",
-            "family": "industrial",
-            "subcategory": "explosion",
-            "subtype": "industrial_explosion",
-            "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
@@ -208,51 +222,37 @@
               "context:any"
             ],
             "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.ARMED.ATTACK",
-            "family": "ground",
-            "subcategory": "armed_incident",
-            "subtype": "armed_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:firearm"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 1449,
+        "article_text_chars": 2064,
         "article_fetch_source": "network",
-        "article_text_excerpt": "O ambarcaţiune a Agenţiei Române de Salvare a Vieţii Omeneşti pe Mare (ARSVOM) intervine, luni, la o navă aflată în derivă, în Marea Neagră, la şase mile marine de digul de nord din Zona Midia. Reprezentanţii ARSVOM au anunţat că, luni, Căpitănia Zonală Constanţa a solicitat intervenţia Agenţiei Române de Salvare a Vieţii Omeneşti pe Mare pentru operaţiunea de salvare a navei Mariam M, sub pavilion Tanzania. „La ora 14:12, nava SAR Artemis pleacă din dana 78 a portului Constanţa către nava Mariam M, aflată în derivă la 6 Mm de digul de nord Midia”, au afirmat reprezentanţii ARSVOM. La ora transmiterii acestei ştiri, misiunea ARSVOM este în desfăşurare. Un atac tragic asupra navei de marfă tanzaniene MARIAM M în Marea Neagră a dus la moartea căpitanului și la rănirea mai multor membri ai echipajului, relata publicația Seanews la 17 septembrie. Conform publicației, nava de marfă generală MARIAM M (IMO 9167667), sub pavilion tanzanian, a fost atacată în Marea Neagră. Căpitanul navei și-a ",
-        "place": "Constanța",
-        "time": "Mon, 16 Nov 2026 15:57:01 +0200",
-        "category": "maritime",
+        "article_text_excerpt": "O navă de marfă care transporta grâu s-a scufundat luni în largul coastelor bulgare de la Marea Neagră , după ce a fost lovită de o dronă maritimă și abandonată de echipaj, au declarat surse din domeniul securității maritime, acesta fiind cel mai recent incident dintr-o serie de atacuri din regiune, scrie Reuters . Echipajul format din 12 cetățeni turci a fost salvat de pe nava „Betul8”, care arbora pavilion somalez, de către nave militare aflate în zonă, a declarat una dintre surse. Ministerul Transporturilor din Bulgaria a precizat că unul dintre elicopterele sale i-a transportat la țărm și că aceștia se aflau în stare bună. Nava, care transporta 3.000 de tone metrice de grâu, naviga din România spre Egipt și s-a răsturnat în zona economică exclusivă a Bulgariei, a declarat luni Ministerul Transporturilor din această țară. Administratorul navei, cu sediul în Insulele Marshall, nu a putut fi contactat imediat pentru a oferi un comentariu. Bulgaria a lansat operațiunea de căutare și sa",
+        "place": "Romania",
+        "time": "Mon, 16 Nov 2026 22:01:10 +0200",
+        "category": "air",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
           "Digi24"
         ],
         "urls": [
-          "https://www.digi24.ro/stiri/o-ambarcatiune-arsvom-intervine-la-o-nava-aflata-in-deriva-cargo-ul-tanzanian-fusese-atacat-la-mijlocul-lunii-septembrie-4038729"
+          "https://www.digi24.ro/stiri/externe/un-atac-cu-o-drona-ar-fi-cauzat-scufundarea-unei-nave-cargo-in-largul-coastelor-bulgariei-potrivit-unor-surse-din-domeniul-securitatii-4039199"
         ],
         "merged_titles": [
-          "O ambarcaţiune ARSVOM intervine la o navă aflată în derivă. Cargo-ul tanzanian fusese atacat la mijlocul lunii septembrie"
+          "Un atac cu o dronă ar fi cauzat scufundarea unei nave cargo în largul coastelor Bulgariei, potrivit unor surse din domeniul securității"
         ],
-        "incident_family": "maritime",
-        "incident_subcategory": "ship_incident",
-        "incident_subtype": "ship_attack",
-        "incident_object": "ship",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
         "incident_action": "attacked",
-        "incident_actor": "ukraine",
+        "incident_actor": "russia",
         "incident_target": "unknown",
-        "classification_confidence": 0.9
+        "classification_confidence": 0.82
       }
     },
     {

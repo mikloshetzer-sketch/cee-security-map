@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-16T14:34:40.815252+00:00",
+  "generated_utc": "2026-11-17T01:34:44.447614+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -22,7 +22,7 @@
     "Romania": {
       "incident_count": 1,
       "category_counts": {
-        "infrastructure_disruption": 1
+        "drone": 1
       },
       "source_files": {
         "local_events.geojson": 1
@@ -59,25 +59,25 @@
     "Hungary": [],
     "Romania": [
       {
-        "id": "7269f82690f1cc4c4889",
+        "id": "f69c475040c194354509",
         "date": "2026-11-16",
-        "time": "2026-11-16T13:57:01+00:00",
-        "category": "infrastructure_disruption",
+        "time": "2026-11-16T20:01:10+00:00",
+        "category": "drone",
         "severity": "high",
-        "title": "O ambarcaţiune ARSVOM intervine la o navă aflată în derivă. Cargo-ul tanzanian fusese atacat la mijlocul lunii septembrie",
+        "title": "Un atac cu o dronă ar fi cauzat scufundarea unei nave cargo în largul coastelor Bulgariei, potrivit unor surse din domeniul securității",
         "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/o-ambarcatiune-arsvom-intervine-la-o-nava-aflata-in-deriva-cargo-ul-tanzanian-fusese-atacat-la-mijlocul-lunii-septembrie-4038729",
+        "url": "https://www.digi24.ro/stiri/externe/un-atac-cu-o-drona-ar-fi-cauzat-scufundarea-unei-nave-cargo-in-largul-coastelor-bulgariei-potrivit-unor-surse-din-domeniul-securitatii-4039199",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "maritime",
-        "incident_subcategory": "ship_incident",
-        "incident_subtype": "ship_attack",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "MARITIME.SHIP.ATTACK",
-        "fingerprint_hash": "2d0fc2f122f674ac4ecc4570"
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "bbceaba938e7308fce38f607"
       }
     ],
     "Slovakia": [],

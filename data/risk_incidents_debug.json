@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-18T00:28:21.303497+00:00",
+  "generated_utc": "2026-11-18T15:07:39.514619+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -15,9 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "kinetic_attack": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
       "incident_count": 1,
@@ -56,17 +60,39 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
+    "Hungary": [
+      {
+        "id": "6a9a37f0a415e52d83cc",
+        "date": "2026-11-18",
+        "time": "2026-11-18T14:14:00+00:00",
+        "category": "kinetic_attack",
+        "severity": "high",
+        "title": "Új nukleáris csúcsfegyverrel készül az Egyesült Államok: dollármilliókat fordítanak az új arzenálra",
+        "source": "Portfolio",
+        "url": "https://www.portfolio.hu/global/20261118/uj-nuklearis-csucsfegyverrel-keszul-az-egyesult-allamok-dollarmilliokat-forditanak-az-uj-arzenalra-877424",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "ground",
+        "incident_subcategory": "explosive_attack",
+        "incident_subtype": "explosive_attack",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "GROUND.EXPLOSIVE.ATTACK",
+        "fingerprint_hash": "7031ca311c32f8bdf06e19e7"
+      }
+    ],
     "Romania": [
       {
-        "id": "97be6c5f3993b0a437c5",
-        "date": "2026-11-17",
-        "time": "2026-11-17T19:35:00+00:00",
+        "id": "bea87b3cec3e2d18b8fb",
+        "date": "2026-11-18",
+        "time": "2026-11-18T14:38:02+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Dróntámadás után elsüllyedt egy Romániába tartó gázszállító hajó",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20261117_drontamadas-romania-gazszallito-hajo",
+        "title": "Navă-cisternă cu GPL care s-a scufundat în largul Bulgariei a fost lovită de drone (oficial)",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/actualitate/nava-cisterna-cu-gpl-care-s-a-scufundat-in-largul-bulgariei-a-fost-lovita-de-drone-oficial-4042375",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -75,9 +101,9 @@
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
+        "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "0b19ddb110c251935ca5bb87"
+        "fingerprint_hash": "9c5075f1b1ae5bad78bb5643"
       }
     ],
     "Slovakia": [],

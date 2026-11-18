@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-17T15:28:56.694663+00:00",
+  "generated_utc": "2026-11-18T00:28:21.303497+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,6 +15,11 @@
       "source_files": {}
     },
     "Hungary": {
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
+    },
+    "Romania": {
       "incident_count": 1,
       "category_counts": {
         "drone": 1
@@ -22,11 +27,6 @@
       "source_files": {
         "local_events.geojson": 1
       }
-    },
-    "Romania": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -56,16 +56,17 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [
+    "Hungary": [],
+    "Romania": [
       {
-        "id": "816771c68e953d33afd3",
+        "id": "97be6c5f3993b0a437c5",
         "date": "2026-11-17",
-        "time": "2026-11-17T11:02:09+00:00",
+        "time": "2026-11-17T19:35:00+00:00",
         "category": "drone",
-        "severity": "low",
-        "title": "Magyar Péter: A munkácsi orosz dróntámadás miatt két napra leáll a magyar–ukrán vasúti közlekedés",
+        "severity": "high",
+        "title": "Dróntámadás után elsüllyedt egy Romániába tartó gázszállító hajó",
         "source": "HVG",
-        "url": "https://hvg.hu/itthon/20261117_magyar-ukran-vasuti-kozlekedes-leallitas-munkacs-orosz-drontamadas-magyar-peter-ukrajna",
+        "url": "https://hvg.hu/vilag/20261117_drontamadas-romania-gazszallito-hajo",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -73,13 +74,12 @@
         "article_role": "incident",
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "c0d82185bee8021b9fc870e4"
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "0b19ddb110c251935ca5bb87"
       }
     ],
-    "Romania": [],
     "Slovakia": [],
     "Poland": [],
     "Lithuania": [],

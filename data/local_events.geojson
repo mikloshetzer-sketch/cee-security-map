@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-17T15:28:48.562143+00:00",
+  "generated_utc": "2026-11-18T00:28:10.480774+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
@@ -9,61 +9,68 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.04,
-          47.497
+          24.9668,
+          45.9432
         ]
       },
       "properties": {
-        "id": "816771c68e953d33afd3",
-        "title": "Magyar Péter: A munkácsi orosz dróntámadás miatt két napra leáll a magyar–ukrán vasúti közlekedés",
-        "summary": "A munkácsi pályaudvartól 300 méterre csapódott be drón.",
+        "id": "97be6c5f3993b0a437c5",
+        "title": "Dróntámadás után elsüllyedt egy Romániába tartó gázszállító hajó",
+        "summary": "A hajót négy drón találta el Bulgária partjainál, a legénységet kimentették.",
         "source": "HVG",
-        "url": "https://hvg.hu/itthon/20261117_magyar-ukran-vasuti-kozlekedes-leallitas-munkacs-orosz-drontamadas-magyar-peter-ukrajna",
-        "published": "Tue, 17 Nov 2026 11:02:09 Z",
-        "country": "Hungary",
-        "city": "Budapest",
+        "url": "https://hvg.hu/vilag/20261117_drontamadas-romania-gazszallito-hajo",
+        "published": "Tue, 17 Nov 2026 19:35:00 Z",
+        "country": "Romania",
+        "city": null,
         "family": "air",
         "subcategory": "drone",
-        "subtype": "drone_detection",
+        "subtype": "drone_strike",
         "object": "drone",
-        "action": "detected",
+        "action": "impact",
         "actor": "russia",
         "target": "government",
         "context": [],
         "consequences": [],
-        "severity": "low",
-        "confidence": 0.98,
+        "severity": "high",
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
-          "country": "Hungary",
+          "country": "Romania",
           "family": "air",
           "subcategory": "drone",
-          "subtype": "drone_detection",
+          "subtype": "drone_strike",
           "object": "drone",
-          "action": "detected",
+          "action": "impact",
           "actor": "russia",
           "target": "government",
-          "place": "Budapest",
+          "place": "Romania",
           "event_date": "Tue, 17 No",
-          "hash": "c0d82185bee8021b9fc870e4"
+          "hash": "0b19ddb110c251935ca5bb87"
         },
         "classifier_version": "1.1.0",
         "taxonomy_version": "1.0.1",
         "matched_terms": {
-          "article_role": [],
+          "article_role": [
+            "történt"
+          ],
           "objects": [
             "drone",
-            "drón"
+            "drón",
+            "military_aircraft",
+            "helicopter",
+            "ship",
+            "tanker",
+            "hajó"
           ],
           "actions": [
-            "detected",
-            "észleltek"
+            "impact",
+            "talált"
           ],
           "targets": [
             "government",
-            "önkormányzat"
+            "minisztérium"
           ],
           "actors": [
             "russia",
@@ -71,12 +78,13 @@
             "orosz",
             "ukraine",
             "ukrajna",
-            "ukrán"
+            "ukrán",
+            "nato"
           ],
           "consequences": [],
           "extra_context": [
             "feed_country=Hungary",
-            "geocode_quality=city"
+            "geocode_quality=country_fallback"
           ]
         },
         "negative_terms": [],
@@ -87,10 +95,33 @@
           "target_match": 0.08,
           "actor_match": 0.06,
           "country_match": 0.1,
-          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
           {
             "rule_id": "AIR.DRONE.DETECTION",
             "family": "air",
@@ -98,9 +129,11 @@
             "subtype": "drone_detection",
             "severity": "low",
             "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
             "matched_context": []
           },
           {
@@ -146,25 +179,11 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
+            "rule_id": "AIR.MISSILE.IMPACT",
             "family": "air",
             "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
+            "subtype": "missile_impact",
+            "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
@@ -188,82 +207,65 @@
             "matched_context": []
           },
           {
-            "rule_id": "TRANSPORT.RAIL.DISRUPTION",
-            "family": "transport",
-            "subcategory": "rail",
-            "subtype": "rail_disruption",
-            "severity": "medium",
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,damaged,exploded"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "INDUSTRIAL.CHEMICAL.RELEASE",
+            "family": "industrial",
+            "subcategory": "chemical_release",
+            "subtype": "chemical_release",
+            "severity": "high",
             "priority": 0,
             "score": 0.85,
             "matched": false,
             "missing": [
-              "targets:all:transport",
-              "actions:all:disrupted"
+              "actions:all:leaked"
             ],
             "matched_context": [
-              "vonat"
+              "gas"
             ]
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:missile",
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
           }
         ],
         "rejection_reason": null,
         "full_article_enriched": true,
-        "article_text_chars": 2318,
+        "article_text_chars": 2338,
         "article_fetch_source": "network",
-        "article_text_excerpt": "A munkácsi pályaudvartól 300 méterre csapódott be drón. Magyar Péter miniszterelnök a Facebookon jelentette be, hogy kedden és szerdán nem indul vonat Magyarország és Ukrajna között, miután orosz dróntámadás érte Munkácsot . A korlátozás a MÁV Budapest–Debrecen–Záhony–Csap–Munkács–Lviv–Kijev-vonalát érinti. A kárpátalja.ma beszámolója szerint Kárpátalja légterében két ellenséges drónt észleltek. Munkácson 8:50 körül robbanáshoz hasonló hangokat hallottak, nem sokkal később a Munkácsi Városi Tanács is közleményt adott ki, amelyben azt írták, hogy „az ellenség támadást indított a város ellen”. A munkácsi önkormányzat felszólította a lakosságot, hogy ne hagyják figyelmen kívül a légiriadó jelzéseit, és maradjanak az óvóhelyeken, amíg hivatalos értesítést nem kapnak. Azt is kérték, hogy ne tegyenek közzé a közösségi médiában a légvédelmi erők tevékenységét bemutató fényképeket és videókat. Kárpátalja kormányzója fél tíz előtt nem sokkal a Facebookon azt írta , hogy a veszély továbbra is fe",
-        "place": "Budapest",
-        "time": "Tue, 17 Nov 2026 11:02:09 Z",
+        "article_text_excerpt": "A hajót négy drón találta el Bulgária partjainál, a legénységet kimentették. Becsapódó tengeri drónok találták el Bulgária partjainál egy cseppfolyósított földgázt szállító tartályhajót, amely helyi idő szerint kedden kora hajnalban eltűnt a radarokról, majd reggel 8 óra után elsüllyedt a Fekete-tengeren, Bjala kikötővárostól mintegy 100 kilométerre. A 19 fős legénységet kimentették – közölte kedden a hajót üzemeltető vállalat, és a bolgár közlekedési minisztérium. A görög Stealth Maritime üzemeltetésében álló, libériai zászló alatt közlekedő Gas Husky 3400 tonna cseppfolyósított propán-bután gázt (LPG) szállított Egyiptomból Romániába a 19 fős fülöp-szigeteki legénységével a fedélzetén. A drónok Bulgária kizárólagos gazdasági övezetén belül találták el; a bolgár védelmi minisztérium által bemutatott fényképeken egy oldalára dőlt hajó látható. A maritime.bg bolgár hajózási hírportál a kimentett kapitányt idézve azt közölte, hogy a hajót négy drón találta el. Varna, Bulgaria, November 1",
+        "place": "Romania",
+        "time": "Tue, 17 Nov 2026 19:35:00 Z",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "city",
+        "geocode_quality": "country_fallback",
         "force_included": false,
         "source_count": 1,
         "sources": [
           "HVG"
         ],
         "urls": [
-          "https://hvg.hu/itthon/20261117_magyar-ukran-vasuti-kozlekedes-leallitas-munkacs-orosz-drontamadas-magyar-peter-ukrajna"
+          "https://hvg.hu/vilag/20261117_drontamadas-romania-gazszallito-hajo"
         ],
         "merged_titles": [
-          "Magyar Péter: A munkácsi orosz dróntámadás miatt két napra leáll a magyar–ukrán vasúti közlekedés"
+          "Dróntámadás után elsüllyedt egy Romániába tartó gázszállító hajó"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
+        "incident_subtype": "drone_strike",
         "incident_object": "drone",
-        "incident_action": "detected",
+        "incident_action": "impact",
         "incident_actor": "russia",
         "incident_target": "government",
-        "classification_confidence": 0.98
+        "classification_confidence": 0.9
       }
     },
     {

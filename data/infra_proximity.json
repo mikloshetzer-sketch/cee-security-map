@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_utc": "2026-11-18T23:56:25.555315+00:00",
+    "generated_utc": "2026-11-19T05:21:01.966878+00:00",
     "infrastructure_count": 103,
-    "event_count": 14,
-    "match_count": 1,
-    "raw_match_count": 1,
-    "top_infrastructure_count": 1,
+    "event_count": 12,
+    "match_count": 0,
+    "raw_match_count": 0,
+    "top_infrastructure_count": 0,
     "max_distance_km": 50,
     "target_countries": [
       "Czechia",
@@ -36,50 +36,5 @@
   },
   "top_matches": [],
   "matches": [],
-  "raw_matches": [
-    {
-      "id": "4f1bd10f70c9961c",
-      "level": "medium",
-      "score": 54.11,
-      "distance_km": 16.18,
-      "event": {
-        "id": "69c47ecccff12427",
-        "title": "Security Politics – Bucharest, Bucuresti, Romania",
-        "category": "security_politics",
-        "incident_type": "bomb_threat",
-        "source": "GDELT",
-        "source_count": 1,
-        "sources": [
-          "GDELT"
-        ],
-        "time": "2026-11-05T00:00:00Z",
-        "url": "https://www.mediafax.ro/english/bomb-threat-on-board-a-plane-flying-from-milan-to-bucharest-182-passengers-evacuated-23838127",
-        "urls": [
-          "https://www.mediafax.ro/english/bomb-threat-on-board-a-plane-flying-from-milan-to-bucharest-182-passengers-evacuated-23838127"
-        ],
-        "lat": 44.426,
-        "lon": 26.102,
-        "location_quality": "city",
-        "place": "bucharest",
-        "geolocation_method": "article_city",
-        "geolocation_source_count": 1,
-        "geolocation_evidence_count": 1,
-        "geolocation_negation_filter": true,
-        "source_file": "gdelt_linked.geojson"
-      },
-      "infrastructure": {
-        "id": "ro-transport-henri-coanda-airport",
-        "name": "Bucharest Henri Coandă International Airport",
-        "country": "Romania",
-        "city": "Bucharest",
-        "category": "transport",
-        "subtype": "international_airport",
-        "criticality": 8.0,
-        "operator": "Bucharest Airports",
-        "lat": 44.571,
-        "lon": 26.085,
-        "source_file": "critical_infrastructure.json"
-      }
-    }
-  ]
+  "raw_matches": []
 }

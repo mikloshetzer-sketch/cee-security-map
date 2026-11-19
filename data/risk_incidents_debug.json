@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-19T05:21:02.072111+00:00",
+  "generated_utc": "2026-11-19T15:12:12.639384+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 2,
-    "local_event_count": 2,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,22 +20,14 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
-      "incident_count": 1,
-      "category_counts": {
-        "kinetic_attack": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Poland": {
       "incident_count": 0,
@@ -61,52 +53,8 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "cb4b189148e08a0a5447",
-        "date": "2026-11-19",
-        "time": "2026-11-19T05:00:07+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "INTERVIU Un fost șef al Armatei române indică baza aeriană despre care „nu vorbește nimeni și nu știu de ce”",
-        "source": "HotNews",
-        "url": "https://hotnews.ro/interviu-un-fost-sef-al-armatei-romane-indica-baza-aeriana-despre-care-nu-vorbeste-nimeni-si-nu-stiu-de-ce-2406791",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "1d27c38c012920a754c48c5a"
-      }
-    ],
-    "Slovakia": [
-      {
-        "id": "ab44d04cf05978d56055",
-        "date": "2026-11-18",
-        "time": "2026-11-18T20:43:07+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Výstrely na námestí ich nezastavili. Dvojica Slovákov dostala v Krakove významné ocenenie",
-        "source": "Aktuality",
-        "url": "https://www.aktuality.sk/clanok/YKY5uba/slovaci-riskovali-vlastne-zivoty-aby-zachranili-zranenu-zenu-krakov-ich-vyznamenal/",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "classification_confidence": 0.76,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint_hash": "3bbe9c55088767be3c687a3e"
-      }
-    ],
+    "Romania": [],
+    "Slovakia": [],
     "Poland": [],
     "Lithuania": [],
     "Latvia": [],

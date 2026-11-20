@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-20T00:19:50.730800+00:00",
+  "generated_utc": "2026-11-20T14:51:07.139183+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -25,18 +25,18 @@
       "source_files": {}
     },
     "Slovakia": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
-    },
-    "Poland": {
       "incident_count": 0,
       "category_counts": {},
       "source_files": {}
+    },
+    "Poland": {
+      "incident_count": 2,
+      "category_counts": {
+        "drone": 2
+      },
+      "source_files": {
+        "local_events.geojson": 2
+      }
     },
     "Lithuania": {
       "incident_count": 0,
@@ -58,16 +58,38 @@
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [],
-    "Slovakia": [
+    "Slovakia": [],
+    "Poland": [
       {
-        "id": "6381a99bc819e6281d72",
-        "date": "2026-11-19",
-        "time": "2026-11-19T19:06:36+00:00",
+        "id": "97e90f8262efc3a25e07",
+        "date": "2026-11-20",
+        "time": "2026-11-20T10:18:30+00:00",
+        "category": "drone",
+        "severity": "low",
+        "title": "Orosz robotrepülőgép zuhant le egy lengyel településen, Tusk szerint külföldi provokációval állnak szemben",
+        "source": "Telex",
+        "url": "https://telex.hu/kulfold/2026/11/20/ismeretlen-targy-zuhant-le-egy-lengyel-telepulesen",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint_hash": "9603805222b19698602435d3"
+      },
+      {
+        "id": "c4c777ecfec89b6ea634",
+        "date": "2026-11-20",
+        "time": "2026-11-20T09:30:31+00:00",
         "category": "drone",
         "severity": "high",
-        "title": "Nad velvyslankyní Evropské unie explodoval v Kyjevě ruský dron",
-        "source": "Novinky",
-        "url": "https://www.novinky.cz/clanek/zahranicni-evropa-nad-velvyslankyni-evropske-unie-na-ukrajine-explodoval-rusky-dron-40609565",
+        "title": "Two Russian missiles and a drone hit Poland, says defence minister",
+        "source": "NotesFromPoland",
+        "url": "https://notesfrompoland.com/2026/11/20/unidentified-object-hits-poland-amid-russian-attacks-on-western-ukraine/",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
@@ -78,10 +100,9 @@
         "incident_subtype": "drone_strike",
         "classification_confidence": 0.82,
         "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "abb0c2f00dcae16d5fc94ef8"
+        "fingerprint_hash": "71226cc7b852a6e89cef9ba6"
       }
     ],
-    "Poland": [],
     "Lithuania": [],
     "Latvia": [],
     "Estonia": []

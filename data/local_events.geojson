@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-20T00:19:43.009868+00:00",
+  "generated_utc": "2026-11-20T14:50:55.923738+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
@@ -9,24 +9,291 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.699,
-          48.669
+          19.1451,
+          51.9194
         ]
       },
       "properties": {
-        "id": "6381a99bc819e6281d72",
-        "title": "Nad velvyslankyní Evropské unie explodoval v Kyjevě ruský dron",
-        "summary": "Nebezpečné chvíle zažila ve čtvrtek v Kyjevě slovenská diplomatka Katarína Mathernová, která je velvyslankyní Evropské unie na Ukrajině. Ruský dron explodoval nad místem, kde se v tu chvíli zdržovala. Incident se obešel bez zranění.",
-        "source": "Novinky",
-        "url": "https://www.novinky.cz/clanek/zahranicni-evropa-nad-velvyslankyni-evropske-unie-na-ukrajine-explodoval-rusky-dron-40609565",
-        "published": "Thu, 19 Nov 2026 20:06:36 +0100",
-        "country": "Slovakia",
+        "id": "97e90f8262efc3a25e07",
+        "title": "Orosz robotrepülőgép zuhant le egy lengyel településen, Tusk szerint külföldi provokációval állnak szemben",
+        "summary": "A lengyel belügyminiszter pedig közölte, hogy három helyszínen folytatnak nyomozást légtérsértés ügyében az Ukrajna elleni orosz csapások után.",
+        "source": "Telex",
+        "url": "https://telex.hu/kulfold/2026/11/20/ismeretlen-targy-zuhant-le-egy-lengyel-telepulesen",
+        "published": "Fri, 20 Nov 2026 11:18:30 +0100",
+        "country": "Poland",
+        "city": null,
+        "family": "air",
+        "subcategory": "drone",
+        "subtype": "drone_detection",
+        "object": "drone",
+        "action": "detected",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [
+          "injury"
+        ],
+        "severity": "low",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.DRONE.DETECTION",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "drone",
+          "subtype": "drone_detection",
+          "object": "drone",
+          "action": "detected",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Poland",
+          "event_date": "Fri, 20 No",
+          "hash": "9603805222b19698602435d3"
+        },
+        "classifier_version": "1.1.0",
+        "taxonomy_version": "1.0.1",
+        "matched_terms": {
+          "article_role": [
+            "történt"
+          ],
+          "objects": [
+            "drone",
+            "drón",
+            "missile",
+            "robotrepülőgép"
+          ],
+          "actions": [
+            "detected",
+            "észleltek"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "oroszország",
+            "orosz",
+            "ukraine",
+            "ukrajna",
+            "nato",
+            "unknown",
+            "ismeretlen",
+            "azonosítatlan"
+          ],
+          "consequences": [
+            "injury",
+            "sérült"
+          ],
+          "extra_context": [
+            "feed_country=Hungary",
+            "geocode_quality=country_fallback"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "consequence_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.26,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
+            "family": "transport",
+            "subcategory": "aviation",
+            "subtype": "airport_closure",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.85,
+            "matched": false,
+            "missing": [
+              "targets:all:transport",
+              "actions:all:closed"
+            ],
+            "matched_context": [
+              "légtér"
+            ]
+          },
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft",
+              "actions:any:damaged,entered,impact"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 3615,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Péntek reggel 7 óra előtt egy azonosítatlan tárgy zuhant le a kelet-lengyelországi Lublini vajdaságban, a biłgoraji járásban található Chmielek közelében, Nowy Lipowiec falu határában, írja a Gazeta Wyborcza . A lap beszámolójából kiderül, hogy másik két településen, Rudnik nad Sanemben és Mołodyczban is ismeretlen tárgyak csapódtak be, így a lengyel hatóságok ezeken a helyszíneken is műveleteket hajtottak végre. Az MTI szerint Marcin Kierwiński lengyel belügyminiszter közölte, hogy Lengyelország három helyszínen folytat nyomozást légtérsértés ügyében az Ukrajna elleni péntek hajnali orosz támadásokat követően. Władysław Kosiniak-Kamysz lengyel védelmi miniszter pénteki sajtótájékoztatóján azt mondta, hogy Nowy Lipowiecben egy Kh-101-es robotrepülőgép zuhant le. „A második helyszínen szintén rakétáról beszélnek, a harmadik helyen pedig nagy valószínűséggel egy sugárhajtású drón csapódott be” – idézte a miniszter szavait a France24 . Korábban azt is közölte, hogy senki sem sérült meg, é",
+        "place": "Poland",
+        "time": "Fri, 20 Nov 2026 11:18:30 +0100",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "country_fallback",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "Telex"
+        ],
+        "urls": [
+          "https://telex.hu/kulfold/2026/11/20/ismeretlen-targy-zuhant-le-egy-lengyel-telepulesen"
+        ],
+        "merged_titles": [
+          "Orosz robotrepülőgép zuhant le egy lengyel településen, Tusk szerint külföldi provokációval állnak szemben"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_detection",
+        "incident_object": "drone",
+        "incident_action": "detected",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.1451,
+          51.9194
+        ]
+      },
+      "properties": {
+        "id": "c4c777ecfec89b6ea634",
+        "title": "Two Russian missiles and a drone hit Poland, says defence minister",
+        "summary": "Poland reports that two Russian missiles and a jet-powered drone crashed on its territory during a major Russian attack on Ukraine.",
+        "source": "NotesFromPoland",
+        "url": "https://notesfrompoland.com/2026/11/20/unidentified-object-hits-poland-amid-russian-attacks-on-western-ukraine/",
+        "published": "Fri, 20 Nov 2026 09:30:31 +0000",
+        "country": "Poland",
         "city": null,
         "family": "air",
         "subcategory": "drone",
         "subtype": "drone_strike",
         "object": "drone",
-        "action": "exploded",
+        "action": "impact",
         "actor": "russia",
         "target": "unknown",
         "context": [],
@@ -37,38 +304,37 @@
         "actual_incident": true,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
-          "country": "Slovakia",
+          "country": "Poland",
           "family": "air",
           "subcategory": "drone",
           "subtype": "drone_strike",
           "object": "drone",
-          "action": "exploded",
+          "action": "impact",
           "actor": "russia",
           "target": "unknown",
-          "place": "Slovakia",
-          "event_date": "Thu, 19 No",
-          "hash": "abb0c2f00dcae16d5fc94ef8"
+          "place": "Poland",
+          "event_date": "Fri, 20 No",
+          "hash": "71226cc7b852a6e89cef9ba6"
         },
         "classifier_version": "1.1.0",
         "taxonomy_version": "1.0.1",
         "matched_terms": {
           "article_role": [],
           "objects": [
-            "drone",
-            "dron"
+            "drone"
           ],
           "actions": [
-            "exploded",
-            "explodoval"
+            "impact",
+            "hit"
           ],
           "targets": [],
           "actors": [
             "russia",
-            "ruský"
+            "russian"
           ],
           "consequences": [],
           "extra_context": [
-            "feed_country=Czechia",
+            "feed_country=Poland",
             "geocode_quality=country_fallback"
           ]
         },
@@ -165,58 +431,61 @@
             "matched_context": []
           },
           {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "objects:all:military_aircraft"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "GROUND.EXPLOSIVE.ATTACK",
             "family": "ground",
             "subcategory": "explosive_attack",
             "subtype": "explosive_attack",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:explosive_device"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "MARITIME.SHIP.ATTACK",
-            "family": "maritime",
-            "subcategory": "ship_incident",
-            "subtype": "ship_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:ship"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "ENERGY.ASSET.EXPLOSION",
-            "family": "energy",
-            "subcategory": "oil_gas",
-            "subtype": "energy_asset_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:energy_asset"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "INDUSTRIAL.EXPLOSION",
-            "family": "industrial",
-            "subcategory": "explosion",
-            "subtype": "industrial_explosion",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "context:any"
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
             ],
             "matched_context": []
           }
@@ -226,27 +495,30 @@
         "article_text_chars": 0,
         "article_fetch_source": "fetch_limit",
         "article_text_excerpt": "",
-        "place": "Slovakia",
-        "time": "Thu, 19 Nov 2026 20:06:36 +0100",
+        "place": "Poland",
+        "time": "Fri, 20 Nov 2026 09:30:31 +0000",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
-        "source_count": 1,
+        "source_count": 2,
         "sources": [
-          "Novinky"
+          "NotesFromPoland",
+          "BNN"
         ],
         "urls": [
-          "https://www.novinky.cz/clanek/zahranicni-evropa-nad-velvyslankyni-evropske-unie-na-ukrajine-explodoval-rusky-dron-40609565"
+          "https://notesfrompoland.com/2026/11/20/unidentified-object-hits-poland-amid-russian-attacks-on-western-ukraine/",
+          "https://bnn-news.com/world/two-russian-missiles-and-a-jet-powered-drone-crash-in-poland-u43rvt8"
         ],
         "merged_titles": [
-          "Nad velvyslankyní Evropské unie explodoval v Kyjevě ruský dron"
+          "Two Russian missiles and a drone hit Poland, says defence minister",
+          "Two Russian missiles and a jet-powered drone crash in Poland"
         ],
         "incident_family": "air",
         "incident_subcategory": "drone",
         "incident_subtype": "drone_strike",
         "incident_object": "drone",
-        "incident_action": "exploded",
+        "incident_action": "impact",
         "incident_actor": "russia",
         "incident_target": "unknown",
         "classification_confidence": 0.82

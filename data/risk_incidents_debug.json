@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-19T15:12:12.639384+00:00",
+  "generated_utc": "2026-11-20T00:19:50.730800+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 0,
-    "local_event_count": 0,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -25,9 +25,13 @@
       "source_files": {}
     },
     "Slovakia": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "drone": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Poland": {
       "incident_count": 0,
@@ -54,7 +58,29 @@
     "Czech Republic": [],
     "Hungary": [],
     "Romania": [],
-    "Slovakia": [],
+    "Slovakia": [
+      {
+        "id": "6381a99bc819e6281d72",
+        "date": "2026-11-19",
+        "time": "2026-11-19T19:06:36+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Nad velvyslankyní Evropské unie explodoval v Kyjevě ruský dron",
+        "source": "Novinky",
+        "url": "https://www.novinky.cz/clanek/zahranicni-evropa-nad-velvyslankyni-evropske-unie-na-ukrajine-explodoval-rusky-dron-40609565",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.82,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "abb0c2f00dcae16d5fc94ef8"
+      }
+    ],
     "Poland": [],
     "Lithuania": [],
     "Latvia": [],

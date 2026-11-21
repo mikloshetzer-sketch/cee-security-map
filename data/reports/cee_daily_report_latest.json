@@ -1,42 +1,42 @@
 {
-  "generated_utc": "2026-11-20T22:43:32.145807+00:00",
+  "generated_utc": "2026-11-21T21:45:29.849641+00:00",
   "headline": "CEE Infrastructure & Security Daily Brief",
   "region": {
     "overall": "normal",
-    "overall_score": 0.379,
+    "overall_score": 0.192,
     "confidence": "low",
-    "confidence_value": 0.226,
+    "confidence_value": 0.219,
     "dimension_scores": {
-      "incident_pressure": 0.423,
-      "military_drone": 0.633,
+      "incident_pressure": 0.25,
+      "military_drone": 0.417,
       "cyber": 0.0,
       "infrastructure": 0.0,
       "crossborder": 0.0,
-      "trend": 1.25
+      "trend": 0.339
     },
-    "evidence_count": 2,
+    "evidence_count": 1,
     "evidence_status": "observed"
   },
   "top_countries": [
     {
       "country": "Poland",
-      "overall": "elevated",
-      "overall_score": 3.029,
-      "normalized": 3.029,
+      "overall": "normal",
+      "overall_score": 1.538,
+      "normalized": 1.538,
       "confidence": "low",
-      "confidence_value": 0.41,
+      "confidence_value": 0.355,
       "drivers": [
-        "biztonsági incidensnyomás",
         "katonai és drónaktivitás",
+        "biztonsági incidensnyomás",
         "friss aktivitási trend"
       ],
       "dimensions": {
-        "incident_pressure": 3.388,
-        "military_drone": 5.062,
+        "incident_pressure": 2.0,
+        "military_drone": 3.333,
         "cyber": 0.0,
         "infrastructure": 0.0,
         "crossborder": 0.0,
-        "trend": 10.0
+        "trend": 2.714
       }
     },
     {
@@ -160,15 +160,14 @@
     }
   ],
   "summary_bullets": [
-    "Helyi források alapján az elmúlt 24 órában 2 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Poland: 2.",
-    "Legerősebb góc: Kutno County, Poland 🆕 (rácspont 52.25, 19.25; score 5.89; 7 napos változás: n/a).",
+    "Legerősebb góc: Kutno County, Poland 🆕 (rácspont 52.25, 19.25; score 5.75; 7 napos változás: n/a).",
     "Trend: nincs elég bázisadat az összehasonlításhoz.",
-    "Forráskép: GDELT 0, GDELT linked 3618, GDELT DOC 0, direkt feed 7, USGS 1, GDACS 0.",
+    "Forráskép: GDELT 0, GDELT linked 3663, GDELT DOC 0, direkt feed 6, USGS 1, GDACS 0.",
     "Trusted RSS forrásokból releváns sajtóanyag: 200 db.",
     "Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt."
   ],
   "weekly_bullets": [
-    "A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Poland: 5.1.",
+    "A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Poland: 2.5.",
     "A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében mérsékelten romló képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, határbiztonsági és rendészeti nyomás, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor lokális incidensek és eszkalációs kockázatok több ponton megfigyelhetők voltak.",
     "A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, ugyanakkor több ponton emelkedő nyomás érzékelhető. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.",
     "Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan az energia- és belpolitikai sérülékenységek összekapcsolódása lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.",
@@ -185,275 +184,8 @@
         ]
       },
       "properties": {
-        "id": "97e90f8262efc3a25e07",
-        "title": "Orosz robotrepülőgép zuhant le egy lengyel településen, Tusk szerint külföldi provokációval állnak szemben",
-        "summary": "A lengyel belügyminiszter pedig közölte, hogy három helyszínen folytatnak nyomozást légtérsértés ügyében az Ukrajna elleni orosz csapások után.",
-        "source": "Telex",
-        "url": "https://telex.hu/kulfold/2026/11/20/ismeretlen-targy-zuhant-le-egy-lengyel-telepulesen",
-        "published": "Fri, 20 Nov 2026 11:18:30 +0100",
-        "country": "Poland",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_detection",
-        "object": "drone",
-        "action": "detected",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [],
-        "consequences": [
-          "injury"
-        ],
-        "severity": "low",
-        "confidence": 0.9,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint": {
-          "country": "Poland",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_detection",
-          "object": "drone",
-          "action": "detected",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Poland",
-          "event_date": "Fri, 20 No",
-          "hash": "9603805222b19698602435d3"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [
-            "történt"
-          ],
-          "objects": [
-            "drone",
-            "drón",
-            "missile",
-            "robotrepülőgép"
-          ],
-          "actions": [
-            "detected",
-            "észleltek"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "oroszország",
-            "orosz",
-            "ukraine",
-            "ukrajna",
-            "nato",
-            "unknown",
-            "ismeretlen",
-            "azonosítatlan"
-          ],
-          "consequences": [
-            "injury",
-            "sérült"
-          ],
-          "extra_context": [
-            "feed_country=Hungary",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "consequence_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 2.26,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:attacked,exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:exploded,impact"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "TRANSPORT.AVIATION.CLOSURE",
-            "family": "transport",
-            "subcategory": "aviation",
-            "subtype": "airport_closure",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.85,
-            "matched": false,
-            "missing": [
-              "targets:all:transport",
-              "actions:all:closed"
-            ],
-            "matched_context": [
-              "légtér"
-            ]
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft",
-              "actions:any:damaged,entered,impact"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 3615,
-        "article_fetch_source": "network",
-        "article_text_excerpt": "Péntek reggel 7 óra előtt egy azonosítatlan tárgy zuhant le a kelet-lengyelországi Lublini vajdaságban, a biłgoraji járásban található Chmielek közelében, Nowy Lipowiec falu határában, írja a Gazeta Wyborcza . A lap beszámolójából kiderül, hogy másik két településen, Rudnik nad Sanemben és Mołodyczban is ismeretlen tárgyak csapódtak be, így a lengyel hatóságok ezeken a helyszíneken is műveleteket hajtottak végre. Az MTI szerint Marcin Kierwiński lengyel belügyminiszter közölte, hogy Lengyelország három helyszínen folytat nyomozást légtérsértés ügyében az Ukrajna elleni péntek hajnali orosz támadásokat követően. Władysław Kosiniak-Kamysz lengyel védelmi miniszter pénteki sajtótájékoztatóján azt mondta, hogy Nowy Lipowiecben egy Kh-101-es robotrepülőgép zuhant le. „A második helyszínen szintén rakétáról beszélnek, a harmadik helyen pedig nagy valószínűséggel egy sugárhajtású drón csapódott be” – idézte a miniszter szavait a France24 . Korábban azt is közölte, hogy senki sem sérült meg, é",
-        "place": "Poland",
-        "time": "Fri, 20 Nov 2026 11:18:30 +0100",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Telex"
-        ],
-        "urls": [
-          "https://telex.hu/kulfold/2026/11/20/ismeretlen-targy-zuhant-le-egy-lengyel-telepulesen"
-        ],
-        "merged_titles": [
-          "Orosz robotrepülőgép zuhant le egy lengyel településen, Tusk szerint külföldi provokációval állnak szemben"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "incident_object": "drone",
-        "incident_action": "detected",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.9
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.1451,
-          51.9194
-        ]
-      },
-      "properties": {
         "id": "c4c777ecfec89b6ea634",
-        "title": "Two Russian missiles and a drone hit Poland, says defence minister",
+        "title": "Two Russian missiles and a drone hit Poland",
         "summary": "Poland reports that two Russian missiles and a jet-powered drone crashed on its territory during a major Russian attack on Ukraine.",
         "source": "NotesFromPoland",
         "url": "https://notesfrompoland.com/2026/11/20/unidentified-object-hits-poland-amid-russian-attacks-on-western-ukraine/",
@@ -682,7 +414,7 @@
           "https://bnn-news.com/world/two-russian-missiles-and-a-jet-powered-drone-crash-in-poland-u43rvt8"
         ],
         "merged_titles": [
-          "Two Russian missiles and a drone hit Poland, says defence minister",
+          "Two Russian missiles and a drone hit Poland",
           "Two Russian missiles and a jet-powered drone crash in Poland"
         ],
         "incident_family": "air",
@@ -699,18 +431,18 @@
   "top_infrastructure_matches": [],
   "all_matches": [],
   "meta": {
-    "generated_utc": "2026-11-20T14:46:58Z",
+    "generated_utc": "2026-11-21T14:08:20Z",
     "counts": {
       "usgs": 1,
       "gdacs": 0,
       "gdelt": 0,
-      "gdelt_linked": 3618,
+      "gdelt_linked": 3663,
       "gdelt_cross": 0,
-      "direct_news": 7,
+      "direct_news": 6,
       "hotspot_cells": 4,
       "rss_trusted": 200,
-      "local_events": 2,
-      "validated_security_events": 2,
+      "local_events": 1,
+      "validated_security_events": 1,
       "validated_crossborder_events": 0,
       "infra_proximity_matches": 0
     },
@@ -779,10 +511,10 @@
     "article_enrichment": {
       "enabled": true,
       "cache": "article_text_cache.json",
-      "fetched_this_run": 40,
+      "fetched_this_run": 37,
       "pipeline_counts": {
         "gdelt_linked": 16,
-        "trusted_rss": 24
+        "trusted_rss": 21
       },
       "trusted_rss_limit": 24,
       "gdelt_linked_limit": 16
@@ -811,7 +543,7 @@
     }
   },
   "region_counter": {
-    "V4 térség": 3.029,
+    "V4 térség": 1.538,
     "Fekete-tengeri perem": 0.0,
     "Baltikum": 0.0
   },

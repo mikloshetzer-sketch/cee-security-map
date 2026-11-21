@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-21T05:05:42.291240+00:00",
+  "generated_utc": "2026-11-21T14:12:13.103401+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
@@ -14,12 +14,12 @@
         ]
       },
       "properties": {
-        "id": "4e60cfc4afbf17fb2beb",
-        "title": "Donald Tusk: Biztos, hogy orosz repülő objektumok sértették meg a lengyel légteret",
-        "summary": "Szándékos orosz provokációnak tartja a lengyel kormányfő országa légterének megsértését, miután több légi objektum is lezuhant Ukrajnához közel, egy közös hadgyakorlattal egy időben.",
-        "source": "HVG",
-        "url": "https://hvg.hu/vilag/20261120_lengyelorszag-orosz-ukran-haboru-dron-donald-tusk-orban-anita",
-        "published": "Fri, 20 Nov 2026 15:03:39 Z",
+        "id": "c4c777ecfec89b6ea634",
+        "title": "Two Russian missiles and a drone hit Poland",
+        "summary": "Poland reports that two Russian missiles and a jet-powered drone crashed on its territory during a major Russian attack on Ukraine.",
+        "source": "NotesFromPoland",
+        "url": "https://notesfrompoland.com/2026/11/20/unidentified-object-hits-poland-amid-russian-attacks-on-western-ukraine/",
+        "published": "Fri, 20 Nov 2026 09:30:31 +0000",
         "country": "Poland",
         "city": null,
         "family": "air",
@@ -52,34 +52,22 @@
         "classifier_version": "1.1.0",
         "taxonomy_version": "1.0.1",
         "matched_terms": {
-          "article_role": [
-            "történt"
-          ],
+          "article_role": [],
           "objects": [
-            "drone",
-            "missile"
+            "drone"
           ],
           "actions": [
             "impact",
-            "hit",
-            "struck",
-            "lezuhant",
-            "attacked"
+            "hit"
           ],
           "targets": [],
           "actors": [
             "russia",
-            "russian",
-            "oroszország",
-            "orosz",
-            "ukraine",
-            "ukrajna",
-            "ukrán",
-            "nato"
+            "russian"
           ],
           "consequences": [],
           "extra_context": [
-            "feed_country=Hungary",
+            "feed_country=Poland",
             "geocode_quality=country_fallback"
           ]
         },
@@ -100,19 +88,7 @@
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
-            "score": 2.42,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.29,
+            "score": 2.32,
             "matched": true,
             "missing": [],
             "matched_context": []
@@ -174,30 +150,16 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.MISSILE.DETECTION",
+            "rule_id": "AIR.MISSILE.IMPACT",
             "family": "air",
             "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
+            "subtype": "missile_impact",
             "severity": "high",
             "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "actions:any:intercepted,shot_down"
+              "objects:all:missile"
             ],
             "matched_context": []
           },
@@ -216,44 +178,72 @@
             "matched_context": []
           },
           {
+            "rule_id": "AIR.MISSILE.DETECTION",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_detection",
+            "severity": "medium",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.INTERCEPT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_interception",
+            "severity": "high",
+            "priority": 0,
+            "score": 0.0,
+            "matched": false,
+            "missing": [
+              "objects:all:missile",
+              "actions:any:intercepted,shot_down"
+            ],
+            "matched_context": []
+          },
+          {
             "rule_id": "GROUND.EXPLOSIVE.ATTACK",
             "family": "ground",
             "subcategory": "explosive_attack",
             "subtype": "explosive_attack",
             "severity": "high",
             "priority": 0,
-            "score": 1.1,
+            "score": 0.0,
             "matched": false,
             "missing": [
-              "objects:all:explosive_device"
+              "objects:all:explosive_device",
+              "actions:any:attacked,exploded"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 3675,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Szándékos orosz provokációnak tartja a lengyel kormányfő országa légterének megsértését, miután több légi objektum is lezuhant Ukrajnához közel, egy közös hadgyakorlattal egy időben. Lengyelország biztos benne, hogy orosz repülő objektumok sértették meg a légterét a hajnali órákban – jelentette be Donald Tusk lengyel kormányfő, majd hozzátette, külföldi partnereik is erre a megállapításra jutottak. Úgy fest, szándékos provokációval állunk szemben. Nem véletlen egybeesés, hogy ezek a tárgyak az Ukrajnát támogató országok közös hadgyakorlatának délkelet-lengyelországi helyszíne közelében zuhantak le Az Ukrajna elleni péntek hajnali orosz támadásokat követően a lengyel légtér megsértésével összefüggésben a hatóságok a Lublini vajdaságban három helyszínen – Rudnik nad Sanem, Molodycz és Nowy Lipowiec településen – kezdtek vizsgálatot pénteken. Donald Tusk elmondta: hajnal óta folyamatos kapcsolatban van a hadsereggel, a védelmi minisztériummal, a belügyminisztériummal, illetve valamennyi é",
+        "full_article_enriched": false,
+        "article_text_chars": 0,
+        "article_fetch_source": "fetch_limit",
+        "article_text_excerpt": "",
         "place": "Poland",
         "time": "Fri, 20 Nov 2026 09:30:31 +0000",
         "category": "air",
         "kind": "local_media",
         "geocode_quality": "country_fallback",
         "force_included": false,
-        "source_count": 3,
+        "source_count": 2,
         "sources": [
-          "HVG",
           "NotesFromPoland",
           "BNN"
         ],
         "urls": [
-          "https://hvg.hu/vilag/20261120_lengyelorszag-orosz-ukran-haboru-dron-donald-tusk-orban-anita",
           "https://notesfrompoland.com/2026/11/20/unidentified-object-hits-poland-amid-russian-attacks-on-western-ukraine/",
           "https://bnn-news.com/world/two-russian-missiles-and-a-jet-powered-drone-crash-in-poland-u43rvt8"
         ],
         "merged_titles": [
-          "Donald Tusk: Biztos, hogy orosz repülő objektumok sértették meg a lengyel légteret",
           "Two Russian missiles and a drone hit Poland",
           "Two Russian missiles and a jet-powered drone crash in Poland"
         ],

@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-22T04:26:27.017686+00:00",
+  "generated_utc": "2026-11-22T14:03:21.481777+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
@@ -275,67 +275,76 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.1451,
-          51.9194
+          22.568,
+          51.247
         ]
       },
       "properties": {
-        "id": "1f99ab89f6802e056d37",
-        "title": "Wiadomo, co wybuchło w Nowym Lipowcu. Wydobyto silnik",
-        "summary": "<img alt=\"Wiadomo, co wybuchło w Nowym Lipowcu. Wydobyto silnik\" src=\"https://tvn24.pl/najnowsze/cdn-zdjecie-nowy-lipowiec-12-30-21-11-ph9350827/alternates/LANDSCAPE_1280\" />\n    Prokuratura zidentyfikowała fragmenty rosyjskiego obiektu, który spadł w Nowym Lipowcu. Według informacji śledczych, na terytorium Polski wleciał rosyjski pocisk manewrujący. Był wyprodukowany w tym roku.",
-        "source": "TVN24",
-        "url": "https://tvn24.pl/rzeszow/rudnik-trzy-obiekty-spadly-w-polsce-prokuratura-zabezpiecza-slady-st9350535?source=rss",
-        "published": "Sat, 21 Nov 2026 10:26:19 GMT",
+        "id": "66b60e5c86af5e85bc9a",
+        "title": "Racheta rusească prăbușită în Polonia fusese fabricată cu doar câteva săptămâni înainte. Noi detalii dezvăluite de anchetatori",
+        "summary": "Racheta de croazieră rusească Kh-101, ale cărei fragmente au fost recuperate în apropierea localității Nowy Lipowiec, din voievodatul Lublin, în estul Poloniei, a fost fabricată în Rusia în ultimul trimestru al anului 2026 și a explodat în aer înainte de a atinge solul, a anunțat procurorul polonez Andrzej Boroń. Anchetatorii au examinat locul incidentului și au recuperat numeroase fragmente împrăștiate pe o suprafață extinsă, înaintea reuniunii Consiliului Nord-Atlantic (NAC), programată luni, la Bruxelles, în urma încălcării spațiului aerian polonez de către Rusia, vineri.",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/racheta-ruseasca-prabusita-in-polonia-fusese-fabricata-cu-doar-cateva-saptamani-inainte-noi-detalii-dezvaluite-de-anchetatori-4047923",
+        "published": "Sun, 22 Nov 2026 15:27:00 +0200",
         "country": "Poland",
-        "city": null,
+        "city": "Lublin",
         "family": "air",
-        "subcategory": "missile",
-        "subtype": "missile_impact",
-        "object": "missile",
+        "subcategory": "drone",
+        "subtype": "drone_strike",
+        "object": "drone",
         "action": "impact",
         "actor": "russia",
         "target": "unknown",
         "context": [],
         "consequences": [],
         "severity": "high",
-        "confidence": 0.82,
+        "confidence": 0.9,
         "article_role": "incident",
         "actual_incident": true,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
+        "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint": {
           "country": "Poland",
           "family": "air",
-          "subcategory": "missile",
-          "subtype": "missile_impact",
-          "object": "missile",
+          "subcategory": "drone",
+          "subtype": "drone_strike",
+          "object": "drone",
           "action": "impact",
           "actor": "russia",
           "target": "unknown",
-          "place": "Poland",
-          "event_date": "Sat, 21 No",
-          "hash": "ee49ab7a2f269b2b0a11bd74"
+          "place": "Lublin",
+          "event_date": "Sun, 22 No",
+          "hash": "4ae5161ac0b7727848a90b41"
         },
         "classifier_version": "1.1.0",
         "taxonomy_version": "1.0.1",
         "matched_terms": {
           "article_role": [],
           "objects": [
+            "drone",
+            "dronă",
             "missile",
-            "pocisk"
+            "rachetă",
+            "racheta"
           ],
           "actions": [
             "impact",
-            "spadł"
+            "căzut",
+            "s-a prăbușit",
+            "exploded",
+            "a explodat"
           ],
           "targets": [],
           "actors": [
             "russia",
-            "rosyjski"
+            "rusia",
+            "ukraine",
+            "ucraina",
+            "nato"
           ],
           "consequences": [],
           "extra_context": [
-            "feed_country=Poland",
-            "geocode_quality=country_fallback"
+            "feed_country=Romania",
+            "geocode_quality=city"
           ]
         },
         "negative_terms": [],
@@ -345,21 +354,10 @@
           "action_match": 0.2,
           "actor_match": 0.06,
           "country_match": 0.1,
+          "city_match": 0.08,
           "supporting_evidence": 0.06
         },
         "candidate_rules": [
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.29,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
           {
             "rule_id": "AIR.DRONE.STRIKE",
             "family": "air",
@@ -367,10 +365,76 @@
             "subtype": "drone_strike",
             "severity": "high",
             "priority": 0,
+            "score": 2.42,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.MISSILE.IMPACT",
+            "family": "air",
+            "subcategory": "missile",
+            "subtype": "missile_impact",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.39,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
             "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:drone"
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
             ],
             "matched_context": []
           },
@@ -417,110 +481,49 @@
             "matched_context": []
           },
           {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:drone",
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
             "rule_id": "GROUND.EXPLOSIVE.ATTACK",
             "family": "ground",
             "subcategory": "explosive_attack",
             "subtype": "explosive_attack",
             "severity": "high",
             "priority": 0,
-            "score": 0.0,
+            "score": 1.1,
             "matched": false,
             "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
+              "objects:all:explosive_device"
             ],
             "matched_context": []
           }
         ],
         "rejection_reason": null,
-        "full_article_enriched": false,
-        "article_text_chars": 0,
-        "article_fetch_source": "fetch_limit",
-        "article_text_excerpt": "",
-        "place": "Poland",
-        "time": "Sat, 21 Nov 2026 10:26:19 GMT",
+        "full_article_enriched": true,
+        "article_text_chars": 4353,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Racheta de croazieră rusească Kh-101, ale cărei fragmente au fost recuperate în apropierea localității Nowy Lipowiec, din voievodatul Lublin, în estul Poloniei, a fost fabricată în Rusia în ultimul trimestru al anului 2026 și a explodat în aer înainte de a atinge solul, a anunțat procurorul polonez Andrzej Boroń. Anchetatorii au examinat locul incidentului și au recuperat numeroase fragmente împrăștiate pe o suprafață extinsă, înaintea reuniunii Consiliului Nord-Atlantic (NAC), programată luni, la Bruxelles, în urma încălcării spațiului aerian polonez de către Rusia , vineri, relatează Kyiv Post . Racheta de croazieră rusească Kh-101, ale cărei resturi au fost descoperite în apropierea localității Nowy Lipowiec, din voievodatul Lublin, în estul Poloniei, a fost fabricată în Rusia în ultimul trimestru al anului 2026 și a explodat în aer înainte de a lovi solul, împrăștiind fragmente pe o suprafață extinsă, a anunțat procurorul polonez Andrzej Boroń, potrivit Polskie Radio. Vorbind în nu",
+        "place": "Lublin",
+        "time": "Sun, 22 Nov 2026 15:27:00 +0200",
         "category": "air",
         "kind": "local_media",
-        "geocode_quality": "country_fallback",
+        "geocode_quality": "city",
         "force_included": false,
         "source_count": 1,
         "sources": [
-          "TVN24"
+          "Digi24"
         ],
         "urls": [
-          "https://tvn24.pl/rzeszow/rudnik-trzy-obiekty-spadly-w-polsce-prokuratura-zabezpiecza-slady-st9350535?source=rss"
+          "https://www.digi24.ro/stiri/externe/racheta-ruseasca-prabusita-in-polonia-fusese-fabricata-cu-doar-cateva-saptamani-inainte-noi-detalii-dezvaluite-de-anchetatori-4047923"
         ],
         "merged_titles": [
-          "Wiadomo, co wybuchło w Nowym Lipowcu. Wydobyto silnik"
+          "Racheta rusească prăbușită în Polonia fusese fabricată cu doar câteva săptămâni înainte. Noi detalii dezvăluite de anchetatori"
         ],
         "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "incident_object": "missile",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "incident_object": "drone",
         "incident_action": "impact",
         "incident_actor": "russia",
         "incident_target": "unknown",
-        "classification_confidence": 0.82
+        "classification_confidence": 0.9
       }
     },
     {

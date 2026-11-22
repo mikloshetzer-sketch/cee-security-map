@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-22T04:26:38.068406+00:00",
+  "generated_utc": "2026-11-22T14:03:27.655645+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -32,8 +32,7 @@
     "Poland": {
       "incident_count": 3,
       "category_counts": {
-        "drone": 2,
-        "kinetic_attack": 1
+        "drone": 3
       },
       "source_files": {
         "local_events.geojson": 3
@@ -62,6 +61,27 @@
     "Slovakia": [],
     "Poland": [
       {
+        "id": "66b60e5c86af5e85bc9a",
+        "date": "2026-11-22",
+        "time": "2026-11-22T13:27:00+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Racheta rusească prăbușită în Polonia fusese fabricată cu doar câteva săptămâni înainte. Noi detalii dezvăluite de anchetatori",
+        "source": "Digi24",
+        "url": "https://www.digi24.ro/stiri/externe/racheta-ruseasca-prabusita-in-polonia-fusese-fabricata-cu-doar-cateva-saptamani-inainte-noi-detalii-dezvaluite-de-anchetatori-4047923",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "4ae5161ac0b7727848a90b41"
+      },
+      {
         "id": "a5814ab4090618701d49",
         "date": "2026-11-21",
         "time": "2026-11-21T21:09:28+00:00",
@@ -81,27 +101,6 @@
         "classification_confidence": 0.98,
         "matched_rule_id": "AIR.DRONE.DETECTION",
         "fingerprint_hash": "8575d9cfbb4500a2ddcc9ca1"
-      },
-      {
-        "id": "1f99ab89f6802e056d37",
-        "date": "2026-11-21",
-        "time": "2026-11-21T10:26:19+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Wiadomo, co wybuchło w Nowym Lipowcu. Wydobyto silnik",
-        "source": "TVN24",
-        "url": "https://tvn24.pl/rzeszow/rudnik-trzy-obiekty-spadly-w-polsce-prokuratura-zabezpiecza-slady-st9350535?source=rss",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "missile",
-        "incident_subtype": "missile_impact",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.MISSILE.IMPACT",
-        "fingerprint_hash": "ee49ab7a2f269b2b0a11bd74"
       },
       {
         "id": "c4c777ecfec89b6ea634",

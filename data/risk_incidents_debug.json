@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-22T14:03:27.655645+00:00",
+  "generated_utc": "2026-11-22T23:15:13.308005+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -61,6 +61,27 @@
     "Slovakia": [],
     "Poland": [
       {
+        "id": "66d58a6f9b0e5b646fe1",
+        "date": "2026-11-22",
+        "time": "2026-11-22T18:51:41+00:00",
+        "category": "drone",
+        "severity": "high",
+        "title": "Nem drón, hanem robotrepülőgép zuhant le Lengyelországban pénteken",
+        "source": "Telex",
+        "url": "https://telex.hu/kulfold/2026/11/22/orosz-dron-robotrepulogep-lengyelorszag-vizsgalat-ugyeszseg-haboru",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "drone",
+        "incident_subtype": "drone_strike",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.DRONE.STRIKE",
+        "fingerprint_hash": "e1ffddd3b1d3c8e8d955aab5"
+      },
+      {
         "id": "66b60e5c86af5e85bc9a",
         "date": "2026-11-22",
         "time": "2026-11-22T13:27:00+00:00",
@@ -80,27 +101,6 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "4ae5161ac0b7727848a90b41"
-      },
-      {
-        "id": "a5814ab4090618701d49",
-        "date": "2026-11-21",
-        "time": "2026-11-21T21:09:28+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Rutte az orosz légtérsértés után: A NATO Lengyelország minden négyzetcentiméterét meg fogja védeni",
-        "source": "Telex",
-        "url": "https://telex.hu/kulfold/2026/11/21/rutte-az-orosz-legtersertes-utan-a-nato-lengyelorszag-minden-negyzetcentimeteret-meg-fogja-vedeni",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.98,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "8575d9cfbb4500a2ddcc9ca1"
       },
       {
         "id": "c4c777ecfec89b6ea634",

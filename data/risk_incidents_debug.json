@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-23T05:05:21.058746+00:00",
+  "generated_utc": "2026-11-23T17:13:16.805663+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 2,
+    "local_event_count": 2,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -30,13 +30,13 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 3,
+      "incident_count": 2,
       "category_counts": {
-        "drone": 2,
-        "military": 1
+        "kinetic_attack": 1,
+        "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 3
+        "local_events.geojson": 2
       }
     },
     "Lithuania": {
@@ -62,46 +62,25 @@
     "Slovakia": [],
     "Poland": [
       {
-        "id": "66b60e5c86af5e85bc9a",
-        "date": "2026-11-22",
-        "time": "2026-11-22T13:27:00+00:00",
-        "category": "drone",
+        "id": "7fd64a301c0c3f573159",
+        "date": "2026-11-23",
+        "time": "2026-11-23T14:23:34+00:00",
+        "category": "kinetic_attack",
         "severity": "high",
-        "title": "Racheta rusească prăbușită în Polonia fusese fabricată cu doar câteva săptămâni înainte. Noi detalii dezvăluite de anchetatori",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/racheta-ruseasca-prabusita-in-polonia-fusese-fabricata-cu-doar-cateva-saptamani-inainte-noi-detalii-dezvaluite-de-anchetatori-4047923",
+        "title": "Policjant postrzelony przez zamachowca w Krakowie opuścił szpital",
+        "source": "TVN24",
+        "url": "https://tvn24.pl/krakow/krakow-postrzelony-podczas-zamachu-policjant-opuscil-szpital-st9353618?source=rss",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "4ae5161ac0b7727848a90b41"
-      },
-      {
-        "id": "acea0368226dc0eaa52b",
-        "date": "2026-11-22",
-        "time": "2026-11-22T08:05:05+00:00",
-        "category": "military",
-        "severity": "medium",
-        "title": "Útok na Kaliningradskou oblast monitoroval letoun NATO, píše ukrajinský web",
-        "source": "CT24",
-        "url": "https://ct24.ceskatelevize.cz/clanek/svet/kaliningradska-oblast-zrejme-celila-utoku-litva-vinu-odmita-379829",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "aircraft",
-        "incident_subtype": "military_aircraft_incident",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
-        "fingerprint_hash": "77f5439d913ca7291ce3a539"
+        "incident_family": "ground",
+        "incident_subcategory": "armed_incident",
+        "incident_subtype": "shooting",
+        "classification_confidence": 0.92,
+        "matched_rule_id": "GROUND.ARMED.SHOOTING",
+        "fingerprint_hash": "d912753dff1280f0bd374e49"
       },
       {
         "id": "c4c777ecfec89b6ea634",

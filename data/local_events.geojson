@@ -1,265 +1,9 @@
 {
   "type": "FeatureCollection",
-  "generated_utc": "2026-11-22T23:15:03.161812+00:00",
+  "generated_utc": "2026-11-23T05:05:13.452074+00:00",
   "classifier_version": "1.1.0",
   "taxonomy_version": "1.0.1",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.1451,
-          51.9194
-        ]
-      },
-      "properties": {
-        "id": "66d58a6f9b0e5b646fe1",
-        "title": "Nem drón, hanem robotrepülőgép zuhant le Lengyelországban pénteken",
-        "summary": "Mindhárom településre ugyanolyan gyártmányú gép zuhant le, de egyről eddig azt hitték, hogy drón volt.",
-        "source": "Telex",
-        "url": "https://telex.hu/kulfold/2026/11/22/orosz-dron-robotrepulogep-lengyelorszag-vizsgalat-ugyeszseg-haboru",
-        "published": "Sun, 22 Nov 2026 19:51:41 +0100",
-        "country": "Poland",
-        "city": null,
-        "family": "air",
-        "subcategory": "drone",
-        "subtype": "drone_strike",
-        "object": "drone",
-        "action": "impact",
-        "actor": "russia",
-        "target": "unknown",
-        "context": [],
-        "consequences": [
-          "injury"
-        ],
-        "severity": "high",
-        "confidence": 0.9,
-        "article_role": "incident",
-        "actual_incident": true,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint": {
-          "country": "Poland",
-          "family": "air",
-          "subcategory": "drone",
-          "subtype": "drone_strike",
-          "object": "drone",
-          "action": "impact",
-          "actor": "russia",
-          "target": "unknown",
-          "place": "Poland",
-          "event_date": "Sun, 22 No",
-          "hash": "e1ffddd3b1d3c8e8d955aab5"
-        },
-        "classifier_version": "1.1.0",
-        "taxonomy_version": "1.0.1",
-        "matched_terms": {
-          "article_role": [],
-          "objects": [
-            "drone",
-            "drón",
-            "missile",
-            "robotrepülőgép"
-          ],
-          "actions": [
-            "impact",
-            "lezuhant"
-          ],
-          "targets": [],
-          "actors": [
-            "russia",
-            "orosz",
-            "nato"
-          ],
-          "consequences": [
-            "injury",
-            "sérült"
-          ],
-          "extra_context": [
-            "feed_country=Hungary",
-            "geocode_quality=country_fallback"
-          ]
-        },
-        "negative_terms": [],
-        "confidence_components": {
-          "base": 0.2,
-          "object_match": 0.2,
-          "action_match": 0.2,
-          "actor_match": 0.06,
-          "country_match": 0.1,
-          "consequence_match": 0.08,
-          "supporting_evidence": 0.06
-        },
-        "candidate_rules": [
-          {
-            "rule_id": "AIR.DRONE.STRIKE",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_strike",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.32,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.IMPACT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_impact",
-            "severity": "high",
-            "priority": 0,
-            "score": 2.29,
-            "matched": true,
-            "missing": [],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.DETECTION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_detection",
-            "severity": "low",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTRUSION",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_intrusion",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:entered"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.INTERCEPT",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_interception",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:intercepted"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.DRONE.SHOOTDOWN",
-            "family": "air",
-            "subcategory": "drone",
-            "subtype": "drone_shootdown",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.DETECTION",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_detection",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:all:detected"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.MISSILE.INTERCEPT",
-            "family": "air",
-            "subcategory": "missile",
-            "subtype": "missile_interception",
-            "severity": "high",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "actions:any:intercepted,shot_down"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "AIR.AIRCRAFT.INCIDENT",
-            "family": "air",
-            "subcategory": "aircraft",
-            "subtype": "military_aircraft_incident",
-            "severity": "medium",
-            "priority": 0,
-            "score": 1.1,
-            "matched": false,
-            "missing": [
-              "objects:all:military_aircraft"
-            ],
-            "matched_context": []
-          },
-          {
-            "rule_id": "GROUND.EXPLOSIVE.ATTACK",
-            "family": "ground",
-            "subcategory": "explosive_attack",
-            "subtype": "explosive_attack",
-            "severity": "high",
-            "priority": 0,
-            "score": 0.0,
-            "matched": false,
-            "missing": [
-              "objects:all:explosive_device",
-              "actions:any:attacked,exploded"
-            ],
-            "matched_context": []
-          }
-        ],
-        "rejection_reason": null,
-        "full_article_enriched": true,
-        "article_text_chars": 1406,
-        "article_fetch_source": "cache",
-        "article_text_excerpt": "Menü Kereső Nem drón, hanem robotrepülőgép zuhant le Lengyelországban pénteken Külföld Bozsó Ágnes Állítsd be a Telexet megbízható forrásnak! Beállítom A lengyel ügyészség szerint nem drón, hanem orosz robotrepülőgép volt mind a három objektum, ami pénteken lezuhant az ország területén – írja a Gazeta Wyborcza . A három repülőgép pénteken, a kora reggeli órákban zuhant le három különböző kelet-lengyelországi település közelében. Az esetben senki nem sérült meg. A hatóságok eleinte azt hitték, hogy az egyik objektum egy drón, de ezt most cáfolták. Az ügyészség tájékoztatása szerint H-101 típusú orosz manőverező robotrepülőgépekről van szó, amiket 2026-ban gyártottak Dubnában. Pénteken Donald Tusk lengyel kormányfő arról beszélt, hogy ez nem tűnik balesetnek, inkább külföldi provokációval állhatnak szemben. Mark Rutte, a NATO főtitkára később kijelentette , hogy „a NATO Lengyelország minden négyzetcentiméterét meg fogja védeni”. A NATO egyik tisztségviselője vasárnap közölte, hogy a kato",
-        "place": "Poland",
-        "time": "Sun, 22 Nov 2026 19:51:41 +0100",
-        "category": "air",
-        "kind": "local_media",
-        "geocode_quality": "country_fallback",
-        "force_included": false,
-        "source_count": 1,
-        "sources": [
-          "Telex"
-        ],
-        "urls": [
-          "https://telex.hu/kulfold/2026/11/22/orosz-dron-robotrepulogep-lengyelorszag-vizsgalat-ugyeszseg-haboru"
-        ],
-        "merged_titles": [
-          "Nem drón, hanem robotrepülőgép zuhant le Lengyelországban pénteken"
-        ],
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "incident_object": "drone",
-        "incident_action": "impact",
-        "incident_actor": "russia",
-        "incident_target": "unknown",
-        "classification_confidence": 0.9
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -511,6 +255,266 @@
         "incident_subtype": "drone_strike",
         "incident_object": "drone",
         "incident_action": "impact",
+        "incident_actor": "russia",
+        "incident_target": "unknown",
+        "classification_confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.67,
+          54.383
+        ]
+      },
+      "properties": {
+        "id": "acea0368226dc0eaa52b",
+        "title": "Útok na Kaliningradskou oblast monitoroval letoun NATO, píše ukrajinský web",
+        "summary": "Ruská Kaliningradská oblast v&nbsp;sobotu večer čelila podle serveru Ukrajinska pravda možným dronovým náletům. Poplašné sirény se v&nbsp;regionu rozezněly poprvé od plnohodnotné ruské invaze na Ukrajinu. Tamní úřady uvedly, že systém reagoval na podezřelý objekt přilétající od Litvy, po prověření ale oznámily, že nebezpečí pominulo. Monitorovací kanály mezitím informovaly o&nbsp;explozích a&nbsp;činnosti protivzdušné obrany v&nbsp;přístavním městě Baltijsk, kde se nachází základna ruské Baltské flotily. Litva odpovědnost za možný útok popírá. V&nbsp;noci pokračovaly také vzájemné údery v&nbsp;jiných regionech Ruska a&nbsp;Ukrajiny, jež si vyžádaly mrtvé a&nbsp;zraněné.",
+        "source": "CT24",
+        "url": "https://ct24.ceskatelevize.cz/clanek/svet/kaliningradska-oblast-zrejme-celila-utoku-litva-vinu-odmita-379829",
+        "published": "Sun, 22 Nov 2026 08:05:05 GMT",
+        "country": "Poland",
+        "city": "Gdańsk",
+        "family": "air",
+        "subcategory": "aircraft",
+        "subtype": "military_aircraft_incident",
+        "object": "military_aircraft",
+        "action": "damaged",
+        "actor": "russia",
+        "target": "unknown",
+        "context": [],
+        "consequences": [],
+        "severity": "medium",
+        "confidence": 0.9,
+        "article_role": "incident",
+        "actual_incident": true,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint": {
+          "country": "Poland",
+          "family": "air",
+          "subcategory": "aircraft",
+          "subtype": "military_aircraft_incident",
+          "object": "military_aircraft",
+          "action": "damaged",
+          "actor": "russia",
+          "target": "unknown",
+          "place": "Gdańsk",
+          "event_date": "Sun, 22 No",
+          "hash": "77f5439d913ca7291ce3a539"
+        },
+        "classifier_version": "1.1.0",
+        "taxonomy_version": "1.0.1",
+        "matched_terms": {
+          "article_role": [],
+          "objects": [
+            "drone",
+            "bezpilotní letoun",
+            "military_aircraft",
+            "vrtulník",
+            "ship",
+            "loď",
+            "plavidlo",
+            "cyber_system",
+            "server"
+          ],
+          "actions": [
+            "burned",
+            "požár",
+            "damaged",
+            "zničil"
+          ],
+          "targets": [],
+          "actors": [
+            "russia",
+            "rusko",
+            "ruský",
+            "ukraine",
+            "ukrajina",
+            "nato"
+          ],
+          "consequences": [],
+          "extra_context": [
+            "feed_country=Czechia",
+            "geocode_quality=city"
+          ]
+        },
+        "negative_terms": [],
+        "confidence_components": {
+          "base": 0.2,
+          "object_match": 0.2,
+          "action_match": 0.2,
+          "actor_match": 0.06,
+          "country_match": 0.1,
+          "city_match": 0.08,
+          "supporting_evidence": 0.06
+        },
+        "candidate_rules": [
+          {
+            "rule_id": "AIR.AIRCRAFT.INCIDENT",
+            "family": "air",
+            "subcategory": "aircraft",
+            "subtype": "military_aircraft_incident",
+            "severity": "medium",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.SHIP.ATTACK",
+            "family": "maritime",
+            "subcategory": "ship_incident",
+            "subtype": "ship_attack",
+            "severity": "high",
+            "priority": 0,
+            "score": 2.32,
+            "matched": true,
+            "missing": [],
+            "matched_context": []
+          },
+          {
+            "rule_id": "PUBLIC.ORDER.VIOLENCE",
+            "family": "public_order",
+            "subcategory": "violent_protest",
+            "subtype": "violent_public_disorder",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.2,
+            "matched": false,
+            "missing": [
+              "context:any"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.DETECTION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_detection",
+            "severity": "low",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:detected"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTRUSION",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_intrusion",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:entered"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.INTERCEPT",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_interception",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:intercepted"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.SHOOTDOWN",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_shootdown",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:shot_down"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "AIR.DRONE.STRIKE",
+            "family": "air",
+            "subcategory": "drone",
+            "subtype": "drone_strike",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:any:attacked,exploded,impact"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "MARITIME.PORT.DISRUPTION",
+            "family": "maritime",
+            "subcategory": "port_security",
+            "subtype": "port_disruption",
+            "severity": "medium",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "targets:all:transport"
+            ],
+            "matched_context": []
+          },
+          {
+            "rule_id": "CYBER.INTRUSION",
+            "family": "cyber",
+            "subcategory": "intrusion",
+            "subtype": "cyber_intrusion",
+            "severity": "high",
+            "priority": 0,
+            "score": 1.1,
+            "matched": false,
+            "missing": [
+              "actions:all:compromised"
+            ],
+            "matched_context": []
+          }
+        ],
+        "rejection_reason": null,
+        "full_article_enriched": true,
+        "article_text_chars": 9702,
+        "article_fetch_source": "network",
+        "article_text_excerpt": "Ruská Kaliningradská oblast v sobotu večer čelila podle serveru Ukrajinska pravda možným dronovým náletům. Poplašné sirény se v regionu rozezněly poprvé od plnohodnotné ruské invaze na Ukrajinu. Tamní úřady uvedly, že systém reagoval na podezřelý objekt přilétající od Litvy, po prověření ale oznámily, že nebezpečí pominulo. Monitorovací kanály mezitím informovaly o explozích a činnosti protivzdušné obrany v přístavním městě Baltijsk, kde se nachází základna ruské Baltské flotily. Litva odpovědnost za možný útok popírá. V noci pokračovaly také vzájemné údery v jiných regionech Ruska a Ukrajiny, jež si vyžádaly mrtvé a zraněné. Podle ukrajinského analytického webu Militarnyi monitorovalo dronový útok na Kaliningradskou oblast jedno z dálkových radiolokačních letadel NATO Boeing E-3A Sentry. Web se odvolává na data sledování letu od společnosti AirNav , jež sleduje letecký provoz v reálném čase. Letoun s volacím znakem NATO01 a registračním číslem LX-N90453 hlídkoval v polském vzdušném pr",
+        "place": "Gdańsk",
+        "time": "Sun, 22 Nov 2026 08:05:05 GMT",
+        "category": "air",
+        "kind": "local_media",
+        "geocode_quality": "city",
+        "force_included": false,
+        "source_count": 1,
+        "sources": [
+          "CT24"
+        ],
+        "urls": [
+          "https://ct24.ceskatelevize.cz/clanek/svet/kaliningradska-oblast-zrejme-celila-utoku-litva-vinu-odmita-379829"
+        ],
+        "merged_titles": [
+          "Útok na Kaliningradskou oblast monitoroval letoun NATO, píše ukrajinský web"
+        ],
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "incident_object": "military_aircraft",
+        "incident_action": "damaged",
         "incident_actor": "russia",
         "incident_target": "unknown",
         "classification_confidence": 0.9

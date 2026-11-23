@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-22T23:15:13.308005+00:00",
+  "generated_utc": "2026-11-23T05:05:21.058746+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -32,7 +32,8 @@
     "Poland": {
       "incident_count": 3,
       "category_counts": {
-        "drone": 3
+        "drone": 2,
+        "military": 1
       },
       "source_files": {
         "local_events.geojson": 3
@@ -61,27 +62,6 @@
     "Slovakia": [],
     "Poland": [
       {
-        "id": "66d58a6f9b0e5b646fe1",
-        "date": "2026-11-22",
-        "time": "2026-11-22T18:51:41+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Nem drón, hanem robotrepülőgép zuhant le Lengyelországban pénteken",
-        "source": "Telex",
-        "url": "https://telex.hu/kulfold/2026/11/22/orosz-dron-robotrepulogep-lengyelorszag-vizsgalat-ugyeszseg-haboru",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.9,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "e1ffddd3b1d3c8e8d955aab5"
-      },
-      {
         "id": "66b60e5c86af5e85bc9a",
         "date": "2026-11-22",
         "time": "2026-11-22T13:27:00+00:00",
@@ -101,6 +81,27 @@
         "classification_confidence": 0.9,
         "matched_rule_id": "AIR.DRONE.STRIKE",
         "fingerprint_hash": "4ae5161ac0b7727848a90b41"
+      },
+      {
+        "id": "acea0368226dc0eaa52b",
+        "date": "2026-11-22",
+        "time": "2026-11-22T08:05:05+00:00",
+        "category": "military",
+        "severity": "medium",
+        "title": "Útok na Kaliningradskou oblast monitoroval letoun NATO, píše ukrajinský web",
+        "source": "CT24",
+        "url": "https://ct24.ceskatelevize.cz/clanek/svet/kaliningradska-oblast-zrejme-celila-utoku-litva-vinu-odmita-379829",
+        "source_file": "local_events.geojson",
+        "classification_source": "security_classifier_compatible_local",
+        "actual_incident": true,
+        "risk_eligible": null,
+        "article_role": "incident",
+        "incident_family": "air",
+        "incident_subcategory": "aircraft",
+        "incident_subtype": "military_aircraft_incident",
+        "classification_confidence": 0.9,
+        "matched_rule_id": "AIR.AIRCRAFT.INCIDENT",
+        "fingerprint_hash": "77f5439d913ca7291ce3a539"
       },
       {
         "id": "c4c777ecfec89b6ea634",

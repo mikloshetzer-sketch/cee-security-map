@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-23T17:13:16.805663+00:00",
+  "generated_utc": "2026-11-24T03:55:00.312750+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
@@ -15,9 +15,13 @@
       "source_files": {}
     },
     "Hungary": {
-      "incident_count": 0,
-      "category_counts": {},
-      "source_files": {}
+      "incident_count": 1,
+      "category_counts": {
+        "infrastructure_disruption": 1
+      },
+      "source_files": {
+        "local_events.geojson": 1
+      }
     },
     "Romania": {
       "incident_count": 0,
@@ -30,13 +34,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "kinetic_attack": 1,
         "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Lithuania": {
@@ -57,31 +60,32 @@
   },
   "countries": {
     "Czech Republic": [],
-    "Hungary": [],
-    "Romania": [],
-    "Slovakia": [],
-    "Poland": [
+    "Hungary": [
       {
-        "id": "7fd64a301c0c3f573159",
+        "id": "cfb64e2c32491857f4c3",
         "date": "2026-11-23",
-        "time": "2026-11-23T14:23:34+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Policjant postrzelony przez zamachowca w Krakowie opuścił szpital",
-        "source": "TVN24",
-        "url": "https://tvn24.pl/krakow/krakow-postrzelony-podczas-zamachu-policjant-opuscil-szpital-st9353618?source=rss",
+        "time": "2026-11-23T10:07:44+00:00",
+        "category": "infrastructure_disruption",
+        "severity": "medium",
+        "title": "Nyolc járatot kellett törölnie a budapesti repülőtérnek a belgiumi sztrájk miatt",
+        "source": "Telex",
+        "url": "https://telex.hu/belfold/2026/11/23/budapest-airport-jarattorles-belgium-sztrajk",
         "source_file": "local_events.geojson",
         "classification_source": "security_classifier_compatible_local",
         "actual_incident": true,
         "risk_eligible": null,
         "article_role": "incident",
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
+        "incident_family": "maritime",
+        "incident_subcategory": "port_security",
+        "incident_subtype": "port_disruption",
         "classification_confidence": 0.92,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint_hash": "d912753dff1280f0bd374e49"
-      },
+        "matched_rule_id": "MARITIME.PORT.DISRUPTION",
+        "fingerprint_hash": "8037e6d566397d9c8ee44f8e"
+      }
+    ],
+    "Romania": [],
+    "Slovakia": [],
+    "Poland": [
       {
         "id": "c4c777ecfec89b6ea634",
         "date": "2026-11-20",

@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-24T16:57:55.750406+00:00",
+  "generated_utc": "2026-11-25T02:01:06.434232+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 3,
-    "local_event_count": 3,
+    "incident_count": 1,
+    "local_event_count": 1,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -20,13 +20,9 @@
       "source_files": {}
     },
     "Romania": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Slovakia": {
       "incident_count": 0,
@@ -34,13 +30,12 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 2,
+      "incident_count": 1,
       "category_counts": {
-        "kinetic_attack": 1,
         "drone": 1
       },
       "source_files": {
-        "local_events.geojson": 2
+        "local_events.geojson": 1
       }
     },
     "Lithuania": {
@@ -62,52 +57,9 @@
   "countries": {
     "Czech Republic": [],
     "Hungary": [],
-    "Romania": [
-      {
-        "id": "70bd7db551ac141f44f3",
-        "date": "2026-11-24",
-        "time": "2026-11-24T15:38:35+00:00",
-        "category": "drone",
-        "severity": "low",
-        "title": "Alertă de dronă la Tulcea, după detectarea unei ținte la nord de brațul Chilia. MApN: Nu au fost raportate pătrunderi în spațiul aerian",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/alerta-aeriana-la-tulcea-doua-avioane-f-16-au-fost-ridicate-de-la-sol-dupa-ce-o-tinta-a-fost-detectata-la-nord-de-bratul-chilia-4050807",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_detection",
-        "classification_confidence": 0.84,
-        "matched_rule_id": "AIR.DRONE.DETECTION",
-        "fingerprint_hash": "d1acd6255a2afbabaaf1e81f"
-      }
-    ],
+    "Romania": [],
     "Slovakia": [],
     "Poland": [
-      {
-        "id": "9e96b6257925391d3351",
-        "date": "2026-11-24",
-        "time": "2026-11-24T15:39:27+00:00",
-        "category": "kinetic_attack",
-        "severity": "high",
-        "title": "Polițistul polonez care l-a anihilat pe atacatorul din Cracovia a ieșit din spital. Care este starea celuilalt erou",
-        "source": "Digi24",
-        "url": "https://www.digi24.ro/stiri/externe/ue/politistul-polonez-care-l-a-anihilat-pe-atacatorul-din-cracovia-a-iesit-din-spital-care-este-starea-celuilalt-erou-4050829",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "ground",
-        "incident_subcategory": "armed_incident",
-        "incident_subtype": "shooting",
-        "classification_confidence": 0.92,
-        "matched_rule_id": "GROUND.ARMED.SHOOTING",
-        "fingerprint_hash": "56a08dcc78eda2cdf31974e5"
-      },
       {
         "id": "c4c777ecfec89b6ea634",
         "date": "2026-11-20",

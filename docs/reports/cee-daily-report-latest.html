@@ -517,7 +517,7 @@ body {
 
     <div class="date-box">
       <div class="label">Dátum</div>
-      <div class="date">2026-11-24</div>
+      <div class="date">2026-11-25</div>
       <div class="label">UTC alapú riport</div>
     </div>
   </header>
@@ -533,7 +533,7 @@ body {
       <div class="kpi">
         <div class="label">Régiós állapot</div>
         <div class="value">NORMAL</div>
-        <div class="note">score: 0.34</div>
+        <div class="note">score: 0.63</div>
       </div>
 
       <div class="kpi">
@@ -550,7 +550,7 @@ body {
 
       <div class="kpi">
         <div class="label">Fő szektor</div>
-        <div class="value" style="font-size:28px;">infrastruktúra</div>
+        <div class="value" style="font-size:28px;">energy</div>
         <div class="note">infrastruktúra-közeli találatok alapján</div>
       </div>
     </section>
@@ -558,7 +558,7 @@ body {
     <section class="section">
       <h2>Rövid napi értékelés</h2>
       <div class="summary-box">
-        <ul><li>Helyi források alapján az elmúlt 24 órában 1 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Poland: 1.</li><li>Legerősebb góc: Kutno County, Poland 🆕 (rácspont 52.25, 19.25; score 5.98; 7 napos változás: n/a).</li><li>Trend: nincs elég bázisadat az összehasonlításhoz.</li><li>Forráskép: GDELT 0, GDELT linked 3461, GDELT DOC 0, direkt feed 6, USGS 1, GDACS 0.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 186 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li></ul>
+        <ul><li>Helyi források alapján az elmúlt 24 órában 2 infrastruktúra- vagy biztonsági relevanciájú lokális esemény jelent meg. Fő érintett országok: Poland: 1, Romania: 1.</li><li>Legerősebb góc: Kutno County, Poland 🆕 (rácspont 52.25, 19.25; score 7.89; 7 napos változás: n/a).</li><li>Trend: nincs elég bázisadat az összehasonlításhoz.</li><li>Forráskép: GDELT 0, GDELT linked 3461, GDELT DOC 0, direkt feed 8, USGS 1, GDACS 0.</li><li>Trusted RSS forrásokból releváns sajtóanyag: 178 db.</li><li>Megjegyzés: automatikus OSINT-kivonat; a linkelt források kézi ellenőrzése javasolt.</li></ul>
       </div>
     </section>
 
@@ -591,10 +591,10 @@ body {
         <div class="region-card orange">
           <div class="region-head">Fekete-tengeri perem</div>
           <div class="region-body">
-            <div class="big-number">0.0</div>
+            <div class="big-number">2.31</div>
             <div class="small-label">összesített risk score</div>
             <div class="region-line"><b>Fő fókusz:</b> Romania</div>
-            <div class="mini-bar"><span style="width:0.0%"></span></div>
+            <div class="mini-bar"><span style="width:27.72%"></span></div>
           </div>
         </div>
         
@@ -624,6 +624,14 @@ body {
         </div>
         
 
+        <div class="country-card elevated">
+          <div class="country-name">Romania</div>
+          <div class="country-score">2.31</div>
+          <div class="country-level">elevated</div>
+          <div class="country-drivers">friss aktivitási trend, katonai és drónaktivitás, biztonsági incidensnyomás</div>
+        </div>
+        
+
         <div class="country-card normal">
           <div class="country-name">Czech Republic</div>
           <div class="country-score">0.0</div>
@@ -634,14 +642,6 @@ body {
 
         <div class="country-card normal">
           <div class="country-name">Hungary</div>
-          <div class="country-score">0.0</div>
-          <div class="country-level">insufficient_data</div>
-          <div class="country-drivers">automatikus OSINT jelzés</div>
-        </div>
-        
-
-        <div class="country-card normal">
-          <div class="country-name">Romania</div>
           <div class="country-score">0.0</div>
           <div class="country-level">insufficient_data</div>
           <div class="country-drivers">automatikus OSINT jelzés</div>
@@ -685,7 +685,15 @@ body {
     <section class="section">
       <h2>Infrastruktúra-közeli incidensek</h2>
       <div class="card-grid">
-        <p>Nincs infrastruktúra-közeli kiemelt találat.</p>
+        
+        <div class="infra-card medium">
+          <div class="event-kicker">Romania • energy • 18.5 km</div>
+          <h3>Cernavodă Nuclear Power Plant</h3>
+          <p>Alertă de dronă la Tulcea, după detectarea unei ținte la nord de brațul Chilia. MApN: Nu au fost raportate pătrunderi în spațiul aerian</p>
+          <div class="level-pill medium">medium</div>
+          <a href="https://www.digi24.ro/stiri/alerta-aeriana-la-tulcea-doua-avioane-f-16-au-fost-ridicate-de-la-sol-dupa-ce-o-tinta-a-fost-detectata-la-nord-de-bratul-chilia-4050807" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
       </div>
     </section>
 
@@ -695,10 +703,17 @@ body {
         
         <div class="event-card">
           <div class="event-kicker">Poland • ground • high</div>
-          <h3>Policjant postrzelony przez zamachowca w Krakowie opuścił szpital</h3>
-          <p>&lt;img alt=&quot;Policjant postrzelony przez zamachowca w Krakowie opuścił szpital&quot; src=&quot;https://tvn24.pl/najnowsze/cdn-zdjecie-policja-w-krakowie-ph9332122/alternates/LANDSCAPE_1280&quot; /&gt;
-    Starszy posterunkowy Jakub Kulik, jeden z policjantów, którzy powstrzymali zamachowca w Krakowie, opuścił szpital. Funkcjonariusz został trzykrotnie postrzelony podczas interwencji.</p>
-          <a href="https://tvn24.pl/krakow/krakow-postrzelony-podczas-zamachu-policjant-opuscil-szpital-st9353618?source=rss" target="_blank" rel="noopener">Forrás megnyitása</a>
+          <h3>Polițistul polonez care l-a anihilat pe atacatorul din Cracovia a ieșit din spital. Care este starea celuilalt erou</h3>
+          <p>Polițistul care l-a ucis pe atacatorul din Cracovia și a fost la rândul lui rănit grav, în urma unei urmăriri cu focuri de armă pe străzile din centrul orașului, a ieșit din spital, scrie Wyborcza.pl. Jakub Kulik a fost împușcat de trei ori în timpul confruntării și, cu toate acestea, a reușit să se ridice și să-l anihilwze pe atacator.</p>
+          <a href="https://www.digi24.ro/stiri/externe/ue/politistul-polonez-care-l-a-anihilat-pe-atacatorul-din-cracovia-a-iesit-din-spital-care-este-starea-celuilalt-erou-4050829" target="_blank" rel="noopener">Forrás megnyitása</a>
+        </div>
+        
+
+        <div class="event-card">
+          <div class="event-kicker">Romania • air • low</div>
+          <h3>Alertă de dronă la Tulcea, după detectarea unei ținte la nord de brațul Chilia. MApN: Nu au fost raportate pătrunderi în spațiul aerian</h3>
+          <p>Autorităţile au emis, marţi după-amiază, un nou mesaj RO-Alert pentru nordul judeţul Tulcea, aceasta fiind a doua avertizare de acest gen în ultimele ore. Radarele au detectat o ţintă aeriană la nord de braţul Chilia, pe teritoriu ucrainean. De asemenea, două aeronave F-16 de la Baza 86 Aeriană Feteşti au decolat pentru supravegherea zonei.</p>
+          <a href="https://www.digi24.ro/stiri/alerta-aeriana-la-tulcea-doua-avioane-f-16-au-fost-ridicate-de-la-sol-dupa-ce-o-tinta-a-fost-detectata-la-nord-de-bratul-chilia-4050807" target="_blank" rel="noopener">Forrás megnyitása</a>
         </div>
         
 
@@ -715,7 +730,7 @@ body {
     <section class="section">
       <h2>Heti trendjelzések</h2>
       <div class="summary-box">
-        <ul><li>A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Poland: 4.0.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében mérsékelten romló képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, határbiztonsági és rendészeti nyomás, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor lokális incidensek és eszkalációs kockázatok több ponton megfigyelhetők voltak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, ugyanakkor több ponton emelkedő nyomás érzékelhető. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan a keleti peremterületek biztonságpolitikai terheltsége lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
+        <ul><li>A helyi forrásokból érkező infrastruktúra- és biztonsági jelzések alapján a heti lokális nyomás legerősebben itt jelent meg: Poland: 4.0, Romania: 2.6.</li><li>A közép– és kelet-európai térség biztonsági helyzete az elmúlt héten összességében mérsékelten romló képet mutatott. A regionális dinamikát elsősorban politikai instabilitás és kormányzati feszültségek, társadalmi elégedetlenség és tiltakozási potenciál, energetikai és kritikus infrastruktúra-kitettség határozták meg. A vizsgált időszakban nem történt olyan egyedi esemény, amely alapjaiban alakította volna át a teljes térség biztonsági szerkezetét, ugyanakkor lokális incidensek és eszkalációs kockázatok több ponton megfigyelhetők voltak.</li><li>A jelenlegi folyamatok rövid távon nem utalnak széles körű fegyveres eszkaláció közvetlen kockázatára, ugyanakkor több ponton emelkedő nyomás érzékelhető. A legfőbb kockázatot továbbra is a határbiztonsági incidensek, az energetikai sérülékenységek, a dezinformáció és a belpolitikai polarizáció együttes hatása jelenti. A magas érzékenységű peremterületeken a lokális nyomáspontok gyorsan regionális figyelmet generálhatnak.</li><li>Rövid távon nem várható a regionális helyzet gyökeres átalakulása, ugyanakkor több törékeny politikai és biztonságpolitikai dinamika továbbra is fennmarad. A következő időszak kulcskérdése várhatóan a keleti peremterületek biztonságpolitikai terheltsége lesz. Az események folyamatos monitorozása továbbra is indokolt, különösen a magas érzékenységű határtérségekben és az energetikai kapcsolódási pontokon.</li><li>Összességében Közép- és Kelet-Európa biztonsági helyzete továbbra is differenciált, több alrégióra tagolt képet mutat. A térség egészét tekintve nem egyetlen domináns válság határozza meg a helyzetet, hanem több, egymással összefüggő nyomáspont együttes hatása.</li></ul>
       </div>
     </section>
 
@@ -726,14 +741,14 @@ body {
           <h2>CEE Security & Infrastructure Snapshot</h2>
           <p>Napi régiós kockázati kép kritikus infrastruktúra, lokális események és OSINT-jelzések alapján.</p>
         </div>
-        <div class="vd-date">2026-11-24</div>
+        <div class="vd-date">2026-11-25</div>
       </div>
 
       <div class="vd-grid">
         <div class="vd-main">
           <div class="vd-label">Régiós állapot</div>
           <div class="vd-big">NORMAL</div>
-          <div class="vd-sub">Regional score: 0.34</div>
+          <div class="vd-sub">Regional score: 0.63</div>
         </div>
 
         <div class="vd-card red">
@@ -747,7 +762,7 @@ body {
         </div>
 
         <div class="vd-card blue">
-          <div class="vd-number">2</div>
+          <div class="vd-number">3</div>
           <div class="vd-text">kiemelt lokális esemény</div>
         </div>
 
@@ -758,7 +773,7 @@ body {
 
         <div class="vd-wide">
           <div class="vd-label">Fő szektor</div>
-          <div class="vd-sector">infrastruktúra</div>
+          <div class="vd-sector">energy</div>
           <div class="vd-sub">Infrastruktúra-közeli találatok domináns kategóriája</div>
         </div>
       </div>
@@ -790,10 +805,10 @@ body {
         <div class="region-card orange">
           <div class="region-head">Fekete-tengeri perem</div>
           <div class="region-body">
-            <div class="big-number">0.0</div>
+            <div class="big-number">2.31</div>
             <div class="small-label">összesített risk score</div>
             <div class="region-line"><b>Fő fókusz:</b> Romania</div>
-            <div class="mini-bar"><span style="width:0.0%"></span></div>
+            <div class="mini-bar"><span style="width:27.72%"></span></div>
           </div>
         </div>
         

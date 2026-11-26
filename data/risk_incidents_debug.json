@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-26T01:34:57.870679+00:00",
+  "generated_utc": "2026-11-26T16:21:07.510040+00:00",
   "purpose": "Exact validated incident records admitted to cee_country_risk_v2.",
   "model": "cee_country_risk_v2",
   "window_days": 7,
   "totals": {
-    "incident_count": 1,
-    "local_event_count": 1,
+    "incident_count": 0,
+    "local_event_count": 0,
     "crossborder_event_count": 0
   },
   "country_summary": {
@@ -30,13 +30,9 @@
       "source_files": {}
     },
     "Poland": {
-      "incident_count": 1,
-      "category_counts": {
-        "drone": 1
-      },
-      "source_files": {
-        "local_events.geojson": 1
-      }
+      "incident_count": 0,
+      "category_counts": {},
+      "source_files": {}
     },
     "Lithuania": {
       "incident_count": 0,
@@ -59,29 +55,7 @@
     "Hungary": [],
     "Romania": [],
     "Slovakia": [],
-    "Poland": [
-      {
-        "id": "fca5f688e06129ac54b6",
-        "date": "2026-11-20",
-        "time": "2026-11-20T11:54:03+00:00",
-        "category": "drone",
-        "severity": "high",
-        "title": "Two Russian missiles and a jet-powered drone crash in Poland",
-        "source": "BNN",
-        "url": "https://bnn-news.com/world/two-russian-missiles-and-a-jet-powered-drone-crash-in-poland-u43rvt8",
-        "source_file": "local_events.geojson",
-        "classification_source": "security_classifier_compatible_local",
-        "actual_incident": true,
-        "risk_eligible": null,
-        "article_role": "incident",
-        "incident_family": "air",
-        "incident_subcategory": "drone",
-        "incident_subtype": "drone_strike",
-        "classification_confidence": 0.82,
-        "matched_rule_id": "AIR.DRONE.STRIKE",
-        "fingerprint_hash": "71226cc7b852a6e89cef9ba6"
-      }
-    ],
+    "Poland": [],
     "Lithuania": [],
     "Latvia": [],
     "Estonia": []
